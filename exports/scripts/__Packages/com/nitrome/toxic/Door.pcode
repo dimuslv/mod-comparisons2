@@ -1,0 +1,169 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Door", "MovieClip", "prototype", "init", "game", "side", "doClose", "close", "gotoAndStop", "finishClose", "_y", "_x", "drawDoor", "nextDoor", "doOpen", "clearDoor", "open", "finishOpen", "openDoor", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00f0
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00f0:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0128
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0128:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc016c
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc016c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Door"
+GetMember
+Not
+Not
+If loc0344
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Door"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Door"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "game", 3, "side" {
+Push register1, "game", register2
+SetMember
+Push register1, "side", register3
+SetMember
+}
+SetMember
+Push register2, "doClose"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "close", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finishClose"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "drawDoor"
+CallMethod
+Pop
+Push register1, "side"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "nextDoor"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doOpen"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "clearDoor"
+CallMethod
+Pop
+Push "open", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finishOpen"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "side"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "openDoor"
+CallMethod
+Pop
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Door"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0344:Pop

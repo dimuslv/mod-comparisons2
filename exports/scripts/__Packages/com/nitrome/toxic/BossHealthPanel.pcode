@@ -1,0 +1,123 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "BossHealthPanel", "_visible", "MovieClip", "prototype", "setActive", "displayHealth", "health_mask", "_xscale", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00b9
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00b9:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00f1
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00f1:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0135
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0135:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossHealthPanel"
+GetMember
+Not
+Not
+If loc0244
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossHealthPanel"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "_visible", false
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossHealthPanel"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "setActive"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "b" {
+Push register1, "_visible", register2
+SetMember
+}
+SetMember
+Push register2, "displayHealth"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "percent" {
+Push register1, "health_mask"
+GetMember
+Push "_xscale", register2
+SetMember
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossHealthPanel"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0244:Pop

@@ -1,0 +1,1185 @@
+ConstantPool "_global", "com", "Object", "nitrome", "util", "MD5", "b64pad", "chrsz", "prototype", "hash", "hex_md5", "length", "str2binl", "core_md5", "binl2hex", "b64_md5", "binl2b64", "str_md5", "binl2str", "hex_hmac_md5", "core_hmac_md5", "b64_hmac_md5", "str_hmac_md5", "md5_cmn", "safe_add", "bit_rol", "md5_ff", "md5_gg", "md5_hh", "md5_ii", "Array", "concat", "Number", "charCodeAt", "", "String", "fromCharCode", "0123456789abcdef", "charAt", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc01c2
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc01c2:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc01fa
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc01fa:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Not
+Not
+If loc023e
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util", 0, "Object"
+NewObject
+SetMember
+loc023e:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "MD5"
+GetMember
+Not
+Not
+If loc1ba1
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "MD5"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "b64pad", 2, "chrsz" {
+Push register3, undefined
+Equals2
+Not
+Not
+If loc02ad
+Push register1, "b64pad", register3
+SetMember
+loc02ad:Push register2, undefined
+Equals2
+Not
+PushDuplicate
+Not
+If loc02c8
+Pop
+Push register2, 8
+Equals2
+loc02c8:PushDuplicate
+If loc02da
+Pop
+Push register2, 16
+Equals2
+loc02da:Not
+If loc02ea
+Push register1, "chrsz", register2
+SetMember
+}
+loc02ea:StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "hash"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "s" {
+Push register2, 1, register1, "hex_md5"
+CallMethod
+Return
+}
+SetMember
+Push register2, "hex_md5"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "s" {
+Push register2, "length"
+GetMember
+Push register1, "chrsz"
+GetMember
+Multiply
+Push register2, 1, register1, "str2binl"
+CallMethod
+Push 2, register1, "core_md5"
+CallMethod
+Push 1, register1, "binl2hex"
+CallMethod
+Return
+}
+SetMember
+Push register2, "b64_md5"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "s" {
+Push register2, "length"
+GetMember
+Push register1, "chrsz"
+GetMember
+Multiply
+Push register2, 1, register1, "str2binl"
+CallMethod
+Push 2, register1, "core_md5"
+CallMethod
+Push 1, register1, "binl2b64"
+CallMethod
+Return
+}
+SetMember
+Push register2, "str_md5"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "s" {
+Push register2, "length"
+GetMember
+Push register1, "chrsz"
+GetMember
+Multiply
+Push register2, 1, register1, "str2binl"
+CallMethod
+Push 2, register1, "core_md5"
+CallMethod
+Push 1, register1, "binl2str"
+CallMethod
+Return
+}
+SetMember
+Push register2, "hex_hmac_md5"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "key", 3, "data" {
+Push register3, register2, 2, register1, "core_hmac_md5"
+CallMethod
+Push 1, register1, "binl2hex"
+CallMethod
+Return
+}
+SetMember
+Push register2, "b64_hmac_md5"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "key", 3, "data" {
+Push register3, register2, 2, register1, "core_hmac_md5"
+CallMethod
+Push 1, register1, "binl2b64"
+CallMethod
+Return
+}
+SetMember
+Push register2, "str_hmac_md5"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "key", 3, "data" {
+Push register3, register2, 2, register1, "core_hmac_md5"
+CallMethod
+Push 1, register1, "binl2str"
+CallMethod
+Return
+}
+SetMember
+Push register2, "md5_cmn"
+DefineFunction2 "", 6, 8, false, false, true, false, true, false, false, true, false, 6, "q", 5, "a", 3, "b", 7, "x", 4, "s", 2, "t" {
+Push register3, register4, register2, register7, 2, register1, "safe_add"
+CallMethod
+Push register6, register5, 2, register1, "safe_add"
+CallMethod
+Push 2, register1, "safe_add"
+CallMethod
+Push 2, register1, "bit_rol"
+CallMethod
+Push 2, register1, "safe_add"
+CallMethod
+Return
+}
+SetMember
+Push register2, "md5_ff"
+DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 2, "b", 4, "c", 3, "d", 8, "x", 6, "s", 5, "t" {
+Push register5, register6, register8, register2, register7, register2, register4
+BitAnd
+Push register2, 4294967295
+BitXor
+Push register3
+BitAnd
+BitOr
+Push 6, register1, "md5_cmn"
+CallMethod
+Return
+}
+SetMember
+Push register2, "md5_gg"
+DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 3, "b", 4, "c", 2, "d", 8, "x", 6, "s", 5, "t" {
+Push register5, register6, register8, register3, register7, register3, register2
+BitAnd
+Push register4, register2, 4294967295
+BitXor
+BitAnd
+BitOr
+Push 6, register1, "md5_cmn"
+CallMethod
+Return
+}
+SetMember
+Push register2, "md5_hh"
+DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 2, "b", 4, "c", 3, "d", 8, "x", 6, "s", 5, "t" {
+Push register5, register6, register8, register2, register7, register2, register4
+BitXor
+Push register3
+BitXor
+Push 6, register1, "md5_cmn"
+CallMethod
+Return
+}
+SetMember
+Push register2, "md5_ii"
+DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 2, "b", 4, "c", 3, "d", 8, "x", 6, "s", 5, "t" {
+Push register5, register6, register8, register2, register7, register4, register2, register3, 4294967295
+BitXor
+BitOr
+BitXor
+Push 6, register1, "md5_cmn"
+CallMethod
+Return
+}
+SetMember
+Push register2, "core_md5"
+DefineFunction2 "", 2, 13, false, false, true, false, true, false, false, true, false, 7, "x", 12, "len" {
+Push register7, register12, 5
+BitRShift
+Push register7, register12, 5
+BitRShift
+GetMember
+Push 128, register12, 32
+Modulo
+BitLShift
+BitOr
+SetMember
+Push register7, register12, 64
+Add2
+Push 9
+BitURShift
+Push 4
+BitLShift
+Push 14
+Add2
+Push register12
+SetMember
+Push 1732584193
+StoreRegister 5
+Pop
+Push -271733879
+StoreRegister 4
+Pop
+Push -1732584194
+StoreRegister 3
+Pop
+Push 271733878
+StoreRegister 2
+Pop
+Push 0
+StoreRegister 6
+Pop
+loc0756:Push register6, register7, "length"
+GetMember
+Less2
+Not
+If loc148c
+Push register5
+StoreRegister 11
+Pop
+Push register4
+StoreRegister 10
+Pop
+Push register3
+StoreRegister 9
+Pop
+Push register2
+StoreRegister 8
+Pop
+Push -680876936, 7, register7, register6, 0
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 5
+Pop
+Push -389564586, 12, register7, register6, 1
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 2
+Pop
+Push 606105819, 17, register7, register6, 2
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 3
+Pop
+Push -1044525330, 22, register7, register6, 3
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 4
+Pop
+Push -176418897, 7, register7, register6, 4
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 5
+Pop
+Push 1200080426, 12, register7, register6, 5
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 2
+Pop
+Push -1473231341, 17, register7, register6, 6
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 3
+Pop
+Push -45705983, 22, register7, register6, 7
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 4
+Pop
+Push 1770035416, 7, register7, register6, 8
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 5
+Pop
+Push -1958414417, 12, register7, register6, 9
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 2
+Pop
+Push -42063, 17, register7, register6, 10
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 3
+Pop
+Push -1990404162, 22, register7, register6, 11
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 4
+Pop
+Push 1804603682, 7, register7, register6, 12
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 5
+Pop
+Push -40341101, 12, register7, register6, 13
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 2
+Pop
+Push -1502002290, 17, register7, register6, 14
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 3
+Pop
+Push 1236535329, 22, register7, register6, 15
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ff"
+CallMethod
+StoreRegister 4
+Pop
+Push -165796510, 5, register7, register6, 1
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 5
+Pop
+Push -1069501632, 9, register7, register6, 6
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 2
+Pop
+Push 643717713, 14, register7, register6, 11
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 3
+Pop
+Push -373897302, 20, register7, register6, 0
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 4
+Pop
+Push -701558691, 5, register7, register6, 5
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 5
+Pop
+Push 38016083, 9, register7, register6, 10
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 2
+Pop
+Push -660478335, 14, register7, register6, 15
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 3
+Pop
+Push -405537848, 20, register7, register6, 4
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 4
+Pop
+Push 568446438, 5, register7, register6, 9
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 5
+Pop
+Push -1019803690, 9, register7, register6, 14
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 2
+Pop
+Push -187363961, 14, register7, register6, 3
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 3
+Pop
+Push 1163531501, 20, register7, register6, 8
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 4
+Pop
+Push -1444681467, 5, register7, register6, 13
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 5
+Pop
+Push -51403784, 9, register7, register6, 2
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 2
+Pop
+Push 1735328473, 14, register7, register6, 7
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 3
+Pop
+Push -1926607734, 20, register7, register6, 12
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_gg"
+CallMethod
+StoreRegister 4
+Pop
+Push -378558, 4, register7, register6, 5
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 5
+Pop
+Push -2022574463, 11, register7, register6, 8
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 2
+Pop
+Push 1839030562, 16, register7, register6, 11
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 3
+Pop
+Push -35309556, 23, register7, register6, 14
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 4
+Pop
+Push -1530992060, 4, register7, register6, 1
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 5
+Pop
+Push 1272893353, 11, register7, register6, 4
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 2
+Pop
+Push -155497632, 16, register7, register6, 7
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 3
+Pop
+Push -1094730640, 23, register7, register6, 10
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 4
+Pop
+Push 681279174, 4, register7, register6, 13
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 5
+Pop
+Push -358537222, 11, register7, register6, 0
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 2
+Pop
+Push -722521979, 16, register7, register6, 3
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 3
+Pop
+Push 76029189, 23, register7, register6, 6
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 4
+Pop
+Push -640364487, 4, register7, register6, 9
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 5
+Pop
+Push -421815835, 11, register7, register6, 12
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 2
+Pop
+Push 530742520, 16, register7, register6, 15
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 3
+Pop
+Push -995338651, 23, register7, register6, 2
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_hh"
+CallMethod
+StoreRegister 4
+Pop
+Push -198630844, 6, register7, register6, 0
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 5
+Pop
+Push 1126891415, 10, register7, register6, 7
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 2
+Pop
+Push -1416354905, 15, register7, register6, 14
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 3
+Pop
+Push -57434055, 21, register7, register6, 5
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 4
+Pop
+Push 1700485571, 6, register7, register6, 12
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 5
+Pop
+Push -1894986606, 10, register7, register6, 3
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 2
+Pop
+Push -1051523, 15, register7, register6, 10
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 3
+Pop
+Push -2054922799, 21, register7, register6, 1
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 4
+Pop
+Push 1873313359, 6, register7, register6, 8
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 5
+Pop
+Push -30611744, 10, register7, register6, 15
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 2
+Pop
+Push -1560198380, 15, register7, register6, 6
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 3
+Pop
+Push 1309151649, 21, register7, register6, 13
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 4
+Pop
+Push -145523070, 6, register7, register6, 4
+Add2
+GetMember
+Push register2, register3, register4, register5, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 5
+Pop
+Push -1120210379, 10, register7, register6, 11
+Add2
+GetMember
+Push register3, register4, register5, register2, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 2
+Pop
+Push 718787259, 15, register7, register6, 2
+Add2
+GetMember
+Push register4, register5, register2, register3, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 3
+Pop
+Push -343485551, 21, register7, register6, 9
+Add2
+GetMember
+Push register5, register2, register3, register4, 7, register1, "md5_ii"
+CallMethod
+StoreRegister 4
+Pop
+Push register11, register5, 2, register1, "safe_add"
+CallMethod
+StoreRegister 5
+Pop
+Push register10, register4, 2, register1, "safe_add"
+CallMethod
+StoreRegister 4
+Pop
+Push register9, register3, 2, register1, "safe_add"
+CallMethod
+StoreRegister 3
+Pop
+Push register8, register2, 2, register1, "safe_add"
+CallMethod
+StoreRegister 2
+Pop
+Push register6, 16
+Add2
+StoreRegister 6
+Pop
+Jump loc0756
+loc148c:Push register2, register3, register4, register5, 4, "Array"
+CallFunction
+Return
+}
+SetMember
+Push register2, "core_hmac_md5"
+DefineFunction2 "", 2, 9, false, false, true, false, true, false, false, true, false, 7, "key", 8, "data" {
+Push register7, 1, register1, "str2binl"
+CallMethod
+Push 1, "Array"
+NewObject
+StoreRegister 3
+Pop
+Push register3, "length"
+GetMember
+Push 16
+Greater
+Not
+If loc1519
+Push register7, "length"
+GetMember
+Push register1, "chrsz"
+GetMember
+Multiply
+Push register3, 2, register1, "core_md5"
+CallMethod
+StoreRegister 3
+Pop
+loc1519:Push 16, 1, "Array"
+NewObject
+StoreRegister 4
+Pop
+Push 16, 1, "Array"
+NewObject
+StoreRegister 5
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc1554:Push register2, 16
+Less2
+Not
+If loc15a1
+Push register4, register2, register3, register2
+GetMember
+Push 909522486
+BitXor
+SetMember
+Push register5, register2, register3, register2
+GetMember
+Push 1549556828
+BitXor
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1554
+loc15a1:Push 512, register8, "length"
+GetMember
+Push register1, "chrsz"
+GetMember
+Multiply
+Add2
+Push register8, 1, register1, "str2binl"
+CallMethod
+Push 1, register4, "concat"
+CallMethod
+Push 2, register1, "core_md5"
+CallMethod
+Push 1, "Array"
+NewObject
+StoreRegister 6
+Pop
+Push 640, register6, 1, register5, "concat"
+CallMethod
+Push 2, register1, "core_md5"
+CallMethod
+Return
+}
+SetMember
+Push register2, "safe_add"
+DefineFunction2 "", 2, 5, false, false, true, false, true, false, true, false, false, 4, "x", 3, "y" {
+Push register4, 65535
+BitAnd
+Push register3, 65535
+BitAnd
+Add2
+Push 1, "Number"
+NewObject
+StoreRegister 1
+Pop
+Push register4, 16
+BitRShift
+Push register3, 16
+BitRShift
+Add2
+Push register1, 16
+BitRShift
+Add2
+Push 1, "Number"
+NewObject
+StoreRegister 2
+Pop
+Push register2, 16
+BitLShift
+Push register1, 65535
+BitAnd
+BitOr
+Return
+}
+SetMember
+Push register2, "bit_rol"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 1, "num", 2, "cnt" {
+Push register1, register2
+BitLShift
+Push register1, 32, register2
+Subtract
+BitURShift
+BitOr
+Return
+}
+SetMember
+Push register2, "str2binl"
+DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 3, "str" {
+Push 0, "Array"
+NewObject
+StoreRegister 4
+Pop
+Push 1, register1, "chrsz"
+GetMember
+BitLShift
+Push 1
+Subtract
+StoreRegister 5
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc172c:Push register2, register3, "length"
+GetMember
+Push register1, "chrsz"
+GetMember
+Multiply
+Less2
+Not
+If loc17a2
+Push register4, register2, 5
+BitRShift
+Push register4, register2, 5
+BitRShift
+GetMember
+Push register2, register1, "chrsz"
+GetMember
+Divide
+Push 1, register3, "charCodeAt"
+CallMethod
+Push register5
+BitAnd
+Push register2, 32
+Modulo
+BitLShift
+BitOr
+SetMember
+Push register2, register1, "chrsz"
+GetMember
+Add2
+StoreRegister 2
+Pop
+Jump loc172c
+loc17a2:Push register4
+Return
+}
+SetMember
+Push register2, "binl2str"
+DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 3, "bin" {
+Push "", 1, "String"
+NewObject
+StoreRegister 4
+Pop
+Push 1, register1, "chrsz"
+GetMember
+BitLShift
+Push 1
+Subtract
+StoreRegister 5
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc17ff:Push register2, register3, "length"
+GetMember
+Push 32
+Multiply
+Less2
+Not
+If loc1867
+Push register4, register3, register2, 5
+BitRShift
+GetMember
+Push register2, 32
+Modulo
+BitURShift
+Push register5
+BitAnd
+Push 1, "String"
+GetVariable
+Push "fromCharCode"
+CallMethod
+Add2
+StoreRegister 4
+Pop
+Push register2, register1, "chrsz"
+GetMember
+Add2
+StoreRegister 2
+Pop
+Jump loc17ff
+loc1867:Push register4
+Return
+}
+SetMember
+Push register2, "binl2hex"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, true, false, false, 2, "binarray" {
+Push "0123456789abcdef"
+StoreRegister 3
+Pop
+Push "", 1, "String"
+NewObject
+StoreRegister 4
+Pop
+Push 0
+StoreRegister 1
+Pop
+loc18b7:Push register1, register2, "length"
+GetMember
+Push 4
+Multiply
+Less2
+Not
+If loc1965
+Push register4, register2, register1, 2
+BitRShift
+GetMember
+Push register1, 4
+Modulo
+Push 8
+Multiply
+Push 4
+Add2
+BitRShift
+Push 15
+BitAnd
+Push 1, register3, "charAt"
+CallMethod
+Push register2, register1, 2
+BitRShift
+GetMember
+Push register1, 4
+Modulo
+Push 8
+Multiply
+BitRShift
+Push 15
+BitAnd
+Push 1, register3, "charAt"
+CallMethod
+Add2
+Add2
+StoreRegister 4
+Pop
+Push register1
+Increment
+StoreRegister 1
+Pop
+Jump loc18b7
+loc1965:Push register4
+Return
+}
+SetMember
+Push register2, "binl2b64"
+DefineFunction2 "", 1, 8, false, false, true, false, true, false, false, true, false, 4, "binarray" {
+Push "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+StoreRegister 7
+Pop
+Push "", 1, "String"
+NewObject
+StoreRegister 5
+Pop
+Push 0
+StoreRegister 3
+Pop
+loc19b5:Push register3, register4, "length"
+GetMember
+Push 4
+Multiply
+Less2
+Not
+If loc1b44
+Push register4, register3, 2
+BitRShift
+GetMember
+Push 8, register3, 4
+Modulo
+Multiply
+BitRShift
+Push 255
+BitAnd
+Push 16
+BitLShift
+Push register4, register3, 1
+Add2
+Push 2
+BitRShift
+GetMember
+Push 8, register3, 1
+Add2
+Push 4
+Modulo
+Multiply
+BitRShift
+Push 255
+BitAnd
+Push 8
+BitLShift
+BitOr
+Push register4, register3, 2
+Add2
+Push 2
+BitRShift
+GetMember
+Push 8, register3, 2
+Add2
+Push 4
+Modulo
+Multiply
+BitRShift
+Push 255
+BitAnd
+BitOr
+StoreRegister 6
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc1a98:Push register2, 4
+Less2
+Not
+If loc1b2f
+Push register3, 8
+Multiply
+Push register2, 6
+Multiply
+Add2
+Push register4, "length"
+GetMember
+Push 32
+Multiply
+Greater
+Not
+If loc1aed
+Push register5, register1, "b64pad"
+GetMember
+Add2
+StoreRegister 5
+Pop
+Jump loc1b1f
+loc1aed:Push register5, register6, 6, 3, register2
+Subtract
+Multiply
+BitRShift
+Push 63
+BitAnd
+Push 1, register7, "charAt"
+CallMethod
+Add2
+StoreRegister 5
+Pop
+loc1b1f:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1a98
+loc1b2f:Push register3, 3
+Add2
+StoreRegister 3
+Pop
+Jump loc19b5
+loc1b44:Push register5
+Return
+}
+SetMember
+Push register2, "b64pad", "", 1, "String"
+NewObject
+SetMember
+Push register2, "chrsz", 8, 1, "Number"
+NewObject
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "MD5"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc1ba1:Pop

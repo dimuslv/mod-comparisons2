@@ -1,0 +1,274 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "TextDisplay", "MovieClip", "prototype", "displayText", "red", "clip", "gotoAndStop", "green", "toUpperCase", "displaying", "info_string", "tf", "text", "", "in", "gotoAndPlay", "startText", "char_count", "head", "play", "onEnterFrame", "displayNextChar", "charAt", "length", "hideText", "out", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0139
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0139:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0171
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0171:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc01b5
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc01b5:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TextDisplay"
+GetMember
+Not
+Not
+If loc052d
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TextDisplay"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TextDisplay"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "displayText"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "s", 3, "colour" {
+Push register3, 2
+Equals2
+Not
+If loc0288
+Push "red", 1, register1, "clip"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc029e
+loc0288:Push "green", 1, register1, "clip"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc029e:Push 0, register2, "toUpperCase"
+CallMethod
+StoreRegister 2
+Pop
+Push register1, "displaying"
+GetMember
+Push true
+Equals2
+Not
+If loc02ff
+Push register2, register1, "info_string"
+GetMember
+Equals2
+Not
+Not
+If loc02fa
+Push register1, "info_string", register2
+SetMember
+Push register1, "clip"
+GetMember
+Push "tf"
+GetMember
+Push "text", ""
+SetMember
+loc02fa:Jump loc034d
+loc02ff:Push register1, "displaying"
+GetMember
+Push false
+Equals2
+Not
+If loc034d
+Push register1, "info_string", register2
+SetMember
+Push register1, "clip"
+GetMember
+Push "tf"
+GetMember
+Push "text", ""
+SetMember
+Push "in", 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+Push register1, "displaying", true
+SetMember
+}
+loc034d:SetMember
+Push register2, "startText"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "char_count", 0
+SetMember
+Push 0, register1, "clip"
+GetMember
+Push "head"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push register1, "onEnterFrame"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "displayNextChar"
+CallMethod
+Pop
+}
+SetMember
+}
+SetMember
+Push register2, "displayNextChar"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push register1, "clip"
+GetMember
+Push "tf"
+GetMember
+Push "text"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "char_count"
+GetMember
+Push 1, register1, "info_string"
+GetMember
+Push "charAt"
+CallMethod
+StoreRegister 3
+Pop
+Push register2, register3
+Add2
+StoreRegister 2
+Pop
+Push register1, "clip"
+GetMember
+Push "tf"
+GetMember
+Push "text", register2
+SetMember
+Push register1, "char_count", register1, "char_count"
+GetMember
+Increment
+SetMember
+Push register1, "char_count"
+GetMember
+Push register1, "info_string"
+GetMember
+Push "length"
+GetMember
+Push 1
+Subtract
+Greater
+Not
+If loc0498
+Push register1, "clip"
+GetMember
+Push "tf"
+GetMember
+Push "text", register1, "info_string"
+GetMember
+SetMember
+Push 1, 1, register1, "clip"
+GetMember
+Push "head"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register1, "onEnterFrame"
+Delete
+Pop
+}
+loc0498:SetMember
+Push register2, "hideText"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "onEnterFrame"
+Delete
+Pop
+Push register1, "displaying"
+GetMember
+Push true
+Equals2
+Not
+If loc04e2
+Push "out", 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+Push register1, "displaying", false
+SetMember
+}
+loc04e2:SetMember
+Push register2, "displaying", false
+SetMember
+Push register2, "char_count", 0
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TextDisplay"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc052d:Pop

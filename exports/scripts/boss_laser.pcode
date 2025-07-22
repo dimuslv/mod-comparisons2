@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.BossLaser"
+GetVariable
+Push "boss_laser", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

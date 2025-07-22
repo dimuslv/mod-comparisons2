@@ -1,0 +1,284 @@
+ConstantPool "_global", "com", "Object", "nitrome", "engine", "Score", "prototype", "init", "rotate", "_value", "r", "__set__value", "reset", "__get__value", "Math", "random", "STEPS", "value", "addProperty", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00ca
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00ca:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0102
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0102:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Not
+Not
+If loc0146
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "engine", 0, "Object"
+NewObject
+SetMember
+loc0146:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Not
+Not
+If loc0475
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "init"
+DefineFunction "", 0 {
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "rotate"
+CallMethod
+Pop
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "_value", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "r"
+GetMember
+SetMember
+}
+SetMember
+Push register1, "__set__value"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "v" {
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "reset", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "reset"
+GetMember
+Decrement
+StoreRegister 0
+SetMember
+Push register0, 0
+Greater
+Not
+Not
+If loc029f
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "rotate"
+CallMethod
+Pop
+loc029f:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "_value", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "r"
+GetMember
+Push register1
+Add2
+SetMember
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "__get__value"
+CallMethod
+Return
+}
+SetMember
+Push register1, "__get__value"
+DefineFunction "", 0 {
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "_value"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "r"
+GetMember
+Subtract
+Return
+}
+SetMember
+Push register1, "rotate"
+DefineFunction "", 0 {
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "reset", 0, "Math"
+GetVariable
+Push "random"
+CallMethod
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "STEPS"
+GetMember
+Multiply
+Push 0
+BitRShift
+Push 1
+Add2
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "r", 100000, 0, "Math"
+GetVariable
+Push "random"
+CallMethod
+Push 200000
+Multiply
+Push 0
+BitRShift
+Add2
+SetMember
+}
+SetMember
+Push register1, "STEPS", 0
+SetMember
+Push register1, "__set__value"
+GetMember
+Push register1, "__get__value"
+GetMember
+Push "value", 3, register1, "addProperty"
+CallMethod
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0475:Pop

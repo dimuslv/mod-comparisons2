@@ -1,0 +1,210 @@
+ConstantPool "_global", "com", "Object", "nitrome", "highscore", "ScoreSubmitPanel", "MovieClip", "prototype", "onLoad", "ng", "getNitrome", "score_text", "text", "YOUR SCORE IS ", "engine", "Score", "__get__value", "off", "gotoAndStop", "Key", "addListener", "addLetter", "name_text", "length", "MAX_LENGTH", "name_entered", "toUpperCase", "submit_button", "enable", "getNameText", "clearName", "disable", "", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc016a
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc016a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc01a2
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc01a2:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Not
+Not
+If loc01e6
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore", 0, "Object"
+NewObject
+SetMember
+loc01e6:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ScoreSubmitPanel"
+GetMember
+Not
+Not
+If loc0449
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ScoreSubmitPanel"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ScoreSubmitPanel"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onLoad"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push 0, register2, "ng"
+GetMember
+Push "getNitrome"
+CallMethod
+Push true
+Equals2
+Not
+If loc02e0
+Push register1, "score_text"
+GetMember
+Push "text", "YOUR SCORE IS ", 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "__get__value"
+CallMethod
+Add2
+ToString
+SetMember
+Jump loc02f0
+loc02e0:Push "off", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc02f0:Push register1, 1, "Key"
+GetVariable
+Push "addListener"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "addLetter"
+DefineFunction2 "", 1, 6, false, true, true, false, true, false, false, true, false, 5, "l" {
+Push register1, "name_text"
+GetMember
+Push "text"
+GetMember
+StoreRegister 3
+Pop
+Push register3, "length"
+GetMember
+Push register1, "MAX_LENGTH"
+GetMember
+Less2
+Not
+If loc039b
+Push register3, register5
+Add2
+StoreRegister 4
+Pop
+Push register1, "name_text"
+GetMember
+Push "text", register4
+SetMember
+Push register2, "name_entered", 0, register1, "name_text"
+GetMember
+Push "text"
+GetMember
+Push "toUpperCase"
+CallMethod
+SetMember
+Push 0, register1, "submit_button"
+GetMember
+Push "enable"
+CallMethod
+Pop
+}
+loc039b:SetMember
+Push register2, "getNameText"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "name_text"
+GetMember
+Push "text"
+GetMember
+ToString
+Return
+}
+SetMember
+Push register2, "clearName"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push 0, register1, "submit_button"
+GetMember
+Push "disable"
+CallMethod
+Pop
+Push register1, "name_text"
+GetMember
+Push "text", ""
+SetMember
+Push register2, "name_entered", register1, "name_text"
+GetMember
+Push "text"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "MAX_LENGTH", 10
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ScoreSubmitPanel"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0449:Pop

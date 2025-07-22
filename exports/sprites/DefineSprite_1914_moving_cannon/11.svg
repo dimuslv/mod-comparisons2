@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="63.0px" width="106.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 53.0, 62.0)">
+    <use ffdec:characterId="1913" height="60.0" id="anim" transform="matrix(-1.0, 0.0, 0.0, 1.0, 32.0, -59.0)" width="68.0" xlink:href="#sprite0"/>
+    <use ffdec:characterId="402" height="41.0" id="wall_boundary_right" transform="matrix(1.0, 0.0, 0.0, 1.0, 26.5, -40.5)" width="1.0" xlink:href="#sprite1"/>
+    <use ffdec:characterId="402" height="41.0" id="wall_boundary_left" transform="matrix(1.0, 0.0, 0.0, 1.0, -32.5, -40.5)" width="1.0" xlink:href="#sprite1"/>
+  </g>
+  <defs>
+    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 34.0, 30.0)">
+      <use ffdec:characterId="1902" height="60.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -34.0, -30.0)" width="68.0" xlink:href="#shape0"/>
+    </g>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 34.0, 30.0)">
+      <pattern height="60" id="PatternID_1902_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -34.0, -30.0)" patternUnits="userSpaceOnUse" viewBox="0 0 68 60" width="68">
+        <image height="60" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="68" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAA8CAYAAADfYhweAAAEv0lEQVR4Xu2Zv4rVQBjF75MIWi6IxYJgoZWVWPkCNtrYWFjJloK1DyD4BIuPYyG+iXDlhHtmT06+mWSSSbK73g8Omb/fn18mo14Ph7Od7Wxnu1t2POm/NkI4vnzz+vjx61XqT9S9sw7EXGG/6V7Y8e2nD6NyGJHgy3QnbVA4Ph0HUpKDyQC6MxYW50XXqgDnVpm/tSQvqJUyYDa3QcGqKEl8JrXy4kvyeCetZr2CP189HkBQeaIc84LnyEF4rABMExsAgK5/Puzk89Sv3xcDIAqFRaH/7frHoNgaeYy1oHQO1BkhQCj48vmzUJgjEE8+AgL5ulo5jDWgdA7oGH2CKMH4e3yVhD1R4tF4CzmMCApi98ucbskhgqFfAyMHBPJT0lIOw4EsgZJgQOjXwCAQ3A+uNYFADqQVlBQARaDvEEowGNRhQEiQ/jmmbR2bI4fRFAiTQ99BlGCUgMCvz6Ov8ZZAcRitoIwCcRAKgwE9WcqB5OT7psphNANCoV8DowQE47WCP/dTksNYFYiDiGCMAfFkx4Q93Of+Ivl+SvO7uHxSBWVQRA2MMSA1gi8F4/5cDmE1IA4C4qlxGJhzH5owkpkq+IEIJud3dyB6pziMlkAUzBgUB+BaDYj/iUMousZ9TE3aQUyF4n5cCqMpEAdB+QlyH5o05nIaA4M1CsULz8lhLAYy56/uJRAsysV59h3IXCgO5MW7B3VA4ESBOAQKoBwGxulDC9U25IVCOs/1vmYOlCZAoBIQ/gtYxTn1wTaLQVIYc7FQrlcfDqQGylIYsJ5D9GtgRED82y3dLbkiHcgUKA6jGRCVg4B8DX3gGcHwU6JFcW1UpAMpQcnBeP/9KeNOtiwQB5GDQR94auJMFG1NmH3d4+M1UFrCgCVnCsRBlGComDD98ol/0eqbVAjcp+ujIsegOIwvfx7Rf5X1gqPvIKbA8NNFv3z60Y6ALIUCCNRcGLCOKIOir7+6l/4LglKYkCbLflSczvPJtvr1fSUoALEEBqwDAkVA0C9JE0U/l6gXopetg4Ci+8GhMG+PddJs64jimNH5XBgQ2kyeazRRh6GFql/14TAJApLTkNYfGljniM7xVPqRHIYW5gURit4jGNc7xX1QnFMIBBF8Gt5fbIPCNQmORTD41jmnANwn5PORD4dCCHoqDjvYoBiIMCAWoW8bherfUHPK3RUaR6GIdrVUZJQs2lqIFz1F7kN9K3zRbpYS1TeVe6NeaI3oI+fb75ybFLezBMLfmCfN+8CLrJFeuio9hcEntJn1EkDf5TDQnvufTtzrQDwmtAeUXnA8ozeJcQXCJGtPiu/Vu8rXMe6WUFJimpS/La5Bm4m21JS4gVaxHnkEZ5vHWPtMLrpX5ogncmpcXZcqaGy9e0OT8G9cwflnsEQ1cdlHW2poalkgPM5RYn7kXerX51w1cTXXmxLaGp33EvNPgok4EPT5Rr1AvH1fH+2pibsJEA2IJ5NkcCoqkHsjIJSuj/bUxN0MiAbS5DivSbFQLZLSxNF2ny6FNhY30CrW/TaSgxIVOkVYS/lcTqW4BGf+V7MEBW0vaG8piLm/rM+xlED05nxsj/EtYdDSL9j+44yPbTFOAPxlHW3JdTNj4Nuos7W0fwUaz3/LgpouAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M-34.0 -30.0 L34.0 -30.0 34.0 30.0 -34.0 30.0 -34.0 -30.0" ffdec:fill-bitmapId="1901" style="fill:url(#PatternID_1902_1)"/>
+    </g>
+    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
+      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -0.5, -20.5)" width="1.0" xlink:href="#shape1"/>
+    </g>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
+      <path d="M0.0 -20.0 L0.0 20.0" fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.0" stroke-width="1.0"/>
+    </g>
+  </defs>
+</svg>

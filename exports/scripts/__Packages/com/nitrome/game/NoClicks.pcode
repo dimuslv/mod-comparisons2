@@ -1,0 +1,113 @@
+ConstantPool "_global", "com", "Object", "nitrome", "game", "NoClicks", "useHandCursor", "MovieClip", "prototype", "onPress", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0092
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0092:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00ca
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00ca:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Not
+Not
+If loc010e
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game", 0, "Object"
+NewObject
+SetMember
+loc010e:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "NoClicks"
+GetMember
+Not
+Not
+If loc01e1
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "NoClicks"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "useHandCursor", false
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "NoClicks"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onPress"
+DefineFunction "", 0 {
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "NoClicks"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc01e1:Pop

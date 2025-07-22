@@ -1,0 +1,183 @@
+ConstantPool "_global", "mx", "Object", "transitions", "easing", "Strong", "prototype", "easeIn", "easeOut", "easeInOut", "version", "1.1.0.52", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc009f
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc009f:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Not
+Not
+If loc00d7
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions", 0, "Object"
+NewObject
+SetMember
+loc00d7:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Not
+Not
+If loc011b
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "easing", 0, "Object"
+NewObject
+SetMember
+loc011b:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Push "Strong"
+GetMember
+Not
+Not
+If loc030a
+Push "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Push "Strong"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "easeIn"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 1, "t", 4, "b", 3, "c", 2, "d" {
+Push register3, register1, register2
+Divide
+StoreRegister 1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register4
+Add2
+Return
+}
+SetMember
+Push register1, "easeOut"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 1, "t", 4, "b", 3, "c", 2, "d" {
+Push register3, register1, register2
+Divide
+Push 1
+Subtract
+StoreRegister 1
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push 1
+Add2
+Multiply
+Push register4
+Add2
+Return
+}
+SetMember
+Push register1, "easeInOut"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 1, "t", 3, "b", 2, "c", 4, "d" {
+Push register1, register4, 2
+Divide
+Divide
+StoreRegister 1
+Push 1
+Less2
+Not
+If loc028d
+Push register2, 2
+Divide
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register3
+Add2
+Return
+loc028d:Push register2, 2
+Divide
+Push register1, 2
+Subtract
+StoreRegister 1
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push register1
+Multiply
+Push 2
+Add2
+Multiply
+Push register3
+Add2
+Return
+}
+SetMember
+Push register1, "version", "1.1.0.52"
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Push "Strong"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc030a:Pop

@@ -1,0 +1,6 @@
+Push "", 7, false
+SetProperty
+Push "this"
+GetVariable
+Push "done", false
+SetMember

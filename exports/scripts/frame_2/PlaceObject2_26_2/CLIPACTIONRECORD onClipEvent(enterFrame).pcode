@@ -1,0 +1,70 @@
+ConstantPool "byt", "_root", "getBytesLoaded", "tot", "getBytesTotal", "p", "Math", "round", "this", "percent_text", "text", "%", "masker", "_xscale", "done", "nitrome", "tt", "doTween", ""
+Push "byt", 0, "_root"
+GetVariable
+Push "getBytesLoaded"
+CallMethod
+DefineLocal
+Push "tot", 0, "_root"
+GetVariable
+Push "getBytesTotal"
+CallMethod
+DefineLocal
+Push "p", "byt"
+GetVariable
+Push "tot"
+GetVariable
+Divide
+Push 100
+Multiply
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+DefineLocal
+Push "this"
+GetVariable
+Push "percent_text"
+GetMember
+Push "text", "p"
+GetVariable
+Push "%"
+Add2
+ToString
+SetMember
+Push "this"
+GetVariable
+Push "masker"
+GetMember
+Push "_xscale", "p"
+GetVariable
+SetMember
+Push "byt"
+GetVariable
+Push "tot"
+GetVariable
+Equals2
+Not
+If loc0161
+Push "this"
+GetVariable
+Push "done"
+GetMember
+Push false
+Equals2
+Not
+If loc015c
+Push "nitrome", 1, "_root"
+GetVariable
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Push "this"
+GetVariable
+Push "done", true
+SetMember
+loc015c:Jump loc016e
+loc0161:Push "", 7, true
+SetProperty
+loc016e:

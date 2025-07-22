@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.HoloButton"
+GetVariable
+Push "holo_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

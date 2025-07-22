@@ -1,0 +1,15 @@
+ConstantPool "this", "_name", "_parent", "finishSplash"
+Push "this"
+GetVariable
+Push "_name"
+GetMember
+Push 1, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "finishSplash"
+CallMethod
+Pop
+Stop

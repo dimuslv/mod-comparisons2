@@ -1,0 +1,122 @@
+ConstantPool "_global", "com", "Object", "nitrome", "buttons", "ScoresButton", "SimpleButton", "prototype", "doPress", "scores", "tt", "doTween", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00a0
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00a0:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00d8
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00d8:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Not
+Not
+If loc011c
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons", 0, "Object"
+NewObject
+SetMember
+loc011c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ScoresButton"
+GetMember
+Not
+Not
+If loc0210
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ScoresButton"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ScoresButton"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPress"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push "scores", 1, register1, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ScoresButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0210:Pop

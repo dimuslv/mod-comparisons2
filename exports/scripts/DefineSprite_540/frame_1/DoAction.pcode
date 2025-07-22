@@ -1,0 +1,8 @@
+Push "reset_", "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "fire_angle"
+GetMember
+Add2
+GotoFrame2 false, true

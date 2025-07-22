@@ -1,0 +1,146 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "BubbleTile", "copy", "_name", "indexOf", "slice", "gotoAndPlay", "_parent", "bubblecopy_", "bubblecopy2_", "MovieClip", "prototype", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00c5
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00c5:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00fd
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00fd:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0141
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0141:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BubbleTile"
+GetMember
+Not
+Not
+If loc02a0
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BubbleTile"
+DefineFunction2 "", 0, 5, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push "copy", 1, register1, "_name"
+GetMember
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+Not
+If loc0240
+Push 7, 1, register1, "_name"
+GetMember
+Push "slice"
+CallMethod
+StoreRegister 4
+Pop
+Push 267
+RandomNumber
+Push 1
+Add2
+StoreRegister 3
+Pop
+Push register3, 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+Push register3, 1, register1, "_parent"
+GetMember
+Push "bubblecopy_", register4
+Add2
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+Push register3, 1, register1, "_parent"
+GetMember
+Push "bubblecopy2_", register4
+Add2
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+}
+loc0240:StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BubbleTile"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BubbleTile"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc02a0:Pop

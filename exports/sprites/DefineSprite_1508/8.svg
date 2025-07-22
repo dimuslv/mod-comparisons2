@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="62.0px" width="43.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 21.0, 44.0)">
+    <use ffdec:characterId="1497" height="59.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -21.0, -44.0)" width="43.0" xlink:href="#shape0"/>
+  </g>
+  <defs>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 21.0, 44.0)">
+      <pattern height="59" id="PatternID_1497_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -21.0, -44.0)" patternUnits="userSpaceOnUse" viewBox="0 0 43 59" width="43">
+        <image height="59" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="43" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAA7CAYAAADii3NbAAAC0klEQVR4Xu2XMU/cQBCFTxFtGuoro1RU6BqkiCplqtRUUUoqSpTyxA9AKVGq1PwkfkJ+ARLoWXrk6TG7Xs6ePZ/Ek56Otcc7n8eza7NaveuAdPTh6An244sUQL9+/7ZfYFZsrHKE/X1/V41LFRIDYKxqvJmW2DQRoKWy8OXNr/3CAqAFFpCLgB0DOBhYVj2yx6aqFfbi6nIw+hu/bB2PTZXDRhXDGOcJy789Ll0Oe/3xbLCCKCxjFwE75hKsx2mO2eSwBKExpglYgmU/p8MqBMZIjN8SsEN1q6xXbFfY9MpCrEYN1ivnFewGC9VgeQ5jtX5TwBrv88+qMdjIrPjJ6Uk/WE1OWBpjwBAogoV5XSosEzlsVFme9z7GjTCWxz3PLNIKeWW9X3EDahzjtemgECsTwdZAI+BUUIhJ1AqrbRE5vU9VSIIPl8fT7dO/28cXWK2034y7WwsA9O/x/8eosNqzNWus55hNmFxBtWcdlq3h7grLb9cIlmPvU7e2gdrzTVINlpXCL+1V1XOcS9vK801SCyyP1exV9f80ZpHDYr9FYr5eff+NTFB9HWNnmRXWq8BkJWCH9mqquQV6zp2kE2tld3H0gaP23M3SBEzCR4ZKvdUK5ec8xlmqUkh/vEzm/dhqhfMcbKtmYAX1O48gfYsqbVcl4Ai6CXhO0FTgqaD6ZeX2ayNYB+axEHgKrL9Su8Au1c5alV+sxrsdWxqMv33s8ZE932Rx4vXn9Ys355tXcD5GDK3XpoNGsARWMB/XYHcC9kezJDvrAFta+aVdINoR/HhtR6h5dDf48mMdbh+9zfzgCWGhCDgb3PM0gVII+PlnMwSXwLPMnMg/CkohcPvwabiI5kQZ1jzI2wxKcSXi4l4urv5WcYIe9tyThUn5+Nhrvmgie1+mwLki2DHgaBF1heWi8xVds17XBRZij+lK9sXiVshuoCpfIC32Od61BD0DFR8/YxblFMEAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M-21.0 -44.0 L22.0 -44.0 22.0 15.0 -21.0 15.0 -21.0 -44.0" ffdec:fill-bitmapId="1496" style="fill:url(#PatternID_1497_1)"/>
+    </g>
+  </defs>
+</svg>

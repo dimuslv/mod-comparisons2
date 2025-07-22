@@ -1,0 +1,2027 @@
+ConstantPool "_global", "NitromeGame", "prototype", "init", "level_id", "total_levels", "game_id", "toLowerCase", "getGameId", "getTotalLevels", "getNitrome", "nitrome_url", "length", "_url", "substr", "getSwfPath", "", "charAt", "/", "slice", "getLevelName", "com", "nitrome", "util", "MD5", "_", "hash", "setLevelUnlocked", "so_", "SharedObject", "getLocal", "Array", "data", "levels_unlocked", "flush", "getLevelUnlocked", "unlockAllLevels", "setSecretUnlocked", "secret_unlocked", "getSecretUnlocked", "setSecretComplete", "secret_complete", "countSecretComplete", "setLevelScore", "level_scores", "getLevelScore", "getTotalScore", "isNaN", "getLastSavedScore", "last_saved_score", "setLastSavedScore", "getSubmitScoreUrl", "submit_url", "getRetrieveScoreUrl", "retrieve_url", "getHighscoreLine", "|", "split", "0", "1", "n", "Object", "username", "score", "rank", "displayNextButton", "displayPreviousButton", "getScoreData", "encrypting: ", "ar_key", "encryptString", "encrypted: ", "decryptString", "adj", "ff", "convertKey", "ar_1", "applyFudgeFactor", "Math", "round", "checkRange", "ar_2", "push", "shift", "setMusicOn", "musicon", "getMusicOn", "setSfxOn", "sfxon", "getSfxOn", "-", "9", "8", "7", "6", "5", "4", "3", "2", ".", ":", "z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a", "ctdngevfaqki8_lb:psoj90ux127hm/4w5y3rz.6-", "http://www.nitrome.com/php/submit_score.php", "http://www.nitrome.com/php/retrieve_scores.php", "http://www.nitromeimages.com/", "http://www.nitrome-games.co.uk/", "http://www.nitrome-games.com/", "http://www.nitromegames.co.uk/", "http://www.nitromegames.com/", "http://www.nitrome.net/", "http://www.nitrome.co.uk/", "http://cdn.nitrome.com/", "http://www.nitrome.com/", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "NitromeGame"
+GetMember
+Not
+Not
+If loc26ac
+Push "_global"
+GetVariable
+Push "NitromeGame"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 3, "game_id", 2, "level_id", 4, "total_levels" {
+Push register1, "level_id", register2
+SetMember
+Push register1, "total_levels", register4
+SetMember
+Push register1, "game_id", 0, register3, "toLowerCase"
+CallMethod
+SetMember
+}
+SetMember
+Push register2, "getGameId"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "game_id"
+GetMember
+Return
+}
+SetMember
+Push register2, "getTotalLevels"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "total_levels"
+GetMember
+Return
+}
+SetMember
+Push register2, "getNitrome"
+DefineFunction2 "", 0, 6, false, true, true, false, true, false, false, true, false {
+Push false
+StoreRegister 5
+Pop
+Push 0
+StoreRegister 3
+Pop
+loc0660:Push register3, register1, "nitrome_url"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc06d9
+Push register1, "nitrome_url"
+GetMember
+Push register3
+GetMember
+StoreRegister 4
+Pop
+Push register4, "length"
+GetMember
+Push 0, 2, register2, "_url"
+GetMember
+Push "substr"
+CallMethod
+Push register4
+Equals2
+Not
+If loc06c9
+Push true
+StoreRegister 5
+Pop
+Jump loc06d9
+loc06c9:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc0660
+loc06d9:Push register5
+Return
+}
+SetMember
+Push register2, "getSwfPath"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, true, false, false {
+Push "", 15
+GetProperty
+StoreRegister 2
+Pop
+Push register2, "length"
+GetMember
+StoreRegister 1
+Pop
+loc070f:Push register1, 0
+Less2
+Not
+Not
+If loc077b
+Push register1, 1, register2, "charAt"
+CallMethod
+Push "/"
+Equals2
+Not
+If loc076b
+Push register1, 1
+Add2
+Push 0, 2, register2, "slice"
+CallMethod
+StoreRegister 2
+Pop
+Jump loc077b
+loc076b:Push register1
+Decrement
+StoreRegister 1
+Pop
+Jump loc070f
+loc077b:Push register2
+Return
+}
+SetMember
+Push register2, "getLevelName"
+DefineFunction2 "", 3, 7, false, false, true, false, true, false, false, true, false, 4, "level_number", 5, "secret", 6, "file_ext" {
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "MD5"
+NewMethod
+StoreRegister 3
+Pop
+Push register1, "level_id"
+GetMember
+Push register4
+Add2
+Push "_"
+Add2
+Push register5
+Add2
+ToString
+Push 1, register3, "hash"
+CallMethod
+Push register6
+Add2
+StoreRegister 2
+Pop
+Push register2
+Return
+}
+SetMember
+Push register2, "setLevelUnlocked"
+DefineFunction2 "", 2, 10, false, false, true, false, true, false, false, true, false, 9, "level_number", 7, "save_id" {
+Push register7, undefined
+Equals2
+PushDuplicate
+If loc0852
+Pop
+Push register7, null
+Equals2
+loc0852:Not
+If loc0865
+Push 1
+StoreRegister 7
+Pop
+loc0865:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register7
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 3
+Pop
+Push false
+StoreRegister 4
+Pop
+Push register3
+Enumerate2
+loc08a4:StoreRegister 0
+Push null
+Equals2
+If loc08cb
+Push register0
+StoreRegister 5
+Pop
+Push true
+StoreRegister 4
+Pop
+Jump loc08a4
+loc08cb:Push register4, false
+Equals2
+Not
+If loc0949
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 6
+Pop
+Push register6, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc0912:Push register2, register6, "length"
+GetMember
+Less2
+Not
+If loc0944
+Push register6, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0912
+loc0944:Jump loc09e5
+loc0949:Push register3, "data"
+GetMember
+Push "levels_unlocked"
+GetMember
+Push undefined
+Equals2
+Not
+If loc09d2
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 6
+Pop
+Push register6, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc099b:Push register2, register6, "length"
+GetMember
+Less2
+Not
+If loc09cd
+Push register6, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc099b
+loc09cd:Jump loc09e5
+loc09d2:Push register3, "data"
+GetMember
+Push "levels_unlocked"
+GetMember
+StoreRegister 6
+Pop
+loc09e5:Push register6, register9, 1
+Subtract
+Push 1
+SetMember
+Push register3, "data"
+GetMember
+Push "levels_unlocked", register6
+SetMember
+Push 0, register3, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getLevelUnlocked"
+DefineFunction2 "", 2, 10, false, false, true, false, true, false, false, true, false, 9, "level_number", 7, "save_id" {
+Push register7, undefined
+Equals2
+PushDuplicate
+If loc0a5c
+Pop
+Push register7, null
+Equals2
+loc0a5c:Not
+If loc0a6f
+Push 1
+StoreRegister 7
+Pop
+loc0a6f:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register7
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 4
+Pop
+Push false
+StoreRegister 5
+Pop
+Push register4
+Enumerate2
+loc0aae:StoreRegister 0
+Push null
+Equals2
+If loc0ad5
+Push register0
+StoreRegister 6
+Pop
+Push true
+StoreRegister 5
+Pop
+Jump loc0aae
+loc0ad5:Push register5, false
+Equals2
+Not
+If loc0b63
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 3
+Pop
+Push register3, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc0b1c:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc0b4e
+Push register3, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0b1c
+loc0b4e:Push register4, "data"
+GetMember
+Push "levels_unlocked", register3
+SetMember
+Jump loc0bfc
+loc0b63:Push register4, "data"
+GetMember
+Push "levels_unlocked"
+GetMember
+Push undefined
+Equals2
+Not
+If loc0bfc
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 3
+Pop
+Push register3, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc0bb5:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc0be7
+Push register3, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0bb5
+loc0be7:Push register4, "data"
+GetMember
+Push "levels_unlocked", register3
+SetMember
+Jump loc0bfc
+loc0bfc:Push register4, "data"
+GetMember
+Push "levels_unlocked"
+GetMember
+Push register9, 1
+Subtract
+GetMember
+Push 1
+Equals2
+Not
+If loc0c2b
+Push true
+Return
+loc0c2b:Push register4, "data"
+GetMember
+Push "levels_unlocked"
+GetMember
+Push register9, 1
+Subtract
+GetMember
+Push 0
+Equals2
+Not
+If loc0c5e
+Push false
+Return
+}
+loc0c5e:SetMember
+Push register2, "unlockAllLevels"
+DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 4, "save_id" {
+Push register4, undefined
+Equals2
+PushDuplicate
+If loc0c8f
+Pop
+Push register4, null
+Equals2
+loc0c8f:Not
+If loc0ca2
+Push 1
+StoreRegister 4
+Pop
+loc0ca2:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register4
+ToString
+Add2
+StoreRegister 6
+Pop
+Push register6, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 5
+Pop
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 3
+Pop
+Push register3, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc0d0a:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc0d38
+Push register3, register2, 1
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0d0a
+loc0d38:Push register5, "data"
+GetMember
+Push "levels_unlocked", register3
+SetMember
+Push 0, register5, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "setSecretUnlocked"
+DefineFunction2 "", 2, 10, false, false, true, false, true, false, false, true, false, 9, "level_number", 7, "save_id" {
+Push register7, undefined
+Equals2
+PushDuplicate
+If loc0d99
+Pop
+Push register7, null
+Equals2
+loc0d99:Not
+If loc0dac
+Push 1
+StoreRegister 7
+Pop
+loc0dac:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register7
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 3
+Pop
+Push false
+StoreRegister 4
+Pop
+Push register3
+Enumerate2
+loc0deb:StoreRegister 0
+Push null
+Equals2
+If loc0e12
+Push register0
+StoreRegister 5
+Pop
+Push true
+StoreRegister 4
+Pop
+Jump loc0deb
+loc0e12:Push register4, false
+Equals2
+Not
+If loc0e94
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 6
+Pop
+Push register6, 0, 0
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc0e5d:Push register2, register6, "length"
+GetMember
+Less2
+Not
+If loc0e8f
+Push register6, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0e5d
+loc0e8f:Jump loc0f30
+loc0e94:Push register3, "data"
+GetMember
+Push "secret_unlocked"
+GetMember
+Push undefined
+Equals2
+Not
+If loc0f1d
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 6
+Pop
+Push register6, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc0ee6:Push register2, register6, "length"
+GetMember
+Less2
+Not
+If loc0f18
+Push register6, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0ee6
+loc0f18:Jump loc0f30
+loc0f1d:Push register3, "data"
+GetMember
+Push "secret_unlocked"
+GetMember
+StoreRegister 6
+Pop
+loc0f30:Push register6, register9, 1
+Subtract
+Push 1
+SetMember
+Push register3, "data"
+GetMember
+Push "secret_unlocked", register6
+SetMember
+Push 0, register3, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getSecretUnlocked"
+DefineFunction2 "", 2, 10, false, false, true, false, true, false, false, true, false, 9, "level_number", 7, "save_id" {
+Push register7, undefined
+Equals2
+PushDuplicate
+If loc0fa7
+Pop
+Push register7, null
+Equals2
+loc0fa7:Not
+If loc0fba
+Push 1
+StoreRegister 7
+Pop
+loc0fba:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register7
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 4
+Pop
+Push false
+StoreRegister 5
+Pop
+Push register4
+Enumerate2
+loc0ff9:StoreRegister 0
+Push null
+Equals2
+If loc1020
+Push register0
+StoreRegister 6
+Pop
+Push true
+StoreRegister 5
+Pop
+Jump loc0ff9
+loc1020:Push register5, false
+Equals2
+Not
+If loc10ae
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 3
+Pop
+Push register3, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc1067:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc1099
+Push register3, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1067
+loc1099:Push register4, "data"
+GetMember
+Push "secret_unlocked", register3
+SetMember
+Jump loc1147
+loc10ae:Push register4, "data"
+GetMember
+Push "secret_unlocked"
+GetMember
+Push undefined
+Equals2
+Not
+If loc1147
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 3
+Pop
+Push register3, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc1100:Push register2, register3, "length"
+GetMember
+Less2
+Not
+If loc1132
+Push register3, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1100
+loc1132:Push register4, "data"
+GetMember
+Push "secret_unlocked", register3
+SetMember
+Jump loc1147
+loc1147:Push register4, "data"
+GetMember
+Push "secret_unlocked"
+GetMember
+Push register9, 1
+Subtract
+GetMember
+Push 1
+Equals2
+Not
+If loc1176
+Push true
+Return
+loc1176:Push register4, "data"
+GetMember
+Push "secret_unlocked"
+GetMember
+Push register9, 1
+Subtract
+GetMember
+Push 0
+Equals2
+Not
+If loc11a9
+Push false
+Return
+}
+loc11a9:SetMember
+Push register2, "setSecretComplete"
+DefineFunction2 "", 2, 10, false, false, true, false, true, false, false, true, false, 9, "level_number", 6, "save_id" {
+Push register6, undefined
+Equals2
+PushDuplicate
+If loc11e8
+Pop
+Push register6, null
+Equals2
+loc11e8:Not
+If loc11fb
+Push 1
+StoreRegister 6
+Pop
+loc11fb:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register6
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 3
+Pop
+Push false
+StoreRegister 4
+Pop
+Push register3
+Enumerate2
+loc123a:StoreRegister 0
+Push null
+Equals2
+If loc1261
+Push register0
+StoreRegister 5
+Pop
+Push true
+StoreRegister 4
+Pop
+Jump loc123a
+loc1261:Push register4, false
+Equals2
+Not
+If loc12e3
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 7
+Pop
+Push register7, 0, 0
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc12ac:Push register2, register7, "length"
+GetMember
+Less2
+Not
+If loc12de
+Push register7, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc12ac
+loc12de:Jump loc137f
+loc12e3:Push register3, "data"
+GetMember
+Push "secret_complete"
+GetMember
+Push undefined
+Equals2
+Not
+If loc136c
+Push register1, "total_levels"
+GetMember
+Push 1, "Array"
+NewObject
+StoreRegister 7
+Pop
+Push register7, 0, 1
+SetMember
+Push 1
+StoreRegister 2
+Pop
+loc1335:Push register2, register7, "length"
+GetMember
+Less2
+Not
+If loc1367
+Push register7, register2, 0
+SetMember
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1335
+loc1367:Jump loc137f
+loc136c:Push register3, "data"
+GetMember
+Push "secret_complete"
+GetMember
+StoreRegister 7
+Pop
+loc137f:Push register7, register9, 1
+Subtract
+Push 1
+SetMember
+Push register3, "data"
+GetMember
+Push "secret_complete", register7
+SetMember
+Push 0, register3, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "countSecretComplete"
+DefineFunction2 "", 2, 9, false, false, true, false, true, false, false, true, false, 0, "level_number", 7, "save_id" {
+Push register7, undefined
+Equals2
+PushDuplicate
+If loc13f6
+Pop
+Push register7, null
+Equals2
+loc13f6:Not
+If loc1409
+Push 1
+StoreRegister 7
+Pop
+loc1409:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register7
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 3
+Pop
+Push false
+StoreRegister 4
+Pop
+Push register3
+Enumerate2
+loc1448:StoreRegister 0
+Push null
+Equals2
+If loc146f
+Push register0
+StoreRegister 6
+Pop
+Push true
+StoreRegister 4
+Pop
+Jump loc1448
+loc146f:Push register4, false
+Equals2
+Not
+If loc148a
+Push 0
+Return
+loc148a:Push register3, "data"
+GetMember
+Push "secret_complete"
+GetMember
+Push undefined
+Equals2
+Not
+If loc14b0
+Push 0
+Return
+loc14b0:Push 0
+StoreRegister 5
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc14d2:Push register2, register3, "data"
+GetMember
+Push "secret_complete"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc152d
+Push register3, "data"
+GetMember
+Push "secret_complete"
+GetMember
+Push register2
+GetMember
+Push 1
+Equals2
+Not
+If loc151d
+Push register5
+Increment
+StoreRegister 5
+Pop
+loc151d:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc14d2
+loc152d:Push register5
+Return
+}
+SetMember
+Push register2, "setLevelScore"
+DefineFunction2 "", 3, 9, false, false, true, false, true, false, false, true, false, 8, "score", 6, "level_number", 5, "save_id" {
+Push register5, undefined
+Equals2
+PushDuplicate
+If loc1579
+Pop
+Push register5, null
+Equals2
+loc1579:Not
+If loc158c
+Push 1
+StoreRegister 5
+Pop
+loc158c:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register5
+ToString
+Add2
+StoreRegister 7
+Pop
+Push register7, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push false
+StoreRegister 3
+Pop
+Push register2
+Enumerate2
+loc15cb:StoreRegister 0
+Push null
+Equals2
+If loc15f2
+Push register0
+StoreRegister 4
+Pop
+Push true
+StoreRegister 3
+Pop
+Jump loc15cb
+loc15f2:Push register3, false
+Equals2
+Not
+If loc1635
+Push register2, "data"
+GetMember
+Push "level_scores", 0, "Array"
+NewObject
+SetMember
+Push register2, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register6, register8
+SetMember
+Jump loc1699
+loc1635:Push register2, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push undefined
+Equals2
+Not
+If loc1683
+Push register2, "data"
+GetMember
+Push "level_scores", 0, "Array"
+NewObject
+SetMember
+Push register2, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register6, register8
+SetMember
+Jump loc1699
+loc1683:Push register2, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register6, register8
+SetMember
+loc1699:Push 0, register2, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getLevelScore"
+DefineFunction2 "", 2, 8, false, false, true, false, true, false, false, true, false, 7, "level_number", 5, "save_id" {
+Push register5, undefined
+Equals2
+PushDuplicate
+If loc16ea
+Pop
+Push register5, null
+Equals2
+loc16ea:Not
+If loc16fd
+Push 1
+StoreRegister 5
+Pop
+loc16fd:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register5
+ToString
+Add2
+StoreRegister 6
+Pop
+Push register6, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push false
+StoreRegister 3
+Pop
+Push register2
+Enumerate2
+loc173c:StoreRegister 0
+Push null
+Equals2
+If loc1763
+Push register0
+StoreRegister 4
+Pop
+Push true
+StoreRegister 3
+Pop
+Jump loc173c
+loc1763:Push register3, false
+Equals2
+Not
+If loc177e
+Push 0
+Return
+loc177e:Push register2, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push undefined
+Equals2
+Not
+If loc17a4
+Push 0
+Return
+loc17a4:Push register2, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register7
+GetMember
+Return
+}
+SetMember
+Push register2, "getTotalScore"
+DefineFunction2 "", 1, 9, false, false, true, false, true, false, false, true, false, 7, "save_id" {
+Push register7, undefined
+Equals2
+PushDuplicate
+If loc17ea
+Pop
+Push register7, null
+Equals2
+loc17ea:Not
+If loc17fd
+Push 1
+StoreRegister 7
+Pop
+loc17fd:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register7
+ToString
+Add2
+StoreRegister 8
+Pop
+Push register8, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 3
+Pop
+Push false
+StoreRegister 5
+Pop
+Push register3
+Enumerate2
+loc183c:StoreRegister 0
+Push null
+Equals2
+If loc1863
+Push register0
+StoreRegister 6
+Pop
+Push true
+StoreRegister 5
+Pop
+Jump loc183c
+loc1863:Push register5, false
+Equals2
+Not
+If loc187e
+Push 0
+Return
+loc187e:Push register3, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push undefined
+Equals2
+Not
+If loc18a4
+Push 0
+Return
+loc18a4:Push 0
+StoreRegister 4
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc18c6:Push register2, register3, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc1957
+Push register3, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register2
+GetMember
+Push undefined
+Equals2
+Not
+PushDuplicate
+Not
+If loc1925
+Pop
+Push register3, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register2
+GetMember
+Push 1, "isNaN"
+CallFunction
+Not
+loc1925:Not
+If loc1947
+Push register4, register3, "data"
+GetMember
+Push "level_scores"
+GetMember
+Push register2
+GetMember
+Add2
+StoreRegister 4
+Pop
+loc1947:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc18c6
+loc1957:Push register4
+Return
+}
+SetMember
+Push register2, "getLastSavedScore"
+DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 5, "save_id" {
+Push register5, undefined
+Equals2
+PushDuplicate
+If loc198e
+Pop
+Push register5, null
+Equals2
+loc198e:Not
+If loc19a1
+Push 1
+StoreRegister 5
+Pop
+loc19a1:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register5
+ToString
+Add2
+StoreRegister 6
+Pop
+Push register6, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push false
+StoreRegister 3
+Pop
+Push register2
+Enumerate2
+loc19e0:StoreRegister 0
+Push null
+Equals2
+If loc1a07
+Push register0
+StoreRegister 4
+Pop
+Push true
+StoreRegister 3
+Pop
+Jump loc19e0
+loc1a07:Push register3, false
+Equals2
+Not
+If loc1a22
+Push 0
+Return
+loc1a22:Push register2, "data"
+GetMember
+Push "last_saved_score"
+GetMember
+Push undefined
+Equals2
+Not
+If loc1a48
+Push 0
+Return
+loc1a48:Push register2, "data"
+GetMember
+Push "last_saved_score"
+GetMember
+Return
+}
+SetMember
+Push register2, "setLastSavedScore"
+DefineFunction2 "", 2, 6, false, false, true, false, true, false, false, true, false, 5, "score", 2, "save_id" {
+Push register2, undefined
+Equals2
+PushDuplicate
+If loc1a8f
+Pop
+Push register2, null
+Equals2
+loc1a8f:Not
+If loc1aa2
+Push 1
+StoreRegister 2
+Pop
+loc1aa2:Push "so_", register1, "game_id"
+GetMember
+Add2
+Push register2
+ToString
+Add2
+StoreRegister 4
+Pop
+Push register4, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 3
+Pop
+Push register3, "data"
+GetMember
+Push "last_saved_score", register5
+SetMember
+Push 0, register3, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getSubmitScoreUrl"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "submit_url"
+GetMember
+Return
+}
+SetMember
+Push register2, "getRetrieveScoreUrl"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "retrieve_url"
+GetMember
+Return
+}
+SetMember
+Push register2, "getHighscoreLine"
+DefineFunction2 "", 2, 7, false, false, true, false, true, false, true, false, false, 6, "data_string", 5, "pos" {
+Push "|", 1, register6, "split"
+CallMethod
+StoreRegister 4
+Pop
+Push register4, register5, 1
+Subtract
+GetMember
+StoreRegister 1
+Pop
+Push register1, "0"
+Equals2
+PushDuplicate
+If loc1b8e
+Pop
+Push register1, "1"
+Equals2
+loc1b8e:PushDuplicate
+If loc1b9c
+Pop
+Push register1, undefined
+Equals2
+loc1b9c:PushDuplicate
+If loc1baa
+Pop
+Push register1, null
+Equals2
+loc1baa:PushDuplicate
+If loc1bb9
+Pop
+Push register1, ""
+Equals2
+loc1bb9:Not
+If loc1bc4
+Push null
+Return
+loc1bc4:Push "_", 1, register1, "split"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, 1
+GetMember
+Push "n"
+Equals2
+PushDuplicate
+If loc1c01
+Pop
+Push register2, 2
+GetMember
+Push "n"
+Equals2
+loc1c01:Not
+If loc1c0c
+Push null
+Return
+loc1c0c:Push 0, "Object"
+NewObject
+StoreRegister 3
+Pop
+Push register3, "username", register2, 2
+GetMember
+SetMember
+Push register3, "score", register2, 1
+GetMember
+SetMember
+Push register3, "rank", register2, 0
+GetMember
+SetMember
+Push register3
+Return
+}
+SetMember
+Push register2, "displayNextButton"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, true, false, false, 3, "data_string" {
+Push "|", 1, register3, "split"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, 10
+GetMember
+StoreRegister 1
+Pop
+Push register1, "1"
+Equals2
+Not
+If loc1cb2
+Push true
+Return
+loc1cb2:Push register1, "0"
+Equals2
+Not
+If loc1cc6
+Push false
+Return
+}
+loc1cc6:SetMember
+Push register2, "displayPreviousButton"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, true, false, false, 3, "data_string" {
+Push "|", 1, register3, "split"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, 11
+GetMember
+StoreRegister 1
+Pop
+Push register1, "1"
+Equals2
+Not
+If loc1d1e
+Push true
+Return
+loc1d1e:Push register1, "0"
+Equals2
+Not
+If loc1d32
+Push false
+Return
+}
+loc1d32:SetMember
+Push register2, "getScoreData"
+DefineFunction2 "", 2, 6, false, false, true, false, true, false, false, true, false, 5, "score", 4, "username" {
+Push register5
+ToString
+Push "_"
+Add2
+Push register1, "game_id"
+GetMember
+Add2
+Push "_"
+Add2
+Push 0, register4, "toLowerCase"
+CallMethod
+Add2
+StoreRegister 3
+Pop
+Push "encrypting: ", register3
+Add2
+Trace
+Push register3, register1, "ar_key"
+GetMember
+Push 2, register1, "encryptString"
+CallMethod
+StoreRegister 2
+Pop
+Push "encrypted: ", register2
+Add2
+Trace
+Push register2, register1, "ar_key"
+GetMember
+Push 2, register1, "decryptString"
+CallMethod
+Trace
+Push register2
+Return
+}
+SetMember
+Push register2, "encryptString"
+DefineFunction2 "", 2, 13, false, false, true, false, true, false, false, true, false, 12, "key", 10, "s" {
+Push register1, "adj", 1.75
+SetMember
+Push register1, "ff", register12, 1, register1, "convertKey"
+CallMethod
+SetMember
+Push ""
+StoreRegister 11
+Pop
+Push 0
+StoreRegister 9
+Pop
+Push 0
+StoreRegister 4
+Pop
+loc1e40:Push register4, register10, "length"
+GetMember
+Less2
+Not
+If loc1f69
+Push 1, register4, 2, register10, "substr"
+CallMethod
+StoreRegister 6
+Pop
+Push undefined
+StoreRegister 7
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc1e84:Push register2, register1, "ar_1"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc1ed4
+Push register1, "ar_1"
+GetMember
+Push register2
+GetMember
+Push register6
+Equals2
+Not
+If loc1ec4
+Push register2
+StoreRegister 7
+Pop
+Jump loc1ed4
+loc1ec4:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc1e84
+loc1ed4:Push register1, "adj", 0, register1, "applyFudgeFactor"
+CallMethod
+SetMember
+Push register9, register1, "adj"
+GetMember
+Add2
+StoreRegister 5
+Pop
+Push register5, 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+Push register7
+Add2
+StoreRegister 3
+Pop
+Push register3, 1, register1, "checkRange"
+CallMethod
+StoreRegister 3
+Pop
+Push register5, register3
+Add2
+StoreRegister 9
+Pop
+Push register1, "ar_2"
+GetMember
+Push register3
+GetMember
+StoreRegister 8
+Pop
+Push register11, register8
+Add2
+StoreRegister 11
+Pop
+Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc1e40
+loc1f69:Push register11
+Return
+}
+SetMember
+Push register2, "convertKey"
+DefineFunction2 "", 1, 9, false, false, true, false, true, false, false, true, false, 6, "key" {
+Push 0, "Array"
+NewObject
+StoreRegister 7
+Pop
+Push register6, "length"
+GetMember
+Push 1, register7, "push"
+CallMethod
+Pop
+Push 0
+StoreRegister 8
+Pop
+Push 0
+StoreRegister 4
+Pop
+loc1fd3:Push register4, register6, "length"
+GetMember
+Less2
+Not
+If loc2094
+Push 1, register4, 2, register6, "substr"
+CallMethod
+StoreRegister 5
+Pop
+Push undefined
+StoreRegister 3
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc2017:Push register2, register1, "ar_1"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc2067
+Push register1, "ar_1"
+GetMember
+Push register2
+GetMember
+Push register5
+Equals2
+Not
+If loc2057
+Push register2
+StoreRegister 3
+Pop
+Jump loc2067
+loc2057:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc2017
+loc2067:Push register3, 1, register7, "push"
+CallMethod
+Pop
+Push register8, register3
+Add2
+StoreRegister 8
+Pop
+Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc1fd3
+loc2094:Push register8, 1, register7, "push"
+CallMethod
+Pop
+Push register7
+Return
+}
+SetMember
+Push register2, "applyFudgeFactor"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "ff"
+GetMember
+Push "shift"
+CallMethod
+ToNumber
+StoreRegister 2
+Pop
+Push register2, register1, "adj"
+GetMember
+Add2
+StoreRegister 2
+Pop
+Push register2, 1, register1, "ff"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register2
+Return
+}
+SetMember
+Push register2, "checkRange"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, false, 2, "num" {
+Push register2, 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 2
+Pop
+Push register1, "ar_1"
+GetMember
+Push "length"
+GetMember
+StoreRegister 3
+Pop
+loc2149:Push register2, register3
+Less2
+Not
+Not
+If loc216a
+Push register2, register3
+Subtract
+StoreRegister 2
+Pop
+Jump loc2149
+loc216a:Push register2, 0
+Less2
+Not
+If loc2191
+Push register2, register3
+Add2
+StoreRegister 2
+Pop
+Jump loc216a
+loc2191:Push register2
+Return
+}
+SetMember
+Push register2, "decryptString"
+DefineFunction2 "", 2, 13, false, false, true, false, true, false, false, true, false, 12, "key", 10, "s" {
+Push register1, "adj", 1.75
+SetMember
+Push register1, "ff", register12, 1, register1, "convertKey"
+CallMethod
+SetMember
+Push ""
+StoreRegister 11
+Pop
+Push 0
+StoreRegister 9
+Pop
+Push 0
+StoreRegister 5
+Pop
+loc2203:Push register5, register10, "length"
+GetMember
+Less2
+Not
+If loc2329
+Push 1, register5, 2, register10, "substr"
+CallMethod
+StoreRegister 7
+Pop
+Push undefined
+StoreRegister 3
+Pop
+Push 0
+StoreRegister 2
+Pop
+loc2247:Push register2, register1, "ar_2"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc2297
+Push register1, "ar_2"
+GetMember
+Push register2
+GetMember
+Push register7
+Equals2
+Not
+If loc2287
+Push register2
+StoreRegister 3
+Pop
+Jump loc2297
+loc2287:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc2247
+loc2297:Push register1, "adj", 0, register1, "applyFudgeFactor"
+CallMethod
+SetMember
+Push register9, register1, "adj"
+GetMember
+Add2
+StoreRegister 6
+Pop
+Push register3, register6, 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+Subtract
+StoreRegister 4
+Pop
+Push register4, 1, register1, "checkRange"
+CallMethod
+StoreRegister 4
+Pop
+Push register6, register3
+Add2
+StoreRegister 9
+Pop
+Push register1, "ar_1"
+GetMember
+Push register4
+GetMember
+StoreRegister 8
+Pop
+Push register11, register8
+Add2
+StoreRegister 11
+Pop
+Push register5
+Increment
+StoreRegister 5
+Pop
+Jump loc2203
+loc2329:Push register11
+Return
+}
+SetMember
+Push register2, "setMusicOn"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "b" {
+Push "so_", register1, "game_id"
+GetMember
+Add2
+StoreRegister 3
+Pop
+Push register3, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, "data"
+GetMember
+Push "musicon", register4
+SetMember
+Push 0, register2, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getMusicOn"
+DefineFunction2 "", 0, 6, false, false, true, false, true, false, false, true, false {
+Push "so_", register1, "game_id"
+GetMember
+Add2
+StoreRegister 5
+Pop
+Push register5, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push false
+StoreRegister 3
+Pop
+Push register2, "data"
+GetMember
+Enumerate2
+loc23dd:StoreRegister 0
+Push null
+Equals2
+If loc2404
+Push register0
+StoreRegister 4
+Pop
+Push true
+StoreRegister 3
+Pop
+Jump loc23dd
+loc2404:Push register3, true
+Equals2
+Not
+If loc2441
+Push register2, "data"
+GetMember
+Push "musicon"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc243b
+Push register2, "data"
+GetMember
+Push "musicon"
+GetMember
+Return
+loc243b:Push true
+Return
+loc2441:Push true
+Return
+}
+SetMember
+Push register2, "setSfxOn"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "b" {
+Push "so_", register1, "game_id"
+GetMember
+Add2
+StoreRegister 3
+Pop
+Push register3, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, "data"
+GetMember
+Push "sfxon", register4
+SetMember
+Push 0, register2, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getSfxOn"
+DefineFunction2 "", 0, 6, false, false, true, false, true, false, false, true, false {
+Push "so_", register1, "game_id"
+GetMember
+Add2
+StoreRegister 5
+Pop
+Push register5, 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push false
+StoreRegister 3
+Pop
+Push register2, "data"
+GetMember
+Enumerate2
+loc24f5:StoreRegister 0
+Push null
+Equals2
+If loc251c
+Push register0
+StoreRegister 4
+Pop
+Push true
+StoreRegister 3
+Pop
+Jump loc24f5
+loc251c:Push register3, true
+Equals2
+Not
+If loc2559
+Push register2, "data"
+GetMember
+Push "sfxon"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc2553
+Push register2, "data"
+GetMember
+Push "sfxon"
+GetMember
+Return
+loc2553:Push true
+Return
+loc2559:Push true
+Return
+}
+SetMember
+Push register2, "ar_1", "-", "0", "9", "8", "7", "6", "5", "4", "3", "2", "1", "_", ".", ":", "/", "z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a", 41, "Array"
+NewObject
+SetMember
+Push register2, "ar_2", "-", "x", "y", "9", "e", "6", "4", "/", "p", "j", ":", "k", "5", "n", "8", "f", "d", "0", "s", "t", "u", "o", "w", "z", "3", "q", "b", "1", "v", "m", "g", ".", "i", "h", "a", "r", "l", "2", "c", "7", "_", 41, "Array"
+NewObject
+SetMember
+Push register2, "ar_key", "ctdngevfaqki8_lb:psoj90ux127hm/4w5y3rz.6-"
+SetMember
+Push register2, "adj", 1.75
+SetMember
+Push register2, "ff", 0, "Array"
+NewObject
+SetMember
+Push register2, "submit_url", "http://www.nitrome.com/php/submit_score.php"
+SetMember
+Push register2, "retrieve_url", "http://www.nitrome.com/php/retrieve_scores.php"
+SetMember
+Push register2, "nitrome_url", "http://www.nitromeimages.com/", "http://www.nitrome-games.co.uk/", "http://www.nitrome-games.com/", "http://www.nitromegames.co.uk/", "http://www.nitromegames.com/", "http://www.nitrome.net/", "http://www.nitrome.co.uk/", "http://cdn.nitrome.com/", "http://www.nitrome.com/", 9, "Array"
+NewObject
+SetMember
+Push 1, null, "_global"
+GetVariable
+Push "NitromeGame"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc26ac:Pop

@@ -1,0 +1,8 @@
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "finishSplash"
+CallMethod
+Pop
+Stop

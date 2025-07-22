@@ -1,0 +1,1638 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "FinalBoss", "MovieClip", "prototype", "doPause", "state", "START", "anim", "stop", "electric", "GROW", "grow", "base", "heart", "WAIT", "PULSE", "LASER", "FIRE", "eye", "GROWBACK", "game", "grow_holder", "boss2", "DIE", "doUnpause", "play", "init", "PRE", "no_transform", "transform", "colorTransform", "red_transform", "flash", "geom", "ColorTransform", "boss_laser", "debris_1", "debris_2", "debris_3", "debris_4", "finishDie", "finish_die", "smoothScroll", "smoothScrollBoss", "openDoor", "setPlayer", "player", "triggerScreenShake", "startScreenShake", "main", "updateAnim", "hit", "hit_count", "bossbmp_holder", "max_hit_count", "hit_record", "stage", "gotoAndStop", "_x", "in", "cutscene", "gotoAndPlay", "quickPause", "wait_count", "DOORWAIT", "door_wait_count", "nextDoor", "max_wait_count", "adj_scroll", "adjustScroll", "state_wait_count", "laser_dir", "prev_weapon", "checkPlayerInside", "createExplosion", "die_count", "exp_count", "_y", "Global", "BOMB_BOSS", "explosion_", "fireMissile", "getPlayerDeg", "finishFire", "startPulse", "startDrop", "finishPulse", "startLaser", "laser_deg", "setActive", "startFinishLaser", "out", "finishLaser", "hitTest", "forcedGameOver", "doHit", "hits", "boss_health_panel", "displayHealth", "finishStart", "drawBody", "drawBossBody", "finishQuickPause", "off", "prev_state", "state_array", "Math", "atan2", "round", "die", "growback", "fire", "laser", "pulse", "wait", "start", "doorwait", "pre", "Array", "missile_count", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc04bc
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc04bc:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc04f4
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc04f4:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0538
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0538:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FinalBoss"
+GetMember
+Not
+Not
+If loc1f5a
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FinalBoss"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FinalBoss"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPause"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "state"
+GetMember
+Push register1, "START"
+GetMember
+Equals2
+Not
+If loc0626
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc0626:Push register1, "state"
+GetMember
+Push register1, "GROW"
+GetMember
+Equals2
+Not
+If loc06a2
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "grow"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc06a2:Push register1, "state"
+GetMember
+Push register1, "WAIT"
+GetMember
+Equals2
+Not
+If loc0700
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc0700:Push register1, "state"
+GetMember
+Push register1, "PULSE"
+GetMember
+Equals2
+Not
+If loc0776
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc0776:Push register1, "state"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+Not
+If loc07ec
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc07ec:Push register1, "state"
+GetMember
+Push register1, "FIRE"
+GetMember
+Equals2
+Not
+If loc0880
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "eye"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc0880:Push register1, "state"
+GetMember
+Push register1, "GROWBACK"
+GetMember
+Equals2
+Not
+If loc090e
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register2, "game"
+GetMember
+Push "grow_holder"
+GetMember
+Push "boss2"
+GetMember
+Push "anim"
+GetMember
+Push "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc092a
+loc090e:Push register1, "state"
+GetMember
+Push register1, "DIE"
+GetMember
+Equals2
+Not
+If loc092a
+Jump loc092a
+}
+loc092a:SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "state"
+GetMember
+Push register1, "START"
+GetMember
+Equals2
+Not
+If loc098f
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc098f:Push register1, "state"
+GetMember
+Push register1, "GROW"
+GetMember
+Equals2
+Not
+If loc0a0b
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "grow"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc0a0b:Push register1, "state"
+GetMember
+Push register1, "WAIT"
+GetMember
+Equals2
+Not
+If loc0a69
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc0a69:Push register1, "state"
+GetMember
+Push register1, "PULSE"
+GetMember
+Equals2
+Not
+If loc0adf
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc0adf:Push register1, "state"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+Not
+If loc0b55
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc0b55:Push register1, "state"
+GetMember
+Push register1, "FIRE"
+GetMember
+Equals2
+Not
+If loc0be9
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "eye"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc0be9:Push register1, "state"
+GetMember
+Push register1, "GROWBACK"
+GetMember
+Equals2
+Not
+If loc0c77
+Push 0, register1, "anim"
+GetMember
+Push "electric"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "base"
+GetMember
+Push "heart"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register2, "game"
+GetMember
+Push "grow_holder"
+GetMember
+Push "boss2"
+GetMember
+Push "anim"
+GetMember
+Push "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc0c93
+loc0c77:Push register1, "state"
+GetMember
+Push register1, "DIE"
+GetMember
+Equals2
+Not
+If loc0c93
+Jump loc0c93
+}
+loc0c93:SetMember
+Push register2, "init"
+DefineFunction2 "", 6, 8, false, false, true, false, true, false, false, true, false, 3, "game", 6, "boss_laser", 4, "debris_1", 7, "debris_2", 5, "debris_3", 2, "debris_4" {
+Push register1, "game", register3
+SetMember
+Push register1, "state", register1, "PRE"
+GetMember
+SetMember
+Push register1, "no_transform", register1, "transform"
+GetMember
+Push "colorTransform"
+GetMember
+SetMember
+Push register1, "red_transform", 0, 0, 0, 150, 1, 1, 1, 0, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+SetMember
+Push register1, "boss_laser", register6
+SetMember
+Push register1, "debris_1", register4
+SetMember
+Push register1, "debris_2", register7
+SetMember
+Push register1, "debris_3", register5
+SetMember
+Push register1, "debris_4", register2
+SetMember
+}
+SetMember
+Push register2, "finishDie"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "finish_die"
+GetMember
+Push false
+Equals2
+Not
+If loc0e0a
+Push 0, register1, "game"
+GetMember
+Push "smoothScroll"
+CallMethod
+Pop
+Push 0, register1, "game"
+GetMember
+Push "smoothScrollBoss"
+CallMethod
+Pop
+Push 1, 1, register1, "game"
+GetMember
+Push "openDoor"
+CallMethod
+Pop
+Push register1, "finish_die", true
+SetMember
+}
+loc0e0a:SetMember
+Push register2, "setPlayer"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "player" {
+Push register1, "player", register2
+SetMember
+}
+SetMember
+Push register2, "triggerScreenShake"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "game"
+GetMember
+Push "startScreenShake"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push 0, register1, "updateAnim"
+CallMethod
+Pop
+Push register1, "hit"
+GetMember
+Push true
+Equals2
+Not
+If loc0ff4
+Push register1, "hit_count", register1, "hit_count"
+GetMember
+Increment
+SetMember
+Push register1, "hit_count"
+GetMember
+Push 10
+Modulo
+Push 0
+Equals2
+Not
+If loc0efc
+Push register1, "transform"
+GetMember
+Push "colorTransform", register1, "red_transform"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "bossbmp_holder"
+GetMember
+Push "transform"
+GetMember
+Push "colorTransform", register1, "red_transform"
+GetMember
+SetMember
+Jump loc0f52
+loc0efc:Push register1, "hit_count"
+GetMember
+Push 5
+Modulo
+Push 0
+Equals2
+Not
+If loc0f52
+Push register1, "transform"
+GetMember
+Push "colorTransform", register1, "no_transform"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "bossbmp_holder"
+GetMember
+Push "transform"
+GetMember
+Push "colorTransform", register1, "no_transform"
+GetMember
+SetMember
+loc0f52:Push register1, "hit_count"
+GetMember
+Push register1, "max_hit_count"
+GetMember
+Less2
+Not
+Not
+If loc0ff4
+Push register1, "transform"
+GetMember
+Push "colorTransform", register1, "no_transform"
+GetMember
+SetMember
+Push register2, "game"
+GetMember
+Push "bossbmp_holder"
+GetMember
+Push "transform"
+GetMember
+Push "colorTransform", register1, "no_transform"
+GetMember
+SetMember
+Push register1, "hit_record", 0
+SetMember
+Push register1, "hit", false
+SetMember
+Push register1, "stage", register1, "stage"
+GetMember
+Increment
+SetMember
+Push register1, "state", register1, "GROWBACK"
+GetMember
+SetMember
+Push "grow", 1, register2, "game"
+GetMember
+Push "grow_holder"
+GetMember
+Push "boss2"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc0ff4:Push register1, "state"
+GetMember
+Push register1, "PRE"
+GetMember
+Equals2
+Not
+If loc108b
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Push 57
+Subtract
+Push 164
+Subtract
+Greater
+Not
+If loc1086
+Push "in", 1, register2, "cutscene"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+Push 0, register1, "player"
+GetMember
+Push "quickPause"
+CallMethod
+Pop
+Push register1, "wait_count", 0
+SetMember
+Push register1, "state", register1, "DOORWAIT"
+GetMember
+SetMember
+loc1086:Jump loc163b
+loc108b:Push register1, "state"
+GetMember
+Push register1, "DOORWAIT"
+GetMember
+Equals2
+Not
+If loc1127
+Push register1, "wait_count", register1, "wait_count"
+GetMember
+Increment
+SetMember
+Push register1, "wait_count"
+GetMember
+Push register1, "door_wait_count"
+GetMember
+Equals2
+Not
+If loc10fd
+Push 0, 1, register1, "game"
+GetMember
+Push "nextDoor"
+CallMethod
+Pop
+Push 1, 1, register1, "game"
+GetMember
+Push "nextDoor"
+CallMethod
+Pop
+loc10fd:Push register1, "wait_count"
+GetMember
+Push register1, "max_wait_count"
+GetMember
+Less2
+Not
+Not
+If loc1122
+Push register1, "state", register1, "START"
+GetMember
+SetMember
+loc1122:Jump loc163b
+loc1127:Push register1, "state"
+GetMember
+Push register1, "START"
+GetMember
+Equals2
+Not
+If loc1143
+Jump loc163b
+loc1143:Push register1, "state"
+GetMember
+Push register1, "GROW"
+GetMember
+Equals2
+Not
+If loc115f
+Jump loc163b
+loc115f:Push register1, "state"
+GetMember
+Push register1, "WAIT"
+GetMember
+Equals2
+Not
+If loc15df
+Push register1, "adj_scroll"
+GetMember
+Push false
+Equals2
+Not
+If loc120d
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Push 57
+Subtract
+Push 48
+Subtract
+Greater
+PushDuplicate
+Not
+If loc11e4
+Pop
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Push 57
+Add2
+Push 48
+Subtract
+Less2
+loc11e4:Not
+If loc120d
+Push 1, 1, register1, "game"
+GetMember
+Push "adjustScroll"
+CallMethod
+Pop
+Push register1, "adj_scroll", true
+SetMember
+loc120d:Push register1, "wait_count", register1, "wait_count"
+GetMember
+Increment
+SetMember
+Push register1, "wait_count"
+GetMember
+Push register1, "state_wait_count"
+GetMember
+Less2
+Not
+PushDuplicate
+Not
+If loc1243
+Pop
+Push register1, "adj_scroll"
+GetMember
+Push true
+Equals2
+loc1243:PushDuplicate
+Not
+If loc1259
+Pop
+Push register1, "hit"
+GetMember
+Push false
+Equals2
+loc1259:Not
+If loc15da
+Push register1, "stage"
+GetMember
+Push 1
+Equals2
+Not
+If loc12e1
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc12a5
+Push register1, "laser_dir", 1
+SetMember
+Jump loc12cf
+loc12a5:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc12cf
+Push register1, "laser_dir", -1
+SetMember
+loc12cf:Push register1, "state", register1, "LASER"
+GetMember
+SetMember
+Jump loc15da
+loc12e1:Push register1, "stage"
+GetMember
+Push 2
+Equals2
+Not
+If loc138c
+Push register1, "prev_weapon"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+Not
+If loc1321
+Push register1, "state", register1, "PULSE"
+GetMember
+SetMember
+Jump loc1387
+loc1321:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc1350
+Push register1, "laser_dir", 1
+SetMember
+Jump loc137a
+loc1350:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc137a
+Push register1, "laser_dir", -1
+SetMember
+loc137a:Push register1, "state", register1, "LASER"
+GetMember
+SetMember
+loc1387:Jump loc15da
+loc138c:Push register1, "stage"
+GetMember
+Push 3
+Equals2
+Not
+If loc1437
+Push register1, "prev_weapon"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+Not
+If loc13cc
+Push register1, "state", register1, "PULSE"
+GetMember
+SetMember
+Jump loc1432
+loc13cc:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc13fb
+Push register1, "laser_dir", 1
+SetMember
+Jump loc1425
+loc13fb:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc1425
+Push register1, "laser_dir", -1
+SetMember
+loc1425:Push register1, "state", register1, "LASER"
+GetMember
+SetMember
+loc1432:Jump loc15da
+loc1437:Push register1, "stage"
+GetMember
+Push 4
+Equals2
+Not
+If loc150b
+Push register1, "prev_weapon"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+Not
+If loc1477
+Push register1, "state", register1, "PULSE"
+GetMember
+SetMember
+Jump loc1506
+loc1477:Push register1, "prev_weapon"
+GetMember
+Push register1, "PULSE"
+GetMember
+Equals2
+Not
+If loc14a0
+Push register1, "state", register1, "FIRE"
+GetMember
+SetMember
+Jump loc1506
+loc14a0:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc14cf
+Push register1, "laser_dir", 1
+SetMember
+Jump loc14f9
+loc14cf:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc14f9
+Push register1, "laser_dir", -1
+SetMember
+loc14f9:Push register1, "state", register1, "LASER"
+GetMember
+SetMember
+loc1506:Jump loc15da
+loc150b:Push register1, "stage"
+GetMember
+Push 5
+Equals2
+Not
+If loc15da
+Push register1, "prev_weapon"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+Not
+If loc154b
+Push register1, "state", register1, "PULSE"
+GetMember
+SetMember
+Jump loc15da
+loc154b:Push register1, "prev_weapon"
+GetMember
+Push register1, "PULSE"
+GetMember
+Equals2
+Not
+If loc1574
+Push register1, "state", register1, "FIRE"
+GetMember
+SetMember
+Jump loc15da
+loc1574:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc15a3
+Push register1, "laser_dir", 1
+SetMember
+Jump loc15cd
+loc15a3:Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc15cd
+Push register1, "laser_dir", -1
+SetMember
+loc15cd:Push register1, "state", register1, "LASER"
+GetMember
+SetMember
+loc15da:Jump loc163b
+loc15df:Push register1, "state"
+GetMember
+Push register1, "GROWBACK"
+GetMember
+Equals2
+Not
+If loc160d
+Push 0, register1, "checkPlayerInside"
+CallMethod
+Pop
+Jump loc163b
+loc160d:Push register1, "state"
+GetMember
+Push register1, "DIE"
+GetMember
+Equals2
+Not
+If loc163b
+Push 0, register1, "createExplosion"
+CallMethod
+Pop
+Jump loc163b
+}
+loc163b:SetMember
+Push register2, "createExplosion"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push register1, "die_count", register1, "die_count"
+GetMember
+Increment
+SetMember
+Push register1, "die_count"
+GetMember
+Push 5
+Modulo
+Push 0
+Equals2
+Not
+If loc1720
+Push register1, "exp_count", register1, "exp_count"
+GetMember
+Increment
+SetMember
+Push 100
+RandomNumber
+Push register1, "_x"
+GetMember
+Push 50
+Subtract
+Add2
+StoreRegister 3
+Pop
+Push register1, "_y"
+GetMember
+Push 125
+RandomNumber
+Subtract
+StoreRegister 2
+Pop
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "BOMB_BOSS"
+GetMember
+Push "explosion_", register1, "exp_count"
+GetMember
+Add2
+Push register2, register3, 5, register1, "game"
+GetMember
+Push "createExplosion"
+CallMethod
+Pop
+Push register1, "die_count", 0
+SetMember
+}
+loc1720:SetMember
+Push register2, "fireMissile"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "triggerScreenShake"
+CallMethod
+Pop
+Push 0, register1, "getPlayerDeg"
+CallMethod
+Push register1, "_y"
+GetMember
+Push 141
+Subtract
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "fireMissile"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finishFire"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "prev_weapon", register1, "FIRE"
+GetMember
+SetMember
+Push register1, "wait_count", 0
+SetMember
+Push register1, "state", register1, "WAIT"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "startPulse"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "triggerScreenShake"
+CallMethod
+Pop
+Push 0, register1, "debris_1"
+GetMember
+Push "startDrop"
+CallMethod
+Pop
+Push 0, register1, "debris_2"
+GetMember
+Push "startDrop"
+CallMethod
+Pop
+Push 0, register1, "debris_3"
+GetMember
+Push "startDrop"
+CallMethod
+Pop
+Push 0, register1, "debris_4"
+GetMember
+Push "startDrop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finishPulse"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "prev_weapon", register1, "PULSE"
+GetMember
+SetMember
+Push register1, "wait_count", 0
+SetMember
+Push register1, "state", register1, "WAIT"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "startLaser"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "laser_dir"
+GetMember
+Push register1, "laser_deg"
+GetMember
+Push true, 3, register1, "boss_laser"
+GetMember
+Push "setActive"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "startFinishLaser"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "prev_weapon", register1, "LASER"
+GetMember
+SetMember
+Push "out", 1, register1, "anim"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finishLaser"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "wait_count", 0
+SetMember
+Push register1, "state", register1, "WAIT"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "checkPlayerInside"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push true, register2, "game"
+GetMember
+Push "_y"
+GetMember
+Push register1, "player"
+GetMember
+Push "_y"
+GetMember
+Add2
+Push register2, "game"
+GetMember
+Push "_x"
+GetMember
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Add2
+Push 3, register2, "game"
+GetMember
+Push "grow_holder"
+GetMember
+Push "hitTest"
+CallMethod
+Not
+If loc19aa
+Push 0, register1, "player"
+GetMember
+Push "forcedGameOver"
+CallMethod
+Pop
+}
+loc19aa:SetMember
+Push register2, "doHit"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "hit_record", register1, "hit_record"
+GetMember
+Increment
+SetMember
+Push register1, "hit_record"
+GetMember
+Push 3
+Equals2
+PushDuplicate
+Not
+If loc19f6
+Pop
+Push register1, "state"
+GetMember
+Push register1, "GROW"
+GetMember
+Equals2
+Not
+loc19f6:Not
+If loc1ae7
+Push register1, "hit"
+GetMember
+Push false
+Equals2
+Not
+If loc1ae7
+Push register1, "hits", register1, "hits"
+GetMember
+Decrement
+SetMember
+Push register1, "hit_count", 0
+SetMember
+Push register1, "hits"
+GetMember
+Push 20
+Multiply
+Push 1, register2, "boss_health_panel"
+GetMember
+Push "displayHealth"
+CallMethod
+Pop
+Push false, 1, register1, "boss_laser"
+GetMember
+Push "setActive"
+CallMethod
+Pop
+Push register1, "state"
+GetMember
+Push register1, "LASER"
+GetMember
+Equals2
+PushDuplicate
+Not
+If loc1a98
+Pop
+Push register1, "hits"
+GetMember
+Push 0
+Greater
+loc1a98:Not
+If loc1ab0
+Push 0, register1, "startFinishLaser"
+CallMethod
+Pop
+loc1ab0:Push register1, "hits"
+GetMember
+Push 0
+Equals2
+Not
+If loc1add
+Push register1, "state", register1, "DIE"
+GetMember
+SetMember
+Jump loc1ae7
+loc1add:Push register1, "hit", true
+SetMember
+}
+loc1ae7:SetMember
+Push register2, "finishStart"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "state", register1, "GROW"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "drawBody"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "_y"
+GetMember
+Push 148
+Subtract
+Push register1, "_x"
+GetMember
+Push 91
+Subtract
+Push 2, register1, "game"
+GetMember
+Push "drawBossBody"
+CallMethod
+Pop
+Push register1, "hits"
+GetMember
+Push 5
+Equals2
+Not
+If loc1bc9
+Push "out", 1, register2, "cutscene"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+Push 100, 1, register2, "boss_health_panel"
+GetMember
+Push "displayHealth"
+CallMethod
+Pop
+Push true, 1, register2, "boss_health_panel"
+GetMember
+Push "setActive"
+CallMethod
+Pop
+Push 0, register1, "player"
+GetMember
+Push "finishQuickPause"
+CallMethod
+Pop
+Jump loc1beb
+loc1bc9:Push "off", 1, register2, "game"
+GetMember
+Push "grow_holder"
+GetMember
+Push "boss2"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+loc1beb:Push register1, "wait_count", 0
+SetMember
+Push register1, "state", register1, "WAIT"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "updateAnim"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "state"
+GetMember
+Push register1, "prev_state"
+GetMember
+Equals2
+Not
+Not
+If loc1c53
+Push register1, "state_array"
+GetMember
+Push register1, "state"
+GetMember
+GetMember
+Push 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc1c53:Push register1, "prev_state", register1, "state"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "getPlayerDeg"
+DefineFunction2 "", 0, 7, false, false, true, false, true, false, false, true, false {
+Push register1, "_x"
+GetMember
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Subtract
+StoreRegister 5
+Pop
+Push register1, "_y"
+GetMember
+Push 141
+Subtract
+StoreRegister 3
+Pop
+Push register3, register1, "player"
+GetMember
+Push "_y"
+GetMember
+Push 20
+Subtract
+Subtract
+StoreRegister 6
+Pop
+Push register5, register6, 2, "Math"
+GetVariable
+Push "atan2"
+CallMethod
+StoreRegister 4
+Pop
+Push register4, 3.141592653589793
+Divide
+Push 180
+Multiply
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, 0
+Less2
+Not
+If loc1d37
+Push 180, 180, register2
+Add2
+Add2
+StoreRegister 2
+Pop
+loc1d37:Push register2, 90
+Subtract
+StoreRegister 2
+Pop
+Push register2, 0
+Less2
+Not
+If loc1d6c
+Push register2, 360
+Add2
+StoreRegister 2
+Pop
+loc1d6c:Push register2, 360
+Less2
+Not
+Not
+If loc1d8e
+Push register2, 360
+Subtract
+StoreRegister 2
+Pop
+loc1d8e:Push register2
+Return
+}
+SetMember
+Push register2, "prev_state", 100
+SetMember
+Push register2, "state_array", "die", "growback", "fire", "laser", "pulse", "wait", "grow", "start", "doorwait", "pre", 10, "Array"
+NewObject
+SetMember
+Push register2, "PRE", 0
+SetMember
+Push register2, "DOORWAIT", 1
+SetMember
+Push register2, "START", 2
+SetMember
+Push register2, "GROW", 3
+SetMember
+Push register2, "WAIT", 4
+SetMember
+Push register2, "PULSE", 5
+SetMember
+Push register2, "LASER", 6
+SetMember
+Push register2, "FIRE", 7
+SetMember
+Push register2, "GROWBACK", 8
+SetMember
+Push register2, "DIE", 9
+SetMember
+Push register2, "hits", 5
+SetMember
+Push register2, "hit", false
+SetMember
+Push register2, "hit_count", 0
+SetMember
+Push register2, "max_hit_count", 120
+SetMember
+Push register2, "wait_count", 0
+SetMember
+Push register2, "door_wait_count", 50
+SetMember
+Push register2, "max_wait_count", 100
+SetMember
+Push register2, "state_wait_count", 75
+SetMember
+Push register2, "stage", 1
+SetMember
+Push register2, "adj_scroll", false
+SetMember
+Push register2, "hit_record", 0
+SetMember
+Push register2, "laser_deg", 180
+SetMember
+Push register2, "missile_count", 0
+SetMember
+Push register2, "finish_die", false
+SetMember
+Push register2, "die_count", 0
+SetMember
+Push register2, "exp_count", 0
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FinalBoss"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc1f5a:Pop

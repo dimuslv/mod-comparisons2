@@ -1,0 +1,25 @@
+ConstantPool "_root", "levelname", "stages/test.xml", "", "LOW"
+Push "_root"
+GetVariable
+Push "levelname"
+GetMember
+Push undefined
+Equals2
+PushDuplicate
+If loc0053
+Pop
+Push "_root"
+GetVariable
+Push "levelname"
+GetMember
+Push null
+Equals2
+loc0053:Not
+If loc0067
+Push "_root"
+GetVariable
+Push "levelname", "stages/test.xml"
+SetMember
+loc0067:Push "", 19, "LOW"
+SetProperty
+Stop

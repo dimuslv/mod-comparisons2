@@ -1,0 +1,149 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Medipak", "MovieClip", "prototype", "init", "game", "doCollect", "collected", "collect", "gotoAndStop", "health_panel", "boostHealth", "finishCollect", "_name", "removeObject", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00f8
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00f8:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0130
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0130:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0174
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0174:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Medipak"
+GetMember
+Not
+Not
+If loc02f4
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Medipak"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Medipak"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "doCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push false
+Equals2
+Not
+If loc0279
+Push "collect", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push 0, register2, "health_panel"
+GetMember
+Push "boostHealth"
+CallMethod
+Pop
+Push register1, "collected", true
+SetMember
+}
+loc0279:SetMember
+Push register2, "finishCollect"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeObject"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "collected", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Medipak"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc02f4:Pop

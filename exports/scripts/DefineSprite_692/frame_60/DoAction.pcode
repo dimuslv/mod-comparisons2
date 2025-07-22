@@ -1,0 +1,8 @@
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "finishStart"
+CallMethod
+Pop
+Stop

@@ -1,0 +1,525 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "DiggerRobot", "MovieClip", "prototype", "init", "game", "doPause", "anim", "stop", "doUnpause", "play", "setPlayer", "player", "main", "getOnScreen", "_visible", "falling", "doFall", "_y", "_x", "getOnSolidGround", "checkForPlayer", "getInWall", "startFall", "y_speed", "checkFloor", "cutDiggerRobotHole", "doExplode", "checkFallOff", "_name", "createExplosion", "debris", "createDebris", "removeMovieClip", "Math", "round", "getInSolidWall", "getSolidCollision", "getSceneryCollision", "screen_test", "hitTest", "Global", "level_height", "done_splash", "doSplash", "removeRobot", "id", "x", "y", "Array", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc022c
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc022c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0264
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0264:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc02a8
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc02a8:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "DiggerRobot"
+GetMember
+Not
+Not
+If loc0a71
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "DiggerRobot"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "DiggerRobot"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "setPlayer"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "player" {
+Push register1, "player", register2
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "getOnScreen"
+CallMethod
+Push true
+Equals2
+Not
+If loc040e
+Push register1, "_visible", true
+SetMember
+Jump loc0418
+loc040e:Push register1, "_visible", false
+SetMember
+loc0418:Push register1, "falling"
+GetMember
+Push true
+Equals2
+Not
+If loc0443
+Push 0, register1, "doFall"
+CallMethod
+Pop
+Jump loc047e
+loc0443:Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 2, register1, "getOnSolidGround"
+CallMethod
+Push false
+Equals2
+Not
+If loc047e
+Push 0, register1, "checkForPlayer"
+CallMethod
+Pop
+}
+loc047e:SetMember
+Push register2, "checkForPlayer"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push register1, "player"
+GetMember
+Push "_y"
+GetMember
+Push register1, "_y"
+GetMember
+Greater
+Not
+If loc0599
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Push 20
+Subtract
+Greater
+PushDuplicate
+Not
+If loc04f6
+Pop
+Push register1, "player"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Push 20
+Add2
+Less2
+loc04f6:Not
+If loc0599
+Push 10
+StoreRegister 2
+Pop
+loc0509:Push register2, 500
+Greater
+Not
+Not
+If loc0564
+Push register1, "_y"
+GetMember
+Push register2
+Add2
+Push register1, "_x"
+GetMember
+Push 2, register1, "getInWall"
+CallMethod
+Push true
+Equals2
+Not
+If loc054f
+Jump loc0564
+loc054f:Push register2, 10
+Add2
+StoreRegister 2
+Pop
+Jump loc0509
+loc0564:Push register1, "player"
+GetMember
+Push "_y"
+GetMember
+Push register1, "_y"
+GetMember
+Push register2
+Add2
+Less2
+Not
+If loc0599
+Push 0, register1, "startFall"
+CallMethod
+Pop
+}
+loc0599:SetMember
+Push register2, "startFall"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "falling", true
+SetMember
+}
+SetMember
+Push register2, "doFall"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_y", register1, "_y"
+GetMember
+Push register1, "y_speed"
+GetMember
+Push 1, register1, "checkFloor"
+CallMethod
+Add2
+SetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "cutDiggerRobotHole"
+CallMethod
+Pop
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 2, register1, "getOnSolidGround"
+CallMethod
+Push true
+Equals2
+Not
+If loc065a
+Push register1, "falling", false
+SetMember
+Push 0, register1, "doExplode"
+CallMethod
+Pop
+Jump loc066c
+loc065a:Push 0, register1, "checkFallOff"
+CallMethod
+Pop
+}
+loc066c:SetMember
+Push register2, "doExplode"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 100, register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 4, register1, "game"
+GetMember
+Push "createExplosion"
+CallMethod
+Pop
+Push register1, "debris"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "checkFloor"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, false, 3, "v" {
+Push register3, 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 3
+Pop
+Push 1
+StoreRegister 2
+Pop
+loc0729:Push register2, register3
+Greater
+Not
+Not
+If loc077d
+Push register1, "_y"
+GetMember
+Push register2
+Add2
+Push register1, "_x"
+GetMember
+Push 2, register1, "getInSolidWall"
+CallMethod
+Push true
+Equals2
+Not
+If loc076d
+Push register2
+Return
+loc076d:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0729
+loc077d:Push register3
+Return
+}
+SetMember
+Push register2, "getInSolidWall"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "x", 2, "y" {
+Push register2, register3, 2, register1, "game"
+GetMember
+Push "getSolidCollision"
+CallMethod
+Push true
+Equals2
+Not
+If loc07c5
+Push true
+Return
+loc07c5:Push false
+Return
+}
+SetMember
+Push register2, "getInWall"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "x", 2, "y" {
+Push register2, register3, 2, register1, "game"
+GetMember
+Push "getSceneryCollision"
+CallMethod
+Push true
+Equals2
+Not
+If loc080d
+Push true
+Return
+loc080d:Push false
+Return
+}
+SetMember
+Push register2, "getOnSolidGround"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "x", 2, "y" {
+Push register2, register3, 2, register1, "game"
+GetMember
+Push "getSolidCollision"
+CallMethod
+Push true
+Equals2
+Not
+If loc0887
+Push register2, 1
+Subtract
+Push register3, 2, register1, "game"
+GetMember
+Push "getSolidCollision"
+CallMethod
+Push false
+Equals2
+Not
+If loc0881
+Push true
+Return
+loc0881:Push false
+Return
+loc0887:Push false
+Return
+}
+SetMember
+Push register2, "getOnScreen"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "screen_test"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push true
+Equals2
+Not
+If loc08c7
+Push true
+Return
+loc08c7:Push false
+Return
+}
+SetMember
+Push register2, "checkFallOff"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_y"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push 64
+Subtract
+Greater
+PushDuplicate
+Not
+If loc0926
+Pop
+Push register1, "done_splash"
+GetMember
+Push false
+Equals2
+loc0926:Not
+If loc0968
+Push register1, "_y"
+GetMember
+Push 15
+Add2
+Push register1, "_x"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "doSplash"
+CallMethod
+Pop
+Push register1, "done_splash", true
+SetMember
+Jump loc09cc
+loc0968:Push register1, "_y"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push 60
+Subtract
+Greater
+Not
+If loc09cc
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeRobot"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+loc09cc:SetMember
+Push register2, "falling", false
+SetMember
+Push register2, "y_speed", 5
+SetMember
+Push register2, "done_splash", false
+SetMember
+Push register2, "debris", "id", 53, "x", 0, "y", -27, 3
+InitObject
+Push "id", 52, "x", 0, "y", -5, 3
+InitObject
+Push 2, "Array"
+NewObject
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "DiggerRobot"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0a71:Pop

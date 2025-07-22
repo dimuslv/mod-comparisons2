@@ -1,0 +1,10 @@
+ConstantPool "this", "_parent", "finishJumpAbout"
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "finishJumpAbout"
+CallMethod
+Pop

@@ -1,0 +1,7 @@
+Push "com.nitrome.buttons.ScoresButton"
+GetVariable
+Push "scores_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

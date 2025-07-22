@@ -1,0 +1,174 @@
+ConstantPool "_global", "com", "Object", "nitrome", "highscore", "ArrowButton", "hideAway", "MovieClip", "prototype", "_name", ": hide", "_visible", "display", ": display", "onRollOver", "over", "gotoAndStop", "onRollOut", "up", "onPress", "prev_arrow", "_parent", "shiftScoresPrev", "next_arrow", "shiftScoresNext", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0124
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0124:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc015c
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc015c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Not
+Not
+If loc01a0
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore", 0, "Object"
+NewObject
+SetMember
+loc01a0:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ArrowButton"
+GetMember
+Not
+Not
+If loc037e
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ArrowButton"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 0, register1, "hideAway"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ArrowButton"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "hideAway"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push ": hide"
+Add2
+Trace
+Push register1, "_visible", false
+SetMember
+}
+SetMember
+Push register2, "display"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push ": display"
+Add2
+Trace
+Push register1, "_visible", true
+SetMember
+}
+SetMember
+Push register2, "onRollOver"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "over", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "onRollOut"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "onPress"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push "prev_arrow"
+Equals2
+Not
+If loc031d
+Push 0, register1, "_parent"
+GetMember
+Push "shiftScoresPrev"
+CallMethod
+Pop
+Jump loc034e
+loc031d:Push register1, "_name"
+GetMember
+Push "next_arrow"
+Equals2
+Not
+If loc034e
+Push 0, register1, "_parent"
+GetMember
+Push "shiftScoresNext"
+CallMethod
+Pop
+Jump loc034e
+}
+loc034e:SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "ArrowButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc037e:Pop

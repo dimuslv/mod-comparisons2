@@ -1,0 +1,124 @@
+ConstantPool "_global", "mx", "Object", "utils", "Delegate", "func", "prototype", "create", "callee", "target", "apply", "createDelegate", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc0099
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc0099:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "utils"
+GetMember
+Not
+Not
+If loc00d1
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "utils", 0, "Object"
+NewObject
+SetMember
+loc00d1:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "utils"
+GetMember
+Push "Delegate"
+GetMember
+Not
+Not
+If loc023f
+Push "mx"
+GetVariable
+Push "utils"
+GetMember
+Push "Delegate"
+DefineFunction2 "", 1, 4, false, false, false, true, true, false, false, true, false, 3, "f" {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "func", register3
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "mx"
+GetVariable
+Push "utils"
+GetMember
+Push "Delegate"
+GetMember
+Push "Object"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "create"
+DefineFunction2 "", 2, 6, false, false, true, false, false, true, true, false, false, 5, "obj", 3, "func" {
+DefineFunction2 "", 0, 4, false, false, true, false, false, true, true, false, false {
+Push register1, "callee"
+GetMember
+Push "target"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "callee"
+GetMember
+Push "func"
+GetMember
+StoreRegister 3
+Pop
+Push register1, register2, 2, register3, "apply"
+CallMethod
+Return
+}
+StoreRegister 2
+Pop
+Push register2, "target", register5
+SetMember
+Push register2, "func", register3
+SetMember
+Push register2
+Return
+}
+SetMember
+Push register2, "createDelegate"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "obj" {
+Push register1, "func"
+GetMember
+Push register2, 2, "mx"
+GetVariable
+Push "utils"
+GetMember
+Push "Delegate"
+GetMember
+Push "create"
+CallMethod
+Return
+}
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "utils"
+GetMember
+Push "Delegate"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc023f:Pop

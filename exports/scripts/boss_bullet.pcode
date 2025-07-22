@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.BossBullet"
+GetVariable
+Push "boss_bullet", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

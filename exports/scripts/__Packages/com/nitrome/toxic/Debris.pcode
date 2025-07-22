@@ -1,0 +1,192 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Debris", "MovieClip", "prototype", "init", "game", "vx", "vy", "vr", "main", "_x", "_y", "_rotation", "screen_test", "hitTest", "Global", "level_height", "_name", "removeDebris", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00ee
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00ee:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0126
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0126:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc016a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc016a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Debris"
+GetMember
+Not
+Not
+If loc0386
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Debris"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Debris"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+Push register1, "vx", 10
+RandomNumber
+Push 5
+Subtract
+SetMember
+Push register1, "vy", 0, 20
+RandomNumber
+Subtract
+SetMember
+Push register1, "vr", 10
+RandomNumber
+Push 5
+Subtract
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "_x", register1, "_x"
+GetMember
+Push register1, "vx"
+GetMember
+Add2
+SetMember
+Push register1, "_y", register1, "_y"
+GetMember
+Push register1, "vy"
+GetMember
+Add2
+SetMember
+Push register1, "_rotation", register1, "_rotation"
+GetMember
+Push register1, "vr"
+GetMember
+Add2
+SetMember
+Push register1, "vx", register1, "vx"
+GetMember
+Push 0.95
+Multiply
+SetMember
+Push register1, "vy", register1, "vy"
+GetMember
+Increment
+SetMember
+Push register2, "screen_test"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push false
+Equals2
+PushDuplicate
+If loc0322
+Pop
+Push register1, "_y"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc0322:Not
+If loc0356
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeDebris"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+loc0356:SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Debris"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0386:Pop

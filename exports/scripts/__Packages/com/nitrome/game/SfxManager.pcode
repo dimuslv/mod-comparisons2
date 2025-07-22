@@ -1,0 +1,124 @@
+ConstantPool "_global", "com", "Object", "nitrome", "game", "SfxManager", "MovieClip", "prototype", "playSound", "mc", "getSfxOn", "gotoAndPlay", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00a0
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00a0:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00d8
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00d8:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Not
+Not
+If loc011c
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game", 0, "Object"
+NewObject
+SetMember
+loc011c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "SfxManager"
+GetMember
+Not
+Not
+If loc0228
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "SfxManager"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "SfxManager"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "playSound"
+DefineFunction2 "", 1, 4, false, true, true, false, true, false, false, true, false, 3, "id" {
+Push 0, register2, "mc"
+GetMember
+Push "getSfxOn"
+CallMethod
+Push true
+Equals2
+Not
+If loc01f8
+Push 2, 1, register1, register3
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+}
+loc01f8:SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "SfxManager"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0228:Pop

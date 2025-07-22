@@ -1,0 +1,8 @@
+Push 0, "_parent"
+GetVariable
+Push "submit_button"
+GetMember
+Push "submitScore"
+CallMethod
+Pop
+Stop

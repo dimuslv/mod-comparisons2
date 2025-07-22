@@ -1,0 +1,342 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Hive", "MovieClip", "prototype", "init", "game", "main", "getOnScreen", "_visible", "spawn_count", "max_spawn_count", "trySpawn", "_name", "getSpawnCount", "getSpawnCountLeft", "getSpawnCountRight", "spawnBot", "_x", "left_spawn", "_y", "right_spawn", "screen_test", "hitTest", "doExplode", "createExplosion", "debris", "createDebris", "removeMovieClip", "id", "x", "y", "Array", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0180
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0180:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc01b8
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc01b8:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc01fc
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc01fc:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Hive"
+GetMember
+Not
+Not
+If loc06dd
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Hive"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Hive"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "getOnScreen"
+CallMethod
+Push true
+Equals2
+Not
+If loc02e7
+Push register1, "_visible", true
+SetMember
+Jump loc02f1
+loc02e7:Push register1, "_visible", false
+SetMember
+loc02f1:Push register1, "spawn_count", register1, "spawn_count"
+GetMember
+Increment
+SetMember
+Push register1, "spawn_count"
+GetMember
+Push register1, "max_spawn_count"
+GetMember
+Less2
+Not
+Not
+If loc033a
+Push 0, register1, "trySpawn"
+CallMethod
+Pop
+Push register1, "spawn_count", 0
+SetMember
+}
+loc033a:SetMember
+Push register2, "trySpawn"
+DefineFunction2 "", 0, 6, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "getSpawnCount"
+CallMethod
+StoreRegister 4
+Pop
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "getSpawnCountLeft"
+CallMethod
+StoreRegister 3
+Pop
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "getSpawnCountRight"
+CallMethod
+StoreRegister 2
+Pop
+Push register4, 6
+Less2
+Not
+If loc047c
+Push register3, 3
+Less2
+PushDuplicate
+Not
+If loc03dc
+Pop
+Push register2, 3
+Less2
+loc03dc:Not
+If loc0405
+Push 2
+RandomNumber
+StoreRegister 5
+Pop
+Push register5, 1, register1, "spawnBot"
+CallMethod
+Pop
+Jump loc047c
+loc0405:Push register2, 3
+Equals2
+PushDuplicate
+Not
+If loc0423
+Pop
+Push register3, 3
+Less2
+loc0423:Not
+If loc0445
+Push 0, 1, register1, "spawnBot"
+CallMethod
+Pop
+Jump loc047c
+loc0445:Push register3, 3
+Equals2
+PushDuplicate
+Not
+If loc0463
+Pop
+Push register2, 3
+Less2
+loc0463:Not
+If loc047c
+Push 1, 1, register1, "spawnBot"
+CallMethod
+Pop
+}
+loc047c:SetMember
+Push register2, "spawnBot"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "dir" {
+Push undefined
+StoreRegister 3
+Pop
+Push undefined
+StoreRegister 2
+Pop
+Push register4, 0
+Equals2
+Not
+If loc04f8
+Push register1, "_x"
+GetMember
+Push register1, "left_spawn"
+GetMember
+Push "_x"
+GetMember
+Add2
+StoreRegister 3
+Pop
+Push register1, "_y"
+GetMember
+Push register1, "left_spawn"
+GetMember
+Push "_y"
+GetMember
+Add2
+StoreRegister 2
+Pop
+Jump loc0541
+loc04f8:Push register4, 1
+Equals2
+Not
+If loc0541
+Push register1, "_x"
+GetMember
+Push register1, "right_spawn"
+GetMember
+Push "_x"
+GetMember
+Add2
+StoreRegister 3
+Pop
+Push register1, "_y"
+GetMember
+Push register1, "right_spawn"
+GetMember
+Push "_y"
+GetMember
+Add2
+StoreRegister 2
+Pop
+loc0541:Push register4, register2, register3, register1, "_name"
+GetMember
+Push 4, register1, "game"
+GetMember
+Push "spawnBot"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getOnScreen"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "screen_test"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push true
+Equals2
+Not
+If loc059d
+Push true
+Return
+loc059d:Push false
+Return
+}
+SetMember
+Push register2, "doExplode"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 100, register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 4, register1, "game"
+GetMember
+Push "createExplosion"
+CallMethod
+Pop
+Push register1, "debris"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "spawn_count", 0
+SetMember
+Push register2, "max_spawn_count", 100
+SetMember
+Push register2, "debris", "id", 16, "x", -2, "y", -36, 3
+InitObject
+Push "id", 15, "x", 10, "y", -20, 3
+InitObject
+Push "id", 14, "x", -7, "y", -13, 3
+InitObject
+Push 3, "Array"
+NewObject
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Hive"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc06dd:Pop

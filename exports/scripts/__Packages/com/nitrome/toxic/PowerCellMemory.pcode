@@ -1,0 +1,331 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "PowerCellMemory", "toxic_power_cells", "SharedObject", "getLocal", "data", "pc", "length", "Array", "powercells", "prototype", "getTotalCollected", "getCollected", "ln", "row", "col", "setCollected", "push", "finaliseLevel", "flush", "clearAll", "clear", "getLevelCollected", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0133
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0133:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc016b
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc016b:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc01af
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc01af:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellMemory"
+GetMember
+Not
+Not
+If loc061c
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellMemory"
+DefineFunction2 "", 0, 5, false, false, true, false, true, false, false, true, false {
+Push "toxic_power_cells", 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push false
+StoreRegister 3
+Pop
+Push register2, "data"
+GetMember
+Enumerate2
+loc0222:StoreRegister 0
+Push null
+Equals2
+If loc0249
+Push register0
+StoreRegister 4
+Pop
+Push true
+StoreRegister 3
+Pop
+Jump loc0222
+loc0249:Push register3
+Not
+If loc029f
+Push register2, "data"
+GetMember
+Push "pc"
+GetMember
+Push "length"
+GetMember
+Push 0
+Greater
+Not
+If loc0280
+Jump loc029a
+loc0280:Push register2, "data"
+GetMember
+Push "pc", 0, "Array"
+NewObject
+SetMember
+loc029a:Jump loc02b9
+loc029f:Push register2, "data"
+GetMember
+Push "pc", 0, "Array"
+NewObject
+SetMember
+loc02b9:Push register1, "powercells", 0, "Array"
+NewObject
+SetMember
+Push register1, "powercells", register2, "data"
+GetMember
+Push "pc"
+GetMember
+SetMember
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "getTotalCollected"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, true, false, false {
+Push "toxic_power_cells", 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 1
+Pop
+Push register1, "data"
+GetMember
+Push "pc"
+GetMember
+Push "length"
+GetMember
+Return
+}
+SetMember
+Push register2, "getCollected"
+DefineFunction2 "", 3, 6, false, false, true, false, true, false, false, true, false, 4, "level_number", 3, "row", 5, "col" {
+Push register1, "powercells"
+GetMember
+Push "length"
+GetMember
+Push 0
+Greater
+Not
+If loc041f
+Push 0
+StoreRegister 2
+Pop
+loc038e:Push register2, register1, "powercells"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc041f
+Push register1, "powercells"
+GetMember
+Push register2
+GetMember
+Push "ln"
+GetMember
+Push register4
+Equals2
+PushDuplicate
+Not
+If loc03e1
+Pop
+Push register1, "powercells"
+GetMember
+Push register2
+GetMember
+Push "row"
+GetMember
+Push register3
+Equals2
+loc03e1:PushDuplicate
+Not
+If loc0403
+Pop
+Push register1, "powercells"
+GetMember
+Push register2
+GetMember
+Push "col"
+GetMember
+Push register5
+Equals2
+loc0403:Not
+If loc040f
+Push true
+Return
+loc040f:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc038e
+loc041f:Push false
+Return
+}
+SetMember
+Push register2, "setCollected"
+DefineFunction2 "", 3, 6, false, false, true, false, true, false, false, true, false, 5, "level_number", 2, "row", 4, "col" {
+Push "ln", register5, "row", register2, "col", register4, 3
+InitObject
+Push 1, register1, "powercells"
+GetMember
+Push "push"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finaliseLevel"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push "toxic_power_cells", 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, "data"
+GetMember
+Push "pc", register1, "powercells"
+GetMember
+SetMember
+Push 0, register2, "flush"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "clearAll"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, true, false, false {
+Push "toxic_power_cells", 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 1
+Pop
+Push 0, register1, "clear"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getLevelCollected"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, true, false, false, 4, "level_number" {
+Push "toxic_power_cells", 1, "SharedObject"
+GetVariable
+Push "getLocal"
+CallMethod
+StoreRegister 2
+Pop
+Push 0
+StoreRegister 3
+Pop
+Push register2, "data"
+GetMember
+Push "pc"
+GetMember
+Push "length"
+GetMember
+Push 0
+Greater
+Not
+If loc05e6
+Push 0
+StoreRegister 1
+Pop
+loc0588:Push register1, register2, "data"
+GetMember
+Push "pc"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc05e6
+Push register2, "data"
+GetMember
+Push "pc"
+GetMember
+Push register1
+GetMember
+Push "ln"
+GetMember
+Push register4
+Equals2
+Not
+If loc05d6
+Push register3
+Increment
+StoreRegister 3
+Pop
+loc05d6:Push register1
+Increment
+StoreRegister 1
+Pop
+Jump loc0588
+loc05e6:Push register3
+Return
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellMemory"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc061c:Pop

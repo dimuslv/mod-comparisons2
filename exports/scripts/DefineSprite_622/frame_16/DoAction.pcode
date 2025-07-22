@@ -1,0 +1,11 @@
+ConstantPool "this", "_parent", "startWalk"
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "startWalk"
+CallMethod
+Pop
+Stop

@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.WalkerBomb"
+GetVariable
+Push "walker_bomb", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

@@ -1,0 +1,257 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Acid", "MovieClip", "prototype", "init", "acid_clip", "_x", "_y", "Global", "level_height", "smoke_bubble_holder", "wall_overlay", "_width", "level_width", "doPause", "stop", "doUnpause", "play", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00f2
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00f2:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc012a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc012a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc016e
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc016e:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Acid"
+GetMember
+Not
+Not
+If loc045d
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Acid"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Acid"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "acid_clip"
+GetMember
+Push "_x", 0
+SetMember
+Push register1, "acid_clip"
+GetMember
+Push "_y", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push 60
+Subtract
+SetMember
+Push register1, "smoke_bubble_holder"
+GetMember
+Push "_x", 0
+SetMember
+Push register1, "smoke_bubble_holder"
+GetMember
+Push "_y", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push 60
+Subtract
+SetMember
+Push register1, "wall_overlay"
+GetMember
+Push "_y", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push 191
+Subtract
+SetMember
+Push register1, "wall_overlay"
+GetMember
+Push "_width", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "doPause"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push register1, "smoke_bubble_holder"
+GetMember
+Enumerate2
+loc0313:StoreRegister 0
+Push null
+Equals2
+If loc034e
+Push register0
+StoreRegister 2
+Pop
+Push 0, register1, "smoke_bubble_holder"
+GetMember
+Push register2
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc0313
+loc034e:Push register1, "acid_clip"
+GetMember
+Enumerate2
+loc0357:StoreRegister 0
+Push null
+Equals2
+If loc0392
+Push register0
+StoreRegister 2
+Pop
+Push 0, register1, "acid_clip"
+GetMember
+Push register2
+GetMember
+Push "stop"
+CallMethod
+Pop
+Jump loc0357
+}
+loc0392:SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push register1, "smoke_bubble_holder"
+GetMember
+Enumerate2
+loc03ae:StoreRegister 0
+Push null
+Equals2
+If loc03e9
+Push register0
+StoreRegister 2
+Pop
+Push 0, register1, "smoke_bubble_holder"
+GetMember
+Push register2
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc03ae
+loc03e9:Push register1, "acid_clip"
+GetMember
+Enumerate2
+loc03f2:StoreRegister 0
+Push null
+Equals2
+If loc042d
+Push register0
+StoreRegister 2
+Pop
+Push 0, register1, "acid_clip"
+GetMember
+Push register2
+GetMember
+Push "play"
+CallMethod
+Pop
+Jump loc03f2
+}
+loc042d:SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Acid"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc045d:Pop

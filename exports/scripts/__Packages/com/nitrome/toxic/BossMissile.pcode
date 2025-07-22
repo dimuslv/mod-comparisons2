@@ -1,0 +1,266 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "BossMissile", "MovieClip", "prototype", "init", "game", "deg", "speed", "_rotation", "start_x", "_x", "start_y", "_y", "distance", "main", "TrigLookup", "cos_data", "sin_data", "Global", "level_width", "level_height", "_name", "removeMissile", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0123
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0123:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc015b
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc015b:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc019f
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc019f:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossMissile"
+GetMember
+Not
+Not
+If loc04c9
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossMissile"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossMissile"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "game", 2, "deg" {
+Push register1, "game", register3
+SetMember
+Push register1, "deg", register2, 90
+Subtract
+SetMember
+Push register1, "deg"
+GetMember
+Push 0
+Less2
+Not
+If loc0291
+Push register1, "deg", register1, "deg"
+GetMember
+Push 360
+Add2
+SetMember
+loc0291:Push register1, "deg"
+GetMember
+Push 360
+Less2
+Not
+Not
+If loc02bf
+Push register1, "deg", register1, "deg"
+GetMember
+Push 360
+Subtract
+SetMember
+loc02bf:Push register1, "speed", 8
+SetMember
+Push register1, "_rotation", register2
+SetMember
+Push register1, "start_x", register1, "_x"
+GetMember
+SetMember
+Push register1, "start_y", register1, "_y"
+GetMember
+SetMember
+Push register1, "distance", 0
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push register1, "distance", register1, "distance"
+GetMember
+Push register1, "speed"
+GetMember
+Add2
+SetMember
+Push register1, "start_x"
+GetMember
+Push register1, "distance"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "cos_data"
+GetMember
+Push register1, "deg"
+GetMember
+GetMember
+Multiply
+Add2
+StoreRegister 3
+Pop
+Push register1, "start_y"
+GetMember
+Push register1, "distance"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "sin_data"
+GetMember
+Push register1, "deg"
+GetMember
+GetMember
+Multiply
+Add2
+StoreRegister 2
+Pop
+Push register1, "_x", register3
+SetMember
+Push register1, "_y", register2
+SetMember
+Push register1, "_x"
+GetMember
+Push 0
+Less2
+PushDuplicate
+If loc03fd
+Pop
+Push register1, "_x"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Greater
+loc03fd:PushDuplicate
+If loc0419
+Pop
+Push register1, "_y"
+GetMember
+Push 0
+Less2
+loc0419:PushDuplicate
+If loc0447
+Pop
+Push register1, "_y"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc0447:Not
+If loc047b
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeMissile"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+loc047b:SetMember
+Push register2, "distance", 0
+SetMember
+Push register2, "speed", 8
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossMissile"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc04c9:Pop

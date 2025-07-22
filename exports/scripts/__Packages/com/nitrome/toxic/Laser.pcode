@@ -1,0 +1,1060 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Laser", "MovieClip", "prototype", "doPause", "spark_clip", "stop", "doUnpause", "play", "main", "getOnScreen", "_visible", "path_move", "NONE", "_x", "x_speed", "_y", "y_speed", "next_x", "getNextPathPoint", "next_y", "rot", "deg", "start_deg", "game", "deg_count", "TrigLookup", "cos_data", "sin_data", "Math", "round", "Global", "level_width", "level_height", "getSceneryCollision", "getRobotCollision", "getBombCollision", "drawLine", "laser_head", "_rotation", "screen_test", "hitTest", "drawing_clip", "clear", "lineStyle", "moveTo", "lineTo", "LOOP", "next_path_point", "path_length", "ALT", "alt_dir", "path", "getCol", "getRow", "init", "getPathLength", "getStartRow", "getStartCol", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0267
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0267:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc029f
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc029f:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc02e3
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc02e3:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Laser"
+GetMember
+Not
+Not
+If loc13c7
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Laser"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Laser"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "spark_clip"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "spark_clip"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 9, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "getOnScreen"
+CallMethod
+Push true
+Equals2
+Not
+If loc0401
+Push register1, "_visible", true
+SetMember
+Jump loc040b
+loc0401:Push register1, "_visible", false
+SetMember
+loc040b:Push register1, "path_move"
+GetMember
+Push register1, "NONE"
+GetMember
+Equals2
+Not
+Not
+If loc04de
+Push register1, "_x", register1, "_x"
+GetMember
+Push register1, "x_speed"
+GetMember
+Add2
+SetMember
+Push register1, "_y", register1, "_y"
+GetMember
+Push register1, "y_speed"
+GetMember
+Add2
+SetMember
+Push register1, "x_speed"
+GetMember
+Push 0
+Equals2
+Not
+Not
+If loc0499
+Push register1, "_x"
+GetMember
+Push register1, "next_x"
+GetMember
+Equals2
+Not
+If loc0494
+Push 0, register1, "getNextPathPoint"
+CallMethod
+Pop
+loc0494:Jump loc04de
+loc0499:Push register1, "y_speed"
+GetMember
+Push 0
+Equals2
+Not
+Not
+If loc04de
+Push register1, "_y"
+GetMember
+Push register1, "next_y"
+GetMember
+Equals2
+Not
+If loc04de
+Push 0, register1, "getNextPathPoint"
+CallMethod
+Pop
+loc04de:Push register1, "rot"
+GetMember
+Push 0
+Equals2
+Not
+If loc050b
+Push register1, "deg", register1, "start_deg"
+GetMember
+SetMember
+Jump loc057c
+loc050b:Push register1, "rot"
+GetMember
+Push 1
+Equals2
+Not
+If loc0543
+Push register1, "deg", register1, "game"
+GetMember
+Push "deg_count"
+GetMember
+Push register1, "start_deg"
+GetMember
+Add2
+SetMember
+Jump loc057c
+loc0543:Push register1, "rot"
+GetMember
+Push -1
+Equals2
+Not
+If loc057c
+Push register1, "deg", 360, register1, "game"
+GetMember
+Push "deg_count"
+GetMember
+Push register1, "start_deg"
+GetMember
+Add2
+Subtract
+SetMember
+loc057c:Push register1, "deg"
+GetMember
+Push 90
+Subtract
+StoreRegister 6
+Pop
+Push register6, 0
+Less2
+Not
+If loc05b7
+Push register6, 360
+Add2
+StoreRegister 6
+Pop
+loc05b7:Push register6, 360
+Less2
+Not
+Not
+If loc05d9
+Push register6, 360
+Subtract
+StoreRegister 6
+Pop
+loc05d9:Push 1
+StoreRegister 2
+Pop
+loc05e6:Push register2, 600
+Greater
+Not
+Not
+If loc079d
+Push register2, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "cos_data"
+GetMember
+Push register6
+GetMember
+Multiply
+StoreRegister 8
+Pop
+Push register2, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "sin_data"
+GetMember
+Push register6
+GetMember
+Multiply
+StoreRegister 7
+Pop
+Push register1, "_x"
+GetMember
+Push register8
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 4
+Pop
+Push register1, "_y"
+GetMember
+Push register7
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 3
+Pop
+Push register4, 0
+Less2
+PushDuplicate
+If loc06cf
+Pop
+Push register4, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Greater
+loc06cf:PushDuplicate
+If loc06e5
+Pop
+Push register3, 0
+Less2
+loc06e5:PushDuplicate
+If loc070d
+Pop
+Push register3, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc070d:Not
+If loc0718
+Jump loc079d
+loc0718:Push register3, register4, 2, register1, "game"
+GetMember
+Push "getSceneryCollision"
+CallMethod
+Push true
+Equals2
+PushDuplicate
+If loc0759
+Pop
+Push register3, register4, 2, register1, "game"
+GetMember
+Push "getRobotCollision"
+CallMethod
+Push true
+Equals2
+loc0759:PushDuplicate
+If loc077d
+Pop
+Push register3, register4, 2, register1, "game"
+GetMember
+Push "getBombCollision"
+CallMethod
+Push true
+Equals2
+loc077d:Not
+If loc0788
+Jump loc079d
+loc0788:Push register2, 20
+Add2
+StoreRegister 2
+Pop
+Jump loc05e6
+loc079d:Push register2, 10
+Subtract
+StoreRegister 5
+Pop
+loc07ad:Push register5, register2, 10
+Add2
+Greater
+Not
+Not
+If loc0962
+Push register5, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "cos_data"
+GetMember
+Push register6
+GetMember
+Multiply
+StoreRegister 8
+Pop
+Push register5, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "sin_data"
+GetMember
+Push register6
+GetMember
+Multiply
+StoreRegister 7
+Pop
+Push register1, "_x"
+GetMember
+Push register8
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 4
+Pop
+Push register1, "_y"
+GetMember
+Push register7
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 3
+Pop
+Push register4, 0
+Less2
+PushDuplicate
+If loc0899
+Pop
+Push register4, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Greater
+loc0899:PushDuplicate
+If loc08af
+Pop
+Push register3, 0
+Less2
+loc08af:PushDuplicate
+If loc08d7
+Pop
+Push register3, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc08d7:Not
+If loc08e2
+Jump loc0962
+loc08e2:Push register3, register4, 2, register1, "game"
+GetMember
+Push "getSceneryCollision"
+CallMethod
+Push true
+Equals2
+PushDuplicate
+If loc0923
+Pop
+Push register3, register4, 2, register1, "game"
+GetMember
+Push "getRobotCollision"
+CallMethod
+Push true
+Equals2
+loc0923:PushDuplicate
+If loc0947
+Pop
+Push register3, register4, 2, register1, "game"
+GetMember
+Push "getBombCollision"
+CallMethod
+Push true
+Equals2
+loc0947:Not
+If loc0952
+Jump loc0962
+loc0952:Push register5
+Increment
+StoreRegister 5
+Pop
+Jump loc07ad
+loc0962:Push register7, register8, 2, register1, "drawLine"
+CallMethod
+Pop
+Push register1, "spark_clip"
+GetMember
+Push "_x", register8
+SetMember
+Push register1, "spark_clip"
+GetMember
+Push "_y", register7
+SetMember
+Push register1, "laser_head"
+GetMember
+Push "_rotation", register1, "deg"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "getOnScreen"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push true, register2, "game"
+GetMember
+Push "_y"
+GetMember
+Push register1, "_y"
+GetMember
+Add2
+Push register2, "game"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Add2
+Push 3, register2, "screen_test"
+GetMember
+Push "hitTest"
+CallMethod
+Push true
+Equals2
+PushDuplicate
+If loc0a71
+Pop
+Push true, register2, "game"
+GetMember
+Push "_y"
+GetMember
+Push register1, "_y"
+GetMember
+Add2
+Push register1, "spark_clip"
+GetMember
+Push "_y"
+GetMember
+Add2
+Push register2, "game"
+GetMember
+Push "_x"
+GetMember
+Push register1, "_x"
+GetMember
+Add2
+Push register1, "spark_clip"
+GetMember
+Push "_x"
+GetMember
+Add2
+Push 3, register2, "screen_test"
+GetMember
+Push "hitTest"
+CallMethod
+Push true
+Equals2
+loc0a71:Not
+If loc0a7d
+Push true
+Return
+loc0a7d:Push false
+Return
+}
+SetMember
+Push register2, "drawLine"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "xpos", 2, "ypos" {
+Push 0, register1, "drawing_clip"
+GetMember
+Push "clear"
+CallMethod
+Pop
+Push true, 100, 3955744, 5, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+Push true, 100, 6595873, 3, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+Push true, 100, 8641826, 1, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "getNextPathPoint"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "path_move"
+GetMember
+Push register1, "LOOP"
+GetMember
+Equals2
+Not
+If loc0c4d
+Push register1, "next_path_point", register1, "next_path_point"
+GetMember
+Increment
+SetMember
+Push register1, "next_path_point"
+GetMember
+Push register1, "path_length"
+GetMember
+Push 1
+Subtract
+Greater
+Not
+If loc0c48
+Push register1, "next_path_point", 1
+SetMember
+loc0c48:Jump loc0d21
+loc0c4d:Push register1, "path_move"
+GetMember
+Push register1, "ALT"
+GetMember
+Equals2
+Not
+If loc0d21
+Push register1, "next_path_point", register1, "next_path_point"
+GetMember
+Push register1, "alt_dir"
+GetMember
+Add2
+SetMember
+Push register1, "alt_dir"
+GetMember
+Push 1
+Equals2
+Not
+If loc0cd9
+Push register1, "next_path_point"
+GetMember
+Push register1, "path_length"
+GetMember
+Push 1
+Subtract
+Greater
+Not
+If loc0cd4
+Push register1, "next_path_point", register1, "next_path_point"
+GetMember
+Push 2
+Subtract
+SetMember
+Push register1, "alt_dir", -1
+SetMember
+loc0cd4:Jump loc0d21
+loc0cd9:Push register1, "alt_dir"
+GetMember
+Push -1
+Equals2
+Not
+If loc0d21
+Push register1, "next_path_point"
+GetMember
+Push -1
+Equals2
+Not
+If loc0d21
+Push register1, "next_path_point", 1
+SetMember
+Push register1, "alt_dir", 1
+SetMember
+loc0d21:Push register1, "next_x", register1, "next_path_point"
+GetMember
+Push 1, register1, "path"
+GetMember
+Push "getCol"
+CallMethod
+Push 32
+Multiply
+Push 16
+Add2
+SetMember
+Push register1, "next_y", register1, "next_path_point"
+GetMember
+Push 1, register1, "path"
+GetMember
+Push "getRow"
+CallMethod
+Push 32
+Multiply
+Push 16
+Add2
+SetMember
+Push register1, "next_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc0dae
+Push register1, "x_speed", -1
+SetMember
+Jump loc0dff
+loc0dae:Push register1, "next_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc0dd7
+Push register1, "x_speed", 1
+SetMember
+Jump loc0dff
+loc0dd7:Push register1, "next_x"
+GetMember
+Push register1, "_x"
+GetMember
+Equals2
+Not
+If loc0dff
+Push register1, "x_speed", 0
+SetMember
+loc0dff:Push register1, "next_y"
+GetMember
+Push register1, "_y"
+GetMember
+Less2
+Not
+If loc0e28
+Push register1, "y_speed", -1
+SetMember
+Jump loc0e79
+loc0e28:Push register1, "next_y"
+GetMember
+Push register1, "_y"
+GetMember
+Greater
+Not
+If loc0e51
+Push register1, "y_speed", 1
+SetMember
+Jump loc0e79
+loc0e51:Push register1, "next_y"
+GetMember
+Push register1, "_y"
+GetMember
+Equals2
+Not
+If loc0e79
+Push register1, "y_speed", 0
+SetMember
+}
+loc0e79:SetMember
+Push register2, "init"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 4, "game", 2, "id", 3, "path" {
+Push register1, "game", register4
+SetMember
+Push register1, "path", register3
+SetMember
+Push register1, "path_length", 0, register3, "getPathLength"
+CallMethod
+SetMember
+Push register1, "path_length"
+GetMember
+Push 0
+Equals2
+Not
+If loc0ef3
+Push register1, "path_move", register1, "NONE"
+GetMember
+SetMember
+Jump loc10d9
+loc0ef3:Push register1, "path_length"
+GetMember
+Push 1
+Subtract
+Push 1, register3, "getRow"
+CallMethod
+Push 0, register3, "getStartRow"
+CallMethod
+Equals2
+PushDuplicate
+Not
+If loc0f5b
+Pop
+Push register1, "path_length"
+GetMember
+Push 1
+Subtract
+Push 1, register3, "getCol"
+CallMethod
+Push 0, register3, "getStartCol"
+CallMethod
+Equals2
+loc0f5b:Not
+If loc0f73
+Push register1, "path_move", register1, "LOOP"
+GetMember
+SetMember
+Jump loc0f80
+loc0f73:Push register1, "path_move", register1, "ALT"
+GetMember
+SetMember
+loc0f80:Push register1, "next_path_point", 1
+SetMember
+Push register1, "next_x", register1, "next_path_point"
+GetMember
+Push 1, register3, "getCol"
+CallMethod
+Push 32
+Multiply
+Push 16
+Add2
+SetMember
+Push register1, "next_y", register1, "next_path_point"
+GetMember
+Push 1, register3, "getRow"
+CallMethod
+Push 32
+Multiply
+Push 16
+Add2
+SetMember
+Push register1, "next_x"
+GetMember
+Push register1, "_x"
+GetMember
+Less2
+Not
+If loc100e
+Push register1, "x_speed", -1
+SetMember
+Jump loc105f
+loc100e:Push register1, "next_x"
+GetMember
+Push register1, "_x"
+GetMember
+Greater
+Not
+If loc1037
+Push register1, "x_speed", 1
+SetMember
+Jump loc105f
+loc1037:Push register1, "next_x"
+GetMember
+Push register1, "_x"
+GetMember
+Equals2
+Not
+If loc105f
+Push register1, "x_speed", 0
+SetMember
+loc105f:Push register1, "next_y"
+GetMember
+Push register1, "_y"
+GetMember
+Less2
+Not
+If loc1088
+Push register1, "y_speed", -1
+SetMember
+Jump loc10d9
+loc1088:Push register1, "next_y"
+GetMember
+Push register1, "_y"
+GetMember
+Greater
+Not
+If loc10b1
+Push register1, "y_speed", 1
+SetMember
+Jump loc10d9
+loc10b1:Push register1, "next_y"
+GetMember
+Push register1, "_y"
+GetMember
+Equals2
+Not
+If loc10d9
+Push register1, "y_speed", 0
+SetMember
+loc10d9:Push register2, 211
+Equals2
+Not
+If loc1109
+Push register1, "rot", 1
+SetMember
+Push register1, "start_deg", 180
+SetMember
+Jump loc1330
+loc1109:Push register2, 212
+Equals2
+Not
+If loc1139
+Push register1, "rot", 1
+SetMember
+Push register1, "start_deg", 270
+SetMember
+Jump loc1330
+loc1139:Push register2, 213
+Equals2
+Not
+If loc116d
+Push register1, "rot", 1
+SetMember
+Push register1, "start_deg", 0
+SetMember
+Jump loc1330
+loc116d:Push register2, 214
+Equals2
+Not
+If loc119d
+Push register1, "rot", 1
+SetMember
+Push register1, "start_deg", 90
+SetMember
+Jump loc1330
+loc119d:Push register2, 215
+Equals2
+Not
+If loc11cd
+Push register1, "rot", -1
+SetMember
+Push register1, "start_deg", 180
+SetMember
+Jump loc1330
+loc11cd:Push register2, 216
+Equals2
+Not
+If loc11fd
+Push register1, "rot", -1
+SetMember
+Push register1, "start_deg", 270
+SetMember
+Jump loc1330
+loc11fd:Push register2, 217
+Equals2
+Not
+If loc1231
+Push register1, "rot", -1
+SetMember
+Push register1, "start_deg", 0
+SetMember
+Jump loc1330
+loc1231:Push register2, 218
+Equals2
+Not
+If loc1261
+Push register1, "rot", -1
+SetMember
+Push register1, "start_deg", 90
+SetMember
+Jump loc1330
+loc1261:Push register2, 219
+Equals2
+Not
+If loc1295
+Push register1, "rot", 0
+SetMember
+Push register1, "start_deg", 180
+SetMember
+Jump loc1330
+loc1295:Push register2, 220
+Equals2
+Not
+If loc12c9
+Push register1, "rot", 0
+SetMember
+Push register1, "start_deg", 270
+SetMember
+Jump loc1330
+loc12c9:Push register2, 221
+Equals2
+Not
+If loc1301
+Push register1, "rot", 0
+SetMember
+Push register1, "start_deg", 0
+SetMember
+Jump loc1330
+loc1301:Push register2, 222
+Equals2
+Not
+If loc1330
+Push register1, "rot", 0
+SetMember
+Push register1, "start_deg", 90
+SetMember
+loc1330:Push register1, "deg", register1, "start_deg"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "NONE", 0
+SetMember
+Push register2, "LOOP", 1
+SetMember
+Push register2, "ALT", 2
+SetMember
+Push register2, "alt_dir", 1
+SetMember
+Push register2, "x_speed", 0
+SetMember
+Push register2, "y_speed", 0
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Laser"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc13c7:Pop

@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.PowerCellPanel"
+GetVariable
+Push "powercell_panel", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

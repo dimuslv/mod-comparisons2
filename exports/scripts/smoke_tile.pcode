@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.SmokeTile"
+GetVariable
+Push "smoke_tile", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

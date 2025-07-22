@@ -1,0 +1,1 @@
+clip.gotoAndStop(this.id);

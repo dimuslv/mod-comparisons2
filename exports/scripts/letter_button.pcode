@@ -1,0 +1,7 @@
+Push "com.nitrome.highscore.LetterButton"
+GetVariable
+Push "letter_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

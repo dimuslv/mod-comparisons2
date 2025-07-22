@@ -1,0 +1,16 @@
+Push "centered", true
+SetVariable
+Push "line_spacing", 9
+SetVariable
+Push "text", "submit score"
+SetVariable
+Push "tracking", -3
+SetVariable
+Push "enabled", true
+SetVariable
+Push "visible", true
+SetVariable
+Push "minHeight", 0
+SetVariable
+Push "minWidth", 0
+SetVariable

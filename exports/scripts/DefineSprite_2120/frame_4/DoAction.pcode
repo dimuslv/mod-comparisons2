@@ -1,0 +1,7 @@
+Push "warpout", 1, "_root"
+GetVariable
+Push "sfx"
+GetMember
+Push "playSound"
+CallMethod
+Pop

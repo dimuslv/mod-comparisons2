@@ -1,0 +1,7 @@
+Push "game", 1, "_root"
+GetVariable
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop

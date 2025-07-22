@@ -1,0 +1,9 @@
+Push "this"
+GetVariable
+Push "id"
+GetMember
+Push 1, "clip"
+GetVariable
+Push "gotoAndStop"
+CallMethod
+Pop

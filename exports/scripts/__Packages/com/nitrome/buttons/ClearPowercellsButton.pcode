@@ -1,0 +1,142 @@
+ConstantPool "_global", "com", "Object", "nitrome", "buttons", "ClearPowercellsButton", "SimpleButton", "prototype", "doPress", "toxic", "PowerCellMemory", "clearAll", "_parent", "pc_text", "textColor", "text", "POWER CELLS CLEARED!", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00ea
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00ea:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0122
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0122:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Not
+Not
+If loc0166
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons", 0, "Object"
+NewObject
+SetMember
+loc0166:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ClearPowercellsButton"
+GetMember
+Not
+Not
+If loc02ab
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ClearPowercellsButton"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ClearPowercellsButton"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPress"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellMemory"
+NewMethod
+StoreRegister 2
+Pop
+Push 0, register2, "clearAll"
+CallMethod
+Pop
+Push register1, "_parent"
+GetMember
+Push "pc_text"
+GetMember
+Push "textColor", 16777215
+SetMember
+Push register1, "_parent"
+GetMember
+Push "pc_text"
+GetMember
+Push "text", "POWER CELLS CLEARED!"
+SetMember
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "ClearPowercellsButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc02ab:Pop

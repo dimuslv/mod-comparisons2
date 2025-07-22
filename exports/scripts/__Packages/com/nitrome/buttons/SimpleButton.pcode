@@ -1,0 +1,132 @@
+ConstantPool "_global", "com", "Object", "nitrome", "buttons", "SimpleButton", "MovieClip", "prototype", "onRollOver", "over", "gotoAndStop", "onRollOut", "up", "onPress", "doPress", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00bc
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00bc:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00f4
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00f4:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Not
+Not
+If loc0138
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons", 0, "Object"
+NewObject
+SetMember
+loc0138:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Not
+Not
+If loc026c
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onRollOver"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "over", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "onRollOut"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "onPress"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "doPress"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doPress"
+DefineFunction "", 0 {
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc026c:Pop

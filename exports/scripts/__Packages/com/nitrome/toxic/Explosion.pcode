@@ -1,0 +1,474 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Explosion", "MovieClip", "prototype", "init", "game", "bomb_type", "bomb_dir", "cutHole", "_name", "_y", "_x", "*", "split", "length", "cutDiggerHole", "cutBossHole", "checkRobots", "xMin", "xMax", "yMin", "yMax", "img2", "flash", "display", "BitmapData", "geom", "Matrix", "tx", "ty", "ColorTransform", "danger_holder", "draw", "difference", "explosion_holder", "getColorBoundsRect", "width", "findExplodeRobot", "dispose", "img3", "object_holder", "findExplodeHoloButton", "getFinalBoss", "img4", "heart_holder", "hitFinalBoss", "checkFirstInfoPoint", "finishExplode", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc021f
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc021f:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0257
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0257:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc029b
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc029b:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Explosion"
+GetMember
+Not
+Not
+If loc0a7c
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Explosion"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Explosion"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 3, "game", 2, "bomb_type", 4, "bomb_dir" {
+Push register1, "game", register3
+SetMember
+Push register1, "bomb_type", register2
+SetMember
+Push register1, "bomb_dir", register4
+SetMember
+}
+SetMember
+Push register2, "cutHole"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "cutHole"
+CallMethod
+Pop
+Push register1, "bomb_type"
+GetMember
+Push 3
+Equals2
+Not
+If loc0439
+Push "*", 1, register1, "_name"
+GetMember
+Push "split"
+CallMethod
+StoreRegister 2
+Pop
+Push register2, register2, "length"
+GetMember
+Push 1
+Subtract
+GetMember
+ToNumber
+Push 1
+Less2
+Not
+Not
+If loc0439
+Push register1, "bomb_dir"
+GetMember
+Push register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 4, register1, "game"
+GetMember
+Push "cutDiggerHole"
+CallMethod
+Pop
+}
+loc0439:SetMember
+Push register2, "cutBossHole"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "cutBossHole"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "checkRobots"
+DefineFunction2 "", 0, 7, false, true, true, false, true, false, false, true, true {
+Push 0, "Object"
+NewObject
+StoreRegister 4
+Pop
+Push register4, "xMin", register1, "_x"
+GetMember
+Push 60
+Subtract
+SetMember
+Push register4, "xMax", register1, "_x"
+GetMember
+Push 60
+Add2
+SetMember
+Push register4, "yMin", register1, "_y"
+GetMember
+Push 60
+Subtract
+SetMember
+Push register4, "yMax", register1, "_y"
+GetMember
+Push 60
+Add2
+SetMember
+Push register3, "img2", false, register4, "yMax"
+GetMember
+Push register4, "yMin"
+GetMember
+Subtract
+Push register4, "xMax"
+GetMember
+Push register4, "xMin"
+GetMember
+Subtract
+Push 3, "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 0, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Matrix"
+NewMethod
+StoreRegister 5
+Pop
+Push register5, "tx", register5, "tx"
+GetMember
+Push register4, "xMin"
+GetMember
+Subtract
+SetMember
+Push register5, "ty", register5, "ty"
+GetMember
+Push register4, "yMin"
+GetMember
+Subtract
+SetMember
+Push 255, -255, -255, 255, 1, 1, 1, 1, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+Push register5, register2, "game"
+GetMember
+Push "danger_holder"
+GetMember
+Push 3, register3, "img2"
+GetMember
+Push "draw"
+CallMethod
+Pop
+Push "difference", 255, 255, 255, 255, 1, 1, 1, 1, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+Push register5, register2, "game"
+GetMember
+Push "explosion_holder"
+GetMember
+Push 4, register3, "img2"
+GetMember
+Push "draw"
+CallMethod
+Pop
+Push 4278255615, 4294967295, 2, register3, "img2"
+GetMember
+Push "getColorBoundsRect"
+CallMethod
+StoreRegister 6
+Pop
+Push register6, "width"
+GetMember
+Push 0
+Equals2
+Not
+If loc0695
+Jump loc06b1
+loc0695:Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "findExplodeRobot"
+CallMethod
+Pop
+loc06b1:Push 0, register3, "img2"
+GetMember
+Push "dispose"
+CallMethod
+Pop
+Push register3, "img2"
+Delete
+Pop
+Push register3, "img3", false, register4, "yMax"
+GetMember
+Push register4, "yMin"
+GetMember
+Subtract
+Push register4, "xMax"
+GetMember
+Push register4, "xMin"
+GetMember
+Subtract
+Push 3, "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 255, -255, -255, 255, 1, 1, 1, 1, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+Push register5, register2, "game"
+GetMember
+Push "object_holder"
+GetMember
+Push 3, register3, "img3"
+GetMember
+Push "draw"
+CallMethod
+Pop
+Push "difference", 255, 255, 255, 255, 1, 1, 1, 1, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+Push register5, register2, "game"
+GetMember
+Push "explosion_holder"
+GetMember
+Push 4, register3, "img3"
+GetMember
+Push "draw"
+CallMethod
+Pop
+Push 4278255615, 4294967295, 2, register3, "img3"
+GetMember
+Push "getColorBoundsRect"
+CallMethod
+StoreRegister 6
+Pop
+Push register6, "width"
+GetMember
+Push 0
+Equals2
+Not
+If loc0824
+Jump loc0840
+loc0824:Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "findExplodeHoloButton"
+CallMethod
+Pop
+loc0840:Push 0, register3, "img3"
+GetMember
+Push "dispose"
+CallMethod
+Pop
+Push register3, "img3"
+Delete
+Pop
+Push 0, register1, "game"
+GetMember
+Push "getFinalBoss"
+CallMethod
+Push true
+Equals2
+Not
+If loc0a0f
+Push register3, "img4", false, register4, "yMax"
+GetMember
+Push register4, "yMin"
+GetMember
+Subtract
+Push register4, "xMax"
+GetMember
+Push register4, "xMin"
+GetMember
+Subtract
+Push 3, "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 255, -255, -255, 255, 1, 1, 1, 1, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+Push register5, register2, "game"
+GetMember
+Push "heart_holder"
+GetMember
+Push 3, register3, "img4"
+GetMember
+Push "draw"
+CallMethod
+Pop
+Push "difference", 255, 255, 255, 255, 1, 1, 1, 1, 8, "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "ColorTransform"
+NewMethod
+Push register5, register2, "game"
+GetMember
+Push "explosion_holder"
+GetMember
+Push 4, register3, "img4"
+GetMember
+Push "draw"
+CallMethod
+Pop
+Push 4278255615, 4294967295, 2, register3, "img4"
+GetMember
+Push "getColorBoundsRect"
+CallMethod
+StoreRegister 6
+Pop
+Push register6, "width"
+GetMember
+Push 0
+Equals2
+Not
+If loc09d6
+Jump loc09ee
+loc09d6:Push 0, register1, "game"
+GetMember
+Push "hitFinalBoss"
+CallMethod
+Pop
+loc09ee:Push 0, register3, "img4"
+GetMember
+Push "dispose"
+CallMethod
+Pop
+Push register3, "img4"
+Delete
+Pop
+loc0a0f:Push 0, register1, "game"
+GetMember
+Push "checkFirstInfoPoint"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "finishExplode"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Explosion"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0a7c:Pop

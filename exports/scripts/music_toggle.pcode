@@ -1,0 +1,7 @@
+Push "com.nitrome.game.MusicToggle"
+GetVariable
+Push "music_toggle", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

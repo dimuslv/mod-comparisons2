@@ -1,0 +1,139 @@
+ConstantPool "_global", "mx", "Object", "transitions", "easing", "None", "prototype", "easeNone", "easeIn", "easeOut", "easeInOut", "version", "1.1.0.52", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc00a6
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc00a6:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Not
+Not
+If loc00de
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions", 0, "Object"
+NewObject
+SetMember
+loc00de:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Not
+Not
+If loc0122
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "easing", 0, "Object"
+NewObject
+SetMember
+loc0122:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Push "None"
+GetMember
+Not
+Not
+If loc0282
+Push "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Push "None"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "easeNone"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 2, "t", 4, "b", 3, "c", 1, "d" {
+Push register3, register2
+Multiply
+Push register1
+Divide
+Push register4
+Add2
+Return
+}
+SetMember
+Push register1, "easeIn"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 2, "t", 4, "b", 3, "c", 1, "d" {
+Push register3, register2
+Multiply
+Push register1
+Divide
+Push register4
+Add2
+Return
+}
+SetMember
+Push register1, "easeOut"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 2, "t", 4, "b", 3, "c", 1, "d" {
+Push register3, register2
+Multiply
+Push register1
+Divide
+Push register4
+Add2
+Return
+}
+SetMember
+Push register1, "easeInOut"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 2, "t", 4, "b", 3, "c", 1, "d" {
+Push register3, register2
+Multiply
+Push register1
+Divide
+Push register4
+Add2
+Return
+}
+SetMember
+Push register1, "version", "1.1.0.52"
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "easing"
+GetMember
+Push "None"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0282:Pop

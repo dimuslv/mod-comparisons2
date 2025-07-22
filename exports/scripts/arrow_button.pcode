@@ -1,0 +1,7 @@
+Push "com.nitrome.highscore.ArrowButton"
+GetVariable
+Push "arrow_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

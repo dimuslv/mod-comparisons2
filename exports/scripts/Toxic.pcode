@@ -1,0 +1,8 @@
+ConstantPool "Toxic", "Object", "registerClass"
+Push "Toxic"
+GetVariable
+Push "Toxic", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

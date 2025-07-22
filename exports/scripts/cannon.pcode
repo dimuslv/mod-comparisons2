@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.Cannon"
+GetVariable
+Push "cannon", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

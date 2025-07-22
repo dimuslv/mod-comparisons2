@@ -1,0 +1,159 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "LevelEnd", "MovieClip", "prototype", "init", "game", "doCollect", "collected", "getPlayerOnGround", "transportPlayer", "collect", "gotoAndStop", "finishCollect", "_name", "removeObject", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0102
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0102:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc013a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc013a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc017e
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc017e:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelEnd"
+GetMember
+Not
+Not
+If loc0321
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelEnd"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelEnd"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "doCollect"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push false
+Equals2
+PushDuplicate
+Not
+If loc0270
+Pop
+Push 0, register1, "game"
+GetMember
+Push "getPlayerOnGround"
+CallMethod
+Push true
+Equals2
+loc0270:Not
+If loc02a6
+Push false, 1, register1, "game"
+GetMember
+Push "transportPlayer"
+CallMethod
+Pop
+Push "collect", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "collected", true
+SetMember
+}
+loc02a6:SetMember
+Push register2, "finishCollect"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeObject"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "collected", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelEnd"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0321:Pop

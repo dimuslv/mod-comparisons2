@@ -1,0 +1,443 @@
+ConstantPool "_global", "com", "Object", "nitrome", "highscore", "HiscoreBoard", "ng", "getNitrome", "start_interval", "loadHiscores", "setInterval", "off", "gotoAndStop", "MovieClip", "prototype", "clearInterval", "loading hiscores from: ", "saved_min_rank", "lv_sender", "LoadVars", "lv_receiver", "onLoad", "result", "hiscoreboard", "displayHiscores", "min_rank", "game_name", "getGameId", "time_based", "0", "getRetrieveScoreUrl", "POST", "sendAndLoad", "displayHiscores: ", "getHighscoreLine", "score_line_", "hideAway", "score", "username", "displayData", "displayNextButton", "next_arrow", "display", "displayPreviousButton", "prev_arrow", "reveal", "gotoAndPlay", "error with high scores", "getZeroFill", "zero_fill", "getMaxDigits", "max_digits", "shiftScoresPrev", "loading", "shiftScoresNext", "displayHiscoresMTV", "length", "user_name", "", "undefined", "no leaderboard data", "max_rank", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc02fe
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc02fe:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0336
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0336:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Not
+Not
+If loc037a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore", 0, "Object"
+NewObject
+SetMember
+loc037a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreBoard"
+GetMember
+Not
+Not
+If loc09f7
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreBoard"
+DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 0, register3, "ng"
+GetMember
+Push "getNitrome"
+CallMethod
+Push true
+Equals2
+Not
+If loc0419
+Push register1, "start_interval", 1, 100, "loadHiscores", register1, 4, "setInterval"
+CallFunction
+SetMember
+Jump loc0429
+loc0419:Push "off", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+loc0429:StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreBoard"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "loadHiscores"
+DefineFunction2 "", 1, 6, false, true, true, false, true, false, false, true, false, 4, "min_rank" {
+Push register1, "start_interval"
+GetMember
+Push 1, "clearInterval"
+CallFunction
+Pop
+Push "loading hiscores from: ", register4
+Add2
+Trace
+Push register1, "saved_min_rank", register4
+SetMember
+Push register2, "lv_sender", 0, "LoadVars"
+NewObject
+SetMember
+Push register2, "lv_receiver", 0, "LoadVars"
+NewObject
+SetMember
+Push register2, "lv_receiver"
+GetMember
+Push "onLoad"
+DefineFunction2 "", 1, 4, false, true, true, false, true, false, true, false, false, 3, "success" {
+Push register3
+Not
+If loc051f
+Push register1, "lv_receiver"
+GetMember
+Push "result"
+GetMember
+StoreRegister 2
+Pop
+Push register2, 1, register1, "hiscoreboard"
+GetMember
+Push "displayHiscores"
+CallMethod
+Pop
+Jump loc051f
+}
+loc051f:SetMember
+Push register2, "lv_sender"
+GetMember
+Push "min_rank", register4
+ToString
+SetMember
+Push register2, "lv_sender"
+GetMember
+Push "game_name", 0, register2, "ng"
+GetMember
+Push "getGameId"
+CallMethod
+SetMember
+Push register2, "lv_sender"
+GetMember
+Push "time_based", "0"
+SetMember
+Push 0, register2, "ng"
+GetMember
+Push "getRetrieveScoreUrl"
+CallMethod
+StoreRegister 3
+Pop
+Push "POST", register2, "lv_receiver"
+GetMember
+Push register3, 3, register2, "lv_sender"
+GetMember
+Push "sendAndLoad"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "displayHiscores"
+DefineFunction2 "", 1, 7, false, true, true, false, true, false, false, true, false, 6, "data_string" {
+Push "displayHiscores: ", register6
+Add2
+Trace
+Push register6, "0"
+Equals2
+Not
+Not
+If loc0760
+Push 0
+StoreRegister 3
+Pop
+loc05e8:Push register3, 9
+Greater
+Not
+Not
+If loc069f
+Push register3, 1
+Add2
+Push register6, 2, register2, "ng"
+GetMember
+Push "getHighscoreLine"
+CallMethod
+StoreRegister 4
+Pop
+Push "score_line_", register3, 1
+Add2
+Add2
+ToString
+StoreRegister 5
+Pop
+Push register4, null
+Equals2
+Not
+If loc065d
+Push 0, register1, register5
+GetMember
+Push "hideAway"
+CallMethod
+Pop
+Jump loc068f
+loc065d:Push register4, "score"
+GetMember
+Push register4, "username"
+GetMember
+Push register1, "saved_min_rank"
+GetMember
+Push register3
+Add2
+Push 3, register1, register5
+GetMember
+Push "displayData"
+CallMethod
+Pop
+loc068f:Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc05e8
+loc069f:Push register6, 1, register2, "ng"
+GetMember
+Push "displayNextButton"
+CallMethod
+Push true
+Equals2
+Not
+If loc06dd
+Push 0, register1, "next_arrow"
+GetMember
+Push "display"
+CallMethod
+Pop
+Jump loc06f5
+loc06dd:Push 0, register1, "next_arrow"
+GetMember
+Push "hideAway"
+CallMethod
+Pop
+loc06f5:Push register6, 1, register2, "ng"
+GetMember
+Push "displayPreviousButton"
+CallMethod
+Push true
+Equals2
+Not
+If loc0733
+Push 0, register1, "prev_arrow"
+GetMember
+Push "display"
+CallMethod
+Pop
+Jump loc074b
+loc0733:Push 0, register1, "prev_arrow"
+GetMember
+Push "hideAway"
+CallMethod
+Pop
+loc074b:Push "reveal", 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+Jump loc0766
+loc0760:Push "error with high scores"
+Trace
+}
+loc0766:SetMember
+Push register2, "getZeroFill"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "zero_fill"
+GetMember
+Return
+}
+SetMember
+Push register2, "getMaxDigits"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "max_digits"
+GetMember
+Return
+}
+SetMember
+Push register2, "shiftScoresPrev"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push "loading", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "saved_min_rank"
+GetMember
+Push 10
+Subtract
+StoreRegister 2
+Pop
+Push register2, 1
+Less2
+Not
+If loc07f5
+Push 1
+StoreRegister 2
+Pop
+loc07f5:Push register2, 1, register1, "loadHiscores"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "shiftScoresNext"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push "loading", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "saved_min_rank"
+GetMember
+Push 10
+Add2
+StoreRegister 2
+Pop
+Push register2, 1, register1, "loadHiscores"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "displayHiscoresMTV"
+DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 6, "leaderboard" {
+Push register6, "length"
+GetMember
+Push 0
+Greater
+Not
+If loc099d
+Push 0
+StoreRegister 2
+Pop
+loc089a:Push register2, 10
+Greater
+Not
+Not
+If loc0988
+Push register6, register2
+GetMember
+Push "user_name"
+GetMember
+ToString
+StoreRegister 3
+Pop
+Push register6, register2
+GetMember
+Push "score"
+GetMember
+ToString
+StoreRegister 5
+Pop
+Push register3, ""
+Equals2
+PushDuplicate
+If loc08ea
+Pop
+Push register3, undefined
+Equals2
+loc08ea:PushDuplicate
+If loc08f9
+Pop
+Push register3, "undefined"
+Equals2
+loc08f9:Not
+If loc093e
+Push 0, register1, "score_line_", register2, 1
+Add2
+Add2
+ToString
+GetMember
+Push "hideAway"
+CallMethod
+Pop
+Push 0, register1, "next_arrow"
+GetMember
+Push "hideAway"
+CallMethod
+Pop
+Jump loc0978
+loc093e:Push "score_line_", register2, 1
+Add2
+Add2
+ToString
+StoreRegister 4
+Pop
+Push register5, register3, register1, "saved_min_rank"
+GetMember
+Push register2
+Add2
+Push 3, register1, register4
+GetMember
+Push "displayData"
+CallMethod
+Pop
+loc0978:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc089a
+loc0988:Push "reveal", 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+Jump loc09a3
+loc099d:Push "no leaderboard data"
+Trace
+}
+loc09a3:SetMember
+Push register2, "max_digits", 8
+SetMember
+Push register2, "zero_fill", false
+SetMember
+Push register2, "max_rank", 100
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreBoard"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc09f7:Pop

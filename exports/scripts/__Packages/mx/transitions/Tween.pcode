@@ -1,0 +1,619 @@
+ConstantPool "_global", "mx", "Object", "transitions", "Tween", "OnEnterFrameBeacon", "init", "length", "obj", "prop", "begin", "__set__position", "__set__duration", "useSeconds", "func", "__set__finish", "_listeners", "addListener", "start", "prototype", "__set__time", "prevTime", "_time", "__get__duration", "looping", "_duration", "rewind", "update", "onMotionLooped", "broadcastMessage", "stop", "onMotionFinished", "__get__time", "Infinity", "__set__FPS", "isPlaying", "stopEnterFrame", "_fps", "startEnterFrame", "__get__FPS", "setPosition", "__get__position", "prevPos", "_pos", "onMotionChanged", "updateAfterEvent", "getPosition", "change", "__get__finish", "continueTo", "position", "yoyo", "MovieClip", "_intervalID", "onEnterFrame", "setInterval", "removeListener", "clearInterval", "onMotionStarted", "onMotionStopped", "resume", "fixTime", "onMotionResumed", "fforward", "nextFrame", "_startTime", "prevFrame", "toString", "[Tween]", "version", "1.1.0.52", "__initBeacon", "__initBroadcaster", "BroadcasterMX", "initialize", "FPS", "addProperty", "duration", "finish", "time", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc0386
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc0386:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Not
+Not
+If loc03be
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions", 0, "Object"
+NewObject
+SetMember
+loc03be:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "Tween"
+GetMember
+Not
+Not
+If loc0ea6
+Push "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "Tween"
+DefineFunction2 "", 7, 10, false, false, true, false, false, true, false, true, false, 8, "obj", 5, "prop", 4, "func", 3, "begin", 6, "finish", 7, "duration", 9, "useSeconds" {
+Push 0, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "OnEnterFrameBeacon"
+GetMember
+Push "init"
+CallMethod
+Pop
+Push register2, "length"
+GetMember
+Not
+Not
+If loc0466
+Push undefined
+Return
+loc0466:Push register1, "obj", register8
+SetMember
+Push register1, "prop", register5
+SetMember
+Push register1, "begin", register3
+SetMember
+Push register3, 1, register1, "__set__position"
+CallMethod
+Pop
+Push register7, 1, register1, "__set__duration"
+CallMethod
+Pop
+Push register1, "useSeconds", register9
+SetMember
+Push register4
+Not
+If loc04c3
+Push register1, "func", register4
+SetMember
+loc04c3:Push register6, 1, register1, "__set__finish"
+CallMethod
+Pop
+Push register1, "_listeners", 0
+InitArray
+SetMember
+Push register1, 1, register1, "addListener"
+CallMethod
+Pop
+Push 0, register1, "start"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "__set__time"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "t" {
+Push register1, "prevTime", register1, "_time"
+GetMember
+SetMember
+Push register2, 0, register1, "__get__duration"
+CallMethod
+Greater
+Not
+If loc05fb
+Push register1, "looping"
+GetMember
+Not
+If loc05a5
+Push register2, register1, "_duration"
+GetMember
+Subtract
+Push 1, register1, "rewind"
+CallMethod
+Pop
+Push 0, register1, "update"
+CallMethod
+Pop
+Push register1, "onMotionLooped", 2, register1, "broadcastMessage"
+CallMethod
+Pop
+Jump loc05f6
+loc05a5:Push register1, "useSeconds"
+GetMember
+Not
+If loc05d2
+Push register1, "_time", register1, "_duration"
+GetMember
+SetMember
+Push 0, register1, "update"
+CallMethod
+Pop
+loc05d2:Push 0, register1, "stop"
+CallMethod
+Pop
+Push register1, "onMotionFinished", 2, register1, "broadcastMessage"
+CallMethod
+Pop
+loc05f6:Jump loc0655
+loc05fb:Push register2, 0
+Less2
+Not
+If loc0639
+Push 0, register1, "rewind"
+CallMethod
+Pop
+Push 0, register1, "update"
+CallMethod
+Pop
+Jump loc0655
+loc0639:Push register1, "_time", register2
+SetMember
+Push 0, register1, "update"
+CallMethod
+Pop
+loc0655:Push 0, register1, "__get__time"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__time"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_time"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__duration"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, true, 3, "d" {
+Push register1, "_duration", register3, null
+Equals2
+PushDuplicate
+If loc06bb
+Pop
+Push register3, 0
+Greater
+Not
+loc06bb:If loc06ca
+Push register3
+Jump loc06d2
+loc06ca:Push register2, "Infinity"
+GetMember
+loc06d2:SetMember
+Push 0, register1, "__get__duration"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__duration"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_duration"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__FPS"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, false, 3, "fps" {
+Push register1, "isPlaying"
+GetMember
+StoreRegister 2
+Pop
+Push 0, register1, "stopEnterFrame"
+CallMethod
+Pop
+Push register1, "_fps", register3
+SetMember
+Push register2
+Not
+If loc075f
+Push 0, register1, "startEnterFrame"
+CallMethod
+Pop
+loc075f:Push 0, register1, "__get__FPS"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__FPS"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_fps"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__position"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "p" {
+Push register2, 1, register1, "setPosition"
+CallMethod
+Pop
+Push 0, register1, "__get__position"
+CallMethod
+Return
+}
+SetMember
+Push register2, "setPosition"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "p" {
+Push register1, "prevPos", register1, "_pos"
+GetMember
+SetMember
+Push register1, "obj"
+GetMember
+Push register1, "prop"
+GetMember
+Push register1, "_pos", register2
+StoreRegister 0
+SetMember
+Push register0
+SetMember
+Push register1, "_pos"
+GetMember
+Push register1, "onMotionChanged", 3, register1, "broadcastMessage"
+CallMethod
+Pop
+Push 0, "updateAfterEvent"
+CallFunction
+Pop
+}
+SetMember
+Push register2, "__get__position"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "getPosition"
+CallMethod
+Return
+}
+SetMember
+Push register2, "getPosition"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "t" {
+Push register2, undefined
+Equals2
+Not
+If loc088b
+Push register1, "_time"
+GetMember
+StoreRegister 2
+Pop
+loc088b:Push register1, "_duration"
+GetMember
+Push register1, "change"
+GetMember
+Push register1, "begin"
+GetMember
+Push register2, 4, register1, "func"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__set__finish"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "f" {
+Push register1, "change", register2, register1, "begin"
+GetMember
+Subtract
+SetMember
+Push 0, register1, "__get__finish"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__finish"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "begin"
+GetMember
+Push register1, "change"
+GetMember
+Add2
+Return
+}
+SetMember
+Push register2, "continueTo"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "finish", 2, "duration" {
+Push register1, "begin", register1, "position"
+GetMember
+SetMember
+Push register3, 1, register1, "__set__finish"
+CallMethod
+Pop
+Push register2, undefined
+Equals2
+Not
+Not
+If loc0970
+Push register2, 1, register1, "__set__duration"
+CallMethod
+Pop
+loc0970:Push 0, register1, "start"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "yoyo"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "__get__time"
+CallMethod
+Push register1, "begin"
+GetMember
+Push 2, register1, "continueTo"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "startEnterFrame"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, true {
+Push register1, "_fps"
+GetMember
+Push undefined
+Equals2
+Not
+If loc09fd
+Push register1, 1, register2, "MovieClip"
+GetMember
+Push "addListener"
+CallMethod
+Pop
+Jump loc0a1f
+loc09fd:Push register1, "_intervalID", 1000, register1, "_fps"
+GetMember
+Divide
+Push "onEnterFrame", register1, 3, "setInterval"
+CallFunction
+SetMember
+loc0a1f:Push register1, "isPlaying", true
+SetMember
+}
+SetMember
+Push register2, "stopEnterFrame"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, true {
+Push register1, "_fps"
+GetMember
+Push undefined
+Equals2
+Not
+If loc0a6a
+Push register1, 1, register2, "MovieClip"
+GetMember
+Push "removeListener"
+CallMethod
+Pop
+Jump loc0a7e
+loc0a6a:Push register1, "_intervalID"
+GetMember
+Push 1, "clearInterval"
+CallFunction
+Pop
+loc0a7e:Push register1, "isPlaying", false
+SetMember
+}
+SetMember
+Push register2, "start"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "rewind"
+CallMethod
+Pop
+Push 0, register1, "startEnterFrame"
+CallMethod
+Pop
+Push register1, "onMotionStarted", 2, register1, "broadcastMessage"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "stop"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "stopEnterFrame"
+CallMethod
+Pop
+Push register1, "onMotionStopped", 2, register1, "broadcastMessage"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "resume"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "fixTime"
+CallMethod
+Pop
+Push 0, register1, "startEnterFrame"
+CallMethod
+Pop
+Push register1, "onMotionResumed", 2, register1, "broadcastMessage"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "rewind"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "t" {
+Push register1, "_time", register2, undefined
+Equals2
+If loc0b81
+Push register2
+Jump loc0b8d
+loc0b81:Push 0
+loc0b8d:SetMember
+Push 0, register1, "fixTime"
+CallMethod
+Pop
+Push 0, register1, "update"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "fforward"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_duration"
+GetMember
+Push 1, register1, "__set__time"
+CallMethod
+Pop
+Push 0, register1, "fixTime"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "nextFrame"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "useSeconds"
+GetMember
+Not
+If loc0c34
+GetTime
+Push register1, "_startTime"
+GetMember
+Subtract
+Push 1000
+Divide
+Push 1, register1, "__set__time"
+CallMethod
+Pop
+Jump loc0c53
+loc0c34:Push register1, "_time"
+GetMember
+Push 1
+Add2
+Push 1, register1, "__set__time"
+CallMethod
+Pop
+}
+loc0c53:SetMember
+Push register2, "onEnterFrame"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "nextFrame"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "prevFrame"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "useSeconds"
+GetMember
+Not
+Not
+If loc0cb9
+Push register1, "_time"
+GetMember
+Push 1
+Subtract
+Push 1, register1, "__set__time"
+CallMethod
+Pop
+}
+loc0cb9:SetMember
+Push register2, "toString"
+DefineFunction "", 0 {
+Push "[Tween]"
+Return
+}
+SetMember
+Push register2, "fixTime"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "useSeconds"
+GetMember
+Not
+If loc0d0b
+Push register1, "_startTime"
+GetTime
+Push register1, "_time"
+GetMember
+Push 1000
+Multiply
+Subtract
+SetMember
+}
+loc0d0b:SetMember
+Push register2, "update"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_time"
+GetMember
+Push 1, register1, "getPosition"
+CallMethod
+Push 1, register1, "__set__position"
+CallMethod
+Pop
+}
+SetMember
+Push register1, "version", "1.1.0.52"
+SetMember
+Push register1, "__initBeacon", 0, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "OnEnterFrameBeacon"
+GetMember
+Push "init"
+CallMethod
+SetMember
+Push register1, "__initBroadcaster", true, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "Tween"
+GetMember
+Push "prototype"
+GetMember
+Push 2, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+GetMember
+Push "initialize"
+CallMethod
+SetMember
+Push register2, "func"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 2, "t", 4, "b", 3, "c", 1, "d" {
+Push register3, register2
+Multiply
+Push register1
+Divide
+Push register4
+Add2
+Return
+}
+SetMember
+Push register2, "__set__FPS"
+GetMember
+Push register2, "__get__FPS"
+GetMember
+Push "FPS", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__duration"
+GetMember
+Push register2, "__get__duration"
+GetMember
+Push "duration", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__finish"
+GetMember
+Push register2, "__get__finish"
+GetMember
+Push "finish", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__position"
+GetMember
+Push register2, "__get__position"
+GetMember
+Push "position", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__time"
+GetMember
+Push register2, "__get__time"
+GetMember
+Push "time", 3, register2, "addProperty"
+CallMethod
+Push 1, null, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "Tween"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0ea6:Pop

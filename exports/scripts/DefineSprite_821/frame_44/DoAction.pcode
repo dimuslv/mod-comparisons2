@@ -1,0 +1,11 @@
+Push 0, "_root"
+GetVariable
+Push "game"
+GetMember
+Push "safe_holder"
+GetMember
+Push "boss2"
+GetMember
+Push "drawBody"
+CallMethod
+Pop

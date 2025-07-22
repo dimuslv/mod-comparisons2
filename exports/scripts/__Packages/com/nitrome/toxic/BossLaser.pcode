@@ -1,0 +1,519 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "BossLaser", "MovieClip", "prototype", "init", "game", "setActive", "deg", "rot", "laser_count", "active", "main", "_visible", "TrigLookup", "cos_data", "sin_data", "_x", "Math", "round", "_y", "Global", "level_width", "level_height", "getLaserSceneryCollision", "getRobotCollision", "getBombCollision", "drawLine", "spark_clip", "max_laser_count", "safe_holder", "boss2", "startFinishLaser", "drawing_clip", "clear", "lineStyle", "moveTo", "lineTo", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc01b7
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc01b7:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc01ef
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc01ef:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0233
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0233:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossLaser"
+GetMember
+Not
+Not
+If loc099c
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossLaser"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossLaser"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "setActive"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 2, "b", 4, "deg", 3, "rot" {
+Push register1, "deg", register4
+SetMember
+Push register1, "rot", register3
+SetMember
+Push register1, "laser_count", 0
+SetMember
+Push register1, "active", register2
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 10, false, true, true, false, true, false, false, true, false {
+Push register1, "_visible", register1, "active"
+GetMember
+SetMember
+Push register1, "active"
+GetMember
+Push true
+Equals2
+Not
+If loc07e4
+Push register1, "deg", register1, "deg"
+GetMember
+Push register1, "rot"
+GetMember
+Add2
+SetMember
+Push register1, "deg"
+GetMember
+Push 90
+Subtract
+StoreRegister 7
+Pop
+Push register7, 0
+Less2
+Not
+If loc03b3
+Push register7, 360
+Add2
+StoreRegister 7
+Pop
+loc03b3:Push register7, 360
+Less2
+Not
+Not
+If loc03d5
+Push register7, 360
+Subtract
+StoreRegister 7
+Pop
+loc03d5:Push 140
+StoreRegister 3
+Pop
+loc03e2:Push register3, 600
+Greater
+Not
+Not
+If loc0599
+Push register3, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "cos_data"
+GetMember
+Push register7
+GetMember
+Multiply
+StoreRegister 9
+Pop
+Push register3, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "sin_data"
+GetMember
+Push register7
+GetMember
+Multiply
+StoreRegister 8
+Pop
+Push register1, "_x"
+GetMember
+Push register9
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 5
+Pop
+Push register1, "_y"
+GetMember
+Push register8
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 4
+Pop
+Push register5, 0
+Less2
+PushDuplicate
+If loc04cb
+Pop
+Push register5, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Greater
+loc04cb:PushDuplicate
+If loc04e1
+Pop
+Push register4, 0
+Less2
+loc04e1:PushDuplicate
+If loc0509
+Pop
+Push register4, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc0509:Not
+If loc0514
+Jump loc0599
+loc0514:Push register4, register5, 2, register1, "game"
+GetMember
+Push "getLaserSceneryCollision"
+CallMethod
+Push true
+Equals2
+PushDuplicate
+If loc0555
+Pop
+Push register4, register5, 2, register1, "game"
+GetMember
+Push "getRobotCollision"
+CallMethod
+Push true
+Equals2
+loc0555:PushDuplicate
+If loc0579
+Pop
+Push register4, register5, 2, register1, "game"
+GetMember
+Push "getBombCollision"
+CallMethod
+Push true
+Equals2
+loc0579:Not
+If loc0584
+Jump loc0599
+loc0584:Push register3, 20
+Add2
+StoreRegister 3
+Pop
+Jump loc03e2
+loc0599:Push register3, 10
+Subtract
+StoreRegister 6
+Pop
+loc05a9:Push register6, register3, 10
+Add2
+Greater
+Not
+Not
+If loc075e
+Push register6, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "cos_data"
+GetMember
+Push register7
+GetMember
+Multiply
+StoreRegister 9
+Pop
+Push register6, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "sin_data"
+GetMember
+Push register7
+GetMember
+Multiply
+StoreRegister 8
+Pop
+Push register1, "_x"
+GetMember
+Push register9
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 5
+Pop
+Push register1, "_y"
+GetMember
+Push register8
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 4
+Pop
+Push register5, 0
+Less2
+PushDuplicate
+If loc0695
+Pop
+Push register5, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Greater
+loc0695:PushDuplicate
+If loc06ab
+Pop
+Push register4, 0
+Less2
+loc06ab:PushDuplicate
+If loc06d3
+Pop
+Push register4, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc06d3:Not
+If loc06de
+Jump loc075e
+loc06de:Push register4, register5, 2, register1, "game"
+GetMember
+Push "getLaserSceneryCollision"
+CallMethod
+Push true
+Equals2
+PushDuplicate
+If loc071f
+Pop
+Push register4, register5, 2, register1, "game"
+GetMember
+Push "getRobotCollision"
+CallMethod
+Push true
+Equals2
+loc071f:PushDuplicate
+If loc0743
+Pop
+Push register4, register5, 2, register1, "game"
+GetMember
+Push "getBombCollision"
+CallMethod
+Push true
+Equals2
+loc0743:Not
+If loc074e
+Jump loc075e
+loc074e:Push register6
+Increment
+StoreRegister 6
+Pop
+Jump loc05a9
+loc075e:Push register8, register9, 2, register1, "drawLine"
+CallMethod
+Pop
+Push register1, "spark_clip"
+GetMember
+Push "_x", register9
+SetMember
+Push register1, "spark_clip"
+GetMember
+Push "_y", register8
+SetMember
+Push register1, "laser_count", register1, "laser_count"
+GetMember
+Increment
+SetMember
+Push register1, "laser_count"
+GetMember
+Push register1, "max_laser_count"
+GetMember
+Less2
+Not
+Not
+If loc07e4
+Push 0, register2, "game"
+GetMember
+Push "safe_holder"
+GetMember
+Push "boss2"
+GetMember
+Push "startFinishLaser"
+CallMethod
+Pop
+Push register1, "active", false
+SetMember
+}
+loc07e4:SetMember
+Push register2, "drawLine"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "xpos", 2, "ypos" {
+Push 0, register1, "drawing_clip"
+GetMember
+Push "clear"
+CallMethod
+Pop
+Push true, 100, 3955744, 5, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+Push true, 100, 6595873, 3, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+Push true, 100, 8641826, 1, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "active", false
+SetMember
+Push register2, "laser_count", 0
+SetMember
+Push register2, "max_laser_count", 270
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossLaser"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc099c:Pop

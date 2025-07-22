@@ -1,0 +1,199 @@
+ConstantPool "_global", "com", "Object", "nitrome", "buttons", "NextLevelButton", "clearKeyListener", "onKeyDown", "Key", "getCode", "doPress", "addListener", "SimpleButton", "prototype", "done", "toxic", "Global", "level_id", "secret_id", "reload", "tt", "doTween", "removeListener", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc010a
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc010a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0142
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0142:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Not
+Not
+If loc0186
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons", 0, "Object"
+NewObject
+SetMember
+loc0186:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "NextLevelButton"
+GetMember
+Not
+Not
+If loc03ad
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "NextLevelButton"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 0, register1, "clearKeyListener"
+CallMethod
+Pop
+Push register1, "onKeyDown"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, "Key"
+GetVariable
+Push "getCode"
+CallMethod
+Push 32
+Equals2
+Not
+If loc0239
+Push 0, register1, "doPress"
+CallMethod
+Pop
+}
+loc0239:SetMember
+Push register1, 1, "Key"
+GetVariable
+Push "addListener"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "NextLevelButton"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPress"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "done"
+GetMember
+Push false
+Equals2
+Not
+If loc034c
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_id", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_id"
+GetMember
+Increment
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "secret_id", 0
+SetMember
+Push "reload", 1, register2, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Push register1, 1, "Key"
+GetVariable
+Push "removeListener"
+CallMethod
+Pop
+Push register1, "done", true
+SetMember
+}
+loc034c:SetMember
+Push register2, "clearKeyListener"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, 1, "Key"
+GetVariable
+Push "removeListener"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "done", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "NextLevelButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc03ad:Pop

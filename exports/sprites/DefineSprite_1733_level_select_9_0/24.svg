@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="51.0px" width="59.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 29.5, 25.5)">
+    <use ffdec:characterId="1732" height="51.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -29.5, -25.5)" width="59.0" xlink:href="#shape0"/>
+    <use ffdec:characterId="1730" height="8.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 2.0, -7.0)" width="15.0" xlink:href="#text0"/>
+    <use ffdec:characterId="1727" height="40.5" id="hit" transform="matrix(1.0, 0.0, 0.0, 1.0, -20.25, -24.25)" width="48.25" xlink:href="#sprite0"/>
+  </g>
+  <defs>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.5, 25.5)">
+      <pattern height="51" id="PatternID_1732_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -29.5, -25.5)" patternUnits="userSpaceOnUse" viewBox="0 0 59 51" width="59">
+        <image height="51" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="59" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAzCAYAAAApdnDeAAAA7klEQVR4Xu2VQQ7CMAwE+xEOfIgvIfFJTrwF5AtqXaxN0ih4mx1pDsVq4jmgLouo4/G6vrPrd27CDro/L7fMdollCDUPx7KEmodimULN5li2ULMpljHUrI5lDTWrYplDTcVGKJZIxUYolsh5Y+3hqP6CTNp+m9jvQwOKTWTXWH94NhXbij88m11jp/rPnirW5kh/QSarY/1vaxSbSMVGlMz9BZlUbETJ3F+QScVGlMyRfoGRdo1FKHagio1Ac4RiB6rYCDRHTBf7bzfLrHbbgeZUoBg0p+JUMQjFnhUUi+ZUoBg0p8J/k37p3xHJ+QB6bvxUEa8jXQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M-29.5 -25.5 L29.5 -25.5 29.5 25.5 -29.5 25.5 -29.5 -25.5" ffdec:fill-bitmapId="1731" style="fill:url(#PatternID_1732_1)"/>
+    </g>
+    <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -5.0, -3.0)">
+      <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 4.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_90"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 11.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 14.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_00"/>
+      </g>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_90">
+      <path d="M640.0 -384.0 L640.0 -512.0 256.0 -512.0 256.0 -384.0 640.0 -384.0 M640.0 -256.0 L128.0 -256.0 128.0 -640.0 768.0 -640.0 768.0 128.0 128.0 128.0 128.0 0.0 640.0 0.0 640.0 -256.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_.0">
+      <path d="M256.0 0.0 L256.0 128.0 128.0 128.0 128.0 0.0 256.0 0.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_00">
+      <path d="M640.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -512.0 M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 24.1, 20.25)">
+      <use ffdec:characterId="1726" height="40.5" transform="matrix(1.0, 0.0, 0.0, 1.0, -24.1, -20.25)" width="48.25" xlink:href="#shape1"/>
+    </g>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 24.1, 20.25)">
+      <path d="M-15.85 -20.25 L24.15 -20.25 24.15 20.25 -7.6 20.25 -8.1 20.0 -8.1 11.75 -16.6 11.75 -16.6 -4.25 -24.1 -4.25 -24.1 -12.0 -23.85 -12.0 -15.85 -20.25" fill="#ff0000" fill-opacity="0.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+  </defs>
+</svg>

@@ -1,0 +1,7 @@
+Push "com.nitrome.game.NoClicks"
+GetVariable
+Push "noclicks", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

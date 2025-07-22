@@ -1,0 +1,167 @@
+ConstantPool "_global", "com", "Object", "nitrome", "buttons", "SubmitScoreButton", "ng", "getLastSavedScore", "engine", "Score", "__get__value", "_visible", "SimpleButton", "prototype", "doPress", "setLastSavedScore", "mc", "startMenuMusic", "popup_holder", "hidePopUp", "submit_score", "tt", "doTween", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc011e
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc011e:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0156
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0156:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Not
+Not
+If loc019a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons", 0, "Object"
+NewObject
+SetMember
+loc019a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SubmitScoreButton"
+GetMember
+Not
+Not
+If loc0347
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SubmitScoreButton"
+DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 0, register3, "ng"
+GetMember
+Push "getLastSavedScore"
+CallMethod
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "__get__value"
+CallMethod
+Less2
+Not
+Not
+If loc0243
+Push register1, "_visible", false
+SetMember
+}
+loc0243:StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SubmitScoreButton"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPress"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "engine"
+GetMember
+Push "Score"
+GetMember
+Push "__get__value"
+CallMethod
+Push 1, register1, "ng"
+GetMember
+Push "setLastSavedScore"
+CallMethod
+Pop
+Push false, 1, register1, "mc"
+GetMember
+Push "startMenuMusic"
+CallMethod
+Pop
+Push 0, register1, "popup_holder"
+GetMember
+Push "hidePopUp"
+CallMethod
+Pop
+Push "submit_score", 1, register1, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SubmitScoreButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0347:Pop

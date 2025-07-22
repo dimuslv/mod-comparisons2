@@ -1,0 +1,7 @@
+Push 4, 1, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "setCollapseSize"
+CallMethod
+Pop

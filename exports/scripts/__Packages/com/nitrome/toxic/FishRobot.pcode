@@ -1,0 +1,229 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "FishRobot", "anim", "gotoAndPlay", "MovieClip", "prototype", "init", "game", "doExplode", "_name", "_y", "_x", "createExplosion", "debris", "createDebris", "removeMovieClip", "doSplash", "doPause", "stop", "doUnpause", "play", "id", "x", "y", "Array", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0115
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0115:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc014d
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc014d:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0191
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0191:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FishRobot"
+GetMember
+Not
+Not
+If loc04f3
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FishRobot"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 120
+RandomNumber
+Push 1
+Add2
+Push 1, register1, "anim"
+GetMember
+Push "gotoAndPlay"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FishRobot"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "doExplode"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 100, register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "anim"
+GetMember
+Push "anim"
+GetMember
+Push "_y"
+GetMember
+Add2
+Push register1, "_x"
+GetMember
+Push 4, register1, "game"
+GetMember
+Push "createExplosion"
+CallMethod
+Pop
+Push register1, "debris"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "anim"
+GetMember
+Push "anim"
+GetMember
+Push "_y"
+GetMember
+Add2
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doSplash"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_y"
+GetMember
+Push 40
+Subtract
+Push register1, "_x"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "doSplash"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+Push 0, register1, "anim"
+GetMember
+Push "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "debris", "id", 91, "x", -18, "y", 31, 3
+InitObject
+Push "id", 92, "x", 20, "y", 27, 3
+InitObject
+Push "id", 93, "x", -26, "y", 75, 3
+InitObject
+Push "id", 94, "x", 30, "y", 67, 3
+InitObject
+Push "id", 95, "x", -18, "y", 105, 3
+InitObject
+Push "id", 96, "x", 23, "y", 109, 3
+InitObject
+Push "id", 97, "x", 4, "y", 147, 3
+InitObject
+Push 7, "Array"
+NewObject
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FishRobot"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc04f3:Pop

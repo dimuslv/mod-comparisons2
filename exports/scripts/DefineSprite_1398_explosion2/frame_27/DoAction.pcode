@@ -1,0 +1,6 @@
+Push 0, "this"
+GetVariable
+Push "finishExplode"
+CallMethod
+Pop
+Stop

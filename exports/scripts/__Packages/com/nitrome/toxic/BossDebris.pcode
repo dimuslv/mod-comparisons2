@@ -1,0 +1,229 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "BossDebris", "_visible", "MovieClip", "prototype", "startDrop", "_y", "y_speed", "rot", "rot_dir", "gotoAndStop", "active", "main", "max_y_speed", "_rotation", "Global", "level_height", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00eb
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00eb:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0123
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0123:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0167
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0167:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossDebris"
+GetMember
+Not
+Not
+If loc0434
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossDebris"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "_visible", false
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossDebris"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "startDrop"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_y", 0
+SetMember
+Push register1, "y_speed", 1
+SetMember
+Push register1, "rot", 360
+RandomNumber
+SetMember
+Push register1, "rot_dir", 2
+RandomNumber
+SetMember
+Push register1, "rot_dir"
+GetMember
+Push 0
+Equals2
+Not
+If loc026f
+Push register1, "rot_dir", -1
+SetMember
+loc026f:Push 5
+RandomNumber
+Push 1
+Add2
+Push 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "active", true
+SetMember
+Push register1, "_visible", true
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "active"
+GetMember
+Not
+If loc03cf
+Push register1, "_y", register1, "_y"
+GetMember
+Push register1, "y_speed"
+GetMember
+Add2
+SetMember
+Push register1, "y_speed", register1, "y_speed"
+GetMember
+Increment
+SetMember
+Push register1, "y_speed"
+GetMember
+Push register1, "max_y_speed"
+GetMember
+Greater
+Not
+If loc030c
+Push register1, "y_speed", register1, "max_y_speed"
+GetMember
+SetMember
+loc030c:Push register1, "rot", register1, "rot"
+GetMember
+Push register1, "rot_dir"
+GetMember
+Add2
+SetMember
+Push register1, "rot"
+GetMember
+Push 0
+Less2
+Not
+If loc0353
+Push register1, "rot", register1, "rot"
+GetMember
+Push 360
+Add2
+SetMember
+loc0353:Push register1, "rot"
+GetMember
+Push 360
+Less2
+Not
+Not
+If loc0381
+Push register1, "rot", register1, "rot"
+GetMember
+Push 360
+Subtract
+SetMember
+loc0381:Push register1, "_rotation", register1, "rot"
+GetMember
+SetMember
+Push register1, "_y"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+Not
+If loc03cf
+Push register1, "_visible", false
+SetMember
+Push register1, "active", false
+SetMember
+}
+loc03cf:SetMember
+Push register2, "active", false
+SetMember
+Push register2, "rot", 0
+SetMember
+Push register2, "y_speed", 1
+SetMember
+Push register2, "max_y_speed", 20
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BossDebris"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0434:Pop

@@ -1,0 +1,219 @@
+ConstantPool "_global", "mx", "Object", "transitions", "BroadcasterMX", "prototype", "initialize", "broadcastMessage", "addListener", "removeListener", "_listeners", "Array", "push", "length", "splice", "shift", "concat", "apply", "version", "1.1.0.52", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Not
+Not
+If loc00f4
+Push "_global"
+GetVariable
+Push "mx", 0, "Object"
+NewObject
+SetMember
+loc00f4:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Not
+Not
+If loc012c
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions", 0, "Object"
+NewObject
+SetMember
+loc012c:Pop
+Push "_global"
+GetVariable
+Push "mx"
+GetMember
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+GetMember
+Not
+Not
+If loc0401
+Push "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1, "initialize"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 1, "o", 2, "dontCreateArray" {
+Push register1, "broadcastMessage"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc01ba
+Push register1, "broadcastMessage"
+Delete
+Pop
+loc01ba:Push register1, "addListener", "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+GetMember
+Push "prototype"
+GetMember
+Push "addListener"
+GetMember
+SetMember
+Push register1, "removeListener", "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+GetMember
+Push "prototype"
+GetMember
+Push "removeListener"
+GetMember
+SetMember
+Push register2
+Not
+Not
+If loc0220
+Push register1, "_listeners", 0, "Array"
+NewObject
+SetMember
+}
+loc0220:SetMember
+Push register2, "addListener"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "o" {
+Push register2, 1, register1, "removeListener"
+CallMethod
+Pop
+Push register1, "broadcastMessage"
+GetMember
+Push undefined
+Equals2
+Not
+If loc027c
+Push register1, "broadcastMessage", "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+GetMember
+Push "prototype"
+GetMember
+Push "broadcastMessage"
+GetMember
+SetMember
+loc027c:Push register2, 1, register1, "_listeners"
+GetMember
+Push "push"
+CallMethod
+Return
+}
+SetMember
+Push register2, "removeListener"
+DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "o" {
+Push register1, "_listeners"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "length"
+GetMember
+StoreRegister 3
+Pop
+loc02c2:Push register3, register3
+Decrement
+StoreRegister 3
+Pop
+Not
+If loc0321
+Push register2, register3
+GetMember
+Push register4
+Equals2
+Not
+If loc031c
+Push 1, register3, 2, register2, "splice"
+CallMethod
+Pop
+Push register2, "length"
+GetMember
+Not
+Not
+If loc0316
+Push register1, "broadcastMessage", undefined
+SetMember
+loc0316:Push true
+Return
+loc031c:Jump loc02c2
+loc0321:Push false
+Return
+}
+SetMember
+Push register2, "broadcastMessage"
+DefineFunction2 "", 0, 7, false, false, true, false, false, true, false, true, false {
+Push 0, register2, "shift"
+CallMethod
+ToString
+StoreRegister 5
+Pop
+Push 0, register1, "_listeners"
+GetMember
+Push "concat"
+CallMethod
+StoreRegister 4
+Pop
+Push register4, "length"
+GetMember
+StoreRegister 6
+Pop
+Push 0
+StoreRegister 3
+Pop
+loc038b:Push register3, register6
+Less2
+Not
+If loc03cd
+Push register2, register4, register3
+GetMember
+Push 2, register4, register3
+GetMember
+Push register5
+GetMember
+Push "apply"
+CallMethod
+Pop
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc038b
+}
+loc03cd:SetMember
+Push register1, "version", "1.1.0.52"
+SetMember
+Push 1, null, "mx"
+GetVariable
+Push "transitions"
+GetMember
+Push "BroadcasterMX"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0401:Pop

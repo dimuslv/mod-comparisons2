@@ -1,0 +1,7 @@
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "finishCollapse"
+CallMethod
+Pop

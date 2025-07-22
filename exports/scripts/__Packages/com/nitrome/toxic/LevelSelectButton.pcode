@@ -1,0 +1,412 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "LevelSelectButton", "MovieClip", "prototype", "onLoad", "init", "_", "_name", "split", "level_id", "secret_id", "hitArea", "hit", "ng", "getLevelUnlocked", "locked", "up", "gotoAndStop", "off", "level_name", "Global", "level_names", "level_powercell_count", "powercell_count", "real_level_id", "getSecretUnlocked", "secret_names", "secret_powercell_count", "onRollOver", "useHandCursor", "over", "_parent", "map_text", "text", ".", " - ", "powercell_text", "level_powercells", "/", "onRollOut", "CLICK A ZONE TO PLAY", "total_power_cells", "TOTAL_POWER_CELLS", "onPress", "intro", "tt", "doTween", "game", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0232
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0232:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc026a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc026a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc02ae
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc02ae:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelSelectButton"
+GetMember
+Not
+Not
+If loc07f9
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelSelectButton"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelSelectButton"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onLoad"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "init"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "init"
+DefineFunction2 "", 0, 4, false, true, true, false, true, false, false, true, false {
+Push "_", 1, register1, "_name"
+GetMember
+Push "split"
+CallMethod
+StoreRegister 3
+Pop
+Push register1, "level_id", register3, 1
+GetMember
+ToNumber
+SetMember
+Push register1, "secret_id", register3, 2
+GetMember
+ToNumber
+SetMember
+Push register1, "hitArea", register1, "hit"
+GetMember
+SetMember
+Push register1, "secret_id"
+GetMember
+Push 0
+Equals2
+Not
+If loc049d
+Push register1, "level_id"
+GetMember
+Push 1, register2, "ng"
+GetMember
+Push "getLevelUnlocked"
+CallMethod
+Push true
+Equals2
+Not
+If loc0419
+Push register1, "locked", false
+SetMember
+Push "up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc0433
+loc0419:Push register1, "locked", true
+SetMember
+Push "off", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc0433:Push register1, "level_name", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_names"
+GetMember
+Push register1, "level_id"
+GetMember
+GetMember
+SetMember
+Push register1, "level_powercell_count", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "powercell_count"
+GetMember
+Push register1, "level_id"
+GetMember
+GetMember
+SetMember
+Push register1, "real_level_id", register1, "level_id"
+GetMember
+SetMember
+Jump loc0582
+loc049d:Push register1, "secret_id"
+GetMember
+Push 1
+Equals2
+Not
+If loc0582
+Push register1, "level_id"
+GetMember
+Push 1, register2, "ng"
+GetMember
+Push "getSecretUnlocked"
+CallMethod
+Push true
+Equals2
+Not
+If loc04fa
+Push register1, "locked", false
+SetMember
+Push "up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc0514
+loc04fa:Push register1, "locked", true
+SetMember
+Push "off", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc0514:Push register1, "level_name", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "secret_names"
+GetMember
+Push register1, "level_id"
+GetMember
+GetMember
+SetMember
+Push register1, "level_powercell_count", "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "secret_powercell_count"
+GetMember
+Push register1, "level_id"
+GetMember
+GetMember
+SetMember
+Push register1, "real_level_id", register1, "level_id"
+GetMember
+Push 20
+Add2
+SetMember
+}
+loc0582:SetMember
+Push register2, "onRollOver"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "locked"
+GetMember
+Push true
+Equals2
+Not
+If loc05c8
+Push "off", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "useHandCursor", false
+SetMember
+Jump loc064c
+loc05c8:Push "over", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "useHandCursor", true
+SetMember
+Push register1, "_parent"
+GetMember
+Push "map_text"
+GetMember
+Push "text", register1, "level_id"
+GetMember
+Push "."
+Add2
+Push register1, "secret_id"
+GetMember
+Add2
+Push " - "
+Add2
+Push register1, "level_name"
+GetMember
+Add2
+ToString
+SetMember
+Push register1, "_parent"
+GetMember
+Push "powercell_text"
+GetMember
+Push "text", register2, "level_powercells"
+GetMember
+Push register1, "real_level_id"
+GetMember
+GetMember
+Push "/"
+Add2
+Push register1, "level_powercell_count"
+GetMember
+Add2
+ToString
+SetMember
+}
+loc064c:SetMember
+Push register2, "onRollOut"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "locked"
+GetMember
+Push true
+Equals2
+Not
+If loc0688
+Push "off", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc0698
+loc0688:Push "up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc0698:Push register1, "_parent"
+GetMember
+Push "map_text"
+GetMember
+Push "text", "CLICK A ZONE TO PLAY"
+SetMember
+Push register1, "_parent"
+GetMember
+Push "powercell_text"
+GetMember
+Push "text", register2, "total_power_cells"
+GetMember
+Push "/"
+Add2
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "TOTAL_POWER_CELLS"
+GetMember
+Add2
+ToString
+SetMember
+}
+SetMember
+Push register2, "onPress"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "locked"
+GetMember
+Push false
+Equals2
+Not
+If loc07bf
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_id", register1, "level_id"
+GetMember
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "secret_id", register1, "secret_id"
+GetMember
+SetMember
+Push register1, "level_id"
+GetMember
+Push 1
+Equals2
+PushDuplicate
+Not
+If loc0788
+Pop
+Push register1, "secret_id"
+GetMember
+Push 0
+Equals2
+loc0788:Not
+If loc07a9
+Push "intro", 1, register2, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Jump loc07bf
+loc07a9:Push "game", 1, register2, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+}
+loc07bf:SetMember
+Push register2, "locked", true
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "LevelSelectButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc07f9:Pop

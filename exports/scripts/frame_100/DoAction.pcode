@@ -1,0 +1,63 @@
+ConstantPool "pcm", "com", "nitrome", "toxic", "PowerCellMemory", "total_power_cells", "getTotalCollected", "powercell_text", "text", "/", "Global", "TOTAL_POWER_CELLS", "level_powercells", "Array", "i", "getLevelCollected"
+Push "pcm", 0, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellMemory"
+NewMethod
+DefineLocal
+Push "total_power_cells", 0, "pcm"
+GetVariable
+Push "getTotalCollected"
+CallMethod
+DefineLocal
+Push "powercell_text"
+GetVariable
+Push "text", "total_power_cells"
+GetVariable
+Push "/"
+Add2
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "TOTAL_POWER_CELLS"
+GetMember
+Add2
+ToString
+SetMember
+Push "level_powercells", 0, "Array"
+NewObject
+DefineLocal
+Push "i", 1
+DefineLocal
+loc0137:Push "i"
+GetVariable
+Push 40
+Greater
+Not
+Not
+If loc0180
+Push "level_powercells"
+GetVariable
+Push "i"
+GetVariable
+Push "i"
+GetVariable
+Push 1, "pcm"
+GetVariable
+Push "getLevelCollected"
+CallMethod
+SetMember
+Push "i", "i"
+GetVariable
+Increment
+SetVariable
+Jump loc0137
+loc0180:Stop

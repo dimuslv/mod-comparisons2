@@ -1,0 +1,160 @@
+ConstantPool "_global", "com", "Object", "nitrome", "highscore", "LetterButton", "letter_text", "_name", "MovieClip", "prototype", "onLoad", "letter_holder", "letter", "text", "onRollOver", "over", "gotoAndStop", "onRollOut", "up", "onPress", "_parent", "addLetter", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00fb
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00fb:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0133
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0133:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Not
+Not
+If loc0177
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore", 0, "Object"
+NewObject
+SetMember
+loc0177:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "LetterButton"
+GetMember
+Not
+Not
+If loc0310
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "LetterButton"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "letter_text", register1, "_name"
+GetMember
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "LetterButton"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onLoad"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "letter_holder"
+GetMember
+Push "letter"
+GetMember
+Push "text", register1, "_name"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "onRollOver"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "over", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "letter_holder"
+GetMember
+Push "letter"
+GetMember
+Push "text", register1, "_name"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "onRollOut"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "letter_holder"
+GetMember
+Push "letter"
+GetMember
+Push "text", register1, "_name"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "onPress"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "letter_text"
+GetMember
+Push 1, register1, "_parent"
+GetMember
+Push "addLetter"
+CallMethod
+Pop
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "LetterButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0310:Pop

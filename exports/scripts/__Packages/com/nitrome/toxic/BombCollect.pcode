@@ -1,0 +1,180 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "BombCollect", "MovieClip", "prototype", "init", "game", "bomb_type", "spawner", "doPause", "anim", "stop", "doUnpause", "play", "doCollect", "collected", "collect", "gotoAndStop", "setBombType", "bomb_panel", "collectBomb", "finishCollect", "normal", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc011d
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc011d:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0155
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0155:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0199
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0199:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BombCollect"
+GetMember
+Not
+Not
+If loc03b9
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BombCollect"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BombCollect"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 3, "game", 2, "bomb_type", 4, "spawner" {
+Push register1, "game", register3
+SetMember
+Push register1, "bomb_type", register2
+SetMember
+Push register1, "spawner", register4
+SetMember
+}
+SetMember
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push false
+Equals2
+Not
+If loc0352
+Push "collect", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push "collect", 1, register1, "spawner"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register1, "bomb_type"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "setBombType"
+CallMethod
+Pop
+Push register1, "bomb_type"
+GetMember
+Push 1, register2, "bomb_panel"
+GetMember
+Push "collectBomb"
+CallMethod
+Pop
+Push register1, "collected", true
+SetMember
+}
+loc0352:SetMember
+Push register2, "finishCollect"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "collected", false
+SetMember
+Push "normal", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "collected", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "BombCollect"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc03b9:Pop

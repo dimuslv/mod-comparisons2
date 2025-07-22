@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="705.45px" width="550.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 275.0, 505.45)">
+    <use ffdec:characterId="2668" height="410.95" transform="matrix(0.9566, 0.0, 0.0, 0.9734, -275.0, -200.0)" width="574.95" xlink:href="#sprite0"/>
+    <use ffdec:characterId="2740" height="144.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -96.5, -86.5)" width="198.0" xlink:href="#shape1"/>
+    <use ffdec:characterId="2671" height="292.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -18.55, -323.45)" width="56.0" xlink:href="#sprite1"/>
+    <use ffdec:characterId="2686" height="12.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -153.0, 160.95)" width="16.0" xlink:href="#sprite2"/>
+    <use ffdec:characterId="2711" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 134.95, 86.0)" width="25.0" xlink:href="#sprite3"/>
+    <use ffdec:characterId="2711" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -61.05, -149.0)" width="25.0" xlink:href="#sprite3"/>
+    <use ffdec:characterId="2712" height="400.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -275.0, -200.0)" width="550.0" xlink:href="#button0"/>
+  </g>
+  <defs>
+    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="2667" height="410.95" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="574.95" xlink:href="#shape0"/>
+    </g>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <path d="M0.0 0.0 L574.95 0.0 574.95 410.95 0.0 410.95 0.0 0.0" fill="#84d62c" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 96.5, 86.5)">
+      <pattern height="144" id="PatternID_2740_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -96.5, -86.5)" patternUnits="userSpaceOnUse" viewBox="0 0 198 144" width="198">
+        <image height="144" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="198" xlink:href="data:image/PNG;base64,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"/>
+      </pattern>
+      <path d="M101.5 57.5 L-96.5 57.5 -96.5 -86.5 101.5 -86.5 101.5 57.5" ffdec:fill-bitmapId="2739" style="fill:url(#PatternID_2740_1)"/>
+    </g>
+    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="2670" height="292.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape2"/>
+    </g>
+    <g id="shape2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <pattern height="292" id="PatternID_2670_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 292" width="56">
+        <image height="292" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAEkCAYAAAB65fJKAAAEuklEQVR4Xu3aTYoUXRCF4f6BbnDi2LFORBTchOC8BVFw5NANiHtQhyKuxJkLcuQCWqIxIDw37l9mdlWe5rwQfFZ1VcZ9OttC5Ts5ueWePn94bfP+w6vrL98/3vzXn8PXUiYgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArInIHsCsicgewKyJyB7ArLXAr69uBgavOYuevLs0bVNC2hfR0xrcMdRctgI0H7tr/t1fl6dXUARZodHTAb02S20BsuA8TECIxRhOAdDtmAZsof7+uPTzdj1fj++35yD3M1RICLxaw6zsccjd/EgdxN/PEegLZjPDBCheMbFxe/cnwf3pqA12BrgpkjExWlBe7C1wE2QLVwLOgI7OnAUV4MiBMdfh4eenUXIJTj/SO8Bt4L5TAPX4GxhDbg1zGcKiDi/CIJqOBsEzsJ+Js+1ZhHQ3+wIfFzD2ThoFrZmhpCIi5NBM5zNIWE+XWD80cQ3x2nduWPOMBDfmM2WuPiNbZ2h9/uyCWxdGGcrXAR9Pjv7b7KzHAS4BQ7vVgbMkIuBozibLXFxN+Li4DVqsxo4g8u+29kBZoDZNXvXn8LNAHHS5WE/oo4CxOdGJ10cdiMozszedM8IcGYJTrr0XyPAeAd7U+wawdksBRYLIf/6t9PTArXJHRwBrvm9VyyEri4vr20M6FMD9n7/pftGgfjcyPjhg6coA0Zo3L0rYLEoyV+DsDgzwGLnKG4WaAcpliXhfsQhsDfFzvgdxBf7zCzwKRZVwjvo798cGC+Kb5pZYDN696zaHfTHm33AZN89fzwLLJY0wg8YPMPq3a076AtWL2nkQHuf3SE8w8zuYm+8ewjzxzML0iWN4jcXZ8kdLHYjMIPOLEiXNGoBfWb2F7trwD3cQZ+Z/cXuHnBPd7D1CWrX8H+9SxcgKuJmgLeFq41f4/W7l8uBeNHWLAG2oLX9EeazO6AfyA+YQXF/BqMBZlDf34JVcdbWwJG/Glk1HB66B6MG2v84hM/Vpgv0vzXfOaCFyAjdA/DqzYvia8M4KwPiv4OMzghwBrcbYPxThl8P93izwNr4dZo4iw0YYV2c1QOOIkeBVjwgAmrAaVish0RENjN30cID13D4OrzOUFsCZw+DAAfi8/i+qRxoF1oK9IPEw+GeVghaco1mDvQZBUZY/EhfesCl7+sWDxoPWPugwdfj3NpBl1Y7sD8/CsP34Z6jVju8P599rTW7Q7YQ+PE9MgIeoxpyFhh/rHHH0VuDjLBd4qx4wFEgBSyGB64B8XV4nd2HgFv5s+IeQtCdgWFMsL+e7oMOHa+7OAAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M56.0 0.0 L56.0 292.0 0.0 292.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="2669" style="fill:url(#PatternID_2670_1)"/>
+    </g>
+    <g id="sprite2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="2673" height="12.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="16.0" xlink:href="#shape3"/>
+    </g>
+    <g id="shape3" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <pattern height="12" id="PatternID_2673_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 16 12" width="16">
+        <image height="12" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="16" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAIAAADkharWAAAAOUlEQVR4XmNouaZDEmLAFMKPBkRDwhxFCMKUwqIBqG7H/36Iaqx6sGiAqyNKA1wPVtXYNeBHg1ADAIPxIGTMMWujAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L16.0 0.0 16.0 12.0 0.0 12.0 0.0 0.0" ffdec:fill-bitmapId="2672" style="fill:url(#PatternID_2673_1)"/>
+    </g>
+    <g id="sprite3" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="2688" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="25.0" xlink:href="#shape4"/>
+    </g>
+    <g id="shape4" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <pattern height="20" id="PatternID_2688_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 25 20" width="25">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="25" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAUCAIAAAD3FQHqAAAAPElEQVR4XmNouaZDLcSAKUQ2GjWLNDRqls6O//1AMmGOIqYUJiJgFtAUCMKUwkQEzCIJjZpFGho1izQEACeE+POxWlU3AAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L25.0 0.0 25.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="2687" style="fill:url(#PatternID_2688_1)"/>
+    </g>
+  </defs>
+</svg>

@@ -1,0 +1,11 @@
+ConstantPool "this", "_parent", "resetAim"
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "resetAim"
+CallMethod
+Pop
+Stop

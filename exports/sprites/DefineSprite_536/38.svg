@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="55.0px" width="64.0px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 30.5, 27.5)">
+    <use ffdec:characterId="535" height="55.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -30.5, -27.5)" width="64.0" xlink:href="#shape0"/>
+  </g>
+  <defs>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 30.5, 27.5)">
+      <pattern height="55" id="PatternID_535_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -30.5, -27.5)" patternUnits="userSpaceOnUse" viewBox="0 0 64 55" width="64">
+        <image height="55" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="64" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA3CAYAAAC8TkynAAADMklEQVR4Xu2XsarVQBCG70NYKGJpYSFYWdnZ+ACi2FgIlra3tbATwdo38e28TMiEyZfZ2U2ykxwhP3zk3GR3dv4/e3Jy7+4uXbp0qa/+dea/0NTw649PumJrG25GC9Nv3r3tCgNxQjlNVdPvv37eDWsyFOlj5FC5xtl8Fl4Y0tNIutKNs360ztFBNDW1B6n55f7bDD0XrVkIors2BUBDEVEA+pn1iQYh/Y500SrzNNGKV1cDsJ8J5+hYQXqnmS1ym/Ngc2uwjXvU6rMXrSf909Ba2S01wUXZ0FlkheBptiAbIfe/f8z4/udXCMdbWNvjiBCmhbi4Z7jF9Ba4Rgnplwb2qhjAWsNS6yC6yg1gjXmpITx+9nSGnHv+8sXss6J/y9Fs7Yg0FQOgUSJzBWvSQ40SnaMBeAHeHaBNW1/mEf7k2TsrhjQoe9R5OkYxoaXLDYCGad6+strfeMIgCMxGpGlTAIo1zrvPazLePgcinF2UplUByHidpwZts/Z/fQZRCsGYjEjTrgBofrw+wBBqAZz6ELQvGzS9xbzSEoIXgJw366Vq0XSAqsm8whDkHHcB5zjclFYFUNsBHhw/rZygRcMBKtdUCW8szXKOQ5pmzwB+70vPAG7rkgmO0d3iBXDqQ3DLr4ANAf+uTubtz6RnvhSAnDdrpapLAGqWeHdf8AKokCY3gIYQBhhCCXv39Rhh545rpWkRQMsu0Ebls5grBaHXZJyg320a1usBaRoMy3ZlALUQiJq16DUxab/bvNty7tSHIANYE0J0F42RxfgoAFMvXdUAohC8IGwg9vj30Qf3WAoPpGkKoBZCaxAH0FVhAF4ItSDWwtolZKz0SwN7NQugFEIUxl64hoXvFNIvDbSK22iAi9QCOAoa32teNBSh2RJs6CjYRy/zosVLSksgbDADrmmN9zKvct/YuHgEm18L6xHtyb5E0cQeuQGsDcFruAXO9ergDTJFxRBqTZIe4wvG08yrwhBaA6ldp0HW1vNHGrda/ONSajKiNkfrfvr5avhbjnY96WPkFA2LS1MKAylRMkRsbR2v647chKaGbMM11FCErW24abHZvVy6dOlSmh4A6yt6y+4sfZYAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M-30.5 -27.5 L33.5 -27.5 33.5 27.5 -30.5 27.5 -30.5 -27.5" ffdec:fill-bitmapId="534" style="fill:url(#PatternID_535_1)"/>
+    </g>
+  </defs>
+</svg>

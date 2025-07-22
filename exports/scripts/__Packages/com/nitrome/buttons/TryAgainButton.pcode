@@ -1,0 +1,174 @@
+ConstantPool "_global", "com", "Object", "nitrome", "buttons", "TryAgainButton", "clearKeyListener", "onKeyDown", "Key", "getCode", "doPress", "addListener", "SimpleButton", "prototype", "done", "reload", "tt", "doTween", "popup_holder", "hidePopUp", "removeListener", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0100
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0100:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0138
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0138:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Not
+Not
+If loc017c
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons", 0, "Object"
+NewObject
+SetMember
+loc017c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "TryAgainButton"
+GetMember
+Not
+Not
+If loc035a
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "TryAgainButton"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 0, register1, "clearKeyListener"
+CallMethod
+Pop
+Push register1, "onKeyDown"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, "Key"
+GetVariable
+Push "getCode"
+CallMethod
+Push 32
+Equals2
+Not
+If loc022f
+Push 0, register1, "doPress"
+CallMethod
+Pop
+}
+loc022f:SetMember
+Push register1, 1, "Key"
+GetVariable
+Push "addListener"
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "TryAgainButton"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "SimpleButton"
+GetMember
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPress"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "done"
+GetMember
+Push false
+Equals2
+Not
+If loc02f9
+Push "reload", 1, register2, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Push 0, register2, "popup_holder"
+GetMember
+Push "hidePopUp"
+CallMethod
+Pop
+Push register1, 1, "Key"
+GetVariable
+Push "removeListener"
+CallMethod
+Pop
+Push register1, "done", true
+SetMember
+}
+loc02f9:SetMember
+Push register2, "clearKeyListener"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, 1, "Key"
+GetVariable
+Push "removeListener"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "done", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "buttons"
+GetMember
+Push "TryAgainButton"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc035a:Pop

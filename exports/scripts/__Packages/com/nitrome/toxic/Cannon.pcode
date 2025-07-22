@@ -1,0 +1,342 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "Cannon", "MovieClip", "prototype", "doPause", "anim", "stop", "doUnpause", "play", "init", "game", "dir", "tall", "updateAnim", "doFire", "_y", "bullet_point", "_x", "fireBullet", "main", "_visible", "getOnScreen", "screen_test", "hitTest", "left", "gotoAndStop", "right", "doExplode", "_name", "createExplosion", "debris_tall_left", "createDebris", "debris_tall_right", "debris_left", "debris_right", "removeMovieClip", "id", "x", "y", "Array", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc01aa
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc01aa:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc01e2
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc01e2:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0226
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0226:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Cannon"
+GetMember
+Not
+Not
+If loc0808
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Cannon"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Cannon"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "init"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 3, "game", 4, "dir", 2, "tall" {
+Push register1, "game", register3
+SetMember
+Push register1, "dir", register4
+SetMember
+Push register1, "tall", register2
+SetMember
+Push 0, register1, "updateAnim"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doFire"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "dir"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "bullet_point"
+GetMember
+Push "_y"
+GetMember
+Add2
+Push register1, "_x"
+GetMember
+Push register1, "bullet_point"
+GetMember
+Push "_x"
+GetMember
+Add2
+Push 3, register1, "game"
+GetMember
+Push "fireBullet"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_visible", 0, register1, "getOnScreen"
+CallMethod
+SetMember
+}
+SetMember
+Push register2, "getOnScreen"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "screen_test"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push true
+Equals2
+Not
+If loc0419
+Push true
+Return
+loc0419:Push false
+Return
+}
+SetMember
+Push register2, "updateAnim"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "dir"
+GetMember
+Push 0
+Equals2
+Not
+If loc0462
+Push "left", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc0489
+loc0462:Push register1, "dir"
+GetMember
+Push 1
+Equals2
+Not
+If loc0489
+Push "right", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+loc0489:SetMember
+Push register2, "doExplode"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 100, register1, "_name"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 4, register1, "game"
+GetMember
+Push "createExplosion"
+CallMethod
+Pop
+Push register1, "tall"
+GetMember
+Push true
+Equals2
+Not
+If loc0575
+Push register1, "dir"
+GetMember
+Push 0
+Equals2
+Not
+If loc052d
+Push register1, "debris_tall_left"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+Jump loc0570
+loc052d:Push register1, "dir"
+GetMember
+Push 1
+Equals2
+Not
+If loc0570
+Push register1, "debris_tall_right"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+loc0570:Jump loc0604
+loc0575:Push register1, "dir"
+GetMember
+Push 0
+Equals2
+Not
+If loc05c1
+Push register1, "debris_left"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+Jump loc0604
+loc05c1:Push register1, "dir"
+GetMember
+Push 1
+Equals2
+Not
+If loc0604
+Push register1, "debris_right"
+GetMember
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push 3, register1, "game"
+GetMember
+Push "createDebris"
+CallMethod
+Pop
+loc0604:Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "tall", false
+SetMember
+Push register2, "debris_right", "id", 17, "x", 0, "y", -14, 3
+InitObject
+Push "id", 22, "x", -12, "y", -42, 3
+InitObject
+Push "id", 21, "x", 6, "y", -33, 3
+InitObject
+Push 3, "Array"
+NewObject
+SetMember
+Push register2, "debris_left", "id", 17, "x", 0, "y", -14, 3
+InitObject
+Push "id", 20, "x", 13, "y", -42, 3
+InitObject
+Push "id", 19, "x", -6, "y", -33, 3
+InitObject
+Push 3, "Array"
+NewObject
+SetMember
+Push register2, "debris_tall_right", "id", 18, "x", 0, "y", -20, 3
+InitObject
+Push "id", 22, "x", -12, "y", -58, 3
+InitObject
+Push "id", 21, "x", 5, "y", -49, 3
+InitObject
+Push 3, "Array"
+NewObject
+SetMember
+Push register2, "debris_tall_left", "id", 18, "x", 0, "y", -20, 3
+InitObject
+Push "id", 20, "x", 13, "y", -58, 3
+InitObject
+Push "id", 19, "x", -5, "y", -49, 3
+InitObject
+Push 3, "Array"
+NewObject
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Cannon"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0808:Pop

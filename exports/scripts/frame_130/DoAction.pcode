@@ -1,0 +1,8 @@
+Push 0, "_root"
+GetVariable
+Push "game"
+GetMember
+Push "init"
+CallMethod
+Pop
+Stop

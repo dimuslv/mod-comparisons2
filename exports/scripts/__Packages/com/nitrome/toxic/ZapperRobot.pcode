@@ -1,0 +1,461 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "ZapperRobot", "MovieClip", "prototype", "init", "game", "main", "getOnScreen", "_visible", "state", "doRotate", "checkBombs", "zap_count", "max_zap_count", "clearZap", "wait_count", "max_wait_count", "rot", "TrigLookup", "cos_data", "sin_data", "_x", "Math", "round", "_y", "Global", "level_width", "level_height", "getBombCollision", "zapBomb", "doZap", "drawing_clip", "clear", "lineStyle", "moveTo", "lineTo", "rot_dir", "max_rot", "zapper_clip", "_rotation", "screen_test", "hitTest", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc01cf
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc01cf:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0207
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0207:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc024b
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc024b:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ZapperRobot"
+GetMember
+Not
+Not
+If loc0916
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ZapperRobot"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ZapperRobot"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "game" {
+Push register1, "game", register2
+SetMember
+}
+SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "getOnScreen"
+CallMethod
+Push true
+Equals2
+Not
+If loc043a
+Push register1, "_visible", true
+SetMember
+Push register1, "state"
+GetMember
+Push 0
+Equals2
+Not
+If loc0375
+Push 0, register1, "doRotate"
+CallMethod
+Pop
+Push 0, register1, "checkBombs"
+CallMethod
+Pop
+Jump loc0435
+loc0375:Push register1, "state"
+GetMember
+Push 1
+Equals2
+Not
+If loc03e7
+Push register1, "zap_count", register1, "zap_count"
+GetMember
+Increment
+SetMember
+Push register1, "zap_count"
+GetMember
+Push register1, "max_zap_count"
+GetMember
+Less2
+Not
+Not
+If loc03e2
+Push 0, register1, "clearZap"
+CallMethod
+Pop
+Push register1, "wait_count", 0
+SetMember
+Push register1, "state", 2
+SetMember
+loc03e2:Jump loc0435
+loc03e7:Push register1, "state"
+GetMember
+Push 2
+Equals2
+Not
+If loc0435
+Push register1, "wait_count", register1, "wait_count"
+GetMember
+Increment
+SetMember
+Push register1, "wait_count"
+GetMember
+Push register1, "max_wait_count"
+GetMember
+Less2
+Not
+Not
+If loc0435
+Push register1, "state", 0
+SetMember
+loc0435:Jump loc0444
+loc043a:Push register1, "_visible", false
+SetMember
+}
+loc0444:SetMember
+Push register2, "checkBombs"
+DefineFunction2 "", 0, 9, false, false, true, false, true, false, false, true, false {
+Push false
+StoreRegister 8
+Pop
+Push register1, "rot"
+GetMember
+Push 90
+Add2
+StoreRegister 7
+Pop
+Push register7, 0
+Less2
+Not
+If loc049c
+Push register7, 360
+Add2
+StoreRegister 7
+Pop
+loc049c:Push register7, 360
+Less2
+Not
+Not
+If loc04be
+Push register7, 360
+Subtract
+StoreRegister 7
+Pop
+loc04be:Push 0
+StoreRegister 2
+Pop
+loc04cf:Push register2, 600
+Greater
+Not
+Not
+If loc0652
+Push register2, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "cos_data"
+GetMember
+Push register7
+GetMember
+Multiply
+StoreRegister 6
+Pop
+Push register2, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TrigLookup"
+GetMember
+Push "sin_data"
+GetMember
+Push register7
+GetMember
+Multiply
+StoreRegister 5
+Pop
+Push register1, "_x"
+GetMember
+Push register6
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 4
+Pop
+Push register1, "_y"
+GetMember
+Push register5
+Add2
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+StoreRegister 3
+Pop
+Push register4, 0
+Less2
+PushDuplicate
+If loc05b8
+Pop
+Push register4, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Greater
+loc05b8:PushDuplicate
+If loc05ce
+Pop
+Push register3, 0
+Less2
+loc05ce:PushDuplicate
+If loc05f6
+Pop
+Push register3, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Greater
+loc05f6:Not
+If loc060b
+Push false
+StoreRegister 8
+Pop
+Jump loc0652
+loc060b:Push register3, register4, 2, register1, "game"
+GetMember
+Push "getBombCollision"
+CallMethod
+Push true
+Equals2
+Not
+If loc063d
+Push true
+StoreRegister 8
+Pop
+Jump loc0652
+loc063d:Push register2, 5
+Add2
+StoreRegister 2
+Pop
+Jump loc04cf
+loc0652:Push register8, true
+Equals2
+Not
+If loc068a
+Push register3, register4, 2, register1, "game"
+GetMember
+Push "zapBomb"
+CallMethod
+Pop
+Push register5, register6, 2, register1, "doZap"
+CallMethod
+Pop
+}
+loc068a:SetMember
+Push register2, "doZap"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "xpos", 2, "ypos" {
+Push 0, register1, "drawing_clip"
+GetMember
+Push "clear"
+CallMethod
+Pop
+Push true, 100, 16724103, 1, 4, register1, "drawing_clip"
+GetMember
+Push "lineStyle"
+CallMethod
+Pop
+Push 0, 0, 2, register1, "drawing_clip"
+GetMember
+Push "moveTo"
+CallMethod
+Pop
+Push register2, register3, 2, register1, "drawing_clip"
+GetMember
+Push "lineTo"
+CallMethod
+Pop
+Push register1, "zap_count", 0
+SetMember
+Push register1, "state", 1
+SetMember
+}
+SetMember
+Push register2, "clearZap"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "drawing_clip"
+GetMember
+Push "clear"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doRotate"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "rot", register1, "rot"
+GetMember
+Push register1, "rot_dir"
+GetMember
+Add2
+SetMember
+Push register1, "rot_dir"
+GetMember
+Push 2
+Equals2
+Not
+If loc07d6
+Push register1, "rot"
+GetMember
+Push register1, "max_rot"
+GetMember
+Equals2
+Not
+If loc07d1
+Push register1, "rot_dir", -2
+SetMember
+loc07d1:Jump loc081b
+loc07d6:Push register1, "rot_dir"
+GetMember
+Push -2
+Equals2
+Not
+If loc081b
+Push register1, "rot"
+GetMember
+Push 0, register1, "max_rot"
+GetMember
+Subtract
+Equals2
+Not
+If loc081b
+Push register1, "rot_dir", 2
+SetMember
+loc081b:Push register1, "zapper_clip"
+GetMember
+Push "_rotation", register1, "rot"
+GetMember
+SetMember
+}
+SetMember
+Push register2, "getOnScreen"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "screen_test"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push true
+Equals2
+Not
+If loc0868
+Push true
+Return
+loc0868:Push false
+Return
+}
+SetMember
+Push register2, "rot", 0
+SetMember
+Push register2, "rot_dir", 2
+SetMember
+Push register2, "max_rot", 80
+SetMember
+Push register2, "state", 0
+SetMember
+Push register2, "zap_count", 0
+SetMember
+Push register2, "max_zap_count", 10
+SetMember
+Push register2, "wait_count", 0
+SetMember
+Push register2, "max_wait_count", 30
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ZapperRobot"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0916:Pop

@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.BasicBomb"
+GetVariable
+Push "basic_bomb", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

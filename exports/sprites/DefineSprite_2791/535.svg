@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="351.9px" width="432.1px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 15.6, 29.05)">
+    <use ffdec:characterId="1368" height="96.95" transform="matrix(1.0, 0.0, 0.0, 1.0, 26.5, 77.55)" width="96.95" xlink:href="#shape0"/>
+    <use ffdec:characterId="2783" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 264.0, 179.0)" width="152.0" xlink:href="#shape1"/>
+    <use ffdec:characterId="2763" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 210.0)" width="63.0" xlink:href="#shape2"/>
+    <use ffdec:characterId="2777" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 148.0)" width="63.0" xlink:href="#shape3"/>
+    <use ffdec:characterId="2787" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 19.0, 200.0)" width="186.0" xlink:href="#shape4"/>
+    <use ffdec:characterId="2767" height="87.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 284.0, 150.0)" width="113.0" xlink:href="#shape5"/>
+    <use ffdec:characterId="364" height="260.5" transform="matrix(1.0, 0.0, 0.0, 1.0, -15.6, 62.35)" width="340.1" xlink:href="#sprite0"/>
+    <use ffdec:characterId="2790" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 41.35, 90.35)" width="56.0" xlink:href="#sprite2"/>
+    <use ffdec:characterId="2785" height="21.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 42.0, 7.0)" width="355.0" xlink:href="#text0"/>
+  </g>
+  <defs>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, -26.5, -77.55)">
+      <pattern height="75" id="PatternID_1368_1" overflow="visible" patternTransform="matrix(1.2928, 0.0, 0.0, 1.2928, 26.5, 77.55)" patternUnits="userSpaceOnUse" viewBox="0 0 75 75" width="75">
+        <image height="75" style="image-rendering:optimizeQuality" width="75" xlink:href="data:image/PNG;base64,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"/>
+      </pattern>
+      <path d="M26.5 77.55 L123.45 77.55 123.45 174.5 26.5 174.5 26.5 77.55" ffdec:fill-bitmapId="1367" style="fill:url(#PatternID_1368_1)"/>
+    </g>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, -264.0, -179.0)">
+      <pattern height="28" id="PatternID_2783_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 230.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M390.05 179.0 L416.0 179.0 416.0 207.0 390.05 207.0 390.05 179.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2783_1)"/>
+      <pattern height="28" id="PatternID_2783_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 353.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M390.05 207.0 L353.0 207.0 353.0 179.0 390.05 179.0 390.05 207.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2783_2)"/>
+      <pattern height="28" id="PatternID_2783_3" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 230.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M390.05 179.0 L416.0 179.0 416.0 207.0 390.05 207.0 390.05 179.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2783_3)"/>
+      <pattern height="28" id="PatternID_2783_4" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 353.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M390.05 207.0 L353.0 207.0 353.0 179.0 390.05 179.0 390.05 207.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2783_4)"/>
+      <pattern height="28" id="PatternID_2783_5" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 141.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M301.05 179.0 L327.0 179.0 327.0 207.0 301.05 207.0 301.05 179.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2783_5)"/>
+      <pattern height="28" id="PatternID_2783_6" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 264.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M301.05 207.0 L264.0 207.0 264.0 179.0 301.05 179.0 301.05 207.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2783_6)"/>
+    </g>
+    <g id="shape2" transform="matrix(1.0, 0.0, 0.0, 1.0, -307.0, -210.0)">
+      <pattern height="28" id="PatternID_2763_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 184.0, 210.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 210.0 L370.0 210.0 370.0 238.0 344.05 238.0 344.05 210.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2763_1)"/>
+      <pattern height="28" id="PatternID_2763_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 210.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 238.0 L307.0 238.0 307.0 210.0 344.05 210.0 344.05 238.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2763_2)"/>
+    </g>
+    <g id="shape3" transform="matrix(1.0, 0.0, 0.0, 1.0, -307.0, -148.0)">
+      <pattern height="28" id="PatternID_2777_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 184.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 148.0 L370.0 148.0 370.0 176.0 344.05 176.0 344.05 148.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2777_1)"/>
+      <pattern height="28" id="PatternID_2777_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 176.0 L307.0 176.0 307.0 148.0 344.05 148.0 344.05 176.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2777_2)"/>
+      <pattern height="28" id="PatternID_2777_3" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 184.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 148.0 L370.0 148.0 370.0 176.0 344.05 176.0 344.05 148.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2777_3)"/>
+      <pattern height="28" id="PatternID_2777_4" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 176.0 L307.0 176.0 307.0 148.0 344.05 148.0 344.05 176.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2777_4)"/>
+      <pattern height="28" id="PatternID_2777_5" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 184.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 148.0 L370.0 148.0 370.0 176.0 344.05 176.0 344.05 148.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2777_5)"/>
+      <pattern height="28" id="PatternID_2777_6" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M344.05 176.0 L307.0 176.0 307.0 148.0 344.05 148.0 344.05 176.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2777_6)"/>
+    </g>
+    <g id="shape4" transform="matrix(1.0, 0.0, 0.0, 1.0, -19.0, -200.0)">
+      <pattern height="28" id="PatternID_2787_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 19.0, 200.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M19.0 200.0 L205.0 200.0 205.0 228.0 19.0 228.0 19.0 200.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2787_1)"/>
+      <pattern height="28" id="PatternID_2787_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 19.0, 200.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
+        <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M19.0 200.0 L205.0 200.0 205.0 228.0 19.0 228.0 19.0 200.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2787_2)"/>
+    </g>
+    <g id="shape5" transform="matrix(1.0, 0.0, 0.0, 1.0, -284.0, -150.0)">
+      <pattern height="25" id="PatternID_2767_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 328.0, 150.0)" patternUnits="userSpaceOnUse" viewBox="0 0 22 25" width="22">
+        <image height="25" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="22" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAZCAYAAAA14t7uAAAAfklEQVR4Xu3TwQmAMAyF4c7iJC4mCE7mIJ2lYsGQBNImaYqX/vAurX54MaWfK2whcTQEB+guZx0+I08aAuDKGxm+I28oEtERvIt6cDVqwc2oBnejPbwe7Ie8D+DneCLcmvBl0kj8kswAq5Pg4RYMLRiaC7d+W28YC4XfpqCuHt+DaBIub0SLAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M328.0 150.0 L350.0 150.0 350.0 175.0 328.0 175.0 328.0 150.0" ffdec:fill-bitmapId="2766" style="fill:url(#PatternID_2767_1)"/>
+      <pattern height="25" id="PatternID_2767_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 328.0, 212.0)" patternUnits="userSpaceOnUse" viewBox="0 0 22 25" width="22">
+        <image height="25" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="22" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAZCAYAAAA14t7uAAAAhUlEQVR4Xu3NUQqAIBBFUdfSStpYELSyFtJajBl4oqOWjhP9eOF9SHpy7ue8mEkSNcMZOv3Ow1ncUcXQcS08nMUdVRMOTTg0DMePshXg2pLkx2wdMC2UPNauCtPWrf8H9CY2YphS4W8o6sJbUdSE96LoEdeiqIiPoijBrVAkMRMUfYKqugHCE2mcn4gyzQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M328.0 212.0 L350.0 212.0 350.0 237.0 328.0 237.0 328.0 212.0" ffdec:fill-bitmapId="2765" style="fill:url(#PatternID_2767_2)"/>
+      <pattern height="22" id="PatternID_2767_3" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 372.0, 182.0)" patternUnits="userSpaceOnUse" viewBox="0 0 25 22" width="25">
+        <image height="22" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="25" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAYAAAA1vze2AAAAkUlEQVR4Xs3S3QmAMBADYGdxEhcTBCdzEGep3GGlTX+8ygUM5MFW8704TT9OSEpJCtAgHT7CRoV0dD9nbXy+65YMYUEFwoCqiBXCl7pFwALh5Wtx3ALpgfyW+MHXNpFltRdH08p9ExkpDjeADJHgZbc4bgFGUkU8AUmBeAOSDGEAkgdhARIdZAISHHcHYujAcC5OSmXDDEk/WAAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M397.0 182.0 L397.0 204.0 372.0 204.0 372.0 182.0 397.0 182.0" ffdec:fill-bitmapId="1562" style="fill:url(#PatternID_2767_3)"/>
+      <pattern height="22" id="PatternID_2767_4" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 284.0, 182.0)" patternUnits="userSpaceOnUse" viewBox="0 0 25 22" width="25">
+        <image height="22" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="25" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAYAAAA1vze2AAAAhUlEQVR4Xs3N0Q2AIAyEYWZxEhczMXEyB3EWDC/maikFuSb+yT0IxC+lH5VhISEQAj0/PvMeggjguBY6ogA2UgWYiAmwkCbwQnoncoGPiIBcYHQmsm5JPcaV+96ZiAfhu4GJXAjfdK5aE4L76UwI7ihVITinpSA4oyYg+KaHPw9DSuHAdDeuyWo3mAn7nAAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M309.0 182.0 L309.0 204.0 284.0 204.0 284.0 182.0 309.0 182.0" ffdec:fill-bitmapId="1566" style="fill:url(#PatternID_2767_4)"/>
+    </g>
+    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 126.6, 142.65)">
+      <use ffdec:characterId="226" height="100.0" id="boundingBox_mc" transform="matrix(1.0, 0.0, 0.0, 0.14, 0.0, 0.0)" width="100.0" xlink:href="#sprite1"/>
+    </g>
+    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <use ffdec:characterId="225" height="100.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="100.0" xlink:href="#shape6"/>
+    </g>
+    <g id="shape6" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4005548469065996"/>
+    </g>
+    <g id="sprite2" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.0, 50.0)">
+      <use ffdec:characterId="2788" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -29.0, -50.0)" width="56.0" xlink:href="#sprite3"/>
+    </g>
+    <g id="sprite3" transform="matrix(1.0, 0.0, 0.0, 1.0, 28.0, 25.0)">
+      <use ffdec:characterId="2054" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -28.0, -25.0)" width="56.0" xlink:href="#shape7"/>
+    </g>
+    <g id="shape7" transform="matrix(1.0, 0.0, 0.0, 1.0, 28.0, 25.0)">
+      <pattern height="50" id="PatternID_2054_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -28.0, -25.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 50" width="56">
+        <image height="50" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAyCAYAAAAJHRh4AAAC10lEQVR4Xu2WzbETMRCE3516JwIgJu4vCY5kQD4kwo0cCIGLX7VKLUat0c/Ka+9A0VVd3tXOaOZbybJfXv5rS7cF/3Uqzd9+fZnaxIdXC2XlwDmgYTWFQsyCQ6pZDQ/s7fPHqXNsKDVAM7BvXz91HRGyASOcgvUAf3x/TSZgNMgC9fvnhymcAhJOAaNAVnArgCurFwmygjsKOFq9MIAWbhfQAfJ8iRIUmtwB9KD0sLKHVlX5SWoAZ5AemAXRHUHn2JlW45ZVAI9AYhyeQe0A4gXik/fmektdQAupPgJmnfN7Klsf1879tlLxEaRaY1aNWqzp2X6/7ffc5G0pFbdHvjZ2llELVgiaPzf3wHkJqbgFfBQkanHLEch6B84GlWQzRqUGtOCZwKyLuWwvaucw60qBqqM+j1XxaETBelaAkVEPn6iBXNb3oCY9VmqC9Z5xnvXNstlVUC8X8zLP9tPzCLKZwL4pk1g1gns9MWlt1rMHBdvTFzXsKiqU59xrUdWwBhOQ5hudASqoZwuVmypWQG8VbbwzXtQAedbmaOTryqyaL0Eb5r2Ca9wfhKTe+BpgDxL52njPurqE43VurnpmIFOv5vqQmre0auSgCT1MvANF4TYAT1EDMTLiFewIJAE5F+uHAESsAqlXADGP5xCA1jtb1eZjTh07G3AI4Yxb3Q3ojT8UEPf63FjVBVyF1LGz4agRxEyHIC2o7hw+x5xa5EoNAUegnjFfdhgtAc4gMQ/MPxJS41K5gArQM/JhblPk5rEwmgIipmdAYdWYl8fDKDWkgJ1VKjlcLYDxk5ASe6kKgAfHpgWw+eOOnMnP1CWqtpUHZ68Rb/O83HCr5zWpcL3t6eWGB/RWD3GaNwKMBNk06axar9EhJJ5rwhVqGnQAe2pOTjViNOnZapo7AAhVkGo814RnqwG0kHiuCY6qn4eQPxMeJJ5p8ECMtw6jkFvrbIV9+/+s3gE4BXS6UXllxwAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M-28.0 -25.0 L28.0 -25.0 28.0 25.0 -28.0 25.0 -28.0 -25.0" ffdec:fill-bitmapId="2053" style="fill:url(#PatternID_2054_1)"/>
+    </g>
+    <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -12.0, -3.0)">
+      <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 11.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 18.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 25.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 32.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 39.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 49.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 56.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 63.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 70.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_C0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 77.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 87.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_W0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 96.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 103.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 106.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 113.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 123.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 130.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 137.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 144.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 151.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 154.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 161.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_G0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 171.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 178.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 185.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_W0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 194.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 204.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 211.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 221.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 228.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 235.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 242.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 252.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 262.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_B0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 269.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 276.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 285.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_B0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 295.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_B0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 302.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 309.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 316.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 323.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 330.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 337.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 347.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_Y0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 354.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 361.0, 9.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+      </g>
+      <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 47.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_-0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 56.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 63.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 70.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 79.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 86.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 95.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_B0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 102.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 109.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 119.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 126.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 136.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_W0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 145.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 152.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 159.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_C0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 166.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 176.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 183.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 190.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 200.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_F0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 207.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 214.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 224.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 231.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 238.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 248.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_B0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 255.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 262.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 269.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 276.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 286.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 293.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 300.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 307.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 314.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_G0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 321.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 328.0, 22.0)" width="355.0" xlink:href="#font_FFF_Idea_8pt_st__1"/>
+      </g>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_P0">
+      <path d="M640.0 -384.0 L640.0 -512.0 256.0 -512.0 256.0 -384.0 640.0 -384.0 M768.0 -256.0 L256.0 -256.0 256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -256.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_R0">
+      <path d="M768.0 -256.0 L768.0 128.0 640.0 128.0 640.0 -256.0 768.0 -256.0 M640.0 -384.0 L640.0 -512.0 256.0 -512.0 256.0 -384.0 640.0 -384.0 640.0 -256.0 256.0 -256.0 256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -384.0 640.0 -384.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_E0">
+      <path d="M768.0 -512.0 L256.0 -512.0 256.0 -384.0 768.0 -384.0 768.0 -256.0 256.0 -256.0 256.0 0.0 768.0 0.0 768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_S0">
+      <path d="M768.0 -512.0 L256.0 -512.0 256.0 -384.0 768.0 -384.0 768.0 128.0 128.0 128.0 128.0 0.0 640.0 0.0 640.0 -256.0 128.0 -256.0 128.0 -640.0 768.0 -640.0 768.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_A0">
+      <path d="M640.0 -384.0 L640.0 -512.0 256.0 -512.0 256.0 -384.0 640.0 -384.0 M256.0 -256.0 L256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 128.0 640.0 128.0 640.0 -256.0 256.0 -256.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_C0">
+      <path d="M768.0 -128.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -384.0 640.0 -384.0 640.0 -512.0 256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -128.0 768.0 -128.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_W0">
+      <path d="M640.0 -640.0 L640.0 0.0 896.0 0.0 896.0 -640.0 1024.0 -640.0 1024.0 128.0 128.0 128.0 128.0 -640.0 256.0 -640.0 256.0 0.0 512.0 0.0 512.0 -640.0 640.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_H0">
+      <path d="M768.0 -640.0 L768.0 128.0 640.0 128.0 640.0 -256.0 256.0 -256.0 256.0 128.0 128.0 128.0 128.0 -640.0 256.0 -640.0 256.0 -384.0 640.0 -384.0 640.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_I0">
+      <path d="M256.0 -640.0 L256.0 128.0 128.0 128.0 128.0 -640.0 256.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_L0">
+      <path d="M256.0 -640.0 L256.0 0.0 768.0 0.0 768.0 128.0 128.0 128.0 128.0 -640.0 256.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_O0">
+      <path d="M640.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -512.0 M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_D0">
+      <path d="M640.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 128.0 128.0 128.0 128.0 -640.0 640.0 -640.0 640.0 -512.0 768.0 -512.0 768.0 0.0 640.0 0.0 640.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_N0">
+      <path d="M768.0 -640.0 L768.0 128.0 640.0 128.0 640.0 -512.0 256.0 -512.0 256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_G0">
+      <path d="M768.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -256.0 384.0 -256.0 384.0 -384.0 768.0 -384.0 768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_T0">
+      <path d="M512.0 -512.0 L512.0 128.0 384.0 128.0 384.0 -512.0 128.0 -512.0 128.0 -640.0 768.0 -640.0 768.0 -512.0 512.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_B0">
+      <path d="M512.0 -384.0 L512.0 -512.0 256.0 -512.0 256.0 -384.0 512.0 -384.0 M256.0 0.0 L640.0 0.0 640.0 -256.0 256.0 -256.0 256.0 0.0 M768.0 -384.0 L768.0 128.0 128.0 128.0 128.0 -640.0 640.0 -640.0 640.0 -384.0 768.0 -384.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_M0">
+      <path d="M256.0 -512.0 L256.0 128.0 128.0 128.0 128.0 -640.0 1024.0 -640.0 1024.0 128.0 896.0 128.0 896.0 -512.0 640.0 -512.0 640.0 128.0 512.0 128.0 512.0 -512.0 256.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_Y0">
+      <path d="M768.0 -640.0 L768.0 -256.0 512.0 -256.0 512.0 128.0 384.0 128.0 384.0 -256.0 128.0 -256.0 128.0 -640.0 256.0 -640.0 256.0 -384.0 640.0 -384.0 640.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_U0">
+      <path d="M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 256.0 -640.0 256.0 0.0 640.0 0.0 640.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_-0">
+      <path d="M128.0 -256.0 L640.0 -256.0 640.0 -128.0 128.0 -128.0 128.0 -256.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_F0">
+      <path d="M768.0 -512.0 L256.0 -512.0 256.0 -384.0 768.0 -384.0 768.0 -256.0 256.0 -256.0 256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -512.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st__1">
+      <path d="M256.0 -640.0 L256.0 -128.0 128.0 -128.0 128.0 -640.0 256.0 -640.0 M256.0 0.0 L256.0 128.0 128.0 128.0 128.0 0.0 256.0 0.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+  </defs>
+</svg>

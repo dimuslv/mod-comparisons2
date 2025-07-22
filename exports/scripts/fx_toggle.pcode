@@ -1,0 +1,7 @@
+Push "com.nitrome.game.FxToggle"
+GetVariable
+Push "fx_toggle", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

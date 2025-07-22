@@ -1,0 +1,13 @@
+ConstantPool "_root", "ng", "NitromeGame", "juicy_", "toxic2", "init"
+Push "_root"
+GetVariable
+Push "ng", 0, "NitromeGame"
+NewObject
+SetMember
+Push 20, "juicy_", "toxic2", 3, "_root"
+GetVariable
+Push "ng"
+GetMember
+Push "init"
+CallMethod
+Pop

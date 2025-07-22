@@ -1,0 +1,212 @@
+ConstantPool "_global", "com", "Object", "nitrome", "game", "MusicToggle", "mc", "getMusicOn", "_off_up", "gotoAndStop", "_on_up", "MovieClip", "prototype", "onRollOver", "updateGraphic", "rollover", "sfx_manager", "playSound", "onRollOut", "onPress", "toggleMusic", "_on_over", "_off_over", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0111
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0111:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0149
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0149:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Not
+Not
+If loc018d
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game", 0, "Object"
+NewObject
+SetMember
+loc018d:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "MusicToggle"
+GetMember
+Not
+Not
+If loc043e
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "MusicToggle"
+DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push 0, register3, "mc"
+GetMember
+Push "getMusicOn"
+CallMethod
+Push false
+Equals2
+Not
+If loc021e
+Push "_off_up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc022e
+loc021e:Push "_on_up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+loc022e:StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "MusicToggle"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onRollOver"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push true, 1, register1, "updateGraphic"
+CallMethod
+Pop
+Push "rollover", 1, register2, "sfx_manager"
+GetMember
+Push "playSound"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "onRollOut"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push false, 1, register1, "updateGraphic"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "onPress"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push 0, register2, "mc"
+GetMember
+Push "toggleMusic"
+CallMethod
+Pop
+Push true, 1, register1, "updateGraphic"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "updateGraphic"
+DefineFunction2 "", 1, 4, false, true, true, false, true, false, false, true, false, 3, "mouse_is_over" {
+Push register3, true
+Equals2
+Not
+If loc0395
+Push 0, register2, "mc"
+GetMember
+Push "getMusicOn"
+CallMethod
+Push true
+Equals2
+Not
+If loc035d
+Push "_on_over", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc0390
+loc035d:Push 0, register2, "mc"
+GetMember
+Push "getMusicOn"
+CallMethod
+Push false
+Equals2
+Not
+If loc0390
+Push "_off_over", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc0390:Jump loc040e
+loc0395:Push register3, false
+Equals2
+Not
+If loc040e
+Push 0, register2, "mc"
+GetMember
+Push "getMusicOn"
+CallMethod
+Push true
+Equals2
+Not
+If loc03db
+Push "_on_up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Jump loc040e
+loc03db:Push 0, register2, "mc"
+GetMember
+Push "getMusicOn"
+CallMethod
+Push false
+Equals2
+Not
+If loc040e
+Push "_off_up", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+}
+loc040e:SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "MusicToggle"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc043e:Pop

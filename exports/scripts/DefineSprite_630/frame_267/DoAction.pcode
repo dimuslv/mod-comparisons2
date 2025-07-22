@@ -1,0 +1,9 @@
+ConstantPool "this", "_parent", "debris_x_offset"
+Push "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "debris_x_offset", 224
+SetMember

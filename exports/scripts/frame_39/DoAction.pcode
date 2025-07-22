@@ -1,0 +1,18 @@
+ConstantPool "lock", "_root", "attachMovie", "mc", "startMenuMusic", "title_screen", "gotoAndStop"
+Push 999, "lock", "lock", 3, "_root"
+GetVariable
+Push "attachMovie"
+CallMethod
+Pop
+Push false, 1, "_root"
+GetVariable
+Push "mc"
+GetMember
+Push "startMenuMusic"
+CallMethod
+Pop
+Push "title_screen", 1, "_root"
+GetVariable
+Push "gotoAndStop"
+CallMethod
+Pop

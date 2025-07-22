@@ -1,0 +1,248 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "FirstInfoPoint", "MovieClip", "prototype", "getInfoPoint", "doPause", "anim", "stop", "doUnpause", "play", "init", "info_str", "game", "doCollect", "collected", "hacked", "0100110100010111010100101010101000100010101001010101001101000101110111001011101010001000101010010100000011010001011101010110101010100010001010000101", "text_display", "displayText", "endCollect", "first_read", "openDoor", "hideText", "checkExplosions", "explosion_holder", "hitTest", "hack", "gotoAndStop", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc01ef
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc01ef:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0227
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0227:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc026b
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc026b:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FirstInfoPoint"
+GetMember
+Not
+Not
+If loc059e
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FirstInfoPoint"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FirstInfoPoint"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "getInfoPoint"
+DefineFunction "", 0 {
+Push true
+Return
+}
+SetMember
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "init"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "str", 3, "game" {
+Push register1, "info_str", register2
+SetMember
+Push register1, "game", register3
+SetMember
+}
+SetMember
+Push register2, "doCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push false
+Equals2
+Not
+If loc0418
+Push register1, "hacked"
+GetMember
+Push false
+Equals2
+Not
+If loc03ed
+Push 2, "0100110100010111010100101010101000100010101001010101001101000101110111001011101010001000101010010100000011010001011101010110101010100010001010000101", 2, register2, "text_display"
+GetMember
+Push "displayText"
+CallMethod
+Pop
+Jump loc040e
+loc03ed:Push 1, register1, "info_str"
+GetMember
+Push 2, register2, "text_display"
+GetMember
+Push "displayText"
+CallMethod
+Pop
+loc040e:Push register1, "collected", true
+SetMember
+}
+loc0418:SetMember
+Push register2, "endCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push true
+Equals2
+Not
+If loc04ac
+Push register1, "hacked"
+GetMember
+Push true
+Equals2
+Not
+If loc048a
+Push register1, "first_read"
+GetMember
+Push false
+Equals2
+Not
+If loc048a
+Push 3, 1, register1, "game"
+GetMember
+Push "openDoor"
+CallMethod
+Pop
+Push register1, "first_read", true
+SetMember
+loc048a:Push 0, register2, "text_display"
+GetMember
+Push "hideText"
+CallMethod
+Pop
+Push register1, "collected", false
+SetMember
+}
+loc04ac:SetMember
+Push register2, "checkExplosions"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "hacked"
+GetMember
+Push false
+Equals2
+Not
+If loc0511
+Push register2, "game"
+GetMember
+Push "explosion_holder"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push true
+Equals2
+Not
+If loc0511
+Push 0, register1, "hack"
+CallMethod
+Pop
+Jump loc0511
+}
+loc0511:SetMember
+Push register2, "hack"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "hacked", true
+SetMember
+Push "hacked", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push 0, register1, "endCollect"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "collected", false
+SetMember
+Push register2, "hacked", false
+SetMember
+Push register2, "first_read", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "FirstInfoPoint"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc059e:Pop

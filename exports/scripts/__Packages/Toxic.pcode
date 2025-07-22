@@ -1,0 +1,488 @@
+ConstantPool "_global", "Toxic", "useFocusRect", "mx", "core", "UIComponent", "prototype", "init", "letters", "Array", "holder", "useHandCursor", "boundingBox_mc", "_visible", "__get__text", "__text", "__set__text", "invalidate", "__get__tracking", "__tracking", "__set__tracking", "__get__line_spacing", "__line_spacing", "__set__line_spacing", "__get__centered", "__centered", "__set__centered", "draw", "base", "removeMovieClip", "createEmptyMovieClip", "push", "length", "toLowerCase", "charAt", " ", "?", "!", "\n", "\r", "|", "t", "char_space", "attachMovie", "char_question", "char_exclamation", "_y", "char_", "kerning", "_x", "_width", "Math", "round", "symbolName", "symbolOwner", "className", "enter text", "centered", "addProperty", "line_spacing", "text", "tracking", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Toxic"
+GetMember
+Not
+Not
+If loc0ac2
+Push "_global"
+GetVariable
+Push "Toxic"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, true, false, true {
+Push 0, register1, undefined
+CallMethod
+Pop
+Push register2, "useFocusRect", false
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "_global"
+GetVariable
+Push "Toxic"
+GetMember
+Push "mx"
+GetVariable
+Push "core"
+GetMember
+Push "UIComponent"
+GetMember
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, "init"
+CallMethod
+Pop
+Push register1, "letters", 0, "Array"
+NewObject
+SetMember
+Push register1, "holder", 0, "Array"
+NewObject
+SetMember
+Push register1, "useHandCursor", false
+SetMember
+Push register1, "boundingBox_mc"
+GetMember
+Push "_visible", false
+SetMember
+}
+SetMember
+Push register2, "__get__text"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "__text"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__text"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newText" {
+Push register1, "__text", register2
+SetMember
+Push 0, register1, "invalidate"
+CallMethod
+Pop
+Push 0, register1, "__get__text"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__tracking"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "__tracking"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__tracking"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newTracking" {
+Push register1, "__tracking", register2
+SetMember
+Push 0, register1, "invalidate"
+CallMethod
+Pop
+Push 0, register1, "__get__tracking"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__line_spacing"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "__line_spacing"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__line_spacing"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newLine_spacing" {
+Push register1, "__line_spacing", register2
+SetMember
+Push 0, register1, "invalidate"
+CallMethod
+Pop
+Push 0, register1, "__get__line_spacing"
+CallMethod
+Return
+}
+SetMember
+Push register2, "__get__centered"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "__centered"
+GetMember
+Return
+}
+SetMember
+Push register2, "__set__centered"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newCentered" {
+Push register1, "__centered", register2
+SetMember
+Push 0, register1, "invalidate"
+CallMethod
+Pop
+Push 0, register1, "__get__centered"
+CallMethod
+Return
+}
+SetMember
+Push register2, "draw"
+DefineFunction2 "", 0, 8, false, false, false, true, true, false, false, true, false {
+Push 0, register1, "base"
+GetMember
+Push "removeMovieClip"
+CallMethod
+Pop
+Push register1, "base", 0, "base", 2, register1, "createEmptyMovieClip"
+CallMethod
+SetMember
+Push register1, "holder", 0, "Array"
+NewObject
+SetMember
+Push 0
+StoreRegister 5
+Pop
+Push register5, "holder", register5
+Add2
+Push 2, register1, "base"
+GetMember
+Push "createEmptyMovieClip"
+CallMethod
+Push 1, register1, "holder"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register1, "letters", 0, "Array"
+NewObject
+SetMember
+Push 0, "Array"
+NewObject
+Push 1, register1, "letters"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push 0
+StoreRegister 4
+Pop
+loc05c1:Push register4, register1, "__text"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc081a
+Push register1, "__text", 0, register1, "__text"
+GetMember
+Push "toLowerCase"
+CallMethod
+SetMember
+Push register4, 1, register1, "__text"
+GetMember
+Push "charAt"
+CallMethod
+StoreRegister 7
+Pop
+Push register7
+StoreRegister 0
+Push " "
+StrictEquals
+If loc0668
+Push register0, "?"
+StrictEquals
+If loc06ac
+Push register0, "!"
+StrictEquals
+If loc06f0
+Push register0, "\n"
+StrictEquals
+If loc0734
+Push register0, "\r"
+StrictEquals
+If loc0734
+Push register0, "|"
+StrictEquals
+If loc0734
+Jump loc07c0
+loc0668:Push register4, "t", register4
+Add2
+Push "char_space", 3, register1, "holder"
+GetMember
+Push register5
+GetMember
+Push "attachMovie"
+CallMethod
+Push 1, register1, "letters"
+GetMember
+Push register5
+GetMember
+Push "push"
+CallMethod
+Pop
+Jump loc080a
+loc06ac:Push register4, "t", register4
+Add2
+Push "char_question", 3, register1, "holder"
+GetMember
+Push register5
+GetMember
+Push "attachMovie"
+CallMethod
+Push 1, register1, "letters"
+GetMember
+Push register5
+GetMember
+Push "push"
+CallMethod
+Pop
+Jump loc080a
+loc06f0:Push register4, "t", register4
+Add2
+Push "char_exclamation", 3, register1, "holder"
+GetMember
+Push register5
+GetMember
+Push "attachMovie"
+CallMethod
+Push 1, register1, "letters"
+GetMember
+Push register5
+GetMember
+Push "push"
+CallMethod
+Pop
+Jump loc080a
+loc0734:Push register5
+Increment
+StoreRegister 5
+Pop
+Push 0, "Array"
+NewObject
+Push 1, register1, "letters"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register5, "holder", register5
+Add2
+Push 2, register1, "base"
+GetMember
+Push "createEmptyMovieClip"
+CallMethod
+Push 1, register1, "holder"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register1, "holder"
+GetMember
+Push register5
+GetMember
+Push "_y", 0, register1, "__get__line_spacing"
+CallMethod
+Push register5
+Multiply
+SetMember
+Jump loc080a
+loc07c0:Push register4, "t", register4
+Add2
+Push "char_", register7
+Add2
+Push 3, register1, "holder"
+GetMember
+Push register5
+GetMember
+Push "attachMovie"
+CallMethod
+Push 1, register1, "letters"
+GetMember
+Push register5
+GetMember
+Push "push"
+CallMethod
+Pop
+Jump loc080a
+loc080a:Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc05c1
+loc081a:Push 0
+StoreRegister 4
+Pop
+loc082b:Push register4, register1, "letters"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc09c3
+Push 1
+StoreRegister 3
+Pop
+loc084f:Push register3, register1, "letters"
+GetMember
+Push register4
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc094d
+Push register1, "__tracking"
+GetMember
+StoreRegister 6
+Pop
+Push register1, "letters"
+GetMember
+Push register4
+GetMember
+Push register3, 1
+Subtract
+GetMember
+Push "kerning"
+GetMember
+Push undefined
+Equals2
+Not
+Not
+If loc08d8
+Push register6, register1, "letters"
+GetMember
+Push register4
+GetMember
+Push register3, 1
+Subtract
+GetMember
+Push "kerning"
+GetMember
+Push "_x"
+GetMember
+Add2
+StoreRegister 6
+Pop
+Jump loc0900
+loc08d8:Push register6, register1, "letters"
+GetMember
+Push register4
+GetMember
+Push register3, 1
+Subtract
+GetMember
+Push "_width"
+GetMember
+Add2
+StoreRegister 6
+Pop
+loc0900:Push register1, "letters"
+GetMember
+Push register4
+GetMember
+Push register3
+GetMember
+Push "_x", register1, "letters"
+GetMember
+Push register4
+GetMember
+Push register3, 1
+Subtract
+GetMember
+Push "_x"
+GetMember
+Push register6
+Add2
+SetMember
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc084f
+loc094d:Push register1, "__centered"
+GetMember
+Not
+If loc09b3
+Push register1, "holder"
+GetMember
+Push register4
+GetMember
+Push "_x", register1, "holder"
+GetMember
+Push register4
+GetMember
+Push "_x"
+GetMember
+Push register1, "holder"
+GetMember
+Push register4
+GetMember
+Push "_width"
+GetMember
+Push 0.5
+Multiply
+Push 1, "Math"
+GetVariable
+Push "round"
+CallMethod
+Subtract
+SetMember
+loc09b3:Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc082b
+loc09c3:Push 0, register2, "draw"
+CallMethod
+Pop
+}
+SetMember
+Push register1, "symbolName", "Toxic"
+SetMember
+Push register1, "symbolOwner", "Toxic"
+GetVariable
+SetMember
+Push register2, "className", "Toxic"
+SetMember
+Push register2, "__text", "enter text"
+SetMember
+Push register2, "__tracking", 1
+SetMember
+Push register2, "__centered", false
+SetMember
+Push register2, "__line_spacing", 9
+SetMember
+Push register2, "__set__centered"
+GetMember
+Push register2, "__get__centered"
+GetMember
+Push "centered", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__line_spacing"
+GetMember
+Push register2, "__get__line_spacing"
+GetMember
+Push "line_spacing", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__text"
+GetMember
+Push register2, "__get__text"
+GetMember
+Push "text", 3, register2, "addProperty"
+CallMethod
+Push register2, "__set__tracking"
+GetMember
+Push register2, "__get__tracking"
+GetMember
+Push "tracking", 3, register2, "addProperty"
+CallMethod
+Push 1, null, "_global"
+GetVariable
+Push "Toxic"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0ac2:Pop

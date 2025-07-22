@@ -1,0 +1,210 @@
+ConstantPool "_global", "com", "Object", "nitrome", "highscore", "HiscoreLine", "_visible", "MovieClip", "prototype", "displayData", "_name", " displayData:", "rank_text", "text", ".", "name_text", "toUpperCase", ",", "_parent", "getZeroFill", "getMaxDigits", "length", "0", "score_text", "updateAfterEvent", "hideAway", " hideAway", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc012f
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc012f:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0167
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0167:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Not
+Not
+If loc01ab
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore", 0, "Object"
+NewObject
+SetMember
+loc01ab:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreLine"
+GetMember
+Not
+Not
+If loc0409
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreLine"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "_visible", true
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreLine"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "displayData"
+DefineFunction2 "", 3, 10, false, false, true, false, true, false, false, true, false, 8, "rank", 9, "nametext", 4, "scoretext" {
+Push register1, "_name"
+GetMember
+Push " displayData:"
+Add2
+Trace
+Push register1, "rank_text"
+GetMember
+Push "text", register8, "."
+Add2
+ToString
+SetMember
+Push register1, "name_text"
+GetMember
+Push "text", 0, register9, "toUpperCase"
+CallMethod
+SetMember
+Push register8, ","
+Add2
+Push register9
+Add2
+Push ","
+Add2
+Push register4
+Add2
+Trace
+Push 0, register1, "_parent"
+GetMember
+Push "getZeroFill"
+CallMethod
+Push true
+Equals2
+Not
+If loc0378
+Push 0, register1, "_parent"
+GetMember
+Push "getMaxDigits"
+CallMethod
+StoreRegister 7
+Pop
+Push register4, "length"
+GetMember
+StoreRegister 6
+Pop
+Push register7, register6
+Subtract
+StoreRegister 3
+Pop
+Push register4
+StoreRegister 5
+Pop
+Push 1
+StoreRegister 2
+Pop
+loc0336:Push register2, register3
+Greater
+Not
+Not
+If loc0363
+Push "0", register5
+Add2
+ToString
+StoreRegister 5
+Pop
+Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc0336
+loc0363:Push register1, "score_text"
+GetMember
+Push "text", register5
+SetMember
+Jump loc0393
+loc0378:Push register4
+ToString
+StoreRegister 5
+Pop
+Push register1, "score_text"
+GetMember
+Push "text", register5
+SetMember
+loc0393:Push register1, "_visible", true
+SetMember
+Push 0, "updateAfterEvent"
+CallFunction
+Pop
+}
+SetMember
+Push register2, "hideAway"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push " hideAway"
+Add2
+Trace
+Push register1, "_visible", false
+SetMember
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "highscore"
+GetMember
+Push "HiscoreLine"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0409:Pop

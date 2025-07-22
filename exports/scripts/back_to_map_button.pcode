@@ -1,0 +1,7 @@
+Push "com.nitrome.buttons.BackToMapButton"
+GetVariable
+Push "back_to_map_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

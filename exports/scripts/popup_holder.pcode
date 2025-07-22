@@ -1,0 +1,7 @@
+Push "com.nitrome.game.PopUpHolder"
+GetVariable
+Push "popup_holder", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

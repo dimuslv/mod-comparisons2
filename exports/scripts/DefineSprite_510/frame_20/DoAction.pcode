@@ -1,0 +1,22 @@
+ConstantPool "this", "_parent", "fire_angle", "startFire"
+Push "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "fire_angle"
+GetMember
+Push 2
+Equals2
+Not
+If loc006a
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "startFire"
+CallMethod
+Pop
+Stop
+Jump loc006b
+loc006a:Play
+loc006b:

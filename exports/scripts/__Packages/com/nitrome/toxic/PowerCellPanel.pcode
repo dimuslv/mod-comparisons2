@@ -1,0 +1,142 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "PowerCellPanel", "MovieClip", "prototype", "setCount", "count", "count_text", "text", "increment", "getPowerCellCount", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00be
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00be:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00f6
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00f6:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc013a
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc013a:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellPanel"
+GetMember
+Not
+Not
+If loc0289
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellPanel"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellPanel"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "setCount"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "n" {
+Push register1, "count", register2
+SetMember
+Push register1, "count_text"
+GetMember
+Push "text", register1, "count"
+GetMember
+ToString
+SetMember
+}
+SetMember
+Push register2, "increment"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "count", register1, "count"
+GetMember
+Increment
+SetMember
+Push register1, "count_text"
+GetMember
+Push "text", register1, "count"
+GetMember
+ToString
+SetMember
+}
+SetMember
+Push register2, "getPowerCellCount"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "count"
+GetMember
+Return
+}
+SetMember
+Push register2, "count", 0
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellPanel"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0289:Pop

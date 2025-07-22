@@ -1,0 +1,16 @@
+ConstantPool "this", "_y", "_x", "_root", "game", "startCreateGround"
+Push "this"
+GetVariable
+Push "_y"
+GetMember
+Push "this"
+GetVariable
+Push "_x"
+GetMember
+Push 2, "_root"
+GetVariable
+Push "game"
+GetMember
+Push "startCreateGround"
+CallMethod
+Pop

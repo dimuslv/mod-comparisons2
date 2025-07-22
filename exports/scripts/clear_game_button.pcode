@@ -1,0 +1,7 @@
+Push "com.nitrome.buttons.ClearGameButton"
+GetVariable
+Push "clear_game_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

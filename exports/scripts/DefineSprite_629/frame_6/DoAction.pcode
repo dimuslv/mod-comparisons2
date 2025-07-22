@@ -1,0 +1,12 @@
+ConstantPool "this", "_parent", "triggerScreenShake"
+Push 0, "this"
+GetVariable
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "triggerScreenShake"
+CallMethod
+Pop

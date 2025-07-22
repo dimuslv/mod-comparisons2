@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="16.0px" width="130.9px" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1.0, 0.0, 0.0, 1.0, 48.0, 9.0)">
+    <use ffdec:characterId="19" height="14.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -48.0, -7.0)" width="96.0" xlink:href="#shape0"/>
+    <clipPath id="clipPath0">
+      <path d="M -39 -3 L -39 4 L 15 4 L 15 -3 Z"/>
+    </clipPath>
+    <g clip-path="url(#clipPath0)">
+      <use ffdec:characterId="23" height="5.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -39.0, -2.0)" width="54.0" xlink:href="#shape1"/>
+    </g>
+    <use ffdec:characterId="25" height="15.0" id="percent_text" transform="matrix(1.0, 0.0, 0.0, 1.0, 14.9, -9.0)" width="68.0" xlink:href="#text0"/>
+  </g>
+  <defs>
+    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 48.0, 7.0)">
+      <pattern height="14" id="PatternID_19_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -48.0, -7.0)" patternUnits="userSpaceOnUse" viewBox="0 0 96 14" width="96">
+        <image height="14" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="96" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAOCAYAAADQZhkSAAAAiUlEQVR4Xu3VwQmAMAwF0E7iAJ3Ciyu4/yYVoZb4k2PTlPA/vIPQSvw5WAqzVRotYabd50UOsNv3WZWP6lFpElE6GlFbky8wLqaARXnCfvsMI6p0CQfPAr9zFXMBeEiKHjgjLiAYFxCMCwimFoDkYfyDZ4GleMJ+u1/UJZoDu7XK/4IbIh/MLnkAviHzVgB/9L4AAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M48.0 7.0 L-48.0 7.0 -48.0 -7.0 48.0 -7.0 48.0 7.0" ffdec:fill-bitmapId="18" style="fill:url(#PatternID_19_1)"/>
+    </g>
+    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 39.0, 2.0)">
+      <pattern height="5" id="PatternID_23_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -39.0, -2.0)" patternUnits="userSpaceOnUse" viewBox="0 0 54 5" width="54">
+        <image height="5" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="54" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAAFCAYAAAAOqx/eAAABqElEQVR4Xt3TW0tUURjG8bXW3uuwEREiCQYEIRCMuRAUL4QuAsEBIdCLIEi6EAQDSRgQAiEMSUJNzfk4qWkHTcoDZSdHSzPSRi0rx5rT07v3TLOd8Rv4wvMBfvx5GaPjEw4smpx0oKccmEcGJdMGpTMGZTMOzjwxKH9qcO6ZQWBWo+K5RuW8xvkXGlUvFS4sagQXFWqWFWpfKdS/Vmh4o3DxrcKl9xKNHyRCUYnmdYnLHyVaN2xc+WzjKq3ti43rX22071jooN2IWejaE+jetxD+LtBzIHDrp0DvL4Hbhxx9cYH+I467fznu0QaTHMNJhpEUw1iaYzzD4JoYe+hAFMGc47DHxoOd9WAagbmTsOoFheBSFlb3H7YifdiqRJMLW3NhNlryMAvXPJiF9u0srDMm0LUrcHNfIPyjCPZb4E6ce7CBPzlYwoVxjKY4HhBuPM0Q8XAEO23FIhmehZ3OYnQejFByyoWZXDGHYE4hjGoFZk0RTKPaLbak/WIruWLvfFgoalMxO1vsE8E2Cbblwiwf9s2HFRbjBOME44WwBMMQ7X6+GMv/2D9dnj/Vri2VbQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M15.0 3.0 L-39.0 3.0 -39.0 -2.0 15.0 -2.0 15.0 3.0" ffdec:fill-bitmapId="22" style="fill:url(#PatternID_23_1)"/>
+    </g>
+    <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -47.9, 2.0)">
+      <g transform="matrix(1.0, 0.0, 0.0, 1.0, 47.9, -2.0)">
+        <use fill="#83dd22" height="15.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 0.0, 11.0)" width="68.0" xlink:href="#font_FFF_Idea_8pt_st_00"/>
+        <use fill="#83dd22" height="15.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 7.0, 11.0)" width="68.0" xlink:href="#font_FFF_Idea_8pt_st__0"/>
+      </g>
+    </g>
+    <g id="font_FFF_Idea_8pt_st_00">
+      <path d="M640.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -512.0 M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="font_FFF_Idea_8pt_st__0">
+      <path d="M1024.0 0.0 L1152.0 0.0 1152.0 -128.0 1024.0 -128.0 1024.0 0.0 M1280.0 -256.0 L1280.0 128.0 896.0 128.0 896.0 -256.0 1280.0 -256.0 M256.0 -512.0 L256.0 -384.0 384.0 -384.0 384.0 -512.0 256.0 -512.0 M512.0 -256.0 L128.0 -256.0 128.0 -640.0 512.0 -640.0 512.0 -256.0 M768.0 -640.0 L896.0 -640.0 896.0 -384.0 768.0 -384.0 768.0 -640.0 M640.0 -128.0 L640.0 128.0 512.0 128.0 512.0 -128.0 640.0 -128.0 640.0 -384.0 768.0 -384.0 768.0 -128.0 640.0 -128.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+  </defs>
+</svg>

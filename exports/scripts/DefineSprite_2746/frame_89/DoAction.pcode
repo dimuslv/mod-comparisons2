@@ -1,0 +1,8 @@
+Push "pre_title_screen", 1, "_root"
+GetVariable
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Stop

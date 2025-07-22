@@ -1,0 +1,123 @@
+ConstantPool "_global", "com", "Object", "nitrome", "game", "PopUpHolder", "MovieClip", "prototype", "displayPopUp", "id", "in", "gotoAndPlay", "hidePopUp", "out", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00ac
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00ac:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00e4
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00e4:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Not
+Not
+If loc0128
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game", 0, "Object"
+NewObject
+SetMember
+loc0128:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "PopUpHolder"
+GetMember
+Not
+Not
+If loc0235
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "PopUpHolder"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "PopUpHolder"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "displayPopUp"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "id" {
+Push register1, "id", register2
+SetMember
+Push "in", 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "hidePopUp"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "out", 1, register1, "gotoAndPlay"
+CallMethod
+Pop
+}
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "game"
+GetMember
+Push "PopUpHolder"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0235:Pop

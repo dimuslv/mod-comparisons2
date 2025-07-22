@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.ConveyorBelt"
+GetVariable
+Push "conveyor_236", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

@@ -1,0 +1,177 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "InfoPoint", "MovieClip", "prototype", "getInfoPoint", "doPause", "anim", "stop", "doUnpause", "play", "init", "info_str", "game", "doCollect", "collected", "text_display", "displayText", "endCollect", "hideText", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0100
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0100:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0138
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0138:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc017c
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc017c:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "InfoPoint"
+GetMember
+Not
+Not
+If loc0378
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "InfoPoint"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "InfoPoint"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "getInfoPoint"
+DefineFunction "", 0 {
+Push true
+Return
+}
+SetMember
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "init"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 2, "str", 3, "game" {
+Push register1, "info_str", register2
+SetMember
+Push register1, "game", register3
+SetMember
+}
+SetMember
+Push register2, "doCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push false
+Equals2
+Not
+If loc02f5
+Push 1, register1, "info_str"
+GetMember
+Push 2, register2, "text_display"
+GetMember
+Push "displayText"
+CallMethod
+Pop
+Push register1, "collected", true
+SetMember
+}
+loc02f5:SetMember
+Push register2, "endCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push true
+Equals2
+Not
+If loc033e
+Push 0, register2, "text_display"
+GetMember
+Push "hideText"
+CallMethod
+Pop
+Push register1, "collected", false
+SetMember
+}
+loc033e:SetMember
+Push register2, "collected", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "InfoPoint"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0378:Pop

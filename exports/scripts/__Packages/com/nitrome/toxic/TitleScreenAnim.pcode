@@ -1,0 +1,260 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "TitleScreenAnim", "acid_holder", "acid_clip", "_x", "_y", "smoke_bubble_holder", "wall_overlay", "_width", "MovieClip", "prototype", "onEnterFrame", "scroll_x", "pipes", "big_pipes", "Math", "abs", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00f7
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00f7:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc012f
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc012f:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0173
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0173:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TitleScreenAnim"
+GetMember
+Not
+Not
+If loc049f
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TitleScreenAnim"
+DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "acid_holder"
+GetMember
+Push "acid_clip"
+GetMember
+Push "_x", 0
+SetMember
+Push register1, "acid_holder"
+GetMember
+Push "acid_clip"
+GetMember
+Push "_y", 340
+SetMember
+Push register1, "acid_holder"
+GetMember
+Push "smoke_bubble_holder"
+GetMember
+Push "_x", 0
+SetMember
+Push register1, "acid_holder"
+GetMember
+Push "smoke_bubble_holder"
+GetMember
+Push "_y", 340
+SetMember
+Push register1, "acid_holder"
+GetMember
+Push "wall_overlay"
+GetMember
+Push "_y", 209
+SetMember
+Push register1, "acid_holder"
+GetMember
+Push "wall_overlay"
+GetMember
+Push "_width", 550
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TitleScreenAnim"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "onEnterFrame"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push register1, "scroll_x", register1, "scroll_x"
+GetMember
+Push 1
+Subtract
+SetMember
+Push register1, "scroll_x"
+GetMember
+Push -1100
+Less2
+Not
+If loc02f0
+Push register1, "scroll_x", register1, "scroll_x"
+GetMember
+Push 1100
+Add2
+SetMember
+loc02f0:Push register1, "pipes"
+GetMember
+Push "_x", register1, "pipes"
+GetMember
+Push "_x"
+GetMember
+Push 1
+Subtract
+SetMember
+Push register1, "pipes"
+GetMember
+Push "_x"
+GetMember
+Push -550
+Less2
+Not
+If loc0351
+Push register1, "pipes"
+GetMember
+Push "_x", register1, "pipes"
+GetMember
+Push "_x"
+GetMember
+Push 550
+Add2
+SetMember
+loc0351:Push register1, "big_pipes"
+GetMember
+Push "_x", register1, "big_pipes"
+GetMember
+Push "_x"
+GetMember
+Push 2
+Subtract
+SetMember
+Push register1, "big_pipes"
+GetMember
+Push "_x"
+GetMember
+Push -1100
+Less2
+Not
+If loc03b2
+Push register1, "big_pipes"
+GetMember
+Push "_x", register1, "big_pipes"
+GetMember
+Push "_x"
+GetMember
+Push 1100
+Add2
+SetMember
+loc03b2:Push register1, "scroll_x"
+GetMember
+Push 32
+Modulo
+Push 1, "Math"
+GetVariable
+Push "abs"
+CallMethod
+StoreRegister 3
+Pop
+Push register1, "acid_holder"
+GetMember
+Push "acid_clip"
+GetMember
+Push "_x", 0, register3
+Subtract
+SetMember
+Push register1, "scroll_x"
+GetMember
+StoreRegister 2
+Pop
+Push register2, -1100
+Less2
+Not
+If loc0427
+Push register2, 550
+Add2
+StoreRegister 2
+Pop
+loc0427:Push register2, -550
+Greater
+Not
+If loc0448
+Push register2, 550
+Subtract
+StoreRegister 2
+Pop
+loc0448:Push register1, "acid_holder"
+GetMember
+Push "smoke_bubble_holder"
+GetMember
+Push "_x", register2
+SetMember
+}
+SetMember
+Push register2, "scroll_x", 0
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "TitleScreenAnim"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc049f:Pop

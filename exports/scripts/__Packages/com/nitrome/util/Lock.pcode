@@ -1,0 +1,129 @@
+ConstantPool "_global", "com", "Object", "nitrome", "util", "Lock", "_visible", "ng", "getNitrome", "http://www.nitrome.com/games/", "getGameId", "_blank", "getURL", "MovieClip", "prototype", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc00c1
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc00c1:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc00f5
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc00f5:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Not
+Not
+If loc0135
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util", 0, "Object"
+NewObject
+SetMember
+loc0135:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "Lock"
+GetMember
+Not
+Not
+If loc024b
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "Lock"
+DefineFunction2 "", 0, 5, false, true, false, true, true, false, false, true, false {
+Push 0, register2, undefined
+CallMethod
+Pop
+Push register1, "_visible", false
+SetMember
+Push true
+Push true
+Equals2
+Not
+If loc01b4
+Push register1, "_visible", false
+SetMember
+Jump loc01eb
+loc01b4:Push register1, "_visible", true
+SetMember
+Push "http://www.nitrome.com/games/", 0, register3, "ng"
+GetMember
+Push "getGameId"
+CallMethod
+Add2
+StoreRegister 4
+Pop
+Push "_blank", register4, 2, register1, "getURL"
+CallMethod
+Pop
+}
+loc01eb:StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "Lock"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "Lock"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc024b:Pop

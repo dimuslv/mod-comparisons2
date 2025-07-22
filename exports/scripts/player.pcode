@@ -1,0 +1,7 @@
+Push "com.nitrome.toxic.Player"
+GetVariable
+Push "player", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

@@ -1,0 +1,7 @@
+Push "com.nitrome.buttons.PauseButton"
+GetVariable
+Push "pause_button", 2, "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

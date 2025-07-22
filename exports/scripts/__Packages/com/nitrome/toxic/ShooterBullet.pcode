@@ -1,0 +1,391 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "ShooterBullet", "MovieClip", "prototype", "init", "game", "dir", "Global", "LEFT", "x_speed", "y_speed", "RIGHT", "main", "_visible", "getOnScreen", "finished", "_x", "_y", "checkCollision", "INERTIA", "GRAVITY", "screen_test", "hitTest", "left_boundary", "right_boundary", "bottom_boundary", "getSceneryCollision", "gotoAndStop", "level_width", "finishFire", "_name", "removeBullet", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0195
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0195:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc01cd
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc01cd:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc0211
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc0211:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ShooterBullet"
+GetMember
+Not
+Not
+If loc0718
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ShooterBullet"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ShooterBullet"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "init"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "game", 2, "dir" {
+Push register1, "game", register3
+SetMember
+Push register1, "dir", register2
+SetMember
+Push register2, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+Equals2
+Not
+If loc0312
+Push register1, "x_speed", -8
+SetMember
+Push register1, "y_speed", -10
+SetMember
+Jump loc0353
+loc0312:Push register2, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+Equals2
+Not
+If loc0353
+Push register1, "x_speed", 8
+SetMember
+Push register1, "y_speed", -10
+SetMember
+}
+loc0353:SetMember
+Push register2, "main"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_visible", 0, register1, "getOnScreen"
+CallMethod
+SetMember
+Push register1, "finished"
+GetMember
+Push false
+Equals2
+Not
+If loc03ce
+Push register1, "_x", register1, "_x"
+GetMember
+Push register1, "x_speed"
+GetMember
+Add2
+SetMember
+Push register1, "_y", register1, "_y"
+GetMember
+Push register1, "y_speed"
+GetMember
+Add2
+SetMember
+Push 0, register1, "checkCollision"
+CallMethod
+Pop
+loc03ce:Push register1, "x_speed", register1, "x_speed"
+GetMember
+Push register1, "INERTIA"
+GetMember
+Multiply
+SetMember
+Push register1, "y_speed", register1, "y_speed"
+GetMember
+Push register1, "GRAVITY"
+GetMember
+Add2
+SetMember
+}
+SetMember
+Push register2, "getOnScreen"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register2, "screen_test"
+GetMember
+Push 1, register1, "hitTest"
+CallMethod
+Push true
+Equals2
+Not
+If loc0434
+Push true
+Return
+loc0434:Push false
+Return
+}
+SetMember
+Push register2, "checkCollision"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push undefined
+StoreRegister 2
+Pop
+Push register1, "dir"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+Equals2
+Not
+If loc049b
+Push register1, "left_boundary"
+GetMember
+Push "_x"
+GetMember
+StoreRegister 2
+Pop
+Jump loc04db
+loc049b:Push register1, "dir"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+Equals2
+Not
+If loc04db
+Push register1, "right_boundary"
+GetMember
+Push "_x"
+GetMember
+StoreRegister 2
+Pop
+loc04db:Push register1, "bottom_boundary"
+GetMember
+Push "_y"
+GetMember
+StoreRegister 3
+Pop
+Push register1, "_y"
+GetMember
+Push register1, "_x"
+GetMember
+Push register2
+Add2
+Push 2, register1, "game"
+GetMember
+Push "getSceneryCollision"
+CallMethod
+Push true
+Equals2
+Not
+If loc0542
+Push "finished", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "finished", true
+SetMember
+Jump loc067f
+loc0542:Push register1, "_y"
+GetMember
+Push register3
+Add2
+Push register1, "_x"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "getSceneryCollision"
+CallMethod
+Push true
+Equals2
+Not
+If loc0596
+Push "finished", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "finished", true
+SetMember
+Jump loc067f
+loc0596:Push register1, "dir"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+Equals2
+PushDuplicate
+Not
+If loc05d6
+Pop
+Push register1, "_x"
+GetMember
+Push -20
+Less2
+loc05d6:Not
+If loc05fb
+Push "finished", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "finished", true
+SetMember
+Jump loc067f
+loc05fb:Push register1, "dir"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+Equals2
+PushDuplicate
+Not
+If loc065a
+Pop
+Push register1, "_x"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Push 20
+Add2
+Greater
+loc065a:Not
+If loc067f
+Push "finished", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "finished", true
+SetMember
+Jump loc067f
+}
+loc067f:SetMember
+Push register2, "finishFire"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeBullet"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "GRAVITY", 1
+SetMember
+Push register2, "INERTIA", 0.96
+SetMember
+Push register2, "finished", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "ShooterBullet"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc0718:Pop

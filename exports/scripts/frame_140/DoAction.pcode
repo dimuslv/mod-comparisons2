@@ -1,0 +1,21 @@
+ConstantPool "reload", "_root", "game", "loading_clip", "gotoAndStop"
+Push "reload"
+Trace
+Push "_root"
+GetVariable
+Push "game"
+GetMember
+RemoveSprite
+Push "_root"
+GetVariable
+Push "game"
+Delete
+Pop
+Push 1, 1, "_root"
+GetVariable
+Push "loading_clip"
+GetMember
+Push "gotoAndStop"
+CallMethod
+Pop
+GoToLabel "reload2"

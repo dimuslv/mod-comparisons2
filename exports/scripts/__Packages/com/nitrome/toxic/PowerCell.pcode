@@ -1,0 +1,196 @@
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "PowerCell", "MovieClip", "prototype", "doPause", "anim", "stop", "doUnpause", "play", "init", "game", "dull", "row", "col", "_alpha", "doCollect", "collected", "collect", "gotoAndStop", "powercell_panel", "increment", "collectPowerCell", "finishCollect", "_name", "removeObject", "removeMovieClip", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Not
+Not
+If loc0141
+Push "_global"
+GetVariable
+Push "com", 0, "Object"
+NewObject
+SetMember
+loc0141:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Not
+Not
+If loc0179
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome", 0, "Object"
+NewObject
+SetMember
+loc0179:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Not
+Not
+If loc01bd
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic", 0, "Object"
+NewObject
+SetMember
+loc01bd:Pop
+Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCell"
+GetMember
+Not
+Not
+If loc041e
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCell"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0, register1, undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCell"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1, "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2, "doPause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "stop"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "doUnpause"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0, register1, "anim"
+GetMember
+Push "play"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "init"
+DefineFunction2 "", 4, 6, false, false, true, false, true, false, false, true, false, 4, "game", 2, "dull", 3, "row", 5, "col" {
+Push register1, "game", register4
+SetMember
+Push register1, "dull", register2
+SetMember
+Push register1, "row", register3
+SetMember
+Push register1, "col", register5
+SetMember
+Push register2, true
+Equals2
+Not
+If loc0308
+Push register1, "_alpha", 50
+SetMember
+}
+loc0308:SetMember
+Push register2, "doCollect"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
+Push register1, "collected"
+GetMember
+Push false
+Equals2
+Not
+If loc03a3
+Push "collect", 1, register1, "gotoAndStop"
+CallMethod
+Pop
+Push register1, "dull"
+GetMember
+Push false
+Equals2
+Not
+If loc0399
+Push 0, register2, "powercell_panel"
+GetMember
+Push "increment"
+CallMethod
+Pop
+Push register1, "col"
+GetMember
+Push register1, "row"
+GetMember
+Push 2, register1, "game"
+GetMember
+Push "collectPowerCell"
+CallMethod
+Pop
+Push register1, "dull", true
+SetMember
+loc0399:Push register1, "collected", true
+SetMember
+}
+loc03a3:SetMember
+Push register2, "finishCollect"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1, "_name"
+GetMember
+Push 1, register1, "game"
+GetMember
+Push "removeObject"
+CallMethod
+Pop
+Push 0, register1, "removeMovieClip"
+CallMethod
+Pop
+}
+SetMember
+Push register2, "collected", false
+SetMember
+Push 1, null, "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCell"
+GetMember
+Push "prototype"
+GetMember
+Push 3, "ASSetPropFlags"
+CallFunction
+loc041e:Pop
