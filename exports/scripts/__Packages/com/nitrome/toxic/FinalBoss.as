@@ -41,6 +41,7 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
    var finish_die = false;
    var die_count = 0;
    var exp_count = 0;
+   var chid = 840;
    function FinalBoss()
    {
       super();
@@ -49,44 +50,44 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
    {
       if(this.state == this.START)
       {
-         this.anim.stop();
-         this.anim.electric.stop();
+         _root._stop(this.anim);
+         _root._stop(this.anim.electric);
       }
       else if(this.state == this.GROW)
       {
-         this.anim.electric.stop();
-         this.anim.grow.stop();
-         this.anim.base.heart.stop();
+         _root._stop(this.anim.electric);
+         _root._stop(this.anim.grow);
+         _root._stop(this.anim.base.heart);
       }
       else if(this.state == this.WAIT)
       {
-         this.anim.electric.stop();
-         this.anim.base.heart.stop();
+         _root._stop(this.anim.electric);
+         _root._stop(this.anim.base.heart);
       }
       else if(this.state == this.PULSE)
       {
-         this.anim.stop();
-         this.anim.electric.stop();
-         this.anim.base.heart.stop();
+         _root._stop(this.anim);
+         _root._stop(this.anim.electric);
+         _root._stop(this.anim.base.heart);
       }
       else if(this.state == this.LASER)
       {
-         this.anim.stop();
-         this.anim.electric.stop();
-         this.anim.base.heart.stop();
+         _root._stop(this.anim);
+         _root._stop(this.anim.electric);
+         _root._stop(this.anim.base.heart);
       }
       else if(this.state == this.FIRE)
       {
-         this.anim.stop();
-         this.anim.electric.stop();
-         this.anim.base.heart.stop();
-         this.anim.eye.stop();
+         _root._stop(this.anim);
+         _root._stop(this.anim.electric);
+         _root._stop(this.anim.base.heart);
+         _root._stop(this.anim.eye);
       }
       else if(this.state == this.GROWBACK)
       {
-         this.anim.electric.stop();
-         this.anim.base.heart.stop();
-         _root.game.grow_holder.boss2.anim.anim.stop();
+         _root._stop(this.anim.electric);
+         _root._stop(this.anim.base.heart);
+         _root._stop(_root.game.grow_holder.boss2.anim.anim);
       }
       else if(this.state == this.DIE)
       {
@@ -96,44 +97,44 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
    {
       if(this.state == this.START)
       {
-         this.anim.play();
-         this.anim.electric.play();
+         _root._play(this.anim);
+         _root._play(this.anim.electric);
       }
       else if(this.state == this.GROW)
       {
-         this.anim.electric.play();
-         this.anim.grow.play();
-         this.anim.base.heart.play();
+         _root._play(this.anim.electric);
+         _root._play(this.anim.grow);
+         _root._play(this.anim.base.heart);
       }
       else if(this.state == this.WAIT)
       {
-         this.anim.electric.play();
-         this.anim.base.heart.play();
+         _root._play(this.anim.electric);
+         _root._play(this.anim.base.heart);
       }
       else if(this.state == this.PULSE)
       {
-         this.anim.play();
-         this.anim.electric.play();
-         this.anim.base.heart.play();
+         _root._play(this.anim);
+         _root._play(this.anim.electric);
+         _root._play(this.anim.base.heart);
       }
       else if(this.state == this.LASER)
       {
-         this.anim.play();
-         this.anim.electric.play();
-         this.anim.base.heart.play();
+         _root._play(this.anim);
+         _root._play(this.anim.electric);
+         _root._play(this.anim.base.heart);
       }
       else if(this.state == this.FIRE)
       {
-         this.anim.play();
-         this.anim.electric.play();
-         this.anim.base.heart.play();
-         this.anim.eye.play();
+         _root._play(this.anim);
+         _root._play(this.anim.electric);
+         _root._play(this.anim.base.heart);
+         _root._play(this.anim.eye);
       }
       else if(this.state == this.GROWBACK)
       {
-         this.anim.electric.play();
-         this.anim.base.heart.play();
-         _root.game.grow_holder.boss2.anim.anim.play();
+         _root._play(this.anim.electric);
+         _root._play(this.anim.base.heart);
+         _root._play(_root.game.grow_holder.boss2.anim.anim);
       }
       else if(this.state == this.DIE)
       {
@@ -353,8 +354,8 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
       if(this.die_count % 5 == 0)
       {
          this.exp_count = this.exp_count + 1;
-         _loc3_ = random(100) + (this._x - 50);
-         _loc2_ = this._y - random(125);
+         _loc3_ = _root._random(100) + (this._x - 50);
+         _loc2_ = this._y - _root._random(125);
          this.game.createExplosion(_loc3_,_loc2_,"explosion_" + this.exp_count,com.nitrome.toxic.Global.BOMB_BOSS,0);
          this.die_count = 0;
       }
@@ -391,7 +392,7 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
    function startFinishLaser()
    {
       this.prev_weapon = this.LASER;
-      this.anim.gotoAndPlay("out");
+      _root._gotoAndPlay(this.anim,"out");
    }
    function finishLaser()
    {

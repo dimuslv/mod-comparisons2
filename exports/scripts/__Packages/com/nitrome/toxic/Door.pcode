@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00f0
+If loc00ec
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00f0:Pop
+loc00ec:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0128
+If loc0120
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0128:Pop
+loc0120:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc016c
+If loc0160
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc016c:Pop
+loc0160:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Door"
 GetMember
 Not
 Not
-If loc0344
+If loc0345
 Push "com"
 GetVariable
 Push "nitrome"
@@ -154,6 +154,8 @@ CallMethod
 Pop
 }
 SetMember
+Push register2, "chid", 1297
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -166,4 +168,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0344:Pop
+loc0345:Pop

@@ -1,4 +1,9 @@
 ConstantPool "this", "_parent", "triggerScreenShake"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc005e
 Push 0, "this"
 GetVariable
 Push "_parent"
@@ -8,3 +13,4 @@ GetMember
 Push "triggerScreenShake"
 CallMethod
 Pop
+loc005e:

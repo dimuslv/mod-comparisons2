@@ -1,4 +1,9 @@
 ConstantPool "this", "_parent", "fire_angle", "startFire"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0082
 Push "this"
 GetVariable
 Push "_parent"
@@ -8,7 +13,7 @@ GetMember
 Push 1
 Equals2
 Not
-If loc006a
+If loc0081
 Push 0, "this"
 GetVariable
 Push "_parent"
@@ -17,6 +22,6 @@ Push "startFire"
 CallMethod
 Pop
 Stop
-Jump loc006b
-loc006a:Play
-loc006b:
+Jump loc0082
+loc0081:Play
+loc0082:

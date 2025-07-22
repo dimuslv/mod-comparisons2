@@ -1,4 +1,9 @@
 ConstantPool "this", "_parent", "debris_x_offset"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc005a
 Push "this"
 GetVariable
 Push "_parent"
@@ -7,3 +12,4 @@ Push "_parent"
 GetMember
 Push "debris_x_offset", -128
 SetMember
+loc005a:

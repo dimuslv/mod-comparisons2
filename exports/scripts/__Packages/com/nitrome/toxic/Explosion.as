@@ -3,6 +3,7 @@ class com.nitrome.toxic.Explosion extends MovieClip
    var game;
    var bomb_type;
    var bomb_dir;
+   var chid;
    function Explosion()
    {
       super();
@@ -12,6 +13,22 @@ class com.nitrome.toxic.Explosion extends MovieClip
       this.game = game;
       this.bomb_type = bomb_type;
       this.bomb_dir = bomb_dir;
+      if(bomb_type == 1)
+      {
+         this.chid = 1373;
+      }
+      else if(bomb_type == 2)
+      {
+         this.chid = 1398;
+      }
+      else if(bomb_type == 5)
+      {
+         this.chid = 1467;
+      }
+      else
+      {
+         this.chid = 1421;
+      }
    }
    function cutHole()
    {

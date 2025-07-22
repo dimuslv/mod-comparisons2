@@ -6,7 +6,14 @@ class com.nitrome.buttons.PauseButton extends com.nitrome.buttons.SimpleButton
    }
    function doPress()
    {
-      _root.popup_holder.displayPopUp("game_paused");
-      _root.game.pauseGame();
+      if(!_root.aMode)
+      {
+         _root.popup_holder.displayPopUp("game_paused");
+         _root.game.pauseGame();
+      }
+      else
+      {
+         _root.justPause = true;
+      }
    }
 }

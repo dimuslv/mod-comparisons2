@@ -1,8 +1,13 @@
 ConstantPool "_parent", "finishStart"
-Push 0
-Push "_parent"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0047
+Push 0, "_parent"
 GetVariable
 Push "finishStart"
 CallMethod
 Pop
 Stop
+loc0047:

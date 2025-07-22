@@ -1,2 +1,5 @@
-this._parent.doExplode();
-stop();
+if(!_root.aMode)
+{
+   this._parent.doExplode();
+   stop();
+}

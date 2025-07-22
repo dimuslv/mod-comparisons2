@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc01ef
+If loc01eb
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc01ef:Pop
+loc01eb:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0227
+If loc021f
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0227:Pop
+loc021f:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc026b
+If loc025f
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc026b:Pop
+loc025f:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "FirstInfoPoint"
 GetMember
 Not
 Not
-If loc059e
+If loc05ab
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,18 +100,22 @@ Return
 SetMember
 Push register2, "doPause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "doUnpause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -131,30 +135,30 @@ GetMember
 Push false
 Equals2
 Not
-If loc0418
+If loc0420
 Push register1, "hacked"
 GetMember
 Push false
 Equals2
 Not
-If loc03ed
+If loc03f5
 Push 2, "0100110100010111010100101010101000100010101001010101001101000101110111001011101010001000101010010100000011010001011101010110101010100010001010000101", 2, register2, "text_display"
 GetMember
 Push "displayText"
 CallMethod
 Pop
-Jump loc040e
-loc03ed:Push 1, register1, "info_str"
+Jump loc0416
+loc03f5:Push 1, register1, "info_str"
 GetMember
 Push 2, register2, "text_display"
 GetMember
 Push "displayText"
 CallMethod
 Pop
-loc040e:Push register1, "collected", true
+loc0416:Push register1, "collected", true
 SetMember
 }
-loc0418:SetMember
+loc0420:SetMember
 Push register2, "endCollect"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push register1, "collected"
@@ -162,19 +166,19 @@ GetMember
 Push true
 Equals2
 Not
-If loc04ac
+If loc04b0
 Push register1, "hacked"
 GetMember
 Push true
 Equals2
 Not
-If loc048a
+If loc0492
 Push register1, "first_read"
 GetMember
 Push false
 Equals2
 Not
-If loc048a
+If loc0492
 Push 3, 1, register1, "game"
 GetMember
 Push "openDoor"
@@ -182,7 +186,7 @@ CallMethod
 Pop
 Push register1, "first_read", true
 SetMember
-loc048a:Push 0, register2, "text_display"
+loc0492:Push 0, register2, "text_display"
 GetMember
 Push "hideText"
 CallMethod
@@ -190,7 +194,7 @@ Pop
 Push register1, "collected", false
 SetMember
 }
-loc04ac:SetMember
+loc04b0:SetMember
 Push register2, "checkExplosions"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push register1, "hacked"
@@ -233,6 +237,8 @@ Push register2, "hacked", false
 SetMember
 Push register2, "first_read", false
 SetMember
+Push register2, "chid", 1482
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -245,4 +251,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc059e:Pop
+loc05ab:Pop

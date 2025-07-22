@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00c6
+If loc00c2
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00c6:Pop
+loc00c2:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00fe
+If loc00f6
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc00fe:Pop
+loc00f6:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "game"
 GetMember
 Not
 Not
-If loc0142
+If loc0136
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "game", 0, "Object"
 NewObject
 SetMember
-loc0142:Pop
+loc0136:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "TransitionTween"
 GetMember
 Not
 Not
-If loc0279
+If loc0285
 Push "com"
 GetVariable
 Push "nitrome"
@@ -96,11 +96,18 @@ Push register2, "doTween"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "frame" {
 Push register1, "frame", register2
 SetMember
+Push true
+If loc0201
 Push 2, 1, register1, "gotoAndPlay"
 CallMethod
 Pop
+Jump loc0212
+loc0201:Push 0
+Push register1, "changeFrame"
+CallMethod
+Pop
 }
-SetMember
+loc0212:SetMember
 Push register2, "changeFrame"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push 0, register2, "game"
@@ -129,4 +136,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0279:Pop
+loc0285:Pop

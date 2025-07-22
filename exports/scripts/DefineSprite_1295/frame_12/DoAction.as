@@ -1,1 +1,4 @@
-this._parent.finishClose();
+if(!_root.aMode)
+{
+   this._parent.finishClose();
+}

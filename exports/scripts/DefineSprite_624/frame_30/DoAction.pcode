@@ -1,4 +1,9 @@
 ConstantPool "this", "_parent", "allowWalk"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0055
 Push 0, "this"
 GetVariable
 Push "_parent"
@@ -8,3 +13,4 @@ GetMember
 Push "allowWalk"
 CallMethod
 Pop
+loc0055:

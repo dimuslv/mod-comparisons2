@@ -9,19 +9,20 @@ class com.nitrome.toxic.Drip extends MovieClip
    var falling = false;
    var y_speed = 5;
    var finish_drip = false;
+   var chid = 1346;
    function Drip()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
-      this.clip.stop();
+      _root._stop(this.anim);
+      _root._stop(this.clip);
    }
    function doUnpause()
    {
-      this.anim.play();
-      this.clip.play();
+      _root._play(this.anim);
+      _root._play(this.clip);
    }
    function init(game, type)
    {

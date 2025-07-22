@@ -1,3 +1,9 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0054
 Push "reset_", "this"
 GetVariable
 Push "_parent"
@@ -6,3 +12,4 @@ Push "fire_angle"
 GetMember
 Add2
 GotoFrame2 false, true
+loc0054:

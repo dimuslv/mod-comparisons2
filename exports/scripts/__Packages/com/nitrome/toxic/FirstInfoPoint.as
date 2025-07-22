@@ -6,6 +6,7 @@ class com.nitrome.toxic.FirstInfoPoint extends MovieClip
    var collected = false;
    var hacked = false;
    var first_read = false;
+   var chid = 1482;
    function FirstInfoPoint()
    {
       super();
@@ -16,11 +17,11 @@ class com.nitrome.toxic.FirstInfoPoint extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(str, game)
    {

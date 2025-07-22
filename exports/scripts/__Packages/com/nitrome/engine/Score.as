@@ -26,7 +26,7 @@ class com.nitrome.engine.Score
    }
    static function rotate()
    {
-      com.nitrome.engine.Score.reset = (Math.random() * com.nitrome.engine.Score.STEPS >> 0) + 1;
-      com.nitrome.engine.Score.r = 100000 + (Math.random() * 200000 >> 0);
+      com.nitrome.engine.Score.reset = (_root._random_double() * com.nitrome.engine.Score.STEPS >> 0) + 1;
+      com.nitrome.engine.Score.r = 100000 + (_root._random_double() * 200000 >> 0);
    }
 }

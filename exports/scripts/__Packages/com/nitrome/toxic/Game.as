@@ -58,7 +58,10 @@ class com.nitrome.toxic.Game extends MovieClip
    var bonus_pad_row;
    var bonus_pad_col;
    var bomb_count;
+   var doKeyDown;
+   var doKeyUp;
    var onEnterFrame;
+   var doEnterFrame;
    var scroll_x_min_diff = 0;
    var scroll_x_max_diff = 0;
    var screen_shake = 0;
@@ -204,7 +207,10 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function main()
    {
-      this.checkKeys();
+      if(!_root.aMode)
+      {
+         this.checkKeys();
+      }
       this.player.main();
       this.updateBombs();
       this.updateRobots();
@@ -396,7 +402,7 @@ class com.nitrome.toxic.Game extends MovieClip
       if(this.screen_shake > 0)
       {
          this.screen_shake -= 1;
-         _loc2_ = random(4) + 1;
+         _loc2_ = _root._random(4) + 1;
          if(_loc2_ == 1)
          {
             this._x -= 3;
@@ -457,10 +463,18 @@ class com.nitrome.toxic.Game extends MovieClip
          this.xml = this.prepareCustom(_root.xml.firstChild);
       }
       this.power_cell_memory = new com.nitrome.toxic.PowerCellMemory();
+      if(_root.aMode)
+      {
+         _root.rngSeed = _root.curArray[1];
+      }
       _root.game.loadLevel();
       ClockDisp.initDriver(_root.powercell_panel.createEmptyMovieClip("CDDriverMovie",_root.powercell_panel.getNextHighestDepth()));
       var _loc5_ = new ClockDisp(0,-450,-375);
       _loc5_.setPause(true);
+      if(_root.aMode)
+      {
+         _root.init();
+      }
    }
    function clearAll()
    {
@@ -808,35 +822,53 @@ class com.nitrome.toxic.Game extends MovieClip
       this.key_listener = new Object();
       this.key_listener.onKeyDown = function()
       {
-         if(Key.getCode() == 38 || Key.getCode() == 87)
+         if(!_root.aMode)
          {
-            com.nitrome.toxic.Global.UP_PRESSED = true;
+            _root.game.doKeyDown(Key.getCode());
          }
-         if(Key.getCode() == 40 || Key.getCode() == 83)
+         else
          {
-            com.nitrome.toxic.Global.DOWN_PRESSED = true;
-         }
-         if(Key.getCode() == 32)
-         {
-            _root.game.layBomb();
-         }
-         if(Key.getCode() == 37 || Key.getCode() == 65)
-         {
-            com.nitrome.toxic.Global.LAST_DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
-         }
-         if(Key.getCode() == 39 || Key.getCode() == 68)
-         {
-            com.nitrome.toxic.Global.LAST_DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
+            _root.doKeyDown(Key.getCode());
          }
       };
       this.key_listener.onKeyUp = function()
       {
-         if(Key.getCode() == 38 || Key.getCode() == 87)
+         if(!_root.aMode)
+         {
+            _root.game.doKeyUp(Key.getCode());
+         }
+      };
+      this.doKeyDown = function(code)
+      {
+         if(code == 38 || code == 87)
+         {
+            com.nitrome.toxic.Global.UP_PRESSED = true;
+         }
+         if(code == 40 || code == 83)
+         {
+            com.nitrome.toxic.Global.DOWN_PRESSED = true;
+         }
+         if(code == 32)
+         {
+            _root.game.layBomb();
+         }
+         if(code == 37 || code == 65)
+         {
+            com.nitrome.toxic.Global.LAST_DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
+         }
+         if(code == 39 || code == 68)
+         {
+            com.nitrome.toxic.Global.LAST_DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
+         }
+      };
+      this.doKeyUp = function(code)
+      {
+         if(code == 38 || code == 87)
          {
             com.nitrome.toxic.Global.can_jump = true;
             com.nitrome.toxic.Global.UP_PRESSED = false;
          }
-         if(Key.getCode() == 40 || Key.getCode() == 83)
+         if(code == 40 || code == 83)
          {
             com.nitrome.toxic.Global.DOWN_PRESSED = false;
          }
@@ -845,6 +877,17 @@ class com.nitrome.toxic.Game extends MovieClip
       com.nitrome.toxic.Global.game_paused = false;
       this.onEnterFrame = function()
       {
+         if(!_root.aMode)
+         {
+            this.doEnterFrame();
+         }
+         else
+         {
+            _root.perform();
+         }
+      };
+      this.doEnterFrame = function()
+      {
          ClockDisp.enterFrame();
          if(com.nitrome.toxic.Global.game_paused == false)
          {
@@ -852,7 +895,14 @@ class com.nitrome.toxic.Game extends MovieClip
          }
       };
       _root.mc.startGameMusic(false);
-      _root.loading_clip.gotoAndPlay("out");
+      if(!_root.aMode)
+      {
+         _root.loading_clip.gotoAndPlay("out");
+      }
+      else
+      {
+         _root.loading_clip.gotoAndStop(54);
+      }
    }
    function clearBossBmp()
    {
@@ -953,6 +1003,14 @@ class com.nitrome.toxic.Game extends MovieClip
       {
          _loc6_ = this.acid_holder.getNextHighestDepth();
          this.acid_holder.attachMovie("tile_" + id,"tile_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         if(id == 201 || id == 202)
+         {
+            this.acid_holder["tile_" + _loc6_].chid = 2632;
+         }
+         else if(id != 203)
+         {
+            this.acid_holder["tile_" + _loc6_].chid = 2611;
+         }
       }
       else if(id == 207 || id == 208)
       {
@@ -1135,6 +1193,7 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.solid_bmp.fillRect(new flash.geom.Rectangle(col * com.nitrome.toxic.Global.TILE_WIDTH,row * com.nitrome.toxic.Global.TILE_HEIGHT,32,32),33554431);
          _loc8_ = this.safe_holder.getNextHighestDepth();
          this.safe_holder.attachMovie("bomb_spawner","spawner_" + _loc8_,_loc8_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.safe_holder["spawner_" + _loc8_].chid = 471;
          if(id == 244)
          {
             _loc6_ = this.object_holder.getNextHighestDepth();
@@ -1183,7 +1242,7 @@ class com.nitrome.toxic.Game extends MovieClip
          _loc6_ = this.danger_holder.getNextHighestDepth();
          this.danger_holder.attachMovie("tall_cannon","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
          this.robot_list.push("robot_" + _loc6_);
-         this.danger_holder["robot_" + _loc6_].init(this,id - 251);
+         this.danger_holder["robot_" + _loc6_].init(this,id - 251,true);
       }
       else if(id == 253 || id == 254)
       {
@@ -1197,6 +1256,14 @@ class com.nitrome.toxic.Game extends MovieClip
          _loc6_ = this.danger_holder.getNextHighestDepth();
          this.danger_holder.attachMovie("tile_" + id,"acid_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
          this.acid_fall_list.push("acid_" + _loc6_);
+         if(id <= 256)
+         {
+            this.danger_holder["acid_" + _loc6_].chid = 2630;
+         }
+         else
+         {
+            this.danger_holder["acid_" + _loc6_].chid = 2628;
+         }
       }
       else if(id == 259)
       {
@@ -1258,6 +1325,7 @@ class com.nitrome.toxic.Game extends MovieClip
          this.safe_list.push("boss2");
          _loc6_ = this.grow_holder.getNextHighestDepth();
          this.grow_holder.attachMovie("boss2_grow_layer","boss2",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.grow_holder.boss2.chid = 842;
          this.boss2 = true;
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("boss_solid_mask");
          _global.solid_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,174,239),new flash.geom.Point(col * com.nitrome.toxic.Global.TILE_WIDTH + 16 - 87,row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 239));
@@ -1571,7 +1639,7 @@ class com.nitrome.toxic.Game extends MovieClip
                trace("bomb_list: " + this.bomb_list.toString());
                if(this.bomb_list.length > 0)
                {
-                  this.player.anim.play();
+                  _root._play(this.player.anim);
                   _loc10_ = 0;
                   while(_loc10_ < this.bomb_list.length)
                   {
@@ -1610,7 +1678,7 @@ class com.nitrome.toxic.Game extends MovieClip
                   trace("bomb_list: " + this.bomb_list.toString());
                   if(this.bomb_list.length > 0)
                   {
-                     this.player.anim.play();
+                     _root._play(this.player.anim);
                      _loc10_ = 0;
                      while(_loc10_ < this.bomb_list.length)
                      {
@@ -2545,6 +2613,7 @@ class com.nitrome.toxic.Game extends MovieClip
    {
       var _loc5_ = this.splash_holder.getNextHighestDepth();
       this.splash_holder.attachMovie("splash","splash_" + _loc5_,_loc5_,{_x:x,_y:y});
+      this.splash_holder["splash_" + _loc5_].chid = 2226;
       _root.sfx.playSound("splash");
    }
    function finishSplash(n)
@@ -2775,10 +2844,10 @@ class com.nitrome.toxic.Game extends MovieClip
       }
       for(var _loc4_ in this.acid_holder)
       {
-         this.acid_holder[_loc4_].stop();
-         this.acid_holder[_loc4_].anim.stop();
-         this.acid_holder[_loc4_].splash.stop();
-         this.acid_holder[_loc4_].bubbles.stop();
+         _root._stop(this.acid_holder[_loc4_]);
+         _root._stop(this.acid_holder[_loc4_].anim);
+         _root._stop(this.acid_holder[_loc4_].splash);
+         _root._stop(this.acid_holder[_loc4_].bubbles);
       }
       if(this.fan_list.length > 0)
       {
@@ -2803,8 +2872,8 @@ class com.nitrome.toxic.Game extends MovieClip
          _loc3_ = 0;
          while(_loc3_ < this.acid_fall_list.length)
          {
-            this.danger_holder[this.acid_fall_list[_loc3_]].anim.stop();
-            this.danger_holder[this.acid_fall_list[_loc3_]].splash.stop();
+            _root._stop(this.danger_holder[this.acid_fall_list[_loc3_]].anim);
+            _root._stop(this.danger_holder[this.acid_fall_list[_loc3_]].splash);
             _loc3_ += 1;
          }
       }
@@ -2862,10 +2931,10 @@ class com.nitrome.toxic.Game extends MovieClip
       }
       for(var _loc4_ in this.acid_holder)
       {
-         this.acid_holder[_loc4_].play();
-         this.acid_holder[_loc4_].anim.play();
-         this.acid_holder[_loc4_].splash.play();
-         this.acid_holder[_loc4_].bubbles.play();
+         _root._play(this.acid_holder[_loc4_]);
+         _root._play(this.acid_holder[_loc4_].anim);
+         _root._play(this.acid_holder[_loc4_].splash);
+         _root._play(this.acid_holder[_loc4_].bubbles);
       }
       if(this.fan_list.length > 0)
       {
@@ -2890,8 +2959,8 @@ class com.nitrome.toxic.Game extends MovieClip
          _loc3_ = 0;
          while(_loc3_ < this.acid_fall_list.length)
          {
-            this.danger_holder[this.acid_fall_list[_loc3_]].anim.play();
-            this.danger_holder[this.acid_fall_list[_loc3_]].splash.play();
+            _root._play(this.danger_holder[this.acid_fall_list[_loc3_]].anim);
+            _root._play(this.danger_holder[this.acid_fall_list[_loc3_]].splash);
             _loc3_ += 1;
          }
       }

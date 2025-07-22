@@ -11,9 +11,9 @@ class com.nitrome.toxic.Debris extends MovieClip
    function init(game)
    {
       this.game = game;
-      this.vx = random(10) - 5;
-      this.vy = - random(20);
-      this.vr = random(10) - 5;
+      this.vx = _root._random(10) - 5;
+      this.vy = - _root._random(20);
+      this.vr = _root._random(10) - 5;
    }
    function main()
    {

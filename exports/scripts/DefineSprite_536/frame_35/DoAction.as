@@ -1,1 +1,4 @@
-this._parent._parent.doFire();
+if(!_root.aMode)
+{
+   this._parent._parent.doFire();
+}

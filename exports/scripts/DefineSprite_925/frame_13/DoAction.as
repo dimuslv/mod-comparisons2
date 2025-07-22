@@ -1,1 +1,4 @@
-this._parent.setCollapseSize(1);
+if(!_root.aMode)
+{
+   this._parent.setCollapseSize(1);
+}

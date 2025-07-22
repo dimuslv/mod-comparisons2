@@ -20,22 +20,22 @@ class com.nitrome.toxic.Acid extends MovieClip
    {
       for(var _loc2_ in this.smoke_bubble_holder)
       {
-         this.smoke_bubble_holder[_loc2_].stop();
+         _root._stop(this.smoke_bubble_holder[_loc2_]);
       }
       for(_loc2_ in this.acid_clip)
       {
-         this.acid_clip[_loc2_].stop();
+         _root._stop(this.acid_clip[_loc2_]);
       }
    }
    function doUnpause()
    {
       for(var _loc2_ in this.smoke_bubble_holder)
       {
-         this.smoke_bubble_holder[_loc2_].play();
+         _root._play(this.smoke_bubble_holder[_loc2_]);
       }
       for(_loc2_ in this.acid_clip)
       {
-         this.acid_clip[_loc2_].play();
+         _root._play(this.acid_clip[_loc2_]);
       }
    }
 }

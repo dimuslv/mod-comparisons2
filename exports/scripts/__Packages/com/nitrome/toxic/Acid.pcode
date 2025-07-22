@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00f2
+If loc00ee
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00f2:Pop
+loc00ee:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc012a
+If loc0122
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc012a:Pop
+loc0122:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc016e
+If loc0162
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc016e:Pop
+loc0162:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Acid"
 GetMember
 Not
 Not
-If loc045d
+If loc0475
 Push "com"
 GetVariable
 Push "nitrome"
@@ -167,39 +167,43 @@ DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, f
 Push register1, "smoke_bubble_holder"
 GetMember
 Enumerate2
-loc0313:StoreRegister 0
+loc02fb:StoreRegister 0
 Push null
 Equals2
-If loc034e
+If loc0342
 Push register0
 StoreRegister 2
 Pop
-Push 0, register1, "smoke_bubble_holder"
+Push register1, "smoke_bubble_holder"
 GetMember
 Push register2
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
-Jump loc0313
-loc034e:Push register1, "acid_clip"
+Jump loc02fb
+loc0342:Push register1, "acid_clip"
 GetMember
 Enumerate2
-loc0357:StoreRegister 0
+loc034b:StoreRegister 0
 Push null
 Equals2
 If loc0392
 Push register0
 StoreRegister 2
 Pop
-Push 0, register1, "acid_clip"
+Push register1, "acid_clip"
 GetMember
 Push register2
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
-Jump loc0357
+Jump loc034b
 }
 loc0392:SetMember
 Push register2, "doUnpause"
@@ -210,38 +214,42 @@ Enumerate2
 loc03ae:StoreRegister 0
 Push null
 Equals2
-If loc03e9
+If loc03f5
 Push register0
 StoreRegister 2
 Pop
-Push 0, register1, "smoke_bubble_holder"
+Push register1, "smoke_bubble_holder"
 GetMember
 Push register2
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 Jump loc03ae
-loc03e9:Push register1, "acid_clip"
+loc03f5:Push register1, "acid_clip"
 GetMember
 Enumerate2
-loc03f2:StoreRegister 0
+loc03fe:StoreRegister 0
 Push null
 Equals2
-If loc042d
+If loc0445
 Push register0
 StoreRegister 2
 Pop
-Push 0, register1, "acid_clip"
+Push register1, "acid_clip"
 GetMember
 Push register2
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
-Jump loc03f2
+Jump loc03fe
 }
-loc042d:SetMember
+loc0445:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -254,4 +262,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc045d:Pop
+loc0475:Pop

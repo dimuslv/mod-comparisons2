@@ -1,0 +1,5 @@
+ConstantPool "_root", "aMode"
+Push "_root"
+GetVariable
+Push "aMode", true
+SetMember

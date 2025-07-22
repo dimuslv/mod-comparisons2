@@ -1,1 +1,8 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0021
 Stop
+loc0021:

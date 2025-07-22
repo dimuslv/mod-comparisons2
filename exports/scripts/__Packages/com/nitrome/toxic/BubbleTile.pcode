@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00c5
+If loc00c1
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00c5:Pop
+loc00c1:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00fd
+If loc00f5
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc00fd:Pop
+loc00f5:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0141
+If loc0135
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0141:Pop
+loc0135:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "BubbleTile"
 GetMember
 Not
 Not
-If loc02a0
+If loc02df
 Push "com"
 GetVariable
 Push "nitrome"
@@ -74,6 +74,28 @@ DefineFunction2 "", 0, 5, false, false, false, true, true, false, false, true, f
 Push 0, register2, undefined
 CallMethod
 Pop
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+Not
+PushDuplicate
+If loc01d3
+Pop
+Push register1, "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "_parent"
+GetMember
+Push "_root"
+GetVariable
+Push "game"
+GetMember
+Equals2
+Not
+loc01d3:Not
+If loc027f
 Push "copy", 1, register1, "_name"
 GetMember
 Push "indexOf"
@@ -81,7 +103,7 @@ CallMethod
 Push -1
 Equals2
 Not
-If loc0240
+If loc027f
 Push 7, 1, register1, "_name"
 GetMember
 Push "slice"
@@ -114,7 +136,7 @@ Push "gotoAndPlay"
 CallMethod
 Pop
 }
-loc0240:StoreRegister 1
+loc027f:StoreRegister 1
 SetMember
 Push "com"
 GetVariable
@@ -143,4 +165,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc02a0:Pop
+loc02df:Pop

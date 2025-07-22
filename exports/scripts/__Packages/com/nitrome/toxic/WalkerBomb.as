@@ -21,6 +21,7 @@ class com.nitrome.toxic.WalkerBomb extends MovieClip
    var landed = false;
    var on_conveyor = false;
    var prev_dir = 100;
+   var chid = 2324;
    function WalkerBomb()
    {
       super();
@@ -31,11 +32,11 @@ class com.nitrome.toxic.WalkerBomb extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(game, x, y, vx, vy)
    {

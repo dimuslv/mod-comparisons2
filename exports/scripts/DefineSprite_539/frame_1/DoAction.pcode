@@ -1,3 +1,9 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0054
 Push "this"
 GetVariable
 Push "_parent"
@@ -7,3 +13,4 @@ GetMember
 Push 1
 Add2
 GotoFrame2 false, false
+loc0054:

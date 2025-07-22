@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0135
+If loc0131
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0135:Pop
+loc0131:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc016d
+If loc0165
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc016d:Pop
+loc0165:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc01b1
+If loc01a5
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc01b1:Pop
+loc01a5:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "ShooterRobot"
 GetMember
 Not
 Not
-If loc0456
+If loc0467
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,18 +100,22 @@ SetMember
 SetMember
 Push register2, "doPause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "doUnpause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -194,6 +198,8 @@ InitObject
 Push 2, "Array"
 NewObject
 SetMember
+Push register2, "chid", 2183
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -206,4 +212,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0456:Pop
+loc0467:Pop

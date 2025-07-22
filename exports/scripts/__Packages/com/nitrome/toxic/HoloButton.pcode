@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0166
+If loc0162
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0166:Pop
+loc0162:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc019e
+If loc0196
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc019e:Pop
+loc0196:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc01e2
+If loc01d6
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc01e2:Pop
+loc01d6:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "HoloButton"
 GetMember
 Not
 Not
-If loc054e
+If loc053b
 Push "com"
 GetVariable
 Push "nitrome"
@@ -133,19 +133,19 @@ GetMember
 Push false
 Equals2
 Not
-If loc03cf
+If loc03b3
 Push register1, "timer_count", 0
 SetMember
 Push 1
 StoreRegister 2
 Pop
-loc036c:Push register2, register1, "names"
+loc0350:Push register2, register1, "names"
 GetMember
 Push "length"
 GetMember
 Less2
 Not
-If loc03b5
+If loc0399
 Push register1, "names"
 GetMember
 Push register2
@@ -159,26 +159,26 @@ Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc036c
-loc03b5:Push "on", 1, register1, "gotoAndStop"
+Jump loc0350
+loc0399:Push "on", 1, register1, "gotoAndStop"
 CallMethod
 Pop
 Push register1, "active", true
 SetMember
 }
-loc03cf:SetMember
+loc03b3:SetMember
 Push register2, "doDeactivate"
 DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
 Push 1
 StoreRegister 2
 Pop
-loc03ef:Push register2, register1, "names"
+loc03d3:Push register2, register1, "names"
 GetMember
 Push "length"
 GetMember
 Less2
 Not
-If loc0438
+If loc041c
 Push register1, "names"
 GetMember
 Push register2
@@ -192,8 +192,8 @@ Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc03ef
-loc0438:Push register1, "_name"
+Jump loc03d3
+loc041c:Push register1, "_name"
 GetMember
 Push 1, register1, "game"
 GetMember
@@ -218,7 +218,7 @@ GetMember
 Push 150
 Equals2
 Not
-If loc04cc
+If loc04b0
 Push "holo", 1, register2, "sfx"
 GetMember
 Push "playSound"
@@ -227,24 +227,26 @@ Pop
 Push "flash", 1, register1, "gotoAndStop"
 CallMethod
 Pop
-loc04cc:Push register1, "timer_count"
+loc04b0:Push register1, "timer_count"
 GetMember
 Push register1, "max_timer"
 GetMember
 Less2
 Not
 Not
-If loc04f6
+If loc04d6
 Push 0, register1, "doDeactivate"
 CallMethod
 Pop
 }
-loc04f6:SetMember
+loc04d6:SetMember
 Push register2, "active", false
 SetMember
 Push register2, "timer_count", 0
 SetMember
 Push register2, "max_timer", 200
+SetMember
+Push register2, "chid", 1591
 SetMember
 Push 1, null, "com"
 GetVariable
@@ -258,4 +260,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc054e:Pop
+loc053b:Pop

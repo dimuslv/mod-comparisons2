@@ -1,7 +1,10 @@
 ConstantPool "ClockDisp", "instances", "setPause", "levelend", "_root", "sfx", "playSound"
-Push true
-Push 1
-Push "ClockDisp"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0092
+Push true, 1, "ClockDisp"
 GetVariable
 Push "instances"
 GetMember
@@ -10,12 +13,11 @@ GetMember
 Push "setPause"
 CallMethod
 Pop
-Push "levelend"
-Push 1
-Push "_root"
+Push "levelend", 1, "_root"
 GetVariable
 Push "sfx"
 GetMember
 Push "playSound"
 CallMethod
 Pop
+loc0092:

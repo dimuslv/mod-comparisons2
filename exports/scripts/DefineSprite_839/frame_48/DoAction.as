@@ -1,2 +1,5 @@
-this._parent.finishDie();
-stop();
+if(!_root.aMode)
+{
+   this._parent.finishDie();
+   stop();
+}

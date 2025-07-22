@@ -35,17 +35,18 @@ class com.nitrome.toxic.Player extends MovieClip
    var quickpause = false;
    var stage_6 = false;
    var found_secret = false;
+   var chid = 2121;
    function Player()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(dir, x, y, game)
    {
@@ -295,6 +296,7 @@ class com.nitrome.toxic.Player extends MovieClip
       _global.img5 = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
       _global.img5.draw(_root.game.acid_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
       _global.img5.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
+      _root.updateTestBitmap(_global.img5);
       var _loc6_ = _global.img5.getColorBoundsRect(4294967295,4278255615);
       if(_loc6_.width != 0)
       {
@@ -1613,7 +1615,7 @@ class com.nitrome.toxic.Player extends MovieClip
             }
             else
             {
-               this.gotoAndStop(com.nitrome.toxic.Global.state_string[this.state] + com.nitrome.toxic.Global.dir_string[this.dir]);
+               _root._gotoAndStop(this,com.nitrome.toxic.Global.state_string[this.state] + com.nitrome.toxic.Global.dir_string[this.dir],2121);
             }
          }
          this.prev_dir = this.dir;

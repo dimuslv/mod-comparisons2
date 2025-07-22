@@ -46,6 +46,7 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
    var max_wait_count = 100;
    var adj_scroll = false;
    var end_seq = false;
+   var chid = 638;
    function FirstBoss()
    {
       super();
@@ -56,15 +57,15 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
       {
          if(this.stage == 1)
          {
-            this.stage_clip.stop();
+            _root._stop(this.stage_clip);
          }
          else if(this.stage == 2)
          {
-            this.stage_clip.anim.stop();
+            _root._stop(this.stage_clip.anim);
          }
          else if(this.stage == 3)
          {
-            this.stage_clip.anim.stop();
+            _root._stop(this.stage_clip.anim);
          }
       }
    }
@@ -74,15 +75,15 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
       {
          if(this.stage == 1)
          {
-            this.stage_clip.play();
+            _root._play(this.stage_clip);
          }
          else if(this.stage == 2)
          {
-            this.stage_clip.anim.play();
+            _root._play(this.stage_clip.anim);
          }
          else if(this.stage == 3)
          {
-            this.stage_clip.anim.play();
+            _root._play(this.stage_clip.anim);
          }
       }
    }
@@ -90,7 +91,7 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
    {
       this.game = game;
       this.state = this.START;
-      this.dir = random(2);
+      this.dir = _root._random(2);
       this.vx = 0;
       this.vy = 0;
       this.no_transform = this.transform.colorTransform;
@@ -519,11 +520,11 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
       {
          if(this.state == this.WALK)
          {
-            this.stage_clip.gotoAndStop(this.state_array[this.state] + this.dir_array[this.dir]);
+            _root._gotoAndStop(this.stage_clip,this.state_array[this.state] + this.dir_array[this.dir],this.stage >= 2 ? 637 : 0);
          }
          else
          {
-            this.stage_clip.gotoAndStop(this.state_array[this.state]);
+            _root._gotoAndStop(this.stage_clip,this.state_array[this.state],this.stage >= 2 ? 637 : 0);
          }
       }
       this.prev_dir = this.dir;

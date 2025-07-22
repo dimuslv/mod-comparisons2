@@ -1,1 +1,4 @@
-this.cutHole();
+if(!_root.aMode)
+{
+   this.cutHole();
+}

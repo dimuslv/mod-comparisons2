@@ -1,1 +1,4 @@
-this.cutBossHole();
+if(!_root.aMode)
+{
+   this.cutBossHole();
+}

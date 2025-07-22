@@ -1,1 +1,4 @@
-_root.sfx.playSound("collect");
+if(!_root.aMode)
+{
+   _root.sfx.playSound("collect");
+}

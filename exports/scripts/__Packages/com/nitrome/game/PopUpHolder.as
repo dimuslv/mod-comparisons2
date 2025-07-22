@@ -1,6 +1,7 @@
 class com.nitrome.game.PopUpHolder extends MovieClip
 {
    var id;
+   var clip;
    function PopUpHolder()
    {
       super();
@@ -8,10 +9,26 @@ class com.nitrome.game.PopUpHolder extends MovieClip
    function displayPopUp(id)
    {
       this.id = id;
-      this.gotoAndPlay("in");
+      if(!_root.fastPlayback)
+      {
+         this.gotoAndPlay("in");
+      }
+      else
+      {
+         this.gotoAndStop(2);
+         this.clip.gotoAndStop(id);
+         this.gotoAndStop(23);
+      }
    }
    function hidePopUp()
    {
-      this.gotoAndPlay("out");
+      if(!_root.fastPlayback)
+      {
+         this.gotoAndPlay("out");
+      }
+      else
+      {
+         this.gotoAndStop(1);
+      }
    }
 }

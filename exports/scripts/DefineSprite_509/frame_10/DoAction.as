@@ -1,2 +1,5 @@
-this._parent.finishTurn();
-stop();
+if(!_root.aMode)
+{
+   this._parent.finishTurn();
+   stop();
+}

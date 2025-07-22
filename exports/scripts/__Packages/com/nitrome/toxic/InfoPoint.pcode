@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0100
+If loc00fc
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0100:Pop
+loc00fc:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0138
+If loc0130
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0138:Pop
+loc0130:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc017c
+If loc0170
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc017c:Pop
+loc0170:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "InfoPoint"
 GetMember
 Not
 Not
-If loc0378
+If loc038d
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,18 +100,22 @@ Return
 SetMember
 Push register2, "doPause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "doUnpause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -131,7 +135,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc02f5
+If loc02fd
 Push 1, register1, "info_str"
 GetMember
 Push 2, register2, "text_display"
@@ -142,7 +146,7 @@ Pop
 Push register1, "collected", true
 SetMember
 }
-loc02f5:SetMember
+loc02fd:SetMember
 Push register2, "endCollect"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push register1, "collected"
@@ -150,7 +154,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc033e
+If loc0342
 Push 0, register2, "text_display"
 GetMember
 Push "hideText"
@@ -159,8 +163,10 @@ Pop
 Push register1, "collected", false
 SetMember
 }
-loc033e:SetMember
+loc0342:SetMember
 Push register2, "collected", false
+SetMember
+Push register2, "chid", 1624
 SetMember
 Push 1, null, "com"
 GetVariable
@@ -174,4 +180,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0378:Pop
+loc038d:Pop

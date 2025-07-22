@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc011d
+If loc0119
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc011d:Pop
+loc0119:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0155
+If loc014d
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0155:Pop
+loc014d:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0199
+If loc018d
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0199:Pop
+loc018d:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "BombCollect"
 GetMember
 Not
 Not
-If loc03b9
+If loc03d2
 Push "com"
 GetVariable
 Push "nitrome"
@@ -104,18 +104,22 @@ SetMember
 SetMember
 Push register2, "doPause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "doUnpause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -127,7 +131,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc0352
+If loc035a
 Push "collect", 1, register1, "gotoAndStop"
 CallMethod
 Pop
@@ -153,7 +157,7 @@ Pop
 Push register1, "collected", true
 SetMember
 }
-loc0352:SetMember
+loc035a:SetMember
 Push register2, "finishCollect"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "collected", false
@@ -164,6 +168,8 @@ Pop
 }
 SetMember
 Push register2, "collected", false
+SetMember
+Push register2, "chid", 929
 SetMember
 Push 1, null, "com"
 GetVariable
@@ -177,4 +183,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc03b9:Pop
+loc03d2:Pop

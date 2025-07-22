@@ -5,13 +5,13 @@ Push "mx"
 GetMember
 Not
 Not
-If loc00fb
+If loc00f7
 Push "_global"
 GetVariable
 Push "mx", 0, "Object"
 NewObject
 SetMember
-loc00fb:Pop
+loc00f7:Pop
 Push "_global"
 GetVariable
 Push "mx"
@@ -20,7 +20,7 @@ Push "transitions"
 GetMember
 Not
 Not
-If loc0133
+If loc012b
 Push "_global"
 GetVariable
 Push "mx"
@@ -28,7 +28,7 @@ GetMember
 Push "transitions", 0, "Object"
 NewObject
 SetMember
-loc0133:Pop
+loc012b:Pop
 Push "_global"
 GetVariable
 Push "mx"
@@ -39,7 +39,7 @@ Push "OnEnterFrameBeacon"
 GetMember
 Not
 Not
-If loc0242
+If loc02ac
 Push "mx"
 GetVariable
 Push "transitions"
@@ -63,7 +63,7 @@ Push register1, "__OnEnterFrameBeacon"
 GetMember
 Not
 Not
-If loc020e
+If loc0278
 Push register4, 1, "mx"
 GetVariable
 Push "transitions"
@@ -79,6 +79,22 @@ StoreRegister 3
 Pop
 Push register3, "onEnterFrame"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, true, false, true {
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0233
+Push 0, "_root"
+GetVariable
+Push "doEnterFrameBeacon"
+CallMethod
+Pop
+}
+loc0233:SetMember
+Push "_root"
+GetVariable
+Push "doEnterFrameBeacon"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, true, false, true {
 Push "onEnterFrame", 1, register1, "MovieClip"
 GetMember
 Push "broadcastMessage"
@@ -87,7 +103,7 @@ Pop
 }
 SetMember
 }
-loc020e:SetMember
+loc0278:SetMember
 Push register1, "version", "1.1.0.52"
 SetMember
 Push 1, null, "mx"
@@ -100,4 +116,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0242:Pop
+loc02ac:Pop

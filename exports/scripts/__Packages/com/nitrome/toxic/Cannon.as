@@ -9,23 +9,28 @@ class com.nitrome.toxic.Cannon extends MovieClip
    var debris_left = new Array({id:19,x:-6,y:-33},{id:20,x:13,y:-42},{id:17,x:0,y:-14});
    var debris_tall_right = new Array({id:21,x:5,y:-49},{id:22,x:-12,y:-58},{id:18,x:0,y:-20});
    var debris_tall_left = new Array({id:19,x:-5,y:-49},{id:20,x:13,y:-58},{id:18,x:0,y:-20});
+   var chid = 880;
    function Cannon()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(game, dir, tall)
    {
       this.game = game;
       this.dir = dir;
       this.tall = tall;
+      if(tall)
+      {
+         this.chid = 2287;
+      }
       this.updateAnim();
    }
    function doFire()

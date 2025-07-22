@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00eb
+If loc00e7
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00eb:Pop
+loc00e7:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0123
+If loc011b
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0123:Pop
+loc011b:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0167
+If loc015b
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0167:Pop
+loc015b:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "BossDebris"
 GetMember
 Not
 Not
-If loc0434
+If loc0465
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,22 +100,30 @@ Push register1, "_y", 0
 SetMember
 Push register1, "y_speed", 1
 SetMember
-Push register1, "rot", 360
-RandomNumber
+Push register1, "rot", 360, 1, "_root"
+GetVariable
+Push "_random"
+CallMethod
 SetMember
 Push register1, "rot_dir", 2
-RandomNumber
+Push 1, "_root"
+GetVariable
+Push "_random"
+CallMethod
 SetMember
 Push register1, "rot_dir"
 GetMember
 Push 0
 Equals2
 Not
-If loc026f
+If loc028c
 Push register1, "rot_dir", -1
 SetMember
-loc026f:Push 5
-RandomNumber
+loc028c:Push 5
+Push 1, "_root"
+GetVariable
+Push "_random"
+CallMethod
 Push 1
 Add2
 Push 1, register1, "gotoAndStop"
@@ -132,7 +140,7 @@ DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, f
 Push register1, "active"
 GetMember
 Not
-If loc03cf
+If loc0404
 Push register1, "_y", register1, "_y"
 GetMember
 Push register1, "y_speed"
@@ -149,11 +157,11 @@ Push register1, "max_y_speed"
 GetMember
 Greater
 Not
-If loc030c
+If loc0345
 Push register1, "y_speed", register1, "max_y_speed"
 GetMember
 SetMember
-loc030c:Push register1, "rot", register1, "rot"
+loc0345:Push register1, "rot", register1, "rot"
 GetMember
 Push register1, "rot_dir"
 GetMember
@@ -164,25 +172,25 @@ GetMember
 Push 0
 Less2
 Not
-If loc0353
+If loc0388
 Push register1, "rot", register1, "rot"
 GetMember
 Push 360
 Add2
 SetMember
-loc0353:Push register1, "rot"
+loc0388:Push register1, "rot"
 GetMember
 Push 360
 Less2
 Not
 Not
-If loc0381
+If loc03b6
 Push register1, "rot", register1, "rot"
 GetMember
 Push 360
 Subtract
 SetMember
-loc0381:Push register1, "_rotation", register1, "rot"
+loc03b6:Push register1, "_rotation", register1, "rot"
 GetMember
 SetMember
 Push register1, "_y"
@@ -199,13 +207,13 @@ Push "level_height"
 GetMember
 Greater
 Not
-If loc03cf
+If loc0404
 Push register1, "_visible", false
 SetMember
 Push register1, "active", false
 SetMember
 }
-loc03cf:SetMember
+loc0404:SetMember
 Push register2, "active", false
 SetMember
 Push register2, "rot", 0
@@ -226,4 +234,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0434:Pop
+loc0465:Pop

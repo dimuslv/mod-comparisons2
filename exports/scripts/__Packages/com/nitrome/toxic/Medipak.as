@@ -2,6 +2,7 @@ class com.nitrome.toxic.Medipak extends MovieClip
 {
    var game;
    var collected = false;
+   var chid = 1885;
    function Medipak()
    {
       super();

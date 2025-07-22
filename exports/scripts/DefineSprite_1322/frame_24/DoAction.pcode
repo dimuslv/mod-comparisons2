@@ -1,3 +1,9 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc004d
 Push 0, "this"
 GetVariable
 Push "_parent"
@@ -6,3 +12,4 @@ Push "startFall"
 CallMethod
 Pop
 Stop
+loc004d:

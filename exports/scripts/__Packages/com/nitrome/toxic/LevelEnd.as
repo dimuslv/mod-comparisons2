@@ -2,6 +2,7 @@ class com.nitrome.toxic.LevelEnd extends MovieClip
 {
    var game;
    var collected = false;
+   var chid = 1880;
    function LevelEnd()
    {
       super();

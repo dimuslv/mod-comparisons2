@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0115
+If loc0111
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0115:Pop
+loc0111:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc014d
+If loc0145
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc014d:Pop
+loc0145:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0191
+If loc0185
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0191:Pop
+loc0185:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "FishRobot"
 GetMember
 Not
 Not
-If loc04f3
+If loc0553
 Push "com"
 GetVariable
 Push "nitrome"
@@ -75,12 +75,17 @@ Push 0, register2, undefined
 CallMethod
 Pop
 Push 120
-RandomNumber
+Push 1, "_root"
+GetVariable
+Push "_random"
+CallMethod
 Push 1
 Add2
-Push 1, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "gotoAndPlay"
+Push 2, "_root"
+GetVariable
+Push "_gotoAndPlay"
 CallMethod
 Pop
 }
@@ -167,32 +172,40 @@ Pop
 SetMember
 Push register2, "doPause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "doUnpause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -214,6 +227,8 @@ InitObject
 Push 7, "Array"
 NewObject
 SetMember
+Push register2, "chid", 1491
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -226,4 +241,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc04f3:Pop
+loc0553:Pop

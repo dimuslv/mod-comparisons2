@@ -5,6 +5,7 @@ class com.nitrome.toxic.BombCollect extends MovieClip
    var spawner;
    var anim;
    var collected = false;
+   var chid = 929;
    function BombCollect()
    {
       super();
@@ -17,11 +18,11 @@ class com.nitrome.toxic.BombCollect extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function doCollect()
    {

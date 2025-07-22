@@ -14,17 +14,18 @@ class com.nitrome.toxic.BasicBomb extends MovieClip
    var landed = false;
    var on_conveyor = false;
    var prev_conveyor = false;
+   var chid = 403;
    function BasicBomb()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function getBombType()
    {

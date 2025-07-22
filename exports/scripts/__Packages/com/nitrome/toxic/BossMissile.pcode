@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0123
+If loc011f
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0123:Pop
+loc011f:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc015b
+If loc0153
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc015b:Pop
+loc0153:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc019f
+If loc0193
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc019f:Pop
+loc0193:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "BossMissile"
 GetMember
 Not
 Not
-If loc04c9
+If loc04b2
 Push "com"
 GetVariable
 Push "nitrome"
@@ -104,25 +104,25 @@ GetMember
 Push 0
 Less2
 Not
-If loc0291
+If loc027d
 Push register1, "deg", register1, "deg"
 GetMember
 Push 360
 Add2
 SetMember
-loc0291:Push register1, "deg"
+loc027d:Push register1, "deg"
 GetMember
 Push 360
 Less2
 Not
 Not
-If loc02bf
+If loc02ab
 Push register1, "deg", register1, "deg"
 GetMember
 Push 360
 Subtract
 SetMember
-loc02bf:Push register1, "speed", 8
+loc02ab:Push register1, "speed", 8
 SetMember
 Push register1, "_rotation", register2
 SetMember
@@ -195,7 +195,7 @@ GetMember
 Push 0
 Less2
 PushDuplicate
-If loc03fd
+If loc03e1
 Pop
 Push register1, "_x"
 GetMember
@@ -210,15 +210,15 @@ GetMember
 Push "level_width"
 GetMember
 Greater
-loc03fd:PushDuplicate
-If loc0419
+loc03e1:PushDuplicate
+If loc03f9
 Pop
 Push register1, "_y"
 GetMember
 Push 0
 Less2
-loc0419:PushDuplicate
-If loc0447
+loc03f9:PushDuplicate
+If loc0427
 Pop
 Push register1, "_y"
 GetMember
@@ -233,8 +233,8 @@ GetMember
 Push "level_height"
 GetMember
 Greater
-loc0447:Not
-If loc047b
+loc0427:Not
+If loc0457
 Push register1, "_name"
 GetMember
 Push 1, register1, "game"
@@ -246,10 +246,12 @@ Push 0, register1, "removeMovieClip"
 CallMethod
 Pop
 }
-loc047b:SetMember
+loc0457:SetMember
 Push register2, "distance", 0
 SetMember
 Push register2, "speed", 8
+SetMember
+Push register2, "chid", 587
 SetMember
 Push 1, null, "com"
 GetVariable
@@ -263,4 +265,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc04c9:Pop
+loc04b2:Pop

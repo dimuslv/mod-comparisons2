@@ -1,1 +1,4 @@
-this._parent._parent.doShoot();
+if(!_root.aMode)
+{
+   this._parent._parent.doShoot();
+}

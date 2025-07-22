@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc021f
+If loc021b
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc021f:Pop
+loc021b:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0257
+If loc024f
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0257:Pop
+loc024f:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc029b
+If loc028f
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc029b:Pop
+loc028f:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Explosion"
 GetMember
 Not
 Not
-If loc0a7c
+If loc0ac2
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,8 +100,31 @@ Push register1, "bomb_type", register2
 SetMember
 Push register1, "bomb_dir", register4
 SetMember
-}
+Push register2, 1
+Equals
+Not
+If loc0387
+Push register1, "chid", 1373
 SetMember
+Jump loc03e6
+loc0387:Push register2, 2
+Equals
+Not
+If loc03ae
+Push register1, "chid", 1398
+SetMember
+Jump loc03e6
+loc03ae:Push register2, 5
+Equals
+Not
+If loc03d5
+Push register1, "chid", 1467
+SetMember
+Jump loc03e6
+loc03d5:Push register1, "chid", 1421
+SetMember
+}
+loc03e6:SetMember
 Push register2, "cutHole"
 DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
 Push register1, "_name"
@@ -120,7 +143,7 @@ GetMember
 Push 3
 Equals2
 Not
-If loc0439
+If loc04af
 Push "*", 1, register1, "_name"
 GetMember
 Push "split"
@@ -137,7 +160,7 @@ Push 1
 Less2
 Not
 Not
-If loc0439
+If loc04af
 Push register1, "bomb_dir"
 GetMember
 Push register1, "_name"
@@ -152,7 +175,7 @@ Push "cutDiggerHole"
 CallMethod
 Pop
 }
-loc0439:SetMember
+loc04af:SetMember
 Push register2, "cutBossHole"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "_name"
@@ -272,16 +295,16 @@ GetMember
 Push 0
 Equals2
 Not
-If loc0695
-Jump loc06b1
-loc0695:Push register1, "_name"
+If loc06ff
+Jump loc071b
+loc06ff:Push register1, "_name"
 GetMember
 Push 1, register1, "game"
 GetMember
 Push "findExplodeRobot"
 CallMethod
 Pop
-loc06b1:Push 0, register3, "img2"
+loc071b:Push 0, register3, "img2"
 GetMember
 Push "dispose"
 CallMethod
@@ -347,16 +370,16 @@ GetMember
 Push 0
 Equals2
 Not
-If loc0824
-Jump loc0840
-loc0824:Push register1, "_name"
+If loc0886
+Jump loc08a2
+loc0886:Push register1, "_name"
 GetMember
 Push 1, register1, "game"
 GetMember
 Push "findExplodeHoloButton"
 CallMethod
 Pop
-loc0840:Push 0, register3, "img3"
+loc08a2:Push 0, register3, "img3"
 GetMember
 Push "dispose"
 CallMethod
@@ -371,7 +394,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc0a0f
+If loc0a5d
 Push register3, "img4", false, register4, "yMax"
 GetMember
 Push register4, "yMin"
@@ -430,14 +453,14 @@ GetMember
 Push 0
 Equals2
 Not
-If loc09d6
-Jump loc09ee
-loc09d6:Push 0, register1, "game"
+If loc0a2c
+Jump loc0a40
+loc0a2c:Push 0, register1, "game"
 GetMember
 Push "hitFinalBoss"
 CallMethod
 Pop
-loc09ee:Push 0, register3, "img4"
+loc0a40:Push 0, register3, "img4"
 GetMember
 Push "dispose"
 CallMethod
@@ -445,7 +468,7 @@ Pop
 Push register3, "img4"
 Delete
 Pop
-loc0a0f:Push 0, register1, "game"
+loc0a5d:Push 0, register1, "game"
 GetMember
 Push "checkFirstInfoPoint"
 CallMethod
@@ -471,4 +494,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0a7c:Pop
+loc0ac2:Pop

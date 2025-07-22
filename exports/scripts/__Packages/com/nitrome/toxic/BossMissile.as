@@ -6,6 +6,7 @@ class com.nitrome.toxic.BossMissile extends MovieClip
    var start_y;
    var distance = 0;
    var speed = 8;
+   var chid = 587;
    function BossMissile()
    {
       super();

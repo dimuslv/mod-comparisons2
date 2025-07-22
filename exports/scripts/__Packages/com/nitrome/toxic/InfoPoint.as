@@ -4,6 +4,7 @@ class com.nitrome.toxic.InfoPoint extends MovieClip
    var info_str;
    var game;
    var collected = false;
+   var chid = 1624;
    function InfoPoint()
    {
       super();
@@ -14,11 +15,11 @@ class com.nitrome.toxic.InfoPoint extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(str, game)
    {

@@ -839,7 +839,7 @@
       <use ffdec:characterId="654" height="241.0" id="anim" transform="matrix(1.0, 0.0, 0.0, 1.0, -88.0, -240.0)" width="176.0" xlink:href="#sprite48"/>
     </g>
     <g id="sprite48" transform="matrix(1.0, 0.0, 0.0, 1.0, 88.0, 240.0)">
-      <use ffdec:characterId="650" height="241.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -88.0, -240.0)" width="176.0" xlink:href="#sprite49"/>
+      <use ffdec:characterId="650" height="241.0" id="_base" transform="matrix(1.0, 0.0, 0.0, 1.0, -88.0, -240.0)" width="176.0" xlink:href="#sprite49"/>
       <use ffdec:characterId="653" height="74.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -37.0, -186.0)" width="74.0" xlink:href="#sprite54"/>
     </g>
     <g id="sprite49" transform="matrix(1.0, 0.0, 0.0, 1.0, 88.0, 240.0)">
@@ -3923,7 +3923,7 @@
       <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4005548469065996"/>
     </g>
     <g id="sprite522" transform="matrix(1.0, 0.0, 0.0, 1.0, 53.0, 78.5)">
-      <use ffdec:characterId="2286" height="79.5" transform="matrix(1.0, 0.0, 0.0, 1.0, -28.0, -78.5)" width="81.0" xlink:href="#sprite523"/>
+      <use ffdec:characterId="2286" height="79.5" id="_anim" transform="matrix(1.0, 0.0, 0.0, 1.0, -28.0, -78.5)" width="81.0" xlink:href="#sprite523"/>
       <use ffdec:characterId="879" height="0.0" id="bullet_point" transform="matrix(1.0, 0.0, 0.0, 1.0, -20.0, -48.0)" width="0.0" xlink:href="#sprite64"/>
     </g>
     <g id="sprite523" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 7.5)">

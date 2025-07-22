@@ -5,7 +5,7 @@
   </g>
   <defs>
     <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 321.05, 417.7)">
-      <use ffdec:characterId="616" height="241.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -97.0, -228.0)" width="194.1" xlink:href="#sprite1"/>
+      <use ffdec:characterId="616" height="241.0" id="_anim" transform="matrix(1.0, 0.0, 0.0, 1.0, -97.0, -228.0)" width="194.1" xlink:href="#sprite1"/>
     </g>
     <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 97.0, 228.0)">
       <use ffdec:characterId="592" height="29.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 21.0, -158.0)" width="52.0" xlink:href="#sprite2"/>

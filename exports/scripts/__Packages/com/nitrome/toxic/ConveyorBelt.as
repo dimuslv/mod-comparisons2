@@ -4,6 +4,7 @@ class com.nitrome.toxic.ConveyorBelt extends MovieClip
    var dir;
    var anim;
    var speed = new Array(-3,3);
+   var chid = 959;
    function ConveyorBelt()
    {
       super();
@@ -15,11 +16,11 @@ class com.nitrome.toxic.ConveyorBelt extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function getOnScreen()
    {

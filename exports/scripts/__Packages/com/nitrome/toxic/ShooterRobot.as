@@ -5,6 +5,7 @@ class com.nitrome.toxic.ShooterRobot extends MovieClip
    var bullet_left;
    var bullet_right;
    var debris = new Array({id:98,x:-14,y:-10},{id:99,x:14,y:-11});
+   var chid = 2183;
    function ShooterRobot()
    {
       super();
@@ -15,11 +16,11 @@ class com.nitrome.toxic.ShooterRobot extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function doFire()
    {

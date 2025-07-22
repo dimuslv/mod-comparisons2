@@ -22,17 +22,18 @@ class com.nitrome.toxic.WheelieRobot extends MovieClip
    var walk_count = 0;
    var max_walk_count = 100;
    var done_splash = false;
+   var chid = 2376;
    function WheelieRobot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(dir, game)
    {

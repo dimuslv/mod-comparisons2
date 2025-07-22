@@ -1,2 +1,5 @@
-this._parent.finishSplash();
-stop();
+if(!_root.aMode)
+{
+   this._parent.finishSplash();
+   stop();
+}

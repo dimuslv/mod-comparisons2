@@ -18,17 +18,18 @@ class com.nitrome.toxic.WheelRobot extends MovieClip
    var debris_right = new Array({id:61,x:-5,y:-43},{id:62,x:15,y:-32},{id:63,x:8,y:-14},{id:64,x:-15,y:-23});
    var debris_left = new Array({id:57,x:5,y:-43},{id:58,x:-14,y:-32},{id:59,x:-7,y:-14},{id:60,x:15,y:-22});
    var done_splash = false;
+   var chid = 2334;
    function WheelRobot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(dir, game)
    {

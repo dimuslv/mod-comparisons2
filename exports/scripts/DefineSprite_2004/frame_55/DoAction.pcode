@@ -1,7 +1,10 @@
 ConstantPool "ClockDisp", "instances", "setPause"
-Push false
-Push 1
-Push "ClockDisp"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0060
+Push false, 1, "ClockDisp"
 GetVariable
 Push "instances"
 GetMember
@@ -10,3 +13,4 @@ GetMember
 Push "setPause"
 CallMethod
 Pop
+loc0060:

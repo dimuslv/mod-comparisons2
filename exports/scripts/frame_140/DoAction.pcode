@@ -11,6 +11,8 @@ GetVariable
 Push "game"
 Delete
 Pop
+Push true
+If loc0077
 Push 1, 1, "_root"
 GetVariable
 Push "loading_clip"
@@ -18,4 +20,4 @@ GetMember
 Push "gotoAndStop"
 CallMethod
 Pop
-GoToLabel "reload2"
+loc0077:GoToLabel "reload2"

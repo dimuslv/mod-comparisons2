@@ -1,2 +1,5 @@
-this._parent.startFire();
-stop();
+if(!_root.aMode)
+{
+   this._parent.startFire();
+   stop();
+}

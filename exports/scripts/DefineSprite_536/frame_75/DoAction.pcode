@@ -1,4 +1,9 @@
 ConstantPool "this", "_parent", "resetAim"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0055
 Push 0, "this"
 GetVariable
 Push "_parent"
@@ -9,3 +14,4 @@ Push "resetAim"
 CallMethod
 Pop
 Stop
+loc0055:

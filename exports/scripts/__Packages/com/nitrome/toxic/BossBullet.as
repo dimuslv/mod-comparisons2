@@ -10,6 +10,7 @@ class com.nitrome.toxic.BossBullet extends MovieClip
    var GRAVITY = 1;
    var INERTIA = 0.96;
    var finished = false;
+   var chid = 548;
    function BossBullet()
    {
       super();

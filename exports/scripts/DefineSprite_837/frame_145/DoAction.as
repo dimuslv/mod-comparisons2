@@ -1,1 +1,4 @@
-this._parent.fireMissile();
+if(!_root.aMode)
+{
+   this._parent.fireMissile();
+}

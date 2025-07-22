@@ -1,2 +1,5 @@
-this._parent.finishEnd();
-stop();
+if(!_root.aMode)
+{
+   this._parent.finishEnd();
+   stop();
+}

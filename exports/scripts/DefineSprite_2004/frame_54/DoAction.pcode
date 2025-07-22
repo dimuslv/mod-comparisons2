@@ -1,10 +1,14 @@
 ConstantPool "warpin", "_root", "sfx", "playSound"
-Push "warpin"
-Push 1
 Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0050
+Push "warpin", 1, "_root"
 GetVariable
 Push "sfx"
 GetMember
 Push "playSound"
 CallMethod
 Pop
+loc0050:

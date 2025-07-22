@@ -2,6 +2,7 @@ class com.nitrome.toxic.Door extends MovieClip
 {
    var game;
    var side;
+   var chid = 1297;
    function Door()
    {
       super();

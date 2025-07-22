@@ -7,6 +7,7 @@ class com.nitrome.toxic.DiggerRobot extends MovieClip
    var y_speed = 5;
    var done_splash = false;
    var debris = new Array({id:52,x:0,y:-5},{id:53,x:0,y:-27});
+   var chid = 1274;
    function DiggerRobot()
    {
       super();
@@ -17,11 +18,11 @@ class com.nitrome.toxic.DiggerRobot extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function setPlayer(player)
    {

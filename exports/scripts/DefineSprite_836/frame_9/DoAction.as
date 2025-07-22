@@ -1,1 +1,4 @@
-gotoAndPlay(1);
+if(!_root.aMode)
+{
+   gotoAndPlay(1);
+}

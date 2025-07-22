@@ -8,6 +8,7 @@ class com.nitrome.toxic.BossLaser extends MovieClip
    var active = false;
    var laser_count = 0;
    var max_laser_count = 270;
+   var chid = 582;
    function BossLaser()
    {
       super();

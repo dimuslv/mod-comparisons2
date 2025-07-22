@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc01aa
+If loc01a6
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc01aa:Pop
+loc01a6:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc01e2
+If loc01da
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc01e2:Pop
+loc01da:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0226
+If loc021a
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0226:Pop
+loc021a:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Cannon"
 GetMember
 Not
 Not
-If loc0808
+If loc0815
 Push "com"
 GetVariable
 Push "nitrome"
@@ -94,18 +94,22 @@ StoreRegister 2
 Pop
 Push register2, "doPause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "doUnpause"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -118,7 +122,12 @@ Push register1, "dir", register4
 SetMember
 Push register1, "tall", register2
 SetMember
-Push 0, register1, "updateAnim"
+Push register2
+Not
+If loc036b
+Push register1, "chid", 2287
+SetMember
+loc036b:Push 0, register1, "updateAnim"
 CallMethod
 Pop
 }
@@ -164,10 +173,10 @@ CallMethod
 Push true
 Equals2
 Not
-If loc0419
+If loc0435
 Push true
 Return
-loc0419:Push false
+loc0435:Push false
 Return
 }
 SetMember
@@ -178,22 +187,22 @@ GetMember
 Push 0
 Equals2
 Not
-If loc0462
+If loc047a
 Push "left", 1, register1, "gotoAndStop"
 CallMethod
 Pop
-Jump loc0489
-loc0462:Push register1, "dir"
+Jump loc04a1
+loc047a:Push register1, "dir"
 GetMember
 Push 1
 Equals2
 Not
-If loc0489
+If loc04a1
 Push "right", 1, register1, "gotoAndStop"
 CallMethod
 Pop
 }
-loc0489:SetMember
+loc04a1:SetMember
 Push register2, "doExplode"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push 100, register1, "_name"
@@ -212,13 +221,13 @@ GetMember
 Push true
 Equals2
 Not
-If loc0575
+If loc0589
 Push register1, "dir"
 GetMember
 Push 0
 Equals2
 Not
-If loc052d
+If loc0541
 Push register1, "debris_tall_left"
 GetMember
 Push register1, "_y"
@@ -230,13 +239,13 @@ GetMember
 Push "createDebris"
 CallMethod
 Pop
-Jump loc0570
-loc052d:Push register1, "dir"
+Jump loc0584
+loc0541:Push register1, "dir"
 GetMember
 Push 1
 Equals2
 Not
-If loc0570
+If loc0584
 Push register1, "debris_tall_right"
 GetMember
 Push register1, "_y"
@@ -248,13 +257,13 @@ GetMember
 Push "createDebris"
 CallMethod
 Pop
-loc0570:Jump loc0604
-loc0575:Push register1, "dir"
+loc0584:Jump loc0614
+loc0589:Push register1, "dir"
 GetMember
 Push 0
 Equals2
 Not
-If loc05c1
+If loc05d1
 Push register1, "debris_left"
 GetMember
 Push register1, "_y"
@@ -266,13 +275,13 @@ GetMember
 Push "createDebris"
 CallMethod
 Pop
-Jump loc0604
-loc05c1:Push register1, "dir"
+Jump loc0614
+loc05d1:Push register1, "dir"
 GetMember
 Push 1
 Equals2
 Not
-If loc0604
+If loc0614
 Push register1, "debris_right"
 GetMember
 Push register1, "_y"
@@ -284,7 +293,7 @@ GetMember
 Push "createDebris"
 CallMethod
 Pop
-loc0604:Push 0, register1, "removeMovieClip"
+loc0614:Push 0, register1, "removeMovieClip"
 CallMethod
 Pop
 }
@@ -327,6 +336,8 @@ InitObject
 Push 3, "Array"
 NewObject
 SetMember
+Push register2, "chid", 880
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -339,4 +350,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0808:Pop
+loc0815:Pop

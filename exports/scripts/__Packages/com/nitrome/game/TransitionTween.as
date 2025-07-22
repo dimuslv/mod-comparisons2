@@ -8,7 +8,14 @@ class com.nitrome.game.TransitionTween extends MovieClip
    function doTween(frame)
    {
       this.frame = frame;
-      this.gotoAndPlay(2);
+      if(false)
+      {
+         this.gotoAndPlay(2);
+      }
+      else
+      {
+         this.changeFrame();
+      }
    }
    function changeFrame()
    {

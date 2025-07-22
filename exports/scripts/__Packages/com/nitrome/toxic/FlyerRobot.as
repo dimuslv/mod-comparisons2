@@ -15,17 +15,18 @@ class com.nitrome.toxic.FlyerRobot extends MovieClip
    var x_speed = 0;
    var y_speed = 0;
    var debris = new Array({id:56,x:0,y:6},{id:55,x:0,y:-3},{id:54,x:0,y:-23});
+   var chid = 1509;
    function FlyerRobot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function main()
    {

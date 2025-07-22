@@ -1,1 +1,4 @@
-this._parent.gotoAndStop("normal");
+if(!_root.aMode)
+{
+   this._parent.gotoAndStop("normal");
+}

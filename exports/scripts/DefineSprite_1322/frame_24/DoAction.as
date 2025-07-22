@@ -1,2 +1,5 @@
-this._parent.startFall();
-stop();
+if(!_root.aMode)
+{
+   this._parent.startFall();
+   stop();
+}

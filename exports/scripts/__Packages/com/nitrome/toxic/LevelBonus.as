@@ -2,6 +2,7 @@ class com.nitrome.toxic.LevelBonus extends MovieClip
 {
    var game;
    var collected = false;
+   var chid = 1880;
    function LevelBonus()
    {
       super();

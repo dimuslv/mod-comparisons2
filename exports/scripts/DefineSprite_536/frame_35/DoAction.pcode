@@ -1,4 +1,9 @@
 ConstantPool "this", "_parent", "doFire"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0052
 Push 0, "this"
 GetVariable
 Push "_parent"
@@ -8,3 +13,4 @@ GetMember
 Push "doFire"
 CallMethod
 Pop
+loc0052:

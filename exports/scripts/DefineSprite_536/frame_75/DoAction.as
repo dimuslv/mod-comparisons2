@@ -1,2 +1,5 @@
-this._parent._parent.resetAim();
-stop();
+if(!_root.aMode)
+{
+   this._parent._parent.resetAim();
+   stop();
+}

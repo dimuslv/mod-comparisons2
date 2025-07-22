@@ -41,7 +41,7 @@ class com.nitrome.toxic.Hive extends MovieClip
       {
          if(_loc3_ < 3 && _loc2_ < 3)
          {
-            _loc5_ = random(2);
+            _loc5_ = _root._random(2);
             this.spawnBot(_loc5_);
          }
          else if(_loc2_ == 3 && _loc3_ < 3)

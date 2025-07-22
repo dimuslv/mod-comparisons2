@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0102
+If loc00fe
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0102:Pop
+loc00fe:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc013a
+If loc0132
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc013a:Pop
+loc0132:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc017e
+If loc0172
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc017e:Pop
+loc0172:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "LevelEnd"
 GetMember
 Not
 Not
-If loc0321
+If loc031a
 Push "com"
 GetVariable
 Push "nitrome"
@@ -106,7 +106,7 @@ Push false
 Equals2
 PushDuplicate
 Not
-If loc0270
+If loc025c
 Pop
 Push 0, register1, "game"
 GetMember
@@ -114,8 +114,8 @@ Push "getPlayerOnGround"
 CallMethod
 Push true
 Equals2
-loc0270:Not
-If loc02a6
+loc025c:Not
+If loc0292
 Push false, 1, register1, "game"
 GetMember
 Push "transportPlayer"
@@ -127,7 +127,7 @@ Pop
 Push register1, "collected", true
 SetMember
 }
-loc02a6:SetMember
+loc0292:SetMember
 Push register2, "finishCollect"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "_name"
@@ -144,6 +144,8 @@ Pop
 SetMember
 Push register2, "collected", false
 SetMember
+Push register2, "chid", 1880
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -156,4 +158,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0321:Pop
+loc031a:Pop

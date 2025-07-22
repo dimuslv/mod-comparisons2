@@ -19,17 +19,18 @@ class com.nitrome.toxic.Laser extends MovieClip
    var alt_dir = 1;
    var x_speed = 0;
    var y_speed = 0;
+   var chid = 1628;
    function Laser()
    {
       super();
    }
    function doPause()
    {
-      this.spark_clip.stop();
+      _root._stop(this.spark_clip);
    }
    function doUnpause()
    {
-      this.spark_clip.play();
+      _root._play(this.spark_clip);
    }
    function main()
    {

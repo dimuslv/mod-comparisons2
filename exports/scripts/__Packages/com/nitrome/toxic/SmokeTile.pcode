@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00c2
+If loc00be
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00c2:Pop
+loc00be:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00fa
+If loc00f2
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc00fa:Pop
+loc00f2:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc013e
+If loc0132
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc013e:Pop
+loc0132:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "SmokeTile"
 GetMember
 Not
 Not
-If loc029d
+If loc02a9
 Push "com"
 GetVariable
 Push "nitrome"
@@ -81,7 +81,7 @@ CallMethod
 Push -1
 Equals2
 Not
-If loc023d
+If loc0249
 Push 6, 1, register1, "_name"
 GetMember
 Push "slice"
@@ -89,7 +89,10 @@ CallMethod
 StoreRegister 4
 Pop
 Push 707
-RandomNumber
+Push 1, "_root"
+GetVariable
+Push "_random"
+CallMethod
 Push 1
 Add2
 StoreRegister 3
@@ -114,7 +117,7 @@ Push "gotoAndPlay"
 CallMethod
 Pop
 }
-loc023d:StoreRegister 1
+loc0249:StoreRegister 1
 SetMember
 Push "com"
 GetVariable
@@ -143,4 +146,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc029d:Pop
+loc02a9:Pop

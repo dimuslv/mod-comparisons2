@@ -3,6 +3,7 @@ class com.nitrome.toxic.CollapsingPlatform extends MovieClip
    var game;
    var player;
    var collected = false;
+   var chid = 926;
    function CollapsingPlatform()
    {
       super();

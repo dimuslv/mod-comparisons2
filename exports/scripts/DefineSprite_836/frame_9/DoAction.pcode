@@ -1,2 +1,9 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0026
 GotoFrame 0
 Play
+loc0026:

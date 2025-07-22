@@ -1,2 +1,5 @@
-this.finishExplode();
-stop();
+if(!_root.aMode)
+{
+   this.finishExplode();
+   stop();
+}

@@ -14,17 +14,18 @@ class com.nitrome.toxic.MovingCannon extends MovieClip
    var debris_right = new Array({id:21,x:6,y:-33},{id:22,x:-12,y:-42},{id:17,x:0,y:-14});
    var debris_left = new Array({id:19,x:-6,y:-33},{id:20,x:13,y:-42},{id:17,x:0,y:-14});
    var max_vx = 1;
+   var chid = 1914;
    function MovingCannon()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(game, dir, tall)
    {

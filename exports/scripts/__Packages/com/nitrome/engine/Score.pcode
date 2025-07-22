@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00ca
+If loc00c6
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00ca:Pop
+loc00c6:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0102
+If loc00fa
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0102:Pop
+loc00fa:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "engine"
 GetMember
 Not
 Not
-If loc0146
+If loc013a
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "engine", 0, "Object"
 NewObject
 SetMember
-loc0146:Pop
+loc013a:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Score"
 GetMember
 Not
 Not
-If loc0475
+If loc046b
 Push "com"
 GetVariable
 Push "nitrome"
@@ -139,7 +139,7 @@ Push register0, 0
 Greater
 Not
 Not
-If loc029f
+If loc0287
 Push 0, "com"
 GetVariable
 Push "nitrome"
@@ -151,7 +151,7 @@ GetMember
 Push "rotate"
 CallMethod
 Pop
-loc029f:Push "com"
+loc0287:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -221,9 +221,9 @@ Push "engine"
 GetMember
 Push "Score"
 GetMember
-Push "reset", 0, "Math"
+Push "reset", 0, "_root"
 GetVariable
-Push "random"
+Push "_random_double"
 CallMethod
 Push "com"
 GetVariable
@@ -249,9 +249,9 @@ Push "engine"
 GetMember
 Push "Score"
 GetMember
-Push "r", 100000, 0, "Math"
+Push "r", 100000, 0, "_root"
 GetVariable
-Push "random"
+Push "_random_double"
 CallMethod
 Push 200000
 Multiply
@@ -281,4 +281,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0475:Pop
+loc046b:Pop

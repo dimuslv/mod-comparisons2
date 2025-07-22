@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00f8
+If loc00f4
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00f8:Pop
+loc00f4:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc0130
+If loc0128
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc0130:Pop
+loc0128:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0174
+If loc0168
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0174:Pop
+loc0168:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Medipak"
 GetMember
 Not
 Not
-If loc02f4
+If loc02ed
 Push "com"
 GetVariable
 Push "nitrome"
@@ -105,7 +105,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc0279
+If loc0265
 Push "collect", 1, register1, "gotoAndStop"
 CallMethod
 Pop
@@ -117,7 +117,7 @@ Pop
 Push register1, "collected", true
 SetMember
 }
-loc0279:SetMember
+loc0265:SetMember
 Push register2, "finishCollect"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "_name"
@@ -134,6 +134,8 @@ Pop
 SetMember
 Push register2, "collected", false
 SetMember
+Push register2, "chid", 1885
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -146,4 +148,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc02f4:Pop
+loc02ed:Pop

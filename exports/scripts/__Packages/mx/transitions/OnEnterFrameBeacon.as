@@ -14,6 +14,13 @@ class mx.transitions.OnEnterFrameBeacon
          _loc3_ = _root.createEmptyMovieClip("__OnEnterFrameBeacon",9876);
          _loc3_.onEnterFrame = function()
          {
+            if(!_root.aMode)
+            {
+               _root.doEnterFrameBeacon();
+            }
+         };
+         _root.doEnterFrameBeacon = function()
+         {
             _global.MovieClip.broadcastMessage("onEnterFrame");
          };
       }

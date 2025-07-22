@@ -1,1 +1,4 @@
-this._parent.finishHit();
+if(!_root.aMode)
+{
+   this._parent.finishHit();
+}

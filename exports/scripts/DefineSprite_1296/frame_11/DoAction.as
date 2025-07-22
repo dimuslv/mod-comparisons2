@@ -1,1 +1,4 @@
-this._parent.finishOpen();
+if(!_root.aMode)
+{
+   this._parent.finishOpen();
+}

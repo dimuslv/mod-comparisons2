@@ -14,13 +14,13 @@ class com.nitrome.toxic.BossDebris extends MovieClip
    {
       this._y = 0;
       this.y_speed = 1;
-      this.rot = random(360);
-      this.rot_dir = random(2);
+      this.rot = _root._random(360);
+      this.rot_dir = _root._random(2);
       if(this.rot_dir == 0)
       {
          this.rot_dir = -1;
       }
-      this.gotoAndStop(random(5) + 1);
+      this.gotoAndStop(_root._random(5) + 1);
       this.active = true;
       this._visible = true;
    }

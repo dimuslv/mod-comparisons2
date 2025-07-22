@@ -18,17 +18,18 @@ class com.nitrome.toxic.Mine extends MovieClip
    var blow_count = 0;
    var max_blow_count = 100;
    var debris = new Array({id:9,x:-1,y:3},{id:8,x:0,y:-6},{id:7,x:0,y:-4});
+   var chid = 1900;
    function Mine()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function main()
    {

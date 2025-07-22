@@ -10,6 +10,7 @@ class com.nitrome.toxic.ShooterBullet extends MovieClip
    var GRAVITY = 1;
    var INERTIA = 0.96;
    var finished = false;
+   var chid = 2170;
    function ShooterBullet()
    {
       super();

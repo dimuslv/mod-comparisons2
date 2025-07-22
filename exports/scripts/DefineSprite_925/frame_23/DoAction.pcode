@@ -1,3 +1,9 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0057
 Push 4, 1, "this"
 GetVariable
 Push "_parent"
@@ -5,3 +11,4 @@ GetMember
 Push "setCollapseSize"
 CallMethod
 Pop
+loc0057:

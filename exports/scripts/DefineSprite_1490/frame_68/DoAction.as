@@ -1,1 +1,4 @@
-this._parent.doSplash();
+if(!_root.aMode)
+{
+   this._parent.doSplash();
+}

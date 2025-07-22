@@ -6,6 +6,7 @@ class com.nitrome.toxic.Bullet extends MovieClip
    var right_boundary;
    var speed = 5;
    var finished = false;
+   var chid = 857;
    function Bullet()
    {
       super();

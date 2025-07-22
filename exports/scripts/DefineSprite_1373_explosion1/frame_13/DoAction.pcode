@@ -1,4 +1,9 @@
 ConstantPool "this", "_y", "_x", "_root", "game", "startCreateGround"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc0073
 Push "this"
 GetVariable
 Push "_y"
@@ -14,3 +19,4 @@ GetMember
 Push "startCreateGround"
 CallMethod
 Pop
+loc0073:

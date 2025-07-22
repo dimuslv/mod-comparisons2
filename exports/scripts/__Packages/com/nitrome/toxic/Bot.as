@@ -19,17 +19,18 @@ class com.nitrome.toxic.Bot extends MovieClip
    var debris_right = new Array({id:13,x:-3,y:-6},{id:12,x:3,y:-5});
    var debris_left = new Array({id:11,x:3,y:-6},{id:10,x:-3,y:-5});
    var done_splash = false;
+   var chid = 856;
    function Bot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(game, hive, dir)
    {

@@ -1,1 +1,4 @@
-this._parent.finishCollapse();
+if(!_root.aMode)
+{
+   this._parent.finishCollapse();
+}

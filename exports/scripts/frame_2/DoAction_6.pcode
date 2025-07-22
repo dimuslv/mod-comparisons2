@@ -1,0 +1,3034 @@
+ConstantPool "_root", "write", "frozen", "curString", "", "curArray", "i", "curIndex", "curFrame", "fastPlayback", "saveStates", "getNextHighestDepth", "inputField", "createTextField", "autoSize", "type", "input", "background", "_visible", "restrict", "^[]i", "varField", "updateVarField", "game", "player", "text", "x: ", "_x", "\ny: ", "_y", "\nvx: ", "vx", "\nvy: ", "vy", "\nwc: ", "wall_count", "\nhc: ", "hit_count", "doKeyDown", "doTasKeyDown", "com", "nitrome", "toxic", "Global", "LAST_DIR_PRESSED", "LEFT", "RIGHT", "justPlacedBombs", "justPause", "loadInputs", "foif", "ClockDisp", "instances", "m_text", "Selection", "setFocus", "setSelection", "popup_holder", "clip", "key_button", "clearKeyListener", "mc", "startMenuMusic", "level_number", "title_screen", "tt", "doTween", "map", "doEnterFrame", "updateText", "stopAll", "rb", "indexOf", "truncateCurArray", "reload", "length", "Key", "isDown", "slice", "r", "getCaretIndex", "charAt", "qweasdQWEADnbrp|", "charCodeAt", "|", "push", "Math", "max", "n", "min", "getFocus", "_level0.inputField", "checkKeys", "neutralPlayback", "UP_PRESSED", "DIR_PRESSED", "DOWN_PRESSED", "can_jump", "nadwqesADWQE", "p", "layBomb", "b", "game_paused", "displayPopUp", "pauseGame", "unpauseGame", "hidePopUp", "rngSeed", "tasStart", "acid_holder", "bubbles", "_random", "_gotoAndPlay", "anim"
+Push "_root"
+GetVariable
+Push "write"
+Push true
+SetMember
+Push "_root"
+GetVariable
+Push "frozen"
+Push true
+SetMember
+Push "_root"
+GetVariable
+Push "curString"
+Push ""
+SetMember
+Push "_root"
+GetVariable
+Push "curArray"
+Push -1
+Push 0
+Push "i"
+Push 3
+InitArray
+SetMember
+Push "_root"
+GetVariable
+Push "curIndex"
+Push 0
+SetMember
+Push "_root"
+GetVariable
+Push "curFrame"
+Push 0
+SetMember
+Push "_root"
+GetVariable
+Push "fastPlayback"
+Push false
+SetMember
+Push "_root"
+GetVariable
+Push "saveStates"
+Push 0
+InitArray
+SetMember
+Push 15
+Push 530
+Push 380
+Push 10
+Push 0
+Push "_root"
+GetVariable
+Push "getNextHighestDepth"
+CallMethod
+Push "inputField"
+Push 6
+Push "_root"
+GetVariable
+Push "createTextField"
+CallMethod
+Pop
+Push "_root"
+GetVariable
+Push "inputField"
+GetMember
+Push "autoSize"
+Push false
+SetMember
+Push "_root"
+GetVariable
+Push "inputField"
+GetMember
+Push "type"
+Push "input"
+SetMember
+Push "_root"
+GetVariable
+Push "inputField"
+GetMember
+Push "background"
+Push true
+SetMember
+Push "_root"
+GetVariable
+Push "inputField"
+GetMember
+Push "_visible"
+Push false
+SetMember
+Push "_root"
+GetVariable
+Push "inputField"
+GetMember
+Push "restrict"
+Push "^[]i"
+SetMember
+Push 350
+Push 20
+Push 40
+Push 10
+Push 0
+Push "_root"
+GetVariable
+Push "getNextHighestDepth"
+CallMethod
+Push "varField"
+Push 6
+Push "_root"
+GetVariable
+Push "createTextField"
+CallMethod
+Pop
+Push "_root"
+GetVariable
+Push "varField"
+GetMember
+Push "_visible"
+Push false
+SetMember
+Push "_root"
+GetVariable
+Push "varField"
+GetMember
+Push "background"
+Push true
+SetMember
+Push "_root"
+GetVariable
+Push "varField"
+GetMember
+Push "autoSize"
+Push true
+SetMember
+Push "_root"
+GetVariable
+Push "updateVarField"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "game"
+GetMember
+Push "player"
+GetMember
+StoreRegister 2
+Pop
+Push register1
+Push "varField"
+GetMember
+Push "text"
+Push "x: "
+Push register2
+Push "_x"
+GetMember
+Add2
+Push "\ny: "
+Add2
+Push register2
+Push "_y"
+GetMember
+Add2
+Push "\nvx: "
+Add2
+Push register2
+Push "vx"
+GetMember
+Add2
+Push "\nvy: "
+Add2
+Push register2
+Push "vy"
+GetMember
+Add2
+Push "\nwc: "
+Add2
+Push register2
+Push "wall_count"
+GetMember
+Add2
+Push "\nhc: "
+Add2
+Push register2
+Push "hit_count"
+GetMember
+Add2
+SetMember
+}
+SetMember
+Push "_root"
+GetVariable
+Push "doKeyDown"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "code" {
+Push register2
+Push 1
+Push register1
+Push "doTasKeyDown"
+CallMethod
+Not
+If loc06c1
+Push undefined
+Return
+loc06c1:Push register1
+Push "write"
+GetMember
+PushDuplicate
+If loc06d8
+Pop
+Push true
+loc06d8:Not
+If loc086c
+Push register2
+Push 37
+Equals2
+PushDuplicate
+If loc0701
+Pop
+Push register2
+Push 65
+Equals2
+loc0701:Not
+If loc0748
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LAST_DIR_PRESSED"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+SetMember
+Jump loc086c
+loc0748:Push register2
+Push 39
+Equals2
+PushDuplicate
+If loc076b
+Pop
+Push register2
+Push 68
+Equals2
+loc076b:Not
+If loc07b2
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LAST_DIR_PRESSED"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+SetMember
+Jump loc086c
+loc07b2:Push register2
+Push 32
+Equals2
+PushDuplicate
+If loc07d5
+Pop
+Push register2
+Push 66
+Equals2
+loc07d5:Not
+If loc07f7
+Push register1
+Push "justPlacedBombs"
+Push register1
+Push "justPlacedBombs"
+GetMember
+Increment
+SetMember
+Jump loc086c
+loc07f7:Push register2
+Push 78
+Equals2
+Not
+If loc0841
+Push register1
+Push "justPlacedBombs"
+GetMember
+Push 0
+Greater
+Not
+If loc083c
+Push register1
+Push "justPlacedBombs"
+Push register1
+Push "justPlacedBombs"
+GetMember
+Decrement
+SetMember
+loc083c:Jump loc086c
+loc0841:Push register2
+Push 80
+Equals2
+Not
+If loc086c
+Push register1
+Push "justPause"
+Push register1
+Push "justPause"
+GetMember
+Not
+SetMember
+}
+loc086c:SetMember
+Push "_root"
+GetVariable
+Push "doTasKeyDown"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "code" {
+Push register2
+Push 13
+Equals2
+Not
+If loc08bc
+Push false
+Push 1
+Push register1
+Push "loadInputs"
+CallMethod
+Pop
+Push true
+Return
+loc08bc:Push 0
+Push register1
+Push "foif"
+CallMethod
+Not
+If loc0ac5
+Push register2
+Push 73
+Equals2
+Not
+If loc097f
+Push register1
+Push "inputField"
+GetMember
+Push "_visible"
+Push register1
+Push "inputField"
+GetMember
+Push "_visible"
+GetMember
+Not
+SetMember
+Push "ClockDisp"
+GetVariable
+Push "instances"
+GetMember
+Push 0
+GetMember
+Push "m_text"
+GetMember
+Push 1
+Push "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+Push 0
+Push 0
+Push 2
+Push "Selection"
+GetVariable
+Push "setSelection"
+CallMethod
+Pop
+Push false
+Push 1
+Push register1
+Push "loadInputs"
+CallMethod
+Pop
+Jump loc0abf
+loc097f:Push register2
+Push 27
+Equals2
+PushDuplicate
+If loc09a2
+Pop
+Push register2
+Push 112
+Equals2
+loc09a2:Not
+If loc0a1b
+Push "ClockDisp"
+GetVariable
+Push "instances"
+GetMember
+Push 0
+GetMember
+Push "m_text"
+GetMember
+Push 1
+Push "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+Push 0
+Push 0
+Push 2
+Push "Selection"
+GetVariable
+Push "setSelection"
+CallMethod
+Pop
+Push false
+Push 1
+Push register1
+Push "loadInputs"
+CallMethod
+Pop
+Jump loc0abf
+loc0a1b:Push register2
+Push 221
+Equals2
+Not
+If loc0a4d
+Push true
+Push 1
+Push register1
+Push "loadInputs"
+CallMethod
+Pop
+Jump loc0abf
+loc0a4d:Push register2
+Push 219
+Equals2
+Not
+If loc0abf
+Push true
+Push 1
+Push register1
+Push "loadInputs"
+CallMethod
+Pop
+Push register1
+Push "varField"
+GetMember
+Push 1
+Push "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+Push 0
+Push 0
+Push 2
+Push "Selection"
+GetVariable
+Push "setSelection"
+CallMethod
+Pop
+loc0abf:Push true
+Return
+loc0ac5:Push register2
+Push 113
+Equals2
+Not
+If loc0b77
+Push 0
+Push register1
+Push "popup_holder"
+GetMember
+Push "clip"
+GetMember
+Push "key_button"
+GetMember
+Push "clearKeyListener"
+CallMethod
+Pop
+Push false
+Push 1
+Push register1
+Push "mc"
+GetMember
+Push "startMenuMusic"
+CallMethod
+Pop
+Push register1
+Push "game"
+GetMember
+Push "level_number"
+GetMember
+If loc0b58
+Push "title_screen"
+Push 1
+Push register1
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Jump loc0b77
+loc0b58:Push "map"
+Push 1
+Push register1
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+loc0b77:Push register2
+Push 67
+Equals2
+Not
+If loc0bae
+Push register1
+Push "varField"
+GetMember
+Push "_visible"
+Push register1
+Push "varField"
+GetMember
+Push "_visible"
+GetMember
+Not
+SetMember
+loc0bae:Push register2
+Push 73
+Equals2
+Not
+If loc0c40
+Push register1
+Push "inputField"
+GetMember
+Push "_visible"
+Push register1
+Push "inputField"
+GetMember
+Push "_visible"
+GetMember
+Not
+SetMember
+Push "ClockDisp"
+GetVariable
+Push "instances"
+GetMember
+Push 0
+GetMember
+Push "m_text"
+GetMember
+Push 1
+Push "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+Push 0
+Push 0
+Push 2
+Push "Selection"
+GetVariable
+Push "setSelection"
+CallMethod
+Pop
+Push true
+Return
+loc0c40:Push register2
+Push 191
+Equals2
+Not
+If loc0c81
+Push register1
+Push "write"
+Push true
+SetMember
+Push register1
+Push "frozen"
+Push register1
+Push "frozen"
+GetMember
+Not
+SetMember
+Push true
+Return
+loc0c81:Push register2
+Push 190
+Equals2
+Not
+If loc0cf7
+Push register1
+Push "frozen"
+Push true
+SetMember
+Push register1
+Push "write"
+Push true
+SetMember
+Push 0
+Push register1
+Push "doEnterFrame"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "updateText"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "stopAll"
+CallMethod
+Pop
+Push true
+Return
+loc0cf7:Push register2
+Push 188
+Equals2
+Not
+If loc0e33
+Push register1
+Push "frozen"
+Push true
+SetMember
+Push register1
+Push "write"
+Push true
+SetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 0
+Greater
+Not
+If loc0e2d
+Push register1
+Push "curFrame"
+Push register1
+Push "curFrame"
+GetMember
+Decrement
+SetMember
+Push register1
+Push "curFrame"
+GetMember
+Push 0
+Greater
+Not
+Not
+If loc0dfa
+loc0d77:Push register1
+Push "curIndex"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Subtract
+SetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Push 1
+Push "rb"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+Not
+If loc0d77
+Push register1
+Push "curFrame"
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+SetMember
+loc0dfa:Push 0
+Push register1
+Push "truncateCurArray"
+CallMethod
+Pop
+Push "reload"
+Push 1
+Push register1
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+loc0e2d:Push true
+Return
+loc0e33:Push register2
+Push 222
+Equals2
+Not
+If loc0e74
+Push register1
+Push "write"
+Push false
+SetMember
+Push register1
+Push "frozen"
+Push register1
+Push "frozen"
+GetMember
+Not
+SetMember
+Push true
+Return
+loc0e74:Push register2
+Push 186
+Equals2
+Not
+If loc0f4f
+Push register1
+Push "frozen"
+Push true
+SetMember
+Push register1
+Push "write"
+Push false
+SetMember
+Push register1
+Push "curIndex"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Push 3
+Subtract
+Less2
+PushDuplicate
+If loc0f07
+Pop
+Push register1
+Push "curFrame"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Push 2
+Subtract
+GetMember
+Less2
+loc0f07:Not
+If loc0f49
+Push 0
+Push register1
+Push "doEnterFrame"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "updateText"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "stopAll"
+CallMethod
+Pop
+loc0f49:Push true
+Return
+loc0f4f:Push register2
+Push 76
+Equals2
+Not
+If loc1077
+Push register1
+Push "frozen"
+Push true
+SetMember
+Push register1
+Push "write"
+Push false
+SetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 0
+Greater
+Not
+If loc1071
+Push register1
+Push "curFrame"
+Push register1
+Push "curFrame"
+GetMember
+Decrement
+SetMember
+Push register1
+Push "curFrame"
+GetMember
+Push 0
+Greater
+Not
+Not
+If loc1052
+loc0fcf:Push register1
+Push "curIndex"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Subtract
+SetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Push 1
+Push "rb"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+Not
+If loc0fcf
+Push register1
+Push "curFrame"
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+SetMember
+loc1052:Push "reload"
+Push 1
+Push register1
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+loc1071:Push true
+Return
+loc1077:Push register2
+Push 82
+Equals2
+Not
+If loc1102
+Push register1
+Push "curIndex"
+Push 0
+SetMember
+Push register1
+Push "curFrame"
+Push register1
+Push "curArray"
+GetMember
+Push 1
+GetMember
+SetMember
+Push register1
+Push "write"
+Push false
+SetMember
+Push register1
+Push "frozen"
+Push false
+SetMember
+Push "reload"
+Push 1
+Push register1
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Push true
+Return
+loc1102:Push register2
+Push 48
+Less2
+Not
+PushDuplicate
+Not
+If loc1128
+Pop
+Push register2
+Push 57
+Greater
+Not
+loc1128:Not
+If loc11ea
+Push 16
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+Not
+If loc1180
+Push register1
+Push "saveStates"
+GetMember
+Push register2
+Push 48
+Subtract
+Push register1
+Push "inputField"
+GetMember
+Push "text"
+GetMember
+SetMember
+Jump loc11e4
+loc1180:Push register1
+Push "saveStates"
+GetMember
+Push register2
+Push 48
+Subtract
+GetMember
+Not
+If loc11e4
+Push register1
+Push "inputField"
+GetMember
+Push "text"
+Push register1
+Push "saveStates"
+GetMember
+Push register2
+Push 48
+Subtract
+GetMember
+SetMember
+Push false
+Push 1
+Push register1
+Push "loadInputs"
+CallMethod
+Pop
+loc11e4:Push true
+Return
+loc11ea:Push false
+Return
+}
+SetMember
+Push "_root"
+GetVariable
+Push "truncateCurArray"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "curArray"
+GetMember
+Push "length"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Add2
+SetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+Push register1
+Push "curFrame"
+GetMember
+SetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 0
+Equals2
+Not
+If loc1309
+Push register1
+Push "curArray"
+GetMember
+Push 2
+GetMember
+Push -1
+Equals2
+Not
+If loc12a9
+Push register1
+Push "curString"
+Push ""
+SetMember
+Jump loc1304
+loc12a9:Push register1
+Push "curString"
+Push register1
+Push "curArray"
+GetMember
+Push 2
+GetMember
+Push 0
+Push 2
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Push "r"
+Add2
+Push register1
+Push "curArray"
+GetMember
+Push 1
+GetMember
+Add2
+SetMember
+loc1304:Jump loc139d
+loc1309:Push register1
+Push "curString"
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 2
+Add2
+GetMember
+Push 0
+Push 2
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Add2
+Push register1
+Push "curFrame"
+GetMember
+Push 1
+Equals2
+Not
+If loc1390
+Push ""
+Jump loc139b
+loc1390:Push register1
+Push "curFrame"
+GetMember
+loc139b:Add2
+SetMember
+}
+loc139d:SetMember
+Push "_root"
+GetVariable
+Push "loadInputs"
+DefineFunction2 "", 1, 18, false, true, true, false, true, false, true, false, false, 2, "useCaretPos" {
+Push 0
+InitArray
+StoreRegister 3
+Pop
+Push -3
+StoreRegister 4
+Pop
+Push 0
+StoreRegister 5
+Pop
+Push ""
+StoreRegister 6
+Pop
+Push 0
+StoreRegister 7
+Pop
+Push 0
+StoreRegister 8
+Pop
+Push register1
+Push "inputField"
+GetMember
+Push "text"
+GetMember
+StoreRegister 9
+Pop
+Push 0
+Push "Selection"
+GetVariable
+Push "getCaretIndex"
+CallMethod
+StoreRegister 10
+Pop
+Push -3
+StoreRegister 11
+Pop
+Push 0
+StoreRegister 12
+Pop
+loc1456:Push register12
+Push register9
+Push "length"
+GetMember
+Less2
+PushDuplicate
+Not
+If loc14a3
+Pop
+Push register12
+Push 1
+Push register9
+Push "charAt"
+CallMethod
+Push 1
+Push "qweasdQWEADnbrp|"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+loc14a3:Not
+If loc14b9
+Push register12
+Increment
+StoreRegister 12
+Pop
+Jump loc1456
+loc14b9:Push register12
+Push register9
+Push "length"
+GetMember
+Less2
+Not
+If loc17e7
+Push register12
+Push 1
+Push register9
+Push "charAt"
+CallMethod
+StoreRegister 13
+Pop
+Push register12
+StoreRegister 14
+Pop
+Push 0
+StoreRegister 15
+Pop
+Push register12
+StoreRegister 16
+Pop
+Push register12
+Increment
+StoreRegister 12
+Pop
+loc1519:Push register12
+Push register9
+Push "length"
+GetMember
+Less2
+PushDuplicate
+Not
+If loc1566
+Pop
+Push register12
+Push 1
+Push register9
+Push "charAt"
+CallMethod
+Push 1
+Push "qweasdQWEADnbrp|"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+loc1566:Not
+If loc160d
+Push register12
+Push 1
+Push register9
+Push "charCodeAt"
+CallMethod
+Push 48
+Less2
+Not
+PushDuplicate
+Not
+If loc15b8
+Pop
+Push register12
+Push 1
+Push register9
+Push "charCodeAt"
+CallMethod
+Push 57
+Greater
+Not
+loc15b8:Not
+If loc15fd
+Push register15
+Push 10
+Multiply
+Push register12
+Push 1
+Push register9
+Push "charCodeAt"
+CallMethod
+Add2
+Push 48
+Subtract
+StoreRegister 15
+Pop
+Push register12
+StoreRegister 16
+Pop
+loc15fd:Push register12
+Increment
+StoreRegister 12
+Pop
+Jump loc1519
+loc160d:Push register13
+Push "|"
+Equals2
+Not
+If loc1697
+Push register3
+Push "length"
+GetMember
+StoreRegister 4
+Pop
+Push register15
+StoreRegister 5
+Pop
+Push register6
+Push register14
+Push register7
+Push 2
+Push register9
+Push "slice"
+CallMethod
+Add2
+StoreRegister 6
+Pop
+Push register16
+Push 1
+Add2
+StoreRegister 7
+Pop
+Push register8
+Push register16
+Push 1
+Add2
+Push register14
+Subtract
+Add2
+StoreRegister 8
+Pop
+Jump loc17e2
+loc1697:Push register13
+Push "r"
+Equals2
+Not
+PushDuplicate
+Not
+If loc16b9
+Pop
+Push register15
+Push 0
+Equals2
+loc16b9:Not
+If loc16cc
+Push 1
+StoreRegister 15
+Pop
+loc16cc:Push register3
+Push "length"
+GetMember
+Push 0
+Equals2
+Not
+If loc175c
+Push register13
+Push "r"
+Equals2
+Not
+If loc171f
+Push register14
+Push register8
+Subtract
+Push register15
+Push "i"
+Push 3
+InitArray
+StoreRegister 3
+Pop
+Jump loc1757
+loc171f:Push register14
+Push register8
+Subtract
+Push register15
+Push register13
+Push -1
+Push 0
+Push "i"
+Push 6
+InitArray
+StoreRegister 3
+Pop
+loc1757:Jump loc1785
+loc175c:Push register14
+Push register8
+Subtract
+Push register15
+Push register13
+Push 3
+Push register3
+Push "push"
+CallMethod
+Pop
+loc1785:Push register11
+Push -3
+Equals2
+PushDuplicate
+Not
+If loc17a7
+Pop
+Push register10
+Push register16
+Greater
+Not
+loc17a7:Not
+If loc17e2
+Push register3
+Push "length"
+GetMember
+Push 6
+Subtract
+Push 0
+Push 2
+Push "Math"
+GetVariable
+Push "max"
+CallMethod
+StoreRegister 11
+Pop
+loc17e2:Jump loc14b9
+loc17e7:Push register6
+Push register7
+Push 1
+Push register9
+Push "slice"
+CallMethod
+Add2
+StoreRegister 6
+Pop
+Push register3
+Push "length"
+GetMember
+Push 0
+Equals2
+Not
+If loc1866
+Push -1
+Push 0
+Push "i"
+Push 3
+InitArray
+StoreRegister 3
+Pop
+Push 0
+StoreRegister 4
+Pop
+Push 0
+StoreRegister 5
+Pop
+Jump loc1ad2
+loc1866:Push register3
+Push register3
+Push "length"
+GetMember
+Push 3
+Subtract
+GetMember
+Push 1
+Push "rb"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+Not
+Not
+If loc18df
+Push register6
+Push "length"
+GetMember
+Push 1
+Push "n"
+Push 3
+Push register3
+Push "push"
+CallMethod
+Pop
+Push register6
+Push "n"
+Add2
+StoreRegister 6
+Pop
+loc18df:Push register2
+Not
+If loc193f
+Push register11
+StoreRegister 4
+Pop
+Push register11
+Push -3
+Equals2
+Not
+If loc1921
+Push register3
+Push "length"
+GetMember
+Push 3
+Subtract
+StoreRegister 4
+Pop
+loc1921:Push register3
+Push register4
+Push 1
+Add2
+GetMember
+StoreRegister 5
+Pop
+Jump loc1a45
+loc193f:Push register4
+Push -3
+Equals2
+PushDuplicate
+If loc1965
+Pop
+Push register4
+Push register3
+Push "length"
+GetMember
+Equals2
+loc1965:Not
+If loc19a2
+Push register3
+Push "length"
+GetMember
+Push 3
+Subtract
+StoreRegister 4
+Pop
+Push register3
+Push register4
+Push 1
+Add2
+GetMember
+StoreRegister 5
+Pop
+Jump loc1a45
+loc19a2:Push register4
+Push 0
+Equals2
+Not
+If loc19ce
+Push register3
+Push 1
+GetMember
+StoreRegister 5
+Pop
+Jump loc1a45
+loc19ce:Push register5
+Push 0
+Equals2
+Not
+If loc1a13
+Push register4
+Push 3
+Subtract
+StoreRegister 4
+Pop
+Push register3
+Push register4
+Push 1
+Add2
+GetMember
+StoreRegister 5
+Pop
+Jump loc1a45
+loc1a13:Push register3
+Push register4
+Push 1
+Add2
+GetMember
+Push register5
+Push 2
+Push "Math"
+GetVariable
+Push "min"
+CallMethod
+StoreRegister 5
+Pop
+loc1a45:Push register3
+Push register4
+GetMember
+Push 1
+Push "rb"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+Not
+Not
+If loc1ad2
+loc1a73:Push register3
+Push register4
+GetMember
+Push 1
+Push "rb"
+Push "indexOf"
+CallMethod
+Push -1
+Equals2
+Not
+Not
+If loc1ab9
+Push register4
+Push 3
+Subtract
+StoreRegister 4
+Pop
+Jump loc1a73
+loc1ab9:Push register3
+Push register4
+Push 1
+Add2
+GetMember
+StoreRegister 5
+Pop
+loc1ad2:Push true
+StoreRegister 17
+Pop
+Push register1
+Push "curIndex"
+GetMember
+Push register4
+Equals2
+PushDuplicate
+Not
+If loc1b06
+Pop
+Push register1
+Push "curFrame"
+GetMember
+Push register5
+Equals2
+loc1b06:Not
+If loc1bdf
+Push 0
+StoreRegister 12
+Pop
+loc1b19:Push register12
+Push register4
+Less2
+Not
+If loc1bac
+Push register1
+Push "curArray"
+GetMember
+Push register12
+GetMember
+Push register3
+Push register12
+GetMember
+Equals2
+Not
+PushDuplicate
+If loc1b7f
+Pop
+Push register1
+Push "curArray"
+GetMember
+Push register12
+Push 1
+Add2
+GetMember
+Push register3
+Push register12
+Push 1
+Add2
+GetMember
+Equals2
+Not
+loc1b7f:Not
+If loc1b94
+Push false
+StoreRegister 17
+Pop
+Jump loc1bac
+loc1b94:Push register12
+Push 3
+Add2
+StoreRegister 12
+Pop
+Jump loc1b19
+loc1bac:Push register1
+Push "curArray"
+GetMember
+Push register4
+GetMember
+Push register3
+Push register4
+GetMember
+Equals2
+Not
+Not
+If loc1bda
+Push false
+StoreRegister 17
+Pop
+loc1bda:Jump loc1be9
+loc1bdf:Push false
+StoreRegister 17
+Pop
+loc1be9:Push register1
+Push "curArray"
+Push register3
+SetMember
+Push register1
+Push "curString"
+Push register6
+SetMember
+Push register1
+Push "curIndex"
+Push register4
+SetMember
+Push register1
+Push "curFrame"
+Push register5
+SetMember
+Push register17
+If loc1c57
+Push "reload"
+Push 1
+Push register1
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Jump loc1c6b
+loc1c57:Push 0
+Push register1
+Push "updateText"
+CallMethod
+Pop
+}
+loc1c6b:SetMember
+Push "_root"
+GetVariable
+Push "updateText"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register2
+Pop
+Push register1
+Push "curIndex"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Push 3
+Subtract
+Equals2
+PushDuplicate
+Not
+If loc1ce8
+Pop
+Push register1
+Push "curFrame"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Push 2
+Subtract
+GetMember
+Equals2
+loc1ce8:Not
+If loc1d03
+Push register1
+Push "curString"
+GetMember
+StoreRegister 2
+Pop
+Jump loc1e52
+loc1d03:Push register1
+Push "curFrame"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+Equals2
+Not
+If loc1dc0
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 5
+Add2
+GetMember
+Push 0
+Push 2
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Push "|"
+Add2
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 5
+Add2
+GetMember
+Push 1
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Add2
+StoreRegister 2
+Pop
+Jump loc1e52
+loc1dc0:Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 2
+Add2
+GetMember
+Push 0
+Push 2
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Push "|"
+Add2
+Push register1
+Push "curFrame"
+GetMember
+Add2
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 2
+Add2
+GetMember
+Push 1
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Add2
+StoreRegister 2
+Pop
+loc1e52:Push register1
+Push "inputField"
+GetMember
+Push "text"
+Push register2
+SetMember
+}
+SetMember
+Push "_root"
+GetVariable
+Push "foif"
+DefineFunction "", 0 {
+Push 0
+Push "Selection"
+GetVariable
+Push "getFocus"
+CallMethod
+Push "_level0.inputField"
+Equals2
+Return
+}
+SetMember
+Push "_root"
+GetVariable
+Push "checkKeys"
+DefineFunction2 "", 0, 6, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "neutralPlayback"
+GetMember
+Not
+If loc1ec4
+Push undefined
+Return
+loc1ec4:Push register1
+Push "write"
+GetMember
+Not
+If loc27fe
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+GetMember
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "foif"
+CallMethod
+Not
+If loc1f82
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push -1
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+Push false
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DOWN_PRESSED"
+Push false
+SetMember
+Jump loc2302
+loc1f82:Push 37
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+PushDuplicate
+If loc1fc1
+Pop
+Push 65
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+loc1fc1:PushDuplicate
+Not
+If loc2008
+Pop
+Push 39
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+PushDuplicate
+If loc2008
+Pop
+Push 68
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+loc2008:Not
+If loc2116
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LAST_DIR_PRESSED"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+Equals2
+Not
+If loc2092
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+SetMember
+Jump loc2111
+loc2092:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LAST_DIR_PRESSED"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+Equals2
+Not
+If loc2111
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+SetMember
+loc2111:Jump loc2248
+loc2116:Push 37
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+PushDuplicate
+If loc2155
+Pop
+Push 65
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+loc2155:Not
+If loc219c
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "LEFT"
+GetMember
+SetMember
+Jump loc2248
+loc219c:Push 39
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+PushDuplicate
+If loc21db
+Pop
+Push 68
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+loc21db:Not
+If loc2222
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "RIGHT"
+GetMember
+SetMember
+Jump loc2248
+loc2222:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push -1
+SetMember
+loc2248:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+Push 38
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+PushDuplicate
+If loc22a4
+Pop
+Push 87
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+loc22a4:SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DOWN_PRESSED"
+Push 40
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+PushDuplicate
+If loc2301
+Pop
+Push 83
+Push 1
+Push "Key"
+GetVariable
+Push "isDown"
+CallMethod
+loc2301:SetMember
+loc2302:Push register2
+PushDuplicate
+Not
+If loc232e
+Pop
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+GetMember
+Not
+loc232e:Not
+If loc2357
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "can_jump"
+Push true
+SetMember
+loc2357:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+GetMember
+Push 1
+Add2
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+GetMember
+ToInteger
+Push 3
+Multiply
+Add2
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DOWN_PRESSED"
+GetMember
+ToInteger
+Push 6
+Multiply
+Add2
+Push 1
+Push "nadwqesADWQE"
+Push "charAt"
+CallMethod
+StoreRegister 3
+Pop
+Push register1
+Push "justPause"
+GetMember
+Not
+If loc2403
+Push "p"
+StoreRegister 3
+Pop
+loc2403:Push register1
+Push "curIndex"
+GetMember
+Push -3
+Equals2
+Not
+If loc2481
+Push register1
+Push "curArray"
+Push 0
+Push 1
+Push register3
+Push 3
+InitArray
+SetMember
+Push register1
+Push "curString"
+Push register3
+SetMember
+Push register1
+Push "curIndex"
+Push 0
+SetMember
+Push register1
+Push "curFrame"
+Push 1
+SetMember
+Jump loc272f
+loc2481:Push 0
+Push register1
+Push "truncateCurArray"
+CallMethod
+Pop
+Push register1
+Push "justPlacedBombs"
+GetMember
+Push 0
+Greater
+Not
+If loc25b9
+Push 0
+StoreRegister 4
+Pop
+loc24bc:Push register4
+Push register1
+Push "justPlacedBombs"
+GetMember
+Less2
+Not
+If loc24fd
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "layBomb"
+CallMethod
+Pop
+Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc24bc
+loc24fd:Push register1
+Push "curString"
+GetMember
+Push "length"
+GetMember
+Push register1
+Push "justPlacedBombs"
+GetMember
+Push "b"
+Push 3
+Push register1
+Push "curArray"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register1
+Push "curIndex"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Add2
+SetMember
+Push register1
+Push "curFrame"
+Push register1
+Push "justPlacedBombs"
+GetMember
+SetMember
+Push register1
+Push "curString"
+Push register1
+Push "curString"
+GetMember
+Push "b"
+Push register1
+Push "justPlacedBombs"
+GetMember
+Push 1
+Greater
+Not
+If loc25b1
+Push register1
+Push "justPlacedBombs"
+GetMember
+Jump loc25b6
+loc25b1:Push ""
+loc25b6:Add2
+Add2
+SetMember
+loc25b9:Push register3
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Equals2
+Not
+If loc26a9
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+Increment
+SetMember
+Push register1
+Push "curFrame"
+Push register1
+Push "curFrame"
+GetMember
+Increment
+SetMember
+Push register1
+Push "curString"
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 2
+Add2
+GetMember
+Push 0
+Push 2
+Push register1
+Push "curString"
+GetMember
+Push "slice"
+CallMethod
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Add2
+Push register1
+Push "curFrame"
+GetMember
+Add2
+SetMember
+Jump loc272f
+loc26a9:Push register1
+Push "curString"
+GetMember
+Push "length"
+GetMember
+Push 1
+Push register3
+Push 3
+Push register1
+Push "curArray"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register1
+Push "curIndex"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Add2
+SetMember
+Push register1
+Push "curFrame"
+Push 1
+SetMember
+Push register1
+Push "curString"
+Push register1
+Push "curString"
+GetMember
+Push register3
+Add2
+SetMember
+loc272f:Push register1
+Push "justPause"
+GetMember
+Not
+If loc27a1
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "game_paused"
+GetMember
+If loc279c
+Push "game_paused"
+Push 1
+Push register1
+Push "popup_holder"
+GetMember
+Push "displayPopUp"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "pauseGame"
+CallMethod
+Pop
+loc279c:Jump loc27f9
+loc27a1:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "game_paused"
+GetMember
+Not
+If loc27f9
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "unpauseGame"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "popup_holder"
+GetMember
+Push "hidePopUp"
+CallMethod
+Pop
+loc27f9:Jump loc2bf7
+loc27fe:Push register1
+Push "curIndex"
+GetMember
+Push -3
+Equals2
+Not
+If loc2843
+Push register1
+Push "curIndex"
+Push 0
+SetMember
+Push register1
+Push "curFrame"
+Push 0
+SetMember
+Jump loc28a8
+loc2843:Push register1
+Push "curFrame"
+GetMember
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+Less2
+Not
+Not
+If loc28a8
+Push register1
+Push "curIndex"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Add2
+SetMember
+Push register1
+Push "curFrame"
+Push 0
+SetMember
+loc28a8:Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Push "b"
+Equals2
+PushDuplicate
+If loc28e9
+Pop
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Push "r"
+Equals2
+loc28e9:Not
+If loc29df
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+Push "b"
+Equals2
+Not
+If loc297d
+Push register1
+Push "curFrame"
+GetMember
+StoreRegister 4
+Pop
+loc2922:Push register4
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+Less2
+Not
+If loc2978
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "layBomb"
+CallMethod
+Pop
+Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc2922
+loc2978:Jump loc29a8
+loc297d:Push register1
+Push "rngSeed"
+Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+SetMember
+loc29a8:Push register1
+Push "curIndex"
+Push register1
+Push "curIndex"
+GetMember
+Push 3
+Add2
+SetMember
+Push register1
+Push "curFrame"
+Push 0
+SetMember
+Jump loc28a8
+loc29df:Push register1
+Push "curArray"
+GetMember
+Push register1
+Push "curIndex"
+GetMember
+GetMember
+StoreRegister 3
+Pop
+Push register3
+Push "p"
+Equals2
+Not
+If loc2a6d
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "game_paused"
+GetMember
+If loc2a68
+Push "game_paused"
+Push 1
+Push register1
+Push "popup_holder"
+GetMember
+Push "displayPopUp"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "pauseGame"
+CallMethod
+Pop
+loc2a68:Jump loc2be0
+loc2a6d:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "game_paused"
+GetMember
+Not
+If loc2ac5
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "unpauseGame"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "popup_holder"
+GetMember
+Push "hidePopUp"
+CallMethod
+Pop
+loc2ac5:Push register3
+Push 1
+Push "nadwqesADWQE"
+Push "indexOf"
+CallMethod
+StoreRegister 5
+Pop
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DIR_PRESSED"
+Push register5
+Push 3
+Modulo
+Push 1
+Subtract
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+GetMember
+PushDuplicate
+Not
+If loc2b54
+Pop
+Push register5
+Push 6
+Modulo
+Push 3
+Less2
+loc2b54:Not
+If loc2b7d
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "can_jump"
+Push true
+SetMember
+loc2b7d:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "UP_PRESSED"
+Push register5
+Push 6
+Modulo
+Push 3
+Less2
+Not
+SetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "DOWN_PRESSED"
+Push register5
+Push 6
+Less2
+Not
+SetMember
+loc2be0:Push register1
+Push "curFrame"
+Push register1
+Push "curFrame"
+GetMember
+Increment
+SetMember
+}
+loc2bf7:SetMember
+Push "_root"
+GetVariable
+Push "tasStart"
+DefineFunction2 "", 0, 9, false, true, true, false, true, false, true, false, false {
+Push 0
+InitArray
+StoreRegister 2
+Pop
+Push register1
+Push "game"
+GetMember
+Push "acid_holder"
+GetMember
+Enumerate2
+loc2c2e:StoreRegister 0
+Push null
+Equals2
+If loc2c76
+Push register0
+StoreRegister 3
+Pop
+Push register1
+Push "game"
+GetMember
+Push "acid_holder"
+GetMember
+Push register3
+GetMember
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Jump loc2c2e
+loc2c76:Push register2
+Enumerate2
+loc2c7c:StoreRegister 0
+Push null
+Equals2
+If loc2d56
+Push register0
+StoreRegister 3
+Pop
+Push register2
+Push register3
+GetMember
+StoreRegister 4
+Pop
+Push register4
+Push "bubbles"
+GetMember
+Not
+If loc2cfd
+Push 267
+Push 1
+Push register1
+Push "_random"
+CallMethod
+Push 1
+Add2
+Push register4
+Push "bubbles"
+GetMember
+Push 2
+Push register1
+Push "_gotoAndPlay"
+CallMethod
+Pop
+Jump loc2d51
+loc2cfd:Push register4
+Push "anim"
+GetMember
+Not
+If loc2d51
+Push 267
+Push 1
+Push register1
+Push "_random"
+CallMethod
+Push 1
+Add2
+Push register4
+Push "anim"
+GetMember
+Push 2
+Push register1
+Push "_gotoAndPlay"
+CallMethod
+Pop
+loc2d51:Jump loc2c7c
+loc2d56:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "can_jump"
+Push true
+SetMember
+Push register1
+Push "write"
+GetMember
+StoreRegister 5
+Pop
+Push register1
+Push "write"
+Push false
+SetMember
+Push register1
+Push "curIndex"
+GetMember
+StoreRegister 6
+Pop
+Push register1
+Push "curFrame"
+GetMember
+StoreRegister 7
+Pop
+Push register1
+Push "curIndex"
+Push 0
+SetMember
+Push register1
+Push "curFrame"
+Push register1
+Push "curArray"
+GetMember
+Push 1
+GetMember
+SetMember
+Push register1
+Push "fastPlayback"
+Push true
+SetMember
+Push register1
+Push "neutralPlayback"
+Push true
+SetMember
+Push 0
+StoreRegister 8
+Pop
+loc2e18:Push register8
+Push 109
+Less2
+Not
+If loc2e50
+Push 0
+Push register1
+Push "doEnterFrame"
+CallMethod
+Pop
+Push register8
+Increment
+StoreRegister 8
+Pop
+Jump loc2e18
+loc2e50:Push register1
+Push "neutralPlayback"
+Push false
+SetMember
+loc2e60:Push register1
+Push "curIndex"
+GetMember
+Push register6
+Less2
+PushDuplicate
+If loc2ea2
+Pop
+Push register1
+Push "curIndex"
+GetMember
+Push register6
+Equals2
+PushDuplicate
+Not
+If loc2ea2
+Pop
+Push register1
+Push "curFrame"
+GetMember
+Push register7
+Less2
+loc2ea2:Not
+If loc2ec1
+Push 0
+Push register1
+Push "doEnterFrame"
+CallMethod
+Pop
+Jump loc2e60
+loc2ec1:Push register1
+Push "fastPlayback"
+Push false
+SetMember
+Push register1
+Push "write"
+Push register5
+SetMember
+Push 0
+Push register1
+Push "updateText"
+CallMethod
+Pop
+}
+SetMember

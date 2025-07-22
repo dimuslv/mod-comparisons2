@@ -1,5 +1,12 @@
+ConstantPool
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc003d
 Push 0, "this"
 GetVariable
 Push "cutHole"
 CallMethod
 Pop
+loc003d:

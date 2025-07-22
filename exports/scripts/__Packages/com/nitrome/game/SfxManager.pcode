@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00a0
+If loc009c
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00a0:Pop
+loc009c:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00d8
+If loc00d0
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc00d8:Pop
+loc00d0:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "game"
 GetMember
 Not
 Not
-If loc011c
+If loc0110
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "game", 0, "Object"
 NewObject
 SetMember
-loc011c:Pop
+loc0110:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "SfxManager"
 GetMember
 Not
 Not
-If loc0228
+If loc022d
 Push "com"
 GetVariable
 Push "nitrome"
@@ -101,14 +101,17 @@ CallMethod
 Push true
 Equals2
 Not
-If loc01f8
+If loc01fd
+Push register2, "fastPlayback"
+GetMember
+If loc01fd
 Push 2, 1, register1, register3
 GetMember
 Push "gotoAndPlay"
 CallMethod
 Pop
 }
-loc01f8:SetMember
+loc01fd:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -121,4 +124,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0228:Pop
+loc022d:Pop

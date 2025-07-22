@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc01b7
+If loc01b3
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc01b7:Pop
+loc01b3:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc01ef
+If loc01e7
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc01ef:Pop
+loc01e7:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc0233
+If loc0227
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc0233:Pop
+loc0227:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "BossLaser"
 GetMember
 Not
 Not
-If loc099c
+If loc0961
 Push "com"
 GetVariable
 Push "nitrome"
@@ -120,7 +120,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc07e4
+If loc07b8
 Push register1, "deg", register1, "deg"
 GetMember
 Push register1, "rot"
@@ -136,28 +136,28 @@ Pop
 Push register7, 0
 Less2
 Not
-If loc03b3
+If loc039b
 Push register7, 360
 Add2
 StoreRegister 7
 Pop
-loc03b3:Push register7, 360
+loc039b:Push register7, 360
 Less2
 Not
 Not
-If loc03d5
+If loc03bd
 Push register7, 360
 Subtract
 StoreRegister 7
 Pop
-loc03d5:Push 140
+loc03bd:Push 140
 StoreRegister 3
 Pop
-loc03e2:Push register3, 600
+loc03ca:Push register3, 600
 Greater
 Not
 Not
-If loc0599
+If loc0579
 Push register3, "com"
 GetVariable
 Push "nitrome"
@@ -211,7 +211,7 @@ Pop
 Push register5, 0
 Less2
 PushDuplicate
-If loc04cb
+If loc04af
 Pop
 Push register5, "com"
 GetVariable
@@ -224,13 +224,13 @@ GetMember
 Push "level_width"
 GetMember
 Greater
-loc04cb:PushDuplicate
-If loc04e1
+loc04af:PushDuplicate
+If loc04c1
 Pop
 Push register4, 0
 Less2
-loc04e1:PushDuplicate
-If loc0509
+loc04c1:PushDuplicate
+If loc04e9
 Pop
 Push register4, "com"
 GetVariable
@@ -243,17 +243,17 @@ GetMember
 Push "level_height"
 GetMember
 Greater
-loc0509:Not
-If loc0514
-Jump loc0599
-loc0514:Push register4, register5, 2, register1, "game"
+loc04e9:Not
+If loc04f4
+Jump loc0579
+loc04f4:Push register4, register5, 2, register1, "game"
 GetMember
 Push "getLaserSceneryCollision"
 CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc0555
+If loc0535
 Pop
 Push register4, register5, 2, register1, "game"
 GetMember
@@ -261,8 +261,8 @@ Push "getRobotCollision"
 CallMethod
 Push true
 Equals2
-loc0555:PushDuplicate
-If loc0579
+loc0535:PushDuplicate
+If loc0559
 Pop
 Push register4, register5, 2, register1, "game"
 GetMember
@@ -270,24 +270,24 @@ Push "getBombCollision"
 CallMethod
 Push true
 Equals2
-loc0579:Not
-If loc0584
-Jump loc0599
-loc0584:Push register3, 20
+loc0559:Not
+If loc0564
+Jump loc0579
+loc0564:Push register3, 20
 Add2
 StoreRegister 3
 Pop
-Jump loc03e2
-loc0599:Push register3, 10
+Jump loc03ca
+loc0579:Push register3, 10
 Subtract
 StoreRegister 6
 Pop
-loc05a9:Push register6, register3, 10
+loc0589:Push register6, register3, 10
 Add2
 Greater
 Not
 Not
-If loc075e
+If loc0736
 Push register6, "com"
 GetVariable
 Push "nitrome"
@@ -341,7 +341,7 @@ Pop
 Push register5, 0
 Less2
 PushDuplicate
-If loc0695
+If loc0671
 Pop
 Push register5, "com"
 GetVariable
@@ -354,13 +354,13 @@ GetMember
 Push "level_width"
 GetMember
 Greater
-loc0695:PushDuplicate
-If loc06ab
+loc0671:PushDuplicate
+If loc0683
 Pop
 Push register4, 0
 Less2
-loc06ab:PushDuplicate
-If loc06d3
+loc0683:PushDuplicate
+If loc06ab
 Pop
 Push register4, "com"
 GetVariable
@@ -373,17 +373,17 @@ GetMember
 Push "level_height"
 GetMember
 Greater
-loc06d3:Not
-If loc06de
-Jump loc075e
-loc06de:Push register4, register5, 2, register1, "game"
+loc06ab:Not
+If loc06b6
+Jump loc0736
+loc06b6:Push register4, register5, 2, register1, "game"
 GetMember
 Push "getLaserSceneryCollision"
 CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc071f
+If loc06f7
 Pop
 Push register4, register5, 2, register1, "game"
 GetMember
@@ -391,8 +391,8 @@ Push "getRobotCollision"
 CallMethod
 Push true
 Equals2
-loc071f:PushDuplicate
-If loc0743
+loc06f7:PushDuplicate
+If loc071b
 Pop
 Push register4, register5, 2, register1, "game"
 GetMember
@@ -400,15 +400,15 @@ Push "getBombCollision"
 CallMethod
 Push true
 Equals2
-loc0743:Not
-If loc074e
-Jump loc075e
-loc074e:Push register6
+loc071b:Not
+If loc0726
+Jump loc0736
+loc0726:Push register6
 Increment
 StoreRegister 6
 Pop
-Jump loc05a9
-loc075e:Push register8, register9, 2, register1, "drawLine"
+Jump loc0589
+loc0736:Push register8, register9, 2, register1, "drawLine"
 CallMethod
 Pop
 Push register1, "spark_clip"
@@ -430,7 +430,7 @@ GetMember
 Less2
 Not
 Not
-If loc07e4
+If loc07b8
 Push 0, register2, "game"
 GetMember
 Push "safe_holder"
@@ -443,7 +443,7 @@ Pop
 Push register1, "active", false
 SetMember
 }
-loc07e4:SetMember
+loc07b8:SetMember
 Push register2, "drawLine"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "xpos", 2, "ypos" {
 Push 0, register1, "drawing_clip"
@@ -504,6 +504,8 @@ Push register2, "laser_count", 0
 SetMember
 Push register2, "max_laser_count", 270
 SetMember
+Push register2, "chid", 582
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -516,4 +518,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc099c:Pop
+loc0961:Pop

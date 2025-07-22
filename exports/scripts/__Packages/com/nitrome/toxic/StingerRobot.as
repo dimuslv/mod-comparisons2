@@ -30,23 +30,24 @@ class com.nitrome.toxic.StingerRobot extends MovieClip
    var max_ground_count = 40;
    var hit = false;
    var debris = new Array({id:90,x:2,y:-13},{id:88,x:-1,y:-29},{id:87,x:0,y:-50},{id:89,x:0,y:-62});
+   var chid = 2264;
    function StingerRobot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
-      this.anim.clip.stop();
-      this.anim.fan.stop();
-      this.anim.fan2.stop();
+      _root._stop(this.anim);
+      _root._stop(this.anim.clip);
+      _root._stop(this.anim.fan);
+      _root._stop(this.anim.fan2);
    }
    function doUnpause()
    {
-      this.anim.play();
-      this.anim.clip.play();
-      this.anim.fan.play();
-      this.anim.fan2.play();
+      _root._play(this.anim);
+      _root._play(this.anim.clip);
+      _root._play(this.anim.fan);
+      _root._play(this.anim.fan2);
    }
    function init(game, player)
    {

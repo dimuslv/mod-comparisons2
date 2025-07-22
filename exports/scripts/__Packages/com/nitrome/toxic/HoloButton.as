@@ -7,6 +7,7 @@ class com.nitrome.toxic.HoloButton extends MovieClip
    var active = false;
    var timer_count = 0;
    var max_timer = 200;
+   var chid = 1591;
    function HoloButton()
    {
       super();

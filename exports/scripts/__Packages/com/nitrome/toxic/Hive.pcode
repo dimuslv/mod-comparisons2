@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0180
+If loc017c
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0180:Pop
+loc017c:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc01b8
+If loc01b0
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc01b8:Pop
+loc01b0:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc01fc
+If loc01f0
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc01fc:Pop
+loc01f0:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Hive"
 GetMember
 Not
 Not
-If loc06dd
+If loc06cd
 Push "com"
 GetVariable
 Push "nitrome"
@@ -105,13 +105,13 @@ CallMethod
 Push true
 Equals2
 Not
-If loc02e7
+If loc02d3
 Push register1, "_visible", true
 SetMember
-Jump loc02f1
-loc02e7:Push register1, "_visible", false
+Jump loc02dd
+loc02d3:Push register1, "_visible", false
 SetMember
-loc02f1:Push register1, "spawn_count", register1, "spawn_count"
+loc02dd:Push register1, "spawn_count", register1, "spawn_count"
 GetMember
 Increment
 SetMember
@@ -122,14 +122,14 @@ GetMember
 Less2
 Not
 Not
-If loc033a
+If loc031e
 Push 0, register1, "trySpawn"
 CallMethod
 Pop
 Push register1, "spawn_count", 0
 SetMember
 }
-loc033a:SetMember
+loc031e:SetMember
 Push register2, "trySpawn"
 DefineFunction2 "", 0, 6, false, false, true, false, true, false, false, true, false {
 Push register1, "_name"
@@ -159,25 +159,28 @@ Pop
 Push register4, 6
 Less2
 Not
-If loc047c
+If loc0478
 Push register3, 3
 Less2
 PushDuplicate
 Not
-If loc03dc
+If loc03c0
 Pop
 Push register2, 3
 Less2
-loc03dc:Not
+loc03c0:Not
 If loc0405
 Push 2
-RandomNumber
+Push 1, "_root"
+GetVariable
+Push "_random"
+CallMethod
 StoreRegister 5
 Pop
 Push register5, 1, register1, "spawnBot"
 CallMethod
 Pop
-Jump loc047c
+Jump loc0478
 loc0405:Push register2, 3
 Equals2
 PushDuplicate
@@ -187,26 +190,26 @@ Pop
 Push register3, 3
 Less2
 loc0423:Not
-If loc0445
+If loc0441
 Push 0, 1, register1, "spawnBot"
 CallMethod
 Pop
-Jump loc047c
-loc0445:Push register3, 3
+Jump loc0478
+loc0441:Push register3, 3
 Equals2
 PushDuplicate
 Not
-If loc0463
+If loc045f
 Pop
 Push register2, 3
 Less2
-loc0463:Not
-If loc047c
+loc045f:Not
+If loc0478
 Push 1, 1, register1, "spawnBot"
 CallMethod
 Pop
 }
-loc047c:SetMember
+loc0478:SetMember
 Push register2, "spawnBot"
 DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "dir" {
 Push undefined
@@ -218,7 +221,7 @@ Pop
 Push register4, 0
 Equals2
 Not
-If loc04f8
+If loc04f0
 Push register1, "_x"
 GetMember
 Push register1, "left_spawn"
@@ -237,11 +240,11 @@ GetMember
 Add2
 StoreRegister 2
 Pop
-Jump loc0541
-loc04f8:Push register4, 1
+Jump loc0539
+loc04f0:Push register4, 1
 Equals2
 Not
-If loc0541
+If loc0539
 Push register1, "_x"
 GetMember
 Push register1, "right_spawn"
@@ -260,7 +263,7 @@ GetMember
 Add2
 StoreRegister 2
 Pop
-loc0541:Push register4, register2, register3, register1, "_name"
+loc0539:Push register4, register2, register3, register1, "_name"
 GetMember
 Push 4, register1, "game"
 GetMember
@@ -278,10 +281,10 @@ CallMethod
 Push true
 Equals2
 Not
-If loc059d
+If loc0595
 Push true
 Return
-loc059d:Push false
+loc0595:Push false
 Return
 }
 SetMember
@@ -339,4 +342,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc06dd:Pop
+loc06cd:Pop

@@ -20,6 +20,7 @@ class com.nitrome.toxic.DiggerBomb extends MovieClip
    var max_dig_count = 20;
    var explode_count = 0;
    var max_explode_count = 5;
+   var chid = 1262;
    function DiggerBomb()
    {
       super();
@@ -30,13 +31,13 @@ class com.nitrome.toxic.DiggerBomb extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
-      this.anim.clip.clip.stop();
+      _root._stop(this.anim);
+      _root._stop(this.anim.clip.clip);
    }
    function doUnpause()
    {
-      this.anim.play();
-      this.anim.clip.clip.play();
+      _root._play(this.anim);
+      _root._play(this.anim.clip.clip);
    }
    function init(game, x, y, vx, vy)
    {

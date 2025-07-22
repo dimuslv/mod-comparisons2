@@ -1,4 +1,9 @@
 ConstantPool "this", "_name", "_parent", "finishSplash"
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc006b
 Push "this"
 GetVariable
 Push "_name"
@@ -13,3 +18,4 @@ Push "finishSplash"
 CallMethod
 Pop
 Stop
+loc006b:

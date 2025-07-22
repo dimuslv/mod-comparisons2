@@ -15,6 +15,7 @@ class com.nitrome.toxic.PlatformBomb extends MovieClip
    var INERTIA = 0.92;
    var GRAVITY = 1;
    var landed = false;
+   var chid = 1928;
    function PlatformBomb()
    {
       super();
@@ -25,11 +26,11 @@ class com.nitrome.toxic.PlatformBomb extends MovieClip
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function initPlayer(game, x, y, d, s, player_vx, player_vy, flag)
    {

@@ -1,0 +1,200 @@
+ConstantPool "_root", "rngSeed", "bigmult", "nextSeed", "doHash", "_random", "_random_double", "Math", "random"
+Push "_root"
+GetVariable
+Push "rngSeed"
+Push 0
+SetMember
+Push "_root"
+GetVariable
+Push "bigmult"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "a", 2, "b" {
+Push 0
+StoreRegister 3
+Pop
+Push register3
+Push register1
+Push register2
+Push 65535
+BitAnd
+Multiply
+Push 4294967296
+Modulo
+Add2
+StoreRegister 3
+Pop
+Push register3
+Push register1
+Push register2
+Push 16
+BitRShift
+Multiply
+Push 16
+BitLShift
+Add2
+StoreRegister 3
+Pop
+Push register3
+ToInteger
+Return
+}
+SetMember
+Push "_root"
+GetVariable
+Push "nextSeed"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "seed" {
+Push register1
+Push 1
+BitAnd
+Not
+If loc012f
+Push register1
+Push 1
+BitRShift
+Push 1207959552
+BitXor
+Return
+loc012f:Push register1
+Push 1
+BitRShift
+Return
+}
+SetMember
+Push "_root"
+GetVariable
+Push "doHash"
+DefineFunction2 "", 1, 4, false, true, true, false, true, false, true, false, false, 2, "seed" {
+Push register2
+Push 13
+BitLShift
+Push register2
+BitXor
+Push register2
+Push 21
+BitRShift
+Subtract
+StoreRegister 2
+Pop
+Push register2
+Push register2
+Push 2
+Push register1
+Push "bigmult"
+CallMethod
+StoreRegister 3
+Pop
+Push register3
+Push 15731
+Multiply
+ToInteger
+StoreRegister 3
+Pop
+Push register3
+Push 789221
+Add2
+ToInteger
+StoreRegister 3
+Pop
+Push register3
+Push register2
+Push 2
+Push register1
+Push "bigmult"
+CallMethod
+StoreRegister 3
+Pop
+Push register3
+Push 771171059
+Subtract
+ToInteger
+StoreRegister 3
+Pop
+Push register3
+Push 2147483647
+BitAnd
+ToInteger
+StoreRegister 3
+Pop
+Push register3
+Push register2
+Add2
+StoreRegister 3
+Pop
+Push register3
+Push 13
+BitLShift
+Push register3
+BitXor
+Push register3
+Push 21
+BitRShift
+Subtract
+Return
+}
+SetMember
+Push "_root"
+GetVariable
+Push "_random"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "range" {
+Push register1
+Push "rngSeed"
+GetMember
+Push 0
+Equals2
+Not
+If loc028a
+Push register2
+RandomNumber
+Return
+loc028a:Push register1
+Push "rngSeed"
+Push register1
+Push "rngSeed"
+GetMember
+Push 1
+Push register1
+Push "nextSeed"
+CallMethod
+SetMember
+Push register1
+Push "rngSeed"
+GetMember
+Push 71
+Multiply
+Push 1
+Push register1
+Push "doHash"
+CallMethod
+Push 2147483647
+BitAnd
+Push register2
+Modulo
+Return
+}
+SetMember
+Push "_root"
+GetVariable
+Push "_random_double"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "rngSeed"
+GetMember
+Push 0
+Equals2
+Not
+If loc0330
+Push 0
+Push "Math"
+GetVariable
+Push "random"
+CallMethod
+Return
+loc0330:Push 2147483648
+Push 1
+Push register1
+Push "_random"
+CallMethod
+Push 2147483648
+Divide
+Return
+}
+SetMember

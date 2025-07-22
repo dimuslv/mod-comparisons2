@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc0277
+If loc0273
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc0277:Pop
+loc0273:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc02af
+If loc02a7
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc02af:Pop
+loc02a7:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc02f3
+If loc02e7
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc02f3:Pop
+loc02e7:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Spider"
 GetMember
 Not
 Not
-If loc0cac
+If loc0cc5
 Push "com"
 GetVariable
 Push "nitrome"
@@ -136,32 +136,40 @@ GetMember
 Push "stop"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg1"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg2"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg3"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg4"
 GetMember
-Push "stop"
+Push 1, "_root"
+GetVariable
+Push "_stop"
 CallMethod
 Pop
 }
@@ -178,32 +186,40 @@ GetMember
 Push "resume"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg1"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg2"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg3"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
-Push 0, register1, "anim"
+Push register1, "anim"
 GetMember
 Push "leg4"
 GetMember
-Push "play"
+Push 1, "_root"
+GetVariable
+Push "_play"
 CallMethod
 Pop
 }
@@ -221,25 +237,25 @@ GetMember
 Push false
 Equals2
 Not
-If loc05dd
+If loc0611
 Push 0, register1, "calculateUp"
 CallMethod
 Pop
 Push register1, "started", true
 SetMember
-loc05dd:Push 0, register1, "getOnScreen"
+loc0611:Push 0, register1, "getOnScreen"
 CallMethod
 Push true
 Equals2
 Not
-If loc0609
+If loc0639
 Push register1, "_visible", true
 SetMember
-Jump loc0613
-loc0609:Push register1, "_visible", false
+Jump loc0643
+loc0639:Push register1, "_visible", false
 SetMember
 }
-loc0613:SetMember
+loc0643:SetMember
 Push register2, "getOnScreen"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push register2, "screen_test"
@@ -249,10 +265,10 @@ CallMethod
 Push true
 Equals2
 Not
-If loc064d
+If loc067d
 Push true
 Return
-loc064d:Push false
+loc067d:Push false
 Return
 }
 SetMember
@@ -412,7 +428,7 @@ GetMember
 Equals2
 Not
 Not
-If loc08ff
+If loc0917
 Push register1, "states"
 GetMember
 Push register1, "state"
@@ -421,7 +437,7 @@ GetMember
 Push 1, register1, "gotoAndStop"
 CallMethod
 Pop
-loc08ff:Push register1, "prev_state", register1, "state"
+loc0917:Push register1, "prev_state", register1, "state"
 GetMember
 SetMember
 }
@@ -431,11 +447,11 @@ DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, f
 Push 0
 StoreRegister 2
 Pop
-loc0930:Push register2, 600
+loc0944:Push register2, 600
 Greater
 Not
 Not
-If loc09a5
+If loc09b9
 Push register1, "_y"
 GetMember
 Push register1, "top_boundary"
@@ -454,29 +470,29 @@ CallMethod
 Push true
 Equals2
 Not
-If loc0995
+If loc09a9
 Push register1, "_y"
 GetMember
 Push register2
 Subtract
 Return
-loc0995:Push register2
+loc09a9:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc0930
+Jump loc0944
 }
-loc09a5:SetMember
+loc09b9:SetMember
 Push register2, "findBottom"
 DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
 Push 0
 StoreRegister 2
 Pop
-loc09c9:Push register2, 600
+loc09d9:Push register2, 600
 Greater
 Not
 Not
-If loc0a3e
+If loc0a4e
 Push register1, "_y"
 GetMember
 Push register1, "bottom_boundary"
@@ -495,19 +511,19 @@ CallMethod
 Push true
 Equals2
 Not
-If loc0a2e
+If loc0a3e
 Push register1, "_y"
 GetMember
 Push register2
 Add2
 Return
-loc0a2e:Push register2
+loc0a3e:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc09c9
+Jump loc09d9
 }
-loc0a3e:SetMember
+loc0a4e:SetMember
 Push register2, "doExplode"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push 100, register1, "_name"
@@ -571,6 +587,8 @@ NewObject
 SetMember
 Push register2, "started", false
 SetMember
+Push register2, "chid", 2205
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -583,4 +601,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0cac:Pop
+loc0cc5:Pop

@@ -28,19 +28,20 @@ class com.nitrome.toxic.BomberRobot extends MovieClip
    var fire_count = 0;
    var max_fire_count = 30;
    var done_splash = false;
+   var chid = 542;
    function BomberRobot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
-      this.anim.head.stop();
+      _root._stop(this.anim);
+      _root._stop(this.anim.head);
    }
    function doUnpause()
    {
-      this.anim.play();
-      this.anim.head.play();
+      _root._play(this.anim);
+      _root._play(this.anim.head);
    }
    function init(dir, game)
    {
@@ -312,7 +313,7 @@ class com.nitrome.toxic.BomberRobot extends MovieClip
             this.fall_anim_count = this.fall_anim_count + 1;
             if(this.fall_anim_count >= 3)
             {
-               this.gotoAndStop(com.nitrome.toxic.Global.state_string[this.state] + com.nitrome.toxic.Global.dir_string[this.dir]);
+               _root._gotoAndStop(this,com.nitrome.toxic.Global.state_string[this.state] + com.nitrome.toxic.Global.dir_string[this.dir],542);
                this.prev_dir = this.dir;
                this.prev_state = this.state;
             }
@@ -322,7 +323,7 @@ class com.nitrome.toxic.BomberRobot extends MovieClip
       {
          if(this.dir != this.prev_dir || this.state != this.prev_state)
          {
-            this.gotoAndStop(com.nitrome.toxic.Global.state_string[this.state] + com.nitrome.toxic.Global.dir_string[this.dir]);
+            _root._gotoAndStop(this,com.nitrome.toxic.Global.state_string[this.state] + com.nitrome.toxic.Global.dir_string[this.dir],542);
          }
          this.prev_dir = this.dir;
          this.prev_state = this.state;

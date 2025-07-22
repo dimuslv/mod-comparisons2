@@ -18,17 +18,18 @@ class com.nitrome.toxic.BasicRobot extends MovieClip
    var debris_right = new Array({id:6,x:-5,y:-10},{id:6,x:-9,y:-10},{id:5,x:0,y:-16},{id:4,x:1,y:-32});
    var debris_left = new Array({id:3,x:3,y:-10},{id:3,x:9,y:-10},{id:2,x:-1,y:-16},{id:1,x:-2,y:-32});
    var done_splash = false;
+   var chid = 428;
    function BasicRobot()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(dir, game)
    {

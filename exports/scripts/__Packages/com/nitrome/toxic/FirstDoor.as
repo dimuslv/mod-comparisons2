@@ -1,6 +1,7 @@
 class com.nitrome.toxic.FirstDoor extends MovieClip
 {
    var game;
+   var chid = 1471;
    function FirstDoor()
    {
       super();

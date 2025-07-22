@@ -1,1 +1,4 @@
-this._parent.finishFire();
+if(!_root.aMode)
+{
+   this._parent.finishFire();
+}

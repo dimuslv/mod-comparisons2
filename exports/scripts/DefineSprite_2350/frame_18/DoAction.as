@@ -1,1 +1,4 @@
-this._parent.checkForPlayer(false);
+if(!_root.aMode)
+{
+   this._parent.checkForPlayer(false);
+}

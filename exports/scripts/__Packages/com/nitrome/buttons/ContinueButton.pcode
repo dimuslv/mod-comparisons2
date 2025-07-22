@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00b8
+If loc00b4
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00b8:Pop
+loc00b4:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00f0
+If loc00e8
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc00f0:Pop
+loc00e8:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "buttons"
 GetMember
 Not
 Not
-If loc0134
+If loc0128
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "buttons", 0, "Object"
 NewObject
 SetMember
-loc0134:Pop
+loc0128:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "ContinueButton"
 GetMember
 Not
 Not
-If loc0242
+If loc025d
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,6 +100,9 @@ StoreRegister 2
 Pop
 Push register2, "doPress"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1, "aMode"
+GetMember
+If loc0211
 Push 0, register1, "game"
 GetMember
 Push "unpauseGame"
@@ -110,8 +113,13 @@ GetMember
 Push "hidePopUp"
 CallMethod
 Pop
-}
+Jump loc022d
+loc0211:Push "_root"
+GetVariable
+Push "justPause", false
 SetMember
+}
+loc022d:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -124,4 +132,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0242:Pop
+loc025d:Pop

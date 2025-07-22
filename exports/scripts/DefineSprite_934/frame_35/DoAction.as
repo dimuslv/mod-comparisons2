@@ -1,2 +1,5 @@
-this._parent.finishCollect();
-stop();
+if(!_root.aMode)
+{
+   this._parent.finishCollect();
+   stop();
+}

@@ -6,17 +6,18 @@ class com.nitrome.toxic.PowerCell extends MovieClip
    var row;
    var col;
    var collected = false;
+   var chid = 2158;
    function PowerCell()
    {
       super();
    }
    function doPause()
    {
-      this.anim.stop();
+      _root._stop(this.anim);
    }
    function doUnpause()
    {
-      this.anim.play();
+      _root._play(this.anim);
    }
    function init(game, dull, row, col)
    {
