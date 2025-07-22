@@ -1,18 +1,19 @@
-ConstantPool "_global", "com", "Object", "nitrome", "util", "Lock", "_visible", "ng", "getNitrome", "http://www.nitrome.com/games/", "getGameId", "_blank", "getURL", "MovieClip", "prototype", "ASSetPropFlags"
+ConstantPool "nitrome", "util", "Lock", "_visible", "com", "MovieClip", "Object", "_global", "prototype", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "com"
 GetMember
 Not
 Not
-If loc00c1
+If loc0083
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com"
+Push 0
+Push "Object"
 NewObject
 SetMember
-loc00c1:Pop
-Push "_global"
+loc0083:Push "_global"
 GetVariable
 Push "com"
 GetMember
@@ -20,16 +21,17 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00f5
+If loc00bc
 Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome"
+Push 0
+Push "Object"
 NewObject
 SetMember
-loc00f5:Pop
-Push "_global"
+loc00bc:Push "_global"
 GetVariable
 Push "com"
 GetMember
@@ -39,17 +41,31 @@ Push "util"
 GetMember
 Not
 Not
-If loc0135
+If loc0101
 Push "_global"
 GetVariable
 Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "util", 0, "Object"
+Push "util"
+Push 0
+Push "Object"
 NewObject
 SetMember
-loc0135:Pop
+loc0101:Push "_global"
+GetVariable
+Push "com"
+GetMember
+Push "nitrome"
+GetMember
+Push "util"
+GetMember
+Push "Lock"
+GetMember
+Not
+Not
+If loc01f9
 Push "_global"
 GetVariable
 Push "com"
@@ -59,48 +75,27 @@ GetMember
 Push "util"
 GetMember
 Push "Lock"
-GetMember
-Not
-Not
-If loc024b
-Push "com"
-GetVariable
-Push "nitrome"
-GetMember
-Push "util"
-GetMember
-Push "Lock"
-DefineFunction2 "", 0, 5, false, true, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+DefineFunction2 "", 0, 3, false, false, true, true, true, false, false, true, false {
+Push 0
+Push register2
+Push undefined
 CallMethod
 Pop
-Push register1, "_visible", false
+Push register1
+Push "_visible"
+Push false
 SetMember
-Push true
-Push true
-Equals2
-Not
-If loc01b4
-Push register1, "_visible", false
+Push register1
+Push "_visible"
+Push false
 SetMember
-Jump loc01eb
-loc01b4:Push register1, "_visible", true
-SetMember
-Push "http://www.nitrome.com/games/", 0, register3, "ng"
-GetMember
-Push "getGameId"
-CallMethod
-Add2
-StoreRegister 4
-Pop
-Push "_blank", register4, 2, register1, "getURL"
-CallMethod
-Pop
 }
-loc01eb:StoreRegister 1
+StoreRegister 1
 SetMember
-Push "com"
+Push "_global"
 GetVariable
+Push "com"
+GetMember
 Push "nitrome"
 GetMember
 Push "util"
@@ -110,12 +105,17 @@ GetMember
 Push "MovieClip"
 GetVariable
 Extends
-Push register1, "prototype"
+Push register1
+Push "prototype"
 GetMember
 StoreRegister 2
 Pop
-Push 1, null, "com"
+Push 1
+Push null
+Push "_global"
 GetVariable
+Push "com"
+GetMember
 Push "nitrome"
 GetMember
 Push "util"
@@ -124,6 +124,7 @@ Push "Lock"
 GetMember
 Push "prototype"
 GetMember
-Push 3, "ASSetPropFlags"
+Push 3
+Push "ASSetPropFlags"
 CallFunction
-loc024b:Pop
+loc01f9:Pop

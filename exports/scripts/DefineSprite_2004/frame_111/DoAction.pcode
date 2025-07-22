@@ -1,4 +1,6 @@
-Push 0, "_parent"
+ConstantPool "_parent", "finishStart"
+Push 0
+Push "_parent"
 GetVariable
 Push "finishStart"
 CallMethod

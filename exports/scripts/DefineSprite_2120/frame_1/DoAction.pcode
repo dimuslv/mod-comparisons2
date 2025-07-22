@@ -1,4 +1,18 @@
-Push "levelend", 1, "_root"
+ConstantPool "ClockDisp", "instances", "setPause", "levelend", "_root", "sfx", "playSound"
+Push true
+Push 1
+Push "ClockDisp"
+GetVariable
+Push "instances"
+GetMember
+Push 0
+GetMember
+Push "setPause"
+CallMethod
+Pop
+Push "levelend"
+Push 1
+Push "_root"
 GetVariable
 Push "sfx"
 GetMember

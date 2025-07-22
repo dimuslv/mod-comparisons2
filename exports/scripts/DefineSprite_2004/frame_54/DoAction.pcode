@@ -1,4 +1,7 @@
-Push "warpin", 1, "_root"
+ConstantPool "warpin", "_root", "sfx", "playSound"
+Push "warpin"
+Push 1
+Push "_root"
 GetVariable
 Push "sfx"
 GetMember

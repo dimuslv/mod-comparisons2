@@ -1,13 +1,86 @@
-ConstantPool "_root", "ng", "NitromeGame", "juicy_", "toxic2", "init"
+ConstantPool "_root", "ng", "NitromeGame", "juicy_", "toxic2", "init", "mask", "createEmptyMovieClip", "beginFill", "moveTo", "lineTo", "endFill", "setMask"
 Push "_root"
 GetVariable
-Push "ng", 0, "NitromeGame"
+Push "ng"
+Push 0
+Push "NitromeGame"
 NewObject
 SetMember
-Push 20, "juicy_", "toxic2", 3, "_root"
+Push 20
+Push "juicy_"
+Push "toxic2"
+Push 3
+Push "_root"
 GetVariable
 Push "ng"
 GetMember
 Push "init"
+CallMethod
+Pop
+Push 11
+Push "mask"
+Push 2
+Push "createEmptyMovieClip"
+CallFunction
+Pop
+Push 0
+Push 1
+Push "mask"
+GetVariable
+Push "beginFill"
+CallMethod
+Pop
+Push 0
+Push 0
+Push 2
+Push "mask"
+GetVariable
+Push "moveTo"
+CallMethod
+Pop
+Push 0
+Push 550
+Push 2
+Push "mask"
+GetVariable
+Push "lineTo"
+CallMethod
+Pop
+Push 400
+Push 550
+Push 2
+Push "mask"
+GetVariable
+Push "lineTo"
+CallMethod
+Pop
+Push 400
+Push 0
+Push 2
+Push "mask"
+GetVariable
+Push "lineTo"
+CallMethod
+Pop
+Push 0
+Push 0
+Push 2
+Push "mask"
+GetVariable
+Push "lineTo"
+CallMethod
+Pop
+Push 0
+Push "mask"
+GetVariable
+Push "endFill"
+CallMethod
+Pop
+Push "mask"
+GetVariable
+Push 1
+Push "_root"
+GetVariable
+Push "setMask"
 CallMethod
 Pop

@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc069f
+If loc069b
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc069f:Pop
+loc069b:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc06d7
+If loc06cf
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc06d7:Pop
+loc06cf:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc071b
+If loc070f
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "toxic", 0, "Object"
 NewObject
 SetMember
-loc071b:Pop
+loc070f:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "Player"
 GetMember
 Not
 Not
-If loc6619
+If loc62fd
 Push "com"
 GetVariable
 Push "nitrome"
@@ -139,12 +139,12 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc088d
+If loc0875
 Push register1, "_x", register2, 24
 Add2
 SetMember
-Jump loc08ca
-loc088d:Push register1, "dir"
+Jump loc08b2
+loc0875:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -158,11 +158,11 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc08ca
+If loc08b2
 Push register1, "_x", register2, 8
 Add2
 SetMember
-loc08ca:Push register1, "_y", register4
+loc08b2:Push register1, "_y", register4
 SetMember
 Push register1, "game", register3
 SetMember
@@ -226,21 +226,21 @@ GetMember
 Push false
 Equals2
 Not
-If loc0a50
+If loc0a24
 Push register1, "_y"
 GetMember
 Push 1280
 Equals2
 PushDuplicate
 Not
-If loc0a23
+If loc09fb
 Pop
 Push register1, "_x"
 GetMember
 Push 1860
 Greater
-loc0a23:Not
-If loc0a50
+loc09fb:Not
+If loc0a24
 Push 0, register1, "game"
 GetMember
 Push "smoothScroll"
@@ -252,7 +252,7 @@ Push true
 Equals2
 Pop
 }
-loc0a50:SetMember
+loc0a24:SetMember
 Push register2, "main"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "quickpause"
@@ -260,7 +260,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc0b39
+If loc0b01
 Push register1, "state"
 GetMember
 Push "com"
@@ -275,12 +275,12 @@ Push "JUMP"
 GetMember
 Equals2
 Not
-If loc0abb
+If loc0a8b
 Push 0, register1, "doJump"
 CallMethod
 Pop
-Jump loc0b34
-loc0abb:Push register1, "state"
+Jump loc0afc
+loc0a8b:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -294,12 +294,12 @@ Push "FALL"
 GetMember
 Equals2
 Not
-If loc0aff
+If loc0acb
 Push 0, register1, "doFall"
 CallMethod
 Pop
-Jump loc0b34
-loc0aff:Push register1, "state", "com"
+Jump loc0afc
+loc0acb:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -313,8 +313,8 @@ SetMember
 Push 0, register1, "updateAnim"
 CallMethod
 Pop
-loc0b34:Jump loc0f7b
-loc0b39:Push 0, register1, "checkAdjustScroll"
+loc0afc:Jump loc0ed7
+loc0b01:Push 0, register1, "checkAdjustScroll"
 CallMethod
 Pop
 Push 0, register1, "updateAnim"
@@ -337,9 +337,9 @@ Push "START"
 GetMember
 Equals2
 Not
-If loc0ba1
-Jump loc0eeb
-loc0ba1:Push register1, "state"
+If loc0b5d
+Jump loc0e53
+loc0b5d:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -353,7 +353,7 @@ Push "STAND"
 GetMember
 Equals2
 Not
-If loc0c09
+If loc0bb9
 Push 0, register1, "doStand"
 CallMethod
 Pop
@@ -363,8 +363,8 @@ Pop
 Push 0, register1, "checkPickUps"
 CallMethod
 Pop
-Jump loc0eeb
-loc0c09:Push register1, "state"
+Jump loc0e53
+loc0bb9:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -378,7 +378,7 @@ Push "DUCK"
 GetMember
 Equals2
 Not
-If loc0c71
+If loc0c15
 Push 0, register1, "doDuck"
 CallMethod
 Pop
@@ -388,8 +388,8 @@ Pop
 Push 0, register1, "checkPickUps"
 CallMethod
 Pop
-Jump loc0eeb
-loc0c71:Push register1, "state"
+Jump loc0e53
+loc0c15:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -403,7 +403,7 @@ Push "WALK"
 GetMember
 Equals2
 Not
-If loc0cd9
+If loc0c71
 Push 0, register1, "doWalk"
 CallMethod
 Pop
@@ -413,8 +413,8 @@ Pop
 Push 0, register1, "checkPickUps"
 CallMethod
 Pop
-Jump loc0eeb
-loc0cd9:Push register1, "state"
+Jump loc0e53
+loc0c71:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -428,7 +428,7 @@ Push "JUMP"
 GetMember
 Equals2
 Not
-If loc0d53
+If loc0cdb
 Push 0, register1, "doJump"
 CallMethod
 Pop
@@ -441,8 +441,8 @@ Pop
 Push 0, register1, "checkFallOff"
 CallMethod
 Pop
-Jump loc0eeb
-loc0d53:Push register1, "state"
+Jump loc0e53
+loc0cdb:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -456,7 +456,7 @@ Push "FALL"
 GetMember
 Equals2
 Not
-If loc0dcd
+If loc0d45
 Push 0, register1, "doFall"
 CallMethod
 Pop
@@ -469,8 +469,8 @@ Pop
 Push 0, register1, "checkFallOff"
 CallMethod
 Pop
-Jump loc0eeb
-loc0dcd:Push register1, "state"
+Jump loc0e53
+loc0d45:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -484,7 +484,7 @@ Push "WALL"
 GetMember
 Equals2
 Not
-If loc0e35
+If loc0da1
 Push 0, register1, "doWall"
 CallMethod
 Pop
@@ -494,8 +494,8 @@ Pop
 Push 0, register1, "checkPickUps"
 CallMethod
 Pop
-Jump loc0eeb
-loc0e35:Push register1, "state"
+Jump loc0e53
+loc0da1:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -509,9 +509,9 @@ Push "HIT"
 GetMember
 Equals2
 Not
-If loc0e67
-Jump loc0eeb
-loc0e67:Push register1, "state"
+If loc0dd3
+Jump loc0e53
+loc0dd3:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -525,7 +525,7 @@ Push "DIE"
 GetMember
 Equals2
 Not
-If loc0eb9
+If loc0e21
 Push register1, "_y", register1, "_y"
 GetMember
 Increment
@@ -533,8 +533,8 @@ SetMember
 Push 0, register1, "adjustToFloor"
 CallMethod
 Pop
-Jump loc0eeb
-loc0eb9:Push register1, "state"
+Jump loc0e53
+loc0e21:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -548,14 +548,14 @@ Push "END"
 GetMember
 Equals2
 Not
-If loc0eeb
-Jump loc0eeb
-loc0eeb:Push register1, "hit_count"
+If loc0e53
+Jump loc0e53
+loc0e53:Push register1, "hit_count"
 GetMember
 Push 0
 Greater
 Not
-If loc0f5c
+If loc0ebc
 Push register1, "hit_count", register1, "hit_count"
 GetMember
 Decrement
@@ -567,20 +567,20 @@ Modulo
 Push 0
 Equals2
 Not
-If loc0f4a
+If loc0eaa
 Push register1, "_alpha", 20
 SetMember
-Jump loc0f57
-loc0f4a:Push register1, "_alpha", 100
+Jump loc0eb7
+loc0eaa:Push register1, "_alpha", 100
 SetMember
-loc0f57:Jump loc0f69
-loc0f5c:Push register1, "_alpha", 100
+loc0eb7:Jump loc0ec9
+loc0ebc:Push register1, "_alpha", 100
 SetMember
-loc0f69:Push 0, register1, "checkMines"
+loc0ec9:Push 0, register1, "checkMines"
 CallMethod
 Pop
 }
-loc0f7b:SetMember
+loc0ed7:SetMember
 Push register2, "checkScreenBounds"
 DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
 Push register1, "_x"
@@ -604,14 +604,14 @@ Pop
 Push register2, 0
 Less2
 Not
-If loc0ff4
+If loc0f4c
 Push register1, "_x", register1, "_x"
 GetMember
 Push register2, -1
 Multiply
 Add2
 SetMember
-loc0ff4:Push register3, "com"
+loc0f4c:Push register3, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -623,7 +623,7 @@ Push "level_width"
 GetMember
 Greater
 Not
-If loc104a
+If loc0fa2
 Push register1, "_x", register1, "_x"
 GetMember
 Push register3, "com"
@@ -640,7 +640,7 @@ Subtract
 Subtract
 SetMember
 }
-loc104a:SetMember
+loc0fa2:SetMember
 Push register2, "startTransport"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "secret" {
 Push register1, "found_secret", register2
@@ -668,20 +668,20 @@ GetMember
 Push true
 Equals2
 Not
-If loc10e8
+If loc1038
 Push 0, register1, "game"
 GetMember
 Push "levelCompleteBonus"
 CallMethod
 Pop
-Jump loc1100
-loc10e8:Push 0, register1, "game"
+Jump loc104c
+loc1038:Push 0, register1, "game"
 GetMember
 Push "levelComplete"
 CallMethod
 Pop
 }
-loc1100:SetMember
+loc104c:SetMember
 Push register2, "conveyor"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "xspeed" {
 Push register1, "state"
@@ -698,7 +698,7 @@ Push "WALK"
 GetMember
 Equals2
 PushDuplicate
-If loc1170
+If loc10bc
 Pop
 Push register1, "state"
 GetMember
@@ -713,16 +713,16 @@ GetMember
 Push "STAND"
 GetMember
 Equals2
-loc1170:Not
-If loc119a
+loc10bc:Not
+If loc10e6
 Push register1, "_x", register1, "_x"
 GetMember
 Push false, register2, 2, register1, "checkConveyorWalls"
 CallMethod
 Add2
 SetMember
-Jump loc11e6
-loc119a:Push register1, "state"
+Jump loc1132
+loc10e6:Push register1, "state"
 GetMember
 Push "com"
 GetVariable
@@ -736,7 +736,7 @@ Push "DUCK"
 GetMember
 Equals2
 Not
-If loc11e6
+If loc1132
 Push register1, "_x", register1, "_x"
 GetMember
 Push true, register2, 2, register1, "checkConveyorWalls"
@@ -744,7 +744,7 @@ CallMethod
 Add2
 SetMember
 }
-loc11e6:SetMember
+loc1132:SetMember
 Push register2, "checkPickUps"
 DefineFunction2 "", 0, 7, false, true, true, false, true, false, false, true, true {
 Push register2, "game"
@@ -756,7 +756,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1479
+If loc13b1
 Push 0, "Object"
 NewObject
 StoreRegister 4
@@ -859,9 +859,9 @@ GetMember
 Push 0
 Equals2
 Not
-If loc142a
-Jump loc1458
-loc142a:Push 0, register1, "game"
+If loc136a
+Jump loc1394
+loc136a:Push 0, register1, "game"
 GetMember
 Push "findCollectObject"
 CallMethod
@@ -871,7 +871,7 @@ GetMember
 Push "findConveyor"
 CallMethod
 Pop
-loc1458:Push 0, register3, "img"
+loc1394:Push 0, register3, "img"
 GetMember
 Push "dispose"
 CallMethod
@@ -880,7 +880,7 @@ Push register3, "img"
 Delete
 Pop
 }
-loc1479:SetMember
+loc13b1:SetMember
 Push register2, "checkCollisions"
 DefineFunction2 "", 0, 8, false, true, true, false, true, false, false, true, true {
 Push 0, "Object"
@@ -933,14 +933,14 @@ Push false
 Equals2
 PushDuplicate
 Not
-If loc156f
+If loc149b
 Pop
 Push register1, "hit_count"
 GetMember
 Push 0
 Equals2
-loc156f:Not
-If loc1844
+loc149b:Not
+If loc1760
 Push register3, "img", false, register4, "yMax"
 GetMember
 Push register4, "yMin"
@@ -1044,7 +1044,7 @@ GetMember
 Push 0
 Equals2
 Not
-If loc1811
+If loc1735
 Push 0, register3, "img"
 GetMember
 Push "dispose"
@@ -1053,8 +1053,8 @@ Pop
 Push register3, "img"
 Delete
 Pop
-Jump loc1844
-loc1811:Push 0, register1, "startHit"
+Jump loc1760
+loc1735:Push 0, register1, "startHit"
 CallMethod
 Pop
 Push 0, register3, "img"
@@ -1065,7 +1065,7 @@ Pop
 Push register3, "img"
 Delete
 Pop
-loc1844:Push register3, "img5", false, register4, "yMax"
+loc1760:Push register3, "img5", false, register4, "yMax"
 GetMember
 Push register4, "yMin"
 GetMember
@@ -1123,9 +1123,9 @@ GetMember
 Push 0
 Equals2
 Not
-If loc1996
-Jump loc19d5
-loc1996:Push 0, register1, "forcedGameOver"
+If loc18ae
+Jump loc18e9
+loc18ae:Push 0, register1, "forcedGameOver"
 CallMethod
 Pop
 Push register1, "_y"
@@ -1139,7 +1139,7 @@ GetMember
 Push "doSplash"
 CallMethod
 Pop
-loc19d5:Push 0, register3, "img5"
+loc18e9:Push 0, register3, "img5"
 GetMember
 Push "dispose"
 CallMethod
@@ -1185,7 +1185,7 @@ Push 64
 Subtract
 Greater
 Not
-If loc1acb
+If loc19d7
 Push 0, register1, "forcedGameOver"
 CallMethod
 Pop
@@ -1201,7 +1201,7 @@ Push "doSplash"
 CallMethod
 Pop
 }
-loc1acb:SetMember
+loc19d7:SetMember
 Push register2, "calculateDistance"
 DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 5, "b" {
 Push register1, "lx", register1, "_x"
@@ -1235,11 +1235,11 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1b6d
+If loc1a75
 Push 0
 StoreRegister 4
 Pop
-loc1b6d:Push register1, "_y"
+loc1a75:Push register1, "_y"
 GetMember
 Push register1, "rx"
 GetMember
@@ -1248,18 +1248,18 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1ba7
+If loc1aab
 Push 0
 StoreRegister 3
 Pop
-loc1ba7:Push 0
+loc1aab:Push 0
 StoreRegister 2
 Pop
-loc1bb8:Push register2, 34
+loc1ab8:Push register2, 34
 Greater
 Not
 Not
-If loc1c4c
+If loc1b4c
 Push register1, "_y"
 GetMember
 Push register2
@@ -1271,9 +1271,9 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1bfe
-Jump loc1c3c
-loc1bfe:Push register1, "_y"
+If loc1afe
+Jump loc1b3c
+loc1afe:Push register1, "_y"
 GetMember
 Push register2
 Add2
@@ -1284,24 +1284,24 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1c3c
+If loc1b3c
 Push register2
 StoreRegister 4
 Pop
-Jump loc1c4c
-loc1c3c:Push register2
+Jump loc1b4c
+loc1b3c:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc1bb8
-loc1c4c:Push 0
+Jump loc1ab8
+loc1b4c:Push 0
 StoreRegister 2
 Pop
-loc1c5d:Push register2, 34
+loc1b59:Push register2, 34
 Greater
 Not
 Not
-If loc1cf1
+If loc1bed
 Push register1, "_y"
 GetMember
 Push register2
@@ -1313,9 +1313,9 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1ca3
-Jump loc1ce1
-loc1ca3:Push register1, "_y"
+If loc1b9f
+Jump loc1bdd
+loc1b9f:Push register1, "_y"
 GetMember
 Push register2
 Add2
@@ -1326,92 +1326,92 @@ CallMethod
 Push true
 Equals2
 Not
-If loc1ce1
+If loc1bdd
 Push register2
 StoreRegister 3
 Pop
-Jump loc1cf1
-loc1ce1:Push register2
+Jump loc1bed
+loc1bdd:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc1c5d
-loc1cf1:Push register4, 0
+Jump loc1b59
+loc1bed:Push register4, 0
 Greater
 PushDuplicate
 Not
-If loc1d14
+If loc1c0c
 Pop
 Push register4, 32
 Less2
 Not
-loc1d14:PushDuplicate
+loc1c0c:PushDuplicate
 Not
-If loc1d2b
+If loc1c1f
 Pop
 Push register3, 0
 Equals2
-loc1d2b:Not
-If loc1d40
+loc1c1f:Not
+If loc1c34
 Push register1, "left_edge", true
 SetMember
-Jump loc1d4a
-loc1d40:Push register1, "left_edge", false
+Jump loc1c3e
+loc1c34:Push register1, "left_edge", false
 SetMember
-loc1d4a:Push register3, 0
+loc1c3e:Push register3, 0
 Greater
 PushDuplicate
 Not
-If loc1d6d
+If loc1c5d
 Pop
 Push register3, 32
 Less2
 Not
-loc1d6d:PushDuplicate
+loc1c5d:PushDuplicate
 Not
-If loc1d84
+If loc1c70
 Pop
 Push register4, 0
 Equals2
-loc1d84:Not
-If loc1d99
+loc1c70:Not
+If loc1c85
 Push register1, "right_edge", true
 SetMember
-Jump loc1da3
-loc1d99:Push register1, "right_edge", false
+Jump loc1c8f
+loc1c85:Push register1, "right_edge", false
 SetMember
-loc1da3:Push register5, true
+loc1c8f:Push register5, true
 Equals2
 Not
-If loc1e09
+If loc1cf5
 Push register4, 32
 Less2
 Not
 PushDuplicate
 Not
-If loc1dcd
+If loc1cb9
 Pop
 Push register3, register4
 Less2
-loc1dcd:Not
-If loc1ddd
+loc1cb9:Not
+If loc1cc9
 Push register1, "left_edge", true
 SetMember
-loc1ddd:Push register3, 32
+loc1cc9:Push register3, 32
 Less2
 Not
 PushDuplicate
 Not
-If loc1df9
+If loc1ce5
 Pop
 Push register4, register3
 Less2
-loc1df9:Not
-If loc1e09
+loc1ce5:Not
+If loc1cf5
 Push register1, "right_edge", true
 SetMember
 }
-loc1e09:SetMember
+loc1cf5:SetMember
 Push register2, "forcedGameOver"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push 0, register1, "startDie"
@@ -1466,7 +1466,7 @@ GetMember
 Push 40
 Less2
 Not
-If loc1f33
+If loc1e0b
 Push register1, "prev_dir", 100
 SetMember
 Push register1, "hit", false
@@ -1475,7 +1475,7 @@ Push 0, register1, "updateAnim"
 CallMethod
 Pop
 }
-loc1f33:SetMember
+loc1e0b:SetMember
 Push register2, "startDie"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "state", "com"
@@ -1507,11 +1507,11 @@ GetMember
 Push true
 Equals2
 Not
-If loc1fcd
+If loc1e9d
 Push 0, register1, "finishHit"
 CallMethod
 Pop
-loc1fcd:Push false, 1, register1, "calculateDistance"
+loc1e9d:Push false, 1, register1, "calculateDistance"
 CallMethod
 Pop
 Push register1, "vy", 0
@@ -1522,7 +1522,7 @@ Push 0
 Equals2
 Not
 Not
-If loc2124
+If loc1fd0
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1, "Math"
@@ -1535,7 +1535,7 @@ GetMember
 Push 0
 Greater
 Not
-If loc208b
+If loc1f47
 Push register1, "vx", register1, "vx"
 GetMember
 Push 2
@@ -1547,16 +1547,16 @@ Push 0
 Greater
 Not
 Not
-If loc2086
+If loc1f42
 Push register1, "vx", 0
 SetMember
-loc2086:Jump loc20ff
-loc208b:Push register1, "vx"
+loc1f42:Jump loc1fab
+loc1f47:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc20ee
+If loc1f9e
 Push register1, "vx", register1, "vx"
 GetMember
 Push 2
@@ -1568,13 +1568,13 @@ Push 0
 Less2
 Not
 Not
-If loc20e9
+If loc1f99
 Push register1, "vx", 0
 SetMember
-loc20e9:Jump loc20ff
-loc20ee:Push register1, "vx", 0
+loc1f99:Jump loc1fab
+loc1f9e:Push register1, "vx", 0
 SetMember
-loc20ff:Push register1, "_x", register1, "_x"
+loc1fab:Push register1, "_x", register1, "_x"
 GetMember
 Push false, register1, "vx"
 GetMember
@@ -1582,7 +1582,7 @@ Push 2, register1, "checkWalls"
 CallMethod
 Add2
 SetMember
-loc2124:Push "com"
+loc1fd0:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -1595,7 +1595,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc2176
+If loc2022
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -1609,7 +1609,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc2176:Push "com"
+loc2022:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -1622,13 +1622,13 @@ GetMember
 Push true
 Equals2
 Not
-If loc21b7
+If loc205f
 Push 0, register1, "startJump"
 CallMethod
 Pop
 Push undefined
 Return
-loc21b7:Push "com"
+loc205f:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -1642,13 +1642,13 @@ Push -1
 Equals2
 Not
 Not
-If loc2369
+If loc2211
 Push register1, "left_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc226d
+If loc2115
 Push register1, "_y"
 GetMember
 Push register1, "rx"
@@ -1658,7 +1658,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc2268
+If loc2110
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -1681,13 +1681,13 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-loc2268:Jump loc2364
-loc226d:Push register1, "right_edge"
+loc2110:Jump loc220c
+loc2115:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc22f5
+If loc219d
 Push register1, "_y"
 GetMember
 Push register1, "lx"
@@ -1697,7 +1697,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc22f0
+If loc2198
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -1720,8 +1720,8 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-loc22f0:Jump loc2364
-loc22f5:Push register1, "_y"
+loc2198:Jump loc220c
+loc219d:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -1730,7 +1730,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc2364
+If loc220c
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -1753,13 +1753,13 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-loc2364:Jump loc24fa
-loc2369:Push register1, "left_edge"
+loc220c:Jump loc2392
+loc2211:Push register1, "left_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc23f1
+If loc2295
 Push register1, "_y"
 GetMember
 Push register1, "rx"
@@ -1769,7 +1769,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc23ec
+If loc2290
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -1788,13 +1788,13 @@ GetMember
 SetMember
 Push undefined
 Return
-loc23ec:Jump loc24e8
-loc23f1:Push register1, "right_edge"
+loc2290:Jump loc2384
+loc2295:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc2479
+If loc2319
 Push register1, "_y"
 GetMember
 Push register1, "lx"
@@ -1804,7 +1804,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc2474
+If loc2314
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -1823,8 +1823,8 @@ GetMember
 SetMember
 Push undefined
 Return
-loc2474:Jump loc24e8
-loc2479:Push register1, "_y"
+loc2314:Jump loc2384
+loc2319:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -1833,7 +1833,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc24e8
+If loc2384
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -1852,11 +1852,11 @@ GetMember
 SetMember
 Push undefined
 Return
-loc24e8:Push 0, register1, "adjustToFloor"
+loc2384:Push 0, register1, "adjustToFloor"
 CallMethod
 Pop
 }
-loc24fa:SetMember
+loc2392:SetMember
 Push register2, "doWalk"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "hit"
@@ -1864,11 +1864,11 @@ GetMember
 Push true
 Equals2
 Not
-If loc2533
+If loc23c7
 Push 0, register1, "finishHit"
 CallMethod
 Pop
-loc2533:Push false, 1, register1, "calculateDistance"
+loc23c7:Push false, 1, register1, "calculateDistance"
 CallMethod
 Pop
 Push "com"
@@ -1884,7 +1884,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc2595
+If loc2429
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -1898,7 +1898,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc2595:Push "com"
+loc2429:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -1911,19 +1911,19 @@ GetMember
 Push true
 Equals2
 Not
-If loc25d6
+If loc2466
 Push 0, register1, "startJump"
 CallMethod
 Pop
 Push undefined
 Return
-loc25d6:Push register1, "left_edge"
+loc2466:Push register1, "left_edge"
 GetMember
 Push true
 Equals2
 PushDuplicate
 Not
-If loc260f
+If loc249f
 Pop
 Push register1, "_y"
 GetMember
@@ -1933,8 +1933,8 @@ Push 2, register1, "getOnGround"
 CallMethod
 Push false
 Equals2
-loc260f:Not
-If loc265b
+loc249f:Not
+If loc24e7
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -1953,13 +1953,13 @@ GetMember
 SetMember
 Push undefined
 Return
-loc265b:Push register1, "right_edge"
+loc24e7:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 PushDuplicate
 Not
-If loc2694
+If loc2520
 Pop
 Push register1, "_y"
 GetMember
@@ -1969,8 +1969,8 @@ Push 2, register1, "getOnGround"
 CallMethod
 Push false
 Equals2
-loc2694:Not
-If loc26e0
+loc2520:Not
+If loc2568
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -1989,21 +1989,21 @@ GetMember
 SetMember
 Push undefined
 Return
-loc26e0:Push register1, "left_edge"
+loc2568:Push register1, "left_edge"
 GetMember
 Push false
 Equals2
 PushDuplicate
 Not
-If loc2704
+If loc258c
 Pop
 Push register1, "right_edge"
 GetMember
 Push false
 Equals2
-loc2704:PushDuplicate
+loc258c:PushDuplicate
 Not
-If loc272f
+If loc25b7
 Pop
 Push register1, "_y"
 GetMember
@@ -2013,8 +2013,8 @@ Push 2, register1, "getOnGround"
 CallMethod
 Push false
 Equals2
-loc272f:Not
-If loc277b
+loc25b7:Not
+If loc25ff
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -2033,7 +2033,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc277b:Push "com"
+loc25ff:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2055,7 +2055,7 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc28f2
+If loc276a
 Push register1, "vx"
 GetMember
 Push 1, "Math"
@@ -2066,36 +2066,36 @@ Push register1, "max_vx"
 GetMember
 Less2
 Not
-If loc2833
+If loc26b3
 Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc2820
+If loc26a0
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Subtract
 SetMember
-Jump loc282e
-loc2820:Push register1, "vx", register1, "vx"
+Jump loc26ae
+loc26a0:Push register1, "vx", register1, "vx"
 GetMember
 Decrement
 SetMember
-loc282e:Jump loc28a7
-loc2833:Push register1, "vx"
+loc26ae:Jump loc271f
+loc26b3:Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc2868
+If loc26e4
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Subtract
 SetMember
-loc2868:Push register1, "vx"
+loc26e4:Push register1, "vx"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -2105,12 +2105,12 @@ Push register1, "max_vx"
 GetMember
 Greater
 Not
-If loc28a7
+If loc271f
 Push register1, "vx", 0, register1, "max_vx"
 GetMember
 Subtract
 SetMember
-loc28a7:Push register1, "state", "com"
+loc271f:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2132,8 +2132,8 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-Jump loc2c47
-loc28f2:Push "com"
+Jump loc2aab
+loc276a:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2155,7 +2155,7 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc2a5f
+If loc28cf
 Push register1, "vx"
 GetMember
 Push 1, "Math"
@@ -2166,36 +2166,36 @@ Push register1, "max_vx"
 GetMember
 Less2
 Not
-If loc29aa
+If loc281e
 Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc2997
+If loc280b
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Add2
 SetMember
-Jump loc29a5
-loc2997:Push register1, "vx", register1, "vx"
+Jump loc2819
+loc280b:Push register1, "vx", register1, "vx"
 GetMember
 Increment
 SetMember
-loc29a5:Jump loc2a14
-loc29aa:Push register1, "vx"
+loc2819:Jump loc2884
+loc281e:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc29df
+If loc284f
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Add2
 SetMember
-loc29df:Push register1, "vx"
+loc284f:Push register1, "vx"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -2205,11 +2205,11 @@ Push register1, "max_vx"
 GetMember
 Greater
 Not
-If loc2a14
+If loc2884
 Push register1, "vx", register1, "max_vx"
 GetMember
 SetMember
-loc2a14:Push register1, "state", "com"
+loc2884:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2231,13 +2231,13 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-Jump loc2c47
-loc2a5f:Push register1, "left_edge"
+Jump loc2aab
+loc28cf:Push register1, "left_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc2b0a
+If loc2976
 Push register1, "_y"
 GetMember
 Push register1, "rx"
@@ -2247,7 +2247,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc2ae2
+If loc294e
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -2266,7 +2266,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc2ae2:Push register1, "state", "com"
+loc294e:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2277,13 +2277,13 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc2c47
-loc2b0a:Push register1, "right_edge"
+Jump loc2aab
+loc2976:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc2bb5
+If loc2a1d
 Push register1, "_y"
 GetMember
 Push register1, "lx"
@@ -2293,7 +2293,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc2b8d
+If loc29f5
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -2312,7 +2312,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc2b8d:Push register1, "state", "com"
+loc29f5:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2323,8 +2323,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc2c47
-loc2bb5:Push register1, "_y"
+Jump loc2aab
+loc2a1d:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -2333,7 +2333,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc2c24
+If loc2a88
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "vy", register1, "fall_vy"
@@ -2352,7 +2352,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc2c24:Push register1, "state", "com"
+loc2a88:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2363,7 +2363,7 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-loc2c47:Push register1, "_x", register1, "_x"
+loc2aab:Push register1, "_x", register1, "_x"
 GetMember
 Push false, register1, "vx"
 GetMember
@@ -2391,11 +2391,11 @@ Push register1, "max_vy"
 GetMember
 Greater
 Not
-If loc2cd3
+If loc2b33
 Push register1, "vy", register1, "max_vy"
 GetMember
 SetMember
-loc2cd3:Push register1, "_y", register1, "_y"
+loc2b33:Push register1, "_y", register1, "_y"
 GetMember
 Push register1, "vy"
 GetMember
@@ -2425,7 +2425,7 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc2e4a
+If loc2c9e
 Push register1, "vx"
 GetMember
 Push 1, "Math"
@@ -2436,36 +2436,36 @@ Push register1, "max_vx"
 GetMember
 Less2
 Not
-If loc2dae
+If loc2c0a
 Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc2d9b
+If loc2bf7
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Subtract
 SetMember
-Jump loc2da9
-loc2d9b:Push register1, "vx", register1, "vx"
+Jump loc2c05
+loc2bf7:Push register1, "vx", register1, "vx"
 GetMember
 Decrement
 SetMember
-loc2da9:Jump loc2e22
-loc2dae:Push register1, "vx"
+loc2c05:Jump loc2c76
+loc2c0a:Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc2de3
+If loc2c3b
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Subtract
 SetMember
-loc2de3:Push register1, "vx"
+loc2c3b:Push register1, "vx"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -2475,12 +2475,12 @@ Push register1, "max_vx"
 GetMember
 Greater
 Not
-If loc2e22
+If loc2c76
 Push register1, "vx", 0, register1, "max_vx"
 GetMember
 Subtract
 SetMember
-loc2e22:Push register1, "dir", "com"
+loc2c76:Push register1, "dir", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2491,8 +2491,8 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-Jump loc3001
-loc2e4a:Push "com"
+Jump loc2e41
+loc2c9e:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2514,7 +2514,7 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc2f94
+If loc2de0
 Push register1, "vx"
 GetMember
 Push 1, "Math"
@@ -2525,36 +2525,36 @@ Push register1, "max_vx"
 GetMember
 Less2
 Not
-If loc2f02
+If loc2d52
 Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc2eef
+If loc2d3f
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Add2
 SetMember
-Jump loc2efd
-loc2eef:Push register1, "vx", register1, "vx"
+Jump loc2d4d
+loc2d3f:Push register1, "vx", register1, "vx"
 GetMember
 Increment
 SetMember
-loc2efd:Jump loc2f6c
-loc2f02:Push register1, "vx"
+loc2d4d:Jump loc2db8
+loc2d52:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc2f37
+If loc2d83
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Add2
 SetMember
-loc2f37:Push register1, "vx"
+loc2d83:Push register1, "vx"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -2564,11 +2564,11 @@ Push register1, "max_vx"
 GetMember
 Greater
 Not
-If loc2f6c
+If loc2db8
 Push register1, "vx", register1, "max_vx"
 GetMember
 SetMember
-loc2f6c:Push register1, "dir", "com"
+loc2db8:Push register1, "dir", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2579,32 +2579,32 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-Jump loc3001
-loc2f94:Push register1, "vx"
+Jump loc2e41
+loc2de0:Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc2fc2
+If loc2e0a
 Push register1, "vx", register1, "vx"
 GetMember
 Decrement
 SetMember
-Jump loc3001
-loc2fc2:Push register1, "vx"
+Jump loc2e41
+loc2e0a:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc2ff0
+If loc2e34
 Push register1, "vx", register1, "vx"
 GetMember
 Increment
 SetMember
-Jump loc3001
-loc2ff0:Push register1, "vx", 0
+Jump loc2e41
+loc2e34:Push register1, "vx", 0
 SetMember
-loc3001:Push register1, "wall_jump", false
+loc2e41:Push register1, "wall_jump", false
 SetMember
 Push register1, "_x", register1, "_x"
 GetMember
@@ -2619,7 +2619,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc3166
+If loc2fa2
 Push register1, "dir"
 GetMember
 Push "com"
@@ -2635,7 +2635,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc30b0
+If loc2ef0
 Pop
 Push "com"
 GetVariable
@@ -2658,8 +2658,8 @@ GetMember
 Push "LEFT"
 GetMember
 Equals2
-loc30b0:PushDuplicate
-If loc3123
+loc2ef0:PushDuplicate
+If loc2f63
 Pop
 Push register1, "dir"
 GetMember
@@ -2676,7 +2676,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc3123
+If loc2f63
 Pop
 Push "com"
 GetVariable
@@ -2699,8 +2699,8 @@ GetMember
 Push "RIGHT"
 GetMember
 Equals2
-loc3123:Not
-If loc3166
+loc2f63:Not
+If loc2fa2
 Push register1, "wall_count", register1, "wall_count"
 GetMember
 Increment
@@ -2712,27 +2712,27 @@ GetMember
 Less2
 Not
 Not
-If loc3166
+If loc2fa2
 Push 0, register1, "startWall"
 CallMethod
 Pop
 Push undefined
 Return
-loc3166:Push register1, "vy"
+loc2fa2:Push register1, "vy"
 GetMember
 Push 0
 Greater
 Not
-If loc3193
+If loc2fc7
 Push 0, register1, "adjustToFloor"
 CallMethod
 Pop
-loc3193:Push register1, "left_edge"
+loc2fc7:Push register1, "left_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc3285
+If loc30b5
 Push register1, "_y"
 GetMember
 Push register1, "rx"
@@ -2742,7 +2742,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc3280
+If loc30b0
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2756,7 +2756,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc321a
+If loc304e
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2767,12 +2767,12 @@ Push "Global"
 GetMember
 Push "can_jump", true
 SetMember
-loc321a:Push register1, "vx"
+loc304e:Push register1, "vx"
 GetMember
 Push 0
 Equals2
 Not
-If loc325d
+If loc308d
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -2784,8 +2784,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc3280
-loc325d:Push register1, "state", "com"
+Jump loc30b0
+loc308d:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2796,13 +2796,13 @@ GetMember
 Push "WALK"
 GetMember
 SetMember
-loc3280:Jump loc3450
-loc3285:Push register1, "right_edge"
+loc30b0:Jump loc3278
+loc30b5:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc3377
+If loc31a3
 Push register1, "_y"
 GetMember
 Push register1, "lx"
@@ -2812,7 +2812,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc3372
+If loc319e
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2826,7 +2826,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc330c
+If loc313c
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2837,12 +2837,12 @@ Push "Global"
 GetMember
 Push "can_jump", true
 SetMember
-loc330c:Push register1, "vx"
+loc313c:Push register1, "vx"
 GetMember
 Push 0
 Equals2
 Not
-If loc334f
+If loc317b
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -2854,8 +2854,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc3372
-loc334f:Push register1, "state", "com"
+Jump loc319e
+loc317b:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2866,8 +2866,8 @@ GetMember
 Push "WALK"
 GetMember
 SetMember
-loc3372:Jump loc3450
-loc3377:Push register1, "_y"
+loc319e:Jump loc3278
+loc31a3:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -2876,7 +2876,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc3450
+If loc3278
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2890,7 +2890,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc33ea
+If loc3216
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2901,12 +2901,12 @@ Push "Global"
 GetMember
 Push "can_jump", true
 SetMember
-loc33ea:Push register1, "vx"
+loc3216:Push register1, "vx"
 GetMember
 Push 0
 Equals2
 Not
-If loc342d
+If loc3255
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -2918,8 +2918,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc3450
-loc342d:Push register1, "state", "com"
+Jump loc3278
+loc3255:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2931,7 +2931,7 @@ Push "WALK"
 GetMember
 SetMember
 }
-loc3450:SetMember
+loc3278:SetMember
 Push register2, "doDuck"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "vx"
@@ -2940,7 +2940,7 @@ Push 0
 Equals2
 Not
 Not
-If loc3599
+If loc33a1
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1, "Math"
@@ -2953,7 +2953,7 @@ GetMember
 Push 0
 Greater
 Not
-If loc3500
+If loc3318
 Push register1, "vx", register1, "vx"
 GetMember
 Push 2
@@ -2965,16 +2965,16 @@ Push 0
 Greater
 Not
 Not
-If loc34fb
+If loc3313
 Push register1, "vx", 0
 SetMember
-loc34fb:Jump loc3574
-loc3500:Push register1, "vx"
+loc3313:Jump loc337c
+loc3318:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc3563
+If loc336f
 Push register1, "vx", register1, "vx"
 GetMember
 Push 2
@@ -2986,13 +2986,13 @@ Push 0
 Less2
 Not
 Not
-If loc355e
+If loc336a
 Push register1, "vx", 0
 SetMember
-loc355e:Jump loc3574
-loc3563:Push register1, "vx", 0
+loc336a:Jump loc337c
+loc336f:Push register1, "vx", 0
 SetMember
-loc3574:Push register1, "_x", register1, "_x"
+loc337c:Push register1, "_x", register1, "_x"
 GetMember
 Push true, register1, "vx"
 GetMember
@@ -3000,7 +3000,7 @@ Push 2, register1, "checkWalls"
 CallMethod
 Add2
 SetMember
-loc3599:Push 0, register1, "adjustToFloor"
+loc33a1:Push 0, register1, "adjustToFloor"
 CallMethod
 Pop
 Push "com"
@@ -3016,7 +3016,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc35f8
+If loc33fc
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3029,7 +3029,7 @@ Push "STAND"
 GetMember
 SetMember
 }
-loc35f8:SetMember
+loc33fc:SetMember
 Push register2, "startJump"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push "com"
@@ -3045,7 +3045,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc36c7
+If loc34c7
 Push register1, "vy", register1, "jump_vy"
 GetMember
 SetMember
@@ -3080,14 +3080,14 @@ GetMember
 Push false
 Equals2
 Not
-If loc36c7
+If loc34c7
 Push 0, register1, "game"
 GetMember
 Push "broadcastJump"
 CallMethod
 Pop
 }
-loc36c7:SetMember
+loc34c7:SetMember
 Push register2, "startWallJump"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push "com"
@@ -3103,7 +3103,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc376a
+If loc356a
 Push register1, "vy", register1, "walljump_vy"
 GetMember
 SetMember
@@ -3134,7 +3134,7 @@ GetMember
 Push "can_jump", false
 SetMember
 }
-loc376a:SetMember
+loc356a:SetMember
 Push register2, "doJump"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push true, 1, register1, "calculateDistance"
@@ -3152,16 +3152,16 @@ Push register1, "max_vy"
 GetMember
 Greater
 Not
-If loc37c9
+If loc35c9
 Push register1, "vy", register1, "max_vy"
 GetMember
 SetMember
-loc37c9:Push register1, "vy"
+loc35c9:Push register1, "vy"
 GetMember
 Push 0
 Less2
 Not
-If loc380c
+If loc3608
 Push register1, "_y", register1, "_y"
 GetMember
 Push register1, "vy"
@@ -3170,8 +3170,8 @@ Push 1, register1, "checkCeiling"
 CallMethod
 Add2
 SetMember
-Jump loc382f
-loc380c:Push register1, "_y", register1, "_y"
+Jump loc362b
+loc3608:Push register1, "_y", register1, "_y"
 GetMember
 Push register1, "vy"
 GetMember
@@ -3179,7 +3179,7 @@ Push 1, register1, "checkFloor"
 CallMethod
 Add2
 SetMember
-loc382f:Push "com"
+loc362b:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3201,7 +3201,7 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc3983
+If loc3773
 Push register1, "vx"
 GetMember
 Push 1, "Math"
@@ -3212,36 +3212,36 @@ Push register1, "max_vx"
 GetMember
 Less2
 Not
-If loc38e7
+If loc36df
 Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc38d4
+If loc36cc
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Subtract
 SetMember
-Jump loc38e2
-loc38d4:Push register1, "vx", register1, "vx"
+Jump loc36da
+loc36cc:Push register1, "vx", register1, "vx"
 GetMember
 Decrement
 SetMember
-loc38e2:Jump loc395b
-loc38e7:Push register1, "vx"
+loc36da:Jump loc374b
+loc36df:Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc391c
+If loc3710
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Subtract
 SetMember
-loc391c:Push register1, "vx"
+loc3710:Push register1, "vx"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -3251,12 +3251,12 @@ Push register1, "max_vx"
 GetMember
 Greater
 Not
-If loc395b
+If loc374b
 Push register1, "vx", 0, register1, "max_vx"
 GetMember
 Subtract
 SetMember
-loc395b:Push register1, "dir", "com"
+loc374b:Push register1, "dir", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3267,8 +3267,8 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-Jump loc3b3a
-loc3983:Push "com"
+Jump loc3916
+loc3773:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3290,7 +3290,7 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc3acd
+If loc38b5
 Push register1, "vx"
 GetMember
 Push 1, "Math"
@@ -3301,36 +3301,36 @@ Push register1, "max_vx"
 GetMember
 Less2
 Not
-If loc3a3b
+If loc3827
 Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc3a28
+If loc3814
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Add2
 SetMember
-Jump loc3a36
-loc3a28:Push register1, "vx", register1, "vx"
+Jump loc3822
+loc3814:Push register1, "vx", register1, "vx"
 GetMember
 Increment
 SetMember
-loc3a36:Jump loc3aa5
-loc3a3b:Push register1, "vx"
+loc3822:Jump loc388d
+loc3827:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc3a70
+If loc3858
 Push register1, "vx", register1, "vx"
 GetMember
 Push 1.5
 Add2
 SetMember
-loc3a70:Push register1, "vx"
+loc3858:Push register1, "vx"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -3340,11 +3340,11 @@ Push register1, "max_vx"
 GetMember
 Greater
 Not
-If loc3aa5
+If loc388d
 Push register1, "vx", register1, "max_vx"
 GetMember
 SetMember
-loc3aa5:Push register1, "dir", "com"
+loc388d:Push register1, "dir", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3355,32 +3355,32 @@ GetMember
 Push "DIR_PRESSED"
 GetMember
 SetMember
-Jump loc3b3a
-loc3acd:Push register1, "vx"
+Jump loc3916
+loc38b5:Push register1, "vx"
 GetMember
 Push 0
 Greater
 Not
-If loc3afb
+If loc38df
 Push register1, "vx", register1, "vx"
 GetMember
 Decrement
 SetMember
-Jump loc3b3a
-loc3afb:Push register1, "vx"
+Jump loc3916
+loc38df:Push register1, "vx"
 GetMember
 Push 0
 Less2
 Not
-If loc3b29
+If loc3909
 Push register1, "vx", register1, "vx"
 GetMember
 Increment
 SetMember
-Jump loc3b3a
-loc3b29:Push register1, "vx", 0
+Jump loc3916
+loc3909:Push register1, "vx", 0
 SetMember
-loc3b3a:Push register1, "wall_jump", false
+loc3916:Push register1, "wall_jump", false
 SetMember
 Push register1, "_x", register1, "_x"
 GetMember
@@ -3395,7 +3395,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc3c9f
+If loc3a77
 Push register1, "dir"
 GetMember
 Push "com"
@@ -3411,7 +3411,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc3be9
+If loc39c5
 Pop
 Push "com"
 GetVariable
@@ -3434,8 +3434,8 @@ GetMember
 Push "LEFT"
 GetMember
 Equals2
-loc3be9:PushDuplicate
-If loc3c5c
+loc39c5:PushDuplicate
+If loc3a38
 Pop
 Push register1, "dir"
 GetMember
@@ -3452,7 +3452,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc3c5c
+If loc3a38
 Pop
 Push "com"
 GetVariable
@@ -3475,8 +3475,8 @@ GetMember
 Push "RIGHT"
 GetMember
 Equals2
-loc3c5c:Not
-If loc3c9f
+loc3a38:Not
+If loc3a77
 Push register1, "wall_count", register1, "wall_count"
 GetMember
 Increment
@@ -3488,35 +3488,35 @@ GetMember
 Less2
 Not
 Not
-If loc3c9f
+If loc3a77
 Push 0, register1, "startWall"
 CallMethod
 Pop
 Push undefined
 Return
-loc3c9f:Push register1, "vy"
+loc3a77:Push register1, "vy"
 GetMember
 Push 0
 Greater
 PushDuplicate
 Not
-If loc3cca
+If loc3a9e
 Pop
 Push register1, "hit_ceiling"
 GetMember
 Push false
 Equals2
-loc3cca:Not
-If loc3ce2
+loc3a9e:Not
+If loc3ab2
 Push 0, register1, "adjustToFloor"
 CallMethod
 Pop
-loc3ce2:Push register1, "left_edge"
+loc3ab2:Push register1, "left_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc3dd4
+If loc3ba0
 Push register1, "_y"
 GetMember
 Push register1, "rx"
@@ -3526,7 +3526,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc3dcf
+If loc3b9b
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3540,7 +3540,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc3d69
+If loc3b39
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3551,12 +3551,12 @@ Push "Global"
 GetMember
 Push "can_jump", true
 SetMember
-loc3d69:Push register1, "vx"
+loc3b39:Push register1, "vx"
 GetMember
 Push 0
 Equals2
 Not
-If loc3dac
+If loc3b78
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3568,8 +3568,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc3dcf
-loc3dac:Push register1, "state", "com"
+Jump loc3b9b
+loc3b78:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3580,13 +3580,13 @@ GetMember
 Push "WALK"
 GetMember
 SetMember
-loc3dcf:Jump loc3f9f
-loc3dd4:Push register1, "right_edge"
+loc3b9b:Jump loc3d63
+loc3ba0:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc3ec6
+If loc3c8e
 Push register1, "_y"
 GetMember
 Push register1, "lx"
@@ -3596,7 +3596,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc3ec1
+If loc3c89
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3610,7 +3610,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc3e5b
+If loc3c27
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3621,12 +3621,12 @@ Push "Global"
 GetMember
 Push "can_jump", true
 SetMember
-loc3e5b:Push register1, "vx"
+loc3c27:Push register1, "vx"
 GetMember
 Push 0
 Equals2
 Not
-If loc3e9e
+If loc3c66
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3638,8 +3638,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc3ec1
-loc3e9e:Push register1, "state", "com"
+Jump loc3c89
+loc3c66:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3650,8 +3650,8 @@ GetMember
 Push "WALK"
 GetMember
 SetMember
-loc3ec1:Jump loc3f9f
-loc3ec6:Push register1, "_y"
+loc3c89:Jump loc3d63
+loc3c8e:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -3660,7 +3660,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc3f9f
+If loc3d63
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3674,7 +3674,7 @@ GetMember
 Push false
 Equals2
 Not
-If loc3f39
+If loc3d01
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3685,12 +3685,12 @@ Push "Global"
 GetMember
 Push "can_jump", true
 SetMember
-loc3f39:Push register1, "vx"
+loc3d01:Push register1, "vx"
 GetMember
 Push 0
 Equals2
 Not
-If loc3f7c
+If loc3d40
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3702,8 +3702,8 @@ GetMember
 Push "STAND"
 GetMember
 SetMember
-Jump loc3f9f
-loc3f7c:Push register1, "state", "com"
+Jump loc3d63
+loc3d40:Push register1, "state", "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3715,7 +3715,7 @@ Push "WALK"
 GetMember
 SetMember
 }
-loc3f9f:SetMember
+loc3d63:SetMember
 Push register2, "startWall"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "state", "com"
@@ -3756,11 +3756,11 @@ GetMember
 Push true
 Equals2
 Not
-If loc4072
+If loc3e22
 Push 0, register1, "finishHit"
 CallMethod
 Pop
-loc4072:Push register1, "_y", register1, "_y"
+loc3e22:Push register1, "_y", register1, "_y"
 GetMember
 Increment
 SetMember
@@ -3779,7 +3779,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc40ec
+If loc3e9c
 Pop
 Push "com"
 GetVariable
@@ -3802,8 +3802,8 @@ GetMember
 Push "LEFT"
 GetMember
 Equals2
-loc40ec:Not
-If loc4230
+loc3e9c:Not
+If loc3fd4
 Push register1, "fall_count", 0
 SetMember
 Push register1, "_y"
@@ -3815,7 +3815,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4154
+If loc3f00
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3829,7 +3829,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc4154:Push register1, "_y"
+loc3f00:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -3838,7 +3838,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc41b7
+If loc3f5f
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3855,7 +3855,7 @@ CallMethod
 Pop
 Push undefined
 Return
-loc41b7:Push register1, "_y"
+loc3f5f:Push register1, "_y"
 GetMember
 Push 30
 Subtract
@@ -3868,7 +3868,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc422b
+If loc3fcf
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "state", "com"
@@ -3884,8 +3884,8 @@ GetMember
 SetMember
 Push undefined
 Return
-loc422b:Jump loc460b
-loc4230:Push register1, "dir"
+loc3fcf:Jump loc4397
+loc3fd4:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -3900,7 +3900,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc429c
+If loc4040
 Pop
 Push "com"
 GetVariable
@@ -3923,8 +3923,8 @@ GetMember
 Push "RIGHT"
 GetMember
 Equals2
-loc429c:Not
-If loc43e0
+loc4040:Not
+If loc4178
 Push register1, "fall_count", 0
 SetMember
 Push register1, "_y"
@@ -3936,7 +3936,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4304
+If loc40a4
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3950,7 +3950,7 @@ GetMember
 SetMember
 Push undefined
 Return
-loc4304:Push register1, "_y"
+loc40a4:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -3959,7 +3959,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4367
+If loc4103
 Push register1, "state", "com"
 GetVariable
 Push "nitrome"
@@ -3976,7 +3976,7 @@ CallMethod
 Pop
 Push undefined
 Return
-loc4367:Push register1, "_y"
+loc4103:Push register1, "_y"
 GetMember
 Push 30
 Subtract
@@ -3989,7 +3989,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc43db
+If loc4173
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "state", "com"
@@ -4005,8 +4005,8 @@ GetMember
 SetMember
 Push undefined
 Return
-loc43db:Jump loc460b
-loc43e0:Push register1, "dir"
+loc4173:Jump loc4397
+loc4178:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -4021,7 +4021,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc444c
+If loc41e4
 Pop
 Push "com"
 GetVariable
@@ -4044,15 +4044,15 @@ GetMember
 Push "RIGHT"
 GetMember
 Equals2
-loc444c:Not
-If loc4476
+loc41e4:Not
+If loc420a
 Push register1, "vx", 6
 SetMember
 Push 0, register1, "startWallJump"
 CallMethod
 Pop
-Jump loc460b
-loc4476:Push register1, "dir"
+Jump loc4397
+loc420a:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -4067,7 +4067,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc44e2
+If loc4276
 Pop
 Push "com"
 GetVariable
@@ -4090,15 +4090,15 @@ GetMember
 Push "LEFT"
 GetMember
 Equals2
-loc44e2:Not
-If loc450c
+loc4276:Not
+If loc429c
 Push register1, "vx", -6
 SetMember
 Push 0, register1, "startWallJump"
 CallMethod
 Pop
-Jump loc460b
-loc450c:Push register1, "fall_count", register1, "fall_count"
+Jump loc4397
+loc429c:Push register1, "fall_count", register1, "fall_count"
 GetMember
 Increment
 SetMember
@@ -4109,7 +4109,7 @@ GetMember
 Less2
 Not
 Not
-If loc460b
+If loc4397
 Push register1, "fall_anim_count", 0
 SetMember
 Push register1, "state", "com"
@@ -4137,7 +4137,7 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc45bb
+If loc4347
 Push register1, "dir", "com"
 GetVariable
 Push "nitrome"
@@ -4149,8 +4149,8 @@ GetMember
 Push "RIGHT"
 GetMember
 SetMember
-Jump loc460b
-loc45bb:Push register1, "dir"
+Jump loc4397
+loc4347:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -4164,7 +4164,7 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc460b
+If loc4397
 Push register1, "dir", "com"
 GetVariable
 Push "nitrome"
@@ -4177,7 +4177,7 @@ Push "LEFT"
 GetMember
 SetMember
 }
-loc460b:SetMember
+loc4397:SetMember
 Push register2, "checkCeiling"
 DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 5, "v" {
 Push undefined
@@ -4197,12 +4197,12 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc4669
+If loc43f5
 Push -1
 StoreRegister 3
 Pop
-Jump loc46a3
-loc4669:Push register1, "dir"
+Jump loc442f
+loc43f5:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -4216,14 +4216,14 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc46a3
+If loc442f
 Push 1
 StoreRegister 3
 Pop
-loc46a3:Push register5, 0
+loc442f:Push register5, 0
 Less2
 Not
-If loc4ad9
+If loc4855
 Push register1, "ceil_boundary"
 GetMember
 Push "_y"
@@ -4244,11 +4244,11 @@ CallMethod
 Push true
 Equals2
 Not
-If loc47a1
+If loc4529
 Push 1
 StoreRegister 2
 Pop
-loc4713:Push register2, register1, "jump_vy"
+loc449b:Push register2, register1, "jump_vy"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -4256,7 +4256,7 @@ Push "abs"
 CallMethod
 Less2
 Not
-If loc479c
+If loc4524
 Push register1, "_y"
 GetMember
 Push register4
@@ -4273,20 +4273,20 @@ CallMethod
 Push false
 Equals2
 Not
-If loc478c
+If loc4514
 Push register1, "vy", register1, "fall_vy"
 GetMember
 SetMember
 Push register5, register2
 Add2
 Return
-loc478c:Push register2
+loc4514:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc4713
-loc479c:Jump loc4ad9
-loc47a1:Push register1, "_y"
+Jump loc449b
+loc4524:Jump loc4855
+loc4529:Push register1, "_y"
 GetMember
 Push register4
 Add2
@@ -4300,11 +4300,11 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4877
+If loc45ff
 Push 1
 StoreRegister 2
 Pop
-loc47e9:Push register2, register1, "jump_vy"
+loc4571:Push register2, register1, "jump_vy"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -4312,7 +4312,7 @@ Push "abs"
 CallMethod
 Less2
 Not
-If loc4872
+If loc45fa
 Push register1, "_y"
 GetMember
 Push register4
@@ -4329,20 +4329,20 @@ CallMethod
 Push false
 Equals2
 Not
-If loc4862
+If loc45ea
 Push register1, "vy", register1, "fall_vy"
 GetMember
 SetMember
 Push register5, register2
 Add2
 Return
-loc4862:Push register2
+loc45ea:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc47e9
-loc4872:Jump loc4ad9
-loc4877:Push register1, "_y"
+Jump loc4571
+loc45fa:Jump loc4855
+loc45ff:Push register1, "_y"
 GetMember
 Push register4
 Add2
@@ -4356,11 +4356,11 @@ CallMethod
 Push true
 Equals2
 Not
-If loc494d
+If loc46d5
 Push 1
 StoreRegister 2
 Pop
-loc48bf:Push register2, register1, "jump_vy"
+loc4647:Push register2, register1, "jump_vy"
 GetMember
 Push 1, "Math"
 GetVariable
@@ -4368,7 +4368,7 @@ Push "abs"
 CallMethod
 Less2
 Not
-If loc4948
+If loc46d0
 Push register1, "_y"
 GetMember
 Push register4
@@ -4385,29 +4385,29 @@ CallMethod
 Push false
 Equals2
 Not
-If loc4938
+If loc46c0
 Push register1, "vy", register1, "fall_vy"
 GetMember
 SetMember
 Push register5, register2
 Add2
 Return
-loc4938:Push register2
+loc46c0:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc48bf
-loc4948:Jump loc4ad9
-loc494d:Push 1
+Jump loc4647
+loc46d0:Jump loc4855
+loc46d5:Push 1
 StoreRegister 2
 Pop
-loc495a:Push register2, register5, 1, "Math"
+loc46e2:Push register2, register5, 1, "Math"
 GetVariable
 Push "abs"
 CallMethod
 Less2
 Not
-If loc4ad9
+If loc4855
 Push register1, "_y"
 GetMember
 Push register4
@@ -4424,7 +4424,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc49e7
+If loc476b
 Push register1, "vy", register1, "fall_vy"
 GetMember
 SetMember
@@ -4435,7 +4435,7 @@ Subtract
 Push 2
 Subtract
 Return
-loc49e7:Push register1, "_y"
+loc476b:Push register1, "_y"
 GetMember
 Push register4
 Add2
@@ -4451,7 +4451,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4a58
+If loc47d8
 Push register1, "vy", register1, "fall_vy"
 GetMember
 SetMember
@@ -4462,7 +4462,7 @@ Subtract
 Push 2
 Subtract
 Return
-loc4a58:Push register1, "_y"
+loc47d8:Push register1, "_y"
 GetMember
 Push register4
 Add2
@@ -4478,7 +4478,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4ac9
+If loc4845
 Push register1, "vy", register1, "fall_vy"
 GetMember
 SetMember
@@ -4489,12 +4489,12 @@ Subtract
 Push 2
 Subtract
 Return
-loc4ac9:Push register2
+loc4845:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc495a
-loc4ad9:Push register5
+Jump loc46e2
+loc4855:Push register5
 Return
 }
 SetMember
@@ -4509,11 +4509,11 @@ Pop
 Push 1
 StoreRegister 2
 Pop
-loc4b1a:Push register2, register3
+loc4896:Push register2, register3
 Greater
 Not
 Not
-If loc4b6e
+If loc48ea
 Push register1, "_y"
 GetMember
 Push register2
@@ -4525,15 +4525,15 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4b5e
+If loc48da
 Push register2
 Return
-loc4b5e:Push register2
+loc48da:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc4b1a
-loc4b6e:Push register3
+Jump loc4896
+loc48ea:Push register3
 Return
 }
 SetMember
@@ -4542,20 +4542,20 @@ DefineFunction2 "", 2, 9, false, false, true, false, true, false, false, true, f
 Push register8, true
 Equals2
 Not
-If loc4bcc
+If loc4948
 Push -20, -15, -10, -5, -2, 5, "Array"
 NewObject
 StoreRegister 2
 Pop
-Jump loc4bf5
-loc4bcc:Push -35, -30, -25, -20, -16, 5, "Array"
+Jump loc4971
+loc4948:Push -35, -30, -25, -20, -16, 5, "Array"
 NewObject
 StoreRegister 2
 Pop
-loc4bf5:Push register3, 0
+loc4971:Push register3, 0
 Greater
 Not
-If loc4f46
+If loc4caa
 Push register1, "wall_boundary_right"
 GetMember
 Push "_x"
@@ -4578,7 +4578,7 @@ CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc4c9e
+If loc4a12
 Pop
 Push register1, "_y"
 GetMember
@@ -4595,8 +4595,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc4c9e:PushDuplicate
-If loc4ce0
+loc4a12:PushDuplicate
+If loc4a54
 Pop
 Push register1, "_y"
 GetMember
@@ -4613,8 +4613,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc4ce0:PushDuplicate
-If loc4d22
+loc4a54:PushDuplicate
+If loc4a96
 Pop
 Push register1, "_y"
 GetMember
@@ -4631,8 +4631,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc4d22:PushDuplicate
-If loc4d64
+loc4a96:PushDuplicate
+If loc4ad8
 Pop
 Push register1, "_y"
 GetMember
@@ -4649,28 +4649,28 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc4d64:Not
-If loc4e61
+loc4ad8:Not
+If loc4bcd
 Push 1
 StoreRegister 5
 Pop
-loc4d77:Push register5, register1, "max_vx"
+loc4aeb:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc4e5c
+If loc4bc8
 Push 0
 StoreRegister 7
 Pop
 Push 0
 StoreRegister 4
 Pop
-loc4dab:Push register4, register2, "length"
+loc4b17:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc4e1b
+If loc4b87
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -4689,21 +4689,21 @@ CallMethod
 Push false
 Equals2
 Not
-If loc4e0b
+If loc4b77
 Push register7
 Increment
 StoreRegister 7
 Pop
-loc4e0b:Push register4
+loc4b77:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc4dab
-loc4e1b:Push register7, register2, "length"
+Jump loc4b17
+loc4b87:Push register7, register2, "length"
 GetMember
 Equals2
 Not
-If loc4e4c
+If loc4bb8
 Push register1, "vx", register3, register5
 Subtract
 SetMember
@@ -4712,29 +4712,29 @@ SetMember
 Push register3, register5
 Subtract
 Return
-loc4e4c:Push register5
+loc4bb8:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc4d77
-loc4e5c:Jump loc4f41
-loc4e61:Push 1
+Jump loc4aeb
+loc4bc8:Jump loc4ca5
+loc4bcd:Push 1
 StoreRegister 5
 Pop
-loc4e6e:Push register5, register1, "max_vx"
+loc4bda:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc4f3b
+If loc4c9f
 Push 0
 StoreRegister 4
 Pop
-loc4e91:Push register4, register2, "length"
+loc4bf9:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc4f2b
+If loc4c8f
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -4751,37 +4751,37 @@ CallMethod
 Push true
 Equals2
 Not
-If loc4f1b
+If loc4c7f
 Push register1, "wall_jump", true
 SetMember
 Push register3, register5
 Less2
 Not
-If loc4efe
+If loc4c66
 Push register3
 Return
-loc4efe:Push register1, "vx", 0
+loc4c66:Push register1, "vx", 0
 SetMember
 Push register5, 1
 Subtract
 Return
-loc4f1b:Push register4
+loc4c7f:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc4e91
-loc4f2b:Push register5
+Jump loc4bf9
+loc4c8f:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc4e6e
-loc4f3b:Push register3
+Jump loc4bda
+loc4c9f:Push register3
 Return
-loc4f41:Jump loc52d0
-loc4f46:Push register3, 0
+loc4ca5:Jump loc5010
+loc4caa:Push register3, 0
 Less2
 Not
-If loc52b2
+If loc4ffa
 Push register1, "wall_boundary_left"
 GetMember
 Push "_x"
@@ -4804,7 +4804,7 @@ CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc4fef
+If loc4d4b
 Pop
 Push register1, "_y"
 GetMember
@@ -4821,8 +4821,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc4fef:PushDuplicate
-If loc5031
+loc4d4b:PushDuplicate
+If loc4d8d
 Pop
 Push register1, "_y"
 GetMember
@@ -4839,8 +4839,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc5031:PushDuplicate
-If loc5073
+loc4d8d:PushDuplicate
+If loc4dcf
 Pop
 Push register1, "_y"
 GetMember
@@ -4857,8 +4857,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc5073:PushDuplicate
-If loc50b5
+loc4dcf:PushDuplicate
+If loc4e11
 Pop
 Push register1, "_y"
 GetMember
@@ -4875,28 +4875,28 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc50b5:Not
-If loc51b2
+loc4e11:Not
+If loc4f06
 Push 1
 StoreRegister 5
 Pop
-loc50c8:Push register5, register1, "max_vx"
+loc4e24:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc51ad
+If loc4f01
 Push 0
 StoreRegister 7
 Pop
 Push 0
 StoreRegister 4
 Pop
-loc50fc:Push register4, register2, "length"
+loc4e50:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc516c
+If loc4ec0
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -4915,21 +4915,21 @@ CallMethod
 Push false
 Equals2
 Not
-If loc515c
+If loc4eb0
 Push register7
 Increment
 StoreRegister 7
 Pop
-loc515c:Push register4
+loc4eb0:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc50fc
-loc516c:Push register7, register2, "length"
+Jump loc4e50
+loc4ec0:Push register7, register2, "length"
 GetMember
 Equals2
 Not
-If loc519d
+If loc4ef1
 Push register1, "vx", register3, register5
 Add2
 SetMember
@@ -4938,29 +4938,29 @@ SetMember
 Push register3, register5
 Add2
 Return
-loc519d:Push register5
+loc4ef1:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc50c8
-loc51ad:Jump loc52ad
-loc51b2:Push 1
+Jump loc4e24
+loc4f01:Jump loc4ff5
+loc4f06:Push 1
 StoreRegister 5
 Pop
-loc51bf:Push register5, register1, "max_vx"
+loc4f13:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc52a7
+If loc4fef
 Push 0
 StoreRegister 4
 Pop
-loc51e2:Push register4, register2, "length"
+loc4f32:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc5297
+If loc4fdf
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -4977,7 +4977,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5287
+If loc4fcf
 Push register1, "wall_jump", true
 SetMember
 Push register3, 1, "Math"
@@ -4987,53 +4987,53 @@ CallMethod
 Push register5
 Less2
 Not
-If loc5260
+If loc4fb0
 Push register3
 Return
-loc5260:Push register1, "vx", 0
+loc4fb0:Push register1, "vx", 0
 SetMember
 Push 0, register5, 1
 Subtract
 Subtract
 Return
-loc5287:Push register4
+loc4fcf:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc51e2
-loc5297:Push register5
+Jump loc4f32
+loc4fdf:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc51bf
-loc52a7:Push register3
+Jump loc4f13
+loc4fef:Push register3
 Return
-loc52ad:Jump loc52d0
-loc52b2:Push register1, "vx", 0
+loc4ff5:Jump loc5010
+loc4ffa:Push register1, "vx", 0
 SetMember
 Push 0
 Return
 }
-loc52d0:SetMember
+loc5010:SetMember
 Push register2, "checkConveyorWalls"
 DefineFunction2 "", 2, 9, false, false, true, false, true, false, false, true, false, 3, "v", 8, "duck" {
 Push register8, true
 Equals2
 Not
-If loc5328
+If loc5068
 Push -20, -15, -10, -5, -2, 5, "Array"
 NewObject
 StoreRegister 2
 Pop
-Jump loc5351
-loc5328:Push -35, -30, -25, -20, -16, 5, "Array"
+Jump loc5091
+loc5068:Push -35, -30, -25, -20, -16, 5, "Array"
 NewObject
 StoreRegister 2
 Pop
-loc5351:Push register3, 0
+loc5091:Push register3, 0
 Greater
 Not
-If loc5684
+If loc53b0
 Push register1, "wall_boundary_right"
 GetMember
 Push "_x"
@@ -5056,7 +5056,7 @@ CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc53fa
+If loc5132
 Pop
 Push register1, "_y"
 GetMember
@@ -5073,8 +5073,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc53fa:PushDuplicate
-If loc543c
+loc5132:PushDuplicate
+If loc5174
 Pop
 Push register1, "_y"
 GetMember
@@ -5091,8 +5091,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc543c:PushDuplicate
-If loc547e
+loc5174:PushDuplicate
+If loc51b6
 Pop
 Push register1, "_y"
 GetMember
@@ -5109,8 +5109,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc547e:PushDuplicate
-If loc54c0
+loc51b6:PushDuplicate
+If loc51f8
 Pop
 Push register1, "_y"
 GetMember
@@ -5127,28 +5127,28 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc54c0:Not
-If loc55b0
+loc51f8:Not
+If loc52e0
 Push 1
 StoreRegister 5
 Pop
-loc54d3:Push register5, register1, "max_vx"
+loc520b:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc55ab
+If loc52db
 Push 0
 StoreRegister 7
 Pop
 Push 0
 StoreRegister 4
 Pop
-loc5507:Push register4, register2, "length"
+loc5237:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc5577
+If loc52a7
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -5167,49 +5167,49 @@ CallMethod
 Push false
 Equals2
 Not
-If loc5567
+If loc5297
 Push register7
 Increment
 StoreRegister 7
 Pop
-loc5567:Push register4
+loc5297:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc5507
-loc5577:Push register7, register2, "length"
+Jump loc5237
+loc52a7:Push register7, register2, "length"
 GetMember
 Equals2
 Not
-If loc559b
+If loc52cb
 Push register1, "wall_jump", true
 SetMember
 Push register3, register5
 Subtract
 Return
-loc559b:Push register5
+loc52cb:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc54d3
-loc55ab:Jump loc567f
-loc55b0:Push 1
+Jump loc520b
+loc52db:Jump loc53ab
+loc52e0:Push 1
 StoreRegister 5
 Pop
-loc55bd:Push register5, register1, "max_vx"
+loc52ed:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc5679
+If loc53a5
 Push 0
 StoreRegister 4
 Pop
-loc55e0:Push register4, register2, "length"
+loc530c:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc5669
+If loc5395
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -5226,35 +5226,35 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5659
+If loc5385
 Push register1, "wall_jump", true
 SetMember
 Push register3, register5
 Less2
 Not
-If loc564d
+If loc5379
 Push register3
 Return
-loc564d:Push register5, 1
+loc5379:Push register5, 1
 Subtract
 Return
-loc5659:Push register4
+loc5385:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc55e0
-loc5669:Push register5
+Jump loc530c
+loc5395:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc55bd
-loc5679:Push register3
+Jump loc52ed
+loc53a5:Push register3
 Return
-loc567f:Jump loc59df
-loc5684:Push register3, 0
+loc53ab:Jump loc56ef
+loc53b0:Push register3, 0
 Less2
 Not
-If loc59d2
+If loc56e6
 Push register1, "wall_boundary_left"
 GetMember
 Push "_x"
@@ -5277,7 +5277,7 @@ CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc572d
+If loc5451
 Pop
 Push register1, "_y"
 GetMember
@@ -5294,8 +5294,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc572d:PushDuplicate
-If loc576f
+loc5451:PushDuplicate
+If loc5493
 Pop
 Push register1, "_y"
 GetMember
@@ -5312,8 +5312,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc576f:PushDuplicate
-If loc57b1
+loc5493:PushDuplicate
+If loc54d5
 Pop
 Push register1, "_y"
 GetMember
@@ -5330,8 +5330,8 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc57b1:PushDuplicate
-If loc57f3
+loc54d5:PushDuplicate
+If loc5517
 Pop
 Push register1, "_y"
 GetMember
@@ -5348,28 +5348,28 @@ Push 2, register1, "getInWall"
 CallMethod
 Push true
 Equals2
-loc57f3:Not
-If loc58e3
+loc5517:Not
+If loc55ff
 Push 1
 StoreRegister 5
 Pop
-loc5806:Push register5, register1, "max_vx"
+loc552a:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc58de
+If loc55fa
 Push 0
 StoreRegister 7
 Pop
 Push 0
 StoreRegister 4
 Pop
-loc583a:Push register4, register2, "length"
+loc5556:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc58aa
+If loc55c6
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -5388,49 +5388,49 @@ CallMethod
 Push false
 Equals2
 Not
-If loc589a
+If loc55b6
 Push register7
 Increment
 StoreRegister 7
 Pop
-loc589a:Push register4
+loc55b6:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc583a
-loc58aa:Push register7, register2, "length"
+Jump loc5556
+loc55c6:Push register7, register2, "length"
 GetMember
 Equals2
 Not
-If loc58ce
+If loc55ea
 Push register1, "wall_jump", true
 SetMember
 Push register3, register5
 Add2
 Return
-loc58ce:Push register5
+loc55ea:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc5806
-loc58de:Jump loc59cd
-loc58e3:Push 1
+Jump loc552a
+loc55fa:Jump loc56e1
+loc55ff:Push 1
 StoreRegister 5
 Pop
-loc58f0:Push register5, register1, "max_vx"
+loc560c:Push register5, register1, "max_vx"
 GetMember
 Greater
 Not
 Not
-If loc59c7
+If loc56db
 Push 0
 StoreRegister 4
 Pop
-loc5913:Push register4, register2, "length"
+loc562b:Push register4, register2, "length"
 GetMember
 Less2
 Not
-If loc59b7
+If loc56cb
 Push register1, "_y"
 GetMember
 Push register2, register4
@@ -5447,7 +5447,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc59a7
+If loc56bb
 Push register1, "wall_jump", true
 SetMember
 Push register3, 1, "Math"
@@ -5457,30 +5457,30 @@ CallMethod
 Push register5
 Less2
 Not
-If loc5991
+If loc56a9
 Push register3
 Return
-loc5991:Push 0, register5, 1
+loc56a9:Push 0, register5, 1
 Subtract
 Subtract
 Return
-loc59a7:Push register4
+loc56bb:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc5913
-loc59b7:Push register5
+Jump loc562b
+loc56cb:Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc58f0
-loc59c7:Push register3
+Jump loc560c
+loc56db:Push register3
 Return
-loc59cd:Jump loc59df
-loc59d2:Push 0
+loc56e1:Jump loc56ef
+loc56e6:Push 0
 Return
 }
-loc59df:SetMember
+loc56ef:SetMember
 Push register2, "adjustToFloor"
 DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
 Push register1, "left_edge"
@@ -5488,7 +5488,7 @@ GetMember
 Push true
 Equals2
 Not
-If loc5b68
+If loc5874
 Push register1, "_y"
 GetMember
 Push register1, "rx"
@@ -5498,64 +5498,26 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5b63
+If loc586f
 Push register1, "vy"
 GetMember
 Push 0
 Less2
 Not
 Not
-If loc5b63
+If loc586f
 Push false
 StoreRegister 3
 Pop
 Push 1
 StoreRegister 2
 Pop
-loc5a62:Push register2, register1, "max_slope"
+loc576e:Push register2, register1, "max_slope"
 GetMember
 Greater
 Not
 Not
-If loc5ad5
-Push register1, "_y"
-GetMember
-Push register2
-Subtract
-Push register1, "rx"
-GetMember
-Push 2, register1, "getOnGround"
-CallMethod
-Push true
-Equals2
-Not
-If loc5ac5
-Push register1, "_y", register1, "_y"
-GetMember
-Push register2
-Subtract
-SetMember
-Push true
-StoreRegister 3
-Pop
-Jump loc5ad5
-loc5ac5:Push register2
-Increment
-StoreRegister 2
-Pop
-Jump loc5a62
-loc5ad5:Push register3, false
-Equals2
-Not
-If loc5b63
-Push 1
-StoreRegister 2
-Pop
-loc5af0:Push register2, 100
-Greater
-Not
-Not
-If loc5b63
+If loc57e1
 Push register1, "_y"
 GetMember
 Push register2
@@ -5567,7 +5529,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5b53
+If loc57d1
 Push register1, "_y", register1, "_y"
 GetMember
 Push register2
@@ -5576,19 +5538,57 @@ SetMember
 Push true
 StoreRegister 3
 Pop
-Jump loc5b63
-loc5b53:Push register2
+Jump loc57e1
+loc57d1:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc5af0
-loc5b63:Jump loc5e3b
-loc5b68:Push register1, "right_edge"
+Jump loc576e
+loc57e1:Push register3, false
+Equals2
+Not
+If loc586f
+Push 1
+StoreRegister 2
+Pop
+loc57fc:Push register2, 100
+Greater
+Not
+Not
+If loc586f
+Push register1, "_y"
+GetMember
+Push register2
+Subtract
+Push register1, "rx"
+GetMember
+Push 2, register1, "getOnGround"
+CallMethod
+Push true
+Equals2
+Not
+If loc585f
+Push register1, "_y", register1, "_y"
+GetMember
+Push register2
+Subtract
+SetMember
+Push true
+StoreRegister 3
+Pop
+Jump loc586f
+loc585f:Push register2
+Increment
+StoreRegister 2
+Pop
+Jump loc57fc
+loc586f:Jump loc5b3f
+loc5874:Push register1, "right_edge"
 GetMember
 Push true
 Equals2
 Not
-If loc5cde
+If loc59e6
 Push register1, "_y"
 GetMember
 Push register1, "lx"
@@ -5598,26 +5598,26 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5cd9
+If loc59e1
 Push register1, "vy"
 GetMember
 Push 0
 Less2
 Not
 Not
-If loc5cd9
+If loc59e1
 Push false
 StoreRegister 3
 Pop
 Push 1
 StoreRegister 2
 Pop
-loc5bd8:Push register2, register1, "max_slope"
+loc58e0:Push register2, register1, "max_slope"
 GetMember
 Greater
 Not
 Not
-If loc5c4b
+If loc5953
 Push register1, "_y"
 GetMember
 Push register2
@@ -5629,7 +5629,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5c3b
+If loc5943
 Push register1, "_y", register1, "_y"
 GetMember
 Push register2
@@ -5638,24 +5638,24 @@ SetMember
 Push true
 StoreRegister 3
 Pop
-Jump loc5c4b
-loc5c3b:Push register2
+Jump loc5953
+loc5943:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc5bd8
-loc5c4b:Push register3, false
+Jump loc58e0
+loc5953:Push register3, false
 Equals2
 Not
-If loc5cd9
+If loc59e1
 Push 1
 StoreRegister 2
 Pop
-loc5c66:Push register2, 100
+loc596e:Push register2, 100
 Greater
 Not
 Not
-If loc5cd9
+If loc59e1
 Push register1, "_y"
 GetMember
 Push register2
@@ -5667,7 +5667,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5cc9
+If loc59d1
 Push register1, "_y", register1, "_y"
 GetMember
 Push register2
@@ -5676,14 +5676,14 @@ SetMember
 Push true
 StoreRegister 3
 Pop
-Jump loc5cd9
-loc5cc9:Push register2
+Jump loc59e1
+loc59d1:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc5c66
-loc5cd9:Jump loc5e3b
-loc5cde:Push register1, "_y"
+Jump loc596e
+loc59e1:Jump loc5b3f
+loc59e6:Push register1, "_y"
 GetMember
 Push register1, "_x"
 GetMember
@@ -5692,26 +5692,26 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5e3b
+If loc5b3f
 Push register1, "vy"
 GetMember
 Push 0
 Less2
 Not
 Not
-If loc5e3b
+If loc5b3f
 Push false
 StoreRegister 3
 Pop
 Push 1
 StoreRegister 2
 Pop
-loc5d3a:Push register2, register1, "max_slope"
+loc5a3e:Push register2, register1, "max_slope"
 GetMember
 Greater
 Not
 Not
-If loc5dad
+If loc5ab1
 Push register1, "_y"
 GetMember
 Push register2
@@ -5723,7 +5723,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5d9d
+If loc5aa1
 Push register1, "_y", register1, "_y"
 GetMember
 Push register2
@@ -5732,24 +5732,24 @@ SetMember
 Push true
 StoreRegister 3
 Pop
-Jump loc5dad
-loc5d9d:Push register2
+Jump loc5ab1
+loc5aa1:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc5d3a
-loc5dad:Push register3, false
+Jump loc5a3e
+loc5ab1:Push register3, false
 Equals2
 Not
-If loc5e3b
+If loc5b3f
 Push 1
 StoreRegister 2
 Pop
-loc5dc8:Push register2, 100
+loc5acc:Push register2, 100
 Greater
 Not
 Not
-If loc5e3b
+If loc5b3f
 Push register1, "_y"
 GetMember
 Push register2
@@ -5761,7 +5761,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5e2b
+If loc5b2f
 Push register1, "_y", register1, "_y"
 GetMember
 Push register2
@@ -5770,14 +5770,14 @@ SetMember
 Push true
 StoreRegister 3
 Pop
-Jump loc5e3b
-loc5e2b:Push register2
+Jump loc5b3f
+loc5b2f:Push register2
 Increment
 StoreRegister 2
 Pop
-Jump loc5dc8
+Jump loc5acc
 }
-loc5e3b:SetMember
+loc5b3f:SetMember
 Push register2, "getOnWall"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "x", 2, "y" {
 Push register1, "dir"
@@ -5794,7 +5794,7 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc5ee1
+If loc5be5
 Push register2, register3, 2, register1, "game"
 GetMember
 Push "getSceneryCollision"
@@ -5802,7 +5802,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5edc
+If loc5be0
 Push register2, register3, 1
 Add2
 Push 2, register1, "game"
@@ -5812,13 +5812,13 @@ CallMethod
 Push false
 Equals2
 Not
-If loc5ed6
+If loc5bda
 Push true
 Return
-loc5ed6:Push false
+loc5bda:Push false
 Return
-loc5edc:Jump loc5f69
-loc5ee1:Push register1, "dir"
+loc5be0:Jump loc5c6d
+loc5be5:Push register1, "dir"
 GetMember
 Push "com"
 GetVariable
@@ -5832,7 +5832,7 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc5f69
+If loc5c6d
 Push register2, register3, 2, register1, "game"
 GetMember
 Push "getSceneryCollision"
@@ -5840,7 +5840,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5f69
+If loc5c6d
 Push register2, register3, 1
 Subtract
 Push 2, register1, "game"
@@ -5850,12 +5850,12 @@ CallMethod
 Push false
 Equals2
 Not
-If loc5f63
+If loc5c67
 Push true
 Return
-loc5f63:Push false
+loc5c67:Push false
 Return
-loc5f69:Push false
+loc5c6d:Push false
 Return
 }
 SetMember
@@ -5868,7 +5868,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc5fe3
+If loc5ce7
 Push register2, 1
 Subtract
 Push register3, 2, register1, "game"
@@ -5878,12 +5878,12 @@ CallMethod
 Push false
 Equals2
 Not
-If loc5fdd
+If loc5ce1
 Push true
 Return
-loc5fdd:Push false
+loc5ce1:Push false
 Return
-loc5fe3:Push false
+loc5ce7:Push false
 Return
 }
 SetMember
@@ -5896,7 +5896,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc605d
+If loc5d61
 Push register2, 1
 Subtract
 Push register3, 2, register1, "game"
@@ -5906,12 +5906,12 @@ CallMethod
 Push true
 Equals2
 Not
-If loc6057
+If loc5d5b
 Push true
 Return
-loc6057:Push false
+loc5d5b:Push false
 Return
-loc605d:Push false
+loc5d61:Push false
 Return
 }
 SetMember
@@ -5924,7 +5924,7 @@ CallMethod
 Push false
 Equals2
 Not
-If loc60d7
+If loc5ddb
 Push register2, 1
 Subtract
 Push register3, 2, register1, "game"
@@ -5934,12 +5934,12 @@ CallMethod
 Push false
 Equals2
 Not
-If loc60d1
+If loc5dd5
 Push true
 Return
-loc60d1:Push false
+loc5dd5:Push false
 Return
-loc60d7:Push false
+loc5ddb:Push false
 Return
 }
 SetMember
@@ -5952,10 +5952,10 @@ CallMethod
 Push true
 Equals2
 Not
-If loc611f
+If loc5e23
 Push true
 Return
-loc611f:Push false
+loc5e23:Push false
 Return
 }
 SetMember
@@ -5975,7 +5975,7 @@ Push "FALL"
 GetMember
 Equals2
 Not
-If loc6238
+If loc5f3c
 Push register1, "dir"
 GetMember
 Push register1, "prev_dir"
@@ -5983,7 +5983,7 @@ GetMember
 Equals2
 Not
 PushDuplicate
-If loc6190
+If loc5e94
 Pop
 Push register1, "state"
 GetMember
@@ -5991,8 +5991,8 @@ Push register1, "prev_state"
 GetMember
 Equals2
 Not
-loc6190:Not
-If loc6233
+loc5e94:Not
+If loc5f37
 Push register1, "fall_anim_count", register1, "fall_anim_count"
 GetMember
 Increment
@@ -6003,7 +6003,7 @@ Push 3
 Less2
 Not
 Not
-If loc6233
+If loc5f37
 Push "com"
 GetVariable
 Push "nitrome"
@@ -6040,15 +6040,15 @@ SetMember
 Push register1, "prev_state", register1, "state"
 GetMember
 SetMember
-loc6233:Jump loc639a
-loc6238:Push register1, "dir"
+loc5f37:Jump loc609a
+loc5f3c:Push register1, "dir"
 GetMember
 Push register1, "prev_dir"
 GetMember
 Equals2
 Not
 PushDuplicate
-If loc6263
+If loc5f67
 Pop
 Push register1, "state"
 GetMember
@@ -6056,8 +6056,8 @@ Push register1, "prev_state"
 GetMember
 Equals2
 Not
-loc6263:Not
-If loc6380
+loc5f67:Not
+If loc6080
 Push register1, "state"
 GetMember
 Push "com"
@@ -6073,7 +6073,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc62b5
+If loc5fb5
 Pop
 Push 0, register1, "game"
 GetMember
@@ -6081,8 +6081,8 @@ Push "getWalkerBombs"
 CallMethod
 Push true
 Equals2
-loc62b5:Not
-If loc6323
+loc5fb5:Not
+If loc6023
 Push "com"
 GetVariable
 Push "nitrome"
@@ -6115,8 +6115,8 @@ Add2
 Push 1, register1, "gotoAndStop"
 CallMethod
 Pop
-Jump loc6380
-loc6323:Push "com"
+Jump loc6080
+loc6023:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -6146,18 +6146,18 @@ Add2
 Push 1, register1, "gotoAndStop"
 CallMethod
 Pop
-loc6380:Push register1, "prev_dir", register1, "dir"
+loc6080:Push register1, "prev_dir", register1, "dir"
 GetMember
 SetMember
 Push register1, "prev_state", register1, "state"
 GetMember
 SetMember
-loc639a:Push register1, "hit"
+loc609a:Push register1, "hit"
 GetMember
 Push true
 Equals2
 Not
-If loc6421
+If loc6121
 Push "com"
 GetVariable
 Push "nitrome"
@@ -6197,7 +6197,7 @@ Push 1, register1, "gotoAndStop"
 CallMethod
 Pop
 }
-loc6421:SetMember
+loc6121:SetMember
 Push register2, "getDir"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "dir"
@@ -6293,4 +6293,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc6619:Pop
+loc62fd:Pop

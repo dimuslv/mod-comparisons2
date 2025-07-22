@@ -1,17 +1,19 @@
-ConstantPool "_global", "com", "Object", "nitrome", "toxic", "PowerCellPanel", "MovieClip", "prototype", "setCount", "count", "count_text", "text", "increment", "getPowerCellCount", "ASSetPropFlags"
+ConstantPool "_global", "com", "Object", "nitrome", "toxic", "PowerCellPanel", "MovieClip", "prototype", "setCount", "count_text", "text", "width", "count", "increment", "getPowerCellCount", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "com"
 GetMember
 Not
 Not
-If loc00be
+If loc00ca
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com"
+Push 0
+Push "Object"
 NewObject
 SetMember
-loc00be:Pop
+loc00ca:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,15 +22,17 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00f6
+If loc0108
 Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome"
+Push 0
+Push "Object"
 NewObject
 SetMember
-loc00f6:Pop
+loc0108:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,17 +43,7 @@ Push "toxic"
 GetMember
 Not
 Not
-If loc013a
-Push "_global"
-GetVariable
-Push "com"
-GetMember
-Push "nitrome"
-GetMember
-Push "toxic", 0, "Object"
-NewObject
-SetMember
-loc013a:Pop
+If loc0152
 Push "_global"
 GetVariable
 Push "com"
@@ -57,28 +51,44 @@ GetMember
 Push "nitrome"
 GetMember
 Push "toxic"
-GetMember
-Push "PowerCellPanel"
-GetMember
-Not
-Not
-If loc0289
-Push "com"
+Push 0
+Push "Object"
+NewObject
+SetMember
+loc0152:Pop
+Push "_global"
 GetVariable
+Push "com"
+GetMember
 Push "nitrome"
 GetMember
 Push "toxic"
 GetMember
 Push "PowerCellPanel"
-DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+GetMember
+Not
+Not
+If loc030b
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "PowerCellPanel"
+DefineFunction2 "", 0, 2, false, false, true, true, true, false, true, false, false {
+Push 0
+Push register1
+Push undefined
 CallMethod
 Pop
 }
 StoreRegister 1
 SetMember
-Push "com"
+Push "_global"
 GetVariable
+Push "com"
+GetMember
 Push "nitrome"
 GetMember
 Push "toxic"
@@ -88,46 +98,75 @@ GetMember
 Push "MovieClip"
 GetVariable
 Extends
-Push register1, "prototype"
+Push register1
+Push "prototype"
 GetMember
 StoreRegister 2
 Pop
-Push register2, "setCount"
+Push register2
+Push "setCount"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "n" {
-Push register1, "count", register2
-SetMember
-Push register1, "count_text"
+Push register1
+Push "count_text"
 GetMember
-Push "text", register1, "count"
+Push "text"
+GetMember
+Push "width"
+Push 400
+SetMember
+Push register1
+Push "count"
+Push register2
+SetMember
+Push register1
+Push "count_text"
+GetMember
+Push "text"
+Push register1
+Push "count"
 GetMember
 ToString
 SetMember
 }
 SetMember
-Push register2, "increment"
+Push register2
+Push "increment"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push register1, "count", register1, "count"
+Push register1
+Push "count"
+Push register1
+Push "count"
 GetMember
-Increment
+Push 1
+Add2
 SetMember
-Push register1, "count_text"
+Push register1
+Push "count_text"
 GetMember
-Push "text", register1, "count"
+Push "text"
+Push register1
+Push "count"
 GetMember
 ToString
 SetMember
 }
 SetMember
-Push register2, "getPowerCellCount"
+Push register2
+Push "getPowerCellCount"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push register1, "count"
+Push register1
+Push "count"
 GetMember
 Return
 }
 SetMember
-Push register2, "count", 0
+Push register2
+Push "count"
+Push 0
 SetMember
-Push 1, null, "com"
+Push 1
+Push null
+Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -137,6 +176,7 @@ Push "PowerCellPanel"
 GetMember
 Push "prototype"
 GetMember
-Push 3, "ASSetPropFlags"
+Push 3
+Push "ASSetPropFlags"
 CallFunction
-loc0289:Pop
+loc030b:Pop

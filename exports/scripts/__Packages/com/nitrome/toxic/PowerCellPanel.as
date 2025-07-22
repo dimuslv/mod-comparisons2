@@ -8,12 +8,13 @@ class com.nitrome.toxic.PowerCellPanel extends MovieClip
    }
    function setCount(n)
    {
+      this.count_text.text.width = 400;
       this.count = n;
       this.count_text.text = String(this.count);
    }
    function increment()
    {
-      this.count = this.count + 1;
+      this.count += 1;
       this.count_text.text = String(this.count);
    }
    function getPowerCellCount()

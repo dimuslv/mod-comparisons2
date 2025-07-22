@@ -313,6 +313,9 @@ class com.nitrome.toxic.Game extends MovieClip
       this.xml.ignoreWhite = true;
       this.xml.parseXML(_loc4_);
       _root.game.loadLevel();
+      ClockDisp.initDriver(_root.powercell_panel.createEmptyMovieClip("CDDriverMovie",_root.powercell_panel.getNextHighestDepth()));
+      var _loc5_ = new ClockDisp(0,-450,-375);
+      _loc5_.setPause(true);
    }
    function clearAll()
    {
@@ -697,6 +700,7 @@ class com.nitrome.toxic.Game extends MovieClip
       com.nitrome.toxic.Global.game_paused = false;
       this.onEnterFrame = function()
       {
+         ClockDisp.enterFrame();
          if(com.nitrome.toxic.Global.game_paused == false)
          {
             this.main();

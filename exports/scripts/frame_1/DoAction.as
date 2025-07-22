@@ -1,2 +1,11 @@
 _root.ng = new NitromeGame();
 _root.ng.init("toxic2","juicy_",20);
+createEmptyMovieClip("mask",11);
+mask.beginFill(0);
+mask.moveTo(0,0);
+mask.lineTo(550,0);
+mask.lineTo(550,400);
+mask.lineTo(0,400);
+mask.lineTo(0,0);
+mask.endFill();
+_root.setMask(mask);
