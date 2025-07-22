@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc009b
+If loc0097
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc009b:Pop
+loc0097:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc00d3
+If loc00cb
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc00d3:Pop
+loc00cb:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "buttons"
 GetMember
 Not
 Not
-If loc0117
+If loc010b
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "buttons", 0, "Object"
 NewObject
 SetMember
-loc0117:Pop
+loc010b:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "PlayButton"
 GetMember
 Not
 Not
-If loc020b
+If loc0403
 Push "com"
 GetVariable
 Push "nitrome"
@@ -100,13 +100,100 @@ StoreRegister 2
 Pop
 Push register2, "doPress"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "name_field"
+GetMember
+Push "text"
+GetMember
+If loc0209
 Push "map", 1, register1, "tt"
 GetMember
 Push "doTween"
 CallMethod
 Pop
-}
+Jump loc03d3
+loc0209:Push "_root"
+GetVariable
+Push "xml", 0, "XML"
+NewObject
 SetMember
+Push "_root"
+GetVariable
+Push "xml"
+GetMember
+Push "ignoreWhite", true
+SetMember
+Push "_root"
+GetVariable
+Push "xml"
+GetMember
+Push "onLoad"
+DefineFunction "", 1, "success"  {
+Push "success"
+GetVariable
+Trace
+Push "success"
+GetVariable
+Not
+If loc02f8
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_id", 0
+SetMember
+Push "game", 1, "_root"
+GetVariable
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+}
+loc02f8:SetMember
+Push "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "name_field"
+GetMember
+Push "text"
+GetMember
+Push 0, -4, 1, "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "name_field"
+GetMember
+Push "text"
+GetMember
+Push "slice"
+CallMethod
+Push "toLowerCase"
+CallMethod
+Push ".tmx"
+Equals2
+If loc03a9
+Push ".tmx"
+Jump loc03ae
+loc03a9:Push ""
+loc03ae:Add2
+Push 1, "_root"
+GetVariable
+Push "xml"
+GetMember
+Push "load"
+CallMethod
+Pop
+}
+loc03d3:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -119,4 +206,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc020b:Pop
+loc0403:Pop

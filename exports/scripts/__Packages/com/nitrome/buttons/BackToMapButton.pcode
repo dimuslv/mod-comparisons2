@@ -5,13 +5,13 @@ Push "com"
 GetMember
 Not
 Not
-If loc00d6
+If loc00d2
 Push "_global"
 GetVariable
 Push "com", 0, "Object"
 NewObject
 SetMember
-loc00d6:Pop
+loc00d2:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -20,7 +20,7 @@ Push "nitrome"
 GetMember
 Not
 Not
-If loc010e
+If loc0106
 Push "_global"
 GetVariable
 Push "com"
@@ -28,7 +28,7 @@ GetMember
 Push "nitrome", 0, "Object"
 NewObject
 SetMember
-loc010e:Pop
+loc0106:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -39,7 +39,7 @@ Push "buttons"
 GetMember
 Not
 Not
-If loc0152
+If loc0146
 Push "_global"
 GetVariable
 Push "com"
@@ -49,7 +49,7 @@ GetMember
 Push "buttons", 0, "Object"
 NewObject
 SetMember
-loc0152:Pop
+loc0146:Pop
 Push "_global"
 GetVariable
 Push "com"
@@ -62,7 +62,7 @@ Push "BackToMapButton"
 GetMember
 Not
 Not
-If loc027a
+If loc02b9
 Push "com"
 GetVariable
 Push "nitrome"
@@ -112,13 +112,26 @@ GetMember
 Push "startMenuMusic"
 CallMethod
 Pop
-Push "map", 1, register2, "tt"
+Push "_root"
+GetVariable
+Push "game"
+GetMember
+Push "level_number"
+GetMember
+If loc0273
+Push "title_screen", 1, register2, "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop
+Jump loc0289
+loc0273:Push "map", 1, register2, "tt"
 GetMember
 Push "doTween"
 CallMethod
 Pop
 }
-SetMember
+loc0289:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -131,4 +144,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc027a:Pop
+loc02b9:Pop

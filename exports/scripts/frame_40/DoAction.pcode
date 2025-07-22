@@ -1,1 +1,18 @@
+ConstantPool
+Push 20, 150, 205, 200, 1, "name_field", 6, "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "createTextField"
+CallMethod
+Push "type", "input"
+SetMember
+Push "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "name_field"
+GetMember
+Push "textColor", 16777215
+SetMember
 Stop

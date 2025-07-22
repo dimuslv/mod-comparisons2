@@ -7,6 +7,7 @@ class com.nitrome.toxic.Game extends MovieClip
    var scroll_y;
    var object_holder;
    var first_info_point_name;
+   var offsets;
    var xml;
    var key_listener;
    var bg_holder;
@@ -77,6 +78,126 @@ class com.nitrome.toxic.Game extends MovieClip
    {
       super();
    }
+   function prepareCustom(xml)
+   {
+      var _loc3_ = new XML();
+      var _loc4_ = _loc3_.createElement("toxic");
+      _loc4_.attributes.rows = xml.attributes.height;
+      _loc4_.attributes.cols = xml.attributes.width;
+      _loc3_.appendChild(_loc4_);
+      var _loc5_ = _loc3_.createElement("ground");
+      _loc5_.appendChild(_loc3_.createTextNode("a"));
+      _loc4_.appendChild(_loc5_);
+      _loc5_ = _loc3_.createElement("solid");
+      _loc5_.appendChild(_loc3_.createTextNode("a"));
+      _loc4_.appendChild(_loc5_);
+      _loc5_ = _loc3_.createElement("object");
+      _loc5_.appendChild(_loc3_.createTextNode("a"));
+      _loc4_.appendChild(_loc5_);
+      _loc5_ = _loc3_.createElement("bg");
+      _loc5_.appendChild(_loc3_.createTextNode("a"));
+      _loc4_.appendChild(_loc5_);
+      _loc4_.appendChild(_loc3_.createElement("lasers"));
+      _loc4_.appendChild(_loc3_.createElement("texts"));
+      _loc4_.appendChild(_loc3_.createElement("holograms"));
+      var _loc6_ = _loc4_.childNodes;
+      var _loc7_ = xml.childNodes;
+      var _loc8_ = 0;
+      var _loc9_ = _loc7_.length;
+      var _loc10_;
+      var _loc11_;
+      var _loc12_;
+      var _loc13_;
+      var _loc14_;
+      var _loc15_;
+      var _loc16_;
+      var _loc17_;
+      var _loc18_;
+      var _loc19_;
+      var _loc20_;
+      while(_loc8_ < _loc9_)
+      {
+         trace(_loc10_ = _loc7_[_loc8_].nodeName);
+         if(_loc10_.nodeName == "layer")
+         {
+            trace(_loc10_.attributes.name);
+            if(_loc10_.attributes.name == "ground")
+            {
+               _loc6_[0].firstChild.nodeValue = _loc10_.firstChild.firstChild.nodeValue.split("\r").join("").split("\n").join("");
+            }
+            else if(_loc10_.attributes.name == "solid")
+            {
+               _loc6_[1].firstChild.nodeValue = _loc10_.firstChild.firstChild.nodeValue.split("\r").join("").split("\n").join("");
+            }
+            else if(_loc10_.attributes.name == "object")
+            {
+               _loc6_[2].firstChild.nodeValue = _loc10_.firstChild.firstChild.nodeValue.split("\r").join("").split("\n").join("").split("282").join("998");
+            }
+            else if(_loc10_.attributes.name == "bg")
+            {
+               _loc6_[3].firstChild.nodeValue = _loc10_.firstChild.firstChild.nodeValue.split("\r").join("").split("\n").join("");
+            }
+            "a";
+         }
+         if(_loc10_.nodeName == "objectgroup")
+         {
+            if(_loc10_.attributes.name == "paths" || _loc10_.attributes.name == "holograms")
+            {
+               _loc11_ = _loc10_.childNodes;
+               _loc12_ = 0;
+               _loc13_ = _loc11_.length;
+               while(_loc12_ < _loc13_)
+               {
+                  if(_loc11_[_loc12_].lastChild.nodeName == "polyline" || _loc11_[_loc12_].lastChild.nodeName == "polygon")
+                  {
+                     _loc14_ = _loc11_[_loc12_].lastChild.attributes.points.split(" ");
+                     if(_loc11_[_loc12_].lastChild.nodeName == "polygon")
+                     {
+                        _loc14_.push(_loc14_[0]);
+                     }
+                     _loc15_ = Number(_loc11_[_loc12_].attributes.x);
+                     _loc16_ = Number(_loc11_[_loc12_].attributes.y);
+                     _loc17_ = 0;
+                     _loc18_ = _loc14_.length;
+                     while(_loc17_ < _loc18_)
+                     {
+                        _loc19_ = _loc14_[_loc17_].split(",");
+                        _loc14_[_loc17_] = Math.floor((Number(_loc19_[1]) + _loc16_) / 32) + "," + Math.floor((Number(_loc19_[0]) + _loc15_) / 32);
+                        _loc17_ = _loc17_ + 1;
+                     }
+                     _loc20_ = _loc3_.createElement(_loc10_.attributes.name == "paths" ? "path" : "holo");
+                     _loc20_.appendChild(_loc3_.createTextNode(_loc14_.join(":")));
+                     _loc6_[_loc10_.attributes.name == "paths" ? 4 : 6].appendChild(_loc20_);
+                  }
+                  _loc12_ = _loc12_ + 1;
+               }
+               "b";
+            }
+            if(_loc10_.attributes.name == "texts")
+            {
+               _loc11_ = _loc10_.childNodes;
+               _loc12_ = 0;
+               _loc13_ = _loc11_.length;
+               while(_loc12_ < _loc13_)
+               {
+                  if(_loc11_[_loc12_].lastChild.nodeName == "text")
+                  {
+                     _loc20_ = _loc3_.createElement("text");
+                     _loc20_.attributes.str = _loc11_[_loc12_].lastChild.firstChild.nodeValue;
+                     _loc20_.attributes.col = Math.floor(Number(_loc11_[_loc12_].attributes.x) / 32);
+                     _loc20_.attributes.row = Math.floor(Number(_loc11_[_loc12_].attributes.y) / 32);
+                     _loc6_[5].appendChild(_loc20_);
+                  }
+                  _loc12_ = _loc12_ + 1;
+               }
+               "b";
+            }
+            "a";
+         }
+         _loc8_ = _loc8_ + 1;
+      }
+      return _loc3_;
+   }
    function getAlive()
    {
       return true;
@@ -99,7 +220,7 @@ class com.nitrome.toxic.Game extends MovieClip
       this.createGround();
       this.doScroll();
       this.doScreenShake();
-      this.deg_count = this.deg_count + 1;
+      this.deg_count += 1;
       if(this.deg_count >= 360)
       {
          this.deg_count = 0;
@@ -114,6 +235,11 @@ class com.nitrome.toxic.Game extends MovieClip
          this.power_cell_memory.finaliseLevel();
       }
       com.nitrome.engine.Score.value = this.power_cell_memory.getTotalCollected() * 1000;
+      if(!this.level_number)
+      {
+         _root.popup_holder.displayPopUp("custom_level_complete");
+         return undefined;
+      }
       if(this.level_number == 20 && com.nitrome.toxic.Global.secret_id == 0)
       {
          _root.popup_holder.displayPopUp("game_complete");
@@ -145,6 +271,11 @@ class com.nitrome.toxic.Game extends MovieClip
          this.power_cell_memory.finaliseLevel();
       }
       com.nitrome.engine.Score.value = this.power_cell_memory.getTotalCollected() * 1000;
+      if(!this.level_number)
+      {
+         _root.popup_holder.displayPopUp("custom_level_complete");
+         return undefined;
+      }
       _root.ng.setSecretUnlocked(com.nitrome.toxic.Global.level_id);
       _root.popup_holder.displayPopUp("level_complete_found_secret");
    }
@@ -245,26 +376,26 @@ class com.nitrome.toxic.Game extends MovieClip
       _root.pipes._y = this.scroll_y * 0.1;
       _root.big_pipes._x = this.scroll_x * 0.5;
       _root.big_pipes._y = this.scroll_y * 0.5;
-      var _loc4_ = Math.abs(this.scroll_x % 32);
-      _root.acid_holder.acid_clip._x = - _loc4_;
+      var _loc3_ = Math.abs(this.scroll_x % 32);
+      _root.acid_holder.acid_clip._x = - _loc3_;
       _root.acid_holder._y = this.scroll_y;
-      var _loc3_ = this.scroll_x;
-      if(_loc3_ < -1100)
+      var _loc4_ = this.scroll_x;
+      if(_loc4_ < -1100)
       {
-         _loc3_ += 550;
+         _loc4_ += 550;
       }
-      if(_loc3_ > -550)
+      if(_loc4_ > -550)
       {
-         _loc3_ -= 550;
+         _loc4_ -= 550;
       }
-      _root.acid_holder.smoke_bubble_holder._x = _loc3_;
+      _root.acid_holder.smoke_bubble_holder._x = _loc4_;
    }
    function doScreenShake()
    {
       var _loc2_;
       if(this.screen_shake > 0)
       {
-         this.screen_shake = this.screen_shake - 1;
+         this.screen_shake -= 1;
          _loc2_ = random(4) + 1;
          if(_loc2_ == 1)
          {
@@ -298,20 +429,34 @@ class com.nitrome.toxic.Game extends MovieClip
    function init()
    {
       this.clearAll();
-      if(com.nitrome.toxic.Global.secret_id == 0)
+      var _loc3_;
+      var _loc4_;
+      if(com.nitrome.toxic.Global.level_id)
       {
-         this.level_number = com.nitrome.toxic.Global.level_id;
+         if(com.nitrome.toxic.Global.secret_id == 0)
+         {
+            this.level_number = com.nitrome.toxic.Global.level_id;
+         }
+         else
+         {
+            this.level_number = com.nitrome.toxic.Global.level_id + 20;
+         }
+         if(this.level_number == 16)
+         {
+            this.offsets = new Array("","","","","","");
+         }
+         _loc3_ = _root.ng.getLevelName(com.nitrome.toxic.Global.level_id,com.nitrome.toxic.Global.secret_id,".xml");
+         _loc4_ = _root.level_data[_loc3_];
+         this.xml = new XML();
+         this.xml.ignoreWhite = true;
+         this.xml.parseXML(_loc4_);
       }
       else
       {
-         this.level_number = com.nitrome.toxic.Global.level_id + 20;
+         this.level_number = 0;
+         this.xml = this.prepareCustom(_root.xml.firstChild);
       }
       this.power_cell_memory = new com.nitrome.toxic.PowerCellMemory();
-      var _loc3_ = _root.ng.getLevelName(com.nitrome.toxic.Global.level_id,com.nitrome.toxic.Global.secret_id,".xml");
-      var _loc4_ = _root.level_data[_loc3_];
-      this.xml = new XML();
-      this.xml.ignoreWhite = true;
-      this.xml.parseXML(_loc4_);
       _root.game.loadLevel();
       ClockDisp.initDriver(_root.powercell_panel.createEmptyMovieClip("CDDriverMovie",_root.powercell_panel.getNextHighestDepth()));
       var _loc5_ = new ClockDisp(0,-450,-375);
@@ -523,9 +668,9 @@ class com.nitrome.toxic.Game extends MovieClip
       this.boss2 = false;
       this.left_door_count = -1;
       this.right_door_count = -1;
-      var _loc12_ = this.xml.firstChild;
-      com.nitrome.toxic.Global.level_rows = Number(String(_loc12_.attributes.rows));
-      com.nitrome.toxic.Global.level_cols = Number(String(_loc12_.attributes.cols));
+      var _loc4_ = this.xml.firstChild;
+      com.nitrome.toxic.Global.level_rows = Number(String(_loc4_.attributes.rows));
+      com.nitrome.toxic.Global.level_cols = Number(String(_loc4_.attributes.cols));
       com.nitrome.toxic.Global.level_width = com.nitrome.toxic.Global.level_cols * com.nitrome.toxic.Global.TILE_WIDTH;
       com.nitrome.toxic.Global.level_height = com.nitrome.toxic.Global.level_rows * com.nitrome.toxic.Global.TILE_HEIGHT;
       com.nitrome.toxic.Global.scroll_x_min = 550 - com.nitrome.toxic.Global.level_width;
@@ -541,68 +686,68 @@ class com.nitrome.toxic.Game extends MovieClip
       _global.bg_bmp = new flash.display.BitmapData(com.nitrome.toxic.Global.level_width,com.nitrome.toxic.Global.level_height,true,16777215);
       _global.robot_bmp = new flash.display.BitmapData(550,400,true,16777215);
       _global.genesis_bmp = new flash.display.BitmapData(com.nitrome.toxic.Global.level_width,com.nitrome.toxic.Global.level_height,true,16777215);
-      var _loc14_ = String(_loc12_.firstChild.firstChild);
-      var _loc19_ = String(_loc12_.firstChild.nextSibling.firstChild);
-      var _loc17_ = String(_loc12_.firstChild.nextSibling.nextSibling.firstChild);
-      var _loc13_ = String(_loc12_.firstChild.nextSibling.nextSibling.nextSibling.firstChild);
-      var _loc15_ = _loc12_.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
-      this.loadLaserPaths(_loc15_);
-      var _loc18_ = _loc12_.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
-      this.loadInfoText(_loc18_);
-      var _loc16_ = _loc12_.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
-      this.loadHoloPaths(_loc16_);
-      var _loc8_ = new Array();
-      _loc8_ = _loc14_.split(",");
-      var _loc7_ = new Array();
-      _loc7_ = _loc19_.split(",");
-      var _loc9_ = new Array();
-      _loc9_ = _loc17_.split(",");
-      var _loc6_ = new Array();
-      _loc6_ = _loc13_.split(",");
-      var _loc4_ = 0;
-      var _loc10_ = 0;
-      var _loc5_;
-      while(_loc10_ < com.nitrome.toxic.Global.level_rows)
+      var _loc5_ = String(_loc4_.firstChild.firstChild);
+      var _loc6_ = String(_loc4_.firstChild.nextSibling.firstChild);
+      var _loc7_ = String(_loc4_.firstChild.nextSibling.nextSibling.firstChild);
+      var _loc8_ = String(_loc4_.firstChild.nextSibling.nextSibling.nextSibling.firstChild);
+      var _loc9_ = _loc4_.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
+      this.loadLaserPaths(_loc9_);
+      var _loc10_ = _loc4_.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
+      this.loadInfoText(_loc10_);
+      var _loc11_ = _loc4_.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
+      this.loadHoloPaths(_loc11_);
+      var _loc12_ = new Array();
+      _loc12_ = _loc5_.split(",");
+      var _loc13_ = new Array();
+      _loc13_ = _loc6_.split(",");
+      var _loc14_ = new Array();
+      _loc14_ = _loc7_.split(",");
+      var _loc15_ = new Array();
+      _loc15_ = _loc8_.split(",");
+      var _loc16_ = 0;
+      var _loc17_ = 0;
+      var _loc18_;
+      while(_loc17_ < com.nitrome.toxic.Global.level_rows)
       {
-         _loc5_ = 0;
-         while(_loc5_ < com.nitrome.toxic.Global.level_cols)
+         _loc18_ = 0;
+         while(_loc18_ < com.nitrome.toxic.Global.level_cols)
          {
-            _loc8_[_loc4_] = Number(_loc8_[_loc4_]);
-            _loc9_[_loc4_] = Number(_loc9_[_loc4_]);
-            _loc6_[_loc4_] = Number(_loc6_[_loc4_]);
-            if(_loc8_[_loc4_] != 0)
+            _loc12_[_loc16_] = Number(_loc12_[_loc16_]);
+            _loc14_[_loc16_] = Number(_loc14_[_loc16_]);
+            _loc15_[_loc16_] = Number(_loc15_[_loc16_]);
+            if(_loc12_[_loc16_] != 0)
             {
-               this.paintGroundTile(_loc10_,_loc5_,_loc8_[_loc4_]);
+               this.paintGroundTile(_loc17_,_loc18_,_loc12_[_loc16_]);
             }
-            if(_loc9_[_loc4_] != 0)
+            if(_loc14_[_loc16_] != 0)
             {
-               this.paintObjectTile(_loc10_,_loc5_,_loc9_[_loc4_]);
+               this.paintObjectTile(_loc17_,_loc18_,_loc14_[_loc16_]);
             }
-            if(_loc6_[_loc4_] != 0)
+            if(_loc15_[_loc16_] != 0)
             {
-               this.paintBgTile(_loc10_,_loc5_,_loc6_[_loc4_]);
+               this.paintBgTile(_loc17_,_loc18_,_loc15_[_loc16_]);
             }
-            _loc4_ = _loc4_ + 1;
-            _loc5_ = _loc5_ + 1;
+            _loc16_ += 1;
+            _loc18_ += 1;
          }
-         _loc10_ = _loc10_ + 1;
+         _loc17_ += 1;
       }
-      _loc4_ = 0;
-      _loc10_ = 0;
-      while(_loc10_ < com.nitrome.toxic.Global.level_rows)
+      _loc16_ = 0;
+      _loc17_ = 0;
+      while(_loc17_ < com.nitrome.toxic.Global.level_rows)
       {
-         _loc5_ = 0;
-         while(_loc5_ < com.nitrome.toxic.Global.level_cols)
+         _loc18_ = 0;
+         while(_loc18_ < com.nitrome.toxic.Global.level_cols)
          {
-            _loc7_[_loc4_] = Number(_loc7_[_loc4_]);
-            if(_loc7_[_loc4_] != 0)
+            _loc13_[_loc16_] = Number(_loc13_[_loc16_]);
+            if(_loc13_[_loc16_] != 0)
             {
-               this.paintSolidTile(_loc10_,_loc5_,_loc7_[_loc4_]);
+               this.paintSolidTile(_loc17_,_loc18_,_loc13_[_loc16_]);
             }
-            _loc4_ = _loc4_ + 1;
-            _loc5_ = _loc5_ + 1;
+            _loc16_ += 1;
+            _loc18_ += 1;
          }
-         _loc10_ = _loc10_ + 1;
+         _loc17_ += 1;
       }
       _global.temp_bmp = flash.display.BitmapData.loadBitmap("start_pad_glow");
       _global.bg_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,52,81),new flash.geom.Point(this.start_pad_col * com.nitrome.toxic.Global.TILE_WIDTH - 10,this.start_pad_row * com.nitrome.toxic.Global.TILE_HEIGHT - 48),null,null,true);
@@ -626,23 +771,23 @@ class com.nitrome.toxic.Game extends MovieClip
       this.bg_holder.attachBitmap(_global.bg_bmp,1);
       this.bg_holder.cacheAsBitmap = true;
       _root.acid_holder.init();
-      var _loc11_ = 0;
-      while(_loc11_ < this.holo_list.length)
+      var _loc19_ = 0;
+      while(_loc19_ < this.holo_list.length)
       {
-         this.object_holder[this.holo_list[_loc11_]].savePath(this.findHoloPath(this.object_holder[this.holo_list[_loc11_]].getRow(),this.object_holder[this.holo_list[_loc11_]].getCol()));
-         _loc11_ = _loc11_ + 1;
+         this.object_holder[this.holo_list[_loc19_]].savePath(this.findHoloPath(this.object_holder[this.holo_list[_loc19_]].getRow(),this.object_holder[this.holo_list[_loc19_]].getCol()));
+         _loc19_ += 1;
       }
-      _loc11_ = 0;
-      while(_loc11_ < this.robot_list.length)
+      _loc19_ = 0;
+      while(_loc19_ < this.robot_list.length)
       {
-         this.danger_holder[this.robot_list[_loc11_]].setPlayer(this.player);
-         _loc11_ = _loc11_ + 1;
+         this.danger_holder[this.robot_list[_loc19_]].setPlayer(this.player);
+         _loc19_ += 1;
       }
-      _loc11_ = 0;
-      while(_loc11_ < this.collect_list.length)
+      _loc19_ = 0;
+      while(_loc19_ < this.collect_list.length)
       {
-         this.object_holder[this.collect_list[_loc11_]].setPlayer(this.player);
-         _loc11_ = _loc11_ + 1;
+         this.object_holder[this.collect_list[_loc19_]].setPlayer(this.player);
+         _loc19_ += 1;
       }
       _root.boss_health_panel.setActive(false);
       if(this.boss1 == true)
@@ -719,23 +864,23 @@ class com.nitrome.toxic.Game extends MovieClip
       _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,_global.temp_bmp.width,_global.temp_bmp.height),new flash.geom.Point(col * com.nitrome.toxic.Global.TILE_WIDTH,row * com.nitrome.toxic.Global.TILE_HEIGHT));
       _global.temp_bmp.dispose();
       delete _global.temp_bmp;
-      var _loc3_;
+      var _loc6_;
       if(id >= 263 && id <= 265)
       {
-         _loc3_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("drip","drip_" + _loc3_,_loc3_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.robot_list.push("drip_" + _loc3_);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("drip","drip_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.robot_list.push("drip_" + _loc6_);
          if(id == 263)
          {
-            this.danger_holder["drip_" + _loc3_].init(this,1);
+            this.danger_holder["drip_" + _loc6_].init(this,1);
          }
          else if(id == 264)
          {
-            this.danger_holder["drip_" + _loc3_].init(this,2);
+            this.danger_holder["drip_" + _loc6_].init(this,2);
          }
          else if(id == 265)
          {
-            this.danger_holder["drip_" + _loc3_].init(this,3);
+            this.danger_holder["drip_" + _loc6_].init(this,3);
          }
       }
    }
@@ -776,11 +921,11 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function paintObjectTile(row, col, id)
    {
+      var _loc6_;
+      var _loc7_;
+      var _loc8_;
       var _loc9_;
       var _loc10_;
-      var _loc8_;
-      var _loc7_;
-      var _loc6_;
       if(id == 1 || id == 2)
       {
          this.start_pad_row = row;
@@ -795,55 +940,55 @@ class com.nitrome.toxic.Game extends MovieClip
       }
       else if(id == 186 || id == 187)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("tile_" + id,"tile_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.fan_list.push("tile_" + _loc9_);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("tile_" + id,"tile_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.fan_list.push("tile_" + _loc6_);
       }
       else if(id >= 190 && id <= 193)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("tile_" + id,"tile_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("tile_" + id,"tile_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
       }
       else if(id == 201 || id == 202 || id == 203 || id == 268 || id == 269 || id == 270 || id == 271)
       {
-         _loc9_ = this.acid_holder.getNextHighestDepth();
-         this.acid_holder.attachMovie("tile_" + id,"tile_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         _loc6_ = this.acid_holder.getNextHighestDepth();
+         this.acid_holder.attachMovie("tile_" + id,"tile_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
       }
       else if(id == 207 || id == 208)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("basic_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.danger_holder["robot_" + _loc9_].init(id - 207,this);
-         this.robot_list.push("robot_" + _loc9_);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("basic_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.danger_holder["robot_" + _loc6_].init(id - 207,this);
+         this.robot_list.push("robot_" + _loc6_);
       }
       else if(id == 209)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("medipak","medipak_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("medipak_" + _loc9_);
-         this.object_holder["medipak_" + _loc9_].init(this);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("medipak","medipak_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("medipak_" + _loc6_);
+         this.object_holder["medipak_" + _loc6_].init(this);
       }
       else if(id == 210)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("powercell","powercell_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("powercell_" + _loc9_);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("powercell","powercell_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("powercell_" + _loc6_);
          if(this.level_number == 0)
          {
-            this.object_holder["powercell_" + _loc9_].init(this,false,row,col);
+            this.object_holder["powercell_" + _loc6_].init(this,false,row,col);
          }
          else
          {
-            _loc10_ = this.power_cell_memory.getCollected(this.level_number,row,col);
-            this.object_holder["powercell_" + _loc9_].init(this,_loc10_,row,col);
+            _loc7_ = this.power_cell_memory.getCollected(this.level_number,row,col);
+            this.object_holder["powercell_" + _loc6_].init(this,_loc7_,row,col);
          }
       }
       else if(id >= 211 && id <= 222)
       {
-         _loc9_ = this.laser_holder.getNextHighestDepth();
-         this.laser_holder.attachMovie("laser","laser_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
-         this.laser_list.push("laser_" + _loc9_);
-         this.laser_holder["laser_" + _loc9_].init(this,id,this.findPath(row,col));
+         _loc6_ = this.laser_holder.getNextHighestDepth();
+         this.laser_holder.attachMovie("laser","laser_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
+         this.laser_list.push("laser_" + _loc6_);
+         this.laser_holder["laser_" + _loc6_].init(this,id,this.findPath(row,col));
       }
       else if(id == 223)
       {
@@ -853,10 +998,10 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.solid_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,62,7),new flash.geom.Point(col * com.nitrome.toxic.Global.TILE_WIDTH - 15,row * com.nitrome.toxic.Global.TILE_HEIGHT + 26));
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("levelend","levelend_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("levelend_" + _loc9_);
-         this.object_holder["levelend_" + _loc9_].init(this);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("levelend","levelend_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("levelend_" + _loc6_);
+         this.object_holder["levelend_" + _loc6_].init(this);
       }
       else if(id == 272)
       {
@@ -866,124 +1011,124 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.solid_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,62,7),new flash.geom.Point(col * com.nitrome.toxic.Global.TILE_WIDTH - 15,row * com.nitrome.toxic.Global.TILE_HEIGHT + 26));
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("levelbonus","levelbonus_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("levelbonus_" + _loc9_);
-         this.object_holder["levelbonus_" + _loc9_].init(this);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("levelbonus","levelbonus_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("levelbonus_" + _loc6_);
+         this.object_holder["levelbonus_" + _loc6_].init(this);
          this.bonus_pad = true;
       }
       else if(id == 224 || id == 225)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("wheelie_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.danger_holder["robot_" + _loc9_].init(id - 224,this);
-         this.robot_list.push("robot_" + _loc9_);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("wheelie_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.danger_holder["robot_" + _loc6_].init(id - 224,this);
+         this.robot_list.push("robot_" + _loc6_);
       }
       else if(id == 226 || id == 227)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("bomber_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.danger_holder["robot_" + _loc9_].init(id - 226,this);
-         this.robot_list.push("robot_" + _loc9_);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("bomber_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.danger_holder["robot_" + _loc6_].init(id - 226,this);
+         this.robot_list.push("robot_" + _loc6_);
       }
       else if(id == 228)
       {
-         _loc9_ = this.safe_holder.getNextHighestDepth();
-         this.safe_holder.attachMovie("zapper_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.safe_holder["robot_" + _loc9_].init(this);
-         this.safe_list.push("robot_" + _loc9_);
+         _loc6_ = this.safe_holder.getNextHighestDepth();
+         this.safe_holder.attachMovie("zapper_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.safe_holder["robot_" + _loc6_].init(this);
+         this.safe_list.push("robot_" + _loc6_);
       }
       else if(id == 229)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("info_point","info_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("info_" + _loc9_);
-         this.object_holder["info_" + _loc9_].init(this.getInfoText(row,col),this);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("info_point","info_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("info_" + _loc6_);
+         this.object_holder["info_" + _loc6_].init(this.getInfoText(row,col),this);
       }
       else if(id == 274)
       {
          this.first_info_point = true;
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("first_info_point","info_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("info_" + _loc9_);
-         this.object_holder["info_" + _loc9_].init(this.getInfoText(row,col),this);
-         this.first_info_point_name = String("info_" + _loc9_);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("first_info_point","info_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("info_" + _loc6_);
+         this.object_holder["info_" + _loc6_].init(this.getInfoText(row,col),this);
+         this.first_info_point_name = String("info_" + _loc6_);
       }
       else if(id == 230)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("holo_button","holo_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.holo_list.push("holo_" + _loc9_);
-         this.object_holder["holo_" + _loc9_].init(this,row,col);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("holo_button","holo_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.holo_list.push("holo_" + _loc6_);
+         this.object_holder["holo_" + _loc6_].init(this,row,col);
          _global.solid_bmp.fillRect(new flash.geom.Rectangle(col * com.nitrome.toxic.Global.TILE_WIDTH,row * com.nitrome.toxic.Global.TILE_HEIGHT,32,32),4278190080);
       }
       else if(id == 998)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("holo_tile","holo_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.object_holder["holo_" + _loc9_].init(this,row,col);
-         this.addHoloTile("holo_" + _loc9_,row,col);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("holo_tile","holo_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.object_holder["holo_" + _loc6_].init(this,row,col);
+         this.addHoloTile("holo_" + _loc6_,row,col);
       }
       else if(id >= 231 && id <= 233)
       {
          this.paintSolidTile(row,col,id);
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("conveyor_" + id,"con_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.object_holder["con_" + _loc9_].init(this,0);
-         this.conveyor_list.push("con_" + _loc9_);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("conveyor_" + id,"con_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.object_holder["con_" + _loc6_].init(this,0);
+         this.conveyor_list.push("con_" + _loc6_);
       }
       else if(id >= 234 && id <= 236)
       {
          this.paintSolidTile(row,col,id);
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("conveyor_" + id,"con_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.object_holder["con_" + _loc9_].init(this,1);
-         this.conveyor_list.push("con_" + _loc9_);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("conveyor_" + id,"con_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.object_holder["con_" + _loc6_].init(this,1);
+         this.conveyor_list.push("con_" + _loc6_);
       }
       else if(id == 237)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("stinger_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.danger_holder["robot_" + _loc9_].init(this,this.player);
-         this.robot_list.push("robot_" + _loc9_);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("stinger_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.danger_holder["robot_" + _loc6_].init(this,this.player);
+         this.robot_list.push("robot_" + _loc6_);
       }
       else if(id == 238)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("mine","mine_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
-         this.mine_list.push("mine_" + _loc9_);
-         this.danger_holder["mine_" + _loc9_].init(this,id,this.findPath(row,col));
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("mine","mine_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
+         this.mine_list.push("mine_" + _loc6_);
+         this.danger_holder["mine_" + _loc6_].init(this,id,this.findPath(row,col));
       }
       else if(id == 239)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("flyer_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this,id,this.findPath(row,col));
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("flyer_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this,id,this.findPath(row,col));
       }
       else if(id == 241)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("spider","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("spider","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this);
       }
       else if(id == 242)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("hive","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this);
-         this.spawn_list["robot_" + _loc9_] = 0;
-         this.left_spawn_list["robot_" + _loc9_] = 0;
-         this.right_spawn_list["robot_" + _loc9_] = 0;
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("hive","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this);
+         this.spawn_list["robot_" + _loc6_] = 0;
+         this.left_spawn_list["robot_" + _loc6_] = 0;
+         this.right_spawn_list["robot_" + _loc6_] = 0;
       }
       else if(id == 243)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("fish","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("fish","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 16});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this);
       }
       else if(id >= 244 && id <= 246 || id == 273)
       {
@@ -992,149 +1137,149 @@ class com.nitrome.toxic.Game extends MovieClip
          this.safe_holder.attachMovie("bomb_spawner","spawner_" + _loc8_,_loc8_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
          if(id == 244)
          {
-            _loc9_ = this.object_holder.getNextHighestDepth();
-            this.object_holder.attachMovie("collect_platform","collect_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
-            this.collect_list.push("collect_" + _loc9_);
-            this.object_holder["collect_" + _loc9_].init(this,2,this.safe_holder["spawner_" + _loc8_]);
+            _loc6_ = this.object_holder.getNextHighestDepth();
+            this.object_holder.attachMovie("collect_platform","collect_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
+            this.collect_list.push("collect_" + _loc6_);
+            this.object_holder["collect_" + _loc6_].init(this,2,this.safe_holder["spawner_" + _loc8_]);
          }
          else if(id == 245)
          {
-            _loc9_ = this.object_holder.getNextHighestDepth();
-            this.object_holder.attachMovie("collect_digger","collect_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
-            this.collect_list.push("collect_" + _loc9_);
-            this.object_holder["collect_" + _loc9_].init(this,3,this.safe_holder["spawner_" + _loc8_]);
+            _loc6_ = this.object_holder.getNextHighestDepth();
+            this.object_holder.attachMovie("collect_digger","collect_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
+            this.collect_list.push("collect_" + _loc6_);
+            this.object_holder["collect_" + _loc6_].init(this,3,this.safe_holder["spawner_" + _loc8_]);
          }
          else if(id == 246)
          {
-            _loc9_ = this.object_holder.getNextHighestDepth();
-            this.object_holder.attachMovie("collect_walker","collect_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
-            this.collect_list.push("collect_" + _loc9_);
-            this.object_holder["collect_" + _loc9_].init(this,4,this.safe_holder["spawner_" + _loc8_]);
+            _loc6_ = this.object_holder.getNextHighestDepth();
+            this.object_holder.attachMovie("collect_walker","collect_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
+            this.collect_list.push("collect_" + _loc6_);
+            this.object_holder["collect_" + _loc6_].init(this,4,this.safe_holder["spawner_" + _loc8_]);
          }
          else if(id == 273)
          {
-            _loc9_ = this.object_holder.getNextHighestDepth();
-            this.object_holder.attachMovie("collect_basic","collect_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
-            this.collect_list.push("collect_" + _loc9_);
-            this.object_holder["collect_" + _loc9_].init(this,1,this.safe_holder["spawner_" + _loc8_]);
+            _loc6_ = this.object_holder.getNextHighestDepth();
+            this.object_holder.attachMovie("collect_basic","collect_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:(row - 1) * com.nitrome.toxic.Global.TILE_HEIGHT});
+            this.collect_list.push("collect_" + _loc6_);
+            this.object_holder["collect_" + _loc6_].init(this,1,this.safe_holder["spawner_" + _loc8_]);
          }
       }
       else if(id >= 247 && id <= 248)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("cannon","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this,id - 247);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("cannon","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this,id - 247);
       }
       else if(id >= 249 && id <= 250)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("moving_cannon","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this,id - 249);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("moving_cannon","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this,id - 249);
       }
       else if(id >= 251 && id <= 252)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("tall_cannon","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this,id - 251);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("tall_cannon","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this,id - 251);
       }
       else if(id == 253 || id == 254)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("wheel_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(id - 253,this);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("wheel_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(id - 253,this);
       }
       else if(id >= 255 && id <= 258)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("tile_" + id,"acid_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.acid_fall_list.push("acid_" + _loc9_);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("tile_" + id,"acid_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.acid_fall_list.push("acid_" + _loc6_);
       }
       else if(id == 259)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("shooter_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("shooter_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this);
       }
       else if(id == 260)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("boss1","boss1",_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("boss1","boss1",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
          this.robot_list.push("boss1");
          this.danger_holder.boss1.init(this);
          this.boss1 = true;
       }
       else if(id == 261)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("door","door_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("door","door_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
          if(col == 16)
          {
-            this.left_door_list.push("door_" + _loc9_);
-            this.object_holder["door_" + _loc9_].init(this,0);
+            this.left_door_list.push("door_" + _loc6_);
+            this.object_holder["door_" + _loc6_].init(this,0);
          }
          else
          {
-            this.right_door_list.push("door_" + _loc9_);
-            this.object_holder["door_" + _loc9_].init(this,1);
+            this.right_door_list.push("door_" + _loc6_);
+            this.object_holder["door_" + _loc6_].init(this,1);
          }
       }
       else if(id == 275)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("first_door","door_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.object_holder["door_" + _loc9_].init(this);
-         this.first_door_list.push("door_" + _loc9_);
-         this.first_door_count = this.first_door_count + 1;
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("first_door","door_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.object_holder["door_" + _loc6_].init(this);
+         this.first_door_list.push("door_" + _loc6_);
+         this.first_door_count += 1;
       }
       else if(id == 262)
       {
-         _loc9_ = this.object_holder.getNextHighestDepth();
-         this.object_holder.attachMovie("collapsing_platform","collapse_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
-         this.collect_list.push("collapse_" + _loc9_);
-         this.object_holder["collapse_" + _loc9_].init(this);
+         _loc6_ = this.object_holder.getNextHighestDepth();
+         this.object_holder.attachMovie("collapsing_platform","collapse_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT});
+         this.collect_list.push("collapse_" + _loc6_);
+         this.object_holder["collapse_" + _loc6_].init(this);
          this.drawCollapsePlatform(0,col * com.nitrome.toxic.Global.TILE_WIDTH,row * com.nitrome.toxic.Global.TILE_HEIGHT);
       }
       else if(id == 266)
       {
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("digger_robot","robot_" + _loc9_,_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
-         this.robot_list.push("robot_" + _loc9_);
-         this.danger_holder["robot_" + _loc9_].init(this);
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("digger_robot","robot_" + _loc6_,_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         this.robot_list.push("robot_" + _loc6_);
+         this.danger_holder["robot_" + _loc6_].init(this);
       }
       else if(id == 267)
       {
-         _loc9_ = this.safe_holder.getNextHighestDepth();
-         this.safe_holder.attachMovie("boss2","boss2",_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         _loc6_ = this.safe_holder.getNextHighestDepth();
+         this.safe_holder.attachMovie("boss2","boss2",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
          this.safe_list.push("boss2");
-         _loc9_ = this.grow_holder.getNextHighestDepth();
-         this.grow_holder.attachMovie("boss2_grow_layer","boss2",_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
+         _loc6_ = this.grow_holder.getNextHighestDepth();
+         this.grow_holder.attachMovie("boss2_grow_layer","boss2",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32});
          this.boss2 = true;
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("boss_solid_mask");
          _global.solid_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,174,239),new flash.geom.Point(col * com.nitrome.toxic.Global.TILE_WIDTH + 16 - 87,row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 239));
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
-         _loc9_ = this.heart_holder.getNextHighestDepth();
-         this.heart_holder.attachMovie("boss_heart_hit","heart",_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16 - 19,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 63});
-         _loc9_ = this.laser_holder.getNextHighestDepth();
-         this.laser_holder.attachMovie("boss_laser","boss_laser",_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 149});
+         _loc6_ = this.heart_holder.getNextHighestDepth();
+         this.heart_holder.attachMovie("boss_heart_hit","heart",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16 - 19,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 63});
+         _loc6_ = this.laser_holder.getNextHighestDepth();
+         this.laser_holder.attachMovie("boss_laser","boss_laser",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 149});
          this.laser_list.push("boss_laser");
          this.laser_holder.boss_laser.init(this);
-         _loc7_ = new Array(0,-9,-5,5,9);
-         _loc6_ = 1;
-         while(_loc6_ <= 4)
+         _loc9_ = new Array(0,-9,-5,5,9);
+         _loc10_ = 1;
+         while(_loc10_ <= 4)
          {
-            _loc9_ = this.danger_holder.getNextHighestDepth();
-            this.danger_holder.attachMovie("boss_debris","debris_" + _loc6_,_loc9_,{_x:(col + _loc7_[_loc6_]) * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:0});
-            this.robot_list.push("debris_" + _loc6_);
-            _loc6_ = _loc6_ + 1;
+            _loc6_ = this.danger_holder.getNextHighestDepth();
+            this.danger_holder.attachMovie("boss_debris","debris_" + _loc10_,_loc6_,{_x:(col + _loc9_[_loc10_]) * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:0});
+            this.robot_list.push("debris_" + _loc10_);
+            _loc10_ += 1;
          }
-         _loc9_ = this.danger_holder.getNextHighestDepth();
-         this.danger_holder.attachMovie("boss_head","boss_head",_loc9_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 149});
+         _loc6_ = this.danger_holder.getNextHighestDepth();
+         this.danger_holder.attachMovie("boss_head","boss_head",_loc6_,{_x:col * com.nitrome.toxic.Global.TILE_WIDTH + 16,_y:row * com.nitrome.toxic.Global.TILE_HEIGHT + 32 - 149});
          this.robot_list.push("boss_head");
          this.safe_holder.boss2.init(this,this.laser_holder.boss_laser,this.danger_holder.debris_1,this.danger_holder.debris_2,this.danger_holder.debris_3,this.danger_holder.debris_4);
       }
@@ -1147,12 +1292,12 @@ class com.nitrome.toxic.Game extends MovieClip
    {
       if(side == 0)
       {
-         this.left_door_count = this.left_door_count + 1;
+         this.left_door_count += 1;
          this.object_holder[this.left_door_list[this.left_door_count]].doClose();
       }
       else if(side == 1)
       {
-         this.right_door_count = this.right_door_count + 1;
+         this.right_door_count += 1;
          this.object_holder[this.right_door_list[this.right_door_count]].doClose();
       }
    }
@@ -1160,18 +1305,18 @@ class com.nitrome.toxic.Game extends MovieClip
    {
       if(side == 0)
       {
-         this.left_door_count = this.left_door_count - 1;
+         this.left_door_count -= 1;
          this.object_holder[this.left_door_list[this.left_door_count]].doOpen();
       }
       else if(side == 1)
       {
-         this.right_door_count = this.right_door_count - 1;
+         this.right_door_count -= 1;
          this.object_holder[this.right_door_list[this.right_door_count]].doOpen();
       }
       else if(side == 3)
       {
          this.object_holder[this.first_door_list[this.first_door_count]].doOpen();
-         this.first_door_count = this.first_door_count - 1;
+         this.first_door_count -= 1;
       }
    }
    function drawCollapsePlatform(n, x, y)
@@ -1206,49 +1351,49 @@ class com.nitrome.toxic.Game extends MovieClip
    function hideHoloPlatform(n)
    {
       var _loc4_ = this.object_holder[n].getCol() * com.nitrome.toxic.Global.TILE_WIDTH;
-      var _loc3_ = this.object_holder[n].getRow() * com.nitrome.toxic.Global.TILE_HEIGHT;
-      _global.solid_bmp.fillRect(new flash.geom.Rectangle(_loc4_,_loc3_,32,32),4278255360);
-      _global.solid_bmp.threshold(_global.solid_bmp,new flash.geom.Rectangle(_loc4_,_loc3_,32,32),new flash.geom.Point(_loc4_,_loc3_),"==",4278255360,0,16777215,false);
+      var _loc5_ = this.object_holder[n].getRow() * com.nitrome.toxic.Global.TILE_HEIGHT;
+      _global.solid_bmp.fillRect(new flash.geom.Rectangle(_loc4_,_loc5_,32,32),4278255360);
+      _global.solid_bmp.threshold(_global.solid_bmp,new flash.geom.Rectangle(_loc4_,_loc5_,32,32),new flash.geom.Point(_loc4_,_loc5_),"==",4278255360,0,16777215,false);
       this.object_holder[n].doHide();
    }
    function loadInfoText(ts)
    {
-      var _loc4_ = ts.childNodes;
+      var _loc3_ = ts.childNodes;
       this.info_text = new Array();
-      var _loc3_ = 0;
-      var _loc2_;
+      var _loc4_ = 0;
       var _loc5_;
-      var _loc7_;
       var _loc6_;
-      while(_loc3_ < _loc4_.length)
+      var _loc7_;
+      var _loc8_;
+      while(_loc4_ < _loc3_.length)
       {
-         _loc2_ = _loc4_[_loc3_];
-         _loc5_ = Number(String(_loc2_.attributes.row));
-         _loc7_ = Number(String(_loc2_.attributes.col));
-         _loc6_ = String(_loc2_.attributes.str);
-         _loc6_ = this.checkText(_loc6_);
-         this.info_text.push({row:_loc5_,col:_loc7_,str:_loc6_});
-         _loc3_ = _loc3_ + 1;
+         _loc5_ = _loc3_[_loc4_];
+         _loc6_ = Number(String(_loc5_.attributes.row));
+         _loc7_ = Number(String(_loc5_.attributes.col));
+         _loc8_ = String(_loc5_.attributes.str);
+         _loc8_ = this.checkText(_loc8_);
+         this.info_text.push({row:_loc6_,col:_loc7_,str:_loc8_});
+         _loc4_ += 1;
       }
    }
    function checkText(s)
    {
       var _loc2_;
       var _loc3_;
-      var _loc1_;
+      var _loc4_;
       if(s.indexOf("&apos;") != -1)
       {
          _loc2_ = s.split("&apos;");
          _loc3_ = "";
-         _loc1_ = 0;
-         while(_loc1_ < _loc2_.length)
+         _loc4_ = 0;
+         while(_loc4_ < _loc2_.length)
          {
-            _loc3_ += _loc2_[_loc1_];
-            if(_loc1_ < _loc2_.length - 1)
+            _loc3_ += _loc2_[_loc4_];
+            if(_loc4_ < _loc2_.length - 1)
             {
                _loc3_ += "\'";
             }
-            _loc1_ = _loc1_ + 1;
+            _loc4_ += 1;
          }
          s = _loc3_;
       }
@@ -1256,15 +1401,15 @@ class com.nitrome.toxic.Game extends MovieClip
       {
          _loc2_ = s.split("|");
          _loc3_ = "";
-         _loc1_ = 0;
-         while(_loc1_ < _loc2_.length)
+         _loc4_ = 0;
+         while(_loc4_ < _loc2_.length)
          {
-            _loc3_ += _loc2_[_loc1_];
-            if(_loc1_ < _loc2_.length - 1)
+            _loc3_ += _loc2_[_loc4_];
+            if(_loc4_ < _loc2_.length - 1)
             {
                _loc3_ += "\r";
             }
-            _loc1_ = _loc1_ + 1;
+            _loc4_ += 1;
          }
          s = _loc3_;
       }
@@ -1272,14 +1417,14 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function getInfoText(row, col)
    {
-      var _loc2_ = 0;
-      while(_loc2_ < this.info_text.length)
+      var _loc4_ = 0;
+      while(_loc4_ < this.info_text.length)
       {
-         if(this.info_text[_loc2_].row == row && this.info_text[_loc2_].col == col)
+         if(this.info_text[_loc4_].row == row && this.info_text[_loc4_].col == col)
          {
-            return this.info_text[_loc2_].str;
+            return this.info_text[_loc4_].str;
          }
-         _loc2_ = _loc2_ + 1;
+         _loc4_ += 1;
       }
       return "";
    }
@@ -1309,26 +1454,26 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function zapBomb(x, y)
    {
-      var _loc2_;
+      var _loc4_;
       if(this.bomb_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.bomb_list.length)
+         _loc4_ = 0;
+         while(_loc4_ < this.bomb_list.length)
          {
-            if(this.bomb_holder[this.bomb_list[_loc2_]].hitTest(this._x + x,this._y + y,true) == true)
+            if(this.bomb_holder[this.bomb_list[_loc4_]].hitTest(this._x + x,this._y + y,true) == true)
             {
-               this.bomb_holder[this.bomb_list[_loc2_]].doExplode();
+               this.bomb_holder[this.bomb_list[_loc4_]].doExplode();
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc4_ += 1;
          }
       }
    }
    function getLaserSceneryCollision(x, y)
    {
-      var _loc2_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      var _loc3_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      if(_loc2_ > 0 || _loc3_ > 0)
+      var _loc4_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      var _loc5_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      if(_loc4_ > 0 || _loc5_ > 0)
       {
          return true;
       }
@@ -1336,19 +1481,19 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function getSceneryCollision(x, y)
    {
-      var _loc3_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      var _loc4_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      var _loc5_;
+      var _loc5_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      var _loc6_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      var _loc7_;
       if(this.boss2 == true)
       {
-         _loc5_ = _global.boss_bmp.getPixel32(x,y) >> 24 & 0xFF;
-         if(_loc3_ > 0 || _loc4_ > 0 || _loc5_ > 0)
+         _loc7_ = _global.boss_bmp.getPixel32(x,y) >> 24 & 0xFF;
+         if(_loc5_ > 0 || _loc6_ > 0 || _loc7_ > 0)
          {
             return true;
          }
          return false;
       }
-      if(_loc3_ > 0 || _loc4_ > 0)
+      if(_loc5_ > 0 || _loc6_ > 0)
       {
          return true;
       }
@@ -1356,18 +1501,18 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function getGroundCollision(x, y)
    {
-      var _loc3_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      var _loc4_;
+      var _loc5_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      var _loc6_;
       if(this.boss2 == true)
       {
-         _loc4_ = _global.boss_bmp.getPixel32(x,y) >> 24 & 0xFF;
-         if(_loc3_ > 0 || _loc4_ > 0)
+         _loc6_ = _global.boss_bmp.getPixel32(x,y) >> 24 & 0xFF;
+         if(_loc5_ > 0 || _loc6_ > 0)
          {
             return true;
          }
          return false;
       }
-      if(_loc3_ > 0)
+      if(_loc5_ > 0)
       {
          return true;
       }
@@ -1375,8 +1520,8 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function getSolidCollision(x, y)
    {
-      var _loc2_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      if(_loc2_ > 0)
+      var _loc4_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      if(_loc4_ > 0)
       {
          return true;
       }
@@ -1384,8 +1529,8 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function getGenesisCollision(x, y)
    {
-      var _loc2_ = _global.genesis_bmp.getPixel32(x,y) >> 24 & 0xFF;
-      if(_loc2_ > 0)
+      var _loc4_ = _global.genesis_bmp.getPixel32(x,y) >> 24 & 0xFF;
+      if(_loc4_ > 0)
       {
          return true;
       }
@@ -1393,72 +1538,72 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function fireBomb(x, y, vx, vy)
    {
-      this.bomb_count = this.bomb_count + 1;
-      var _loc2_ = String("bomb_" + this.bomb_count);
-      this.bomb_holder.attachMovie("basic_bomb",_loc2_,this.bomb_count);
-      this.bomb_holder[_loc2_].init(this,x,y,vx,vy);
-      this.bomb_list.push(_loc2_);
+      this.bomb_count += 1;
+      var _loc6_ = String("bomb_" + this.bomb_count);
+      this.bomb_holder.attachMovie("basic_bomb",_loc6_,this.bomb_count);
+      this.bomb_holder[_loc6_].init(this,x,y,vx,vy);
+      this.bomb_list.push(_loc6_);
    }
    function layBomb()
    {
-      var _loc13_;
+      var _loc4_;
       var _loc5_;
+      var _loc6_;
       var _loc7_;
       var _loc8_;
-      var _loc6_;
       var _loc9_;
-      var _loc4_;
-      var _loc11_;
       var _loc10_;
+      var _loc11_;
       var _loc12_;
+      var _loc13_;
       if(com.nitrome.toxic.Global.game_paused == false && this.player.getQuickPause() == false)
       {
-         _loc13_ = this.player.getDir();
+         _loc4_ = this.player.getDir();
          _loc5_ = this.player.getState();
-         _loc7_ = this.player.getBombType();
+         _loc6_ = this.player.getBombType();
          if(_loc5_ != com.nitrome.toxic.Global.START && _loc5_ != com.nitrome.toxic.Global.END && _loc5_ != com.nitrome.toxic.Global.HIT && _loc5_ != com.nitrome.toxic.Global.WALL && _loc5_ != com.nitrome.toxic.Global.DIE)
          {
-            this.bomb_count = this.bomb_count + 1;
-            _loc8_ = String("bomb_" + this.bomb_count);
-            _root.bomb_shape.gotoAndStop(_loc7_);
+            this.bomb_count += 1;
+            _loc7_ = String("bomb_" + this.bomb_count);
+            _root.bomb_shape.gotoAndStop(_loc6_);
             if(_loc5_ == com.nitrome.toxic.Global.DUCK && this.getWalkerBombs() == true)
             {
                trace("bomb_list: " + this.bomb_list.toString());
                if(this.bomb_list.length > 0)
                {
                   this.player.anim.play();
-                  _loc4_ = 0;
-                  while(_loc4_ < this.bomb_list.length)
+                  _loc10_ = 0;
+                  while(_loc10_ < this.bomb_list.length)
                   {
-                     if(this.bomb_holder[this.bomb_list[_loc4_]].getBombType() == com.nitrome.toxic.Global.BOMB_WALKER)
+                     if(this.bomb_holder[this.bomb_list[_loc10_]].getBombType() == com.nitrome.toxic.Global.BOMB_WALKER)
                      {
-                        this.bomb_holder[this.bomb_list[_loc4_]].doExplode();
-                        _loc4_ = _loc4_ - 1;
+                        this.bomb_holder[this.bomb_list[_loc10_]].doExplode();
+                        _loc10_ -= 1;
                      }
-                     _loc4_ = _loc4_ + 1;
+                     _loc10_ += 1;
                   }
                }
                return undefined;
             }
-            if(_loc7_ == 1)
+            if(_loc6_ == 1)
             {
-               this.bomb_holder.attachMovie("basic_bomb",_loc8_,this.bomb_count);
-               _loc6_ = this.player._x + this.player.bomb_start_pos._x;
+               this.bomb_holder.attachMovie("basic_bomb",_loc7_,this.bomb_count);
+               _loc8_ = this.player._x + this.player.bomb_start_pos._x;
                _loc9_ = this.player._y + this.player.bomb_start_pos._y;
             }
-            else if(_loc7_ == 2)
+            else if(_loc6_ == 2)
             {
-               this.bomb_holder.attachMovie("platform_bomb",_loc8_,this.bomb_count);
-               _loc6_ = this.player._x + this.player.platform_start_pos._x;
+               this.bomb_holder.attachMovie("platform_bomb",_loc7_,this.bomb_count);
+               _loc8_ = this.player._x + this.player.platform_start_pos._x;
                _loc9_ = this.player._y + this.player.platform_start_pos._y;
             }
-            else if(_loc7_ == 3)
+            else if(_loc6_ == 3)
             {
-               this.bomb_holder.attachMovie("digger_bomb",_loc8_,this.bomb_count);
-               _loc6_ = this.player._x + this.player.bomb_start_pos._x;
+               this.bomb_holder.attachMovie("digger_bomb",_loc7_,this.bomb_count);
+               _loc8_ = this.player._x + this.player.bomb_start_pos._x;
                _loc9_ = this.player._y + this.player.bomb_start_pos._y;
             }
-            else if(_loc7_ == 4)
+            else if(_loc6_ == 4)
             {
                if(_loc5_ == com.nitrome.toxic.Global.DUCK && this.getWalkerBombs() == true)
                {
@@ -1466,53 +1611,53 @@ class com.nitrome.toxic.Game extends MovieClip
                   if(this.bomb_list.length > 0)
                   {
                      this.player.anim.play();
-                     _loc4_ = 0;
-                     while(_loc4_ < this.bomb_list.length)
+                     _loc10_ = 0;
+                     while(_loc10_ < this.bomb_list.length)
                      {
-                        if(this.bomb_holder[this.bomb_list[_loc4_]].getBombType() == com.nitrome.toxic.Global.BOMB_WALKER)
+                        if(this.bomb_holder[this.bomb_list[_loc10_]].getBombType() == com.nitrome.toxic.Global.BOMB_WALKER)
                         {
-                           this.bomb_holder[this.bomb_list[_loc4_]].doExplode();
-                           _loc4_ = _loc4_ - 1;
+                           this.bomb_holder[this.bomb_list[_loc10_]].doExplode();
+                           _loc10_ -= 1;
                         }
-                        _loc4_ = _loc4_ + 1;
+                        _loc10_ += 1;
                      }
                   }
                   return undefined;
                }
-               this.bomb_holder.attachMovie("walker_bomb",_loc8_,this.bomb_count);
-               _loc6_ = this.player._x + this.player.bomb_start_pos._x;
+               this.bomb_holder.attachMovie("walker_bomb",_loc7_,this.bomb_count);
+               _loc8_ = this.player._x + this.player.bomb_start_pos._x;
                _loc9_ = this.player._y + this.player.bomb_start_pos._y;
             }
             _loc11_ = false;
-            if(_loc7_ != 3)
+            if(_loc6_ != 3)
             {
-               _loc10_ = new flash.geom.Matrix();
-               _loc10_.tx -= _loc6_ - _root.bomb_shape._width * 0.5;
-               _loc10_.ty -= _loc9_ - _root.bomb_shape._height * 0.5;
+               _loc12_ = new flash.geom.Matrix();
+               _loc12_.tx -= _loc8_ - _root.bomb_shape._width * 0.5;
+               _loc12_.ty -= _loc9_ - _root.bomb_shape._height * 0.5;
                _global.b_temp = new flash.display.BitmapData(_root.bomb_shape._width,_root.bomb_shape._height,true,16777215);
-               _global.b_temp.draw(_root.game.solid_holder,_loc10_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
-               _global.b_temp.draw(_root.game.ground_holder,_loc10_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
+               _global.b_temp.draw(_root.game.solid_holder,_loc12_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
+               _global.b_temp.draw(_root.game.ground_holder,_loc12_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
                _global.b_temp.draw(_root.bomb_shape,new flash.geom.Matrix(),new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
-               _loc12_ = _global.b_temp.getColorBoundsRect(4294967295,4278255615);
-               if(_loc12_.width != 0)
+               _loc13_ = _global.b_temp.getColorBoundsRect(4294967295,4278255615);
+               if(_loc13_.width != 0)
                {
-                  if(_loc12_.x == 0)
+                  if(_loc13_.x == 0)
                   {
                      _loc11_ = true;
-                     _loc6_ += _root.bomb_shape._width;
+                     _loc8_ += _root.bomb_shape._width;
                   }
                   else
                   {
                      _loc11_ = true;
-                     _loc6_ -= _root.bomb_shape._width;
+                     _loc8_ -= _root.bomb_shape._width;
                   }
                }
                _global.b_temp.dispose();
                delete _global.b_temp;
             }
-            this.bomb_holder[_loc8_].initPlayer(this,_loc6_,_loc9_,_loc13_,_loc5_,this.player.getVX(),this.player.getVY(),_loc11_);
+            this.bomb_holder[_loc7_].initPlayer(this,_loc8_,_loc9_,_loc4_,_loc5_,this.player.getVX(),this.player.getVY(),_loc11_);
             _root.bomb_panel.useBomb();
-            this.bomb_list.push(_loc8_);
+            this.bomb_list.push(_loc7_);
          }
       }
    }
@@ -1528,7 +1673,7 @@ class com.nitrome.toxic.Game extends MovieClip
             {
                return true;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
       return false;
@@ -1542,7 +1687,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.bomb_list.length)
          {
             this.bomb_holder[this.bomb_list[_loc2_]].startJump();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -1559,59 +1704,59 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.bomb_list.length)
          {
             this.bomb_holder[this.bomb_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
    function updateBombName(old_name, new_name)
    {
-      var _loc2_;
+      var _loc4_;
       if(this.bomb_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.bomb_list.length)
+         _loc4_ = 0;
+         while(_loc4_ < this.bomb_list.length)
          {
-            if(this.bomb_list[_loc2_] == old_name)
+            if(this.bomb_list[_loc4_] == old_name)
             {
-               this.bomb_list[_loc2_] = new_name;
+               this.bomb_list[_loc4_] = new_name;
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc4_ += 1;
          }
       }
    }
    function removeBomb(id)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.bomb_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.bomb_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.bomb_list.length)
          {
-            if(this.bomb_list[_loc2_] == id)
+            if(this.bomb_list[_loc3_] == id)
             {
-               this.bomb_list.splice(_loc2_,1);
+               this.bomb_list.splice(_loc3_,1);
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
    function removeMissile(id)
    {
       trace("removing missile: " + id);
-      var _loc2_;
+      var _loc3_;
       if(this.missile_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.missile_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.missile_list.length)
          {
-            if(this.missile_list[_loc2_] == id)
+            if(this.missile_list[_loc3_] == id)
             {
-               this.missile_list.splice(_loc2_,1);
+               this.missile_list.splice(_loc3_,1);
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
@@ -1624,7 +1769,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.robot_list.length)
          {
             this.danger_holder[this.robot_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -1637,7 +1782,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.safe_list.length)
          {
             this.safe_holder[this.safe_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -1650,7 +1795,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.mine_list.length)
          {
             this.danger_holder[this.mine_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -1663,20 +1808,20 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.conveyor_list.length)
          {
             this.object_holder[this.conveyor_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
    function checkMineProximity(x, y)
    {
-      var _loc2_;
+      var _loc4_;
       if(this.mine_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.mine_list.length)
+         _loc4_ = 0;
+         while(_loc4_ < this.mine_list.length)
          {
-            this.danger_holder[this.mine_list[_loc2_]].checkProximity(x,y);
-            _loc2_ = _loc2_ + 1;
+            this.danger_holder[this.mine_list[_loc4_]].checkProximity(x,y);
+            _loc4_ += 1;
          }
       }
    }
@@ -1689,74 +1834,74 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.active_holo_list.length)
          {
             this.object_holder[this.active_holo_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
    function findExplodeRobot(explosion)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.robot_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.robot_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.robot_list.length)
          {
-            if(this.danger_holder[this.robot_list[_loc2_]].hitTest(this.explosion_holder[explosion]) == true)
+            if(this.danger_holder[this.robot_list[_loc3_]].hitTest(this.explosion_holder[explosion]) == true)
             {
-               this.danger_holder[this.robot_list[_loc2_]].doExplode();
+               this.danger_holder[this.robot_list[_loc3_]].doExplode();
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
    function findExplodeHoloButton(explosion)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.holo_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.holo_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.holo_list.length)
          {
-            if(this.object_holder[this.holo_list[_loc2_]].hitTest(this.explosion_holder[explosion]) == true)
+            if(this.object_holder[this.holo_list[_loc3_]].hitTest(this.explosion_holder[explosion]) == true)
             {
-               this.active_holo_list.push(this.holo_list[_loc2_]);
-               this.object_holder[this.holo_list[_loc2_]].doActivate();
+               this.active_holo_list.push(this.holo_list[_loc3_]);
+               this.object_holder[this.holo_list[_loc3_]].doActivate();
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
    function removeHoloButton(id)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.active_holo_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.active_holo_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.active_holo_list.length)
          {
-            if(this.active_holo_list[_loc2_] == id)
+            if(this.active_holo_list[_loc3_] == id)
             {
-               this.active_holo_list.splice(_loc2_,1);
+               this.active_holo_list.splice(_loc3_,1);
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
    function checkRobotList(id)
    {
       var _loc3_ = false;
-      var _loc2_;
+      var _loc4_;
       if(this.robot_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.robot_list.length)
+         _loc4_ = 0;
+         while(_loc4_ < this.robot_list.length)
          {
-            if(this.robot_list[_loc2_] == id)
+            if(this.robot_list[_loc4_] == id)
             {
                _loc3_ = true;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc4_ += 1;
          }
       }
       if(_loc3_ == false)
@@ -1766,35 +1911,35 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function removeRobot(id)
    {
-      var _loc4_ = false;
-      var _loc2_;
+      var _loc3_ = false;
+      var _loc4_;
       if(this.robot_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.robot_list.length)
+         _loc4_ = 0;
+         while(_loc4_ < this.robot_list.length)
          {
-            if(this.robot_list[_loc2_] == id)
+            if(this.robot_list[_loc4_] == id)
             {
-               this.robot_list.splice(_loc2_,1);
-               _loc4_ = true;
+               this.robot_list.splice(_loc4_,1);
+               _loc3_ = true;
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc4_ += 1;
          }
       }
-      if(_loc4_ == false)
+      if(_loc3_ == false)
       {
          if(this.mine_list.length > 0)
          {
-            _loc2_ = 0;
-            while(_loc2_ < this.mine_list.length)
+            _loc4_ = 0;
+            while(_loc4_ < this.mine_list.length)
             {
-               if(this.mine_list[_loc2_] == id)
+               if(this.mine_list[_loc4_] == id)
                {
-                  this.mine_list.splice(_loc2_,1);
+                  this.mine_list.splice(_loc4_,1);
                   break;
                }
-               _loc2_ = _loc2_ + 1;
+               _loc4_ += 1;
             }
          }
       }
@@ -1815,24 +1960,24 @@ class com.nitrome.toxic.Game extends MovieClip
                }
                this.object_holder[this.collect_list[_loc2_]].doCollect();
             }
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
    function findConveyor(mc)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.conveyor_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.conveyor_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.conveyor_list.length)
          {
-            if(this.object_holder[this.conveyor_list[_loc2_]].hitTest(mc) == true)
+            if(this.object_holder[this.conveyor_list[_loc3_]].hitTest(mc) == true)
             {
-               this.conveyorObject(mc,this.object_holder[this.conveyor_list[_loc2_]].getSpeed());
+               this.conveyorObject(mc,this.object_holder[this.conveyor_list[_loc3_]].getSpeed());
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
@@ -1845,18 +1990,18 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function removeObject(id)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.collect_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.collect_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.collect_list.length)
          {
-            if(this.collect_list[_loc2_] == id)
+            if(this.collect_list[_loc3_] == id)
             {
-               this.collect_list.splice(_loc2_,1);
+               this.collect_list.splice(_loc3_,1);
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
@@ -1869,7 +2014,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.bullet_list.length)
          {
             this.danger_holder[this.bullet_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -1882,89 +2027,89 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.missile_list.length)
          {
             this.missile_holder[this.missile_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
    function removeBullet(id)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.bullet_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.bullet_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.bullet_list.length)
          {
-            if(this.bullet_list[_loc2_] == id)
+            if(this.bullet_list[_loc3_] == id)
             {
-               this.bullet_list.splice(_loc2_,1);
+               this.bullet_list.splice(_loc3_,1);
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
    function fireBullet(x, y, dir)
    {
-      var _loc2_ = this.danger_holder.getNextHighestDepth();
-      this.danger_holder.attachMovie("bullet","bullet_" + _loc2_,_loc2_,{_x:x,_y:y});
-      this.bullet_list.push("bullet_" + _loc2_);
-      this.danger_holder["bullet_" + _loc2_].init(this,dir);
+      var _loc5_ = this.danger_holder.getNextHighestDepth();
+      this.danger_holder.attachMovie("bullet","bullet_" + _loc5_,_loc5_,{_x:x,_y:y});
+      this.bullet_list.push("bullet_" + _loc5_);
+      this.danger_holder["bullet_" + _loc5_].init(this,dir);
    }
    function fireShooterBullet(x, y, dir)
    {
-      var _loc2_ = this.danger_holder.getNextHighestDepth();
-      this.danger_holder.attachMovie("shooter_bullet","bullet_" + _loc2_,_loc2_,{_x:x,_y:y});
-      this.bullet_list.push("bullet_" + _loc2_);
-      this.danger_holder["bullet_" + _loc2_].init(this,dir);
+      var _loc5_ = this.danger_holder.getNextHighestDepth();
+      this.danger_holder.attachMovie("shooter_bullet","bullet_" + _loc5_,_loc5_,{_x:x,_y:y});
+      this.bullet_list.push("bullet_" + _loc5_);
+      this.danger_holder["bullet_" + _loc5_].init(this,dir);
    }
    function fireBossBullet(x, y, dir)
    {
-      var _loc2_ = this.danger_holder.getNextHighestDepth();
-      this.danger_holder.attachMovie("boss_bullet","bullet_" + _loc2_,_loc2_,{_x:x,_y:y});
-      this.bullet_list.push("bullet_" + _loc2_);
-      this.danger_holder["bullet_" + _loc2_].init(this,dir);
+      var _loc5_ = this.danger_holder.getNextHighestDepth();
+      this.danger_holder.attachMovie("boss_bullet","bullet_" + _loc5_,_loc5_,{_x:x,_y:y});
+      this.bullet_list.push("bullet_" + _loc5_);
+      this.danger_holder["bullet_" + _loc5_].init(this,dir);
    }
    function fireMissile(x, y, deg)
    {
-      this.missile_count = this.missile_count + 1;
-      var _loc2_ = 500 + this.missile_count;
-      this.missile_holder.attachMovie("boss_missile","missile_" + _loc2_,_loc2_,{_x:x,_y:y});
-      this.missile_list.push("missile_" + _loc2_);
-      this.missile_holder["missile_" + _loc2_].init(this,deg);
+      this.missile_count += 1;
+      var _loc5_ = 500 + this.missile_count;
+      this.missile_holder.attachMovie("boss_missile","missile_" + _loc5_,_loc5_,{_x:x,_y:y});
+      this.missile_list.push("missile_" + _loc5_);
+      this.missile_holder["missile_" + _loc5_].init(this,deg);
    }
    function createDebris(x, y, debris_array)
    {
-      var _loc2_ = 0;
-      var _loc3_;
-      var _loc7_;
-      var _loc5_;
+      var _loc5_ = 0;
       var _loc6_;
-      while(_loc2_ < debris_array.length)
+      var _loc7_;
+      var _loc8_;
+      var _loc9_;
+      while(_loc5_ < debris_array.length)
       {
-         _loc3_ = this.debris_holder.getNextHighestDepth();
-         _loc7_ = debris_array[_loc2_].id;
-         _loc5_ = debris_array[_loc2_].x;
-         _loc6_ = debris_array[_loc2_].y;
-         this.debris_holder.attachMovie("debris_" + _loc7_,"debris_" + _loc3_,_loc3_,{_x:x + _loc5_,_y:y + _loc6_});
-         this.debris_holder["debris_" + _loc3_].init(this);
-         this.debris_list.push("debris_" + _loc3_);
-         _loc2_ = _loc2_ + 1;
+         _loc6_ = this.debris_holder.getNextHighestDepth();
+         _loc7_ = debris_array[_loc5_].id;
+         _loc8_ = debris_array[_loc5_].x;
+         _loc9_ = debris_array[_loc5_].y;
+         this.debris_holder.attachMovie("debris_" + _loc7_,"debris_" + _loc6_,_loc6_,{_x:x + _loc8_,_y:y + _loc9_});
+         this.debris_holder["debris_" + _loc6_].init(this);
+         this.debris_list.push("debris_" + _loc6_);
+         _loc5_ += 1;
       }
    }
    function removeDebris(id)
    {
-      var _loc2_;
+      var _loc3_;
       if(this.debris_list.length > 0)
       {
-         _loc2_ = 0;
-         while(_loc2_ < this.debris_list.length)
+         _loc3_ = 0;
+         while(_loc3_ < this.debris_list.length)
          {
-            if(this.debris_list[_loc2_] == id)
+            if(this.debris_list[_loc3_] == id)
             {
-               this.debris_list.splice(_loc2_,1);
+               this.debris_list.splice(_loc3_,1);
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc3_ += 1;
          }
       }
    }
@@ -1977,7 +2122,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.debris_list.length)
          {
             this.debris_holder[this.debris_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -1990,7 +2135,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc2_ < this.laser_list.length)
          {
             this.laser_holder[this.laser_list[_loc2_]].main();
-            _loc2_ = _loc2_ + 1;
+            _loc2_ += 1;
          }
       }
    }
@@ -2000,8 +2145,8 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function createExplosion(x, y, id, ex_id, dir)
    {
-      var _loc4_ = this.explosion_holder.getNextHighestDepth();
-      this.explosion_holder.attachMovie(String("explosion" + ex_id),id,_loc4_,{_x:x,_y:y - 10});
+      var _loc7_ = this.explosion_holder.getNextHighestDepth();
+      this.explosion_holder.attachMovie(String("explosion" + ex_id),id,_loc7_,{_x:x,_y:y - 10});
       this.explosion_holder[id].init(this,ex_id,dir);
       if(ex_id == com.nitrome.toxic.Global.BOMB_BASIC)
       {
@@ -2059,78 +2204,78 @@ class com.nitrome.toxic.Game extends MovieClip
       _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole");
       _global.boss_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,80),new flash.geom.Point(x - 40,y - 40),_global.boss_bmp,new flash.geom.Point(x - 40,y - 40),true);
       _global.boss_bmp.threshold(_global.boss_bmp,new flash.geom.Rectangle(x - 40,y - 40,80,80),new flash.geom.Point(x - 40,y - 40),"==",4278255360,0,16777215,false);
-      var _loc3_ = x - 40;
-      var _loc5_;
-      var _loc4_;
+      var _loc6_ = x - 40;
+      var _loc7_;
+      var _loc8_;
+      var _loc9_;
       var _loc10_;
       var _loc11_;
-      var _loc13_;
-      var _loc9_;
       var _loc12_;
-      var _loc8_;
-      while(_loc3_ <= x - 40 + 80)
+      var _loc13_;
+      var _loc14_;
+      while(_loc6_ <= x - 40 + 80)
       {
-         _loc5_ = y - 40;
-         while(_loc5_ <= y - 40 + 80)
+         _loc7_ = y - 40;
+         while(_loc7_ <= y - 40 + 80)
          {
-            _loc4_ = _global.boss_bmp.getPixel32(_loc3_,_loc5_);
-            _loc10_ = _loc4_ >> 24 & 0xFF;
-            _loc11_ = _loc4_ >> 16 & 0xFF;
-            _loc13_ = _loc4_ >> 8 & 0xFF;
-            _loc9_ = _loc4_ & 0xFF;
-            if(_loc10_ == 255 && _loc11_ == 68 && _loc13_ == 82 && _loc9_ == 76)
+            _loc8_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_);
+            _loc9_ = _loc8_ >> 24 & 0xFF;
+            _loc10_ = _loc8_ >> 16 & 0xFF;
+            _loc11_ = _loc8_ >> 8 & 0xFF;
+            _loc12_ = _loc8_ & 0xFF;
+            if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
             {
-               _loc12_ = _global.boss_bmp.getPixel32(_loc3_,_loc5_ - 1);
-               _loc8_ = _loc12_ >> 24 & 0xFF;
-               if(_loc8_ == 0)
+               _loc13_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_ - 1);
+               _loc14_ = _loc13_ >> 24 & 0xFF;
+               if(_loc14_ == 0)
                {
-                  _global.boss_bmp.setPixel32(_loc3_,_loc5_,4278190080);
+                  _global.boss_bmp.setPixel32(_loc6_,_loc7_,4278190080);
                   break;
                }
             }
-            _loc5_ = _loc5_ + 1;
+            _loc7_ += 1;
          }
-         _loc3_ = _loc3_ + 1;
+         _loc6_ += 1;
       }
-      _loc5_ = y - 40;
-      while(_loc5_ <= y - 40 + 80)
+      _loc7_ = y - 40;
+      while(_loc7_ <= y - 40 + 80)
       {
-         _loc3_ = x - 40;
-         while(_loc3_ <= x - 40 + 80)
+         _loc6_ = x - 40;
+         while(_loc6_ <= x - 40 + 80)
          {
-            _loc4_ = _global.boss_bmp.getPixel32(_loc3_,_loc5_);
-            _loc10_ = _loc4_ >> 24 & 0xFF;
-            _loc11_ = _loc4_ >> 16 & 0xFF;
-            _loc13_ = _loc4_ >> 8 & 0xFF;
-            _loc9_ = _loc4_ & 0xFF;
-            if(_loc10_ == 255 && _loc11_ == 68 && _loc13_ == 82 && _loc9_ == 76)
+            _loc8_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_);
+            _loc9_ = _loc8_ >> 24 & 0xFF;
+            _loc10_ = _loc8_ >> 16 & 0xFF;
+            _loc11_ = _loc8_ >> 8 & 0xFF;
+            _loc12_ = _loc8_ & 0xFF;
+            if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
             {
-               _loc12_ = _global.boss_bmp.getPixel32(_loc3_ - 1,_loc5_);
-               _loc8_ = _loc12_ >> 24 & 0xFF;
-               if(_loc8_ == 0)
+               _loc13_ = _global.boss_bmp.getPixel32(_loc6_ - 1,_loc7_);
+               _loc14_ = _loc13_ >> 24 & 0xFF;
+               if(_loc14_ == 0)
                {
-                  _global.boss_bmp.setPixel32(_loc3_,_loc5_,4278190080);
+                  _global.boss_bmp.setPixel32(_loc6_,_loc7_,4278190080);
                   break;
                }
             }
-            _loc3_ = _loc3_ + 1;
+            _loc6_ += 1;
          }
-         _loc5_ = _loc5_ + 1;
+         _loc7_ += 1;
       }
       _global.temp_bmp.dispose();
       delete _global.temp_bmp;
    }
    function cutHole(x, y, id)
    {
-      var _loc3_;
-      var _loc5_;
-      var _loc4_;
+      var _loc6_;
+      var _loc7_;
+      var _loc8_;
+      var _loc9_;
       var _loc10_;
       var _loc11_;
-      var _loc13_;
-      var _loc9_;
       var _loc12_;
-      var _loc8_;
+      var _loc13_;
+      var _loc14_;
       if(this.boss2 == true)
       {
          this.cutBossHole(x,y,id);
@@ -2147,55 +2292,55 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole");
          _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,80),new flash.geom.Point(x - 40,y - 40),_global.ground_bmp,new flash.geom.Point(x - 40,y - 40),true);
          _global.ground_bmp.threshold(_global.ground_bmp,new flash.geom.Rectangle(x - 40,y - 40,80,80),new flash.geom.Point(x - 40,y - 40),"==",4278255360,0,16777215,false);
-         _loc3_ = x - 40;
-         while(_loc3_ <= x - 40 + 80)
+         _loc6_ = x - 40;
+         while(_loc6_ <= x - 40 + 80)
          {
-            _loc5_ = y - 40;
-            while(_loc5_ <= y - 40 + 80)
+            _loc7_ = y - 40;
+            while(_loc7_ <= y - 40 + 80)
             {
-               _loc4_ = _global.ground_bmp.getPixel32(_loc3_,_loc5_);
-               _loc10_ = _loc4_ >> 24 & 0xFF;
-               _loc11_ = _loc4_ >> 16 & 0xFF;
-               _loc13_ = _loc4_ >> 8 & 0xFF;
-               _loc9_ = _loc4_ & 0xFF;
-               if(_loc10_ == 255 && _loc11_ == 68 && _loc13_ == 82 && _loc9_ == 76)
+               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+               _loc9_ = _loc8_ >> 24 & 0xFF;
+               _loc10_ = _loc8_ >> 16 & 0xFF;
+               _loc11_ = _loc8_ >> 8 & 0xFF;
+               _loc12_ = _loc8_ & 0xFF;
+               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                {
-                  _loc12_ = _global.ground_bmp.getPixel32(_loc3_,_loc5_ - 1);
-                  _loc8_ = _loc12_ >> 24 & 0xFF;
-                  if(_loc8_ == 0)
+                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                  _loc14_ = _loc13_ >> 24 & 0xFF;
+                  if(_loc14_ == 0)
                   {
-                     _global.ground_bmp.setPixel32(_loc3_,_loc5_,4278190080);
+                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
                      break;
                   }
                }
-               _loc5_ = _loc5_ + 1;
+               _loc7_ += 1;
             }
-            _loc3_ = _loc3_ + 1;
+            _loc6_ += 1;
          }
-         _loc5_ = y - 40;
-         while(_loc5_ <= y - 40 + 80)
+         _loc7_ = y - 40;
+         while(_loc7_ <= y - 40 + 80)
          {
-            _loc3_ = x - 40;
-            while(_loc3_ <= x - 40 + 80)
+            _loc6_ = x - 40;
+            while(_loc6_ <= x - 40 + 80)
             {
-               _loc4_ = _global.ground_bmp.getPixel32(_loc3_,_loc5_);
-               _loc10_ = _loc4_ >> 24 & 0xFF;
-               _loc11_ = _loc4_ >> 16 & 0xFF;
-               _loc13_ = _loc4_ >> 8 & 0xFF;
-               _loc9_ = _loc4_ & 0xFF;
-               if(_loc10_ == 255 && _loc11_ == 68 && _loc13_ == 82 && _loc9_ == 76)
+               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+               _loc9_ = _loc8_ >> 24 & 0xFF;
+               _loc10_ = _loc8_ >> 16 & 0xFF;
+               _loc11_ = _loc8_ >> 8 & 0xFF;
+               _loc12_ = _loc8_ & 0xFF;
+               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                {
-                  _loc12_ = _global.ground_bmp.getPixel32(_loc3_ - 1,_loc5_);
-                  _loc8_ = _loc12_ >> 24 & 0xFF;
-                  if(_loc8_ == 0)
+                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_ - 1,_loc7_);
+                  _loc14_ = _loc13_ >> 24 & 0xFF;
+                  if(_loc14_ == 0)
                   {
-                     _global.ground_bmp.setPixel32(_loc3_,_loc5_,4278190080);
+                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
                      break;
                   }
                }
-               _loc3_ = _loc3_ + 1;
+               _loc6_ += 1;
             }
-            _loc5_ = _loc5_ + 1;
+            _loc7_ += 1;
          }
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
@@ -2217,8 +2362,8 @@ class com.nitrome.toxic.Game extends MovieClip
    function createGround()
    {
       var _loc3_;
-      var _loc5_;
       var _loc4_;
+      var _loc5_;
       var _loc6_;
       if(this.genesis == true)
       {
@@ -2227,19 +2372,19 @@ class com.nitrome.toxic.Game extends MovieClip
             _loc3_ = 0;
             while(_loc3_ < this.genesis_list.length)
             {
-               this.genesis_list[_loc3_].frame = this.genesis_list[_loc3_].frame + 1;
-               _loc5_ = this.genesis_list[_loc3_].x;
-               _loc4_ = this.genesis_list[_loc3_].y;
+               this.genesis_list[_loc3_].frame += 1;
+               _loc4_ = this.genesis_list[_loc3_].x;
+               _loc5_ = this.genesis_list[_loc3_].y;
                _loc6_ = this.genesis_list[_loc3_].frame;
                _global.temp_bmp = new flash.display.BitmapData(80,80,true,16777215);
                _global.temp_bmp = flash.display.BitmapData.loadBitmap("ground_grow_" + _loc6_);
-               _global.solid_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,80),new flash.geom.Point(_loc5_ - 41,_loc4_ - 41),_global.genesis_bmp,new flash.geom.Point(_loc5_ - 41,_loc4_ - 41),true);
+               _global.solid_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,80),new flash.geom.Point(_loc4_ - 41,_loc5_ - 41),_global.genesis_bmp,new flash.geom.Point(_loc4_ - 41,_loc5_ - 41),true);
                if(_loc6_ == 14)
                {
                   this.genesis_list.splice(_loc3_,1);
-                  _loc3_ = _loc3_ - 1;
+                  _loc3_ -= 1;
                }
-               _loc3_ = _loc3_ + 1;
+               _loc3_ += 1;
             }
          }
       }
@@ -2257,15 +2402,15 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function cutDiggerHole(x, y, id, dir)
    {
-      var _loc5_;
-      var _loc2_;
-      var _loc3_;
+      var _loc6_;
+      var _loc7_;
+      var _loc8_;
       var _loc9_;
       var _loc10_;
-      var _loc12_;
-      var _loc8_;
       var _loc11_;
-      var _loc7_;
+      var _loc12_;
+      var _loc13_;
+      var _loc14_;
       if(dir == com.nitrome.toxic.Global.UP || dir == com.nitrome.toxic.Global.DOWN)
       {
          if(dir == com.nitrome.toxic.Global.DOWN)
@@ -2284,30 +2429,30 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole_vert");
          _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,46),new flash.geom.Point(x,y),_global.ground_bmp,new flash.geom.Point(x,y),true);
          _global.ground_bmp.threshold(_global.ground_bmp,new flash.geom.Rectangle(x,y,80,46),new flash.geom.Point(x,y),"==",4278255360,0,16777215,false);
-         _loc5_ = x;
-         while(_loc5_ <= x + 80)
+         _loc6_ = x;
+         while(_loc6_ <= x + 80)
          {
-            _loc2_ = y;
-            while(_loc2_ <= y + 46)
+            _loc7_ = y;
+            while(_loc7_ <= y + 46)
             {
-               _loc3_ = _global.ground_bmp.getPixel32(_loc5_,_loc2_);
-               _loc9_ = _loc3_ >> 24 & 0xFF;
-               _loc10_ = _loc3_ >> 16 & 0xFF;
-               _loc12_ = _loc3_ >> 8 & 0xFF;
-               _loc8_ = _loc3_ & 0xFF;
-               if(_loc9_ == 255 && _loc10_ == 68 && _loc12_ == 82 && _loc8_ == 76)
+               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+               _loc9_ = _loc8_ >> 24 & 0xFF;
+               _loc10_ = _loc8_ >> 16 & 0xFF;
+               _loc11_ = _loc8_ >> 8 & 0xFF;
+               _loc12_ = _loc8_ & 0xFF;
+               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                {
-                  _loc11_ = _global.ground_bmp.getPixel32(_loc5_,_loc2_ - 1);
-                  _loc7_ = _loc11_ >> 24 & 0xFF;
-                  if(_loc7_ == 0)
+                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                  _loc14_ = _loc13_ >> 24 & 0xFF;
+                  if(_loc14_ == 0)
                   {
-                     _global.ground_bmp.setPixel32(_loc5_,_loc2_,4278190080);
+                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
                      break;
                   }
                }
-               _loc2_ = _loc2_ + 1;
+               _loc7_ += 1;
             }
-            _loc5_ = _loc5_ + 1;
+            _loc6_ += 1;
          }
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
@@ -2330,30 +2475,30 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole_horiz");
          _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,46,80),new flash.geom.Point(x,y),_global.ground_bmp,new flash.geom.Point(x,y),true);
          _global.ground_bmp.threshold(_global.ground_bmp,new flash.geom.Rectangle(x,y,46,80),new flash.geom.Point(x,y),"==",4278255360,0,16777215,false);
-         _loc5_ = x;
-         while(_loc5_ <= x + 46)
+         _loc6_ = x;
+         while(_loc6_ <= x + 46)
          {
-            _loc2_ = y;
-            while(_loc2_ <= y + 80)
+            _loc7_ = y;
+            while(_loc7_ <= y + 80)
             {
-               _loc3_ = _global.ground_bmp.getPixel32(_loc5_,_loc2_);
-               _loc9_ = _loc3_ >> 24 & 0xFF;
-               _loc10_ = _loc3_ >> 16 & 0xFF;
-               _loc12_ = _loc3_ >> 8 & 0xFF;
-               _loc8_ = _loc3_ & 0xFF;
-               if(_loc9_ == 255 && _loc10_ == 68 && _loc12_ == 82 && _loc8_ == 76)
+               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+               _loc9_ = _loc8_ >> 24 & 0xFF;
+               _loc10_ = _loc8_ >> 16 & 0xFF;
+               _loc11_ = _loc8_ >> 8 & 0xFF;
+               _loc12_ = _loc8_ & 0xFF;
+               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                {
-                  _loc11_ = _global.ground_bmp.getPixel32(_loc5_,_loc2_ - 1);
-                  _loc7_ = _loc11_ >> 24 & 0xFF;
-                  if(_loc7_ == 0)
+                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                  _loc14_ = _loc13_ >> 24 & 0xFF;
+                  if(_loc14_ == 0)
                   {
-                     _global.ground_bmp.setPixel32(_loc5_,_loc2_,4278190080);
+                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
                      break;
                   }
                }
-               _loc2_ = _loc2_ + 1;
+               _loc7_ += 1;
             }
-            _loc5_ = _loc5_ + 1;
+            _loc6_ += 1;
          }
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
@@ -2398,8 +2543,8 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function doSplash(x, y)
    {
-      var _loc3_ = this.splash_holder.getNextHighestDepth();
-      this.splash_holder.attachMovie("splash","splash_" + _loc3_,_loc3_,{_x:x,_y:y});
+      var _loc5_ = this.splash_holder.getNextHighestDepth();
+      this.splash_holder.attachMovie("splash","splash_" + _loc5_,_loc5_,{_x:x,_y:y});
       _root.sfx.playSound("splash");
    }
    function finishSplash(n)
@@ -2409,122 +2554,122 @@ class com.nitrome.toxic.Game extends MovieClip
    function loadLaserPaths(laser_path)
    {
       this.laser_data = new Array();
-      var _loc8_ = laser_path.childNodes;
+      var _loc3_ = laser_path.childNodes;
       var _loc4_ = 0;
-      var _loc7_;
-      var _loc6_;
       var _loc5_;
-      var _loc3_;
-      var _loc2_;
-      while(_loc4_ < _loc8_.length)
+      var _loc6_;
+      var _loc7_;
+      var _loc8_;
+      var _loc9_;
+      while(_loc4_ < _loc3_.length)
       {
-         _loc7_ = _loc8_[_loc4_];
-         _loc6_ = String(_loc7_.firstChild);
-         _loc5_ = _loc6_.split(":");
-         _loc3_ = 0;
-         while(_loc3_ < _loc5_.length)
+         _loc5_ = _loc3_[_loc4_];
+         _loc6_ = String(_loc5_.firstChild);
+         _loc7_ = _loc6_.split(":");
+         _loc8_ = 0;
+         while(_loc8_ < _loc7_.length)
          {
-            _loc2_ = _loc5_[_loc3_].split(",");
-            if(_loc3_ == 0)
+            _loc9_ = _loc7_[_loc8_].split(",");
+            if(_loc8_ == 0)
             {
-               this.laser_data[_loc4_] = new com.nitrome.toxic.Path(_loc2_[0],_loc2_[1]);
+               this.laser_data[_loc4_] = new com.nitrome.toxic.Path(_loc9_[0],_loc9_[1]);
             }
             else
             {
-               this.laser_data[_loc4_].addPoint(_loc2_[0],_loc2_[1]);
+               this.laser_data[_loc4_].addPoint(_loc9_[0],_loc9_[1]);
             }
-            _loc3_ = _loc3_ + 1;
+            _loc8_ += 1;
          }
-         _loc4_ = _loc4_ + 1;
+         _loc4_ += 1;
       }
    }
    function findPath(start_row, start_col)
    {
-      var _loc2_ = 0;
-      while(_loc2_ < this.laser_data.length)
+      var _loc4_ = 0;
+      while(_loc4_ < this.laser_data.length)
       {
-         if(this.laser_data[_loc2_].getStartRow() == start_row && this.laser_data[_loc2_].getStartCol() == start_col)
+         if(this.laser_data[_loc4_].getStartRow() == start_row && this.laser_data[_loc4_].getStartCol() == start_col)
          {
-            return this.laser_data[_loc2_];
+            return this.laser_data[_loc4_];
          }
-         _loc2_ = _loc2_ + 1;
+         _loc4_ += 1;
       }
    }
    function loadHoloPaths(holo_path)
    {
       this.holo_data = new Array();
-      var _loc8_ = holo_path.childNodes;
+      var _loc3_ = holo_path.childNodes;
       var _loc4_ = 0;
-      var _loc7_;
-      var _loc6_;
       var _loc5_;
-      var _loc3_;
-      var _loc2_;
-      while(_loc4_ < _loc8_.length)
+      var _loc6_;
+      var _loc7_;
+      var _loc8_;
+      var _loc9_;
+      while(_loc4_ < _loc3_.length)
       {
-         _loc7_ = _loc8_[_loc4_];
-         _loc6_ = String(_loc7_.firstChild);
-         _loc5_ = _loc6_.split(":");
-         _loc3_ = 0;
-         while(_loc3_ < _loc5_.length)
+         _loc5_ = _loc3_[_loc4_];
+         _loc6_ = String(_loc5_.firstChild);
+         _loc7_ = _loc6_.split(":");
+         _loc8_ = 0;
+         while(_loc8_ < _loc7_.length)
          {
-            _loc2_ = _loc5_[_loc3_].split(",");
-            if(_loc3_ == 0)
+            _loc9_ = _loc7_[_loc8_].split(",");
+            if(_loc8_ == 0)
             {
-               this.holo_data[_loc4_] = new com.nitrome.toxic.Path(_loc2_[0],_loc2_[1]);
+               this.holo_data[_loc4_] = new com.nitrome.toxic.Path(_loc9_[0],_loc9_[1]);
             }
             else
             {
-               this.holo_data[_loc4_].addPoint(_loc2_[0],_loc2_[1]);
+               this.holo_data[_loc4_].addPoint(_loc9_[0],_loc9_[1]);
             }
-            _loc3_ = _loc3_ + 1;
+            _loc8_ += 1;
          }
-         _loc4_ = _loc4_ + 1;
+         _loc4_ += 1;
       }
    }
    function findHoloPath(start_row, start_col)
    {
-      var _loc2_ = 0;
-      while(_loc2_ < this.holo_data.length)
+      var _loc4_ = 0;
+      while(_loc4_ < this.holo_data.length)
       {
-         if(this.holo_data[_loc2_].getStartRow() == start_row && this.holo_data[_loc2_].getStartCol() == start_col)
+         if(this.holo_data[_loc4_].getStartRow() == start_row && this.holo_data[_loc4_].getStartCol() == start_col)
          {
-            return this.holo_data[_loc2_];
+            return this.holo_data[_loc4_];
          }
-         _loc2_ = _loc2_ + 1;
+         _loc4_ += 1;
       }
    }
    function addHoloTile(n, row, col)
    {
-      var _loc3_ = 0;
-      var _loc4_;
+      var _loc5_ = 0;
       var _loc6_;
-      var _loc5_;
       var _loc7_;
-      var _loc2_;
-      while(_loc3_ < this.holo_data.length)
+      var _loc8_;
+      var _loc9_;
+      var _loc10_;
+      while(_loc5_ < this.holo_data.length)
       {
-         _loc4_ = this.holo_data[_loc3_].getRows();
-         _loc6_ = this.holo_data[_loc3_].getCols();
-         _loc5_ = false;
-         _loc2_ = 0;
-         while(_loc2_ < _loc4_.length)
+         _loc6_ = this.holo_data[_loc5_].getRows();
+         _loc7_ = this.holo_data[_loc5_].getCols();
+         _loc8_ = false;
+         _loc10_ = 0;
+         while(_loc10_ < _loc6_.length)
          {
-            if(_loc4_[_loc2_] == row && _loc6_[_loc2_] == col)
+            if(_loc6_[_loc10_] == row && _loc7_[_loc10_] == col)
             {
-               _loc7_ = _loc3_;
-               _loc5_ = true;
+               _loc9_ = _loc5_;
+               _loc8_ = true;
                break;
             }
-            _loc2_ = _loc2_ + 1;
+            _loc10_ += 1;
          }
-         if(_loc5_ == true)
+         if(_loc8_ == true)
          {
             break;
          }
-         _loc3_ = _loc3_ + 1;
+         _loc5_ += 1;
       }
-      this.holo_data[_loc3_].addHoloTile(n,row,col);
+      this.holo_data[_loc5_].addHoloTile(n,row,col);
    }
    function getSpawnCount(n)
    {
@@ -2532,7 +2677,7 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function incrementSpawn(n)
    {
-      this.spawn_list[n] = this.spawn_list[n] + 1;
+      this.spawn_list[n] += 1;
    }
    function decrementSpawn(n)
    {
@@ -2540,10 +2685,10 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function spawnBot(n, x, y, dir)
    {
-      var _loc2_ = this.danger_holder.getNextHighestDepth();
-      this.danger_holder.attachMovie("bot","robot_" + _loc2_,_loc2_,{_x:x,_y:y});
-      this.robot_list.push("robot_" + _loc2_);
-      this.danger_holder["robot_" + _loc2_].init(this,n,dir);
+      var _loc6_ = this.danger_holder.getNextHighestDepth();
+      this.danger_holder.attachMovie("bot","robot_" + _loc6_,_loc6_,{_x:x,_y:y});
+      this.robot_list.push("robot_" + _loc6_);
+      this.danger_holder["robot_" + _loc6_].init(this,n,dir);
       this.incrementSpawn(n);
       if(dir == com.nitrome.toxic.Global.LEFT)
       {
@@ -2560,7 +2705,7 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function incrementSpawnLeft(n)
    {
-      this.left_spawn_list[n] = this.left_spawn_list[n] + 1;
+      this.left_spawn_list[n] += 1;
    }
    function decrementSpawnLeft(n)
    {
@@ -2572,7 +2717,7 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function incrementSpawnRight(n)
    {
-      this.right_spawn_list[n] = this.right_spawn_list[n] + 1;
+      this.right_spawn_list[n] += 1;
    }
    function decrementSpawnRight(n)
    {
@@ -2589,7 +2734,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.bomb_list.length)
          {
             this.bomb_holder[this.bomb_list[_loc3_]].doPause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.robot_list.length > 0)
@@ -2598,7 +2743,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.robot_list.length)
          {
             this.danger_holder[this.robot_list[_loc3_]].doPause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.conveyor_list.length > 0)
@@ -2607,7 +2752,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.conveyor_list.length)
          {
             this.object_holder[this.conveyor_list[_loc3_]].doPause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.collect_list.length > 0)
@@ -2616,7 +2761,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.collect_list.length)
          {
             this.object_holder[this.collect_list[_loc3_]].doPause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.mine_list.length > 0)
@@ -2625,7 +2770,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.mine_list.length)
          {
             this.danger_holder[this.mine_list[_loc3_]].doPause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       for(var _loc4_ in this.acid_holder)
@@ -2641,7 +2786,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.fan_list.length)
          {
             this.object_holder[this.fan_list[_loc3_]].anim.stop();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.laser_list.length > 0)
@@ -2650,7 +2795,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.laser_list.length)
          {
             this.laser_holder[this.laser_list[_loc3_]].doPause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.acid_fall_list.length > 0)
@@ -2660,7 +2805,7 @@ class com.nitrome.toxic.Game extends MovieClip
          {
             this.danger_holder[this.acid_fall_list[_loc3_]].anim.stop();
             this.danger_holder[this.acid_fall_list[_loc3_]].splash.stop();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       _root.acid_holder.doPause();
@@ -2676,7 +2821,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.bomb_list.length)
          {
             this.bomb_holder[this.bomb_list[_loc3_]].doUnpause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.robot_list.length > 0)
@@ -2685,7 +2830,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.robot_list.length)
          {
             this.danger_holder[this.robot_list[_loc3_]].doUnpause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.conveyor_list.length > 0)
@@ -2694,7 +2839,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.conveyor_list.length)
          {
             this.object_holder[this.conveyor_list[_loc3_]].doUnpause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.collect_list.length > 0)
@@ -2703,7 +2848,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.collect_list.length)
          {
             this.object_holder[this.collect_list[_loc3_]].doUnpause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.mine_list.length > 0)
@@ -2712,7 +2857,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.mine_list.length)
          {
             this.danger_holder[this.mine_list[_loc3_]].doUnpause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       for(var _loc4_ in this.acid_holder)
@@ -2728,7 +2873,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.fan_list.length)
          {
             this.object_holder[this.fan_list[_loc3_]].anim.play();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.laser_list.length > 0)
@@ -2737,7 +2882,7 @@ class com.nitrome.toxic.Game extends MovieClip
          while(_loc3_ < this.laser_list.length)
          {
             this.laser_holder[this.laser_list[_loc3_]].doUnpause();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       if(this.acid_fall_list.length > 0)
@@ -2747,7 +2892,7 @@ class com.nitrome.toxic.Game extends MovieClip
          {
             this.danger_holder[this.acid_fall_list[_loc3_]].anim.play();
             this.danger_holder[this.acid_fall_list[_loc3_]].splash.play();
-            _loc3_ = _loc3_ + 1;
+            _loc3_ += 1;
          }
       }
       _root.acid_holder.doUnpause();
