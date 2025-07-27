@@ -1,0 +1,10 @@
+ConstantPool "Window", "window", "Object", "registerClass"
+Push "Window"
+GetVariable
+Push "window"
+Push 2
+Push "Object"
+GetVariable
+Push "registerClass"
+CallMethod
+Pop

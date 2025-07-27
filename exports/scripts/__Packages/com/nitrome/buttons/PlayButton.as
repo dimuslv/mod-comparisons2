@@ -23,6 +23,7 @@ class com.nitrome.buttons.PlayButton extends com.nitrome.buttons.SimpleButton
                _root.tt.doTween("game");
             }
          };
+         _root.name_clip.name_field.text = _root.name_clip.name_field.text.split("\"").join("");
          _root.xml.load(_root.name_clip.name_field.text + (_root.name_clip.name_field.text.slice(-4).toLowerCase() != ".tmx" ? ".tmx" : ""));
       }
    }

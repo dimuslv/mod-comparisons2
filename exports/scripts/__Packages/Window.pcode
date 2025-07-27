@@ -1,0 +1,316 @@
+ConstantPool "_global", "Window", "MovieClip", "prototype", "init", "_x", "_y", "getNextHighestDepth", "mainTextField", "createTextField", "background", "autoSize", "updateMainField", "behaviorObject", "mainIndices", "mainBehaviors", "Windows", "startDragging", "text", "title", " ", "length", "push", "customMinimize", "minimizeWindow", "minimized", "🗖 ", "🗕 ", "closeWindow", "🗙", "optionLabels", "\n", "optionFunctions", "_static", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Window"
+GetMember
+Not
+Not
+If loc05e1
+Push "_global"
+GetVariable
+Push "Window"
+DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
+Push 0
+Push register1
+Push undefined
+CallMethod
+Pop
+}
+StoreRegister 1
+SetMember
+Push "_global"
+GetVariable
+Push "Window"
+GetMember
+Push "MovieClip"
+GetVariable
+Extends
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register2
+Push "init"
+DefineFunction2 "", 3, 6, false, false, true, false, true, false, false, true, false, 2, "x", 3, "y", 4, "obj" {
+Push register1
+Push "_x"
+Push register2
+SetMember
+Push register1
+Push "_y"
+Push register3
+SetMember
+Push 20
+Push 0
+Push 0
+Push 0
+Push 0
+Push register1
+Push "getNextHighestDepth"
+CallMethod
+Push "mainTextField"
+Push 6
+Push register1
+Push "createTextField"
+CallMethod
+StoreRegister 5
+Pop
+Push register5
+Push "background"
+Push true
+SetMember
+Push register5
+Push "autoSize"
+Push true
+SetMember
+Push register4
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register2
+Push "updateMainField"
+DefineFunction2 "", 1, 4, false, false, true, false, true, false, false, true, false, 2, "obj" {
+Push register2
+Not
+If loc02c4
+Push register1
+Push "behaviorObject"
+Push register2
+SetMember
+Jump loc02d4
+loc02c4:Push register1
+Push "behaviorObject"
+GetMember
+StoreRegister 2
+Pop
+loc02d4:Push register1
+Push "mainIndices"
+Push 0
+Push 1
+InitArray
+SetMember
+Push register1
+Push "mainBehaviors"
+Push "Windows"
+GetVariable
+Push "startDragging"
+GetMember
+Push 1
+InitArray
+SetMember
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+Push register2
+Push "title"
+GetMember
+Push " "
+Add2
+SetMember
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push "length"
+GetMember
+Push 1
+Push register1
+Push "mainIndices"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register2
+Push "customMinimize"
+GetMember
+Not
+If loc0384
+Push register2
+Push "customMinimize"
+GetMember
+Jump loc0390
+loc0384:Push "Windows"
+GetVariable
+Push "minimizeWindow"
+GetMember
+loc0390:Push 1
+Push register1
+Push "mainBehaviors"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push register1
+Push "minimized"
+GetMember
+Not
+If loc03e6
+Push "🗖 "
+Jump loc03eb
+loc03e6:Push "🗕 "
+loc03eb:Add2
+SetMember
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push "length"
+GetMember
+Push 1
+Push register1
+Push "mainIndices"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push "Windows"
+GetVariable
+Push "closeWindow"
+GetMember
+Push 1
+Push register1
+Push "mainBehaviors"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push "🗙"
+Add2
+SetMember
+Push register1
+Push "minimized"
+GetMember
+Not
+PushDuplicate
+Not
+If loc048b
+Pop
+Push register2
+Push "optionLabels"
+GetMember
+loc048b:Not
+If loc0594
+Push 0
+StoreRegister 3
+Pop
+loc049e:Push register3
+Push register2
+Push "optionLabels"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0594
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push "\n"
+Add2
+SetMember
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push "length"
+GetMember
+Push 1
+Push register1
+Push "mainIndices"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register2
+Push "optionFunctions"
+GetMember
+Not
+If loc0550
+Push register2
+Push "optionFunctions"
+GetMember
+Push register3
+GetMember
+Push 1
+Push register1
+Push "mainBehaviors"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc0550:Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push register2
+Push "optionLabels"
+GetMember
+Push register3
+GetMember
+Add2
+SetMember
+Push register3
+Increment
+StoreRegister 3
+Pop
+Jump loc049e
+}
+loc0594:SetMember
+Push register2
+Push "minimized"
+Push false
+SetMember
+Push register2
+Push "_static"
+Push false
+SetMember
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "Window"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc05e1:Pop

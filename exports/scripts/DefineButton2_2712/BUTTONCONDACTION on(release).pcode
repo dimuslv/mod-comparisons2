@@ -1,1 +1,7 @@
-GetUrl "http://www.nitrome.com/", "_blank"
+Push "pre_title_screen", 1, "_root"
+GetVariable
+Push "tt"
+GetMember
+Push "doTween"
+CallMethod
+Pop

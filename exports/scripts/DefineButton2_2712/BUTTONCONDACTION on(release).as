@@ -1,3 +1,3 @@
 on(release){
-   getUrl("http://www.nitrome.com/", "_blank");
+   _root.tt.doTween("pre_title_screen");
 }

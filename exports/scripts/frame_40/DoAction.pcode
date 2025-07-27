@@ -1,11 +1,19 @@
-ConstantPool
-Push 20, 150, 205, 200, 1, "name_field", 6, "_root"
+ConstantPool "name_field", "_root", "name_clip", "createTextField", "type", "input", "textColor"
+Push 20
+Push 150
+Push 205
+Push 200
+Push 1
+Push "name_field"
+Push 6
+Push "_root"
 GetVariable
 Push "name_clip"
 GetMember
 Push "createTextField"
 CallMethod
-Push "type", "input"
+Push "type"
+Push "input"
 SetMember
 Push "_root"
 GetVariable
@@ -13,6 +21,7 @@ Push "name_clip"
 GetMember
 Push "name_field"
 GetMember
-Push "textColor", 16777215
+Push "textColor"
+Push 16777215
 SetMember
 Stop

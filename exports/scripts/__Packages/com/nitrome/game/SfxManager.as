@@ -8,7 +8,7 @@ class com.nitrome.game.SfxManager extends MovieClip
    {
       if(_root.mc.getSfxOn() == true)
       {
-         if(!_root.fastPlayback)
+         if(!TAS.fastPlayback)
          {
             this[id].gotoAndPlay(2);
          }

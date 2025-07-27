@@ -62,7 +62,7 @@ Push "PlayButton"
 GetMember
 Not
 Not
-If loc0403
+If loc0495
 Push "com"
 GetVariable
 Push "nitrome"
@@ -114,7 +114,7 @@ GetMember
 Push "doTween"
 CallMethod
 Pop
-Jump loc03d3
+Jump loc0465
 loc0209:Push "_root"
 GetVariable
 Push "xml", 0, "XML"
@@ -165,6 +165,28 @@ GetMember
 Push "name_field"
 GetMember
 Push "text"
+Push "", 1
+Push "\"", 1
+Push "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "name_field"
+GetMember
+Push "text"
+GetMember
+Push "split"
+CallMethod
+Push "join"
+CallMethod
+SetMember
+Push "_root"
+GetVariable
+Push "name_clip"
+GetMember
+Push "name_field"
+GetMember
+Push "text"
 GetMember
 Push 0, -4, 1, "_root"
 GetVariable
@@ -180,11 +202,11 @@ Push "toLowerCase"
 CallMethod
 Push ".tmx"
 Equals2
-If loc03a9
+If loc043b
 Push ".tmx"
-Jump loc03ae
-loc03a9:Push ""
-loc03ae:Add2
+Jump loc0440
+loc043b:Push ""
+loc0440:Add2
 Push 1, "_root"
 GetVariable
 Push "xml"
@@ -193,7 +215,7 @@ Push "load"
 CallMethod
 Pop
 }
-loc03d3:SetMember
+loc0465:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -206,4 +228,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0403:Pop
+loc0495:Pop

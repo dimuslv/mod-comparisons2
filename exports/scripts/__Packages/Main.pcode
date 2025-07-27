@@ -1,0 +1,1194 @@
+ConstantPool "_global", "Main", "prototype", "init", "aMode", "_random", "RNG", "_random_double", "_stop", "_play", "_gotoAndStop", "_gotoAndPlay", "updateTestBitmap", "spriteInfo", "Windows", "levelInit", "game", "holders", "explosion_holder", "acid_holder", "splash_holder", "missile_holder", "bomb_holder", "grow_holder", "player_holder", "laser_holder", "danger_holder", "safe_holder", "object_holder", "heart_holder", "TAS", "stopAll", "metaUpdate", "frozen", "write", "curArray", "length", "curIndex", "curFrame", "gameUpdate", "updateText", "checkKeys", "scriptStack", "updateAnimations", "executeScripts", "doEnterFrame", "doEnterFrameBeacon", "justPause", "com", "nitrome", "toxic", "Global", "game_paused", "justPlacedBombs", "i", "objName", "obj", "chid", "advanceAnimation", "iterateOnChildren", "determineChildChid", "justExisted", "number", "_currentframe", "m", "stopped", "_totalframes", "gotoAndStop", "nextFrame", "object", "f", "push", "checkFrameScript", "_gotoAnd", "gotoAndPlay", "stop", "play", "stopAnimation", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Main"
+GetMember
+Not
+Not
+If loc1441
+Push "_global"
+GetVariable
+Push "Main"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1
+Push "init"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "aMode"
+Push true
+SetMember
+Push register1
+Push "_random"
+Push "RNG"
+GetVariable
+Push "_random"
+GetMember
+SetMember
+Push register1
+Push "_random_double"
+Push "RNG"
+GetVariable
+Push "_random_double"
+GetMember
+SetMember
+Push register1
+Push "_stop"
+Push "Main"
+GetVariable
+Push "_stop"
+GetMember
+SetMember
+Push register1
+Push "_play"
+Push "Main"
+GetVariable
+Push "_play"
+GetMember
+SetMember
+Push register1
+Push "_gotoAndStop"
+Push "Main"
+GetVariable
+Push "_gotoAndStop"
+GetMember
+SetMember
+Push register1
+Push "_gotoAndPlay"
+Push "Main"
+GetVariable
+Push "_gotoAndPlay"
+GetMember
+SetMember
+Push register1
+Push "updateTestBitmap"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "a" {
+Push undefined
+Return
+}
+SetMember
+Push "Main"
+GetVariable
+Push "spriteInfo"
+Push register1
+Push "spriteInfo"
+GetMember
+SetMember
+Push 0
+Push "Windows"
+GetVariable
+Push "init"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "levelInit"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "game"
+GetMember
+StoreRegister 2
+Pop
+Push "Main"
+GetVariable
+Push "holders"
+Push register2
+Push "explosion_holder"
+GetMember
+Push register2
+Push "acid_holder"
+GetMember
+Push register2
+Push "splash_holder"
+GetMember
+Push register2
+Push "missile_holder"
+GetMember
+Push register2
+Push "bomb_holder"
+GetMember
+Push register2
+Push "grow_holder"
+GetMember
+Push register2
+Push "player_holder"
+GetMember
+Push register2
+Push "laser_holder"
+GetMember
+Push register2
+Push "danger_holder"
+GetMember
+Push register2
+Push "safe_holder"
+GetMember
+Push register2
+Push "object_holder"
+GetMember
+Push register2
+Push "heart_holder"
+GetMember
+Push 12
+InitArray
+SetMember
+Push 0
+Push "TAS"
+GetVariable
+Push "levelInit"
+CallMethod
+Pop
+Push 0
+Push "Main"
+GetVariable
+Push "stopAll"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "metaUpdate"
+DefineFunction "", 0 {
+Push "TAS"
+GetVariable
+Push "frozen"
+GetMember
+If loc0682
+Push "TAS"
+GetVariable
+Push "write"
+GetMember
+Not
+PushDuplicate
+Not
+If loc0627
+Pop
+Push "TAS"
+GetVariable
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Push 0
+Equals2
+PushDuplicate
+If loc05c0
+Pop
+Push "TAS"
+GetVariable
+Push "curIndex"
+GetMember
+Push "TAS"
+GetVariable
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+loc05c0:PushDuplicate
+If loc0627
+Pop
+Push "TAS"
+GetVariable
+Push "curIndex"
+GetMember
+Push "TAS"
+GetVariable
+Push "curArray"
+GetMember
+Push "length"
+GetMember
+Push 3
+Subtract
+Equals2
+PushDuplicate
+Not
+If loc0627
+Pop
+Push "TAS"
+GetVariable
+Push "curFrame"
+GetMember
+Push "TAS"
+GetVariable
+Push "curArray"
+GetMember
+Push "TAS"
+GetVariable
+Push "curIndex"
+GetMember
+Push 1
+Add2
+GetMember
+Less2
+Not
+loc0627:Not
+If loc0643
+Push "TAS"
+GetVariable
+Push "frozen"
+Push true
+SetMember
+Jump loc0682
+loc0643:Push 0
+Push "Main"
+GetVariable
+Push "gameUpdate"
+CallMethod
+Pop
+Push 0
+Push "TAS"
+GetVariable
+Push "updateText"
+CallMethod
+Pop
+Push 0
+Push "Main"
+GetVariable
+Push "stopAll"
+CallMethod
+Pop
+}
+loc0682:SetMember
+Push register1
+Push "gameUpdate"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
+Push 0
+Push "TAS"
+GetVariable
+Push "checkKeys"
+CallMethod
+Pop
+Push "Main"
+GetVariable
+Push "scriptStack"
+Push 0
+InitArray
+SetMember
+Push 0
+Push "Main"
+GetVariable
+Push "updateAnimations"
+CallMethod
+Pop
+Push "Main"
+GetVariable
+Push "scriptStack"
+GetMember
+StoreRegister 2
+Pop
+Push "Main"
+GetVariable
+Push "scriptStack"
+Push 0
+InitArray
+SetMember
+Push register2
+Push 1
+Push "Main"
+GetVariable
+Push "executeScripts"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "game"
+GetMember
+Push "doEnterFrame"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "doEnterFrameBeacon"
+CallMethod
+Pop
+Push "Main"
+GetVariable
+Push "scriptStack"
+GetMember
+Push 1
+Push "Main"
+GetVariable
+Push "executeScripts"
+CallMethod
+Pop
+Push "TAS"
+GetVariable
+Push "justPause"
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "game_paused"
+GetMember
+SetMember
+Push "TAS"
+GetVariable
+Push "justPlacedBombs"
+Push 0
+SetMember
+}
+SetMember
+Push register1
+Push "executeScripts"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "stack" {
+Push 0
+StoreRegister 2
+Pop
+loc07ce:Push register2
+Push register1
+Push "length"
+GetMember
+Less2
+Not
+If loc0825
+Push register1
+Push register2
+GetMember
+Push 1
+Push register1
+Push register2
+Push 1
+Add2
+CallMethod
+Pop
+Push register2
+Push 2
+Add2
+StoreRegister 2
+Pop
+Jump loc07ce
+}
+loc0825:SetMember
+Push register1
+Push "updateAnimations"
+DefineFunction "", 0 {
+Push "i"
+Push 0
+DefineLocal
+loc0846:Push "i"
+GetVariable
+Push "Main"
+GetVariable
+Push "holders"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc08f0
+Push "Main"
+GetVariable
+Push "holders"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Enumerate2
+loc0879:StoreRegister 0
+Push null
+Equals2
+If loc08de
+Push "objName"
+Push register0
+DefineLocal
+Push "obj"
+Push "Main"
+GetVariable
+Push "holders"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push "objName"
+GetVariable
+GetMember
+DefineLocal
+Push "obj"
+GetVariable
+Push "chid"
+GetMember
+Push "obj"
+GetVariable
+Push 2
+Push "Main"
+GetVariable
+Push "advanceAnimation"
+CallMethod
+Pop
+Jump loc0879
+loc08de:Push "i"
+Push "i"
+GetVariable
+Increment
+SetVariable
+Jump loc0846
+}
+loc08f0:SetMember
+Push register1
+Push "iterateOnChildren"
+DefineFunction2 "", 4, 8, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "childArray", 3, "fun1", 4, "fun2" {
+Push 0
+StoreRegister 5
+Pop
+loc0930:Push register5
+Push register2
+Push "length"
+GetMember
+Less2
+Not
+If loc0a0c
+Push register1
+Push register2
+Push register5
+GetMember
+GetMember
+StoreRegister 6
+Pop
+Push register6
+Not
+If loc09f4
+Push register2
+Push register5
+Push 1
+Add2
+GetMember
+Push register1
+Push 2
+Push "Main"
+GetVariable
+Push "determineChildChid"
+CallMethod
+StoreRegister 7
+Pop
+Push register6
+Push "justExisted"
+GetMember
+If loc09cc
+Push register7
+Push register6
+Push 2
+Push register3
+Push undefined
+CallMethod
+Pop
+Jump loc09f4
+loc09cc:Push register4
+Not
+If loc09f4
+Push register7
+Push register6
+Push 2
+Push register4
+Push undefined
+CallMethod
+Pop
+loc09f4:Push register5
+Push 2
+Add2
+StoreRegister 5
+Pop
+Jump loc0930
+}
+loc0a0c:SetMember
+Push register1
+Push "determineChildChid"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
+Push register2
+TypeOf
+Push "number"
+Equals2
+Not
+Not
+If loc0ab8
+Push 0
+StoreRegister 3
+Pop
+loc0a4d:Push register3
+Push register2
+Push "length"
+GetMember
+Less2
+Not
+If loc0aaf
+Push register1
+Push "_currentframe"
+GetMember
+Push register2
+Push register3
+GetMember
+Less2
+Not
+Not
+If loc0a97
+Push register2
+Push register3
+Push 1
+Add2
+GetMember
+Return
+loc0a97:Push register3
+Push 2
+Add2
+StoreRegister 3
+Pop
+Jump loc0a4d
+loc0aaf:Push 0
+Return
+loc0ab8:Push register2
+Return
+}
+SetMember
+Push register1
+Push "advanceAnimation"
+DefineFunction2 "", 2, 5, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
+Push register2
+If loc0aee
+Push undefined
+Return
+loc0aee:Push "Main"
+GetVariable
+Push "spriteInfo"
+GetMember
+Push "m"
+Push register2
+Add2
+GetMember
+StoreRegister 3
+Pop
+Push register3
+If loc0b1a
+Push undefined
+Return
+loc0b1a:Push register3
+Push "length"
+GetMember
+Push 1
+Greater
+Not
+If loc0bbe
+Push 0
+StoreRegister 4
+Pop
+loc0b41:Push register4
+Push register3
+Push 1
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0bbe
+Push register1
+Push register3
+Push 1
+GetMember
+Push register4
+GetMember
+GetMember
+Not
+If loc0ba6
+Push register1
+Push register3
+Push 1
+GetMember
+Push register4
+GetMember
+GetMember
+Push "justExisted"
+Push true
+SetMember
+loc0ba6:Push register4
+Push 2
+Add2
+StoreRegister 4
+Pop
+Jump loc0b41
+loc0bbe:Push register3
+Push 0
+GetMember
+PushDuplicate
+Not
+If loc0be0
+Pop
+Push register1
+Push "stopped"
+GetMember
+Not
+loc0be0:Not
+If loc0cba
+Push register1
+Push "_currentframe"
+GetMember
+Push register1
+Push "_totalframes"
+GetMember
+Less2
+Not
+Not
+If loc0c25
+Push 1
+Push 1
+Push register1
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc0c39
+loc0c25:Push 0
+Push register1
+Push "nextFrame"
+CallMethod
+Pop
+loc0c39:Push register3
+Push 0
+GetMember
+TypeOf
+Push "object"
+Equals2
+Not
+If loc0cba
+Push register3
+Push 0
+GetMember
+Push "f"
+Push register1
+Push "_currentframe"
+GetMember
+Add2
+GetMember
+Not
+If loc0cba
+Push register3
+Push 0
+GetMember
+Push "f"
+Push register1
+Push "_currentframe"
+GetMember
+Add2
+GetMember
+Push register1
+Push 2
+Push "Main"
+GetVariable
+Push "scriptStack"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc0cba:Push register3
+Push "length"
+GetMember
+Push 1
+Greater
+Not
+If loc0d14
+Push "Main"
+GetVariable
+Push "advanceAnimation"
+GetMember
+Push "Main"
+GetVariable
+Push "checkFrameScript"
+GetMember
+Push register3
+Push 1
+GetMember
+Push register1
+Push 4
+Push "Main"
+GetVariable
+Push "iterateOnChildren"
+CallMethod
+Pop
+}
+loc0d14:SetMember
+Push register1
+Push "checkFrameScript"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
+Push register2
+If loc0d44
+Push undefined
+Return
+loc0d44:Push "Main"
+GetVariable
+Push "spriteInfo"
+GetMember
+Push "m"
+Push register2
+Add2
+GetMember
+StoreRegister 3
+Pop
+Push register3
+If loc0d70
+Push undefined
+Return
+loc0d70:Push register3
+Push 0
+GetMember
+TypeOf
+Push "object"
+Equals2
+Not
+If loc0df1
+Push register3
+Push 0
+GetMember
+Push "f"
+Push register1
+Push "_currentframe"
+GetMember
+Add2
+GetMember
+Not
+If loc0df1
+Push register3
+Push 0
+GetMember
+Push "f"
+Push register1
+Push "_currentframe"
+GetMember
+Add2
+GetMember
+Push register1
+Push 2
+Push "Main"
+GetVariable
+Push "scriptStack"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc0df1:Push register3
+Push "length"
+GetMember
+Push 1
+Greater
+Not
+If loc0e4b
+Push "Main"
+GetVariable
+Push "checkFrameScript"
+GetMember
+Push "Main"
+GetVariable
+Push "checkFrameScript"
+GetMember
+Push register3
+Push 1
+GetMember
+Push register1
+Push 4
+Push "Main"
+GetVariable
+Push "iterateOnChildren"
+CallMethod
+Pop
+}
+loc0e4b:SetMember
+Push register1
+Push "_gotoAnd"
+DefineFunction2 "", 4, 9, false, true, true, false, true, false, true, false, false, 2, "that", 3, "frame", 4, "chid", 5, "doStop" {
+Push register1
+Push "aMode"
+GetMember
+Not
+If loc10ed
+Push register4
+Not
+If loc10bf
+Push "Main"
+GetVariable
+Push "spriteInfo"
+GetMember
+Push "m"
+Push register4
+Add2
+GetMember
+StoreRegister 6
+Pop
+Push register6
+If loc0ef0
+Push register5
+Push 0
+Push register3
+Push register2
+Push 4
+Push "Main"
+GetVariable
+Push "_gotoAnd"
+CallMethod
+Pop
+Push undefined
+Return
+loc0ef0:Push register6
+Push "length"
+GetMember
+Push 1
+Greater
+Not
+If loc0f94
+Push 0
+StoreRegister 7
+Pop
+loc0f17:Push register7
+Push register6
+Push 1
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc0f94
+Push register2
+Push register6
+Push 1
+GetMember
+Push register7
+GetMember
+GetMember
+Not
+If loc0f7c
+Push register2
+Push register6
+Push 1
+GetMember
+Push register7
+GetMember
+GetMember
+Push "justExisted"
+Push true
+SetMember
+loc0f7c:Push register7
+Push 2
+Add2
+StoreRegister 7
+Pop
+Jump loc0f17
+loc0f94:Push register2
+Push "_currentframe"
+GetMember
+StoreRegister 8
+Pop
+Push register3
+Push 1
+Push register2
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register2
+Push "stopped"
+Push register5
+SetMember
+Push register8
+Push register2
+Push "_currentframe"
+GetMember
+Equals2
+Not
+Not
+If loc10ba
+Push register6
+Push 0
+GetMember
+TypeOf
+Push "object"
+Equals2
+Not
+If loc1067
+Push register6
+Push 0
+GetMember
+Push "f"
+Push register2
+Push "_currentframe"
+GetMember
+Add2
+GetMember
+Not
+If loc1067
+Push register6
+Push 0
+GetMember
+Push "f"
+Push "obj"
+GetVariable
+Push "_currentframe"
+GetMember
+Add2
+GetMember
+Push register2
+Push 2
+Push "Main"
+GetVariable
+Push "scriptStack"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc1067:Push register6
+Push "length"
+GetMember
+Push 1
+Greater
+Not
+If loc10ba
+Push false
+Push "Main"
+GetVariable
+Push "checkFrameScript"
+GetMember
+Push register6
+Push 1
+GetMember
+Push register2
+Push 4
+Push "Main"
+GetVariable
+Push "iterateOnChildren"
+CallMethod
+Pop
+loc10ba:Jump loc10e8
+loc10bf:Push register3
+Push 1
+Push register2
+Push "gotoAndStop"
+CallMethod
+Pop
+Push register2
+Push "stopped"
+Push register5
+SetMember
+loc10e8:Jump loc112f
+loc10ed:Push register5
+Not
+If loc1116
+Push register3
+Push 1
+Push register2
+Push "gotoAndStop"
+CallMethod
+Pop
+Jump loc112f
+loc1116:Push register3
+Push 1
+Push register2
+Push "gotoAndPlay"
+CallMethod
+Pop
+}
+loc112f:SetMember
+Push register1
+Push "_gotoAndStop"
+DefineFunction2 "", 3, 4, false, false, true, false, true, false, true, false, false, 1, "that", 2, "frame", 3, "chid" {
+Push true
+Push register3
+Push register2
+Push register1
+Push 4
+Push "Main"
+GetVariable
+Push "_gotoAnd"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "_gotoAndPlay"
+DefineFunction2 "", 3, 4, false, false, true, false, true, false, true, false, false, 1, "that", 2, "frame", 3, "chid" {
+Push false
+Push register3
+Push register2
+Push register1
+Push 4
+Push "Main"
+GetVariable
+Push "_gotoAnd"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "_stop"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "that" {
+Push register1
+Push "aMode"
+GetMember
+Not
+If loc1215
+Push register2
+Push "stopped"
+Push true
+SetMember
+Jump loc1229
+loc1215:Push 0
+Push register2
+Push "stop"
+CallMethod
+Pop
+}
+loc1229:SetMember
+Push register1
+Push "_play"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "that" {
+Push register1
+Push "aMode"
+GetMember
+Not
+If loc126b
+Push register2
+Push "stopped"
+Push false
+SetMember
+Jump loc127f
+loc126b:Push 0
+Push register2
+Push "play"
+CallMethod
+Pop
+}
+loc127f:SetMember
+Push register1
+Push "stopAll"
+DefineFunction "", 0 {
+Push "i"
+Push 0
+DefineLocal
+loc12a0:Push "i"
+GetVariable
+Push "Main"
+GetVariable
+Push "holders"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc134a
+Push "Main"
+GetVariable
+Push "holders"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Enumerate2
+loc12d3:StoreRegister 0
+Push null
+Equals2
+If loc1338
+Push "objName"
+Push register0
+DefineLocal
+Push "obj"
+Push "Main"
+GetVariable
+Push "holders"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push "objName"
+GetVariable
+GetMember
+DefineLocal
+Push "obj"
+GetVariable
+Push "chid"
+GetMember
+Push "obj"
+GetVariable
+Push 2
+Push "Main"
+GetVariable
+Push "stopAnimation"
+CallMethod
+Pop
+Jump loc12d3
+loc1338:Push "i"
+Push "i"
+GetVariable
+Increment
+SetVariable
+Jump loc12a0
+}
+loc134a:SetMember
+Push register1
+Push "stopAnimation"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
+Push 0
+Push register1
+Push "stop"
+CallMethod
+Pop
+Push register2
+If loc138e
+Push undefined
+Return
+loc138e:Push "Main"
+GetVariable
+Push "spriteInfo"
+GetMember
+Push "m"
+Push register2
+Add2
+GetMember
+StoreRegister 3
+Pop
+Push register3
+If loc13ba
+Push undefined
+Return
+loc13ba:Push register3
+Push "length"
+GetMember
+Push 1
+Greater
+Not
+If loc1414
+Push "Main"
+GetVariable
+Push "stopAnimation"
+GetMember
+Push "Main"
+GetVariable
+Push "stopAnimation"
+GetMember
+Push register3
+Push 1
+GetMember
+Push register1
+Push 4
+Push "Main"
+GetVariable
+Push "iterateOnChildren"
+CallMethod
+Pop
+}
+loc1414:SetMember
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "Main"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc1441:Pop

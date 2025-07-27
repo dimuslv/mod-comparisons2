@@ -62,7 +62,7 @@ Push "ContinueButton"
 GetMember
 Not
 Not
-If loc025d
+If loc025b
 Push "com"
 GetVariable
 Push "nitrome"
@@ -113,13 +113,13 @@ GetMember
 Push "hidePopUp"
 CallMethod
 Pop
-Jump loc022d
-loc0211:Push "_root"
+Jump loc022b
+loc0211:Push "TAS"
 GetVariable
 Push "justPause", false
 SetMember
 }
-loc022d:SetMember
+loc022b:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -132,4 +132,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc025d:Pop
+loc025b:Pop

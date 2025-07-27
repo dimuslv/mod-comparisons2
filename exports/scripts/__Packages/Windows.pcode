@@ -1,0 +1,583 @@
+ConstantPool "_global", "Windows", "prototype", "init", "clip", "window_clip", "w", "getNextHighestDepth", "inputWindow", "window", "attachMovie", "title", "Input string", "customMinimize", "minimized", "inputField", "_visible", "updateMainField", "_static", "createTextField", "background", "type", "input", "restrict", "^[]", "TAS", "varWindow", "Vars", "update", "updateVarWindow", "nullField", "onMouseUp", "curDragging", "onEnterFrame", "_x", "_xmouse", "Math", "min", "max", "curDragOfsX", "_y", "_ymouse", "curDragOfsY", "focus", "Selection", "getFocus", "slice", "_level0.window_clip", "length", "mainTextField", "ind", "getCaretIndex", "i", "mainIndices", "mainBehaviors", "nullFocus", "behaviorObject", "setFocus", "minimizeWindow", "closeWindow", "removeMovieClip", "startDragging", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Windows"
+GetMember
+Not
+Not
+If loc0aa5
+Push "_global"
+GetVariable
+Push "Windows"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1
+Push "init"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push "Windows"
+GetVariable
+Push "clip"
+Push register1
+Push "window_clip"
+GetMember
+SetMember
+Push "w"
+Push 0
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "inputWindow"
+Push "window"
+Push 3
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "attachMovie"
+CallMethod
+DefineLocal
+Push "title"
+Push "Input string"
+Push "customMinimize"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push register1
+Push "minimized"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push register1
+Push "inputField"
+GetMember
+Push "_visible"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push false
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+Push 2
+InitObject
+Push 355
+Push 10
+Push 3
+Push "w"
+GetVariable
+Push "init"
+CallMethod
+Pop
+Push "w"
+GetVariable
+Push "_static"
+Push true
+SetMember
+Push 20
+Push 530
+Push 20
+Push 0
+Push 0
+Push "w"
+GetVariable
+Push "getNextHighestDepth"
+CallMethod
+Push "inputField"
+Push 6
+Push "w"
+GetVariable
+Push "createTextField"
+CallMethod
+Pop
+Push "w"
+GetVariable
+Push "inputField"
+GetMember
+Push "background"
+Push true
+SetMember
+Push "w"
+GetVariable
+Push "inputField"
+GetMember
+Push "type"
+Push "input"
+SetMember
+Push "w"
+GetVariable
+Push "inputField"
+GetMember
+Push "restrict"
+Push "^[]"
+SetMember
+Push "w"
+GetVariable
+Push "_visible"
+Push false
+SetMember
+Push "TAS"
+GetVariable
+Push "inputField"
+Push "w"
+GetVariable
+Push "inputField"
+GetMember
+SetMember
+Push "w"
+Push 0
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "varWindow"
+Push "window"
+Push 3
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "attachMovie"
+CallMethod
+SetVariable
+Push "title"
+Push "Vars"
+Push "update"
+Push "TAS"
+GetVariable
+Push "updateVarWindow"
+GetMember
+Push 2
+InitObject
+Push 40
+Push 10
+Push 3
+Push "w"
+GetVariable
+Push "init"
+CallMethod
+Pop
+Push "w"
+GetVariable
+Push "_static"
+Push true
+SetMember
+Push "w"
+GetVariable
+Push "_visible"
+Push false
+SetMember
+Push 0
+Push 0
+Push 0
+Push 0
+Push 0
+Push register1
+Push "getNextHighestDepth"
+CallMethod
+Push "nullField"
+Push 6
+Push register1
+Push "createTextField"
+CallMethod
+Pop
+Push register1
+Push "nullField"
+GetMember
+Push "_visible"
+Push false
+SetMember
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "onMouseUp"
+DefineFunction2 "", 0, 1, false, false, true, false, true, false, true, false, false {
+Push "Windows"
+GetVariable
+Push "curDragging"
+Push null
+SetMember
+}
+SetMember
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "onEnterFrame"
+Push "Windows"
+GetVariable
+Push "update"
+GetMember
+SetMember
+}
+SetMember
+Push register1
+Push "update"
+DefineFunction "", 0 {
+Push "Windows"
+GetVariable
+Push "curDragging"
+GetMember
+Not
+If loc06b7
+Push "Windows"
+GetVariable
+Push "curDragging"
+GetMember
+Push "_x"
+Push "_xmouse"
+GetVariable
+Push 550
+Push 2
+Push "Math"
+GetVariable
+Push "min"
+CallMethod
+Push 0
+Push 2
+Push "Math"
+GetVariable
+Push "max"
+CallMethod
+Push "Windows"
+GetVariable
+Push "curDragOfsX"
+GetMember
+Add2
+SetMember
+Push "Windows"
+GetVariable
+Push "curDragging"
+GetMember
+Push "_y"
+Push "_ymouse"
+GetVariable
+Push 400
+Push 2
+Push "Math"
+GetVariable
+Push "min"
+CallMethod
+Push 0
+Push 2
+Push "Math"
+GetVariable
+Push "max"
+CallMethod
+Push "Windows"
+GetVariable
+Push "curDragOfsY"
+GetMember
+Add2
+SetMember
+Jump loc086b
+loc06b7:Push "focus"
+Push 0
+Push "Selection"
+GetVariable
+Push "getFocus"
+CallMethod
+DefineLocal
+Push 19
+Push 0
+Push 2
+Push "focus"
+GetVariable
+Push "slice"
+CallMethod
+Push "_level0.window_clip"
+Equals2
+PushDuplicate
+Not
+If loc0735
+Pop
+Push "focus"
+GetVariable
+Push "length"
+GetMember
+Push "mainTextField"
+Push "length"
+GetMember
+Subtract
+Push 1
+Push "focus"
+GetVariable
+Push "slice"
+CallMethod
+Push "mainTextField"
+Equals2
+loc0735:Not
+If loc086b
+Push "w"
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "focus"
+GetVariable
+Push "length"
+GetMember
+Push "mainTextField"
+Push "length"
+GetMember
+Subtract
+Push 1
+Subtract
+Push 20
+Push 2
+Push "focus"
+GetVariable
+Push "slice"
+CallMethod
+GetMember
+DefineLocal
+Push "ind"
+Push 0
+Push "Selection"
+GetVariable
+Push "getCaretIndex"
+CallMethod
+DefineLocal
+Push "ind"
+GetVariable
+Trace
+Push "i"
+Push "w"
+GetVariable
+Push "mainIndices"
+GetMember
+Push "length"
+GetMember
+Push 1
+Subtract
+DefineLocal
+loc07cd:Push "i"
+GetVariable
+Push 0
+Less2
+Not
+Not
+If loc0856
+Push "ind"
+GetVariable
+Push "w"
+GetVariable
+Push "mainIndices"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Less2
+Not
+Not
+If loc0844
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Not
+If loc083f
+Push "w"
+GetVariable
+Push 1
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+CallMethod
+Pop
+loc083f:Jump loc0856
+loc0844:Push "i"
+Push "i"
+GetVariable
+Decrement
+SetVariable
+Jump loc07cd
+loc0856:Push 0
+Push "Windows"
+GetVariable
+Push "nullFocus"
+CallMethod
+Pop
+loc086b:Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Enumerate2
+loc0878:StoreRegister 0
+Push null
+Equals2
+If loc08f6
+Push "i"
+Push register0
+SetVariable
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push "behaviorObject"
+GetMember
+Push "update"
+GetMember
+Not
+If loc08f1
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push 1
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push "behaviorObject"
+GetMember
+Push "update"
+CallMethod
+Pop
+loc08f1:Jump loc0878
+}
+loc08f6:SetMember
+Push register1
+Push "nullFocus"
+DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "nullField"
+GetMember
+Push 1
+Push "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "minimizeWindow"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push register1
+Push "minimized"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push false
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "closeWindow"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push register1
+Push "_static"
+GetMember
+Not
+If loc09b4
+Push register1
+Push "_visible"
+Push false
+SetMember
+Jump loc09c8
+loc09b4:Push 0
+Push register1
+Push "removeMovieClip"
+CallMethod
+Pop
+}
+loc09c8:SetMember
+Push register1
+Push "startDragging"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push "Windows"
+GetVariable
+Push "curDragging"
+Push register1
+SetMember
+Push "Windows"
+GetVariable
+Push "curDragOfsX"
+Push register1
+Push "_x"
+GetMember
+Push "_xmouse"
+GetVariable
+Subtract
+SetMember
+Push "Windows"
+GetVariable
+Push "curDragOfsY"
+Push register1
+Push "_y"
+GetMember
+Push "_ymouse"
+GetVariable
+Subtract
+SetMember
+Push 0
+Push "Windows"
+GetVariable
+Push "nullFocus"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "curDragging"
+Push null
+SetMember
+Push register1
+Push "curDragOfsX"
+Push 0
+SetMember
+Push register1
+Push "curDragOfsY"
+Push 0
+SetMember
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "Windows"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc0aa5:Pop

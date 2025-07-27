@@ -14,6 +14,7 @@
     <use ffdec:characterId="1517" height="39.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 487.8, 5.85)" width="49.0" xlink:href="#sprite28"/>
     <use ffdec:characterId="221" height="28.0" id="name_button" transform="matrix(1.0, 0.0, 0.0, 1.0, 182.0, 200.0)" width="186.0" xlink:href="#shape10"/>
     <use ffdec:characterId="3429" height="0.0" id="name_clip" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite30"/>
+    <use ffdec:characterId="3429" height="0.0" id="window_clip" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite30"/>
     <use ffdec:characterId="14" height="400.0" id="tt" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="550.0" xlink:href="#sprite31"/>
     <use ffdec:characterId="58" height="11.0" id="sfx" transform="matrix(1.0, 0.0, 0.0, 1.0, 121.8, -100.9)" width="550.95" xlink:href="#sprite32"/>
     <use ffdec:characterId="60" height="8.0" id="mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 126.2, -115.55)" width="31.0" xlink:href="#sprite48"/>

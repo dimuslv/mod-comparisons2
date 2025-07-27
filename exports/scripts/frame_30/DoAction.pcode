@@ -1,1 +1,8 @@
+ConstantPool "Main", "init"
+Push 0
+Push "Main"
+GetVariable
+Push "init"
+CallMethod
+Pop
 Stop

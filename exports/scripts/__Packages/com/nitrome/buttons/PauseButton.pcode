@@ -62,7 +62,7 @@ Push "PauseButton"
 GetMember
 Not
 Not
-If loc0269
+If loc0267
 Push "com"
 GetVariable
 Push "nitrome"
@@ -113,13 +113,13 @@ GetMember
 Push "pauseGame"
 CallMethod
 Pop
-Jump loc0239
-loc021d:Push "_root"
+Jump loc0237
+loc021d:Push "TAS"
 GetVariable
 Push "justPause", true
 SetMember
 }
-loc0239:SetMember
+loc0237:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -132,4 +132,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0269:Pop
+loc0267:Pop

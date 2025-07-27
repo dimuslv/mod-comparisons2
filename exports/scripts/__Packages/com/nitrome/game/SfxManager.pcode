@@ -62,7 +62,7 @@ Push "SfxManager"
 GetMember
 Not
 Not
-If loc022d
+If loc0234
 Push "com"
 GetVariable
 Push "nitrome"
@@ -101,17 +101,19 @@ CallMethod
 Push true
 Equals2
 Not
-If loc01fd
-Push register2, "fastPlayback"
+If loc0204
+Push "TAS"
+GetVariable
+Push "fastPlayback"
 GetMember
-If loc01fd
+If loc0204
 Push 2, 1, register1, register3
 GetMember
 Push "gotoAndPlay"
 CallMethod
 Pop
 }
-loc01fd:SetMember
+loc0204:SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -124,4 +126,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc022d:Pop
+loc0234:Pop

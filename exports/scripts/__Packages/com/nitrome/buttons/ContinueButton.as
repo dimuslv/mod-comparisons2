@@ -13,7 +13,7 @@ class com.nitrome.buttons.ContinueButton extends com.nitrome.buttons.SimpleButto
       }
       else
       {
-         _root.justPause = false;
+         TAS.justPause = false;
       }
    }
 }

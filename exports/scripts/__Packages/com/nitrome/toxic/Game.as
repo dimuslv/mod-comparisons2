@@ -465,7 +465,7 @@ class com.nitrome.toxic.Game extends MovieClip
       this.power_cell_memory = new com.nitrome.toxic.PowerCellMemory();
       if(_root.aMode)
       {
-         _root.rngSeed = _root.curArray[1];
+         RNG.rngSeed = TAS.curArray[1];
       }
       _root.game.loadLevel();
       ClockDisp.initDriver(_root.powercell_panel.createEmptyMovieClip("CDDriverMovie",_root.powercell_panel.getNextHighestDepth()));
@@ -473,7 +473,7 @@ class com.nitrome.toxic.Game extends MovieClip
       _loc5_.setPause(true);
       if(_root.aMode)
       {
-         _root.init();
+         Main.levelInit();
       }
    }
    function clearAll()
@@ -828,7 +828,7 @@ class com.nitrome.toxic.Game extends MovieClip
          }
          else
          {
-            _root.doKeyDown(Key.getCode());
+            TAS.doKeyDown(Key.getCode());
          }
       };
       this.key_listener.onKeyUp = function()
@@ -883,7 +883,7 @@ class com.nitrome.toxic.Game extends MovieClip
          }
          else
          {
-            _root.perform();
+            Main.metaUpdate();
          }
       };
       this.doEnterFrame = function()

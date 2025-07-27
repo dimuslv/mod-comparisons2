@@ -173,7 +173,7 @@ class com.nitrome.toxic.DiggerBomb extends MovieClip
       this.explode_count = this.explode_count + 1;
       this.digging = true;
       this.game.createExplosion(this._x,this._y,this._name,com.nitrome.toxic.Global.BOMB_DIGGER,this.hit_wall);
-      this.anim.gotoAndStop("hidden");
+      Main._gotoAndStop(this.anim,"hidden",1261);
    }
    function getFinishedExplode()
    {

@@ -10,12 +10,13 @@
     <use ffdec:characterId="2749" height="13.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 203.5, 387.0)" width="143.0" xlink:href="#button0"/>
     <use ffdec:characterId="1920" height="39.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 467.35, 5.85)" width="33.0" xlink:href="#sprite20"/>
     <use ffdec:characterId="1517" height="39.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 487.8, 5.85)" width="49.0" xlink:href="#sprite22"/>
-    <use ffdec:characterId="14" height="400.0" id="tt" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="550.0" xlink:href="#sprite24"/>
-    <use ffdec:characterId="58" height="11.0" id="sfx" transform="matrix(1.0, 0.0, 0.0, 1.0, 121.8, -100.9)" width="550.95" xlink:href="#sprite25"/>
-    <use ffdec:characterId="60" height="8.0" id="mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 126.2, -115.55)" width="31.0" xlink:href="#sprite41"/>
-    <use ffdec:characterId="62" height="11.0" id="game_music_mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 200.5, -116.55)" width="58.0" xlink:href="#sprite42"/>
-    <use ffdec:characterId="64" height="9.0" id="menu_music_mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 285.75, -116.55)" width="58.0" xlink:href="#sprite43"/>
-    <use ffdec:characterId="17" height="402.0" id="curves_clip" transform="matrix(1.0, 0.0, 0.0, 1.0, -1.0, -1.0)" width="552.0" xlink:href="#sprite44"/>
+    <use ffdec:characterId="3429" height="0.0" id="window_clip" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite24"/>
+    <use ffdec:characterId="14" height="400.0" id="tt" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="550.0" xlink:href="#sprite25"/>
+    <use ffdec:characterId="58" height="11.0" id="sfx" transform="matrix(1.0, 0.0, 0.0, 1.0, 121.8, -100.9)" width="550.95" xlink:href="#sprite26"/>
+    <use ffdec:characterId="60" height="8.0" id="mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 126.2, -115.55)" width="31.0" xlink:href="#sprite42"/>
+    <use ffdec:characterId="62" height="11.0" id="game_music_mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 200.5, -116.55)" width="58.0" xlink:href="#sprite43"/>
+    <use ffdec:characterId="64" height="9.0" id="menu_music_mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 285.75, -116.55)" width="58.0" xlink:href="#sprite44"/>
+    <use ffdec:characterId="17" height="402.0" id="curves_clip" transform="matrix(1.0, 0.0, 0.0, 1.0, -1.0, -1.0)" width="552.0" xlink:href="#sprite45"/>
   </g>
   <defs>
     <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 14.05, 717.0)">
@@ -575,23 +576,23 @@
       </pattern>
       <path d="M-10.0 -10.0 L10.0 -10.0 10.0 10.0 -10.0 10.0 -10.0 -10.0" ffdec:fill-bitmapId="1510" style="fill:url(#PatternID_1511_1)"/>
     </g>
-    <g id="sprite25" transform="matrix(1.0, 0.0, 0.0, 1.0, 31.0, 6.0)">
+    <g id="sprite26" transform="matrix(1.0, 0.0, 0.0, 1.0, 31.0, 6.0)">
       <use ffdec:characterId="27" height="11.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -31.0, -6.0)" width="62.0" xlink:href="#text1"/>
-      <use ffdec:characterId="29" height="0.0" id="splash" transform="matrix(1.0, 0.0, 0.0, 1.0, 59.1, -0.4)" width="0.0" xlink:href="#sprite26"/>
-      <use ffdec:characterId="31" height="0.0" id="warpin" transform="matrix(1.0, 0.0, 0.0, 1.0, 92.4, -0.4)" width="0.0" xlink:href="#sprite27"/>
-      <use ffdec:characterId="33" height="0.0" id="warpout" transform="matrix(1.0, 0.0, 0.0, 1.0, 125.9, -0.4)" width="0.0" xlink:href="#sprite28"/>
-      <use ffdec:characterId="35" height="0.0" id="levelstart" transform="matrix(1.0, 0.0, 0.0, 1.0, 159.4, -0.4)" width="0.0" xlink:href="#sprite29"/>
-      <use ffdec:characterId="37" height="0.0" id="levelend" transform="matrix(1.0, 0.0, 0.0, 1.0, 191.85, -0.4)" width="0.0" xlink:href="#sprite30"/>
-      <use ffdec:characterId="39" height="0.0" id="missionfailed" transform="matrix(1.0, 0.0, 0.0, 1.0, 222.85, -0.4)" width="0.0" xlink:href="#sprite31"/>
-      <use ffdec:characterId="41" height="0.0" id="explode" transform="matrix(1.0, 0.0, 0.0, 1.0, 254.85, -0.4)" width="0.0" xlink:href="#sprite32"/>
-      <use ffdec:characterId="43" height="0.0" id="explode_small" transform="matrix(1.0, 0.0, 0.0, 1.0, 287.45, -0.4)" width="0.0" xlink:href="#sprite33"/>
-      <use ffdec:characterId="45" height="0.0" id="collect" transform="matrix(1.0, 0.0, 0.0, 1.0, 320.35, -0.4)" width="0.0" xlink:href="#sprite34"/>
-      <use ffdec:characterId="47" height="0.0" id="hit" transform="matrix(1.0, 0.0, 0.0, 1.0, 356.35, -0.4)" width="0.0" xlink:href="#sprite35"/>
-      <use ffdec:characterId="49" height="0.0" id="die" transform="matrix(1.0, 0.0, 0.0, 1.0, 384.15, -0.4)" width="0.0" xlink:href="#sprite36"/>
-      <use ffdec:characterId="51" height="0.0" id="jump" transform="matrix(1.0, 0.0, 0.0, 1.0, 421.35, 1.35)" width="0.0" xlink:href="#sprite37"/>
-      <use ffdec:characterId="53" height="0.0" id="trigger" transform="matrix(1.0, 0.0, 0.0, 1.0, 452.95, 0.0)" width="0.0" xlink:href="#sprite38"/>
-      <use ffdec:characterId="55" height="0.0" id="holo" transform="matrix(1.0, 0.0, 0.0, 1.0, 483.95, -1.0)" width="0.0" xlink:href="#sprite39"/>
-      <use ffdec:characterId="57" height="0.0" id="stomp" transform="matrix(1.0, 0.0, 0.0, 1.0, 519.95, 0.0)" width="0.0" xlink:href="#sprite40"/>
+      <use ffdec:characterId="29" height="0.0" id="splash" transform="matrix(1.0, 0.0, 0.0, 1.0, 59.1, -0.4)" width="0.0" xlink:href="#sprite27"/>
+      <use ffdec:characterId="31" height="0.0" id="warpin" transform="matrix(1.0, 0.0, 0.0, 1.0, 92.4, -0.4)" width="0.0" xlink:href="#sprite28"/>
+      <use ffdec:characterId="33" height="0.0" id="warpout" transform="matrix(1.0, 0.0, 0.0, 1.0, 125.9, -0.4)" width="0.0" xlink:href="#sprite29"/>
+      <use ffdec:characterId="35" height="0.0" id="levelstart" transform="matrix(1.0, 0.0, 0.0, 1.0, 159.4, -0.4)" width="0.0" xlink:href="#sprite30"/>
+      <use ffdec:characterId="37" height="0.0" id="levelend" transform="matrix(1.0, 0.0, 0.0, 1.0, 191.85, -0.4)" width="0.0" xlink:href="#sprite31"/>
+      <use ffdec:characterId="39" height="0.0" id="missionfailed" transform="matrix(1.0, 0.0, 0.0, 1.0, 222.85, -0.4)" width="0.0" xlink:href="#sprite32"/>
+      <use ffdec:characterId="41" height="0.0" id="explode" transform="matrix(1.0, 0.0, 0.0, 1.0, 254.85, -0.4)" width="0.0" xlink:href="#sprite33"/>
+      <use ffdec:characterId="43" height="0.0" id="explode_small" transform="matrix(1.0, 0.0, 0.0, 1.0, 287.45, -0.4)" width="0.0" xlink:href="#sprite34"/>
+      <use ffdec:characterId="45" height="0.0" id="collect" transform="matrix(1.0, 0.0, 0.0, 1.0, 320.35, -0.4)" width="0.0" xlink:href="#sprite35"/>
+      <use ffdec:characterId="47" height="0.0" id="hit" transform="matrix(1.0, 0.0, 0.0, 1.0, 356.35, -0.4)" width="0.0" xlink:href="#sprite36"/>
+      <use ffdec:characterId="49" height="0.0" id="die" transform="matrix(1.0, 0.0, 0.0, 1.0, 384.15, -0.4)" width="0.0" xlink:href="#sprite37"/>
+      <use ffdec:characterId="51" height="0.0" id="jump" transform="matrix(1.0, 0.0, 0.0, 1.0, 421.35, 1.35)" width="0.0" xlink:href="#sprite38"/>
+      <use ffdec:characterId="53" height="0.0" id="trigger" transform="matrix(1.0, 0.0, 0.0, 1.0, 452.95, 0.0)" width="0.0" xlink:href="#sprite39"/>
+      <use ffdec:characterId="55" height="0.0" id="holo" transform="matrix(1.0, 0.0, 0.0, 1.0, 483.95, -1.0)" width="0.0" xlink:href="#sprite40"/>
+      <use ffdec:characterId="57" height="0.0" id="stomp" transform="matrix(1.0, 0.0, 0.0, 1.0, 519.95, 0.0)" width="0.0" xlink:href="#sprite41"/>
     </g>
     <g id="text1" transform="matrix(1.0, 0.0, 0.0, 1.0, -41.0, -2.0)">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 40.0, 0.0)">
@@ -634,7 +635,7 @@
     <g id="font_FFF_Idea_8pt_st_r0">
       <path d="M256.0 -384.0 L256.0 128.0 128.0 128.0 128.0 -512.0 512.0 -512.0 512.0 -384.0 256.0 -384.0" fill-rule="evenodd" stroke="none"/>
     </g>
-    <g id="sprite41" transform="matrix(1.0, 0.0, 0.0, 1.0, 18.0, 4.0)">
+    <g id="sprite42" transform="matrix(1.0, 0.0, 0.0, 1.0, 18.0, 4.0)">
       <use ffdec:characterId="59" height="8.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -18.0, -4.0)" width="31.0" xlink:href="#text2"/>
     </g>
     <g id="text2" transform="matrix(1.0, 0.0, 0.0, 1.0, -1.0, -3.0)">
@@ -652,7 +653,7 @@
     <g id="font_FFF_Idea_8pt_st_C0">
       <path d="M768.0 -128.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -384.0 640.0 -384.0 640.0 -512.0 256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -128.0 768.0 -128.0" fill-rule="evenodd" stroke="none"/>
     </g>
-    <g id="sprite42" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.0, 5.0)">
+    <g id="sprite43" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.0, 5.0)">
       <use ffdec:characterId="61" height="11.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -29.0, -5.0)" width="58.0" xlink:href="#text3"/>
     </g>
     <g id="text3" transform="matrix(1.0, 0.0, 0.0, 1.0, -43.0, -2.0)">
@@ -677,7 +678,7 @@
     <g id="font_FFF_Idea_8pt_st_c0">
       <path d="M256.0 0.0 L512.0 0.0 512.0 -128.0 640.0 -128.0 640.0 128.0 128.0 128.0 128.0 -512.0 640.0 -512.0 640.0 -256.0 512.0 -256.0 512.0 -384.0 256.0 -384.0 256.0 0.0" fill-rule="evenodd" stroke="none"/>
     </g>
-    <g id="sprite43" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.0, 5.0)">
+    <g id="sprite44" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.0, 5.0)">
       <use ffdec:characterId="63" height="9.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -29.0, -5.0)" width="58.0" xlink:href="#text4"/>
     </g>
     <g id="text4" transform="matrix(1.0, 0.0, 0.0, 1.0, -43.0, -2.0)">
@@ -693,7 +694,7 @@
         <use fill="#46160d" height="9.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 54.0, 9.0)" width="58.0" xlink:href="#font_FFF_Idea_8pt_st_c0"/>
       </g>
     </g>
-    <g id="sprite44" transform="matrix(1.0, 0.0, 0.0, 1.0, 276.0, 201.0)">
+    <g id="sprite45" transform="matrix(1.0, 0.0, 0.0, 1.0, 276.0, 201.0)">
       <use ffdec:characterId="16" height="402.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -276.0, -201.0)" width="552.0" xlink:href="#shape22"/>
     </g>
     <g id="shape22" transform="matrix(1.0, 0.0, 0.0, 1.0, 276.0, 201.0)">
