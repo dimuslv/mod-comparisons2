@@ -9,3 +9,4 @@ mask.lineTo(0,400);
 mask.lineTo(0,0);
 mask.endFill();
 _root.setMask(mask);
+mask._visible = false;

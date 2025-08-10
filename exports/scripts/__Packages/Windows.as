@@ -28,6 +28,27 @@ class Windows
       w.init(10,40,{title:"Vars",update:TAS.updateVarWindow});
       w._static = true;
       w._visible = false;
+      var _loc2_ = ["Damage",60,52,"Acid",60,52,"Object",60,52];
+      var _loc3_ = 0;
+      var _loc4_;
+      while(_loc3_ < _loc2_.length)
+      {
+         _loc4_ = _loc2_[_loc3_];
+         w = Windows.clip.attachMovie("window",_loc4_ + "VisWindow",Windows.clip.getNextHighestDepth());
+         w.init(0,0,{title:_loc4_,customMinimize:function(w)
+         {
+            w.minimized = !w.minimized;
+            w.img._visible = !w.minimized;
+            w.updateMainField(false);
+         }});
+         w.createEmptyMovieClip("img",w.getNextHighestDepth());
+         w.img._y = 20;
+         Utils.bmps[_loc4_] = new flash.display.BitmapData(_loc2_[_loc3_ + 1],_loc2_[_loc3_ + 2],false);
+         w.img.attachBitmap(Utils.bmps[_loc4_],w.img.getNextHighestDepth());
+         w._static = true;
+         w._visible = false;
+         _loc3_ += 3;
+      }
       _root.createTextField("nullField",_root.getNextHighestDepth(),0,0,0,0);
       _root.nullField._visible = false;
       Windows.clip.onMouseUp = function()
@@ -58,7 +79,17 @@ class Windows
                {
                   if(w.mainBehaviors[i])
                   {
-                     w.mainBehaviors[i](w);
+                     if(w.mainBehaviors[i] instanceof Function)
+                     {
+                        w.mainBehaviors[i](w);
+                     }
+                     else if(w.mainBehaviors[i] instanceof Array)
+                     {
+                        var fun = w.mainBehaviors[i][0];
+                        w.mainBehaviors[i][0] = w;
+                        fun.apply(null,w.mainBehaviors[i]);
+                        w.mainBehaviors[i][0] = fun;
+                     }
                   }
                   break;
                }
@@ -69,9 +100,9 @@ class Windows
       }
       for(i in Windows.clip)
       {
-         if(Windows.clip[i].behaviorObject.update)
+         if(Windows.clip[i].obj.update)
          {
-            Windows.clip[i].behaviorObject.update(Windows.clip[i]);
+            Windows.clip[i].obj.update(Windows.clip[i]);
          }
       }
    }
@@ -101,5 +132,15 @@ class Windows
       Windows.curDragOfsX = w._x - _xmouse;
       Windows.curDragOfsY = w._y - _ymouse;
       Windows.nullFocus();
+   }
+   static function createWindow(x, y, obj)
+   {
+      var _loc4_ = Windows.clip.attachMovie("window","window" + Windows.clip.getNextHighestDepth(),Windows.clip.getNextHighestDepth());
+      _loc4_.init(x,y,obj);
+      return _loc4_;
+   }
+   static function createEmptyWindow(x, y)
+   {
+      return Windows.createWindow(x,y,{title:""});
    }
 }

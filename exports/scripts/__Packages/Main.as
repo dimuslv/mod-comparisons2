@@ -27,6 +27,7 @@ class Main
       var _loc2_ = _root.game;
       Main.holders = [_loc2_.heart_holder,_loc2_.object_holder,_loc2_.safe_holder,_loc2_.danger_holder,_loc2_.laser_holder,_loc2_.player_holder,_loc2_.grow_holder,_loc2_.bomb_holder,_loc2_.missile_holder,_loc2_.splash_holder,_loc2_.acid_holder,_loc2_.explosion_holder];
       TAS.levelInit();
+      Utils.levelInit();
       Main.stopAll();
    }
    static function metaUpdate()

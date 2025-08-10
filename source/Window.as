@@ -1,6 +1,6 @@
 class Window extends MovieClip
 {
-	var behaviorObject;
+	var obj;
 	var mainIndices;
 	var mainBehaviors;
 	var minimized = false;
@@ -21,9 +21,9 @@ class Window extends MovieClip
 	
 	function updateMainField(obj) {
 		if (obj)
-			this.behaviorObject = obj;
+			this.obj = obj;
 		else
-			obj = this.behaviorObject;
+			obj = this.obj;
 		this.mainIndices = [0];
 		this.mainBehaviors = [Windows.startDragging];
 		this.mainTextField.text = obj.title + " ";
@@ -36,15 +36,14 @@ class Window extends MovieClip
 		this.mainBehaviors.push(Windows.closeWindow);
 		this.mainTextField.text += "🗙";
 		
-		if (!this.minimized && obj.optionLabels) {
+		if (!this.minimized && obj.options) {
 			var i = 0;
-			while (i < obj.optionLabels.length) {
+			while (i < obj.options.length) {
 				this.mainTextField.text += "\n";
 				this.mainIndices.push(this.mainTextField.text.length);
-				if (obj.optionFunctions)
-					this.mainBehaviors.push(obj.optionFunctions[i]);
-				this.mainTextField.text += obj.optionLabels[i];
-				i++;
+				this.mainBehaviors.push(obj.options[i+1]);
+				this.mainTextField.text += obj.options[i];
+				i += 2;
 			}
 		}
 	}

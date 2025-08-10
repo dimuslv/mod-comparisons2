@@ -15,6 +15,10 @@ class com.nitrome.toxic.LevelEnd extends MovieClip
    {
       if(this.collected == false && this.game.getPlayerOnGround() == true)
       {
+         if(Utils.deactivateTeleport)
+         {
+            return undefined;
+         }
          this.game.transportPlayer(false);
          this.gotoAndStop("collect");
          this.collected = true;

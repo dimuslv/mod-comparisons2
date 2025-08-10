@@ -1,6 +1,7 @@
 class com.nitrome.toxic.Game extends MovieClip
 {
    var player;
+   var test_holder;
    var level_number;
    var power_cell_memory;
    var scroll_x;
@@ -212,6 +213,8 @@ class com.nitrome.toxic.Game extends MovieClip
          this.checkKeys();
       }
       this.player.main();
+      this.test_holder.testPoints._x = Math.floor(this.player._x) - 26;
+      this.test_holder.testPoints._y = Math.floor(this.player._y) - 100;
       this.updateBombs();
       this.updateRobots();
       this.updateSafeRobots();
@@ -287,6 +290,10 @@ class com.nitrome.toxic.Game extends MovieClip
    }
    function gameOver()
    {
+      if(Utils.noDeath)
+      {
+         return undefined;
+      }
       trace("game over");
       this.pauseGame();
       com.nitrome.engine.Score.value = this.power_cell_memory.getTotalCollected() * 1000;
@@ -815,6 +822,8 @@ class com.nitrome.toxic.Game extends MovieClip
          this.bossbmp_holder.attachBitmap(_global.boss_bmp,1);
          this.bossbmp_holder.cacheAsBitmap = true;
       }
+      this.test_holder.createEmptyMovieClip("testPoints",this.test_holder.getNextHighestDepth());
+      this.test_holder.testPoints.attachBitmap(flash.display.BitmapData.loadBitmap("testPoints"),1);
       if(this.level_number != 0)
       {
          _root.powercell_panel.setCount(this.power_cell_memory.getTotalCollected());
@@ -2272,7 +2281,7 @@ class com.nitrome.toxic.Game extends MovieClip
       _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole");
       _global.boss_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,80),new flash.geom.Point(x - 40,y - 40),_global.boss_bmp,new flash.geom.Point(x - 40,y - 40),true);
       _global.boss_bmp.threshold(_global.boss_bmp,new flash.geom.Rectangle(x - 40,y - 40,80,80),new flash.geom.Point(x - 40,y - 40),"==",4278255360,0,16777215,false);
-      var _loc6_ = x - 40;
+      var _loc6_;
       var _loc7_;
       var _loc8_;
       var _loc9_;
@@ -2281,54 +2290,58 @@ class com.nitrome.toxic.Game extends MovieClip
       var _loc12_;
       var _loc13_;
       var _loc14_;
-      while(_loc6_ <= x - 40 + 80)
-      {
-         _loc7_ = y - 40;
-         while(_loc7_ <= y - 40 + 80)
-         {
-            _loc8_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_);
-            _loc9_ = _loc8_ >> 24 & 0xFF;
-            _loc10_ = _loc8_ >> 16 & 0xFF;
-            _loc11_ = _loc8_ >> 8 & 0xFF;
-            _loc12_ = _loc8_ & 0xFF;
-            if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
-            {
-               _loc13_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_ - 1);
-               _loc14_ = _loc13_ >> 24 & 0xFF;
-               if(_loc14_ == 0)
-               {
-                  _global.boss_bmp.setPixel32(_loc6_,_loc7_,4278190080);
-                  break;
-               }
-            }
-            _loc7_ += 1;
-         }
-         _loc6_ += 1;
-      }
-      _loc7_ = y - 40;
-      while(_loc7_ <= y - 40 + 80)
+      if(!Utils.perf)
       {
          _loc6_ = x - 40;
          while(_loc6_ <= x - 40 + 80)
          {
-            _loc8_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_);
-            _loc9_ = _loc8_ >> 24 & 0xFF;
-            _loc10_ = _loc8_ >> 16 & 0xFF;
-            _loc11_ = _loc8_ >> 8 & 0xFF;
-            _loc12_ = _loc8_ & 0xFF;
-            if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
+            _loc7_ = y - 40;
+            while(_loc7_ <= y - 40 + 80)
             {
-               _loc13_ = _global.boss_bmp.getPixel32(_loc6_ - 1,_loc7_);
-               _loc14_ = _loc13_ >> 24 & 0xFF;
-               if(_loc14_ == 0)
+               _loc8_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_);
+               _loc9_ = _loc8_ >> 24 & 0xFF;
+               _loc10_ = _loc8_ >> 16 & 0xFF;
+               _loc11_ = _loc8_ >> 8 & 0xFF;
+               _loc12_ = _loc8_ & 0xFF;
+               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                {
-                  _global.boss_bmp.setPixel32(_loc6_,_loc7_,4278190080);
-                  break;
+                  _loc13_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                  _loc14_ = _loc13_ >> 24 & 0xFF;
+                  if(_loc14_ == 0)
+                  {
+                     _global.boss_bmp.setPixel32(_loc6_,_loc7_,4278190080);
+                     break;
+                  }
                }
+               _loc7_ += 1;
             }
             _loc6_ += 1;
          }
-         _loc7_ += 1;
+         _loc7_ = y - 40;
+         while(_loc7_ <= y - 40 + 80)
+         {
+            _loc6_ = x - 40;
+            while(_loc6_ <= x - 40 + 80)
+            {
+               _loc8_ = _global.boss_bmp.getPixel32(_loc6_,_loc7_);
+               _loc9_ = _loc8_ >> 24 & 0xFF;
+               _loc10_ = _loc8_ >> 16 & 0xFF;
+               _loc11_ = _loc8_ >> 8 & 0xFF;
+               _loc12_ = _loc8_ & 0xFF;
+               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
+               {
+                  _loc13_ = _global.boss_bmp.getPixel32(_loc6_ - 1,_loc7_);
+                  _loc14_ = _loc13_ >> 24 & 0xFF;
+                  if(_loc14_ == 0)
+                  {
+                     _global.boss_bmp.setPixel32(_loc6_,_loc7_,4278190080);
+                     break;
+                  }
+               }
+               _loc6_ += 1;
+            }
+            _loc7_ += 1;
+         }
       }
       _global.temp_bmp.dispose();
       delete _global.temp_bmp;
@@ -2360,55 +2373,58 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole");
          _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,80),new flash.geom.Point(x - 40,y - 40),_global.ground_bmp,new flash.geom.Point(x - 40,y - 40),true);
          _global.ground_bmp.threshold(_global.ground_bmp,new flash.geom.Rectangle(x - 40,y - 40,80,80),new flash.geom.Point(x - 40,y - 40),"==",4278255360,0,16777215,false);
-         _loc6_ = x - 40;
-         while(_loc6_ <= x - 40 + 80)
-         {
-            _loc7_ = y - 40;
-            while(_loc7_ <= y - 40 + 80)
-            {
-               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
-               _loc9_ = _loc8_ >> 24 & 0xFF;
-               _loc10_ = _loc8_ >> 16 & 0xFF;
-               _loc11_ = _loc8_ >> 8 & 0xFF;
-               _loc12_ = _loc8_ & 0xFF;
-               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
-               {
-                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
-                  _loc14_ = _loc13_ >> 24 & 0xFF;
-                  if(_loc14_ == 0)
-                  {
-                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
-                     break;
-                  }
-               }
-               _loc7_ += 1;
-            }
-            _loc6_ += 1;
-         }
-         _loc7_ = y - 40;
-         while(_loc7_ <= y - 40 + 80)
+         if(!Utils.perf)
          {
             _loc6_ = x - 40;
             while(_loc6_ <= x - 40 + 80)
             {
-               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
-               _loc9_ = _loc8_ >> 24 & 0xFF;
-               _loc10_ = _loc8_ >> 16 & 0xFF;
-               _loc11_ = _loc8_ >> 8 & 0xFF;
-               _loc12_ = _loc8_ & 0xFF;
-               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
+               _loc7_ = y - 40;
+               while(_loc7_ <= y - 40 + 80)
                {
-                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_ - 1,_loc7_);
-                  _loc14_ = _loc13_ >> 24 & 0xFF;
-                  if(_loc14_ == 0)
+                  _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+                  _loc9_ = _loc8_ >> 24 & 0xFF;
+                  _loc10_ = _loc8_ >> 16 & 0xFF;
+                  _loc11_ = _loc8_ >> 8 & 0xFF;
+                  _loc12_ = _loc8_ & 0xFF;
+                  if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                   {
-                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
-                     break;
+                     _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                     _loc14_ = _loc13_ >> 24 & 0xFF;
+                     if(_loc14_ == 0)
+                     {
+                        _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
+                        break;
+                     }
                   }
+                  _loc7_ += 1;
                }
                _loc6_ += 1;
             }
-            _loc7_ += 1;
+            _loc7_ = y - 40;
+            while(_loc7_ <= y - 40 + 80)
+            {
+               _loc6_ = x - 40;
+               while(_loc6_ <= x - 40 + 80)
+               {
+                  _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+                  _loc9_ = _loc8_ >> 24 & 0xFF;
+                  _loc10_ = _loc8_ >> 16 & 0xFF;
+                  _loc11_ = _loc8_ >> 8 & 0xFF;
+                  _loc12_ = _loc8_ & 0xFF;
+                  if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
+                  {
+                     _loc13_ = _global.ground_bmp.getPixel32(_loc6_ - 1,_loc7_);
+                     _loc14_ = _loc13_ >> 24 & 0xFF;
+                     if(_loc14_ == 0)
+                     {
+                        _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
+                        break;
+                     }
+                  }
+                  _loc6_ += 1;
+               }
+               _loc7_ += 1;
+            }
          }
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
@@ -2497,30 +2513,33 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole_vert");
          _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,80,46),new flash.geom.Point(x,y),_global.ground_bmp,new flash.geom.Point(x,y),true);
          _global.ground_bmp.threshold(_global.ground_bmp,new flash.geom.Rectangle(x,y,80,46),new flash.geom.Point(x,y),"==",4278255360,0,16777215,false);
-         _loc6_ = x;
-         while(_loc6_ <= x + 80)
+         if(!Utils.perf)
          {
-            _loc7_ = y;
-            while(_loc7_ <= y + 46)
+            _loc6_ = x;
+            while(_loc6_ <= x + 80)
             {
-               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
-               _loc9_ = _loc8_ >> 24 & 0xFF;
-               _loc10_ = _loc8_ >> 16 & 0xFF;
-               _loc11_ = _loc8_ >> 8 & 0xFF;
-               _loc12_ = _loc8_ & 0xFF;
-               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
+               _loc7_ = y;
+               while(_loc7_ <= y + 46)
                {
-                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
-                  _loc14_ = _loc13_ >> 24 & 0xFF;
-                  if(_loc14_ == 0)
+                  _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+                  _loc9_ = _loc8_ >> 24 & 0xFF;
+                  _loc10_ = _loc8_ >> 16 & 0xFF;
+                  _loc11_ = _loc8_ >> 8 & 0xFF;
+                  _loc12_ = _loc8_ & 0xFF;
+                  if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                   {
-                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
-                     break;
+                     _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                     _loc14_ = _loc13_ >> 24 & 0xFF;
+                     if(_loc14_ == 0)
+                     {
+                        _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
+                        break;
+                     }
                   }
+                  _loc7_ += 1;
                }
-               _loc7_ += 1;
+               _loc6_ += 1;
             }
-            _loc6_ += 1;
          }
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
@@ -2543,30 +2562,33 @@ class com.nitrome.toxic.Game extends MovieClip
          _global.temp_bmp = flash.display.BitmapData.loadBitmap("bomb_hole_horiz");
          _global.ground_bmp.copyPixels(_global.temp_bmp,new flash.geom.Rectangle(0,0,46,80),new flash.geom.Point(x,y),_global.ground_bmp,new flash.geom.Point(x,y),true);
          _global.ground_bmp.threshold(_global.ground_bmp,new flash.geom.Rectangle(x,y,46,80),new flash.geom.Point(x,y),"==",4278255360,0,16777215,false);
-         _loc6_ = x;
-         while(_loc6_ <= x + 46)
+         if(!Utils.perf)
          {
-            _loc7_ = y;
-            while(_loc7_ <= y + 80)
+            _loc6_ = x;
+            while(_loc6_ <= x + 46)
             {
-               _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
-               _loc9_ = _loc8_ >> 24 & 0xFF;
-               _loc10_ = _loc8_ >> 16 & 0xFF;
-               _loc11_ = _loc8_ >> 8 & 0xFF;
-               _loc12_ = _loc8_ & 0xFF;
-               if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
+               _loc7_ = y;
+               while(_loc7_ <= y + 80)
                {
-                  _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
-                  _loc14_ = _loc13_ >> 24 & 0xFF;
-                  if(_loc14_ == 0)
+                  _loc8_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_);
+                  _loc9_ = _loc8_ >> 24 & 0xFF;
+                  _loc10_ = _loc8_ >> 16 & 0xFF;
+                  _loc11_ = _loc8_ >> 8 & 0xFF;
+                  _loc12_ = _loc8_ & 0xFF;
+                  if(_loc9_ == 255 && _loc10_ == 68 && _loc11_ == 82 && _loc12_ == 76)
                   {
-                     _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
-                     break;
+                     _loc13_ = _global.ground_bmp.getPixel32(_loc6_,_loc7_ - 1);
+                     _loc14_ = _loc13_ >> 24 & 0xFF;
+                     if(_loc14_ == 0)
+                     {
+                        _global.ground_bmp.setPixel32(_loc6_,_loc7_,4278190080);
+                        break;
+                     }
                   }
+                  _loc7_ += 1;
                }
-               _loc7_ += 1;
+               _loc6_ += 1;
             }
-            _loc6_ += 1;
          }
          _global.temp_bmp.dispose();
          delete _global.temp_bmp;
@@ -2614,7 +2636,10 @@ class com.nitrome.toxic.Game extends MovieClip
       var _loc5_ = this.splash_holder.getNextHighestDepth();
       this.splash_holder.attachMovie("splash","splash_" + _loc5_,_loc5_,{_x:x,_y:y});
       this.splash_holder["splash_" + _loc5_].chid = 2226;
-      _root.sfx.playSound("splash");
+      if(!(Utils.invulnerable || Utils.noDeath))
+      {
+         _root.sfx.playSound("splash");
+      }
    }
    function finishSplash(n)
    {

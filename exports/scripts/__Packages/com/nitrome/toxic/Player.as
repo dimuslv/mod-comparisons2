@@ -252,6 +252,7 @@ class com.nitrome.toxic.Player extends MovieClip
          _global.img.draw(_root.game.object_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
          _global.img.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
          _loc6_ = _global.img.getColorBoundsRect(4294967295,4278255615);
+         Utils.updateVisBitmap("Object",_global.img);
          if(_loc6_.width != 0)
          {
             this.game.findCollectObject();
@@ -281,6 +282,7 @@ class com.nitrome.toxic.Player extends MovieClip
          _global.img.draw(_root.game.missile_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
          _global.img.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
          _loc7_ = _global.img.getColorBoundsRect(4294967295,4278255615);
+         Utils.updateVisBitmap("Damage",_global.img);
          if(_loc7_.width == 0)
          {
             _global.img.dispose();
@@ -296,7 +298,7 @@ class com.nitrome.toxic.Player extends MovieClip
       _global.img5 = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
       _global.img5.draw(_root.game.acid_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
       _global.img5.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
-      _root.updateTestBitmap(_global.img5);
+      Utils.updateVisBitmap("Acid",_global.img5);
       var _loc6_ = _global.img5.getColorBoundsRect(4294967295,4278255615);
       if(_loc6_.width != 0)
       {
@@ -388,11 +390,19 @@ class com.nitrome.toxic.Player extends MovieClip
    }
    function forcedGameOver()
    {
+      if(Utils.invulnerable || Utils.noDeath)
+      {
+         return undefined;
+      }
       this.startDie();
       _root.health_panel.loseAllHealth();
    }
    function startHit()
    {
+      if(Utils.invulnerable)
+      {
+         return undefined;
+      }
       this.hit = true;
       this.hit_count = 60;
       this.vy = this.hit_vy;
@@ -1200,6 +1210,10 @@ class com.nitrome.toxic.Player extends MovieClip
          _loc6_ = this.wall_boundary_right._x;
          if(!(this.getInWall(this._x + _loc6_ + v,this._y + _loc2_[0]) == true || this.getInWall(this._x + _loc6_ + v,this._y + _loc2_[1]) == true || this.getInWall(this._x + _loc6_ + v,this._y + _loc2_[2]) == true || this.getInWall(this._x + _loc6_ + v,this._y + _loc2_[3]) == true || this.getInWall(this._x + _loc6_ + v,this._y + _loc2_[4]) == true))
          {
+            if(Utils.inaccuratePhysics)
+            {
+               return v;
+            }
             _loc5_ = 1;
             while(_loc5_ <= this.max_vx)
             {

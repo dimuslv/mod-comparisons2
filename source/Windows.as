@@ -49,6 +49,36 @@ class Windows
 		w._static = true;
 		w._visible = false;
 		
+		var visWindowArray = [
+			"Damage", 60, 52,
+			"Acid", 60, 52,
+			"Object", 60, 52
+		];
+		
+		var i = 0;
+		while (i < visWindowArray.length) {
+			var n = visWindowArray[i];
+			
+			w = Windows.clip.attachMovie("window", n + "VisWindow", Windows.clip.getNextHighestDepth());
+			
+			w.init(0, 0, {
+				title: n,
+				customMinimize: function(w) {
+					w.minimized = !w.minimized;
+					w.img._visible = !w.minimized;
+					w.updateMainField(false);
+				}
+			});
+			
+			w.createEmptyMovieClip("img", w.getNextHighestDepth());
+			w.img._y = 20;
+			Utils.bmps[n] = new flash.display.BitmapData(visWindowArray[i+1], visWindowArray[i+2], false);
+			w.img.attachBitmap(Utils.bmps[n], w.img.getNextHighestDepth());
+			w._static = true;
+			w._visible = false;
+			i += 3;
+		}
+		
 		_root.createTextField("nullField", _root.getNextHighestDepth(), 0, 0, 0, 0);
 		_root.nullField._visible = false;
 		
@@ -74,8 +104,16 @@ class Windows
 				var i = w.mainIndices.length - 1;
 				while (i >= 0) {
 					if (ind >= w.mainIndices[i]) {
-						if (w.mainBehaviors[i])
-							w.mainBehaviors[i](w);
+						if (w.mainBehaviors[i]) {
+							if (w.mainBehaviors[i] instanceof Function) {
+								w.mainBehaviors[i](w);
+							} else if (w.mainBehaviors[i] instanceof Array) {
+								var fun = w.mainBehaviors[i][0];
+								w.mainBehaviors[i][0] = w;
+								fun.apply(null, w.mainBehaviors[i]);
+								w.mainBehaviors[i][0] = fun;
+							}
+						}
 						break;
 					}
 					i--;
@@ -85,8 +123,8 @@ class Windows
 		}
 		
 		for (i in Windows.clip) {
-			if (Windows.clip[i].behaviorObject.update) {
-				Windows.clip[i].behaviorObject.update(Windows.clip[i]);
+			if (Windows.clip[i].obj.update) {
+				Windows.clip[i].obj.update(Windows.clip[i]);
 			}
 		}
 	}
@@ -114,5 +152,15 @@ class Windows
 		Windows.curDragOfsX = w._x - _xmouse;
 		Windows.curDragOfsY = w._y - _ymouse;
 		Windows.nullFocus();
+	}
+	
+	static function createWindow(x, y, obj) {
+		var w = Windows.clip.attachMovie("window", "window" + Windows.clip.getNextHighestDepth(), Windows.clip.getNextHighestDepth());
+		w.init(x, y, obj);
+		return w;
+	}
+	
+	static function createEmptyWindow(x, y) {
+		return Windows.createWindow(x, y, {title: ""});
 	}
 }

@@ -1,4 +1,4 @@
-ConstantPool "_root", "ng", "NitromeGame", "juicy_", "toxic2", "init", "mask", "createEmptyMovieClip", "beginFill", "moveTo", "lineTo", "endFill", "setMask"
+ConstantPool "_root", "ng", "NitromeGame", "juicy_", "toxic2", "init", "mask", "createEmptyMovieClip", "beginFill", "moveTo", "lineTo", "endFill", "setMask", "_visible"
 Push "_root"
 GetVariable
 Push "ng"
@@ -84,3 +84,8 @@ GetVariable
 Push "setMask"
 CallMethod
 Pop
+Push "mask"
+GetVariable
+Push "_visible"
+Push false
+SetMember

@@ -62,7 +62,7 @@ Push "LevelEnd"
 GetMember
 Not
 Not
-If loc031a
+If loc0348
 Push "com"
 GetVariable
 Push "nitrome"
@@ -115,8 +115,16 @@ CallMethod
 Push true
 Equals2
 loc025c:Not
-If loc0292
-Push false, 1, register1, "game"
+If loc02c0
+Push "Utils"
+GetVariable
+Push "deactivateTeleport"
+GetMember
+Not
+If loc0290
+Push undefined
+Return
+loc0290:Push false, 1, register1, "game"
 GetMember
 Push "transportPlayer"
 CallMethod
@@ -127,7 +135,7 @@ Pop
 Push register1, "collected", true
 SetMember
 }
-loc0292:SetMember
+loc02c0:SetMember
 Push register2, "finishCollect"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
 Push register1, "_name"
@@ -158,4 +166,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc031a:Pop
+loc0348:Pop

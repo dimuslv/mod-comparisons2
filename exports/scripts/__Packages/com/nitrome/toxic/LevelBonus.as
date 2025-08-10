@@ -16,6 +16,10 @@ class com.nitrome.toxic.LevelBonus extends MovieClip
       trace("player hit bonus pad?");
       if(this.collected == false && this.game.getPlayerOnGround() == true)
       {
+         if(Utils.deactivateTeleport)
+         {
+            return undefined;
+         }
          this.game.transportPlayer(true);
          this.gotoAndStop("collect");
          this.collected = true;

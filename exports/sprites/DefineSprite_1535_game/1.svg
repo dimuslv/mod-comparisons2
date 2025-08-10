@@ -18,6 +18,7 @@
     <use ffdec:characterId="1532" height="0.0" id="splash_holder" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite14"/>
     <use ffdec:characterId="1533" height="0.0" id="acid_holder" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite15"/>
     <use ffdec:characterId="1534" height="0.0" id="explosion_holder" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite16"/>
+    <use ffdec:characterId="1534" height="0.0" id="test_holder" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="0.0" xlink:href="#sprite16"/>
   </g>
   <defs/>
 </svg>

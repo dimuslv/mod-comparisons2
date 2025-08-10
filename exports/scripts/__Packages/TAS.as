@@ -3,6 +3,8 @@ class TAS
    static var justPause;
    static var justPlacedBombs;
    static var inputField;
+   static var targetIndex;
+   static var targetFrame;
    static var write = true;
    static var frozen = true;
    static var curString = "";
@@ -18,12 +20,16 @@ class TAS
    static function updateVarWindow(w)
    {
       var _loc3_ = _root.game.player;
-      w.behaviorObject.optionLabels = ["x: " + _loc3_._x,"y: " + _loc3_._y,"vx: " + _loc3_.vx,"vy: " + _loc3_.vy,"wc: " + _loc3_.wall_count,"hc: " + _loc3_.hit_count,"st: " + ["start","stand","duck","walk","jump","fall","wall","hit","die","end"][_loc3_.state]];
+      w.obj.options = ["x: " + _loc3_._x,false,"y: " + _loc3_._y,false,"vx: " + _loc3_.vx,false,"vy: " + _loc3_.vy,false,"wc: " + _loc3_.wall_count,false,"hc: " + _loc3_.hit_count,false,"st: " + ["start","stand","duck","walk","jump","fall","wall","hit","die","end"][_loc3_.state],false];
       w.updateMainField(false);
    }
    static function doKeyDown(code)
    {
       if(TAS.doTasKeyDown(code))
+      {
+         return undefined;
+      }
+      if(Utils.doKeyDown(code))
       {
          return undefined;
       }
@@ -83,6 +89,8 @@ class TAS
       {
          _root.popup_holder.clip.key_button.clearKeyListener();
          _root.mc.startMenuMusic(false);
+         TAS.curIndex = 0;
+         TAS.curFrame = TAS.curArray[1];
          if(!_root.game.level_number)
          {
             _root.tt.doTween("title_screen");
@@ -560,6 +568,10 @@ class TAS
             com.nitrome.toxic.Global.DOWN_PRESSED = _loc5_ >= 6;
          }
          TAS.curFrame++;
+         if(TAS.fastPlayback && TAS.curIndex == TAS.targetIndex && TAS.curFrame == TAS.targetFrame)
+         {
+            TAS.fastPlayback = false;
+         }
       }
    }
    static function levelInit()
@@ -587,20 +599,20 @@ class TAS
       com.nitrome.toxic.Global.can_jump = true;
       var _loc5_ = TAS.write;
       TAS.write = false;
-      var _loc6_ = TAS.curIndex;
-      var _loc7_ = TAS.curFrame;
+      TAS.targetIndex = TAS.curIndex;
+      TAS.targetFrame = TAS.curFrame;
       TAS.curIndex = 0;
       TAS.curFrame = TAS.curArray[1];
       TAS.fastPlayback = true;
       TAS.neutralPlayback = true;
-      var _loc8_ = 0;
-      while(_loc8_ < 109)
+      var _loc6_ = 0;
+      while(_loc6_ < 109)
       {
          Main.gameUpdate();
-         _loc8_ = _loc8_ + 1;
+         _loc6_ = _loc6_ + 1;
       }
       TAS.neutralPlayback = false;
-      while(TAS.curIndex < _loc6_ || TAS.curIndex == _loc6_ && TAS.curFrame < _loc7_)
+      while(TAS.curIndex < TAS.targetIndex || TAS.curIndex == TAS.targetIndex && TAS.curFrame < TAS.targetFrame)
       {
          Main.gameUpdate();
       }

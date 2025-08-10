@@ -12,17 +12,19 @@ class TAS
 	static var justPlacedBombs;
 	static var justPause;
 	static var inputField;
+	static var targetIndex;
+	static var targetFrame;
 
 	static function updateVarWindow(w) {
 		var p = _root.game.player;
-		w.behaviorObject.optionLabels = [
-			"x: " + p._x,
-			"y: " + p._y,
-			"vx: " + p.vx,
-			"vy: " + p.vy,
-			"wc: " + p.wall_count,
-			"hc: " + p.hit_count,
-			"st: " + ["start", "stand", "duck", "walk", "jump", "fall", "wall", "hit", "die", "end"][p.state]
+		w.obj.options = [
+			"x: " + p._x, false,
+			"y: " + p._y, false,
+			"vx: " + p.vx, false,
+			"vy: " + p.vy, false,
+			"wc: " + p.wall_count, false,
+			"hc: " + p.hit_count, false,
+			"st: " + ["start", "stand", "duck", "walk", "jump", "fall", "wall", "hit", "die", "end"][p.state], false
 		];
 		
 		w.updateMainField(false);
@@ -30,6 +32,10 @@ class TAS
 
 	static function doKeyDown(code) {
 		if (TAS.doTasKeyDown(code)) {
+			return;
+		}
+		
+		if (Utils.doKeyDown(code)) {
 			return;
 		}
 		
@@ -71,6 +77,8 @@ class TAS
 		if (code == 113) { //F2
 			_root.popup_holder.clip.key_button.clearKeyListener();
 			_root.mc.startMenuMusic(false);
+			TAS.curIndex = 0;
+			TAS.curFrame = TAS.curArray[1];
 			//_root.inputField.text = "";
 			//_root.curString = "";
 			//_root.curArray = ["i", 0, -1];
@@ -462,6 +470,10 @@ class TAS
 				com.nitrome.toxic.Global.DOWN_PRESSED = num >= 6;
 			}
 			TAS.curFrame++;
+			
+			if (TAS.fastPlayback && TAS.curIndex == TAS.targetIndex && TAS.curFrame == TAS.targetFrame) {
+				TAS.fastPlayback = false;
+			}
 		}
 	}
 
@@ -490,8 +502,8 @@ class TAS
 		com.nitrome.toxic.Global.can_jump = true;
 		var oldWrite = TAS.write;
 		TAS.write = false;
-		var targetIndex = TAS.curIndex;
-		var targetFrame = TAS.curFrame;
+		TAS.targetIndex = TAS.curIndex;
+		TAS.targetFrame = TAS.curFrame;
 		TAS.curIndex = 0;
 		TAS.curFrame = TAS.curArray[1];
 		TAS.fastPlayback = true;
@@ -504,7 +516,7 @@ class TAS
 		}
 		TAS.neutralPlayback = false;
 		
-		while (TAS.curIndex < targetIndex || (TAS.curIndex == targetIndex && TAS.curFrame < targetFrame)) {
+		while (TAS.curIndex < TAS.targetIndex || (TAS.curIndex == TAS.targetIndex && TAS.curFrame < TAS.targetFrame)) {
 			Main.gameUpdate();
 		}
 		

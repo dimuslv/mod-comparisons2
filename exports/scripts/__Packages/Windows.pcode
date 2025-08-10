@@ -1,11 +1,11 @@
-ConstantPool "_global", "Windows", "prototype", "init", "clip", "window_clip", "w", "getNextHighestDepth", "inputWindow", "window", "attachMovie", "title", "Input string", "customMinimize", "minimized", "inputField", "_visible", "updateMainField", "_static", "createTextField", "background", "type", "input", "restrict", "^[]", "TAS", "varWindow", "Vars", "update", "updateVarWindow", "nullField", "onMouseUp", "curDragging", "onEnterFrame", "_x", "_xmouse", "Math", "min", "max", "curDragOfsX", "_y", "_ymouse", "curDragOfsY", "focus", "Selection", "getFocus", "slice", "_level0.window_clip", "length", "mainTextField", "ind", "getCaretIndex", "i", "mainIndices", "mainBehaviors", "nullFocus", "behaviorObject", "setFocus", "minimizeWindow", "closeWindow", "removeMovieClip", "startDragging", "ASSetPropFlags"
+ConstantPool "_global", "Windows", "prototype", "init", "clip", "window_clip", "w", "getNextHighestDepth", "inputWindow", "window", "attachMovie", "title", "Input string", "customMinimize", "minimized", "inputField", "_visible", "updateMainField", "_static", "createTextField", "background", "type", "input", "restrict", "^[]", "TAS", "varWindow", "Vars", "update", "updateVarWindow", "Object", "Acid", "Damage", "length", "VisWindow", "img", "createEmptyMovieClip", "_y", "Utils", "bmps", "flash", "display", "BitmapData", "attachBitmap", "nullField", "onMouseUp", "curDragging", "onEnterFrame", "_x", "_xmouse", "Math", "min", "max", "curDragOfsX", "_ymouse", "curDragOfsY", "focus", "Selection", "getFocus", "slice", "_level0.window_clip", "mainTextField", "ind", "getCaretIndex", "i", "mainIndices", "mainBehaviors", "Function", "Array", "fun", "apply", "nullFocus", "obj", "setFocus", "minimizeWindow", "closeWindow", "removeMovieClip", "startDragging", "createWindow", "createEmptyWindow", "", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Windows"
 GetMember
 Not
 Not
-If loc0aa5
+If loc0f8c
 Push "_global"
 GetVariable
 Push "Windows"
@@ -20,7 +20,7 @@ StoreRegister 2
 Pop
 Push register1
 Push "init"
-DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
+DefineFunction2 "", 0, 5, false, true, true, false, true, false, true, false, false {
 Push "Windows"
 GetVariable
 Push "clip"
@@ -183,7 +183,172 @@ GetVariable
 Push "_visible"
 Push false
 SetMember
+Push 52
+Push 60
+Push "Object"
+Push 52
+Push 60
+Push "Acid"
+Push 52
+Push 60
+Push "Damage"
+Push 9
+InitArray
+StoreRegister 2
+Pop
 Push 0
+StoreRegister 3
+Pop
+loc0615:Push register3
+Push register2
+Push "length"
+GetMember
+Less2
+Not
+If loc0840
+Push register2
+Push register3
+GetMember
+StoreRegister 4
+Pop
+Push "w"
+Push 0
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push register4
+Push "VisWindow"
+Add2
+Push "window"
+Push 3
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "attachMovie"
+CallMethod
+SetVariable
+Push "title"
+Push register4
+Push "customMinimize"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push register1
+Push "minimized"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push register1
+Push "img"
+GetMember
+Push "_visible"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push false
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+Push 2
+InitObject
+Push 0
+Push 0
+Push 3
+Push "w"
+GetVariable
+Push "init"
+CallMethod
+Pop
+Push 0
+Push "w"
+GetVariable
+Push "getNextHighestDepth"
+CallMethod
+Push "img"
+Push 2
+Push "w"
+GetVariable
+Push "createEmptyMovieClip"
+CallMethod
+Pop
+Push "w"
+GetVariable
+Push "img"
+GetMember
+Push "_y"
+Push 20
+SetMember
+Push "Utils"
+GetVariable
+Push "bmps"
+GetMember
+Push register4
+Push false
+Push register2
+Push register3
+Push 2
+Add2
+GetMember
+Push register2
+Push register3
+Push 1
+Add2
+GetMember
+Push 3
+Push "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 0
+Push "w"
+GetVariable
+Push "img"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "Utils"
+GetVariable
+Push "bmps"
+GetMember
+Push register4
+GetMember
+Push 2
+Push "w"
+GetVariable
+Push "img"
+GetMember
+Push "attachBitmap"
+CallMethod
+Pop
+Push "w"
+GetVariable
+Push "_static"
+Push true
+SetMember
+Push "w"
+GetVariable
+Push "_visible"
+Push false
+SetMember
+Push register3
+Push 3
+Add2
+StoreRegister 3
+Pop
+Jump loc0615
+loc0840:Push 0
 Push 0
 Push 0
 Push 0
@@ -236,7 +401,7 @@ GetVariable
 Push "curDragging"
 GetMember
 Not
-If loc06b7
+If loc09d1
 Push "Windows"
 GetVariable
 Push "curDragging"
@@ -287,8 +452,8 @@ Push "curDragOfsY"
 GetMember
 Add2
 SetMember
-Jump loc086b
-loc06b7:Push "focus"
+Jump loc0c5c
+loc09d1:Push "focus"
 Push 0
 Push "Selection"
 GetVariable
@@ -306,7 +471,7 @@ Push "_level0.window_clip"
 Equals2
 PushDuplicate
 Not
-If loc0735
+If loc0a4f
 Pop
 Push "focus"
 GetVariable
@@ -323,8 +488,8 @@ Push "slice"
 CallMethod
 Push "mainTextField"
 Equals2
-loc0735:Not
-If loc086b
+loc0a4f:Not
+If loc0c5c
 Push "w"
 Push "Windows"
 GetVariable
@@ -368,13 +533,13 @@ GetMember
 Push 1
 Subtract
 DefineLocal
-loc07cd:Push "i"
+loc0ae7:Push "i"
 GetVariable
 Push 0
 Less2
 Not
 Not
-If loc0856
+If loc0c47
 Push "ind"
 GetVariable
 Push "w"
@@ -387,7 +552,7 @@ GetMember
 Less2
 Not
 Not
-If loc0844
+If loc0c35
 Push "w"
 GetVariable
 Push "mainBehaviors"
@@ -396,7 +561,19 @@ Push "i"
 GetVariable
 GetMember
 Not
-If loc083f
+If loc0c30
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push "Function"
+GetVariable
+InstanceOf
+Not
+If loc0b7e
 Push "w"
 GetVariable
 Push 1
@@ -408,28 +585,88 @@ Push "i"
 GetVariable
 CallMethod
 Pop
-loc083f:Jump loc0856
-loc0844:Push "i"
+Jump loc0c30
+loc0b7e:Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push "Array"
+GetVariable
+InstanceOf
+Not
+If loc0c30
+Push "fun"
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push 0
+GetMember
+DefineLocal
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push 0
+Push "w"
+GetVariable
+SetMember
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push null
+Push 2
+Push "fun"
+GetVariable
+Push "apply"
+CallMethod
+Pop
+Push "w"
+GetVariable
+Push "mainBehaviors"
+GetMember
+Push "i"
+GetVariable
+GetMember
+Push 0
+Push "fun"
+GetVariable
+SetMember
+loc0c30:Jump loc0c47
+loc0c35:Push "i"
 Push "i"
 GetVariable
 Decrement
 SetVariable
-Jump loc07cd
-loc0856:Push 0
+Jump loc0ae7
+loc0c47:Push 0
 Push "Windows"
 GetVariable
 Push "nullFocus"
 CallMethod
 Pop
-loc086b:Push "Windows"
+loc0c5c:Push "Windows"
 GetVariable
 Push "clip"
 GetMember
 Enumerate2
-loc0878:StoreRegister 0
+loc0c69:StoreRegister 0
 Push null
 Equals2
-If loc08f6
+If loc0ce7
 Push "i"
 Push register0
 SetVariable
@@ -440,12 +677,12 @@ GetMember
 Push "i"
 GetVariable
 GetMember
-Push "behaviorObject"
+Push "obj"
 GetMember
 Push "update"
 GetMember
 Not
-If loc08f1
+If loc0ce2
 Push "Windows"
 GetVariable
 Push "clip"
@@ -461,14 +698,14 @@ GetMember
 Push "i"
 GetVariable
 GetMember
-Push "behaviorObject"
+Push "obj"
 GetMember
 Push "update"
 CallMethod
 Pop
-loc08f1:Jump loc0878
+loc0ce2:Jump loc0c69
 }
-loc08f6:SetMember
+loc0ce7:SetMember
 Push register1
 Push "nullFocus"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
@@ -508,19 +745,19 @@ Push register1
 Push "_static"
 GetMember
 Not
-If loc09b4
+If loc0da5
 Push register1
 Push "_visible"
 Push false
 SetMember
-Jump loc09c8
-loc09b4:Push 0
+Jump loc0db9
+loc0da5:Push 0
 Push register1
 Push "removeMovieClip"
 CallMethod
 Pop
 }
-loc09c8:SetMember
+loc0db9:SetMember
 Push register1
 Push "startDragging"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
@@ -558,6 +795,64 @@ Pop
 }
 SetMember
 Push register1
+Push "createWindow"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, true, false, false, 1, "x", 2, "y", 3, "obj" {
+Push 0
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "window"
+Push 0
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Add2
+Push "window"
+Push 3
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "attachMovie"
+CallMethod
+StoreRegister 4
+Pop
+Push register3
+Push register2
+Push register1
+Push 3
+Push register4
+Push "init"
+CallMethod
+Pop
+Push register4
+Return
+}
+SetMember
+Push register1
+Push "createEmptyWindow"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 1, "x", 2, "y" {
+Push "title"
+Push ""
+Push 1
+InitObject
+Push register2
+Push register1
+Push 3
+Push "Windows"
+GetVariable
+Push "createWindow"
+CallMethod
+Return
+}
+SetMember
+Push register1
 Push "curDragging"
 Push null
 SetMember
@@ -580,4 +875,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc0aa5:Pop
+loc0f8c:Pop

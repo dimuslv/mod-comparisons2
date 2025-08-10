@@ -1,0 +1,897 @@
+ConstantPool "_global", "Utils", "prototype", "levelInit", "layerVisibilities", "game", "slice", "_holder", "_visible", "doKeyDown", "Windows", "createEmptyWindow", "mainMenu", "title", "Main menu", "curWindow", "options", "layerVisibilityWindow", "Layer visibility", "preferenceWindow", "Preferences", "infoWindowsWindow", "Info windows", "bruteforcingWindow", "Bruteforcing", "testingVarsWindow", "Testing vars", "updateMainField", "deactivateTeleport", "Deactivate teleport", "inaccuratePhysics", "Buggy IL mod physics", "noDeath", "No death", "invulnerable", "Invulnerability", "addToggleVarOptions", "toggleMask", "Mask: ", "masked", "on", "off", "push", "Back", "length", ": ", "toggleVar", "obj", "copyCollisionData", "Copy collision data 📋", "com", "nitrome", "toxic", "Global", "level_height", "level_cols", "getSceneryCollision", "toString", "System", "setClipboard", "mask", "setMask", "perf", "Perf optimizations", "clip", "ObjectVisWindow", "activateStaticWindow", "Object visualization 🗗", "AcidVisWindow", "Acid visualization 🗗", "DamageVisWindow", "Damage visualization 🗗", "updateVisBitmap", "TAS", "fastPlayback", "VisWindow", "zeroPoint", "height", "width", "flash", "geom", "Rectangle", "bmps", "copyPixels", "fullLoads", "controlAtBeginning", "emptyStringOnExit", "closeWindowsOnExit", "Point", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Utils"
+GetMember
+Not
+Not
+If loc11a1
+Push "_global"
+GetVariable
+Push "Utils"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1
+Push "levelInit"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
+GetMember
+If loc050e
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
+Push 0
+InitObject
+SetMember
+Push register1
+Push "game"
+GetMember
+Enumerate2
+loc04ae:StoreRegister 0
+Push null
+Equals2
+If loc0509
+Push register0
+StoreRegister 2
+Pop
+Push -7
+Push 1
+Push register2
+Push "slice"
+CallMethod
+Push "_holder"
+Equals2
+Not
+If loc0504
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
+GetMember
+Push register2
+Push true
+SetMember
+loc0504:Jump loc04ae
+loc0509:Jump loc0587
+loc050e:Push register1
+Push "game"
+GetMember
+Enumerate2
+loc051a:StoreRegister 0
+Push null
+Equals2
+If loc0587
+Push register0
+StoreRegister 2
+Pop
+Push -7
+Push 1
+Push register2
+Push "slice"
+CallMethod
+Push "_holder"
+Equals2
+Not
+If loc0582
+Push register1
+Push "game"
+GetMember
+Push register2
+GetMember
+Push "_visible"
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
+GetMember
+Push register2
+GetMember
+SetMember
+loc0582:Jump loc051a
+}
+loc0587:SetMember
+Push register1
+Push "doKeyDown"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "code" {
+Push register1
+Push 77
+Equals2
+Not
+If loc0600
+Push 100
+Push 100
+Push 2
+Push "Windows"
+GetVariable
+Push "createEmptyWindow"
+CallMethod
+StoreRegister 2
+Pop
+Push register2
+Push 1
+Push "Utils"
+GetVariable
+Push "mainMenu"
+CallMethod
+Pop
+Push true
+Return
+}
+loc0600:SetMember
+Push register1
+Push "mainMenu"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push "title"
+Push "Main menu"
+Push "curWindow"
+Push "Utils"
+GetVariable
+Push "mainMenu"
+GetMember
+Push "options"
+Push "Utils"
+GetVariable
+Push "layerVisibilityWindow"
+GetMember
+Push "Layer visibility"
+Push "Utils"
+GetVariable
+Push "preferenceWindow"
+GetMember
+Push "Preferences"
+Push "Utils"
+GetVariable
+Push "infoWindowsWindow"
+GetMember
+Push "Info windows"
+Push "Utils"
+GetVariable
+Push "bruteforcingWindow"
+GetMember
+Push "Bruteforcing"
+Push "Utils"
+GetVariable
+Push "testingVarsWindow"
+GetMember
+Push "Testing vars"
+Push 10
+InitArray
+Push 3
+InitObject
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "testingVarsWindow"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push "title"
+Push "Testing vars"
+Push "curWindow"
+Push "Utils"
+GetVariable
+Push "testingVarsWindow"
+GetMember
+Push "options"
+Push 0
+InitArray
+Push 3
+InitObject
+StoreRegister 2
+Pop
+Push "deactivateTeleport"
+Push "Utils"
+GetVariable
+Push "Deactivate teleport"
+Push "inaccuratePhysics"
+Push "Utils"
+GetVariable
+Push "Buggy IL mod physics"
+Push "noDeath"
+Push "Utils"
+GetVariable
+Push "No death"
+Push "invulnerable"
+Push "Utils"
+GetVariable
+Push "Invulnerability"
+Push 12
+InitArray
+Push register2
+Push "options"
+GetMember
+Push 2
+Push "Utils"
+GetVariable
+Push "addToggleVarOptions"
+CallMethod
+Pop
+Push "Utils"
+GetVariable
+Push "toggleMask"
+GetMember
+Push "Mask: "
+Push "Utils"
+GetVariable
+Push "masked"
+GetMember
+Not
+If loc079a
+Push "on"
+Jump loc079f
+loc079a:Push "off"
+loc079f:Add2
+Push 2
+Push register2
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push "Utils"
+GetVariable
+Push "mainMenu"
+GetMember
+Push "Back"
+Push 2
+Push register2
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register2
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "addToggleVarOptions"
+DefineFunction2 "", 2, 7, false, false, true, false, true, false, true, false, false, 1, "options", 2, "stuffArray" {
+Push 0
+StoreRegister 3
+Pop
+loc0836:Push register3
+Push register2
+Push "length"
+GetMember
+Less2
+Not
+If loc091a
+Push register2
+Push register3
+GetMember
+StoreRegister 4
+Pop
+Push register2
+Push register3
+Push 1
+Add2
+GetMember
+StoreRegister 5
+Pop
+Push register2
+Push register3
+Push 2
+Add2
+GetMember
+StoreRegister 6
+Pop
+Push register4
+Push ": "
+Add2
+Push register5
+Push register6
+GetMember
+Not
+If loc08b5
+Push "on"
+Jump loc08ba
+loc08b5:Push "off"
+loc08ba:Add2
+Push 1
+Push register1
+Push "push"
+CallMethod
+Pop
+Push register6
+Push register5
+Push "Utils"
+GetVariable
+Push "toggleVar"
+GetMember
+Push 3
+InitArray
+Push 1
+Push register1
+Push "push"
+CallMethod
+Pop
+Push register3
+Push 3
+Add2
+StoreRegister 3
+Pop
+Jump loc0836
+}
+loc091a:SetMember
+Push register1
+Push "toggleVar"
+DefineFunction2 "", 3, 4, false, false, true, false, true, false, true, false, false, 1, "w", 2, "stump", 3, "varName" {
+Push register2
+Push register3
+Push register2
+Push register3
+GetMember
+Not
+SetMember
+Push register1
+Push 1
+Push register1
+Push "obj"
+GetMember
+Push "curWindow"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "bruteforcingWindow"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push "title"
+Push "Bruteforcing"
+Push "curWindow"
+Push "Utils"
+GetVariable
+Push "bruteforcingWindow"
+GetMember
+Push "options"
+Push "Utils"
+GetVariable
+Push "mainMenu"
+GetMember
+Push "Back"
+Push "Utils"
+GetVariable
+Push "copyCollisionData"
+GetMember
+Push "Copy collision data 📋"
+Push 4
+InitArray
+Push 3
+InitObject
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "copyCollisionData"
+DefineFunction2 "", 1, 8, false, true, true, false, true, false, true, false, false, 2, "w" {
+Push 0
+InitArray
+StoreRegister 3
+Pop
+Push 0
+StoreRegister 4
+Pop
+loc0a2e:Push register4
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Less2
+Not
+If loc0b57
+Push 0
+StoreRegister 5
+Pop
+loc0a65:Push register5
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_cols"
+GetMember
+Less2
+Not
+If loc0b47
+Push 0
+StoreRegister 6
+Pop
+Push 0
+StoreRegister 7
+Pop
+loc0aa9:Push register7
+Push 32
+Less2
+Not
+If loc0b1e
+Push register4
+Push register5
+Push 32
+Multiply
+Push register7
+Add2
+Push 2
+Push register1
+Push "game"
+GetMember
+Push "getSceneryCollision"
+CallMethod
+Not
+If loc0b0e
+Push register6
+Push 1
+Push register7
+BitLShift
+BitOr
+StoreRegister 6
+Pop
+loc0b0e:Push register7
+Increment
+StoreRegister 7
+Pop
+Jump loc0aa9
+loc0b1e:Push register6
+Push 1
+Push register3
+Push "push"
+CallMethod
+Pop
+Push register5
+Increment
+StoreRegister 5
+Pop
+Jump loc0a65
+loc0b47:Push register4
+Increment
+StoreRegister 4
+Pop
+Jump loc0a2e
+loc0b57:Push 0
+Push register3
+Push "toString"
+CallMethod
+Push 1
+Push "System"
+GetVariable
+Push "setClipboard"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "toggleMask"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "w" {
+Push "Utils"
+GetVariable
+Push "masked"
+Push "Utils"
+GetVariable
+Push "masked"
+GetMember
+Not
+SetMember
+Push "Utils"
+GetVariable
+Push "masked"
+GetMember
+Not
+If loc0be2
+Push "mask"
+GetVariable
+Push 1
+Push register1
+Push "setMask"
+CallMethod
+Pop
+Jump loc0bfa
+loc0be2:Push null
+Push 1
+Push register1
+Push "setMask"
+CallMethod
+Pop
+loc0bfa:Push register2
+Push 1
+Push register2
+Push "obj"
+GetMember
+Push "curWindow"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "preferenceWindow"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push "title"
+Push "Preferences"
+Push "curWindow"
+Push "Utils"
+GetVariable
+Push "preferenceWindow"
+GetMember
+Push "options"
+Push 0
+InitArray
+Push 3
+InitObject
+StoreRegister 2
+Pop
+Push "perf"
+Push "Utils"
+GetVariable
+Push "Perf optimizations"
+Push 3
+InitArray
+Push register2
+Push "options"
+GetMember
+Push 2
+Push "Utils"
+GetVariable
+Push "addToggleVarOptions"
+CallMethod
+Pop
+Push "Utils"
+GetVariable
+Push "mainMenu"
+GetMember
+Push "Back"
+Push 2
+Push register2
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register2
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "infoWindowsWindow"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push "title"
+Push "Info windows"
+Push "curWindow"
+Push "Utils"
+GetVariable
+Push "infoWindowsWindow"
+GetMember
+Push "options"
+Push "Utils"
+GetVariable
+Push "mainMenu"
+GetMember
+Push "Back"
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "ObjectVisWindow"
+GetMember
+Push "Utils"
+GetVariable
+Push "activateStaticWindow"
+GetMember
+Push 2
+InitArray
+Push "Object visualization 🗗"
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "AcidVisWindow"
+GetMember
+Push "Utils"
+GetVariable
+Push "activateStaticWindow"
+GetMember
+Push 2
+InitArray
+Push "Acid visualization 🗗"
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "DamageVisWindow"
+GetMember
+Push "Utils"
+GetVariable
+Push "activateStaticWindow"
+GetMember
+Push 2
+InitArray
+Push "Damage visualization 🗗"
+Push 8
+InitArray
+Push 3
+InitObject
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "activateStaticWindow"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 1, "w", 2, "w2" {
+Push register2
+Push "_visible"
+Push true
+SetMember
+}
+SetMember
+Push register1
+Push "updateVisBitmap"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 1, "n", 2, "source_bmp" {
+Push "TAS"
+GetVariable
+Push "fastPlayback"
+GetMember
+Not
+PushDuplicate
+Not
+If loc0e5f
+Pop
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push register1
+Push "VisWindow"
+Add2
+GetMember
+Push "_visible"
+GetMember
+loc0e5f:Not
+If loc0ed1
+Push "zeroPoint"
+GetVariable
+Push register2
+Push "height"
+GetMember
+Push register2
+Push "width"
+GetMember
+Push 0
+Push 0
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push register2
+Push 3
+Push "Utils"
+GetVariable
+Push "bmps"
+GetMember
+Push register1
+GetMember
+Push "copyPixels"
+CallMethod
+Pop
+}
+loc0ed1:SetMember
+Push register1
+Push "layerVisibilityWindow"
+DefineFunction2 "", 1, 6, false, true, true, false, true, false, true, false, false, 2, "w" {
+Push register1
+Push "game"
+GetMember
+Enumerate2
+loc0ef6:StoreRegister 0
+Push null
+Equals2
+If loc0f63
+Push register0
+StoreRegister 3
+Pop
+Push -7
+Push 1
+Push register3
+Push "slice"
+CallMethod
+Push "_holder"
+Equals2
+Not
+If loc0f5e
+Push register1
+Push "game"
+GetMember
+Push register3
+GetMember
+Push "_visible"
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
+GetMember
+Push register3
+GetMember
+SetMember
+loc0f5e:Jump loc0ef6
+loc0f63:Push "title"
+Push "Layer visibility"
+Push "curWindow"
+Push "Utils"
+GetVariable
+Push "layerVisibilityWindow"
+GetMember
+Push "options"
+Push 0
+InitArray
+Push 3
+InitObject
+StoreRegister 4
+Pop
+Push 0
+InitArray
+StoreRegister 5
+Pop
+Push register1
+Push "game"
+GetMember
+Enumerate2
+loc0fb4:StoreRegister 0
+Push null
+Equals2
+If loc1022
+Push register0
+StoreRegister 3
+Pop
+Push -7
+Push 1
+Push register3
+Push "slice"
+CallMethod
+Push "_holder"
+Equals2
+Not
+If loc101d
+Push register3
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
+GetMember
+Push register3
+Push 3
+Push register5
+Push "push"
+CallMethod
+Pop
+loc101d:Jump loc0fb4
+loc1022:Push register5
+Push register4
+Push "options"
+GetMember
+Push 2
+Push "Utils"
+GetVariable
+Push "addToggleVarOptions"
+CallMethod
+Pop
+Push "Utils"
+GetVariable
+Push "mainMenu"
+GetMember
+Push "Back"
+Push 2
+Push register4
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register4
+Push 1
+Push register2
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "invulnerable"
+Push false
+SetMember
+Push register1
+Push "noDeath"
+Push false
+SetMember
+Push register1
+Push "fullLoads"
+Push false
+SetMember
+Push register1
+Push "controlAtBeginning"
+Push false
+SetMember
+Push register1
+Push "emptyStringOnExit"
+Push true
+SetMember
+Push register1
+Push "closeWindowsOnExit"
+Push false
+SetMember
+Push register1
+Push "perf"
+Push true
+SetMember
+Push register1
+Push "inaccuratePhysics"
+Push false
+SetMember
+Push register1
+Push "masked"
+Push true
+SetMember
+Push register1
+Push "zeroPoint"
+Push 0
+Push 0
+Push 2
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Point"
+NewMethod
+SetMember
+Push register1
+Push "deactivateTeleport"
+Push false
+SetMember
+Push register1
+Push "bmps"
+Push 0
+InitObject
+SetMember
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "Utils"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc11a1:Pop
