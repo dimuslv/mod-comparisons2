@@ -21,7 +21,6 @@ class Windows
       w.createTextField("inputField",w.getNextHighestDepth(),0,20,530,20);
       w.inputField.background = true;
       w.inputField.type = "input";
-      w.inputField.restrict = "^[]";
       w._visible = false;
       TAS.inputField = w.inputField;
       w = Windows.clip.attachMovie("window","varWindow",Windows.clip.getNextHighestDepth());

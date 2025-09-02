@@ -1,11 +1,18 @@
 class TAS
 {
 	static var write = true;
+	static var override = true;
 	static var frozen = true;
 	static var curString = "";
-	static var curArray = ["i", 0, -1];
+	
 	static var curIndex = 0;
 	static var curFrame = 0;
+	
+	static var inputArray = ["i"];
+	static var valueArray = [0];
+	static var indArray = [-1];
+	static var endIndArray = [0];
+	
 	static var fastPlayback = false;
 	static var neutralPlayback = false;
 	static var saveStates = [];
@@ -14,6 +21,9 @@ class TAS
 	static var inputField;
 	static var targetIndex;
 	static var targetFrame;
+	static var delayedCaretIndex = -1;
+	
+	static var subLetters = "rb";
 
 	static function updateVarWindow(w) {
 		var p = _root.game.player;
@@ -28,6 +38,18 @@ class TAS
 		];
 		
 		w.updateMainField(false);
+	}
+	
+	static function isAtStringEnd() {
+		return TAS.curIndex >= TAS.inputArray.length - 1 && TAS.curFrame >= TAS.valueArray[TAS.curIndex];
+	}
+	
+	static function isSubLetter(let) {
+		return "rb".indexOf(let) != -1;
+	}
+	
+	static function compact(num) {
+		return (num == 1)? "" : num;
 	}
 
 	static function doKeyDown(code) {
@@ -62,12 +84,14 @@ class TAS
 			return true;
 		}
 		if (TAS.foif()) {
-			if (code == 27 || code == 112) { //Esc, F1
+			if (code == 27 || code == 112) { //Esc F1
 				Windows.nullFocus();
 				TAS.loadInputs(false);
-			} else if (code == 221) { //]
+			} else if (code == 38) { //Up
 				TAS.loadInputs(true);
-			} else if (code == 219) { //[
+				TAS.delayedCaretIndex = Selection.getCaretIndex();
+				Windows.nullFocus();
+			} else if (code == 40 || code == 123) { //Down F12
 				TAS.loadInputs(true);
 				Windows.nullFocus();
 			}
@@ -78,19 +102,15 @@ class TAS
 			_root.popup_holder.clip.key_button.clearKeyListener();
 			_root.mc.startMenuMusic(false);
 			TAS.curIndex = 0;
-			TAS.curFrame = TAS.curArray[1];
-			//_root.inputField.text = "";
-			//_root.curString = "";
-			//_root.curArray = ["i", 0, -1];
-			//_root.curIndex = 0;
-			//_root.curFrame = 0;
+			TAS.curFrame = TAS.valueArray[0];
+			
 			if(!_root.game.level_number) {
 				_root.tt.doTween("title_screen");
 			} else {
 				_root.tt.doTween("map");
 			}
 		}
-		if (code == 67) { //c
+		if (code == 86) { //v
 			Windows.clip.varWindow._visible = !Windows.clip.varWindow._visible;
 			return true;
 		}
@@ -99,71 +119,93 @@ class TAS
 			//Windows.nullFocus();
 			return true;
 		}
-		if (code == 191) { ///
-			TAS.write = true;
+		var i;
+		if (code == 191 || code == 222) { /// '
+			TAS.write = code == 191;
 			TAS.frozen = !TAS.frozen;
+			TAS.override = !Key.isDown(16);
 			return true;
 		}
-		if (code == 190) { //.
-			TAS.frozen = true;
-			TAS.write = true;
-			Main.gameUpdate();
+		if (code == 190 || code == 186 || code == 75) { //. ; k
+			if (code != 75)
+				TAS.frozen = true;
+			TAS.write = code == 190;
+			
+			i = (code == 75)? 30 : 1;
+			if (TAS.write) {
+				TAS.override = !Key.isDown(16);
+			} else if (Key.isDown(16)) {
+				i *= 5;
+			}
+			
+			TAS.fastPlayback = true;
+			while (i > 0 && (TAS.write || !TAS.isAtStringEnd())) {
+				if (i == 1)
+					TAS.fastPlayback = false;
+				Main.gameUpdate();
+				i--;
+			}
+			
 			TAS.updateText();
 			Main.stopAll();
 			return true;
 		}
-		if (code == 188) { //,
-			TAS.frozen = true;
-			TAS.write = true;
+		if (code == 188 || code == 76 || code == 74) { //, l j
+			if (code != 74)
+				TAS.frozen = true;
+			TAS.write = code == 188;
+			
+			i = (code == 74)? 30 : 1;
+			if (Key.isDown(16)) {
+				i *= 5;
+			}
+			
 			if (TAS.curIndex > 0) {
-				TAS.curFrame--;
-				if (TAS.curFrame <= 0) {
-					do {
-						TAS.curIndex -= 3;
-					} while ("rb".indexOf(TAS.curArray[TAS.curIndex]) != -1);
-					
-					TAS.curFrame = TAS.curArray[TAS.curIndex + 1];
+				while (i > 0 && TAS.curIndex > 0) {
+					TAS.curFrame--;
+					if (TAS.curFrame <= 0) {
+						do {
+							TAS.curIndex--;
+						} while (TAS.isSubLetter(TAS.inputArray[TAS.curIndex]));
+						
+						TAS.curFrame = TAS.valueArray[TAS.curIndex];
+					}
+					i--;
 				}
+				_root.tt.doTween("reload");
+			}
+			if (TAS.write)
 				TAS.truncateCurArray();
-				_root.tt.doTween("reload");
+			
+			return true;
+		}
+		
+		if (code == 220) { //|
+			var caretInd;
+			
+			if (TAS.isAtStringEnd()) {
+				caretInd = TAS.curString.length;
+			} else if (TAS.curFrame == TAS.valueArray[TAS.curIndex]) {
+				caretInd = TAS.indArray[TAS.curIndex + 1];
+			} else {
+				caretInd = TAS.indArray[TAS.curIndex];
 			}
+			
+			Selection.setFocus(Windows.clip.inputWindow.inputField);
+			Selection.setSelection(caretInd, caretInd);
+			Windows.nullFocus();
 			return true;
 		}
-		if (code == 222) { //'
-			TAS.write = false;
-			TAS.frozen = !TAS.frozen;
+		
+		if (code == 46) { //Delete
+			TAS.truncateCurArray();
+			TAS.updateText();
 			return true;
 		}
-		if (code == 186) { //;
-			TAS.frozen = true;
-			TAS.write = false;
-			if (TAS.curIndex < TAS.curArray.length - 3 || TAS.curFrame < TAS.curArray[TAS.curArray.length - 2]) {
-				Main.gameUpdate();
-				TAS.updateText();
-				Main.stopAll();
-			}
-			return true;
-		}
-		if (code == 76) { //l
-			TAS.frozen = true;
-			TAS.write = false;
-			if (TAS.curIndex > 0) {
-				TAS.curFrame--;
-				if (TAS.curFrame <= 0) {
-					do {
-						TAS.curIndex -= 3;
-					} while ("rb".indexOf(TAS.curArray[TAS.curIndex]) != -1);
-					
-					TAS.curFrame = TAS.curArray[TAS.curIndex + 1];
-				}
-				
-				_root.tt.doTween("reload");
-			}
-			return true;
-		}
+		
 		if (code == 82) { //r
 			TAS.curIndex = 0;
-			TAS.curFrame = TAS.curArray[1];
+			TAS.curFrame = TAS.valueArray[0];
 			//write = false;
 			//frozen = false;
 			_root.tt.doTween("reload");
@@ -182,117 +224,146 @@ class TAS
 	}
 
 	static function truncateCurArray() {
-		TAS.curArray.length = TAS.curIndex + 3;
-		TAS.curArray[TAS.curIndex + 1] = TAS.curFrame;
+		TAS.inputArray.length = TAS.curIndex + 1;
+		TAS.valueArray.length = TAS.curIndex + 1;
+		TAS.indArray.length = TAS.curIndex + 1;
+		TAS.endIndArray.length = TAS.curIndex + 1;
+		
+		TAS.valueArray[TAS.curIndex] = TAS.curFrame;
 		if (TAS.curIndex == 0) {
-			if (TAS.curArray[2] == -1) {
+			if (TAS.indArray[0] == -1) {
 				TAS.curString = "";
 			} else {
-				TAS.curString = TAS.curString.slice(0, TAS.curArray[2]) + "r" + TAS.curArray[1];
+				TAS.curString = TAS.curString.slice(0, TAS.endIndArray[0]);
 			}
 		} else {
-			TAS.curString = TAS.curString.slice(0, TAS.curArray[TAS.curIndex + 2]) + TAS.curArray[TAS.curIndex] + ((TAS.curFrame == 1)? "" : TAS.curFrame);
+			TAS.curString = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + TAS.inputArray[TAS.curIndex] + TAS.compact(TAS.curFrame);
 		}
+	}
+	
+	static function splitCurLetter() {
+		if (TAS.curFrame == TAS.valueArray[TAS.curIndex])
+			return;
+		
+		TAS.inputArray.splice(TAS.curIndex + 1, 0, TAS.inputArray[TAS.curIndex]);
+		TAS.valueArray.splice(TAS.curIndex + 1, 0, TAS.valueArray[TAS.curIndex]-TAS.curFrame);
+		
+		TAS.valueArray[TAS.curIndex] = TAS.curFrame;
+		
+		var newString = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + (TAS.inputArray[TAS.curIndex] + TAS.compact(TAS.curFrame));
+		
+		TAS.indArray.splice(TAS.curIndex + 1, 0, newString.length);
+		
+		newString += TAS.inputArray[TAS.curIndex+1] + TAS.compact(TAS.valueArray[TAS.curIndex+1]);
+		
+		TAS.endIndArray.splice(TAS.curIndex + 1, 0, newString.length);
+		
+		newString += TAS.curString.slice(TAS.endIndArray[TAS.curIndex]);
+		
+		var i = TAS.curIndex + 2;
+		while (i < TAS.inputArray.length) {
+			TAS.indArray[i] += TAS.endIndArray[TAS.curIndex+1] - TAS.endIndArray[TAS.curIndex];
+			TAS.endIndArray[i] += TAS.endIndArray[TAS.curIndex+1] - TAS.endIndArray[TAS.curIndex];
+			i++;
+		}
+		
+		TAS.endIndArray[TAS.curIndex] = TAS.indArray[TAS.curIndex+1];
+		
+		TAS.curString = newString;
 	}
 
 	static function loadInputs(useCaretPos) {
-		var newArray = [];
-		var newIndex = -3;
-		var newFrame = 0;
-		var newString = "";
-		
-		var sectionBeginning = 0;
-		var lettersLost = 0;
-		
-		var str = TAS.inputField.text;
+		var newInputArray = ["i"];
+		var newValueArray = [0];
+		var newIndArray = [-1];
+		var newEndIndArray = [0];
+		var newIndex = -1;
+		var newFrame = -1;
+		var newString = TAS.inputField.text;
 		
 		var caretPos = Selection.getCaretIndex();
-		var caretInd = -3;
+		var caretInd = -1;
 		
 		var i = 0;
-		while (i < str.length && "qweasdQWEADnbrp|".indexOf(str.charAt(i)) == -1) {
+		while (i < newString.length && "qweasdQWEADnbrp|".indexOf(newString.charAt(i)) == -1) {
 			i++;
 		}
-		while (i < str.length) {
+		while (i < newString.length) {
 			
-			var symbol = str.charAt(i);
+			var symbol = newString.charAt(i);
 			var pos = i;
 			var num = 0;
-			var lastNumPos = i;
+			var endPos = i + 1;
 			
 			i++;
-			while (i < str.length && "qweasdQWEADnbrp|".indexOf(str.charAt(i)) == -1) {
-				if (str.charCodeAt(i) >= 48 && str.charCodeAt(i) <= 57) {
-					num = num * 10 + str.charCodeAt(i) - 48;
-					lastNumPos = i;
+			while (i < newString.length && "qweasdQWEADnbrp|".indexOf(newString.charAt(i)) == -1) {
+				if (newString.charCodeAt(i) >= 48 && newString.charCodeAt(i) <= 57) {
+					num = num * 10 + newString.charCodeAt(i) - 48;
+					endPos = i + 1;
 				}
 				i++;
 			}
 			
 			if (symbol == "|") {
-				newIndex = newArray.length;
+				newIndex = newInputArray.length;
 				newFrame = num;
-				newString += str.slice(sectionBeginning, pos);
-				sectionBeginning = lastNumPos + 1;
-				lettersLost += lastNumPos + 1 - pos;
+				i -= endPos - pos;
+				caretPos -= endPos - pos;
+				newString = newString.slice(0, pos) + newString.slice(endPos);
 			} else {
 				if (symbol != "r" && num == 0) {
 					num = 1;
 				}
 				
-				if (newArray.length == 0) {
-					if (symbol == "r") {
-						newArray = ["i", num, pos - lettersLost];
-					} else {
-						newArray = ["i", 0, -1, symbol, num, pos - lettersLost];
-					}
+				if (newInputArray.length == 1 && newIndArray[0] == -1 && symbol == "r") {
+					newValueArray[0] = num;
+					newIndArray[0] = pos;
+					newEndIndArray[0] = endPos;
 				} else {
-					newArray.push(symbol, num, pos - lettersLost);
+					newInputArray.push(symbol);
+					newValueArray.push(num);
+					newIndArray.push(pos);
+					newEndIndArray.push(endPos);
 				}
 				
-				if (caretInd == -3 && caretPos <= lastNumPos) {
-					caretInd = Math.max(0, newArray.length - 6);
+				if (caretInd == -1 && caretPos < endPos) {
+					caretInd = Math.max(0, newInputArray.length - 2);
 				}
 			}
 		}
-		newString += str.slice(sectionBeginning);
 		
-		if (newArray.length == 0) {
-			newArray = ["i", 0, -1];
-			newIndex = 0;
-			newFrame = 0;
-		} else {
-			if ("rb".indexOf(newArray[newArray.length-3]) != -1) {
-				newArray.push("n", 1, newString.length);
-				newString += "n";
-			}
-			
-			if (useCaretPos) {
-				newIndex = caretInd;
-				if (caretInd == -3) {
-					newIndex = newArray.length - 3;
-				}
-				newFrame = newArray[newIndex + 1];
+		if (TAS.isSubLetter(newInputArray[newInputArray.length-1])) {
+			newInputArray.push("n");
+			newValueArray.push(1);
+			newIndArray.push(newString.length);
+			newString += "n";
+			newEndIndArray.push(newString.length);
+		}
+		
+		if (useCaretPos) {
+			if (caretInd == -1) {
+				newIndex = newInputArray.length - 1;
 			} else {
-				if (newIndex == -3 || newIndex == newArray.length) {
-					newIndex = newArray.length - 3;
-					newFrame = newArray[newIndex + 1];
-				} else if (newIndex == 0) {
-					newFrame = newArray[1];
-				} else if (newFrame == 0) {
-					newIndex -= 3;
-					newFrame = newArray[newIndex + 1];
-				} else {
-					newFrame = Math.min(newFrame, newArray[newIndex + 1]);
-				}
+				newIndex = caretInd;
 			}
-			
-			if ("rb".indexOf(newArray[newIndex]) != -1) {
-				while ("rb".indexOf(newArray[newIndex]) != -1) {
-					newIndex -= 3;
-				}
-				newFrame = newArray[newIndex + 1];
+			newFrame = newValueArray[newIndex];
+		} else {
+			if (newIndex == -1 || newIndex == newInputArray.length) {
+				newIndex = newInputArray.length - 1;
+				newFrame = newValueArray[newIndex];
+			} else if (newFrame == 0) {
+				newIndex--;
+				newFrame = newValueArray[newIndex];
+			} else {
+				newFrame = Math.min(newFrame, newValueArray[newIndex]);
 			}
+		}
+		
+		if (TAS.isSubLetter(newInputArray[newIndex])) {
+			while (TAS.isSubLetter(newInputArray[newIndex])) {
+				newIndex--;
+			}
+			newFrame = newValueArray[newIndex];
 		}
 		
 		var areEqual = true;
@@ -300,20 +371,23 @@ class TAS
 		if (TAS.curIndex == newIndex && TAS.curFrame == newFrame) {
 			i = 0;
 			while (i < newIndex) {
-				if (TAS.curArray[i] != newArray[i] || TAS.curArray[i+1] != newArray[i+1]) {
+				if (TAS.inputArray[i] != newInputArray[i] || TAS.valueArray[i] != newValueArray[i]) {
 					areEqual = false;
 					break;
 				}
-				i += 3;
+				i++;
 			}
-			if (TAS.curArray[newIndex] != newArray[newIndex]) {
+			if (TAS.inputArray[newIndex] != newInputArray[newIndex]) {
 				areEqual = false;
 			}
 		} else {
 			areEqual = false;
 		}
 		
-		TAS.curArray = newArray;
+		TAS.inputArray = newInputArray;
+		TAS.valueArray = newValueArray;
+		TAS.indArray = newIndArray;
+		TAS.endIndArray = newEndIndArray;
 		TAS.curString = newString;
 		TAS.curIndex = newIndex;
 		TAS.curFrame = newFrame;
@@ -328,12 +402,12 @@ class TAS
 	static function updateText() {
 		var newText;
 		
-		if (TAS.curIndex == TAS.curArray.length - 3 && TAS.curFrame == TAS.curArray[TAS.curArray.length - 2]) {
+		if (TAS.isAtStringEnd()) {
 			newText = TAS.curString;
-		} else if (TAS.curFrame == TAS.curArray[TAS.curIndex + 1]) {
-			newText = TAS.curString.slice(0, TAS.curArray[TAS.curIndex + 5]) + "|" + TAS.curString.slice(TAS.curArray[TAS.curIndex + 5]);
+		} else if (TAS.curFrame == TAS.valueArray[TAS.curIndex]) {
+			newText = TAS.curString.slice(0, TAS.indArray[TAS.curIndex+1]) + "|" + TAS.curString.slice(TAS.indArray[TAS.curIndex+1]);
 		} else {
-			newText = TAS.curString.slice(0, TAS.curArray[TAS.curIndex + 2]) + "|" + TAS.curFrame + TAS.curString.slice(TAS.curArray[TAS.curIndex + 2]);
+			newText = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + "|" + TAS.curFrame + TAS.curString.slice(TAS.indArray[TAS.curIndex]);
 		}
 		
 		TAS.inputField.text = newText;
@@ -383,37 +457,60 @@ class TAS
 				letter = "p";
 			}
 			
-			if (TAS.curIndex == -3) {
-				TAS.curArray = [letter, 1, 0];
-				TAS.curString = letter;
-				TAS.curIndex = 0;
-				TAS.curFrame = 1;
-			} else {
+			if (TAS.override) {
 				TAS.truncateCurArray();
-				
-				if (TAS.justPlacedBombs > 0) {
-					var i = 0;
-					while (i < TAS.justPlacedBombs) {
-						_root.game.layBomb();
-						i++;
-					}
-					TAS.curArray.push("b", TAS.justPlacedBombs, TAS.curString.length);
-					TAS.curIndex += 3;
-					TAS.curFrame = TAS.justPlacedBombs;
-					TAS.curString += "b" + ((TAS.justPlacedBombs > 1)? TAS.justPlacedBombs : "");
-				}
-				
-				if (letter == TAS.curArray[TAS.curIndex]) {
-					TAS.curArray[TAS.curIndex + 1]++;
-					TAS.curFrame++;
-					TAS.curString = TAS.curString.slice(0, TAS.curArray[TAS.curIndex + 2]) + TAS.curArray[TAS.curIndex] + TAS.curFrame;
-				} else {
-					TAS.curArray.push(letter, 1, TAS.curString.length);
-					TAS.curIndex += 3;
-					TAS.curFrame = 1;
-					TAS.curString += letter;
-				}
+			} else {
+				TAS.splitCurLetter();
 			}
+			
+			//var addedLength = 0;
+			var endInd = TAS.endIndArray[TAS.curIndex];
+			var endString = TAS.curString.slice(endInd);
+			TAS.curString = TAS.curString.slice(0, endInd);
+			var i;
+			
+			if (TAS.justPlacedBombs > 0) {
+				i = 0;
+				while (i < TAS.justPlacedBombs) {
+					_root.game.layBomb();
+					i++;
+				}
+				TAS.curIndex++;
+				
+				TAS.inputArray.splice(TAS.curIndex, 0, "b");
+				TAS.valueArray.splice(TAS.curIndex, 0, TAS.justPlacedBombs);
+				TAS.indArray.splice(TAS.curIndex, 0, TAS.curString.length);
+				
+				TAS.curFrame = TAS.justPlacedBombs;
+				TAS.curString += "b" + ((TAS.justPlacedBombs > 1)? TAS.justPlacedBombs : "");
+				TAS.endIndArray.splice(TAS.curIndex, 0, TAS.curString.length);
+			}
+			
+			if (letter == TAS.inputArray[TAS.curIndex]) {
+				TAS.valueArray[TAS.curIndex]++;
+				TAS.curFrame++;
+				TAS.curString = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + TAS.inputArray[TAS.curIndex] + TAS.curFrame;
+				TAS.endIndArray[TAS.curIndex] = TAS.curString.length;
+			} else {
+				TAS.curIndex++;
+				
+				TAS.inputArray.splice(TAS.curIndex, 0, letter);
+				TAS.valueArray.splice(TAS.curIndex, 0, 1);
+				TAS.indArray.splice(TAS.curIndex, 0, TAS.curString.length);
+				
+				TAS.curFrame = 1;
+				TAS.curString += letter;
+				TAS.endIndArray.splice(TAS.curIndex, 0, TAS.curString.length);
+			}
+			
+			i = TAS.curIndex + 1;
+			while (i < TAS.inputArray.length) {
+				TAS.indArray[i] += TAS.curString.length - endInd;
+				TAS.endIndArray[i] += TAS.curString.length - endInd;
+				i++;
+			}
+			
+			TAS.curString += endString;
 			
 			if (TAS.justPause) {
 				if (!com.nitrome.toxic.Global.game_paused) {
@@ -426,29 +523,26 @@ class TAS
 			}
 		} else {
 			// Assumes that there is something to play!
-			if (TAS.curIndex == -3) {
-				TAS.curIndex = 0;
-				TAS.curFrame = 0;
-			} else if (TAS.curFrame >= TAS.curArray[TAS.curIndex + 1]) {
-				TAS.curIndex += 3;
+			if (TAS.curFrame >= TAS.valueArray[TAS.curIndex]) {
+				TAS.curIndex++;
 				TAS.curFrame = 0;
 			}
 			
-			while (TAS.curArray[TAS.curIndex] == "b" || TAS.curArray[TAS.curIndex] == "r") {
-				if (TAS.curArray[TAS.curIndex] == "b") {
-					var i = TAS.curFrame; // 0
-					while (i < TAS.curArray[TAS.curIndex + 1]) {
+			while (TAS.inputArray[TAS.curIndex] == "b" || TAS.inputArray[TAS.curIndex] == "r") {
+				if (TAS.inputArray[TAS.curIndex] == "b") {
+					i = 0;
+					while (i < TAS.valueArray[TAS.curIndex]) {
 						_root.game.layBomb();
 						i++;
 					}
 				} else {
-					RNG.rngSeed = TAS.curArray[TAS.curIndex + 1];
+					RNG.rngSeed = TAS.valueArray[TAS.curIndex];
 				}
-				TAS.curIndex += 3;
+				TAS.curIndex++;
 				TAS.curFrame = 0;
 			}
 			
-			var letter = TAS.curArray[TAS.curIndex];
+			var letter = TAS.inputArray[TAS.curIndex];
 			
 			if (letter == "p") {
 				if (!com.nitrome.toxic.Global.game_paused) {
@@ -505,7 +599,7 @@ class TAS
 		TAS.targetIndex = TAS.curIndex;
 		TAS.targetFrame = TAS.curFrame;
 		TAS.curIndex = 0;
-		TAS.curFrame = TAS.curArray[1];
+		TAS.curFrame = TAS.valueArray[0];
 		TAS.fastPlayback = true;
 		
 		TAS.neutralPlayback = true;
@@ -521,6 +615,7 @@ class TAS
 		}
 		
 		TAS.fastPlayback = false;
+		TAS.targetIndex = -1;
 		TAS.write = oldWrite;
 		
 		TAS.updateText();

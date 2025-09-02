@@ -191,7 +191,7 @@ class Utils
 		
 		for (var holder in _root.game) {
 			if (holder.slice(-7) == "_holder")
-				arr.push(holder, Utils.layerVisibilities, holder);
+				arr.push(holder.slice(0, -7), Utils.layerVisibilities, holder);
 		}
 		
 		Utils.addToggleVarOptions(obj.options, arr);

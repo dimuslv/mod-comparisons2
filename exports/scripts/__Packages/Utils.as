@@ -166,7 +166,7 @@ class Utils
       {
          if(_loc3_.slice(-7) == "_holder")
          {
-            _loc5_.push(_loc3_,Utils.layerVisibilities,_loc3_);
+            _loc5_.push(_loc3_.slice(0,-7),Utils.layerVisibilities,_loc3_);
          }
       }
       Utils.addToggleVarOptions(_loc4_.options,_loc5_);

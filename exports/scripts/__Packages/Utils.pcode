@@ -5,7 +5,7 @@ Push "Utils"
 GetMember
 Not
 Not
-If loc11a1
+If loc11bf
 Push "_global"
 GetVariable
 Push "Utils"
@@ -771,7 +771,7 @@ Enumerate2
 loc0fb4:StoreRegister 0
 Push null
 Equals2
-If loc1022
+If loc1040
 Push register0
 StoreRegister 3
 Pop
@@ -783,20 +783,25 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc101d
+If loc103b
 Push register3
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
+Push -7
+Push 0
+Push 2
 Push register3
+Push "slice"
+CallMethod
 Push 3
 Push register5
 Push "push"
 CallMethod
 Pop
-loc101d:Jump loc0fb4
-loc1022:Push register5
+loc103b:Jump loc0fb4
+loc1040:Push register5
 Push register4
 Push "options"
 GetMember
@@ -894,4 +899,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc11a1:Pop
+loc11bf:Pop

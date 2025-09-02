@@ -1,11 +1,11 @@
-ConstantPool "_global", "Main", "prototype", "init", "aMode", "_random", "RNG", "_random_double", "_stop", "_play", "_gotoAndStop", "_gotoAndPlay", "updateTestBitmap", "spriteInfo", "Windows", "levelInit", "game", "holders", "explosion_holder", "acid_holder", "splash_holder", "missile_holder", "bomb_holder", "grow_holder", "player_holder", "laser_holder", "danger_holder", "safe_holder", "object_holder", "heart_holder", "TAS", "Utils", "stopAll", "metaUpdate", "frozen", "write", "curArray", "length", "curIndex", "curFrame", "gameUpdate", "updateText", "checkKeys", "scriptStack", "updateAnimations", "executeScripts", "doEnterFrame", "doEnterFrameBeacon", "justPause", "com", "nitrome", "toxic", "Global", "game_paused", "justPlacedBombs", "i", "objName", "obj", "chid", "advanceAnimation", "iterateOnChildren", "determineChildChid", "justExisted", "number", "_currentframe", "m", "stopped", "_totalframes", "gotoAndStop", "nextFrame", "object", "f", "push", "checkFrameScript", "_gotoAnd", "gotoAndPlay", "stop", "play", "stopAnimation", "ASSetPropFlags"
+ConstantPool "_global", "Main", "prototype", "init", "aMode", "_random", "RNG", "_random_double", "_stop", "_play", "_gotoAndStop", "_gotoAndPlay", "updateTestBitmap", "spriteInfo", "Windows", "levelInit", "game", "holders", "explosion_holder", "acid_holder", "splash_holder", "missile_holder", "bomb_holder", "grow_holder", "player_holder", "laser_holder", "danger_holder", "safe_holder", "object_holder", "heart_holder", "TAS", "Utils", "stopAll", "metaUpdate", "delayedCaretIndex", "clip", "inputWindow", "inputField", "Selection", "setFocus", "setSelection", "frozen", "write", "isAtStringEnd", "gameUpdate", "updateText", "checkKeys", "scriptStack", "updateAnimations", "executeScripts", "doEnterFrame", "doEnterFrameBeacon", "justPause", "com", "nitrome", "toxic", "Global", "game_paused", "justPlacedBombs", "length", "i", "objName", "obj", "chid", "advanceAnimation", "iterateOnChildren", "determineChildChid", "justExisted", "number", "_currentframe", "m", "stopped", "_totalframes", "gotoAndStop", "nextFrame", "object", "f", "push", "checkFrameScript", "_gotoAnd", "gotoAndPlay", "stop", "play", "stopAnimation", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Main"
 GetMember
 Not
 Not
-If loc145c
+If loc1492
 Push "_global"
 GetVariable
 Push "Main"
@@ -164,9 +164,51 @@ Push "metaUpdate"
 DefineFunction "", 0 {
 Push "TAS"
 GetVariable
+Push "delayedCaretIndex"
+GetMember
+Push -1
+Equals2
+Not
+Not
+If loc063e
+Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "inputWindow"
+GetMember
+Push "inputField"
+GetMember
+Push 1
+Push "Selection"
+GetVariable
+Push "setFocus"
+CallMethod
+Pop
+Push "TAS"
+GetVariable
+Push "delayedCaretIndex"
+GetMember
+Push "TAS"
+GetVariable
+Push "delayedCaretIndex"
+GetMember
+Push 2
+Push "Selection"
+GetVariable
+Push "setSelection"
+CallMethod
+Pop
+Push "TAS"
+GetVariable
+Push "delayedCaretIndex"
+Push -1
+SetMember
+loc063e:Push "TAS"
+GetVariable
 Push "frozen"
 GetMember
-If loc069d
+If loc06d3
 Push "TAS"
 GetVariable
 Push "write"
@@ -174,77 +216,22 @@ GetMember
 Not
 PushDuplicate
 Not
-If loc0642
+If loc0678
 Pop
-Push "TAS"
-GetVariable
-Push "curArray"
-GetMember
-Push "length"
-GetMember
 Push 0
-Equals2
-PushDuplicate
-If loc05db
-Pop
 Push "TAS"
 GetVariable
-Push "curIndex"
-GetMember
-Push "TAS"
-GetVariable
-Push "curArray"
-GetMember
-Push "length"
-GetMember
-Less2
-Not
-loc05db:PushDuplicate
-If loc0642
-Pop
-Push "TAS"
-GetVariable
-Push "curIndex"
-GetMember
-Push "TAS"
-GetVariable
-Push "curArray"
-GetMember
-Push "length"
-GetMember
-Push 3
-Subtract
-Equals2
-PushDuplicate
-Not
-If loc0642
-Pop
-Push "TAS"
-GetVariable
-Push "curFrame"
-GetMember
-Push "TAS"
-GetVariable
-Push "curArray"
-GetMember
-Push "TAS"
-GetVariable
-Push "curIndex"
-GetMember
-Push 1
-Add2
-GetMember
-Less2
-Not
-loc0642:Not
-If loc065e
+Push "isAtStringEnd"
+CallMethod
+loc0678:Not
+If loc0694
 Push "TAS"
 GetVariable
 Push "frozen"
 Push true
 SetMember
-Jump loc069d
-loc065e:Push 0
+Jump loc06d3
+loc0694:Push 0
 Push "Main"
 GetVariable
 Push "gameUpdate"
@@ -263,7 +250,7 @@ Push "stopAll"
 CallMethod
 Pop
 }
-loc069d:SetMember
+loc06d3:SetMember
 Push register1
 Push "gameUpdate"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
@@ -353,13 +340,13 @@ DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, f
 Push 0
 StoreRegister 2
 Pop
-loc07e9:Push register2
+loc081f:Push register2
 Push register1
 Push "length"
 GetMember
 Less2
 Not
-If loc0840
+If loc0876
 Push register1
 Push register2
 GetMember
@@ -375,16 +362,16 @@ Push 2
 Add2
 StoreRegister 2
 Pop
-Jump loc07e9
+Jump loc081f
 }
-loc0840:SetMember
+loc0876:SetMember
 Push register1
 Push "updateAnimations"
 DefineFunction "", 0 {
 Push "i"
 Push 0
 DefineLocal
-loc0861:Push "i"
+loc0897:Push "i"
 GetVariable
 Push "Main"
 GetVariable
@@ -394,7 +381,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc090b
+If loc0941
 Push "Main"
 GetVariable
 Push "holders"
@@ -403,10 +390,10 @@ Push "i"
 GetVariable
 GetMember
 Enumerate2
-loc0894:StoreRegister 0
+loc08ca:StoreRegister 0
 Push null
 Equals2
-If loc08f9
+If loc092f
 Push "objName"
 Push register0
 DefineLocal
@@ -434,28 +421,28 @@ GetVariable
 Push "advanceAnimation"
 CallMethod
 Pop
-Jump loc0894
-loc08f9:Push "i"
+Jump loc08ca
+loc092f:Push "i"
 Push "i"
 GetVariable
 Increment
 SetVariable
-Jump loc0861
+Jump loc0897
 }
-loc090b:SetMember
+loc0941:SetMember
 Push register1
 Push "iterateOnChildren"
 DefineFunction2 "", 4, 8, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "childArray", 3, "fun1", 4, "fun2" {
 Push 0
 StoreRegister 5
 Pop
-loc094b:Push register5
+loc0981:Push register5
 Push register2
 Push "length"
 GetMember
 Less2
 Not
-If loc0a27
+If loc0a5d
 Push register1
 Push register2
 Push register5
@@ -465,7 +452,7 @@ StoreRegister 6
 Pop
 Push register6
 Not
-If loc0a0f
+If loc0a45
 Push register2
 Push register5
 Push 1
@@ -482,7 +469,7 @@ Pop
 Push register6
 Push "justExisted"
 GetMember
-If loc09e7
+If loc0a1d
 Push register7
 Push register6
 Push 2
@@ -490,10 +477,10 @@ Push register3
 Push undefined
 CallMethod
 Pop
-Jump loc0a0f
-loc09e7:Push register4
+Jump loc0a45
+loc0a1d:Push register4
 Not
-If loc0a0f
+If loc0a45
 Push register7
 Push register6
 Push 2
@@ -501,14 +488,14 @@ Push register4
 Push undefined
 CallMethod
 Pop
-loc0a0f:Push register5
+loc0a45:Push register5
 Push 2
 Add2
 StoreRegister 5
 Pop
-Jump loc094b
+Jump loc0981
 }
-loc0a27:SetMember
+loc0a5d:SetMember
 Push register1
 Push "determineChildChid"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
@@ -518,17 +505,17 @@ Push "number"
 Equals2
 Not
 Not
-If loc0ad3
+If loc0b09
 Push 0
 StoreRegister 3
 Pop
-loc0a68:Push register3
+loc0a9e:Push register3
 Push register2
 Push "length"
 GetMember
 Less2
 Not
-If loc0aca
+If loc0b00
 Push register1
 Push "_currentframe"
 GetMember
@@ -538,22 +525,22 @@ GetMember
 Less2
 Not
 Not
-If loc0ab2
+If loc0ae8
 Push register2
 Push register3
 Push 1
 Add2
 GetMember
 Return
-loc0ab2:Push register3
+loc0ae8:Push register3
 Push 2
 Add2
 StoreRegister 3
 Pop
-Jump loc0a68
-loc0aca:Push 0
+Jump loc0a9e
+loc0b00:Push 0
 Return
-loc0ad3:Push register2
+loc0b09:Push register2
 Return
 }
 SetMember
@@ -561,10 +548,10 @@ Push register1
 Push "advanceAnimation"
 DefineFunction2 "", 2, 5, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
 Push register2
-If loc0b09
+If loc0b3f
 Push undefined
 Return
-loc0b09:Push "Main"
+loc0b3f:Push "Main"
 GetVariable
 Push "spriteInfo"
 GetMember
@@ -575,20 +562,20 @@ GetMember
 StoreRegister 3
 Pop
 Push register3
-If loc0b35
+If loc0b6b
 Push undefined
 Return
-loc0b35:Push register3
+loc0b6b:Push register3
 Push "length"
 GetMember
 Push 1
 Greater
 Not
-If loc0bd9
+If loc0c0f
 Push 0
 StoreRegister 4
 Pop
-loc0b5c:Push register4
+loc0b92:Push register4
 Push register3
 Push 1
 GetMember
@@ -596,7 +583,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc0bd9
+If loc0c0f
 Push register1
 Push register3
 Push 1
@@ -605,7 +592,7 @@ Push register4
 GetMember
 GetMember
 Not
-If loc0bc1
+If loc0bf7
 Push register1
 Push register3
 Push 1
@@ -616,25 +603,25 @@ GetMember
 Push "justExisted"
 Push true
 SetMember
-loc0bc1:Push register4
+loc0bf7:Push register4
 Push 2
 Add2
 StoreRegister 4
 Pop
-Jump loc0b5c
-loc0bd9:Push register3
+Jump loc0b92
+loc0c0f:Push register3
 Push 0
 GetMember
 PushDuplicate
 Not
-If loc0bfb
+If loc0c31
 Pop
 Push register1
 Push "stopped"
 GetMember
 Not
-loc0bfb:Not
-If loc0cd5
+loc0c31:Not
+If loc0d0b
 Push register1
 Push "_currentframe"
 GetMember
@@ -644,27 +631,27 @@ GetMember
 Less2
 Not
 Not
-If loc0c40
+If loc0c76
 Push 1
 Push 1
 Push register1
 Push "gotoAndStop"
 CallMethod
 Pop
-Jump loc0c54
-loc0c40:Push 0
+Jump loc0c8a
+loc0c76:Push 0
 Push register1
 Push "nextFrame"
 CallMethod
 Pop
-loc0c54:Push register3
+loc0c8a:Push register3
 Push 0
 GetMember
 TypeOf
 Push "object"
 Equals2
 Not
-If loc0cd5
+If loc0d0b
 Push register3
 Push 0
 GetMember
@@ -675,7 +662,7 @@ GetMember
 Add2
 GetMember
 Not
-If loc0cd5
+If loc0d0b
 Push register3
 Push 0
 GetMember
@@ -694,13 +681,13 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc0cd5:Push register3
+loc0d0b:Push register3
 Push "length"
 GetMember
 Push 1
 Greater
 Not
-If loc0d2f
+If loc0d65
 Push "Main"
 GetVariable
 Push "advanceAnimation"
@@ -720,15 +707,15 @@ Push "iterateOnChildren"
 CallMethod
 Pop
 }
-loc0d2f:SetMember
+loc0d65:SetMember
 Push register1
 Push "checkFrameScript"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
 Push register2
-If loc0d5f
+If loc0d95
 Push undefined
 Return
-loc0d5f:Push "Main"
+loc0d95:Push "Main"
 GetVariable
 Push "spriteInfo"
 GetMember
@@ -739,17 +726,17 @@ GetMember
 StoreRegister 3
 Pop
 Push register3
-If loc0d8b
+If loc0dc1
 Push undefined
 Return
-loc0d8b:Push register3
+loc0dc1:Push register3
 Push 0
 GetMember
 TypeOf
 Push "object"
 Equals2
 Not
-If loc0e0c
+If loc0e42
 Push register3
 Push 0
 GetMember
@@ -760,7 +747,7 @@ GetMember
 Add2
 GetMember
 Not
-If loc0e0c
+If loc0e42
 Push register3
 Push 0
 GetMember
@@ -779,13 +766,13 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc0e0c:Push register3
+loc0e42:Push register3
 Push "length"
 GetMember
 Push 1
 Greater
 Not
-If loc0e66
+If loc0e9c
 Push "Main"
 GetVariable
 Push "checkFrameScript"
@@ -805,7 +792,7 @@ Push "iterateOnChildren"
 CallMethod
 Pop
 }
-loc0e66:SetMember
+loc0e9c:SetMember
 Push register1
 Push "_gotoAnd"
 DefineFunction2 "", 4, 9, false, true, true, false, true, false, true, false, false, 2, "that", 3, "frame", 4, "chid", 5, "doStop" {
@@ -813,10 +800,10 @@ Push register1
 Push "aMode"
 GetMember
 Not
-If loc1108
+If loc113e
 Push register4
 Not
-If loc10da
+If loc1110
 Push "Main"
 GetVariable
 Push "spriteInfo"
@@ -828,7 +815,7 @@ GetMember
 StoreRegister 6
 Pop
 Push register6
-If loc0f0b
+If loc0f41
 Push register5
 Push 0
 Push register3
@@ -841,17 +828,17 @@ CallMethod
 Pop
 Push undefined
 Return
-loc0f0b:Push register6
+loc0f41:Push register6
 Push "length"
 GetMember
 Push 1
 Greater
 Not
-If loc0faf
+If loc0fe5
 Push 0
 StoreRegister 7
 Pop
-loc0f32:Push register7
+loc0f68:Push register7
 Push register6
 Push 1
 GetMember
@@ -859,7 +846,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc0faf
+If loc0fe5
 Push register2
 Push register6
 Push 1
@@ -868,7 +855,7 @@ Push register7
 GetMember
 GetMember
 Not
-If loc0f97
+If loc0fcd
 Push register2
 Push register6
 Push 1
@@ -879,13 +866,13 @@ GetMember
 Push "justExisted"
 Push true
 SetMember
-loc0f97:Push register7
+loc0fcd:Push register7
 Push 2
 Add2
 StoreRegister 7
 Pop
-Jump loc0f32
-loc0faf:Push register2
+Jump loc0f68
+loc0fe5:Push register2
 Push "_currentframe"
 GetMember
 StoreRegister 8
@@ -907,7 +894,7 @@ GetMember
 Equals2
 Not
 Not
-If loc10d5
+If loc110b
 Push register6
 Push 0
 GetMember
@@ -915,7 +902,7 @@ TypeOf
 Push "object"
 Equals2
 Not
-If loc1082
+If loc10b8
 Push register6
 Push 0
 GetMember
@@ -926,7 +913,7 @@ GetMember
 Add2
 GetMember
 Not
-If loc1082
+If loc10b8
 Push register6
 Push 0
 GetMember
@@ -946,13 +933,13 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc1082:Push register6
+loc10b8:Push register6
 Push "length"
 GetMember
 Push 1
 Greater
 Not
-If loc10d5
+If loc110b
 Push false
 Push "Main"
 GetVariable
@@ -968,8 +955,8 @@ GetVariable
 Push "iterateOnChildren"
 CallMethod
 Pop
-loc10d5:Jump loc1103
-loc10da:Push register3
+loc110b:Jump loc1139
+loc1110:Push register3
 Push 1
 Push register2
 Push "gotoAndStop"
@@ -979,25 +966,25 @@ Push register2
 Push "stopped"
 Push register5
 SetMember
-loc1103:Jump loc114a
-loc1108:Push register5
+loc1139:Jump loc1180
+loc113e:Push register5
 Not
-If loc1131
+If loc1167
 Push register3
 Push 1
 Push register2
 Push "gotoAndStop"
 CallMethod
 Pop
-Jump loc114a
-loc1131:Push register3
+Jump loc1180
+loc1167:Push register3
 Push 1
 Push register2
 Push "gotoAndPlay"
 CallMethod
 Pop
 }
-loc114a:SetMember
+loc1180:SetMember
 Push register1
 Push "_gotoAndStop"
 DefineFunction2 "", 3, 4, false, false, true, false, true, false, true, false, false, 1, "that", 2, "frame", 3, "chid" {
@@ -1035,19 +1022,19 @@ Push register1
 Push "aMode"
 GetMember
 Not
-If loc1230
+If loc1266
 Push register2
 Push "stopped"
 Push true
 SetMember
-Jump loc1244
-loc1230:Push 0
+Jump loc127a
+loc1266:Push 0
 Push register2
 Push "stop"
 CallMethod
 Pop
 }
-loc1244:SetMember
+loc127a:SetMember
 Push register1
 Push "_play"
 DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "that" {
@@ -1055,26 +1042,26 @@ Push register1
 Push "aMode"
 GetMember
 Not
-If loc1286
+If loc12bc
 Push register2
 Push "stopped"
 Push false
 SetMember
-Jump loc129a
-loc1286:Push 0
+Jump loc12d0
+loc12bc:Push 0
 Push register2
 Push "play"
 CallMethod
 Pop
 }
-loc129a:SetMember
+loc12d0:SetMember
 Push register1
 Push "stopAll"
 DefineFunction "", 0 {
 Push "i"
 Push 0
 DefineLocal
-loc12bb:Push "i"
+loc12f1:Push "i"
 GetVariable
 Push "Main"
 GetVariable
@@ -1084,7 +1071,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc1365
+If loc139b
 Push "Main"
 GetVariable
 Push "holders"
@@ -1093,10 +1080,10 @@ Push "i"
 GetVariable
 GetMember
 Enumerate2
-loc12ee:StoreRegister 0
+loc1324:StoreRegister 0
 Push null
 Equals2
-If loc1353
+If loc1389
 Push "objName"
 Push register0
 DefineLocal
@@ -1124,15 +1111,15 @@ GetVariable
 Push "stopAnimation"
 CallMethod
 Pop
-Jump loc12ee
-loc1353:Push "i"
+Jump loc1324
+loc1389:Push "i"
 Push "i"
 GetVariable
 Increment
 SetVariable
-Jump loc12bb
+Jump loc12f1
 }
-loc1365:SetMember
+loc139b:SetMember
 Push register1
 Push "stopAnimation"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "obj", 2, "chid" {
@@ -1142,10 +1129,10 @@ Push "stop"
 CallMethod
 Pop
 Push register2
-If loc13a9
+If loc13df
 Push undefined
 Return
-loc13a9:Push "Main"
+loc13df:Push "Main"
 GetVariable
 Push "spriteInfo"
 GetMember
@@ -1156,16 +1143,16 @@ GetMember
 StoreRegister 3
 Pop
 Push register3
-If loc13d5
+If loc140b
 Push undefined
 Return
-loc13d5:Push register3
+loc140b:Push register3
 Push "length"
 GetMember
 Push 1
 Greater
 Not
-If loc142f
+If loc1465
 Push "Main"
 GetVariable
 Push "stopAnimation"
@@ -1185,7 +1172,7 @@ Push "iterateOnChildren"
 CallMethod
 Pop
 }
-loc142f:SetMember
+loc1465:SetMember
 Push 1
 Push null
 Push "_global"
@@ -1197,4 +1184,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc145c:Pop
+loc1492:Pop

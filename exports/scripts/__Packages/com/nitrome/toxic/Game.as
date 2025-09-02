@@ -472,7 +472,7 @@ class com.nitrome.toxic.Game extends MovieClip
       this.power_cell_memory = new com.nitrome.toxic.PowerCellMemory();
       if(_root.aMode)
       {
-         RNG.rngSeed = TAS.curArray[1];
+         RNG.rngSeed = TAS.valueArray[0];
       }
       _root.game.loadLevel();
       ClockDisp.initDriver(_root.powercell_panel.createEmptyMovieClip("CDDriverMovie",_root.powercell_panel.getNextHighestDepth()));

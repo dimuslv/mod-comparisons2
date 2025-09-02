@@ -32,9 +32,15 @@ class Main
    }
    static function metaUpdate()
    {
+      if(TAS.delayedCaretIndex != -1)
+      {
+         Selection.setFocus(Windows.clip.inputWindow.inputField);
+         Selection.setSelection(TAS.delayedCaretIndex,TAS.delayedCaretIndex);
+         TAS.delayedCaretIndex = -1;
+      }
       if(!TAS.frozen)
       {
-         if(!TAS.write && (TAS.curArray.length == 0 || TAS.curIndex >= TAS.curArray.length || TAS.curIndex == TAS.curArray.length - 3 && TAS.curFrame >= TAS.curArray[TAS.curIndex + 1]))
+         if(!TAS.write && TAS.isAtStringEnd())
          {
             TAS.frozen = true;
          }
