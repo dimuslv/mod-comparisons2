@@ -8,7 +8,7 @@ Not
 If loc0133
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc0133:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc016b:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "toxic", 0, "Object"
+Push "toxic", 0.0, "Object"
 NewObject
 SetMember
 loc01af:Pop
@@ -103,23 +103,23 @@ Push "pc"
 GetMember
 Push "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc0280
 Jump loc029a
 loc0280:Push register2, "data"
 GetMember
-Push "pc", 0, "Array"
+Push "pc", 0.0, "Array"
 NewObject
 SetMember
 loc029a:Jump loc02b9
 loc029f:Push register2, "data"
 GetMember
-Push "pc", 0, "Array"
+Push "pc", 0.0, "Array"
 NewObject
 SetMember
-loc02b9:Push register1, "powercells", 0, "Array"
+loc02b9:Push register1, "powercells", 0.0, "Array"
 NewObject
 SetMember
 Push register1, "powercells", register2, "data"
@@ -157,11 +157,11 @@ Push register1, "powercells"
 GetMember
 Push "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc041f
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc038e:Push register2, register1, "powercells"
@@ -240,7 +240,7 @@ GetMember
 Push "pc", register1, "powercells"
 GetMember
 SetMember
-Push 0, register2, "flush"
+Push 0.0, register2, "flush"
 CallMethod
 Pop
 }
@@ -253,7 +253,7 @@ Push "getLocal"
 CallMethod
 StoreRegister 1
 Pop
-Push 0, register1, "clear"
+Push 0.0, register1, "clear"
 CallMethod
 Pop
 }
@@ -266,7 +266,7 @@ Push "getLocal"
 CallMethod
 StoreRegister 2
 Pop
-Push 0
+Push 0.0
 StoreRegister 3
 Pop
 Push register2, "data"
@@ -275,11 +275,11 @@ Push "pc"
 GetMember
 Push "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc05e6
-Push 0
+Push 0.0
 StoreRegister 1
 Pop
 loc0588:Push register1, register2, "data"

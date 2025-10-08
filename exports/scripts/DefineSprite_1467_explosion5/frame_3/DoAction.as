@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   _root.sfx.playSound("explode");
+	_root.sfx.playSound("explode");
 }

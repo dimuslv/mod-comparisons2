@@ -8,7 +8,7 @@ Not
 If loc00eb
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc00eb:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0123:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "toxic", 0, "Object"
+Push "toxic", 0.0, "Object"
 NewObject
 SetMember
 loc0167:Pop
@@ -71,7 +71,7 @@ Push "toxic"
 GetMember
 Push "HealthPanel"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }
@@ -102,17 +102,17 @@ Subtract
 SetMember
 Push register1, "health_percent"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 Not
 If loc024d
-Push 0, register2, "game"
+Push 0.0, register2, "game"
 GetMember
 Push "gameOver"
 CallMethod
 Pop
-loc024d:Push 0, register1, "doDisplay"
+loc024d:Push 0.0, register1, "doDisplay"
 CallMethod
 Pop
 }
@@ -133,16 +133,16 @@ Not
 If loc02ac
 Push register1, "health_percent", 100
 SetMember
-loc02ac:Push 0, register1, "doDisplay"
+loc02ac:Push 0.0, register1, "doDisplay"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "loseAllHealth"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push register1, "health_percent", 0
+Push register1, "health_percent", 0.0
 SetMember
-Push 0, register1, "doDisplay"
+Push 0.0, register1, "doDisplay"
 CallMethod
 Pop
 }

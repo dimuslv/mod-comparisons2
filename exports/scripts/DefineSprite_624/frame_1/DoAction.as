@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   this._parent._parent.doWalk();
+	this._parent._parent.doWalk();
 }

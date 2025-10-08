@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   this._parent._parent.triggerScreenShake();
+	this._parent._parent.triggerScreenShake();
 }

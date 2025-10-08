@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   this._parent.finishDie();
-   stop();
+	this._parent.finishDie();
+	stop();
 }

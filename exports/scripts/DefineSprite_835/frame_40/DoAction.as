@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   this._parent.finishLaser();
-   stop();
+	this._parent.finishLaser();
+	stop();
 }

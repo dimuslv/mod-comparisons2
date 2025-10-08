@@ -8,7 +8,7 @@ Not
 If loc0092
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc0092:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc00ca:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "game", 0, "Object"
+Push "game", 0.0, "Object"
 NewObject
 SetMember
 loc010e:Pop
@@ -71,7 +71,7 @@ Push "game"
 GetMember
 Push "NoClicks"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "useHandCursor", false

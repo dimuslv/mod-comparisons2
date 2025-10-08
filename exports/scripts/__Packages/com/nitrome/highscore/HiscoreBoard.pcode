@@ -8,7 +8,7 @@ Not
 If loc02fe
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc02fe:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0336:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "highscore", 0, "Object"
+Push "highscore", 0.0, "Object"
 NewObject
 SetMember
 loc037a:Pop
@@ -71,10 +71,10 @@ Push "highscore"
 GetMember
 Push "HiscoreBoard"
 DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
-Push 0, register3, "ng"
+Push 0.0, register3, "ng"
 GetMember
 Push "getNitrome"
 CallMethod
@@ -119,10 +119,10 @@ Add2
 Trace
 Push register1, "saved_min_rank", register4
 SetMember
-Push register2, "lv_sender", 0, "LoadVars"
+Push register2, "lv_sender", 0.0, "LoadVars"
 NewObject
 SetMember
-Push register2, "lv_receiver", 0, "LoadVars"
+Push register2, "lv_receiver", 0.0, "LoadVars"
 NewObject
 SetMember
 Push register2, "lv_receiver"
@@ -153,7 +153,7 @@ ToString
 SetMember
 Push register2, "lv_sender"
 GetMember
-Push "game_name", 0, register2, "ng"
+Push "game_name", 0.0, register2, "ng"
 GetMember
 Push "getGameId"
 CallMethod
@@ -162,7 +162,7 @@ Push register2, "lv_sender"
 GetMember
 Push "time_based", "0"
 SetMember
-Push 0, register2, "ng"
+Push 0.0, register2, "ng"
 GetMember
 Push "getRetrieveScoreUrl"
 CallMethod
@@ -187,7 +187,7 @@ Equals2
 Not
 Not
 If loc0760
-Push 0
+Push 0.0
 StoreRegister 3
 Pop
 loc05e8:Push register3, 9
@@ -213,7 +213,7 @@ Push register4, null
 Equals2
 Not
 If loc065d
-Push 0, register1, register5
+Push 0.0, register1, register5
 GetMember
 Push "hideAway"
 CallMethod
@@ -245,13 +245,13 @@ Push true
 Equals2
 Not
 If loc06dd
-Push 0, register1, "next_arrow"
+Push 0.0, register1, "next_arrow"
 GetMember
 Push "display"
 CallMethod
 Pop
 Jump loc06f5
-loc06dd:Push 0, register1, "next_arrow"
+loc06dd:Push 0.0, register1, "next_arrow"
 GetMember
 Push "hideAway"
 CallMethod
@@ -264,13 +264,13 @@ Push true
 Equals2
 Not
 If loc0733
-Push 0, register1, "prev_arrow"
+Push 0.0, register1, "prev_arrow"
 GetMember
 Push "display"
 CallMethod
 Pop
 Jump loc074b
-loc0733:Push 0, register1, "prev_arrow"
+loc0733:Push 0.0, register1, "prev_arrow"
 GetMember
 Push "hideAway"
 CallMethod
@@ -340,11 +340,11 @@ Push register2, "displayHiscoresMTV"
 DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 6, "leaderboard" {
 Push register6, "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc099d
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc089a:Push register2, 10
@@ -380,7 +380,7 @@ Push register3, "undefined"
 Equals2
 loc08f9:Not
 If loc093e
-Push 0, register1, "score_line_", register2, 1
+Push 0.0, register1, "score_line_", register2, 1
 Add2
 Add2
 ToString
@@ -388,7 +388,7 @@ GetMember
 Push "hideAway"
 CallMethod
 Pop
-Push 0, register1, "next_arrow"
+Push 0.0, register1, "next_arrow"
 GetMember
 Push "hideAway"
 CallMethod

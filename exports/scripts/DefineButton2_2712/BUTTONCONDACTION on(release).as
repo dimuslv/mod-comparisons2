@@ -1,3 +1,3 @@
 on(release){
-   _root.tt.doTween("pre_title_screen");
+	_root.tt.doTween("pre_title_screen");
 }

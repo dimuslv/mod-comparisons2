@@ -8,7 +8,7 @@ Not
 If loc0245
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0245:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "managers", 0, "Object"
+Push "managers", 0.0, "Object"
 NewObject
 SetMember
 loc027d:Pop
@@ -184,7 +184,7 @@ Push "SystemManager"
 GetMember
 Push "form", register1
 SetMember
-Push 0, register1, "focusManager"
+Push 0.0, register1, "focusManager"
 GetMember
 Push "activate"
 CallMethod
@@ -207,7 +207,7 @@ Push "form"
 GetMember
 StoreRegister 1
 Pop
-Push 0, register1, "focusManager"
+Push 0.0, register1, "focusManager"
 GetMember
 Push "_onMouseDown"
 CallMethod
@@ -258,7 +258,7 @@ Push register3, "T"
 Equals2
 Not
 If loc05a4
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
 Jump loc06c7
@@ -275,7 +275,7 @@ loc05c4:Push register3, "L"
 Equals2
 Not
 If loc05e8
-Push 0
+Push 0.0
 StoreRegister 5
 Pop
 Jump loc06c7
@@ -292,10 +292,10 @@ loc0608:Push register3, "LT"
 Equals2
 Not
 If loc063d
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
-Push 0
+Push 0.0
 StoreRegister 5
 Pop
 Jump loc06c7
@@ -303,7 +303,7 @@ loc063d:Push register3, "TR"
 Equals2
 Not
 If loc066e
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
 Push register9, register7
@@ -319,7 +319,7 @@ Push register8, register6
 Subtract
 StoreRegister 4
 Pop
-Push 0
+Push 0.0
 StoreRegister 5
 Pop
 Jump loc06c7
@@ -353,7 +353,7 @@ Push "managers"
 GetMember
 Push "SystemManager"
 GetMember
-Push "__screen", 0, "Object"
+Push "__screen", 0.0, "Object"
 NewObject
 SetMember
 loc070e:Push "mx"
@@ -396,7 +396,7 @@ Push "__screen"
 GetMember
 Push "height", register6
 SetMember
-Push 0, register1, "focusManager"
+Push 0.0, register1, "focusManager"
 GetMember
 Push "relocate"
 CallMethod
@@ -416,7 +416,7 @@ Pop
 SetMember
 Push register1, "__get__screen"
 DefineFunction "", 0 {
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember
@@ -437,7 +437,7 @@ Push undefined
 Equals2
 Not
 If loc0848
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember
@@ -459,11 +459,11 @@ Return
 SetMember
 Push register1, "_initialized", false
 SetMember
-Push register1, "idleFrames", 0
+Push register1, "idleFrames", 0.0
 SetMember
 Push register1, "isMouseDown", false
 SetMember
-Push register1, "forms", 0, "Array"
+Push register1, "forms", 0.0, "Array"
 NewObject
 SetMember
 DefineFunction "", 0 {

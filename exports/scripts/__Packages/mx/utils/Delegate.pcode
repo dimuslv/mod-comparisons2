@@ -8,7 +8,7 @@ Not
 If loc0099
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0099:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "utils", 0, "Object"
+Push "utils", 0.0, "Object"
 NewObject
 SetMember
 loc00d1:Pop
@@ -46,7 +46,7 @@ Push "utils"
 GetMember
 Push "Delegate"
 DefineFunction2 "", 1, 4, false, false, false, true, true, false, false, true, false, 3, "f" {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "func", register3

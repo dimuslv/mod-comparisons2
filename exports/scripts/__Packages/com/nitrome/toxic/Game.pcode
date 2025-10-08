@@ -4167,7 +4167,7 @@ GetMember
 Push "copyPixels"
 CallMethod
 Pop
-Push 4278190080, 32, 32, register3, "com"
+Push 4278190080.0, 32, 32, register3, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -5479,7 +5479,7 @@ GetMember
 Push "init"
 CallMethod
 Pop
-Push 4278190080, 32, 32, register3, "com"
+Push 4278190080.0, 32, 32, register3, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -7757,7 +7757,7 @@ Pop
 Push register1, "temp_bmp"
 Delete
 Pop
-Push false, 16777215, 0, 4278255360, "==", register4, register3, 2, "flash"
+Push false, 16777215, 0, 4278255360.0, "==", register4, register3, 2, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -7835,7 +7835,7 @@ Pop
 SetMember
 Push register2, "clearDoor"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, true, 2, "x", 3, "y" {
-Push 4278255360, 32, 32, register3, register2, 4, "flash"
+Push 4278255360.0, 32, 32, register3, register2, 4, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -7846,7 +7846,7 @@ GetMember
 Push "fillRect"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register3, register2, 2, "flash"
+Push false, 16777215, 0, 4278255360.0, "==", register3, register2, 2, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -7963,7 +7963,7 @@ GetMember
 Multiply
 StoreRegister 5
 Pop
-Push 4278255360, 32, 32, register5, register4, 4, "flash"
+Push 4278255360.0, 32, 32, register5, register4, 4, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -7974,7 +7974,7 @@ GetMember
 Push "fillRect"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register5, register4, 2, "flash"
+Push false, 16777215, 0, 4278255360.0, "==", register5, register4, 2, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -9173,7 +9173,7 @@ GetMember
 Push "draw"
 CallMethod
 Pop
-Push 4278255615, 4294967295, 2, register3, "b_temp"
+Push 4278255615.0, 4294967295.0, 2, register3, "b_temp"
 GetMember
 Push "getColorBoundsRect"
 CallMethod
@@ -10981,7 +10981,7 @@ GetMember
 Push "copyPixels"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register4, 40
+Push false, 16777215, 0, 4278255360.0, "==", register4, 40
 Subtract
 Push register3, 40
 Subtract
@@ -11105,7 +11105,7 @@ Push register14, 0
 Equals2
 Not
 If locc815
-Push 4278190080, register7, register6, 3, register2, "boss_bmp"
+Push 4278190080.0, register7, register6, 3, register2, "boss_bmp"
 GetMember
 Push "setPixel32"
 CallMethod
@@ -11213,7 +11213,7 @@ Push register14, 0
 Equals2
 Not
 If locc9d4
-Push 4278190080, register7, register6, 3, register2, "boss_bmp"
+Push 4278190080.0, register7, register6, 3, register2, "boss_bmp"
 GetMember
 Push "setPixel32"
 CallMethod
@@ -11363,7 +11363,7 @@ GetMember
 Push "copyPixels"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register4, 40
+Push false, 16777215, 0, 4278255360.0, "==", register4, 40
 Subtract
 Push register3, 40
 Subtract
@@ -11487,7 +11487,7 @@ Push register14, 0
 Equals2
 Not
 If loccebc
-Push 4278190080, register7, register6, 3, register2, "ground_bmp"
+Push 4278190080.0, register7, register6, 3, register2, "ground_bmp"
 GetMember
 Push "setPixel32"
 CallMethod
@@ -11595,7 +11595,7 @@ Push register14, 0
 Equals2
 Not
 If locd07b
-Push 4278190080, register7, register6, 3, register2, "ground_bmp"
+Push 4278190080.0, register7, register6, 3, register2, "ground_bmp"
 GetMember
 Push "setPixel32"
 CallMethod
@@ -11920,7 +11920,7 @@ GetMember
 Push "copyPixels"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register3, register2, 2, "flash"
+Push false, 16777215, 0, 4278255360.0, "==", register3, register2, 2, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -12092,7 +12092,7 @@ GetMember
 Push "copyPixels"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register3, register2, 2, "flash"
+Push false, 16777215, 0, 4278255360.0, "==", register3, register2, 2, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -12202,7 +12202,7 @@ Push register14, 0
 Equals2
 Not
 If locdb33
-Push 4278190080, register7, register6, 3, register1, "ground_bmp"
+Push 4278190080.0, register7, register6, 3, register1, "ground_bmp"
 GetMember
 Push "setPixel32"
 CallMethod
@@ -12376,7 +12376,7 @@ GetMember
 Push "copyPixels"
 CallMethod
 Pop
-Push false, 16777215, 0, 4278255360, "==", register3, register2, 2, "flash"
+Push false, 16777215, 0, 4278255360.0, "==", register3, register2, 2, "flash"
 GetVariable
 Push "geom"
 GetMember
@@ -12486,7 +12486,7 @@ Push register14, 0
 Equals2
 Not
 If locdfec
-Push 4278190080, register7, register6, 3, register1, "ground_bmp"
+Push 4278190080.0, register7, register6, 3, register1, "ground_bmp"
 GetMember
 Push "setPixel32"
 CallMethod

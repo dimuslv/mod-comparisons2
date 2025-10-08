@@ -8,7 +8,7 @@ Not
 If loc01e8
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc01e8:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0220:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "highscore", 0, "Object"
+Push "highscore", 0.0, "Object"
 NewObject
 SetMember
 loc0264:Pop
@@ -71,7 +71,7 @@ Push "highscore"
 GetMember
 Push "SubmitButton"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "pressed", false
@@ -128,7 +128,7 @@ SetMember
 loc0380:SetMember
 Push register2, "submitScore"
 DefineFunction2 "", 0, 4, false, true, true, false, true, false, false, true, false {
-Push register2, "name_entered", 0, register1, "_parent"
+Push register2, "name_entered", 0.0, register1, "_parent"
 GetMember
 Push "getNameText"
 CallMethod
@@ -140,10 +140,10 @@ Equals2
 Not
 Not
 If loc0522
-Push register2, "lv_sender", 0, "LoadVars"
+Push register2, "lv_sender", 0.0, "LoadVars"
 NewObject
 SetMember
-Push register2, "lv_receiver", 0, "LoadVars"
+Push register2, "lv_receiver", 0.0, "LoadVars"
 NewObject
 SetMember
 Push register2, "lv_receiver"
@@ -170,7 +170,7 @@ Push register2, "lv_sender"
 GetMember
 Push "data_string", register2, "name_entered"
 GetMember
-Push 0, "com"
+Push 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -189,7 +189,7 @@ Push register2, "lv_sender"
 GetMember
 Push "time_based", "0"
 SetMember
-Push 0, register2, "ng"
+Push 0.0, register2, "ng"
 GetMember
 Push "getSubmitScoreUrl"
 CallMethod
@@ -207,7 +207,7 @@ GetMember
 Add2
 Push ":"
 Add2
-Push 0, "com"
+Push 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember

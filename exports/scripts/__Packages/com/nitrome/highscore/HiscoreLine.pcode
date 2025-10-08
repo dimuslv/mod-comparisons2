@@ -8,7 +8,7 @@ Not
 If loc012f
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc012f:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0167:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "highscore", 0, "Object"
+Push "highscore", 0.0, "Object"
 NewObject
 SetMember
 loc01ab:Pop
@@ -71,7 +71,7 @@ Push "highscore"
 GetMember
 Push "HiscoreLine"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "_visible", true
@@ -109,7 +109,7 @@ ToString
 SetMember
 Push register1, "name_text"
 GetMember
-Push "text", 0, register9, "toUpperCase"
+Push "text", 0.0, register9, "toUpperCase"
 CallMethod
 SetMember
 Push register8, ","
@@ -121,7 +121,7 @@ Add2
 Push register4
 Add2
 Trace
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "getZeroFill"
 CallMethod
@@ -129,7 +129,7 @@ Push true
 Equals2
 Not
 If loc0378
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "getMaxDigits"
 CallMethod
@@ -179,7 +179,7 @@ Push "text", register5
 SetMember
 loc0393:Push register1, "_visible", true
 SetMember
-Push 0, "updateAfterEvent"
+Push 0.0, "updateAfterEvent"
 CallFunction
 Pop
 }

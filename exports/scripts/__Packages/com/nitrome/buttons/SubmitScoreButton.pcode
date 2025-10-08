@@ -8,7 +8,7 @@ Not
 If loc011e
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc011e:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0156:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "buttons", 0, "Object"
+Push "buttons", 0.0, "Object"
 NewObject
 SetMember
 loc019a:Pop
@@ -71,14 +71,14 @@ Push "buttons"
 GetMember
 Push "SubmitScoreButton"
 DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
-Push 0, register3, "ng"
+Push 0.0, register3, "ng"
 GetMember
 Push "getLastSavedScore"
 CallMethod
-Push 0, "com"
+Push 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -120,7 +120,7 @@ StoreRegister 2
 Pop
 Push register2, "doPress"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
-Push 0, "com"
+Push 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -140,7 +140,7 @@ GetMember
 Push "startMenuMusic"
 CallMethod
 Pop
-Push 0, register1, "popup_holder"
+Push 0.0, register1, "popup_holder"
 GetMember
 Push "hidePopUp"
 CallMethod

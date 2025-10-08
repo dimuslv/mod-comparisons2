@@ -5,7 +5,7 @@ var level_powercells = new Array();
 var i = 1;
 while(i <= 40)
 {
-   level_powercells[i] = pcm.getLevelCollected(i);
-   i++;
+	level_powercells[i] = pcm.getLevelCollected(i);
+	i++;
 }
 stop();

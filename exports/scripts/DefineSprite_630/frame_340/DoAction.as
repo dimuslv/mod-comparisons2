@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   this._parent._parent.debris_x_offset = 0;
+	this._parent._parent.debris_x_offset = 0;
 }

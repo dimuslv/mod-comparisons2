@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   this._parent.startFall();
-   stop();
+	this._parent.startFall();
+	stop();
 }

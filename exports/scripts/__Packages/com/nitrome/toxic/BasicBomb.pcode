@@ -853,7 +853,7 @@ GetMember
 Push "draw"
 CallMethod
 Pop
-Push 4278255615, 4294967295, 2, register3, "imgb"
+Push 4278255615.0, 4294967295.0, 2, register3, "imgb"
 GetMember
 Push "getColorBoundsRect"
 CallMethod

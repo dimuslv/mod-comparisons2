@@ -8,7 +8,7 @@ Not
 If loc0256
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0256:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "skins", 0, "Object"
+Push "skins", 0.0, "Object"
 NewObject
 SetMember
 loc028e:Pop
@@ -46,7 +46,7 @@ Push "mx"
 GetMember
 Push "skins"
 GetMember
-Push "halo", 0, "Object"
+Push "halo", 0.0, "Object"
 NewObject
 SetMember
 loc02d2:Pop
@@ -71,7 +71,7 @@ Push "halo"
 GetMember
 Push "FocusRect"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "boundingBox_mc"
@@ -82,7 +82,7 @@ Push register1, "boundingBox_mc"
 GetMember
 Push "_width", register1, "boundingBox_mc"
 GetMember
-Push "_height", 0
+Push "_height", 0.0
 StoreRegister 0
 SetMember
 Push register0
@@ -111,7 +111,7 @@ StoreRegister 2
 Pop
 Push register2, "draw"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "o" {
-Push 0, register1, "adjustFocusRect"
+Push 0.0, register1, "adjustFocusRect"
 CallMethod
 Pop
 }
@@ -123,7 +123,7 @@ StoreRegister 0
 SetMember
 Push register0
 SetMember
-Push 0, register1, "clear"
+Push 0.0, register1, "clear"
 CallMethod
 Pop
 Push register2
@@ -137,7 +137,7 @@ GetMember
 Push 2
 Greater
 If loc045c
-Push 0
+Push 0.0
 Jump loc046d
 loc045c:Push register2, "br"
 GetMember
@@ -149,7 +149,7 @@ GetMember
 Push 2
 Greater
 If loc0499
-Push 0
+Push 0.0
 Jump loc04aa
 loc0499:Push register2, "bl"
 GetMember
@@ -161,7 +161,7 @@ GetMember
 Push 2
 Greater
 If loc04d6
-Push 0
+Push 0.0
 Jump loc04e7
 loc04d6:Push register2, "tr"
 GetMember
@@ -173,7 +173,7 @@ GetMember
 Push 2
 Greater
 If loc0513
-Push 0
+Push 0.0
 Jump loc0524
 loc0513:Push register2, "tl"
 GetMember
@@ -185,7 +185,7 @@ Multiply
 Push register7, 2, register1, "beginFill"
 CallMethod
 Pop
-Push register2, register3, register4, 0, 0, 5, register1, "drawRoundRect"
+Push register2, register3, register4, 0.0, 0.0, 5, register1, "drawRoundRect"
 CallMethod
 Pop
 Push register2, register3, 4
@@ -195,7 +195,7 @@ Subtract
 Push 2, 2, 5, register1, "drawRoundRect"
 CallMethod
 Pop
-Push 0, register1, "endFill"
+Push 0.0, register1, "endFill"
 CallMethod
 Pop
 Push register2, "br", register2, "br"
@@ -203,7 +203,7 @@ GetMember
 Push 1
 Greater
 If loc05d7
-Push 0
+Push 0.0
 Jump loc05e8
 loc05d7:Push register2, "br"
 GetMember
@@ -215,7 +215,7 @@ GetMember
 Push 1
 Greater
 If loc0614
-Push 0
+Push 0.0
 Jump loc0625
 loc0614:Push register2, "bl"
 GetMember
@@ -227,7 +227,7 @@ GetMember
 Push 1
 Greater
 If loc0651
-Push 0
+Push 0.0
 Jump loc0662
 loc0651:Push register2, "tr"
 GetMember
@@ -239,7 +239,7 @@ GetMember
 Push 1
 Greater
 If loc068e
-Push 0
+Push 0.0
 Jump loc069f
 loc068e:Push register2, "tl"
 GetMember
@@ -263,7 +263,7 @@ GetMember
 Push 1
 Greater
 If loc071a
-Push 0
+Push 0.0
 Jump loc072b
 loc071a:Push register2, "br"
 GetMember
@@ -275,7 +275,7 @@ GetMember
 Push 1
 Greater
 If loc0757
-Push 0
+Push 0.0
 Jump loc0768
 loc0757:Push register2, "bl"
 GetMember
@@ -287,7 +287,7 @@ GetMember
 Push 1
 Greater
 If loc0794
-Push 0
+Push 0.0
 Jump loc07a5
 loc0794:Push register2, "tr"
 GetMember
@@ -299,7 +299,7 @@ GetMember
 Push 1
 Greater
 If loc07d1
-Push 0
+Push 0.0
 Jump loc07e2
 loc07d1:Push register2, "tl"
 GetMember
@@ -313,14 +313,14 @@ Subtract
 Push 2, 2, 5, register1, "drawRoundRect"
 CallMethod
 Pop
-Push 0, register1, "endFill"
+Push 0.0, register1, "endFill"
 CallMethod
 Pop
 Jump loc09e4
 loc082a:Push undefined
 StoreRegister 5
 Pop
-Push register2, 0
+Push register2, 0.0
 Equals2
 Not
 Not
@@ -330,7 +330,7 @@ Subtract
 StoreRegister 5
 Pop
 Jump loc086f
-loc085e:Push 0
+loc085e:Push 0.0
 StoreRegister 5
 Pop
 loc086f:Push register6, 0.3
@@ -338,7 +338,7 @@ Multiply
 Push register7, 2, register1, "beginFill"
 CallMethod
 Pop
-Push register2, register3, register4, 0, 0, 5, register1, "drawRoundRect"
+Push register2, register3, register4, 0.0, 0.0, 5, register1, "drawRoundRect"
 CallMethod
 Pop
 Push register5, register3, 4
@@ -348,7 +348,7 @@ Subtract
 Push 2, 2, 5, register1, "drawRoundRect"
 CallMethod
 Pop
-Push 0, register1, "endFill"
+Push 0.0, register1, "endFill"
 CallMethod
 Pop
 Push register6, 0.3
@@ -356,7 +356,7 @@ Multiply
 Push register7, 2, register1, "beginFill"
 CallMethod
 Pop
-Push register2, 0
+Push register2, 0.0
 Equals2
 Not
 Not
@@ -370,10 +370,10 @@ Subtract
 StoreRegister 2
 Pop
 Jump loc0972
-loc0950:Push 0
+loc0950:Push 0.0
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc0972:Push register2, register3, 2
@@ -390,7 +390,7 @@ Subtract
 Push 2, 2, 5, register1, "drawRoundRect"
 CallMethod
 Pop
-Push 0, register1, "endFill"
+Push 0.0, register1, "endFill"
 CallMethod
 Pop
 }
@@ -412,7 +412,7 @@ Push "resize"
 Equals2
 Not
 If loc0a4e
-Push 0, register2, "target"
+Push 0.0, register2, "target"
 GetMember
 Push "adjustFocusRect"
 CallMethod
@@ -424,7 +424,7 @@ Push "move"
 Equals2
 Not
 If loc0a7a
-Push 0, register2, "target"
+Push 0.0, register2, "target"
 GetMember
 Push "adjustFocusRect"
 CallMethod
@@ -495,9 +495,9 @@ SetMember
 loc0b8a:Push register1, 1, register2, "draw"
 CallMethod
 Pop
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
-Push 0, register1, "getDepth"
+Push 0.0, register1, "getDepth"
 CallMethod
 Less2
 Not
@@ -543,7 +543,7 @@ Push "focus_mc"
 GetMember
 StoreRegister 3
 Pop
-Push register2, 100, 0, register1, "height"
+Push register2, 100, 0.0, register1, "height"
 GetMember
 Push 4
 Add2
@@ -624,7 +624,7 @@ Push true
 Return
 }
 SetMember
-Push register1, "classConstructed", 0, "mx"
+Push register1, "classConstructed", 0.0, "mx"
 GetVariable
 Push "skins"
 GetMember

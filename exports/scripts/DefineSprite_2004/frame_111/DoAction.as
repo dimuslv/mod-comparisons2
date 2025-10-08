@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   _parent.finishStart();
-   stop();
+	_parent.finishStart();
+	stop();
 }

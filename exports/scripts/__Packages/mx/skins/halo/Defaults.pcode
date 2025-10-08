@@ -8,7 +8,7 @@ Not
 If loc0619
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0619:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "skins", 0, "Object"
+Push "skins", 0.0, "Object"
 NewObject
 SetMember
 loc0651:Pop
@@ -46,7 +46,7 @@ Push "mx"
 GetMember
 Push "skins"
 GetMember
-Push "halo", 0, "Object"
+Push "halo", 0.0, "Object"
 NewObject
 SetMember
 loc0695:Pop
@@ -88,7 +88,7 @@ Push register2, "themeColor", 8453965
 SetMember
 Push register2, "disabledColor", 8684164
 SetMember
-Push register2, "modalTransparency", 0
+Push register2, "modalTransparency", 0.0
 SetMember
 Push register2, "filled", true
 SetMember
@@ -96,7 +96,7 @@ Push register2, "stroked", true
 SetMember
 Push register2, "strokeWidth", 1
 SetMember
-Push register2, "strokeColor", 0
+Push register2, "strokeColor", 0.0
 SetMember
 Push register2, "fillColor", 16777215
 SetMember
@@ -160,7 +160,7 @@ Push register2, "todayColor", 6710886
 SetMember
 Push register1, "styles"
 GetMember
-Push "ScrollSelectList", 0, "mx"
+Push "ScrollSelectList", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -179,7 +179,7 @@ Push register2, "borderStyle", "inset"
 SetMember
 Push register1, "styles"
 GetMember
-Push "ComboBox", 0, "mx"
+Push "ComboBox", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -194,7 +194,7 @@ Push register2, "borderStyle", "inset"
 SetMember
 Push register1, "styles"
 GetMember
-Push "NumericStepper", 0, "mx"
+Push "NumericStepper", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -209,7 +209,7 @@ Push register2, "textAlign", "center"
 SetMember
 Push register1, "styles"
 GetMember
-Push "RectBorder", 0, "mx"
+Push "RectBorder", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -232,7 +232,7 @@ Push register2, "shadowCapColor", 14015965
 SetMember
 Push register2, "borderCapColor", 9542041
 SetMember
-Push 0, "Object"
+Push 0.0, "Object"
 NewObject
 StoreRegister 4
 Pop
@@ -263,7 +263,7 @@ StoreRegister 3
 Pop
 Push register1, "styles"
 GetMember
-Push "TextInput", 0, "mx"
+Push "TextInput", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -287,7 +287,7 @@ GetMember
 SetMember
 Push register1, "styles"
 GetMember
-Push "Window", 0, "mx"
+Push "Window", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -302,7 +302,7 @@ Push register3, "borderStyle", "default"
 SetMember
 Push register1, "styles"
 GetMember
-Push "windowStyles", 0, "mx"
+Push "windowStyles", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -317,7 +317,7 @@ Push register3, "fontWeight", "bold"
 SetMember
 Push register1, "styles"
 GetMember
-Push "dataGridStyles", 0, "mx"
+Push "dataGridStyles", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -332,7 +332,7 @@ Push register3, "fontWeight", "bold"
 SetMember
 Push register1, "styles"
 GetMember
-Push "Alert", 0, "mx"
+Push "Alert", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -347,7 +347,7 @@ Push register3, "borderStyle", "alert"
 SetMember
 Push register1, "styles"
 GetMember
-Push "ScrollView", 0, "mx"
+Push "ScrollView", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -362,7 +362,7 @@ Push register3, "borderStyle", "inset"
 SetMember
 Push register1, "styles"
 GetMember
-Push "View", 0, "mx"
+Push "View", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -377,7 +377,7 @@ Push register3, "borderStyle", "none"
 SetMember
 Push register1, "styles"
 GetMember
-Push "ProgressBar", 0, "mx"
+Push "ProgressBar", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -394,7 +394,7 @@ Push register3, "fontWeight", "bold"
 SetMember
 Push register1, "styles"
 GetMember
-Push "AccordionHeader", 0, "mx"
+Push "AccordionHeader", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -411,7 +411,7 @@ Push register3, "fontSize", "11"
 SetMember
 Push register1, "styles"
 GetMember
-Push "Accordion", 0, "mx"
+Push "Accordion", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -445,7 +445,7 @@ Push register3, "verticalGap", -1
 SetMember
 Push register1, "styles"
 GetMember
-Push "DateChooser", 0, "mx"
+Push "DateChooser", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -462,7 +462,7 @@ Push register3, "headerColor", 16777215
 SetMember
 Push register1, "styles"
 GetMember
-Push "CalendarLayout", 0, "mx"
+Push "CalendarLayout", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -481,7 +481,7 @@ Push register3, "color", 2831164
 SetMember
 Push register1, "styles"
 GetMember
-Push "WeekDayStyle", 0, "mx"
+Push "WeekDayStyle", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -502,7 +502,7 @@ Push register3, "color", 2831164
 SetMember
 Push register1, "styles"
 GetMember
-Push "TodayStyle", 0, "mx"
+Push "TodayStyle", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -517,7 +517,7 @@ Push register3, "color", 16777215
 SetMember
 Push register1, "styles"
 GetMember
-Push "HeaderDateText", 0, "mx"
+Push "HeaderDateText", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -592,7 +592,7 @@ loc104d:Push register17, undefined
 Equals2
 Not
 If loc1076
-Push 255, 0, 2
+Push 255, 0.0, 2
 InitArray
 StoreRegister 17
 Pop
@@ -607,7 +607,7 @@ Equals2
 Not
 Not
 If loc10f4
-Push "matrixType", "box", "x", 0, register14
+Push "matrixType", "box", "x", 0.0, register14
 Subtract
 Push "y", register14, "w", register6, 2
 Multiply
@@ -842,14 +842,14 @@ Equals2
 Not
 Not
 If loc14ae
-Push 0, register1, "endFill"
+Push 0.0, register1, "endFill"
 CallMethod
 Pop
 }
 loc14ae:SetMember
 Push register1, "classConstruct"
 DefineFunction "", 0 {
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "core"
 GetMember
@@ -860,7 +860,7 @@ GetMember
 Push "Extensions"
 CallMethod
 Pop
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "skins"
 GetMember
@@ -896,7 +896,7 @@ Push true
 Return
 }
 SetMember
-Push register1, "classConstructed", 0, "mx"
+Push register1, "classConstructed", 0.0, "mx"
 GetVariable
 Push "skins"
 GetMember

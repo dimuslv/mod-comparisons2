@@ -8,7 +8,7 @@ Not
 If loc03e5
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc03e5:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc041d:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "toxic", 0, "Object"
+Push "toxic", 0.0, "Object"
 NewObject
 SetMember
 loc0461:Pop
@@ -86,7 +86,7 @@ Push register1, "TILE_WIDTH", 32
 SetMember
 Push register1, "TILE_HEIGHT", 32
 SetMember
-Push register1, "LEFT", 0
+Push register1, "LEFT", 0.0
 SetMember
 Push register1, "RIGHT", 1
 SetMember
@@ -94,7 +94,7 @@ Push register1, "UP", 2
 SetMember
 Push register1, "DOWN", 3
 SetMember
-Push register1, "START", 0
+Push register1, "START", 0.0
 SetMember
 Push register1, "STAND", 1
 SetMember
@@ -140,9 +140,9 @@ Push register1, "UP_PRESSED", false
 SetMember
 Push register1, "DOWN_PRESSED", false
 SetMember
-Push register1, "DIR_PRESSED", 0
+Push register1, "DIR_PRESSED", 0.0
 SetMember
-Push register1, "LAST_DIR_PRESSED", 0
+Push register1, "LAST_DIR_PRESSED", 0.0
 SetMember
 Push register1, "can_jump", true
 SetMember
@@ -162,10 +162,10 @@ SetMember
 Push register1, "secret_names", "QUICKSTEP", "", "LASER QUEST", "SWARM", "MARATHON MAN", "", "", "DEAD SPACE", "A BUG\'S LIFE", "", "", "GROW UP", "", "SLEEPY HOLO", "MAXIMUM SECURITY", "", "", "", "FISH AND DRIPS", "", "", 21, "Array"
 NewObject
 SetMember
-Push register1, "powercell_count", 15, 26, 8, 39, 28, 14, 25, 3, 12, 18, 28, 14, 14, 17, 25, 12, 16, 10, 7, 14, 0, 21, "Array"
+Push register1, "powercell_count", 15, 26, 8, 39, 28, 14, 25, 3, 12, 18, 28, 14, 14, 17, 25, 12, 16, 10, 7, 14, 0.0, 21, "Array"
 NewObject
 SetMember
-Push register1, "secret_powercell_count", 27, 0, 2, 19, 23, 0, 0, 8, 15, 0, 0, 12, 0, 33, 8, 0, 0, 0, 8, 0, 0, 21, "Array"
+Push register1, "secret_powercell_count", 27, 0.0, 2, 19, 23, 0.0, 0.0, 8, 15, 0.0, 0.0, 12, 0.0, 33, 8, 0.0, 0.0, 0.0, 8, 0.0, 0.0, 21, "Array"
 NewObject
 SetMember
 Push 1, null, "com"

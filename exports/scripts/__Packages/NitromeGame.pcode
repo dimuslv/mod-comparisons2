@@ -23,7 +23,7 @@ Push register1, "level_id", register2
 SetMember
 Push register1, "total_levels", register4
 SetMember
-Push register1, "game_id", 0, register3, "toLowerCase"
+Push register1, "game_id", 0.0, register3, "toLowerCase"
 CallMethod
 SetMember
 }
@@ -47,7 +47,7 @@ DefineFunction2 "", 0, 6, false, true, true, false, true, false, false, true, fa
 Push false
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 3
 Pop
 loc0660:Push register3, register1, "nitrome_url"
@@ -65,7 +65,7 @@ StoreRegister 4
 Pop
 Push register4, "length"
 GetMember
-Push 0, 2, register2, "_url"
+Push 0.0, 2, register2, "_url"
 GetMember
 Push "substr"
 CallMethod
@@ -96,7 +96,7 @@ Push register2, "length"
 GetMember
 StoreRegister 1
 Pop
-loc070f:Push register1, 0
+loc070f:Push register1, 0.0
 Less2
 Not
 Not
@@ -109,7 +109,7 @@ Not
 If loc076b
 Push register1, 1
 Add2
-Push 0, 2, register2, "slice"
+Push 0.0, 2, register2, "slice"
 CallMethod
 StoreRegister 2
 Pop
@@ -125,7 +125,7 @@ Return
 SetMember
 Push register2, "getLevelName"
 DefineFunction2 "", 3, 7, false, false, true, false, true, false, false, true, false, 4, "level_number", 5, "secret", 6, "file_ext" {
-Push 0, "com"
+Push 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -208,7 +208,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 6
 Pop
-Push register6, 0, 1
+Push register6, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -218,7 +218,7 @@ GetMember
 Less2
 Not
 If loc0944
-Push register6, register2, 0
+Push register6, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -240,7 +240,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 6
 Pop
-Push register6, 0, 1
+Push register6, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -250,7 +250,7 @@ GetMember
 Less2
 Not
 If loc09cd
-Push register6, register2, 0
+Push register6, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -272,7 +272,7 @@ Push register3, "data"
 GetMember
 Push "levels_unlocked", register6
 SetMember
-Push 0, register3, "flush"
+Push 0.0, register3, "flush"
 CallMethod
 Pop
 }
@@ -331,7 +331,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 3
 Pop
-Push register3, 0, 1
+Push register3, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -341,7 +341,7 @@ GetMember
 Less2
 Not
 If loc0b4e
-Push register3, register2, 0
+Push register3, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -367,7 +367,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 3
 Pop
-Push register3, 0, 1
+Push register3, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -377,7 +377,7 @@ GetMember
 Less2
 Not
 If loc0be7
-Push register3, register2, 0
+Push register3, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -409,7 +409,7 @@ GetMember
 Push register9, 1
 Subtract
 GetMember
-Push 0
+Push 0.0
 Equals2
 Not
 If loc0c5e
@@ -451,7 +451,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 3
 Pop
-Push register3, 0, 1
+Push register3, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -472,7 +472,7 @@ loc0d38:Push register5, "data"
 GetMember
 Push "levels_unlocked", register3
 SetMember
-Push 0, register5, "flush"
+Push 0.0, register5, "flush"
 CallMethod
 Pop
 }
@@ -531,7 +531,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 6
 Pop
-Push register6, 0, 0
+Push register6, 0.0, 0.0
 SetMember
 Push 1
 StoreRegister 2
@@ -541,7 +541,7 @@ GetMember
 Less2
 Not
 If loc0e8f
-Push register6, register2, 0
+Push register6, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -563,7 +563,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 6
 Pop
-Push register6, 0, 1
+Push register6, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -573,7 +573,7 @@ GetMember
 Less2
 Not
 If loc0f18
-Push register6, register2, 0
+Push register6, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -595,7 +595,7 @@ Push register3, "data"
 GetMember
 Push "secret_unlocked", register6
 SetMember
-Push 0, register3, "flush"
+Push 0.0, register3, "flush"
 CallMethod
 Pop
 }
@@ -654,7 +654,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 3
 Pop
-Push register3, 0, 1
+Push register3, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -664,7 +664,7 @@ GetMember
 Less2
 Not
 If loc1099
-Push register3, register2, 0
+Push register3, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -690,7 +690,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 3
 Pop
-Push register3, 0, 1
+Push register3, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -700,7 +700,7 @@ GetMember
 Less2
 Not
 If loc1132
-Push register3, register2, 0
+Push register3, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -732,7 +732,7 @@ GetMember
 Push register9, 1
 Subtract
 GetMember
-Push 0
+Push 0.0
 Equals2
 Not
 If loc11a9
@@ -794,7 +794,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 7
 Pop
-Push register7, 0, 0
+Push register7, 0.0, 0.0
 SetMember
 Push 1
 StoreRegister 2
@@ -804,7 +804,7 @@ GetMember
 Less2
 Not
 If loc12de
-Push register7, register2, 0
+Push register7, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -826,7 +826,7 @@ Push 1, "Array"
 NewObject
 StoreRegister 7
 Pop
-Push register7, 0, 1
+Push register7, 0.0, 1
 SetMember
 Push 1
 StoreRegister 2
@@ -836,7 +836,7 @@ GetMember
 Less2
 Not
 If loc1367
-Push register7, register2, 0
+Push register7, register2, 0.0
 SetMember
 Push register2
 Increment
@@ -858,7 +858,7 @@ Push register3, "data"
 GetMember
 Push "secret_complete", register7
 SetMember
-Push 0, register3, "flush"
+Push 0.0, register3, "flush"
 CallMethod
 Pop
 }
@@ -911,7 +911,7 @@ loc146f:Push register4, false
 Equals2
 Not
 If loc148a
-Push 0
+Push 0.0
 Return
 loc148a:Push register3, "data"
 GetMember
@@ -921,12 +921,12 @@ Push undefined
 Equals2
 Not
 If loc14b0
-Push 0
+Push 0.0
 Return
-loc14b0:Push 0
+loc14b0:Push 0.0
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc14d2:Push register2, register3, "data"
@@ -1011,7 +1011,7 @@ Not
 If loc1635
 Push register2, "data"
 GetMember
-Push "level_scores", 0, "Array"
+Push "level_scores", 0.0, "Array"
 NewObject
 SetMember
 Push register2, "data"
@@ -1031,7 +1031,7 @@ Not
 If loc1683
 Push register2, "data"
 GetMember
-Push "level_scores", 0, "Array"
+Push "level_scores", 0.0, "Array"
 NewObject
 SetMember
 Push register2, "data"
@@ -1047,7 +1047,7 @@ Push "level_scores"
 GetMember
 Push register6, register8
 SetMember
-loc1699:Push 0, register2, "flush"
+loc1699:Push 0.0, register2, "flush"
 CallMethod
 Pop
 }
@@ -1100,7 +1100,7 @@ loc1763:Push register3, false
 Equals2
 Not
 If loc177e
-Push 0
+Push 0.0
 Return
 loc177e:Push register2, "data"
 GetMember
@@ -1110,7 +1110,7 @@ Push undefined
 Equals2
 Not
 If loc17a4
-Push 0
+Push 0.0
 Return
 loc17a4:Push register2, "data"
 GetMember
@@ -1169,7 +1169,7 @@ loc1863:Push register5, false
 Equals2
 Not
 If loc187e
-Push 0
+Push 0.0
 Return
 loc187e:Push register3, "data"
 GetMember
@@ -1179,12 +1179,12 @@ Push undefined
 Equals2
 Not
 If loc18a4
-Push 0
+Push 0.0
 Return
-loc18a4:Push 0
+loc18a4:Push 0.0
 StoreRegister 4
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc18c6:Push register2, register3, "data"
@@ -1286,7 +1286,7 @@ loc1a07:Push register3, false
 Equals2
 Not
 If loc1a22
-Push 0
+Push 0.0
 Return
 loc1a22:Push register2, "data"
 GetMember
@@ -1296,7 +1296,7 @@ Push undefined
 Equals2
 Not
 If loc1a48
-Push 0
+Push 0.0
 Return
 loc1a48:Push register2, "data"
 GetMember
@@ -1337,7 +1337,7 @@ Push register3, "data"
 GetMember
 Push "last_saved_score", register5
 SetMember
-Push 0, register3, "flush"
+Push 0.0, register3, "flush"
 CallMethod
 Pop
 }
@@ -1412,7 +1412,7 @@ loc1c01:Not
 If loc1c0c
 Push null
 Return
-loc1c0c:Push 0, "Object"
+loc1c0c:Push 0.0, "Object"
 NewObject
 StoreRegister 3
 Pop
@@ -1422,7 +1422,7 @@ SetMember
 Push register3, "score", register2, 1
 GetMember
 SetMember
-Push register3, "rank", register2, 0
+Push register3, "rank", register2, 0.0
 GetMember
 SetMember
 Push register3
@@ -1488,7 +1488,7 @@ GetMember
 Add2
 Push "_"
 Add2
-Push 0, register4, "toLowerCase"
+Push 0.0, register4, "toLowerCase"
 CallMethod
 Add2
 StoreRegister 3
@@ -1524,10 +1524,10 @@ SetMember
 Push ""
 StoreRegister 11
 Pop
-Push 0
+Push 0.0
 StoreRegister 9
 Pop
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
 loc1e40:Push register4, register10, "length"
@@ -1542,7 +1542,7 @@ Pop
 Push undefined
 StoreRegister 7
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc1e84:Push register2, register1, "ar_1"
@@ -1569,7 +1569,7 @@ Increment
 StoreRegister 2
 Pop
 Jump loc1e84
-loc1ed4:Push register1, "adj", 0, register1, "applyFudgeFactor"
+loc1ed4:Push register1, "adj", 0.0, register1, "applyFudgeFactor"
 CallMethod
 SetMember
 Push register9, register1, "adj"
@@ -1614,7 +1614,7 @@ Return
 SetMember
 Push register2, "convertKey"
 DefineFunction2 "", 1, 9, false, false, true, false, true, false, false, true, false, 6, "key" {
-Push 0, "Array"
+Push 0.0, "Array"
 NewObject
 StoreRegister 7
 Pop
@@ -1623,10 +1623,10 @@ GetMember
 Push 1, register7, "push"
 CallMethod
 Pop
-Push 0
+Push 0.0
 StoreRegister 8
 Pop
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
 loc1fd3:Push register4, register6, "length"
@@ -1641,7 +1641,7 @@ Pop
 Push undefined
 StoreRegister 3
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc2017:Push register2, register1, "ar_1"
@@ -1689,7 +1689,7 @@ Return
 SetMember
 Push register2, "applyFudgeFactor"
 DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "ff"
+Push 0.0, register1, "ff"
 GetMember
 Push "shift"
 CallMethod
@@ -1734,7 +1734,7 @@ Subtract
 StoreRegister 2
 Pop
 Jump loc2149
-loc216a:Push register2, 0
+loc216a:Push register2, 0.0
 Less2
 Not
 If loc2191
@@ -1757,10 +1757,10 @@ SetMember
 Push ""
 StoreRegister 11
 Pop
-Push 0
+Push 0.0
 StoreRegister 9
 Pop
-Push 0
+Push 0.0
 StoreRegister 5
 Pop
 loc2203:Push register5, register10, "length"
@@ -1775,7 +1775,7 @@ Pop
 Push undefined
 StoreRegister 3
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc2247:Push register2, register1, "ar_2"
@@ -1802,7 +1802,7 @@ Increment
 StoreRegister 2
 Pop
 Jump loc2247
-loc2297:Push register1, "adj", 0, register1, "applyFudgeFactor"
+loc2297:Push register1, "adj", 0.0, register1, "applyFudgeFactor"
 CallMethod
 SetMember
 Push register9, register1, "adj"
@@ -1861,7 +1861,7 @@ Push register2, "data"
 GetMember
 Push "musicon", register4
 SetMember
-Push 0, register2, "flush"
+Push 0.0, register2, "flush"
 CallMethod
 Pop
 }
@@ -1937,7 +1937,7 @@ Push register2, "data"
 GetMember
 Push "sfxon", register4
 SetMember
-Push 0, register2, "flush"
+Push 0.0, register2, "flush"
 CallMethod
 Pop
 }
@@ -2006,7 +2006,7 @@ Push register2, "ar_key", "ctdngevfaqki8_lb:psoj90ux127hm/4w5y3rz.6-"
 SetMember
 Push register2, "adj", 1.75
 SetMember
-Push register2, "ff", 0, "Array"
+Push register2, "ff", 0.0, "Array"
 NewObject
 SetMember
 Push register2, "submit_url", "http://www.nitrome.com/php/submit_score.php"

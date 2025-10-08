@@ -1,4 +1,4 @@
-Push 0, "this"
+Push 0.0, "this"
 GetVariable
 Push "changeFrame"
 CallMethod

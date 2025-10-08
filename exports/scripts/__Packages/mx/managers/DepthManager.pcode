@@ -8,7 +8,7 @@ Not
 If loc02b0
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc02b0:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "managers", 0, "Object"
+Push "managers", 0.0, "Object"
 NewObject
 SetMember
 loc02e8:Pop
@@ -181,9 +181,9 @@ StoreRegister 2
 Pop
 Push register1, "sortFunction"
 DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 2, "a", 1, "b" {
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
-Push 0, register1, "getDepth"
+Push 0.0, register1, "getDepth"
 CallMethod
 Greater
 Not
@@ -371,9 +371,9 @@ Push undefined
 Equals2
 Not
 If loc086a
-Push register1, "_childCounter", 0
+Push register1, "_childCounter", 0.0
 SetMember
-loc086a:Push 0, register1, "buildDepthTable"
+loc086a:Push 0.0, register1, "buildDepthTable"
 CallMethod
 StoreRegister 3
 Pop
@@ -461,9 +461,9 @@ Push undefined
 Equals2
 Not
 If loc09f2
-Push register1, "_childCounter", 0
+Push register1, "_childCounter", 0.0
 SetMember
-loc09f2:Push 0, register1, "buildDepthTable"
+loc09f2:Push 0.0, register1, "buildDepthTable"
 CallMethod
 StoreRegister 3
 Pop
@@ -545,7 +545,7 @@ Return
 SetMember
 Push register2, "setDepthTo"
 DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 4, "depthFlag" {
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "buildDepthTable"
 CallMethod
@@ -606,13 +606,13 @@ Not
 If loc0c39
 Push undefined
 Return
-loc0c39:Push 0, register4, "getDepth"
+loc0c39:Push 0.0, register4, "getDepth"
 CallMethod
 Push 1
 Add2
 StoreRegister 2
 Pop
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "buildDepthTable"
 CallMethod
@@ -627,7 +627,7 @@ PushDuplicate
 Not
 If loc0ca1
 Pop
-Push 0, register1, "getDepth"
+Push 0.0, register1, "getDepth"
 CallMethod
 Push register2
 Less2
@@ -705,13 +705,13 @@ Not
 If loc0dbb
 Push undefined
 Return
-loc0dbb:Push 0, register7, "getDepth"
+loc0dbb:Push 0.0, register7, "getDepth"
 CallMethod
 Push 1
 Subtract
 StoreRegister 6
 Pop
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "buildDepthTable"
 CallMethod
@@ -726,7 +726,7 @@ PushDuplicate
 Not
 If loc0e23
 Pop
-Push 0, register1, "getDepth"
+Push 0.0, register1, "getDepth"
 CallMethod
 Push register6
 Greater
@@ -778,7 +778,7 @@ Equals2
 Not
 Not
 If loc0ee0
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
 Push register4, 2, "Math"
 GetVariable
@@ -945,7 +945,7 @@ Equals2
 Not
 Not
 If loc1175
-Push 0, register7, "getDepth"
+Push 0.0, register7, "getDepth"
 CallMethod
 Push register9, 2, "Math"
 GetVariable
@@ -958,7 +958,7 @@ loc117a:Push register12, undefined
 Equals2
 Not
 If loc11bd
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
 Push register10
 Greater
@@ -971,7 +971,7 @@ Jump loc11bd
 loc11b3:Push "down"
 StoreRegister 12
 Pop
-loc11bd:Push 0, "Array"
+loc11bd:Push 0.0, "Array"
 NewObject
 StoreRegister 1
 Pop
@@ -1022,11 +1022,11 @@ StoreRegister 11
 Pop
 loc126b:Push register1, "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc12b4
-Push 0, register1, "pop"
+Push 0.0, register1, "pop"
 CallMethod
 StoreRegister 3
 Pop
@@ -1038,19 +1038,19 @@ Jump loc12b4
 loc12af:Jump loc126b
 loc12b4:Push register1, "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc13af
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
 StoreRegister 11
 Pop
-Push 0, register1, "pop"
+Push 0.0, register1, "pop"
 CallMethod
 StoreRegister 3
 Pop
-Push 0, register3, "getDepth"
+Push 0.0, register3, "getDepth"
 CallMethod
 StoreRegister 4
 Pop
@@ -1059,7 +1059,7 @@ Add2
 Greater
 Not
 If loc1387
-Push register4, 0
+Push register4, 0.0
 Less2
 Not
 Not
@@ -1102,11 +1102,11 @@ StoreRegister 3
 Pop
 loc13cb:Push register1, "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc1414
-Push 0, register1, "shift"
+Push 0.0, register1, "shift"
 CallMethod
 StoreRegister 3
 Pop
@@ -1118,19 +1118,19 @@ Jump loc1414
 loc140f:Jump loc13cb
 loc1414:Push register1, "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc14dd
-Push 0, register3, "getDepth"
+Push 0.0, register3, "getDepth"
 CallMethod
 StoreRegister 11
 Pop
-Push 0, register1, "shift"
+Push 0.0, register1, "shift"
 CallMethod
 StoreRegister 3
 Pop
-Push 0, register3, "getDepth"
+Push 0.0, register3, "getDepth"
 CallMethod
 StoreRegister 4
 Pop
@@ -1141,7 +1141,7 @@ PushDuplicate
 Not
 If loc1496
 Pop
-Push register4, 0
+Push register4, 0.0
 Greater
 loc1496:Not
 If loc14b5
@@ -1163,7 +1163,7 @@ loc14d8:Jump loc1414
 loc14dd:SetMember
 Push register2, "getDepthByFlag"
 DefineFunction2 "", 2, 11, false, false, true, false, true, false, true, false, false, 10, "depthFlag", 1, "depthTable" {
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 Push register10, "mx"
@@ -1189,7 +1189,7 @@ GetMember
 Equals2
 loc1555:Not
 If loc16f4
-Push 0
+Push 0.0
 StoreRegister 5
 Pop
 Push false
@@ -1233,7 +1233,7 @@ Equals2
 Not
 loc15e2:Not
 If loc16b0
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 Push "mx"
 GetVariable
@@ -1252,7 +1252,7 @@ GetMember
 Not
 Not
 If loc1656
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 Push register2, 2, "Math"
 GetVariable
@@ -1265,7 +1265,7 @@ loc1656:Push register7
 Not
 Not
 If loc1687
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 StoreRegister 5
 Pop
@@ -1273,7 +1273,7 @@ Push true
 StoreRegister 7
 Pop
 Jump loc16b0
-loc1687:Push 0, register9, "getDepth"
+loc1687:Push 0.0, register9, "getDepth"
 CallMethod
 Push register5, 2, "Math"
 GetVariable
@@ -1345,7 +1345,7 @@ Equals2
 Not
 loc1778:Not
 If loc17d8
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 Push "mx"
 GetVariable
@@ -1359,7 +1359,7 @@ Greater
 Not
 Not
 If loc17d8
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 Push register2, 2, "Math"
 GetVariable
@@ -1419,7 +1419,7 @@ Equals2
 Not
 loc1876:Not
 If loc18d6
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 Push "mx"
 GetVariable
@@ -1433,7 +1433,7 @@ Greater
 Not
 Not
 If loc18d6
-Push 0, register9, "getDepth"
+Push 0.0, register9, "getDepth"
 CallMethod
 Push register2, 2, "Math"
 GetVariable
@@ -1507,7 +1507,7 @@ Equals2
 Not
 Not
 If loc19c8
-Push 0, register4, "getDepth"
+Push 0.0, register4, "getDepth"
 CallMethod
 Push register6, 2, "Math"
 GetVariable
@@ -1530,7 +1530,7 @@ Return
 SetMember
 Push register2, "buildDepthTable"
 DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push 0, "Array"
+Push 0.0, "Array"
 NewObject
 StoreRegister 5
 Pop
@@ -1578,7 +1578,7 @@ Push register1
 Equals2
 Not
 If loc1ab8
-Push register5, 0, register2, "getDepth"
+Push register5, 0.0, register2, "getDepth"
 CallMethod
 Push register2
 SetMember
@@ -1620,7 +1620,7 @@ GetVariable
 Push "createEmptyMovieClip"
 CallMethod
 SetMember
-Push register1, "__depthManager", 0, "mx"
+Push register1, "__depthManager", 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember

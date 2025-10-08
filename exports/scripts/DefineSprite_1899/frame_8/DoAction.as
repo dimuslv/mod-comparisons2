@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   _root.sfx.playSound("trigger");
+	_root.sfx.playSound("trigger");
 }

@@ -1,7 +1,7 @@
 ConstantPool "reload2", "_root", "game", "getAlive", "gotoAndStop"
 Push "reload2"
 Trace
-Push 0, "_root"
+Push 0.0, "_root"
 GetVariable
 Push "game"
 GetMember

@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   this._parent.finishAlert();
+	this._parent.finishAlert();
 }

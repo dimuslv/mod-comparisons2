@@ -1,4 +1,4 @@
-Push 0, "_root"
+Push 0.0, "_root"
 GetVariable
 Push "game"
 GetMember

@@ -14,19 +14,19 @@
     </g>
     <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -5.0, -3.0)">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 4.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_90"/>
-        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 11.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
-        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 14.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_00"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 4.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_90"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 11.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 14.0, 9.0)" width="15.0" xlink:href="#font_FFF_Idea_8pt_st_00"/>
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_90">
-      <path d="M640.0 -384.0 L640.0 -512.0 256.0 -512.0 256.0 -384.0 640.0 -384.0 M640.0 -256.0 L128.0 -256.0 128.0 -640.0 768.0 -640.0 768.0 128.0 128.0 128.0 128.0 0.0 640.0 0.0 640.0 -256.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M568.9 -341.35 L568.9 -455.1 227.55 -455.1 227.55 -341.35 568.9 -341.35 M568.9 -227.55 L113.8 -227.55 113.8 -568.9 682.65 -568.9 682.65 113.8 113.8 113.8 113.8 0.0 568.9 0.0 568.9 -227.55" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_.0">
-      <path d="M256.0 0.0 L256.0 128.0 128.0 128.0 128.0 0.0 256.0 0.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M227.55 0.0 L227.55 113.8 113.8 113.8 113.8 0.0 227.55 0.0" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_00">
-      <path d="M640.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -512.0 M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M568.9 -455.1 L227.55 -455.1 227.55 0.0 568.9 0.0 568.9 -455.1 M682.65 -568.9 L682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 24.1, 20.25)">
       <use ffdec:characterId="1726" height="40.5" transform="matrix(1.0, 0.0, 0.0, 1.0, -24.1, -20.25)" width="48.25" xlink:href="#shape1"/>

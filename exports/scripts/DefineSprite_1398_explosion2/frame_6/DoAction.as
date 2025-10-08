@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   this.checkRobots();
+	this.checkRobots();
 }

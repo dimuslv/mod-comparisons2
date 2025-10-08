@@ -8,7 +8,7 @@ Not
 If loc00fb
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc00fb:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0133:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "highscore", 0, "Object"
+Push "highscore", 0.0, "Object"
 NewObject
 SetMember
 loc0177:Pop
@@ -71,7 +71,7 @@ Push "highscore"
 GetMember
 Push "LetterButton"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "letter_text", register1, "_name"

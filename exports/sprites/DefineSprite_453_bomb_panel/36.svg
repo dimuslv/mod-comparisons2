@@ -21,25 +21,25 @@
     </g>
     <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -1.0, -3.0)">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-        <use fill="#81da20" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 0.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
-        <use fill="#81da20" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 7.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
-        <use fill="#81da20" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 14.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
-        <use fill="#81da20" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 21.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
-        <use fill="#81da20" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 28.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
-        <use fill="#81da20" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 35.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#81da20" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 0.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#81da20" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 7.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+        <use fill="#81da20" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 14.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#81da20" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 21.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#81da20" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 28.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#81da20" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 35.0, 9.0)" width="40.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_R0">
-      <path d="M768.0 -256.0 L768.0 128.0 640.0 128.0 640.0 -256.0 768.0 -256.0 M640.0 -384.0 L640.0 -512.0 256.0 -512.0 256.0 -384.0 640.0 -384.0 640.0 -256.0 256.0 -256.0 256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -384.0 640.0 -384.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M682.65 -227.55 L682.65 113.8 568.9 113.8 568.9 -227.55 682.65 -227.55 M568.9 -341.35 L568.9 -455.1 227.55 -455.1 227.55 -341.35 568.9 -341.35 568.9 -227.55 227.55 -227.55 227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -341.35 568.9 -341.35" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_U0">
-      <path d="M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 256.0 -640.0 256.0 0.0 640.0 0.0 640.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M682.65 -568.9 L682.65 113.8 113.8 113.8 113.8 -568.9 227.55 -568.9 227.55 0.0 568.9 0.0 568.9 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_N0">
-      <path d="M768.0 -640.0 L768.0 128.0 640.0 128.0 640.0 -512.0 256.0 -512.0 256.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M682.65 -568.9 L682.65 113.8 568.9 113.8 568.9 -455.1 227.55 -455.1 227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_E0">
-      <path d="M768.0 -512.0 L256.0 -512.0 256.0 -384.0 768.0 -384.0 768.0 -256.0 256.0 -256.0 256.0 0.0 768.0 0.0 768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0 768.0 -512.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M682.65 -455.1 L227.55 -455.1 227.55 -341.35 682.65 -341.35 682.65 -227.55 227.55 -227.55 227.55 0.0 682.65 0.0 682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -455.1" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="text1" transform="matrix(1.0, 0.0, 0.0, 1.0, 2.0, 2.0)">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, -2.0, -2.0)">
@@ -47,7 +47,7 @@
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_50">
-      <path d="M768.0 -512.0 L256.0 -512.0 256.0 -384.0 768.0 -384.0 768.0 128.0 128.0 128.0 128.0 0.0 640.0 0.0 640.0 -256.0 128.0 -256.0 128.0 -640.0 768.0 -640.0 768.0 -512.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M682.65 -455.1 L227.55 -455.1 227.55 -341.35 682.65 -341.35 682.65 113.8 113.8 113.8 113.8 0.0 568.9 0.0 568.9 -227.55 113.8 -227.55 113.8 -568.9 682.65 -568.9 682.65 -455.1" fill-rule="evenodd" stroke="none"/>
     </g>
   </defs>
 </svg>

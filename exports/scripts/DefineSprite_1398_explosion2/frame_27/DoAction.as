@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   this.finishExplode();
-   stop();
+	this.finishExplode();
+	stop();
 }

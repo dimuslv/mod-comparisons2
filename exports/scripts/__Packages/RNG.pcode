@@ -30,7 +30,7 @@ Push register2
 Push 65535
 BitAnd
 Multiply
-Push 4294967296
+Push 4294967296.0
 Modulo
 Add2
 StoreRegister 3
@@ -206,13 +206,13 @@ GetVariable
 Push "random"
 CallMethod
 Return
-loc0377:Push 2147483648
+loc0377:Push 2147483648.0
 Push 1
 Push "RNG"
 GetVariable
 Push "_random"
 CallMethod
-Push 2147483648
+Push 2147483648.0
 Divide
 Return
 }

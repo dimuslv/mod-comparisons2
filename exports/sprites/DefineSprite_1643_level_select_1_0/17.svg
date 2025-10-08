@@ -14,19 +14,19 @@
     </g>
     <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -2.0, -3.0)">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 1.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_10"/>
-        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 5.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
-        <use fill="#83dd22" height="8.0" transform="matrix(0.0078, 0.0, 0.0, 0.0078, 8.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_00"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 1.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_10"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 5.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
+        <use fill="#83dd22" height="8.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 8.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_00"/>
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_10">
-      <path d="M384.0 -640.0 L384.0 128.0 256.0 128.0 256.0 -512.0 128.0 -512.0 128.0 -640.0 384.0 -640.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M341.35 -568.9 L341.35 113.8 227.55 113.8 227.55 -455.1 113.8 -455.1 113.8 -568.9 341.35 -568.9" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_.0">
-      <path d="M256.0 0.0 L256.0 128.0 128.0 128.0 128.0 0.0 256.0 0.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M227.55 0.0 L227.55 113.8 113.8 113.8 113.8 0.0 227.55 0.0" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_00">
-      <path d="M640.0 -512.0 L256.0 -512.0 256.0 0.0 640.0 0.0 640.0 -512.0 M768.0 -640.0 L768.0 128.0 128.0 128.0 128.0 -640.0 768.0 -640.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M568.9 -455.1 L227.55 -455.1 227.55 0.0 568.9 0.0 568.9 -455.1 M682.65 -568.9 L682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 24.0, 19.9)">
       <use ffdec:characterId="1636" height="39.75" transform="matrix(1.0, 0.0, 0.0, 1.0, -24.0, -19.9)" width="48.0" xlink:href="#shape1"/>

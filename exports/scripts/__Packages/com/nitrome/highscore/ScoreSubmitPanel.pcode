@@ -8,7 +8,7 @@ Not
 If loc016a
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc016a:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc01a2:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "highscore", 0, "Object"
+Push "highscore", 0.0, "Object"
 NewObject
 SetMember
 loc01e6:Pop
@@ -71,7 +71,7 @@ Push "highscore"
 GetMember
 Push "ScoreSubmitPanel"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }
@@ -94,7 +94,7 @@ StoreRegister 2
 Pop
 Push register2, "onLoad"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
-Push 0, register2, "ng"
+Push 0.0, register2, "ng"
 GetMember
 Push "getNitrome"
 CallMethod
@@ -104,7 +104,7 @@ Not
 If loc02e0
 Push register1, "score_text"
 GetMember
-Push "text", "YOUR SCORE IS ", 0, "com"
+Push "text", "YOUR SCORE IS ", 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -151,14 +151,14 @@ Push register1, "name_text"
 GetMember
 Push "text", register4
 SetMember
-Push register2, "name_entered", 0, register1, "name_text"
+Push register2, "name_entered", 0.0, register1, "name_text"
 GetMember
 Push "text"
 GetMember
 Push "toUpperCase"
 CallMethod
 SetMember
-Push 0, register1, "submit_button"
+Push 0.0, register1, "submit_button"
 GetMember
 Push "enable"
 CallMethod
@@ -177,7 +177,7 @@ Return
 SetMember
 Push register2, "clearName"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
-Push 0, register1, "submit_button"
+Push 0.0, register1, "submit_button"
 GetMember
 Push "disable"
 CallMethod

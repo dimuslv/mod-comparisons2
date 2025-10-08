@@ -10,7 +10,7 @@ Push "_global"
 GetVariable
 Push "Toxic"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, true, false, true {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 Push register2, "useFocusRect", false
@@ -35,13 +35,13 @@ StoreRegister 2
 Pop
 Push register2, "init"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, "init"
+Push 0.0, register2, "init"
 CallMethod
 Pop
-Push register1, "letters", 0, "Array"
+Push register1, "letters", 0.0, "Array"
 NewObject
 SetMember
-Push register1, "holder", 0, "Array"
+Push register1, "holder", 0.0, "Array"
 NewObject
 SetMember
 Push register1, "useHandCursor", false
@@ -63,10 +63,10 @@ Push register2, "__set__text"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newText" {
 Push register1, "__text", register2
 SetMember
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
-Push 0, register1, "__get__text"
+Push 0.0, register1, "__get__text"
 CallMethod
 Return
 }
@@ -82,10 +82,10 @@ Push register2, "__set__tracking"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newTracking" {
 Push register1, "__tracking", register2
 SetMember
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
-Push 0, register1, "__get__tracking"
+Push 0.0, register1, "__get__tracking"
 CallMethod
 Return
 }
@@ -101,10 +101,10 @@ Push register2, "__set__line_spacing"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newLine_spacing" {
 Push register1, "__line_spacing", register2
 SetMember
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
-Push 0, register1, "__get__line_spacing"
+Push 0.0, register1, "__get__line_spacing"
 CallMethod
 Return
 }
@@ -120,28 +120,28 @@ Push register2, "__set__centered"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "newCentered" {
 Push register1, "__centered", register2
 SetMember
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
-Push 0, register1, "__get__centered"
+Push 0.0, register1, "__get__centered"
 CallMethod
 Return
 }
 SetMember
 Push register2, "draw"
 DefineFunction2 "", 0, 8, false, false, false, true, true, false, false, true, false {
-Push 0, register1, "base"
+Push 0.0, register1, "base"
 GetMember
 Push "removeMovieClip"
 CallMethod
 Pop
-Push register1, "base", 0, "base", 2, register1, "createEmptyMovieClip"
+Push register1, "base", 0.0, "base", 2, register1, "createEmptyMovieClip"
 CallMethod
 SetMember
-Push register1, "holder", 0, "Array"
+Push register1, "holder", 0.0, "Array"
 NewObject
 SetMember
-Push 0
+Push 0.0
 StoreRegister 5
 Pop
 Push register5, "holder", register5
@@ -155,17 +155,17 @@ GetMember
 Push "push"
 CallMethod
 Pop
-Push register1, "letters", 0, "Array"
+Push register1, "letters", 0.0, "Array"
 NewObject
 SetMember
-Push 0, "Array"
+Push 0.0, "Array"
 NewObject
 Push 1, register1, "letters"
 GetMember
 Push "push"
 CallMethod
 Pop
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
 loc05c1:Push register4, register1, "__text"
@@ -175,7 +175,7 @@ GetMember
 Less2
 Not
 If loc081a
-Push register1, "__text", 0, register1, "__text"
+Push register1, "__text", 0.0, register1, "__text"
 GetMember
 Push "toLowerCase"
 CallMethod
@@ -259,7 +259,7 @@ loc0734:Push register5
 Increment
 StoreRegister 5
 Pop
-Push 0, "Array"
+Push 0.0, "Array"
 NewObject
 Push 1, register1, "letters"
 GetMember
@@ -281,7 +281,7 @@ Push register1, "holder"
 GetMember
 Push register5
 GetMember
-Push "_y", 0, register1, "__get__line_spacing"
+Push "_y", 0.0, register1, "__get__line_spacing"
 CallMethod
 Push register5
 Multiply
@@ -310,7 +310,7 @@ Increment
 StoreRegister 4
 Pop
 Jump loc05c1
-loc081a:Push 0
+loc081a:Push 0.0
 StoreRegister 4
 Pop
 loc082b:Push register4, register1, "letters"
@@ -433,7 +433,7 @@ Increment
 StoreRegister 4
 Pop
 Jump loc082b
-loc09c3:Push 0, register2, "draw"
+loc09c3:Push 0.0, register2, "draw"
 CallMethod
 Pop
 }

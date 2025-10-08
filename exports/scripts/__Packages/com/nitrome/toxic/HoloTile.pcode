@@ -8,7 +8,7 @@ Not
 If loc00b7
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc00b7:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc00ef:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "toxic", 0, "Object"
+Push "toxic", 0.0, "Object"
 NewObject
 SetMember
 loc0133:Pop
@@ -71,7 +71,7 @@ Push "toxic"
 GetMember
 Push "HoloTile"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }

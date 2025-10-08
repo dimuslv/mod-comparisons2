@@ -8,7 +8,7 @@ Not
 If loc0111
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc0111:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0149:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "game", 0, "Object"
+Push "game", 0.0, "Object"
 NewObject
 SetMember
 loc018d:Pop
@@ -71,10 +71,10 @@ Push "game"
 GetMember
 Push "MusicToggle"
 DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
-Push 0, register3, "mc"
+Push 0.0, register3, "mc"
 GetMember
 Push "getMusicOn"
 CallMethod
@@ -128,7 +128,7 @@ Pop
 SetMember
 Push register2, "onPress"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
-Push 0, register2, "mc"
+Push 0.0, register2, "mc"
 GetMember
 Push "toggleMusic"
 CallMethod
@@ -144,7 +144,7 @@ Push register3, true
 Equals2
 Not
 If loc0395
-Push 0, register2, "mc"
+Push 0.0, register2, "mc"
 GetMember
 Push "getMusicOn"
 CallMethod
@@ -156,7 +156,7 @@ Push "_on_over", 1, register1, "gotoAndStop"
 CallMethod
 Pop
 Jump loc0390
-loc035d:Push 0, register2, "mc"
+loc035d:Push 0.0, register2, "mc"
 GetMember
 Push "getMusicOn"
 CallMethod
@@ -172,7 +172,7 @@ loc0395:Push register3, false
 Equals2
 Not
 If loc040e
-Push 0, register2, "mc"
+Push 0.0, register2, "mc"
 GetMember
 Push "getMusicOn"
 CallMethod
@@ -184,7 +184,7 @@ Push "_on_up", 1, register1, "gotoAndStop"
 CallMethod
 Pop
 Jump loc040e
-loc03db:Push 0, register2, "mc"
+loc03db:Push 0.0, register2, "mc"
 GetMember
 Push "getMusicOn"
 CallMethod

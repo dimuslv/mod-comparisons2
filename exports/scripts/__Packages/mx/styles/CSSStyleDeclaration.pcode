@@ -8,7 +8,7 @@ Not
 If loc0116
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0116:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "styles", 0, "Object"
+Push "styles", 0.0, "Object"
 NewObject
 SetMember
 loc014e:Pop
@@ -180,7 +180,7 @@ Push true
 Return
 }
 SetMember
-Push register1, "classConstructed", 0, "mx"
+Push register1, "classConstructed", 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember

@@ -8,7 +8,7 @@ Not
 If loc0154
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0154:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "events", 0, "Object"
+Push "events", 0.0, "Object"
 NewObject
 SetMember
 loc018c:Pop
@@ -67,7 +67,7 @@ Pop
 Push undefined
 StoreRegister 1
 Pop
-Push 0
+Push 0.0
 StoreRegister 1
 Pop
 loc0235:Push register1, register4
@@ -114,7 +114,7 @@ Push "events"
 GetMember
 Push "EventDispatcher"
 GetMember
-Push "_fEventDispatcher", 0, "mx"
+Push "_fEventDispatcher", 0.0, "mx"
 GetVariable
 Push "events"
 GetMember
@@ -291,7 +291,7 @@ Push undefined
 Equals2
 Not
 If loc058b
-Push register1, register3, 0, "Array"
+Push register1, register3, 0.0, "Array"
 NewObject
 SetMember
 loc058b:Push 1, register3, register1, 3, register2, "ASSetPropFlags"

@@ -1,10 +1,10 @@
 ConstantPool "byt", "_root", "getBytesLoaded", "tot", "getBytesTotal", "p", "Math", "round", "this", "percent_text", "text", "%", "masker", "_xscale", "done", "nitrome", "tt", "doTween", ""
-Push "byt", 0, "_root"
+Push "byt", 0.0, "_root"
 GetVariable
 Push "getBytesLoaded"
 CallMethod
 DefineLocal
-Push "tot", 0, "_root"
+Push "tot", 0.0, "_root"
 GetVariable
 Push "getBytesTotal"
 CallMethod

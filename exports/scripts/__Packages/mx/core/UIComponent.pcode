@@ -8,7 +8,7 @@ Not
 If loc0334
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0334:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "core", 0, "Object"
+Push "core", 0.0, "Object"
 NewObject
 SetMember
 loc036c:Pop
@@ -46,7 +46,7 @@ Push "core"
 GetMember
 Push "UIComponent"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }
@@ -95,7 +95,7 @@ DefineFunction2 "", 3, 3, false, false, true, false, true, false, false, true, f
 Push register2, 1, register1, "setEnabled"
 CallMethod
 Pop
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
 Push register1, "stylecache"
@@ -109,14 +109,14 @@ Return
 SetMember
 Push register2, "setEnabled"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "enabled" {
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "getFocus"
 DefineFunction "", 0 {
-Push "selFocus", 0, "Selection"
+Push "selFocus", 0.0, "Selection"
 GetVariable
 Push "getFocus"
 CallMethod
@@ -203,7 +203,7 @@ InitObject
 Push 1, register1, "dispatchEvent"
 CallMethod
 Pop
-Push 0, register1, "getFocusManager"
+Push 0.0, register1, "getFocusManager"
 CallMethod
 Push "bDrawFocus"
 GetMember
@@ -300,7 +300,7 @@ Push register1, 1, register1, "findFocusFromObject"
 CallMethod
 StoreRegister 3
 Pop
-Push 0, register1, "getFocus"
+Push 0.0, register1, "getFocus"
 CallMethod
 StoreRegister 2
 Pop
@@ -312,7 +312,7 @@ If loc0857
 Push false, 1, register2, "drawFocus"
 CallMethod
 Pop
-Push 0, register1, "getFocusManager"
+Push 0.0, register1, "getFocusManager"
 CallMethod
 Push "bDrawFocus"
 GetMember
@@ -332,13 +332,13 @@ Push register1, 1, register1, "findFocusFromObject"
 CallMethod
 StoreRegister 2
 Pop
-Push register2, 0, register1, "getFocus"
+Push register2, 0.0, register1, "getFocus"
 CallMethod
 Equals2
 Not
 Not
 If loc08ab
-Push 0, register2, "setFocus"
+Push 0.0, register2, "setFocus"
 CallMethod
 Pop
 }
@@ -371,7 +371,7 @@ DefineFunction "", 0 {
 SetMember
 Push register2, "init"
 DefineFunction2 "", 0, 4, false, false, false, true, true, false, false, true, true {
-Push 0, register2, "init"
+Push 0.0, register2, "init"
 CallMethod
 Pop
 Push register1, "_xscale", 100
@@ -428,7 +428,7 @@ SetMember
 Push register2, "origBorderStyles", "themeColor", 16711680, 1
 InitObject
 SetMember
-Push register2, "clipParameters", 0
+Push register2, "clipParameters", 0.0
 InitObject
 SetMember
 Push register1, "mergedClipParameters", "mx"

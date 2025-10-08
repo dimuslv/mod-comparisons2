@@ -1,3 +1,3 @@
 on(press){
-   getUrl("http://www.nitrome.com", "");
+	getURL("http://www.nitrome.com");
 }

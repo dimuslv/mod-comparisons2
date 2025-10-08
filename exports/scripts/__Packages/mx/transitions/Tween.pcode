@@ -8,7 +8,7 @@ Not
 If loc0386
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0386:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "transitions", 0, "Object"
+Push "transitions", 0.0, "Object"
 NewObject
 SetMember
 loc03be:Pop
@@ -46,7 +46,7 @@ Push "transitions"
 GetMember
 Push "Tween"
 DefineFunction2 "", 7, 10, false, false, true, false, false, true, false, true, false, 8, "obj", 5, "prop", 4, "func", 3, "begin", 6, "finish", 7, "duration", 9, "useSeconds" {
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "transitions"
 GetMember
@@ -84,13 +84,13 @@ SetMember
 loc04c3:Push register6, 1, register1, "__set__finish"
 CallMethod
 Pop
-Push register1, "_listeners", 0
+Push register1, "_listeners", 0.0
 InitArray
 SetMember
 Push register1, 1, register1, "addListener"
 CallMethod
 Pop
-Push 0, register1, "start"
+Push 0.0, register1, "start"
 CallMethod
 Pop
 }
@@ -105,7 +105,7 @@ DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, f
 Push register1, "prevTime", register1, "_time"
 GetMember
 SetMember
-Push register2, 0, register1, "__get__duration"
+Push register2, 0.0, register1, "__get__duration"
 CallMethod
 Greater
 Not
@@ -120,7 +120,7 @@ Subtract
 Push 1, register1, "rewind"
 CallMethod
 Pop
-Push 0, register1, "update"
+Push 0.0, register1, "update"
 CallMethod
 Pop
 Push register1, "onMotionLooped", 2, register1, "broadcastMessage"
@@ -134,33 +134,33 @@ If loc05d2
 Push register1, "_time", register1, "_duration"
 GetMember
 SetMember
-Push 0, register1, "update"
+Push 0.0, register1, "update"
 CallMethod
 Pop
-loc05d2:Push 0, register1, "stop"
+loc05d2:Push 0.0, register1, "stop"
 CallMethod
 Pop
 Push register1, "onMotionFinished", 2, register1, "broadcastMessage"
 CallMethod
 Pop
 loc05f6:Jump loc0655
-loc05fb:Push register2, 0
+loc05fb:Push register2, 0.0
 Less2
 Not
 If loc0639
-Push 0, register1, "rewind"
+Push 0.0, register1, "rewind"
 CallMethod
 Pop
-Push 0, register1, "update"
+Push 0.0, register1, "update"
 CallMethod
 Pop
 Jump loc0655
 loc0639:Push register1, "_time", register2
 SetMember
-Push 0, register1, "update"
+Push 0.0, register1, "update"
 CallMethod
 Pop
-loc0655:Push 0, register1, "__get__time"
+loc0655:Push 0.0, register1, "__get__time"
 CallMethod
 Return
 }
@@ -179,7 +179,7 @@ Equals2
 PushDuplicate
 If loc06bb
 Pop
-Push register3, 0
+Push register3, 0.0
 Greater
 Not
 loc06bb:If loc06ca
@@ -188,7 +188,7 @@ Jump loc06d2
 loc06ca:Push register2, "Infinity"
 GetMember
 loc06d2:SetMember
-Push 0, register1, "__get__duration"
+Push 0.0, register1, "__get__duration"
 CallMethod
 Return
 }
@@ -206,7 +206,7 @@ Push register1, "isPlaying"
 GetMember
 StoreRegister 2
 Pop
-Push 0, register1, "stopEnterFrame"
+Push 0.0, register1, "stopEnterFrame"
 CallMethod
 Pop
 Push register1, "_fps", register3
@@ -214,10 +214,10 @@ SetMember
 Push register2
 Not
 If loc075f
-Push 0, register1, "startEnterFrame"
+Push 0.0, register1, "startEnterFrame"
 CallMethod
 Pop
-loc075f:Push 0, register1, "__get__FPS"
+loc075f:Push 0.0, register1, "__get__FPS"
 CallMethod
 Return
 }
@@ -234,7 +234,7 @@ DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, f
 Push register2, 1, register1, "setPosition"
 CallMethod
 Pop
-Push 0, register1, "__get__position"
+Push 0.0, register1, "__get__position"
 CallMethod
 Return
 }
@@ -258,14 +258,14 @@ GetMember
 Push register1, "onMotionChanged", 3, register1, "broadcastMessage"
 CallMethod
 Pop
-Push 0, "updateAfterEvent"
+Push 0.0, "updateAfterEvent"
 CallFunction
 Pop
 }
 SetMember
 Push register2, "__get__position"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "getPosition"
+Push 0.0, register1, "getPosition"
 CallMethod
 Return
 }
@@ -297,7 +297,7 @@ Push register1, "change", register2, register1, "begin"
 GetMember
 Subtract
 SetMember
-Push 0, register1, "__get__finish"
+Push 0.0, register1, "__get__finish"
 CallMethod
 Return
 }
@@ -328,14 +328,14 @@ If loc0970
 Push register2, 1, register1, "__set__duration"
 CallMethod
 Pop
-loc0970:Push 0, register1, "start"
+loc0970:Push 0.0, register1, "start"
 CallMethod
 Pop
 }
 SetMember
 Push register2, "yoyo"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "__get__time"
+Push 0.0, register1, "__get__time"
 CallMethod
 Push register1, "begin"
 GetMember
@@ -393,10 +393,10 @@ SetMember
 SetMember
 Push register2, "start"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "rewind"
+Push 0.0, register1, "rewind"
 CallMethod
 Pop
-Push 0, register1, "startEnterFrame"
+Push 0.0, register1, "startEnterFrame"
 CallMethod
 Pop
 Push register1, "onMotionStarted", 2, register1, "broadcastMessage"
@@ -406,7 +406,7 @@ Pop
 SetMember
 Push register2, "stop"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "stopEnterFrame"
+Push 0.0, register1, "stopEnterFrame"
 CallMethod
 Pop
 Push register1, "onMotionStopped", 2, register1, "broadcastMessage"
@@ -416,10 +416,10 @@ Pop
 SetMember
 Push register2, "resume"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "fixTime"
+Push 0.0, register1, "fixTime"
 CallMethod
 Pop
-Push 0, register1, "startEnterFrame"
+Push 0.0, register1, "startEnterFrame"
 CallMethod
 Pop
 Push register1, "onMotionResumed", 2, register1, "broadcastMessage"
@@ -434,12 +434,12 @@ Equals2
 If loc0b81
 Push register2
 Jump loc0b8d
-loc0b81:Push 0
+loc0b81:Push 0.0
 loc0b8d:SetMember
-Push 0, register1, "fixTime"
+Push 0.0, register1, "fixTime"
 CallMethod
 Pop
-Push 0, register1, "update"
+Push 0.0, register1, "update"
 CallMethod
 Pop
 }
@@ -451,7 +451,7 @@ GetMember
 Push 1, register1, "__set__time"
 CallMethod
 Pop
-Push 0, register1, "fixTime"
+Push 0.0, register1, "fixTime"
 CallMethod
 Pop
 }
@@ -483,7 +483,7 @@ Pop
 loc0c53:SetMember
 Push register2, "onEnterFrame"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "nextFrame"
+Push 0.0, register1, "nextFrame"
 CallMethod
 Pop
 }
@@ -539,7 +539,7 @@ Pop
 SetMember
 Push register1, "version", "1.1.0.52"
 SetMember
-Push register1, "__initBeacon", 0, "mx"
+Push register1, "__initBeacon", 0.0, "mx"
 GetVariable
 Push "transitions"
 GetMember

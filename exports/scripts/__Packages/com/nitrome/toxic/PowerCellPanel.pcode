@@ -9,7 +9,7 @@ If loc00ca
 Push "_global"
 GetVariable
 Push "com"
-Push 0
+Push 0.0
 Push "Object"
 NewObject
 SetMember
@@ -28,7 +28,7 @@ GetVariable
 Push "com"
 GetMember
 Push "nitrome"
-Push 0
+Push 0.0
 Push "Object"
 NewObject
 SetMember
@@ -51,7 +51,7 @@ GetMember
 Push "nitrome"
 GetMember
 Push "toxic"
-Push 0
+Push 0.0
 Push "Object"
 NewObject
 SetMember

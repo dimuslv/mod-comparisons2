@@ -1,5 +1,5 @@
 ConstantPool "pcm", "com", "nitrome", "toxic", "PowerCellMemory", "total_power_cells", "getTotalCollected", "powercell_text", "text", "/", "Global", "TOTAL_POWER_CELLS", "level_powercells", "Array", "i", "getLevelCollected"
-Push "pcm", 0, "com"
+Push "pcm", 0.0, "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -8,7 +8,7 @@ GetMember
 Push "PowerCellMemory"
 NewMethod
 DefineLocal
-Push "total_power_cells", 0, "pcm"
+Push "total_power_cells", 0.0, "pcm"
 GetVariable
 Push "getTotalCollected"
 CallMethod
@@ -32,7 +32,7 @@ GetMember
 Add2
 ToString
 SetMember
-Push "level_powercells", 0, "Array"
+Push "level_powercells", 0.0, "Array"
 NewObject
 DefineLocal
 Push "i", 1

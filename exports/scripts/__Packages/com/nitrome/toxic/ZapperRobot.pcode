@@ -8,7 +8,7 @@ Not
 If loc01cf
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc01cf:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0207:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "toxic", 0, "Object"
+Push "toxic", 0.0, "Object"
 NewObject
 SetMember
 loc024b:Pop
@@ -71,7 +71,7 @@ Push "toxic"
 GetMember
 Push "ZapperRobot"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }
@@ -100,7 +100,7 @@ SetMember
 SetMember
 Push register2, "main"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "getOnScreen"
+Push 0.0, register1, "getOnScreen"
 CallMethod
 Push true
 Equals2
@@ -110,14 +110,14 @@ Push register1, "_visible", true
 SetMember
 Push register1, "state"
 GetMember
-Push 0
+Push 0.0
 Equals2
 Not
 If loc0375
-Push 0, register1, "doRotate"
+Push 0.0, register1, "doRotate"
 CallMethod
 Pop
-Push 0, register1, "checkBombs"
+Push 0.0, register1, "checkBombs"
 CallMethod
 Pop
 Jump loc0435
@@ -139,10 +139,10 @@ Less2
 Not
 Not
 If loc03e2
-Push 0, register1, "clearZap"
+Push 0.0, register1, "clearZap"
 CallMethod
 Pop
-Push register1, "wait_count", 0
+Push register1, "wait_count", 0.0
 SetMember
 Push register1, "state", 2
 SetMember
@@ -165,7 +165,7 @@ Less2
 Not
 Not
 If loc0435
-Push register1, "state", 0
+Push register1, "state", 0.0
 SetMember
 loc0435:Jump loc0444
 loc043a:Push register1, "_visible", false
@@ -183,7 +183,7 @@ Push 90
 Add2
 StoreRegister 7
 Pop
-Push register7, 0
+Push register7, 0.0
 Less2
 Not
 If loc049c
@@ -200,7 +200,7 @@ Push register7, 360
 Subtract
 StoreRegister 7
 Pop
-loc04be:Push 0
+loc04be:Push 0.0
 StoreRegister 2
 Pop
 loc04cf:Push register2, 600
@@ -258,7 +258,7 @@ Push "round"
 CallMethod
 StoreRegister 3
 Pop
-Push register4, 0
+Push register4, 0.0
 Less2
 PushDuplicate
 If loc05b8
@@ -277,7 +277,7 @@ Greater
 loc05b8:PushDuplicate
 If loc05ce
 Pop
-Push register3, 0
+Push register3, 0.0
 Less2
 loc05ce:PushDuplicate
 If loc05f6
@@ -332,7 +332,7 @@ Pop
 loc068a:SetMember
 Push register2, "doZap"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, false, true, false, 3, "xpos", 2, "ypos" {
-Push 0, register1, "drawing_clip"
+Push 0.0, register1, "drawing_clip"
 GetMember
 Push "clear"
 CallMethod
@@ -342,7 +342,7 @@ GetMember
 Push "lineStyle"
 CallMethod
 Pop
-Push 0, 0, 2, register1, "drawing_clip"
+Push 0.0, 0.0, 2, register1, "drawing_clip"
 GetMember
 Push "moveTo"
 CallMethod
@@ -352,7 +352,7 @@ GetMember
 Push "lineTo"
 CallMethod
 Pop
-Push register1, "zap_count", 0
+Push register1, "zap_count", 0.0
 SetMember
 Push register1, "state", 1
 SetMember
@@ -360,7 +360,7 @@ SetMember
 SetMember
 Push register2, "clearZap"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "drawing_clip"
+Push 0.0, register1, "drawing_clip"
 GetMember
 Push "clear"
 CallMethod
@@ -399,7 +399,7 @@ Not
 If loc081b
 Push register1, "rot"
 GetMember
-Push 0, register1, "max_rot"
+Push 0.0, register1, "max_rot"
 GetMember
 Subtract
 Equals2
@@ -430,19 +430,19 @@ loc0868:Push false
 Return
 }
 SetMember
-Push register2, "rot", 0
+Push register2, "rot", 0.0
 SetMember
 Push register2, "rot_dir", 2
 SetMember
 Push register2, "max_rot", 80
 SetMember
-Push register2, "state", 0
+Push register2, "state", 0.0
 SetMember
-Push register2, "zap_count", 0
+Push register2, "zap_count", 0.0
 SetMember
 Push register2, "max_zap_count", 10
 SetMember
-Push register2, "wait_count", 0
+Push register2, "wait_count", 0.0
 SetMember
 Push register2, "max_wait_count", 30
 SetMember

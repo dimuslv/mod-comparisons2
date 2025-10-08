@@ -8,7 +8,7 @@ Not
 If loc0124
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc0124:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc015c:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "highscore", 0, "Object"
+Push "highscore", 0.0, "Object"
 NewObject
 SetMember
 loc01a0:Pop
@@ -71,10 +71,10 @@ Push "highscore"
 GetMember
 Push "ArrowButton"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
-Push 0, register1, "hideAway"
+Push 0.0, register1, "hideAway"
 CallMethod
 Pop
 }
@@ -139,7 +139,7 @@ Push "prev_arrow"
 Equals2
 Not
 If loc031d
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "shiftScoresPrev"
 CallMethod
@@ -151,7 +151,7 @@ Push "next_arrow"
 Equals2
 Not
 If loc034e
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "shiftScoresNext"
 CallMethod

@@ -8,7 +8,7 @@ Not
 If loc070b
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc070b:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "managers", 0, "Object"
+Push "managers", 0.0, "Object"
 NewObject
 SetMember
 loc0743:Pop
@@ -46,7 +46,7 @@ Push "managers"
 GetMember
 Push "FocusManager"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }
@@ -96,14 +96,14 @@ SetMember
 Push true, 1, register2, "__set__emphasized"
 CallMethod
 Pop
-loc0844:Push 0, register1, "__get__defaultPushButton"
+loc0844:Push 0.0, register1, "__get__defaultPushButton"
 CallMethod
 Return
 }
 SetMember
 Push register2, "getMaxTabIndex"
 DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 5, "o" {
-Push 0
+Push 0.0
 StoreRegister 3
 Pop
 Push undefined
@@ -180,14 +180,14 @@ Return
 SetMember
 Push register2, "__get__nextTabIndex"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "getNextTabIndex"
+Push 0.0, register1, "getNextTabIndex"
 CallMethod
 Return
 }
 SetMember
 Push register2, "relocate"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember
@@ -212,7 +212,7 @@ Pop
 SetMember
 Push register2, "init"
 DefineFunction2 "", 1, 4, false, false, false, true, true, false, false, true, true, 0, "Void" {
-Push 0, register2, "init"
+Push 0.0, register2, "init"
 CallMethod
 Pop
 Push register1, "tabEnabled", false
@@ -227,7 +227,7 @@ StoreRegister 0
 SetMember
 Push register0
 SetMember
-Push register1, "_alpha", 0
+Push register1, "_alpha", 0.0
 SetMember
 Push register1, "_parent"
 GetMember
@@ -254,7 +254,7 @@ GetMember
 Push "addEventListener"
 CallMethod
 Pop
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember
@@ -276,7 +276,7 @@ CallMethod
 Pop
 Push register1, "tabCapture"
 GetMember
-Push "tabIndex", 0
+Push "tabIndex", 0.0
 SetMember
 Push register1, "enabledChanged"
 GetMember
@@ -288,7 +288,7 @@ GetVariable
 Push "addListener"
 CallMethod
 Pop
-Push register1, "lastMouse", 0, "Object"
+Push register1, "lastMouse", 0.0, "Object"
 NewObject
 SetMember
 Push 1, "focusManager", register1, "_parent"
@@ -365,7 +365,7 @@ StoreRegister 0
 SetMember
 Push register0
 SetMember
-Push 0, register1, "getSelectionFocus"
+Push 0.0, register1, "getSelectionFocus"
 CallMethod
 StoreRegister 2
 Pop
@@ -381,7 +381,7 @@ Push register1, "lastSelFocus", register2
 SetMember
 Push register1, "lastFocus", register3
 SetMember
-loc0d57:Push 0, register1, "cancelAllDoLaters"
+loc0d57:Push 0.0, register1, "cancelAllDoLaters"
 CallMethod
 Pop
 }
@@ -441,7 +441,7 @@ If loc0e34
 Push register1, "bNeedFocus", true
 SetMember
 loc0e34:Jump loc0e82
-loc0e39:Push 0, register1, "getFocus"
+loc0e39:Push 0.0, register1, "getFocus"
 CallMethod
 StoreRegister 2
 Pop
@@ -482,7 +482,7 @@ Push "background"
 GetMember
 StoreRegister 4
 Pop
-loc0ee2:Push 0, register1, "lastFocus"
+loc0ee2:Push 0.0, register1, "lastFocus"
 GetMember
 Push "setFocus"
 CallMethod
@@ -558,7 +558,7 @@ Push "setFocus"
 CallMethod
 Pop
 Jump loc101d
-loc100b:Push 0, register1, "setFocus"
+loc100b:Push 0.0, register1, "setFocus"
 CallMethod
 Pop
 }
@@ -633,7 +633,7 @@ Return
 SetMember
 Push register2, "getSelectionFocus"
 DefineFunction "", 0 {
-Push "m", 0, "Selection"
+Push "m", 0.0, "Selection"
 GetVariable
 Push "getFocus"
 CallMethod
@@ -649,7 +649,7 @@ Return
 SetMember
 Push register2, "getFocus"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push 0, register1, "getSelectionFocus"
+Push 0.0, register1, "getSelectionFocus"
 CallMethod
 StoreRegister 2
 Pop
@@ -1715,7 +1715,7 @@ Push register2, "tabHandler"
 DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 0, "Void" {
 Push register1, "bDrawFocus", true
 SetMember
-Push 0, register1, "getSelectionFocus"
+Push 0.0, register1, "getSelectionFocus"
 CallMethod
 StoreRegister 5
 Pop
@@ -1775,7 +1775,7 @@ Equals2
 Not
 loc1fa8:Not
 If loc1fd5
-Push register1, "_foundList", 0, "Object"
+Push register1, "_foundList", 0.0, "Object"
 NewObject
 SetMember
 Push register1, "_foundList"
@@ -1838,7 +1838,7 @@ If loc20ba
 Push register5, "tabIndex"
 GetMember
 Jump loc20c6
-loc20ba:Push 0
+loc20ba:Push 0.0
 loc20c6:Push register6, 5, register1, "getTabCandidate"
 CallMethod
 Pop
@@ -1889,7 +1889,7 @@ Equals2
 Not
 Not
 If loc21af
-Push register1, "_foundList", 0, "Object"
+Push register1, "_foundList", 0.0, "Object"
 NewObject
 SetMember
 Push register1, "_foundList"
@@ -1910,7 +1910,7 @@ Push undefined
 Equals2
 Not
 If loc21e9
-Push register1, "_foundList", 0, "Object"
+Push register1, "_foundList", 0.0, "Object"
 NewObject
 SetMember
 Push register1, "_foundList"
@@ -2054,13 +2054,13 @@ Push "managers"
 GetMember
 Push "SystemManager"
 GetMember
-Push "idleFrames", 0
+Push "idleFrames", 0.0
 SetMember
 Push register1, "defaultPushButtonEnabled"
 GetMember
 Not
 If loc2430
-Push 0, "Key"
+Push 0.0, "Key"
 GetVariable
 Push "getCode"
 CallMethod
@@ -2068,7 +2068,7 @@ Push 13
 Equals2
 Not
 If loc2430
-Push 0, register1, "__get__defaultPushButton"
+Push 0.0, register1, "__get__defaultPushButton"
 CallMethod
 Push undefined
 Equals2
@@ -2313,18 +2313,18 @@ Push "managers"
 GetMember
 Push "SystemManager"
 GetMember
-Push "idleFrames", 0
+Push "idleFrames", 0.0
 SetMember
 Push "Selection"
 GetVariable
 StoreRegister 3
 Pop
-Push register3, "lastBeginIndex", 0, "Selection"
+Push register3, "lastBeginIndex", 0.0, "Selection"
 GetVariable
 Push "getBeginIndex"
 CallMethod
 SetMember
-Push register3, "lastEndIndex", 0, "Selection"
+Push register3, "lastEndIndex", 0.0, "Selection"
 GetVariable
 Push "getEndIndex"
 CallMethod

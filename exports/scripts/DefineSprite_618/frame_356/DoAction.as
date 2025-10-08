@@ -1,4 +1,4 @@
 if(!_root.aMode)
 {
-   this._parent.checkNextStage();
+	this._parent.checkNextStage();
 }

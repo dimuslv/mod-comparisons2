@@ -8,7 +8,7 @@ Not
 If loc0157
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0157:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "styles", 0, "Object"
+Push "styles", 0.0, "Object"
 NewObject
 SetMember
 loc018f:Pop
@@ -62,7 +62,7 @@ Push undefined
 Equals2
 Not
 If loc022c
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc022c:Push register1, "_tf"
@@ -87,7 +87,7 @@ Push undefined
 Equals2
 Not
 If loc029b
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc029b:Push register1, "_tf"
@@ -130,7 +130,7 @@ Push undefined
 Equals2
 Not
 If loc034e
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc034e:Push register1, "_tf"
@@ -155,7 +155,7 @@ Push undefined
 Equals2
 Not
 If loc03bd
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc03bd:Push register1, "_tf"
@@ -180,7 +180,7 @@ Push undefined
 Equals2
 Not
 If loc042c
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc042c:Push register1, "_tf"
@@ -205,7 +205,7 @@ Push undefined
 Equals2
 Not
 If loc049b
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc049b:Push register1, "_tf"
@@ -245,7 +245,7 @@ Push undefined
 Equals2
 Not
 If loc0543
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc0543:Push register1, "_tf"
@@ -270,7 +270,7 @@ Push undefined
 Equals2
 Not
 If loc05b2
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc05b2:Push register1, "_tf"
@@ -295,7 +295,7 @@ Push undefined
 Equals2
 Not
 If loc0621
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc0621:Push register1, "_tf"
@@ -320,7 +320,7 @@ Push undefined
 Equals2
 Not
 If loc0690
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc0690:Push register1, "_tf"
@@ -360,7 +360,7 @@ Push undefined
 Equals2
 Not
 If loc0738
-Push register1, "_tf", 0, "TextFormat"
+Push register1, "_tf", 0.0, "TextFormat"
 NewObject
 SetMember
 loc0738:Push register1, "_tf"

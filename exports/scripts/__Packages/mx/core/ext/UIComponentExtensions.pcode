@@ -8,7 +8,7 @@ Not
 If loc01d6
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc01d6:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "core", 0, "Object"
+Push "core", 0.0, "Object"
 NewObject
 SetMember
 loc020e:Pop
@@ -46,7 +46,7 @@ Push "mx"
 GetMember
 Push "core"
 GetMember
-Push "ext", 0, "Object"
+Push "ext", 0.0, "Object"
 NewObject
 SetMember
 loc0252:Pop
@@ -132,7 +132,7 @@ Equals2
 Not
 Not
 If loc03a4
-Push 0, register1, "getFocusManager"
+Push 0.0, register1, "getFocusManager"
 CallMethod
 Push "bDrawFocus"
 GetMember
@@ -191,7 +191,7 @@ GetMember
 Push "getFocusManager"
 GetMember
 SetMember
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember
@@ -200,7 +200,7 @@ GetMember
 Push "enableOverlappedWindows"
 CallMethod
 Pop
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "styles"
 GetMember
@@ -209,7 +209,7 @@ GetMember
 Push "enableRunTimeCSS"
 CallMethod
 Pop
-Push 0, "mx"
+Push 0.0, "mx"
 GetVariable
 Push "managers"
 GetMember
@@ -222,7 +222,7 @@ Pop
 SetMember
 Push register1, "bExtended", false
 SetMember
-Push register1, "UIComponentExtended", 0, "mx"
+Push register1, "UIComponentExtended", 0.0, "mx"
 GetVariable
 Push "core"
 GetMember

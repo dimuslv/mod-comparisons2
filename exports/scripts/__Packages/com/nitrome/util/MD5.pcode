@@ -8,7 +8,7 @@ Not
 If loc01c2
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc01c2:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc01fa:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "util", 0, "Object"
+Push "util", 0.0, "Object"
 NewObject
 SetMember
 loc023e:Pop
@@ -204,7 +204,7 @@ Push register2, "md5_ff"
 DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 2, "b", 4, "c", 3, "d", 8, "x", 6, "s", 5, "t" {
 Push register5, register6, register8, register2, register7, register2, register4
 BitAnd
-Push register2, 4294967295
+Push register2, 4294967295.0
 BitXor
 Push register3
 BitAnd
@@ -218,7 +218,7 @@ Push register2, "md5_gg"
 DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 3, "b", 4, "c", 2, "d", 8, "x", 6, "s", 5, "t" {
 Push register5, register6, register8, register3, register7, register3, register2
 BitAnd
-Push register4, register2, 4294967295
+Push register4, register2, 4294967295.0
 BitXor
 BitAnd
 BitOr
@@ -240,7 +240,7 @@ Return
 SetMember
 Push register2, "md5_ii"
 DefineFunction2 "", 7, 9, false, false, true, false, true, false, false, true, false, 7, "a", 2, "b", 4, "c", 3, "d", 8, "x", 6, "s", 5, "t" {
-Push register5, register6, register8, register2, register7, register4, register2, register3, 4294967295
+Push register5, register6, register8, register2, register7, register4, register2, register3, 4294967295.0
 BitXor
 BitOr
 BitXor
@@ -283,7 +283,7 @@ Pop
 Push 271733878
 StoreRegister 2
 Pop
-Push 0
+Push 0.0
 StoreRegister 6
 Pop
 loc0756:Push register6, register7, "length"
@@ -303,7 +303,7 @@ Pop
 Push register2
 StoreRegister 8
 Pop
-Push -680876936, 7, register7, register6, 0
+Push -680876936, 7, register7, register6, 0.0
 Add2
 GetMember
 Push register2, register3, register4, register5, 7, register1, "md5_ff"
@@ -436,7 +436,7 @@ Push register4, register5, register2, register3, 7, register1, "md5_gg"
 CallMethod
 StoreRegister 3
 Pop
-Push -373897302, 20, register7, register6, 0
+Push -373897302, 20, register7, register6, 0.0
 Add2
 GetMember
 Push register5, register2, register3, register4, 7, register1, "md5_gg"
@@ -590,7 +590,7 @@ Push register2, register3, register4, register5, 7, register1, "md5_hh"
 CallMethod
 StoreRegister 5
 Pop
-Push -358537222, 11, register7, register6, 0
+Push -358537222, 11, register7, register6, 0.0
 Add2
 GetMember
 Push register3, register4, register5, register2, 7, register1, "md5_hh"
@@ -639,7 +639,7 @@ Push register5, register2, register3, register4, 7, register1, "md5_hh"
 CallMethod
 StoreRegister 4
 Pop
-Push -198630844, 6, register7, register6, 0
+Push -198630844, 6, register7, register6, 0.0
 Add2
 GetMember
 Push register2, register3, register4, register5, 7, register1, "md5_ii"
@@ -808,7 +808,7 @@ Push 16, 1, "Array"
 NewObject
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc1554:Push register2, 16
@@ -897,7 +897,7 @@ Return
 SetMember
 Push register2, "str2binl"
 DefineFunction2 "", 1, 6, false, false, true, false, true, false, false, true, false, 3, "str" {
-Push 0, "Array"
+Push 0.0, "Array"
 NewObject
 StoreRegister 4
 Pop
@@ -908,7 +908,7 @@ Push 1
 Subtract
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc172c:Push register2, register3, "length"
@@ -959,7 +959,7 @@ Push 1
 Subtract
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc17ff:Push register2, register3, "length"
@@ -1003,7 +1003,7 @@ Push "", 1, "String"
 NewObject
 StoreRegister 4
 Pop
-Push 0
+Push 0.0
 StoreRegister 1
 Pop
 loc18b7:Push register1, register2, "length"
@@ -1061,7 +1061,7 @@ Push "", 1, "String"
 NewObject
 StoreRegister 5
 Pop
-Push 0
+Push 0.0
 StoreRegister 3
 Pop
 loc19b5:Push register3, register4, "length"
@@ -1114,7 +1114,7 @@ BitAnd
 BitOr
 StoreRegister 6
 Pop
-Push 0
+Push 0.0
 StoreRegister 2
 Pop
 loc1a98:Push register2, 4

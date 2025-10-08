@@ -8,7 +8,7 @@ Not
 If loc01ee
 Push "_global"
 GetVariable
-Push "com", 0, "Object"
+Push "com", 0.0, "Object"
 NewObject
 SetMember
 loc01ee:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "com"
 GetMember
-Push "nitrome", 0, "Object"
+Push "nitrome", 0.0, "Object"
 NewObject
 SetMember
 loc0226:Pop
@@ -46,7 +46,7 @@ Push "com"
 GetMember
 Push "nitrome"
 GetMember
-Push "game", 0, "Object"
+Push "game", 0.0, "Object"
 NewObject
 SetMember
 loc026a:Pop
@@ -71,7 +71,7 @@ Push "game"
 GetMember
 Push "MusicController"
 DefineFunction2 "", 0, 4, false, true, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
 Push register1, "game_sound", register3, "game_music_mc"
@@ -96,12 +96,12 @@ GetMember
 Push "setVolume"
 CallMethod
 Pop
-Push register1, "music_on", 0, register3, "ng"
+Push register1, "music_on", 0.0, register3, "ng"
 GetMember
 Push "getMusicOn"
 CallMethod
 SetMember
-Push register1, "sfx_on", 0, register3, "ng"
+Push register1, "sfx_on", 0.0, register3, "ng"
 GetMember
 Push "getSfxOn"
 CallMethod
@@ -142,7 +142,7 @@ CallMethod
 Pop
 Push register1, "vol"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 Not
@@ -154,7 +154,7 @@ CallFunction
 Pop
 Push register1, "music_type", register2
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "stop"
 CallMethod
@@ -180,12 +180,12 @@ Push register1, "game_sound"
 GetMember
 Push "onSoundComplete"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "start"
+Push 0.0, register1, "start"
 CallMethod
 Pop
 }
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "start"
 CallMethod
@@ -236,7 +236,7 @@ Push "startMenuMusic"
 Trace
 Push register1, "music_type"
 GetMember
-Push 0
+Push 0.0
 Equals2
 Not
 Not
@@ -247,15 +247,15 @@ Push true
 Equals2
 Not
 If loc05e7
-Push register1, "music_type", 0
+Push register1, "music_type", 0.0
 SetMember
-Push register1, "fade_interval", 0, register1, "RATE"
+Push register1, "fade_interval", 0.0, register1, "RATE"
 GetMember
 Push "fadeOut", register1, 4, "setInterval"
 CallFunction
 SetMember
 Jump loc05f8
-loc05e7:Push register1, "music_type", 0
+loc05e7:Push register1, "music_type", 0.0
 SetMember
 loc05f8:Jump loc0796
 loc05fd:Push register2, true
@@ -268,11 +268,11 @@ Push true
 Equals2
 Not
 If loc06d9
-Push register1, "music_type", 0
+Push register1, "music_type", 0.0
 SetMember
 Push register1, "vol", 100
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "stop"
 CallMethod
@@ -298,12 +298,12 @@ Push register1, "game_sound"
 GetMember
 Push "onSoundComplete"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "start"
+Push 0.0, register1, "start"
 CallMethod
 Pop
 }
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "start"
 CallMethod
@@ -325,7 +325,7 @@ loc0702:Not
 If loc0796
 Push register1, "vol", 100
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "stop"
 CallMethod
@@ -341,12 +341,12 @@ Push register1, "game_sound"
 GetMember
 Push "onSoundComplete"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "start"
+Push 0.0, register1, "start"
 CallMethod
 Pop
 }
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "start"
 CallMethod
@@ -390,7 +390,7 @@ Push register1, "music_type", 1
 SetMember
 Push register1, "vol", 100
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "stop"
 CallMethod
@@ -416,12 +416,12 @@ Push register1, "game_sound"
 GetMember
 Push "onSoundComplete"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "start"
+Push 0.0, register1, "start"
 CallMethod
 Pop
 }
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "start"
 CallMethod
@@ -452,7 +452,7 @@ Push true
 Equals2
 Not
 If loc096b
-Push 0, register1, "turnOffMusic"
+Push 0.0, register1, "turnOffMusic"
 CallMethod
 Pop
 Jump loc0991
@@ -462,7 +462,7 @@ Push false
 Equals2
 Not
 If loc0991
-Push 0, register1, "turnOnMusic"
+Push 0.0, register1, "turnOnMusic"
 CallMethod
 Pop
 }
@@ -473,7 +473,7 @@ Push register1, "music_on", true
 SetMember
 Push register1, "music_type"
 GetMember
-Push 0
+Push 0.0
 Equals2
 Not
 If loc09de
@@ -501,7 +501,7 @@ Push register2, "turnOffMusic"
 DefineFunction2 "", 0, 3, false, true, true, false, true, false, false, true, false {
 Push register1, "music_on", false
 SetMember
-Push 0, register1, "game_sound"
+Push 0.0, register1, "game_sound"
 GetMember
 Push "stop"
 CallMethod
@@ -528,7 +528,7 @@ Push true
 Equals2
 Not
 If loc0ac0
-Push 0, register1, "turnOffSfx"
+Push 0.0, register1, "turnOffSfx"
 CallMethod
 Pop
 Jump loc0ae6
@@ -538,7 +538,7 @@ Push false
 Equals2
 Not
 If loc0ae6
-Push 0, register1, "turnOnSfx"
+Push 0.0, register1, "turnOnSfx"
 CallMethod
 Pop
 }
@@ -569,14 +569,14 @@ Push register2, "music_on", true
 SetMember
 Push register2, "sfx_on", true
 SetMember
-Push register2, "music_type", 0
+Push register2, "music_type", 0.0
 SetMember
 Push register2, "music_ids", "game_music", "menu_music", 2, "Array"
 NewObject
 SetMember
 Push register2, "RATE", 60
 SetMember
-Push register2, "vol", 0
+Push register2, "vol", 0.0
 SetMember
 Push register2, "just_started", true
 SetMember

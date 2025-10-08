@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   this._parent.finishPulse();
-   stop();
+	this._parent.finishPulse();
+	stop();
 }

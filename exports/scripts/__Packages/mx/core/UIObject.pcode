@@ -8,7 +8,7 @@ Not
 If loc07e8
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc07e8:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "core", 0, "Object"
+Push "core", 0.0, "Object"
 NewObject
 SetMember
 loc0820:Pop
@@ -46,10 +46,10 @@ Push "core"
 GetMember
 Push "UIObject"
 DefineFunction2 "", 0, 3, false, false, false, true, true, false, false, true, false {
-Push 0, register2, undefined
+Push 0.0, register2, undefined
 CallMethod
 Pop
-Push 0, register1, "constructObject"
+Push 0.0, register1, "constructObject"
 CallMethod
 Pop
 }
@@ -118,7 +118,7 @@ Push "width"
 GetMember
 Push register1, "_x"
 GetMember
-Push 0, register1, "__get__width"
+Push 0.0, register1, "__get__width"
 CallMethod
 Add2
 Subtract
@@ -133,7 +133,7 @@ Push "height"
 GetMember
 Push register1, "_y"
 GetMember
-Push 0, register1, "__get__height"
+Push 0.0, register1, "__get__height"
 CallMethod
 Add2
 Subtract
@@ -155,7 +155,7 @@ SetMember
 SetMember
 Push register2, "__get__minHeight"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "getMinHeight"
+Push 0.0, register1, "getMinHeight"
 CallMethod
 Return
 }
@@ -165,7 +165,7 @@ DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, f
 Push register2, 1, register1, "setMinHeight"
 CallMethod
 Pop
-Push 0, register1, "__get__minHeight"
+Push 0.0, register1, "__get__minHeight"
 CallMethod
 Return
 }
@@ -185,7 +185,7 @@ SetMember
 SetMember
 Push register2, "__get__minWidth"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
-Push 0, register1, "getMinWidth"
+Push 0.0, register1, "getMinWidth"
 CallMethod
 Return
 }
@@ -195,7 +195,7 @@ DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, f
 Push register2, 1, register1, "setMinWidth"
 CallMethod
 Pop
-Push 0, register1, "__get__minWidth"
+Push 0.0, register1, "__get__minWidth"
 CallMethod
 Return
 }
@@ -239,7 +239,7 @@ DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, f
 Push false, register2, 2, register1, "setVisible"
 CallMethod
 Pop
-Push 0, register1, "__get__visible"
+Push 0.0, register1, "__get__visible"
 CallMethod
 Return
 }
@@ -255,7 +255,7 @@ Push register2, "__set__scaleX"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "x" {
 Push register1, "_xscale", register2
 SetMember
-Push 0, register1, "__get__scaleX"
+Push 0.0, register1, "__get__scaleX"
 CallMethod
 Return
 }
@@ -271,7 +271,7 @@ Push register2, "__set__scaleY"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "y" {
 Push register1, "_yscale", register2
 SetMember
-Push 0, register1, "__get__scaleY"
+Push 0.0, register1, "__get__scaleY"
 CallMethod
 Return
 }
@@ -284,7 +284,7 @@ Push undefined
 Equals2
 Not
 If loc0cba
-Push register1, "methodTable", 0, "Array"
+Push register1, "methodTable", 0.0, "Array"
 NewObject
 SetMember
 loc0cba:Push "obj", register2, "fn", register3, 2
@@ -308,26 +308,26 @@ Push register1, "invalidateFlag"
 GetMember
 Not
 If loc0d2e
-Push 0, register1, "redraw"
+Push 0.0, register1, "redraw"
 CallMethod
 Pop
 loc0d2e:Push register1, "methodTable"
 GetMember
 StoreRegister 3
 Pop
-Push register1, "methodTable", 0, "Array"
+Push register1, "methodTable", 0.0, "Array"
 NewObject
 SetMember
 Push register3, "length"
 GetMember
-Push 0
+Push 0.0
 Greater
 Not
 If loc0db4
 Push undefined
 StoreRegister 2
 Pop
-loc0d73:Push 0, register3, "shift"
+loc0d73:Push 0.0, register3, "shift"
 CallMethod
 StoreRegister 2
 Push undefined
@@ -335,7 +335,7 @@ Equals2
 Not
 Not
 If loc0db4
-Push 0, register2, "obj"
+Push 0.0, register2, "obj"
 GetMember
 Push register2, "fn"
 GetMember
@@ -349,7 +349,7 @@ DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, f
 Push register1, "onEnterFrame"
 Delete
 Pop
-Push register1, "methodTable", 0, "Array"
+Push register1, "methodTable", 0.0, "Array"
 NewObject
 SetMember
 }
@@ -365,7 +365,7 @@ SetMember
 SetMember
 Push register2, "invalidateStyle"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
 }
@@ -395,7 +395,7 @@ If loc0ed2
 Push register0
 StoreRegister 2
 Pop
-Push 0, register1, "tfList"
+Push 0.0, register1, "tfList"
 GetMember
 Push register2
 GetMember
@@ -403,7 +403,7 @@ Push "draw"
 CallMethod
 Pop
 Jump loc0e97
-loc0ed2:Push 0, register1, "draw"
+loc0ed2:Push 0.0, register1, "draw"
 CallMethod
 Pop
 Push "type", "draw", 1
@@ -457,7 +457,7 @@ Push register1, "__width", register7
 SetMember
 Push register1, "__height", register6
 SetMember
-Push 0, register1, "size"
+Push 0.0, register1, "size"
 CallMethod
 Pop
 Push register5, true
@@ -503,7 +503,7 @@ Pop
 SetMember
 Push register2, "createLabel"
 DefineFunction2 "", 3, 6, false, false, true, false, true, false, false, true, false, 3, "name", 5, "depth", 4, "text" {
-Push 0, 0, 0, 0, register5, register3, 6, register1, "createTextField"
+Push 0.0, 0.0, 0.0, 0.0, register5, register3, 6, register1, "createTextField"
 CallMethod
 Pop
 Push register1, register3
@@ -529,17 +529,17 @@ Push undefined
 Equals2
 Not
 If loc119b
-Push register1, "tfList", 0, "Object"
+Push register1, "tfList", 0.0, "Object"
 NewObject
 SetMember
 loc119b:Push register1, "tfList"
 GetMember
 Push register3, register2
 SetMember
-Push 0, register2, "invalidateStyle"
+Push 0.0, register2, "invalidateStyle"
 CallMethod
 Pop
-Push 0, register1, "invalidate"
+Push 0.0, register1, "invalidate"
 CallMethod
 Pop
 Push register2, "styleName", register1
@@ -627,17 +627,17 @@ Push register1, register6
 GetMember
 StoreRegister 2
 Pop
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
-Push 0
+Push 0.0
 Less2
 Not
 If loc13e5
-Push 0, register1, "buildDepthTable"
+Push 0.0, register1, "buildDepthTable"
 CallMethod
 StoreRegister 4
 Pop
-Push "up", register4, 0, 3, register1, "findNextAvailableDepth"
+Push "up", register4, 0.0, 3, register1, "findNextAvailableDepth"
 CallMethod
 StoreRegister 5
 Pop
@@ -647,7 +647,7 @@ Pop
 Push register3, 1, register2, "swapDepths"
 CallMethod
 Pop
-loc13e5:Push 0, register2, "removeMovieClip"
+loc13e5:Push 0.0, register2, "removeMovieClip"
 CallMethod
 Pop
 Push register1, register6
@@ -716,7 +716,7 @@ DefineFunction "", 1, "Void"  {
 SetMember
 Push register2, "_createChildren"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push 0, register1, "createChildren"
+Push 0.0, register1, "createChildren"
 CallMethod
 Pop
 Push register1, "childrenCreated", true
@@ -733,16 +733,16 @@ Not
 If loc1585
 Push undefined
 Return
-loc1585:Push 0, register1, "init"
+loc1585:Push 0.0, register1, "init"
 CallMethod
 Pop
-Push 0, register1, "_createChildren"
+Push 0.0, register1, "_createChildren"
 CallMethod
 Pop
-Push 0, register1, "createAccessibilityImplementation"
+Push 0.0, register1, "createAccessibilityImplementation"
 CallMethod
 Pop
-Push 0, register1, "_endInit"
+Push 0.0, register1, "_endInit"
 CallMethod
 Pop
 Push register1, "validateNow"
@@ -753,7 +753,7 @@ Push true, 1, register1, "redraw"
 CallMethod
 Pop
 Jump loc1602
-loc15f0:Push 0, register1, "invalidate"
+loc15f0:Push 0.0, register1, "invalidate"
 CallMethod
 Pop
 }
@@ -834,11 +834,11 @@ Push undefined
 Equals2
 Not
 If loc1745
-Push 0, register1, "initFromClipParameters"
+Push 0.0, register1, "initFromClipParameters"
 CallMethod
 Pop
 Jump loc1757
-loc1745:Push 0, register1, "initProperties"
+loc1745:Push 0.0, register1, "initProperties"
 CallMethod
 Pop
 loc1757:Push register2, "cascadingStyles"
@@ -847,7 +847,7 @@ Push true
 Equals2
 Not
 If loc177f
-Push register1, "stylecache", 0, "Object"
+Push register1, "stylecache", 0.0, "Object"
 NewObject
 SetMember
 }
@@ -1259,7 +1259,7 @@ Pop
 loc1cbc:Push register6
 Not
 If loc1d03
-Push 0, register1, "getClassStyleDeclaration"
+Push 0.0, register1, "getClassStyleDeclaration"
 CallMethod
 StoreRegister 10
 Pop
@@ -1320,7 +1320,7 @@ Not
 If loc1dbb
 Push register2
 Return
-loc1dbb:Push 0, "TextFormat"
+loc1dbb:Push 0.0, "TextFormat"
 NewObject
 StoreRegister 2
 Pop
@@ -1365,7 +1365,7 @@ Equals2
 Not
 Not
 If loc1e82
-Push 0, register2, "getStyleName"
+Push 0.0, register2, "getStyleName"
 CallMethod
 Return
 loc1e82:Push register2
@@ -1377,7 +1377,7 @@ Equals2
 Not
 Not
 If loc1eb4
-Push 0, register1, "_parent"
+Push 0.0, register1, "_parent"
 GetMember
 Push "getStyleName"
 CallMethod
@@ -1443,7 +1443,7 @@ Not
 If loc1f8d
 Push register3
 Return
-loc1f8d:Push 0, register1, "getClassStyleDeclaration"
+loc1f8d:Push 0.0, register1, "getClassStyleDeclaration"
 CallMethod
 StoreRegister 7
 Pop
@@ -1587,7 +1587,7 @@ Push register2, "invalidateFlag", false
 SetMember
 Push register2, "lineWidth", 1
 SetMember
-Push register2, "lineColor", 0
+Push register2, "lineColor", 0.0
 SetMember
 Push register2, "tabEnabled", false
 SetMember

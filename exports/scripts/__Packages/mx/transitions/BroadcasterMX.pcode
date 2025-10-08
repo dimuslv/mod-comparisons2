@@ -8,7 +8,7 @@ Not
 If loc00f4
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc00f4:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "transitions", 0, "Object"
+Push "transitions", 0.0, "Object"
 NewObject
 SetMember
 loc012c:Pop
@@ -91,7 +91,7 @@ Push register2
 Not
 Not
 If loc0220
-Push register1, "_listeners", 0, "Array"
+Push register1, "_listeners", 0.0, "Array"
 NewObject
 SetMember
 }
@@ -166,12 +166,12 @@ Return
 SetMember
 Push register2, "broadcastMessage"
 DefineFunction2 "", 0, 7, false, false, true, false, false, true, false, true, false {
-Push 0, register2, "shift"
+Push 0.0, register2, "shift"
 CallMethod
 ToString
 StoreRegister 5
 Pop
-Push 0, register1, "_listeners"
+Push 0.0, register1, "_listeners"
 GetMember
 Push "concat"
 CallMethod
@@ -181,7 +181,7 @@ Push register4, "length"
 GetMember
 StoreRegister 6
 Pop
-Push 0
+Push 0.0
 StoreRegister 3
 Pop
 loc038b:Push register3, register6

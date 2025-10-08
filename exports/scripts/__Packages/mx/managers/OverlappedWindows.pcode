@@ -8,7 +8,7 @@ Not
 If loc0235
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0235:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "managers", 0, "Object"
+Push "managers", 0.0, "Object"
 NewObject
 SetMember
 loc026d:Pop
@@ -157,7 +157,7 @@ Push "SystemManager"
 GetMember
 Push "_xRemoveEventListener"
 CallMethod
-Push 0
+Push 0.0
 Equals2
 Not
 If loc0487
@@ -192,7 +192,7 @@ Push "managers"
 GetMember
 Push "SystemManager"
 GetMember
-Push "idleFrames", 0
+Push "idleFrames", 0.0
 SetMember
 Push "mx"
 GetVariable
@@ -259,7 +259,7 @@ Pop
 Push undefined
 StoreRegister 4
 Pop
-Push 0
+Push 0.0
 StoreRegister 4
 Pop
 loc05c4:Push register4, register6
@@ -290,7 +290,7 @@ Push register3, undefined
 Equals2
 Not
 If loc064c
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
 StoreRegister 3
 Pop
@@ -298,12 +298,12 @@ Push register2
 StoreRegister 5
 Pop
 Jump loc0686
-loc064c:Push register3, 0, register2, "getDepth"
+loc064c:Push register3, 0.0, register2, "getDepth"
 CallMethod
 Less2
 Not
 If loc0686
-Push 0, register2, "getDepth"
+Push 0.0, register2, "getDepth"
 CallMethod
 StoreRegister 3
 Pop
@@ -346,7 +346,7 @@ Push "form"
 GetMember
 StoreRegister 9
 Pop
-Push 0, register9, "focusManager"
+Push 0.0, register9, "focusManager"
 GetMember
 Push "_onMouseDown"
 CallMethod
@@ -361,7 +361,7 @@ Push "managers"
 GetMember
 Push "SystemManager"
 GetMember
-Push "idleFrames", 0
+Push "idleFrames", 0.0
 SetMember
 }
 SetMember
@@ -381,7 +381,7 @@ Push "managers"
 GetMember
 Push "SystemManager"
 GetMember
-Push "idleFrames", 0
+Push "idleFrames", 0.0
 SetMember
 }
 SetMember
@@ -439,7 +439,7 @@ Push "form"
 GetMember
 StoreRegister 1
 Pop
-Push 0, register1, "focusManager"
+Push 0.0, register1, "focusManager"
 GetMember
 Push "deactivate"
 CallMethod
@@ -452,7 +452,7 @@ Push "SystemManager"
 GetMember
 Push "form", register2
 SetMember
-Push 0, register2, "focusManager"
+Push 0.0, register2, "focusManager"
 GetMember
 Push "activate"
 CallMethod
@@ -512,7 +512,7 @@ Push "form"
 GetMember
 StoreRegister 5
 Pop
-Push 0, register5, "focusManager"
+Push 0.0, register5, "focusManager"
 GetMember
 Push "deactivate"
 CallMethod
@@ -535,7 +535,7 @@ Pop
 Push undefined
 StoreRegister 2
 Pop
-Push 0
+Push 0.0
 StoreRegister 1
 Pop
 loc0990:Push register1, register3
@@ -649,7 +649,7 @@ Push "form"
 GetMember
 StoreRegister 5
 Pop
-Push 0, register5, "focusManager"
+Push 0.0, register5, "focusManager"
 GetMember
 Push "activate"
 CallMethod
@@ -697,7 +697,7 @@ Pop
 Push undefined
 StoreRegister 1
 Pop
-Push 0
+Push 0.0
 StoreRegister 1
 Pop
 loc0baf:Push register1, register3

@@ -8,7 +8,7 @@ Not
 If loc0276
 Push "_global"
 GetVariable
-Push "mx", 0, "Object"
+Push "mx", 0.0, "Object"
 NewObject
 SetMember
 loc0276:Pop
@@ -25,7 +25,7 @@ Push "_global"
 GetVariable
 Push "mx"
 GetMember
-Push "events", 0, "Object"
+Push "events", 0.0, "Object"
 NewObject
 SetMember
 loc02ae:Pop
@@ -46,7 +46,7 @@ Push "events"
 GetMember
 Push "UIEventDispatcher"
 DefineFunction2 "", 0, 2, false, false, false, true, true, false, true, false, false {
-Push 0, register1, undefined
+Push 0.0, register1, undefined
 CallMethod
 Pop
 }
@@ -77,7 +77,7 @@ Push undefined
 Equals2
 Not
 If loc03ce
-Push register2, "keyHandler", 0, "Object"
+Push register2, "keyHandler", 0.0, "Object"
 NewObject
 StoreRegister 0
 SetMember
@@ -158,9 +158,9 @@ GetMember
 Push "onUnload"
 GetMember
 SetMember
-Push 0, register1, "getBytesTotal"
+Push 0.0, register1, "getBytesTotal"
 CallMethod
-Push 0, register1, "getBytesLoaded"
+Push 0.0, register1, "getBytesLoaded"
 CallMethod
 Equals2
 Not
@@ -200,7 +200,7 @@ Push "events"
 GetMember
 Push "UIEventDispatcher"
 GetMember
-Push "_fEventDispatcher", 0, "mx"
+Push "_fEventDispatcher", 0.0, "mx"
 GetVariable
 Push "events"
 GetMember
@@ -296,11 +296,11 @@ Pop
 SetMember
 Push register2, "onKeyDown"
 DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push "type", "keyDown", "code", 0, "Key"
+Push "type", "keyDown", "code", 0.0, "Key"
 GetVariable
 Push "getCode"
 CallMethod
-Push "ascii", 0, "Key"
+Push "ascii", 0.0, "Key"
 GetVariable
 Push "getAscii"
 CallMethod
@@ -323,11 +323,11 @@ Pop
 SetMember
 Push register2, "onKeyUp"
 DefineFunction2 "", 1, 7, false, false, true, false, true, false, false, true, false, 0, "Void" {
-Push "type", "keyUp", "code", 0, "Key"
+Push "type", "keyUp", "code", 0.0, "Key"
 GetVariable
 Push "getCode"
 CallMethod
-Push "ascii", 0, "Key"
+Push "ascii", 0.0, "Key"
 GetVariable
 Push "getAscii"
 CallMethod
@@ -416,7 +416,7 @@ Not
 If loc091c
 Push register3, register5
 GetMember
-Push 0
+Push 0.0
 GetMember
 StoreRegister 2
 Pop
@@ -453,7 +453,7 @@ Push register1, register6
 GetMember
 Push "length"
 GetMember
-Push 0
+Push 0.0
 Equals2
 Not
 If loc0a48

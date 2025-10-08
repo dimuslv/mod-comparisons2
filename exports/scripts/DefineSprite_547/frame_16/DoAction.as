@@ -1,5 +1,5 @@
 if(!_root.aMode)
 {
-   this._parent.finishFire();
-   stop();
+	this._parent.finishFire();
+	stop();
 }
