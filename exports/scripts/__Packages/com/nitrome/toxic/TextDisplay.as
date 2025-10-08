@@ -32,7 +32,14 @@ class com.nitrome.toxic.TextDisplay extends MovieClip
       {
          this.info_string = s;
          this.clip.tf.text = "";
-         this.gotoAndPlay("in");
+         if(!TAS.fastPlayback)
+         {
+            this.gotoAndPlay("in");
+         }
+         else
+         {
+            this.gotoAndStop("there");
+         }
          this.displaying = true;
       }
    }
@@ -64,7 +71,14 @@ class com.nitrome.toxic.TextDisplay extends MovieClip
       delete this.onEnterFrame;
       if(this.displaying == true)
       {
-         this.gotoAndPlay("out");
+         if(!TAS.fastPlayback)
+         {
+            this.gotoAndPlay("out");
+         }
+         else
+         {
+            this.gotoAndStop(1);
+         }
          this.displaying = false;
       }
    }

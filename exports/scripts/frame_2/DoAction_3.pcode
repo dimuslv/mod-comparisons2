@@ -2134,12 +2134,8 @@ Push "f55"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "that" {
 Push false
 Push 1
-Push "ClockDisp"
+Push "Timer"
 GetVariable
-Push "instances"
-GetMember
-Push 0
-GetMember
 Push "setPause"
 CallMethod
 Pop
@@ -2238,15 +2234,11 @@ Push "_parent"
 GetMember
 Push "hit"
 GetMember
-If loc330e
+If loc32fa
 Push true
 Push 1
-Push "ClockDisp"
+Push "Timer"
 GetVariable
-Push "instances"
-GetMember
-Push 0
-GetMember
 Push "setPause"
 CallMethod
 Pop
@@ -2259,7 +2251,7 @@ Push "playSound"
 CallMethod
 Pop
 }
-loc330e:Push "f4"
+loc32fa:Push "f4"
 DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "that" {
 Push "warpout"
 Push 1

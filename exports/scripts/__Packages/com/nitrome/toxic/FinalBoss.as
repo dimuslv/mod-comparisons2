@@ -201,7 +201,7 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
       {
          if(this.player._x > this._x - 57 - 164)
          {
-            _root.cutscene.gotoAndPlay("in");
+            Utils.cutsceneIn();
             this.player.quickPause();
             this.wait_count = 0;
             this.state = this.DOORWAIT;
@@ -441,7 +441,7 @@ class com.nitrome.toxic.FinalBoss extends MovieClip
       this.game.drawBossBody(this._x - 91,this._y - 148);
       if(this.hits == 5)
       {
-         _root.cutscene.gotoAndPlay("out");
+         Utils.cutsceneOut();
          _root.boss_health_panel.displayHealth(100);
          _root.boss_health_panel.setActive(true);
          this.player.finishQuickPause();

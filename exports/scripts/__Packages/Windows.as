@@ -27,14 +27,13 @@ class Windows
       w.init(10,40,{title:"Vars",update:TAS.updateVarWindow});
       w._static = true;
       w._visible = false;
-      var _loc2_ = ["Damage",60,52,"Acid",60,52,"Object",60,52];
-      var _loc3_ = 0;
-      var _loc4_;
-      while(_loc3_ < _loc2_.length)
+      var _loc2_ = 0;
+      var _loc3_;
+      while(_loc2_ < Utils.visWindowArray.length)
       {
-         _loc4_ = _loc2_[_loc3_];
-         w = Windows.clip.attachMovie("window",_loc4_ + "VisWindow",Windows.clip.getNextHighestDepth());
-         w.init(0,0,{title:_loc4_,customMinimize:function(w)
+         _loc3_ = Utils.visWindowArray[_loc2_];
+         w = Windows.clip.attachMovie("window",_loc3_ + "VisWindow",Windows.clip.getNextHighestDepth());
+         w.init(160 + 23 * _loc2_,7,{title:_loc3_,customMinimize:function(w)
          {
             w.minimized = !w.minimized;
             w.img._visible = !w.minimized;
@@ -42,12 +41,18 @@ class Windows
          }});
          w.createEmptyMovieClip("img",w.getNextHighestDepth());
          w.img._y = 20;
-         Utils.bmps[_loc4_] = new flash.display.BitmapData(_loc2_[_loc3_ + 1],_loc2_[_loc3_ + 2],false);
-         w.img.attachBitmap(Utils.bmps[_loc4_],w.img.getNextHighestDepth());
+         Utils.bmps[_loc3_] = new flash.display.BitmapData(Utils.visWindowArray[_loc2_ + 1],Utils.visWindowArray[_loc2_ + 2],false);
+         w.img.attachBitmap(Utils.bmps[_loc3_],w.img.getNextHighestDepth());
          w._static = true;
          w._visible = false;
-         _loc3_ += 3;
+         _loc2_ += 3;
       }
+      w = Windows.clip.attachMovie("window","timerWindow",Windows.clip.getNextHighestDepth());
+      w.init(29,7,{title:"00:00.000",update:Timer.updateTimerWindow,noMinimize:true});
+      w.mainTextField.setNewTextFormat(new TextFormat("Consolas",18));
+      w.mainTextField._height = 25;
+      w._static = true;
+      w._visible = true;
       _root.createTextField("nullField",_root.getNextHighestDepth(),0,0,0,0);
       _root.nullField._visible = false;
       Windows.clip.onMouseUp = function()
@@ -99,7 +104,7 @@ class Windows
       }
       for(i in Windows.clip)
       {
-         if(Windows.clip[i].obj.update)
+         if(Windows.clip[i].obj.update && Windows.clip[i]._visible)
          {
             Windows.clip[i].obj.update(Windows.clip[i]);
          }

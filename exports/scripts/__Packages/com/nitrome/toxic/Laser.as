@@ -8,8 +8,8 @@ class com.nitrome.toxic.Laser extends MovieClip
    var deg;
    var start_deg;
    var game;
-   var laser_head;
    var drawing_clip;
+   var laser_head;
    var next_path_point;
    var path_length;
    var path;
@@ -82,47 +82,58 @@ class com.nitrome.toxic.Laser extends MovieClip
       {
          _loc6_ -= 360;
       }
-      var _loc2_ = 1;
+      var _loc2_;
       var _loc8_;
       var _loc7_;
       var _loc4_;
       var _loc3_;
-      while(_loc2_ <= 600)
+      var _loc5_;
+      if(Utils.laserState)
       {
-         _loc8_ = _loc2_ * com.nitrome.toxic.TrigLookup.cos_data[_loc6_];
-         _loc7_ = _loc2_ * com.nitrome.toxic.TrigLookup.sin_data[_loc6_];
-         _loc4_ = Math.round(this._x + _loc8_);
-         _loc3_ = Math.round(this._y + _loc7_);
-         if(_loc4_ < 0 || _loc4_ > com.nitrome.toxic.Global.level_width || _loc3_ < 0 || _loc3_ > com.nitrome.toxic.Global.level_height)
+         _loc2_ = 1;
+         while(_loc2_ <= 600)
          {
-            break;
+            _loc8_ = _loc2_ * com.nitrome.toxic.TrigLookup.cos_data[_loc6_];
+            _loc7_ = _loc2_ * com.nitrome.toxic.TrigLookup.sin_data[_loc6_];
+            _loc4_ = Math.round(this._x + _loc8_);
+            _loc3_ = Math.round(this._y + _loc7_);
+            if(_loc4_ < 0 || _loc4_ > com.nitrome.toxic.Global.level_width || _loc3_ < 0 || _loc3_ > com.nitrome.toxic.Global.level_height)
+            {
+               break;
+            }
+            if(this.game.getSceneryCollision(_loc4_,_loc3_) == true || Utils.laserState === 1 && (this.game.getRobotCollision(_loc4_,_loc3_) == true || this.game.getBombCollision(_loc4_,_loc3_) == true))
+            {
+               break;
+            }
+            _loc2_ += 20;
          }
-         if(this.game.getSceneryCollision(_loc4_,_loc3_) == true || this.game.getRobotCollision(_loc4_,_loc3_) == true || this.game.getBombCollision(_loc4_,_loc3_) == true)
+         _loc5_ = _loc2_ - 10;
+         while(_loc5_ <= _loc2_ + 10)
          {
-            break;
+            _loc8_ = _loc5_ * com.nitrome.toxic.TrigLookup.cos_data[_loc6_];
+            _loc7_ = _loc5_ * com.nitrome.toxic.TrigLookup.sin_data[_loc6_];
+            _loc4_ = Math.round(this._x + _loc8_);
+            _loc3_ = Math.round(this._y + _loc7_);
+            if(_loc4_ < 0 || _loc4_ > com.nitrome.toxic.Global.level_width || _loc3_ < 0 || _loc3_ > com.nitrome.toxic.Global.level_height)
+            {
+               break;
+            }
+            if(this.game.getSceneryCollision(_loc4_,_loc3_) == true || Utils.laserState === 1 && (this.game.getRobotCollision(_loc4_,_loc3_) == true || this.game.getBombCollision(_loc4_,_loc3_) == true))
+            {
+               break;
+            }
+            _loc5_ = _loc5_ + 1;
          }
-         _loc2_ += 20;
+         this.drawLine(_loc8_,_loc7_);
+         this.spark_clip._x = _loc8_;
+         this.spark_clip._y = _loc7_;
       }
-      var _loc5_ = _loc2_ - 10;
-      while(_loc5_ <= _loc2_ + 10)
+      else
       {
-         _loc8_ = _loc5_ * com.nitrome.toxic.TrigLookup.cos_data[_loc6_];
-         _loc7_ = _loc5_ * com.nitrome.toxic.TrigLookup.sin_data[_loc6_];
-         _loc4_ = Math.round(this._x + _loc8_);
-         _loc3_ = Math.round(this._y + _loc7_);
-         if(_loc4_ < 0 || _loc4_ > com.nitrome.toxic.Global.level_width || _loc3_ < 0 || _loc3_ > com.nitrome.toxic.Global.level_height)
-         {
-            break;
-         }
-         if(this.game.getSceneryCollision(_loc4_,_loc3_) == true || this.game.getRobotCollision(_loc4_,_loc3_) == true || this.game.getBombCollision(_loc4_,_loc3_) == true)
-         {
-            break;
-         }
-         _loc5_ = _loc5_ + 1;
+         this.drawing_clip.clear();
+         this.spark_clip._x = 0;
+         this.spark_clip._y = 0;
       }
-      this.drawLine(_loc8_,_loc7_);
-      this.spark_clip._x = _loc8_;
-      this.spark_clip._y = _loc7_;
       this.laser_head._rotation = this.deg;
    }
    function getOnScreen()

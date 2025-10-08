@@ -1,0 +1,259 @@
+ConstantPool "_global", "Timer", "prototype", "init", "time", "timeStep", "stopped", "setPause", "getTimeText", "minutes", "fps", "Math", "floor", "minuteString", "slice", "seconds", "round", "secondString", ":", "updateTimerWindow", "minimized", "obj", "title", "updateMainField", "", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Timer"
+GetMember
+Not
+Not
+If loc047c
+Push "_global"
+GetVariable
+Push "Timer"
+DefineFunction "", 0 {
+}
+StoreRegister 1
+SetMember
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1
+Push "init"
+DefineFunction "", 0 {
+Push "Timer"
+GetVariable
+Push "time"
+Push 0
+SetMember
+}
+SetMember
+Push register1
+Push "timeStep"
+DefineFunction "", 0 {
+Push "Timer"
+GetVariable
+Push "stopped"
+GetMember
+If loc0178
+Push "Timer"
+GetVariable
+Push "time"
+Push "Timer"
+GetVariable
+Push "time"
+GetMember
+Increment
+SetMember
+}
+loc0178:SetMember
+Push register1
+Push "setPause"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "value" {
+Push "Timer"
+GetVariable
+Push "stopped"
+Push register1
+SetMember
+}
+SetMember
+Push register1
+Push "getTimeText"
+DefineFunction "", 0 {
+Push "minutes"
+Push "Timer"
+GetVariable
+Push "time"
+GetMember
+Push 60
+Divide
+Push "Timer"
+GetVariable
+Push "fps"
+GetMember
+Divide
+Push 1
+Push "Math"
+GetVariable
+Push "floor"
+CallMethod
+DefineLocal
+Push "minuteString"
+Push "minutes"
+GetVariable
+Push 100
+Less2
+Not
+Not
+If loc021c
+Push "minutes"
+GetVariable
+ToString
+Jump loc0242
+loc021c:Push 1
+Push 1
+Push "minutes"
+GetVariable
+Push 100
+Add2
+ToString
+Push "slice"
+CallMethod
+loc0242:DefineLocal
+Push "seconds"
+Push "Timer"
+GetVariable
+Push "time"
+GetMember
+Push 60
+Push "Timer"
+GetVariable
+Push "fps"
+GetMember
+Multiply
+Modulo
+Push "Timer"
+GetVariable
+Push "fps"
+GetMember
+Divide
+Push 1000
+Multiply
+Push 1
+Push "Math"
+GetVariable
+Push "round"
+CallMethod
+Push 1000
+Divide
+DefineLocal
+Push "secondString"
+Push -1
+Push 1
+Push 2
+Push "seconds"
+GetVariable
+Push 100.0001
+Add2
+ToString
+Push "slice"
+CallMethod
+DefineLocal
+Push "minuteString"
+GetVariable
+Push ":"
+Add2
+Push "secondString"
+GetVariable
+Add2
+Return
+}
+SetMember
+Push register1
+Push "updateTimerWindow"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push register1
+Push "minimized"
+GetMember
+If loc03aa
+Push register1
+Push "obj"
+GetMember
+Push "time"
+GetMember
+Push "Timer"
+GetVariable
+Push "time"
+GetMember
+StrictEquals
+Not
+Not
+If loc03a5
+Push register1
+Push "obj"
+GetMember
+Push "time"
+Push "Timer"
+GetVariable
+Push "time"
+GetMember
+SetMember
+Push register1
+Push "obj"
+GetMember
+Push "title"
+Push "Timer"
+GetVariable
+Push "time"
+GetMember
+Push 1
+Push "Timer"
+GetVariable
+Push "getTimeText"
+CallMethod
+SetMember
+Push register1
+Push "obj"
+GetMember
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+loc03a5:Jump loc0419
+loc03aa:Push register1
+Push "obj"
+GetMember
+Push "time"
+GetMember
+Push -1
+StrictEquals
+Not
+Not
+If loc0419
+Push register1
+Push "obj"
+GetMember
+Push "title"
+Push ""
+SetMember
+Push register1
+Push "obj"
+GetMember
+Push "time"
+Push -1
+SetMember
+Push register1
+Push "obj"
+GetMember
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+loc0419:SetMember
+Push register1
+Push "time"
+Push 0
+SetMember
+Push register1
+Push "fps"
+Push 30
+SetMember
+Push register1
+Push "stopped"
+Push true
+SetMember
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "Timer"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc047c:Pop

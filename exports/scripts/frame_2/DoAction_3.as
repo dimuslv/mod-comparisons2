@@ -362,7 +362,7 @@ _root.spriteInfo = {m168:[true],m400:[{f101:function(that)
    _root.sfx.playSound("warpin");
 },f55:function(that)
 {
-   ClockDisp.instances[0].setPause(false);
+   Timer.setPause(false);
 },f111:function(that)
 {
    that._parent.finishStart();
@@ -383,7 +383,7 @@ _root.spriteInfo = {m168:[true],m400:[{f101:function(that)
 {
    if(!that._parent.hit)
    {
-      ClockDisp.instances[0].setPause(true);
+      Timer.setPause(true);
       _root.sfx.playSound("levelend");
    }
 },f4:function(that)

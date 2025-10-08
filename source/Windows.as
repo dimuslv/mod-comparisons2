@@ -49,19 +49,13 @@ class Windows
 		w._static = true;
 		w._visible = false;
 		
-		var visWindowArray = [
-			"Damage", 60, 52,
-			"Acid", 60, 52,
-			"Object", 60, 52
-		];
-		
 		var i = 0;
-		while (i < visWindowArray.length) {
-			var n = visWindowArray[i];
+		while (i < Utils.visWindowArray.length) {
+			var n = Utils.visWindowArray[i];
 			
 			w = Windows.clip.attachMovie("window", n + "VisWindow", Windows.clip.getNextHighestDepth());
 			
-			w.init(0, 0, {
+			w.init(160 + 23*i, 7, {
 				title: n,
 				customMinimize: function(w) {
 					w.minimized = !w.minimized;
@@ -72,12 +66,19 @@ class Windows
 			
 			w.createEmptyMovieClip("img", w.getNextHighestDepth());
 			w.img._y = 20;
-			Utils.bmps[n] = new flash.display.BitmapData(visWindowArray[i+1], visWindowArray[i+2], false);
+			Utils.bmps[n] = new flash.display.BitmapData(Utils.visWindowArray[i+1], Utils.visWindowArray[i+2], false);
 			w.img.attachBitmap(Utils.bmps[n], w.img.getNextHighestDepth());
 			w._static = true;
 			w._visible = false;
 			i += 3;
 		}
+		
+		w = Windows.clip.attachMovie("window", "timerWindow", Windows.clip.getNextHighestDepth());
+		w.init(29, 7, {title: "00:00.000", update: Timer.updateTimerWindow, noMinimize: true});
+		w.mainTextField.setNewTextFormat(new TextFormat("Consolas", 18));
+		w.mainTextField._height = 25;
+		w._static = true;
+		w._visible = true;
 		
 		_root.createTextField("nullField", _root.getNextHighestDepth(), 0, 0, 0, 0);
 		_root.nullField._visible = false;
@@ -123,7 +124,7 @@ class Windows
 		}
 		
 		for (i in Windows.clip) {
-			if (Windows.clip[i].obj.update) {
+			if (Windows.clip[i].obj.update && Windows.clip[i]._visible) {
 				Windows.clip[i].obj.update(Windows.clip[i]);
 			}
 		}

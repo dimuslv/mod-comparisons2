@@ -134,7 +134,7 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
          {
             if(this.player._x > this._x - 57 - 100 && this.player._x < this._x + 57 - 100)
             {
-               _root.cutscene.gotoAndPlay("in");
+               Utils.cutsceneIn();
                this.player.quickPause();
                this.wait_count = 0;
                this.state = this.WAIT;
@@ -237,7 +237,7 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
                                  this.wait_count = this.wait_count + 1;
                                  if(this.end_seq == false)
                                  {
-                                    _root.cutscene.gotoAndPlay("in");
+                                    Utils.cutsceneIn();
                                     this.player.quickPause();
                                     this.end_seq = true;
                                  }
@@ -247,7 +247,7 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
                                  }
                                  if(this.wait_count >= this.max_wait_count)
                                  {
-                                    _root.cutscene.gotoAndPlay("out");
+                                    Utils.cutsceneOut();
                                     this.player.finishQuickPause();
                                     this.finishDead();
                                  }
@@ -443,7 +443,7 @@ class com.nitrome.toxic.FirstBoss extends MovieClip
          this.gotoAndStop("stage_1");
          _root.boss_health_panel.displayHealth(100);
          _root.boss_health_panel.setActive(true);
-         _root.cutscene.gotoAndPlay("out");
+         Utils.cutsceneOut();
          this.player.finishQuickPause();
          this.stage = 1;
       }

@@ -2,7 +2,7 @@ class TAS
 {
 	static var write = true;
 	static var override = true;
-	static var frozen = true;
+	static var frozen = false;
 	static var curString = "";
 	
 	static var curIndex = 0;
@@ -24,6 +24,8 @@ class TAS
 	static var delayedCaretIndex = -1;
 	
 	static var subLetters = "rb";
+	
+	static var runBack = false;
 
 	static function updateVarWindow(w) {
 		var p = _root.game.player;
@@ -101,8 +103,8 @@ class TAS
 		if (code == 113) { //F2
 			_root.popup_holder.clip.key_button.clearKeyListener();
 			_root.mc.startMenuMusic(false);
-			TAS.curIndex = 0;
-			TAS.curFrame = TAS.valueArray[0];
+			//TAS.curIndex = 0;
+			//TAS.curFrame = TAS.valueArray[0];
 			
 			if(!_root.game.level_number) {
 				_root.tt.doTween("title_screen");
@@ -117,6 +119,10 @@ class TAS
 		if (code == 73) { //i
 			Windows.clip.inputWindow._visible = !Windows.clip.inputWindow._visible;
 			//Windows.nullFocus();
+			return true;
+		}
+		if (code == 84) { //t
+			Windows.clip.timerWindow._visible = !Windows.clip.timerWindow._visible;
 			return true;
 		}
 		var i;
@@ -145,6 +151,7 @@ class TAS
 				Main.gameUpdate();
 				i--;
 			}
+			TAS.fastPlayback = false;
 			
 			TAS.updateText();
 			Main.stopAll();
@@ -172,6 +179,7 @@ class TAS
 					}
 					i--;
 				}
+				TAS.runBack = true;
 				_root.tt.doTween("reload");
 			}
 			if (TAS.write)
@@ -204,8 +212,8 @@ class TAS
 		}
 		
 		if (code == 82) { //r
-			TAS.curIndex = 0;
-			TAS.curFrame = TAS.valueArray[0];
+			//TAS.curIndex = 0;
+			//TAS.curFrame = TAS.valueArray[0];
 			//write = false;
 			//frozen = false;
 			_root.tt.doTween("reload");
@@ -393,6 +401,7 @@ class TAS
 		TAS.curFrame = newFrame;
 		
 		if (!areEqual) {
+			TAS.runBack = true;
 			_root.tt.doTween("reload");
 		} else {
 			TAS.updateText();
@@ -602,16 +611,21 @@ class TAS
 		TAS.curFrame = TAS.valueArray[0];
 		TAS.fastPlayback = true;
 		
-		TAS.neutralPlayback = true;
-		var i = 0;
-		while (i < 109) {
-			Main.gameUpdate();
-			i++;
+		if (Utils.skipBeginning) {
+			TAS.neutralPlayback = true;
+			var i = 0;
+			while (i < 109) {
+				Main.gameUpdate();
+				i++;
+			}
+			TAS.neutralPlayback = false;
 		}
-		TAS.neutralPlayback = false;
 		
-		while (TAS.curIndex < TAS.targetIndex || (TAS.curIndex == TAS.targetIndex && TAS.curFrame < TAS.targetFrame)) {
-			Main.gameUpdate();
+		if (TAS.runBack) {
+			TAS.runBack = false;
+			while (TAS.curIndex < TAS.targetIndex || (TAS.curIndex == TAS.targetIndex && TAS.curFrame < TAS.targetFrame)) {
+				Main.gameUpdate();
+			}
 		}
 		
 		TAS.fastPlayback = false;

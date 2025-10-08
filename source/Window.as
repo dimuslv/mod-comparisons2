@@ -28,9 +28,11 @@ class Window extends MovieClip
 		this.mainBehaviors = [Windows.startDragging];
 		this.mainTextField.text = obj.title + " ";
 		
-		this.mainIndices.push(this.mainTextField.text.length);
-		this.mainBehaviors.push(obj.customMinimize? obj.customMinimize : Windows.minimizeWindow);
-		this.mainTextField.text += (this.minimized? "🗖 " : "🗕 ");
+		if (!obj.noMinimize) {
+			this.mainIndices.push(this.mainTextField.text.length);
+			this.mainBehaviors.push(obj.customMinimize? obj.customMinimize : Windows.minimizeWindow);
+			this.mainTextField.text += (this.minimized? "🗖 " : "🗕 ");
+		}
 		
 		this.mainIndices.push(this.mainTextField.text.length);
 		this.mainBehaviors.push(Windows.closeWindow);

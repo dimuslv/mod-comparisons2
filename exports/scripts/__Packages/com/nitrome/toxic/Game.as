@@ -475,9 +475,8 @@ class com.nitrome.toxic.Game extends MovieClip
          RNG.rngSeed = TAS.valueArray[0];
       }
       _root.game.loadLevel();
-      ClockDisp.initDriver(_root.powercell_panel.createEmptyMovieClip("CDDriverMovie",_root.powercell_panel.getNextHighestDepth()));
-      var _loc5_ = new ClockDisp(0,-450,-375);
-      _loc5_.setPause(true);
+      Timer.init();
+      Timer.setPause(true);
       if(_root.aMode)
       {
          Main.levelInit();
@@ -897,7 +896,7 @@ class com.nitrome.toxic.Game extends MovieClip
       };
       this.doEnterFrame = function()
       {
-         ClockDisp.enterFrame();
+         Timer.timeStep();
          if(com.nitrome.toxic.Global.game_paused == false)
          {
             this.main();
@@ -1716,6 +1715,7 @@ class com.nitrome.toxic.Game extends MovieClip
                _global.b_temp.draw(_root.game.ground_holder,_loc12_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
                _global.b_temp.draw(_root.bomb_shape,new flash.geom.Matrix(),new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
                _loc13_ = _global.b_temp.getColorBoundsRect(4294967295,4278255615);
+               Utils.updateVisBitmap("Bomb",_global.b_temp);
                if(_loc13_.width != 0)
                {
                   if(_loc13_.x == 0)

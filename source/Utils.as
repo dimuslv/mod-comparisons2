@@ -12,8 +12,34 @@ class Utils
 	static var zeroPoint = new flash.geom.Point(0, 0);
 	static var deactivateTeleport = false;
 	static var layerVisibilities;
+	static var extraLayerVisibilities;
+	static var laserState = 1;
+	static var skipBeginning = true;
 	
+	static var visWindowArray = [
+			"Damage", 60, 52,
+			"Acid", 60, 52,
+			"Object", 60, 52,
+			"Bomb", 31, 18
+		];
 	static var bmps = {};
+	static var empty_bmp = new flash.display.BitmapData(100, 100, false);
+	
+	static function cutsceneIn() {
+		if (!TAS.fastPlayback) {
+			_root.cutscene.gotoAndPlay("in");
+		} else {
+			_root.cutscene.gotoAndStop(18);
+		}
+	}
+	
+	static function cutsceneOut() {
+		if (!TAS.fastPlayback) {
+			_root.cutscene.gotoAndPlay("out");
+		} else {
+			_root.cutscene.gotoAndStop(1);
+		}
+	}
 	
 	static function levelInit() {
 		if (!Utils.layerVisibilities) {
@@ -22,10 +48,29 @@ class Utils
 				if (holder.slice(-7) == "_holder")
 					Utils.layerVisibilities[holder] = true;
 			}
+			Utils.layerVisibilities.test_holder = false;
+			_root.game.test_holder._visible = false;
+			
+			Utils.extraLayerVisibilities = {
+				pipes : true,
+				big_pipes : true,
+				acid_holder : true,
+				bomb_panel : true,
+				health_panel : true,
+				powercell_panel : true,
+				/*boss_health_panel : true,*/
+				text_display : true,
+				cutscene : true,
+				popup_holder : true/*,
+				loading_clip : true*/
+			};
 		} else {
 			for (var holder in _root.game) {
 				if (holder.slice(-7) == "_holder")
 					_root.game[holder]._visible = Utils.layerVisibilities[holder];
+			}
+			for (var layer in Utils.extraLayerVisibilities) {
+				_root[layer]._visible = Utils.extraLayerVisibilities[layer];
 			}
 		}
 	}
@@ -63,8 +108,11 @@ class Utils
 			"Invulnerability", Utils, "invulnerable",
 			"No death", Utils, "noDeath",
 			"Buggy IL mod physics", Utils, "inaccuratePhysics",
-			"Deactivate teleport", Utils, "deactivateTeleport"
+			"Deactivate teleport", Utils, "deactivateTeleport",
+			"Skip beginning", Utils, "skipBeginning"
 		]);
+		
+		Utils.addCycleOption(obj.options, "Lasers", Utils, "laserState", ["off", "on", "simple"]);
 		
 		obj.options.push("Mask: " + (Utils.masked? "on" : "off"), Utils.toggleMask);
 		
@@ -88,6 +136,17 @@ class Utils
 	
 	static function toggleVar(w, stump, varName) {
 		stump[varName] = !stump[varName];
+		w.obj.curWindow(w);
+	}
+	
+	static function addCycleOption(options, name, stump, varName, values) {
+		options.push(name + ": " + values[stump[varName]]);
+		options.push([Utils.cycleVar, stump, varName, values]);
+	}
+	
+	static function cycleVar(w, stump, varName, values) {
+		stump[varName]++;
+		stump[varName] %= values.length;
 		w.obj.curWindow(w);
 	}
 	
@@ -153,15 +212,17 @@ class Utils
 	}
 	
 	static function infoWindowsWindow(w) {
+		var options = [];
+		for (var i = 0; i < Utils.visWindowArray.length; i += 3) {
+			options.push(Utils.visWindowArray[i] + " visualization 🗗", [Utils.activateStaticWindow, Windows.clip[Utils.visWindowArray[i] + "VisWindow"]]);
+		}
+		
+		options.push("Back", Utils.mainMenu);
+		
 		w.updateMainField({
 			title: "Info windows",
 			curWindow: Utils.infoWindowsWindow,
-			options: [
-				"Damage visualization 🗗", [Utils.activateStaticWindow, Windows.clip.DamageVisWindow],
-				"Acid visualization 🗗", [Utils.activateStaticWindow, Windows.clip.AcidVisWindow],
-				"Object visualization 🗗", [Utils.activateStaticWindow, Windows.clip.ObjectVisWindow],
-				"Back", Utils.mainMenu
-			]
+			options: options
 		});
 	}
 	
@@ -170,8 +231,10 @@ class Utils
 	}
 	
 	static function updateVisBitmap(n, source_bmp) {
+		var dest_bmp = Utils.bmps[n];
 		if (!TAS.fastPlayback && Windows.clip[n+"VisWindow"]._visible) {
-			Utils.bmps[n].copyPixels(source_bmp, new flash.geom.Rectangle(0, 0, source_bmp.width, source_bmp.height), zeroPoint);
+			dest_bmp.copyPixels(Utils.empty_bmp, new flash.geom.Rectangle(0, 0, dest_bmp.width, dest_bmp.height), zeroPoint);
+			dest_bmp.copyPixels(source_bmp, new flash.geom.Rectangle(0, 0, source_bmp.width, source_bmp.height), zeroPoint);
 		}
 	}
 	
@@ -194,9 +257,35 @@ class Utils
 				arr.push(holder.slice(0, -7), Utils.layerVisibilities, holder);
 		}
 		
-		Utils.addToggleVarOptions(obj.options, arr);
+		obj.options.push("Extra", Utils.extraLayerVisibilityWindow);
 		
 		obj.options.push("Back", Utils.mainMenu);
+		
+		Utils.addToggleVarOptions(obj.options, arr);
+		
+		w.updateMainField(obj);
+	}
+	
+	static function extraLayerVisibilityWindow(w) {
+		for (var layer in Utils.extraLayerVisibilities) {
+			_root[layer]._visible = Utils.extraLayerVisibilities[layer];
+		}
+		
+		var obj = {
+			title: "Extra layer visibility",
+			curWindow: Utils.extraLayerVisibilityWindow,
+			options: []
+		}
+		
+		var arr = [];
+		
+		for (var layer in Utils.extraLayerVisibilities) {
+			arr.push(layer, Utils.extraLayerVisibilities, layer);
+		}
+		
+		obj.options.push("Back", Utils.layerVisibilityWindow);
+		
+		Utils.addToggleVarOptions(obj.options, arr);
 		
 		w.updateMainField(obj);
 	}

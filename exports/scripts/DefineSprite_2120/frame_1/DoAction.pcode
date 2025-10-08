@@ -3,13 +3,9 @@ Push "_root"
 GetVariable
 Push "aMode"
 GetMember
-If loc0092
-Push true, 1, "ClockDisp"
+If loc0088
+Push true, 1, "Timer"
 GetVariable
-Push "instances"
-GetMember
-Push 0
-GetMember
 Push "setPause"
 CallMethod
 Pop
@@ -20,4 +16,4 @@ GetMember
 Push "playSound"
 CallMethod
 Pop
-loc0092:
+loc0088:
