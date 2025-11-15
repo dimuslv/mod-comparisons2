@@ -62,7 +62,7 @@ Push "PopUpHolder"
 GetMember
 Not
 Not
-If loc02ee
+If loc0386
 Push "com"
 GetVariable
 Push "nitrome"
@@ -96,16 +96,18 @@ Push register2, "displayPopUp"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "id" {
 Push register1, "id", register2
 SetMember
+Push true
+If loc0267
 Push "TAS"
 GetVariable
 Push "fastPlayback"
 GetMember
-If loc01f7
+If loc0201
 Push "in", 1, register1, "gotoAndPlay"
 CallMethod
 Pop
-Jump loc0258
-loc01f7:Push 2, 1, register1, "gotoAndStop"
+Jump loc0262
+loc0201:Push 2, 1, register1, "gotoAndStop"
 CallMethod
 Pop
 Push register2, 1, register1, "clip"
@@ -116,24 +118,45 @@ Pop
 Push 23, 1, register1, "gotoAndStop"
 CallMethod
 Pop
+loc0262:Jump loc0299
+loc0267:Push 2141, "in", register1
+Push 3
+Push "_root"
+GetVariable
+Push "_gotoAndPlay"
+CallMethod
+Pop
 }
-loc0258:SetMember
+loc0299:SetMember
 Push register2, "hidePopUp"
 DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push true
+If loc0313
 Push "TAS"
 GetVariable
 Push "fastPlayback"
 GetMember
-If loc02a0
+If loc02eb
 Push "out", 1, register1, "gotoAndPlay"
 CallMethod
 Pop
-Jump loc02be
-loc02a0:Push 1, 1, register1, "gotoAndStop"
+Jump loc0309
+loc02eb:Push 1, 1, register1, "gotoAndStop"
+CallMethod
+Pop
+loc0309:Jump loc030e
+loc030e:Jump loc0345
+loc0313:Push 2141, "out", register1
+Push 3
+Push "_root"
+GetVariable
+Push "_gotoAndPlay"
 CallMethod
 Pop
 }
-loc02be:SetMember
+loc0345:SetMember
+Push register2, "chid", 2141
+SetMember
 Push 1, null, "com"
 GetVariable
 Push "nitrome"
@@ -146,4 +169,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc02ee:Pop
+loc0386:Pop

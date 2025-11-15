@@ -62,7 +62,7 @@ Push "Laser"
 GetMember
 Not
 Not
-If loc1408
+If loc142c
 Push "com"
 GetVariable
 Push "nitrome"
@@ -540,7 +540,7 @@ Push register1, "spark_clip"
 GetMember
 Push "_y", register7
 SetMember
-Jump loc0a28
+Jump loc0a4c
 loc09ee:Push 0, register1, "drawing_clip"
 GetMember
 Push "clear"
@@ -549,12 +549,22 @@ Pop
 Push register1, "spark_clip"
 GetMember
 Push "_x", 0
+Push register1, "_x"
+GetMember
+Subtract
+Push 64
+Subtract
 SetMember
 Push register1, "spark_clip"
 GetMember
 Push "_y", 0
+Push register1, "_y"
+GetMember
+Subtract
+Push 64
+Subtract
 SetMember
-loc0a28:Push register1, "laser_head"
+loc0a4c:Push register1, "laser_head"
 GetMember
 Push "_rotation", register1, "deg"
 GetMember
@@ -584,7 +594,7 @@ CallMethod
 Push true
 Equals2
 PushDuplicate
-If loc0b05
+If loc0b29
 Pop
 Push true, register2, "game"
 GetMember
@@ -616,11 +626,11 @@ Push "hitTest"
 CallMethod
 Push true
 Equals2
-loc0b05:Not
-If loc0b11
+loc0b29:Not
+If loc0b35
 Push true
 Return
-loc0b11:Push false
+loc0b35:Push false
 Return
 }
 SetMember
@@ -686,7 +696,7 @@ Push register1, "LOOP"
 GetMember
 Equals2
 Not
-If loc0cc5
+If loc0ce9
 Push register1, "next_path_point", register1, "next_path_point"
 GetMember
 Increment
@@ -699,17 +709,17 @@ Push 1
 Subtract
 Greater
 Not
-If loc0cc0
+If loc0ce4
 Push register1, "next_path_point", 1
 SetMember
-loc0cc0:Jump loc0d99
-loc0cc5:Push register1, "path_move"
+loc0ce4:Jump loc0dbd
+loc0ce9:Push register1, "path_move"
 GetMember
 Push register1, "ALT"
 GetMember
 Equals2
 Not
-If loc0d99
+If loc0dbd
 Push register1, "next_path_point", register1, "next_path_point"
 GetMember
 Push register1, "alt_dir"
@@ -721,7 +731,7 @@ GetMember
 Push 1
 Equals2
 Not
-If loc0d51
+If loc0d75
 Push register1, "next_path_point"
 GetMember
 Push register1, "path_length"
@@ -730,7 +740,7 @@ Push 1
 Subtract
 Greater
 Not
-If loc0d4c
+If loc0d70
 Push register1, "next_path_point", register1, "next_path_point"
 GetMember
 Push 2
@@ -738,24 +748,24 @@ Subtract
 SetMember
 Push register1, "alt_dir", -1
 SetMember
-loc0d4c:Jump loc0d99
-loc0d51:Push register1, "alt_dir"
+loc0d70:Jump loc0dbd
+loc0d75:Push register1, "alt_dir"
 GetMember
 Push -1
 Equals2
 Not
-If loc0d99
+If loc0dbd
 Push register1, "next_path_point"
 GetMember
 Push -1
 Equals2
 Not
-If loc0d99
+If loc0dbd
 Push register1, "next_path_point", 1
 SetMember
 Push register1, "alt_dir", 1
 SetMember
-loc0d99:Push register1, "next_x", register1, "next_path_point"
+loc0dbd:Push register1, "next_x", register1, "next_path_point"
 GetMember
 Push 1, register1, "path"
 GetMember
@@ -783,60 +793,60 @@ Push register1, "_x"
 GetMember
 Less2
 Not
-If loc0e26
+If loc0e4a
 Push register1, "x_speed", -1
 SetMember
-Jump loc0e73
-loc0e26:Push register1, "next_x"
+Jump loc0e97
+loc0e4a:Push register1, "next_x"
 GetMember
 Push register1, "_x"
 GetMember
 Greater
 Not
-If loc0e4f
+If loc0e73
 Push register1, "x_speed", 1
 SetMember
-Jump loc0e73
-loc0e4f:Push register1, "next_x"
+Jump loc0e97
+loc0e73:Push register1, "next_x"
 GetMember
 Push register1, "_x"
 GetMember
 Equals2
 Not
-If loc0e73
+If loc0e97
 Push register1, "x_speed", 0
 SetMember
-loc0e73:Push register1, "next_y"
+loc0e97:Push register1, "next_y"
 GetMember
 Push register1, "_y"
 GetMember
 Less2
 Not
-If loc0e9c
+If loc0ec0
 Push register1, "y_speed", -1
 SetMember
-Jump loc0ee9
-loc0e9c:Push register1, "next_y"
+Jump loc0f0d
+loc0ec0:Push register1, "next_y"
 GetMember
 Push register1, "_y"
 GetMember
 Greater
 Not
-If loc0ec5
+If loc0ee9
 Push register1, "y_speed", 1
 SetMember
-Jump loc0ee9
-loc0ec5:Push register1, "next_y"
+Jump loc0f0d
+loc0ee9:Push register1, "next_y"
 GetMember
 Push register1, "_y"
 GetMember
 Equals2
 Not
-If loc0ee9
+If loc0f0d
 Push register1, "y_speed", 0
 SetMember
 }
-loc0ee9:SetMember
+loc0f0d:SetMember
 Push register2, "init"
 DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 4, "game", 2, "id", 3, "path" {
 Push register1, "game", register4
@@ -851,12 +861,12 @@ GetMember
 Push 0
 Equals2
 Not
-If loc0f5b
+If loc0f7f
 Push register1, "path_move", register1, "NONE"
 GetMember
 SetMember
-Jump loc1131
-loc0f5b:Push register1, "path_length"
+Jump loc1155
+loc0f7f:Push register1, "path_length"
 GetMember
 Push 1
 Subtract
@@ -867,7 +877,7 @@ CallMethod
 Equals2
 PushDuplicate
 Not
-If loc0fbb
+If loc0fdf
 Pop
 Push register1, "path_length"
 GetMember
@@ -878,16 +888,16 @@ CallMethod
 Push 0, register3, "getStartCol"
 CallMethod
 Equals2
-loc0fbb:Not
-If loc0fd3
+loc0fdf:Not
+If loc0ff7
 Push register1, "path_move", register1, "LOOP"
 GetMember
 SetMember
-Jump loc0fe0
-loc0fd3:Push register1, "path_move", register1, "ALT"
+Jump loc1004
+loc0ff7:Push register1, "path_move", register1, "ALT"
 GetMember
 SetMember
-loc0fe0:Push register1, "next_path_point", 1
+loc1004:Push register1, "next_path_point", 1
 SetMember
 Push register1, "next_x", register1, "next_path_point"
 GetMember
@@ -913,166 +923,166 @@ Push register1, "_x"
 GetMember
 Less2
 Not
-If loc106e
+If loc1092
 Push register1, "x_speed", -1
 SetMember
-Jump loc10bb
-loc106e:Push register1, "next_x"
+Jump loc10df
+loc1092:Push register1, "next_x"
 GetMember
 Push register1, "_x"
 GetMember
 Greater
 Not
-If loc1097
+If loc10bb
 Push register1, "x_speed", 1
 SetMember
-Jump loc10bb
-loc1097:Push register1, "next_x"
+Jump loc10df
+loc10bb:Push register1, "next_x"
 GetMember
 Push register1, "_x"
 GetMember
 Equals2
 Not
-If loc10bb
+If loc10df
 Push register1, "x_speed", 0
 SetMember
-loc10bb:Push register1, "next_y"
+loc10df:Push register1, "next_y"
 GetMember
 Push register1, "_y"
 GetMember
 Less2
 Not
-If loc10e4
+If loc1108
 Push register1, "y_speed", -1
 SetMember
-Jump loc1131
-loc10e4:Push register1, "next_y"
+Jump loc1155
+loc1108:Push register1, "next_y"
 GetMember
 Push register1, "_y"
 GetMember
 Greater
 Not
-If loc110d
+If loc1131
 Push register1, "y_speed", 1
 SetMember
-Jump loc1131
-loc110d:Push register1, "next_y"
+Jump loc1155
+loc1131:Push register1, "next_y"
 GetMember
 Push register1, "_y"
 GetMember
 Equals2
 Not
-If loc1131
+If loc1155
 Push register1, "y_speed", 0
 SetMember
-loc1131:Push register2, 211
+loc1155:Push register2, 211
 Equals2
 Not
-If loc1161
+If loc1185
 Push register1, "rot", 1
 SetMember
 Push register1, "start_deg", 180
 SetMember
-Jump loc136c
-loc1161:Push register2, 212
+Jump loc1390
+loc1185:Push register2, 212
 Equals2
 Not
-If loc1191
+If loc11b5
 Push register1, "rot", 1
 SetMember
 Push register1, "start_deg", 270
 SetMember
-Jump loc136c
-loc1191:Push register2, 213
+Jump loc1390
+loc11b5:Push register2, 213
 Equals2
 Not
-If loc11c1
+If loc11e5
 Push register1, "rot", 1
 SetMember
 Push register1, "start_deg", 0
 SetMember
-Jump loc136c
-loc11c1:Push register2, 214
+Jump loc1390
+loc11e5:Push register2, 214
 Equals2
 Not
-If loc11f1
+If loc1215
 Push register1, "rot", 1
 SetMember
 Push register1, "start_deg", 90
 SetMember
-Jump loc136c
-loc11f1:Push register2, 215
+Jump loc1390
+loc1215:Push register2, 215
 Equals2
 Not
-If loc1221
+If loc1245
 Push register1, "rot", -1
 SetMember
 Push register1, "start_deg", 180
 SetMember
-Jump loc136c
-loc1221:Push register2, 216
+Jump loc1390
+loc1245:Push register2, 216
 Equals2
 Not
-If loc1251
+If loc1275
 Push register1, "rot", -1
 SetMember
 Push register1, "start_deg", 270
 SetMember
-Jump loc136c
-loc1251:Push register2, 217
+Jump loc1390
+loc1275:Push register2, 217
 Equals2
 Not
-If loc1281
+If loc12a5
 Push register1, "rot", -1
 SetMember
 Push register1, "start_deg", 0
 SetMember
-Jump loc136c
-loc1281:Push register2, 218
+Jump loc1390
+loc12a5:Push register2, 218
 Equals2
 Not
-If loc12b1
+If loc12d5
 Push register1, "rot", -1
 SetMember
 Push register1, "start_deg", 90
 SetMember
-Jump loc136c
-loc12b1:Push register2, 219
+Jump loc1390
+loc12d5:Push register2, 219
 Equals2
 Not
-If loc12e1
+If loc1305
 Push register1, "rot", 0
 SetMember
 Push register1, "start_deg", 180
 SetMember
-Jump loc136c
-loc12e1:Push register2, 220
+Jump loc1390
+loc1305:Push register2, 220
 Equals2
 Not
-If loc1311
+If loc1335
 Push register1, "rot", 0
 SetMember
 Push register1, "start_deg", 270
 SetMember
-Jump loc136c
-loc1311:Push register2, 221
+Jump loc1390
+loc1335:Push register2, 221
 Equals2
 Not
-If loc1341
+If loc1365
 Push register1, "rot", 0
 SetMember
 Push register1, "start_deg", 0
 SetMember
-Jump loc136c
-loc1341:Push register2, 222
+Jump loc1390
+loc1365:Push register2, 222
 Equals2
 Not
-If loc136c
+If loc1390
 Push register1, "rot", 0
 SetMember
 Push register1, "start_deg", 90
 SetMember
-loc136c:Push register1, "deg", register1, "start_deg"
+loc1390:Push register1, "deg", register1, "start_deg"
 GetMember
 SetMember
 }
@@ -1103,4 +1113,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc1408:Pop
+loc142c:Pop

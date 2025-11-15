@@ -26,6 +26,7 @@ class Main
 	{
 		var _loc2_ = _root.game;
 		Main.holders = [_loc2_.heart_holder,_loc2_.object_holder,_loc2_.safe_holder,_loc2_.danger_holder,_loc2_.laser_holder,_loc2_.player_holder,_loc2_.grow_holder,_loc2_.bomb_holder,_loc2_.missile_holder,_loc2_.splash_holder,_loc2_.acid_holder,_loc2_.explosion_holder];
+		_root.popup_holder.stopped = true;
 		TAS.levelInit();
 		Utils.levelInit();
 		Main.stopAll();
@@ -54,7 +55,9 @@ class Main
 	}
 	static function gameUpdate()
 	{
+		Main.scriptStack = [];
 		TAS.checkKeys();
+		Main.executeScripts(Main.scriptStack);
 		Main.scriptStack = [];
 		Main.updateAnimations();
 		var _loc2_ = Main.scriptStack;
@@ -63,8 +66,7 @@ class Main
 		_root.game.doEnterFrame();
 		_root.doEnterFrameBeacon();
 		Main.executeScripts(Main.scriptStack);
-		TAS.justPause = com.nitrome.toxic.Global.game_paused;
-		TAS.justPlacedBombs = 0;
+		TAS.resetInputCheckers();
 	}
 	static function executeScripts(stack)
 	{
@@ -77,16 +79,18 @@ class Main
 	}
 	static function updateAnimations()
 	{
-		var i = 0;
-		while(i < Main.holders.length)
+		var _loc2_ = 0;
+		var _loc4_;
+		while(_loc2_ < Main.holders.length)
 		{
-			for(var objName in Main.holders[i])
+			for(var _loc3_ in Main.holders[_loc2_])
 			{
-				var obj = Main.holders[i][objName];
-				Main.advanceAnimation(obj,obj.chid);
+				_loc4_ = Main.holders[_loc2_][_loc3_];
+				Main.advanceAnimation(_loc4_,_loc4_.chid);
 			}
-			i++;
+			_loc2_ = _loc2_ + 1;
 		}
+		Main.advanceAnimation(_root.popup_holder,_root.popup_holder.chid);
 	}
 	static function iterateOnChildren(obj, childArray, fun1, fun2)
 	{
@@ -235,7 +239,7 @@ class Main
 					{
 						if(_loc6_[0]["f" + that._currentframe])
 						{
-							Main.scriptStack.push(that,_loc6_[0]["f" + obj._currentframe]);
+							Main.scriptStack.push(that,_loc6_[0]["f" + that._currentframe]);
 						}
 					}
 					if(_loc6_.length > 1)
@@ -291,16 +295,18 @@ class Main
 	}
 	static function stopAll()
 	{
-		var i = 0;
-		while(i < Main.holders.length)
+		var _loc2_ = 0;
+		var _loc4_;
+		while(_loc2_ < Main.holders.length)
 		{
-			for(var objName in Main.holders[i])
+			for(var _loc3_ in Main.holders[_loc2_])
 			{
-				var obj = Main.holders[i][objName];
-				Main.stopAnimation(obj,obj.chid);
+				_loc4_ = Main.holders[_loc2_][_loc3_];
+				Main.stopAnimation(_loc4_,_loc4_.chid);
 			}
-			i++;
+			_loc2_ = _loc2_ + 1;
 		}
+		Main.stopAnimation(_root.popup_holder,_root.popup_holder.chid);
 	}
 	static function stopAnimation(obj, chid)
 	{

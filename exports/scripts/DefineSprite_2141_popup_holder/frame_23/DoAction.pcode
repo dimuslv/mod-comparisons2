@@ -1,1 +1,7 @@
+Push "_root"
+GetVariable
+Push "aMode"
+GetMember
+If loc001c
 Stop
+loc001c:

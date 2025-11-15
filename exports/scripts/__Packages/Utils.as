@@ -15,6 +15,8 @@ class Utils
 	static var deactivateTeleport = false;
 	static var laserState = 1;
 	static var skipBeginning = true;
+	static var autoScroll = true;
+	static var screenshake = true;
 	static var visWindowArray = ["Damage",60,52,"Acid",60,52,"Object",60,52,"Bomb",31,18];
 	static var bmps = {};
 	static var empty_bmp = new flash.display.BitmapData(100,100,false);
@@ -93,7 +95,6 @@ class Utils
 		var _loc2_ = {title:"Testing vars",curWindow:Utils.testingVarsWindow,options:[]};
 		Utils.addToggleVarOptions(_loc2_.options,["Invulnerability",Utils,"invulnerable","No death",Utils,"noDeath","Buggy IL mod physics",Utils,"inaccuratePhysics","Deactivate teleport",Utils,"deactivateTeleport","Skip beginning",Utils,"skipBeginning"]);
 		Utils.addCycleOption(_loc2_.options,"Lasers",Utils,"laserState",["off","on","simple"]);
-		_loc2_.options.push("Mask: " + (Utils.masked ? "on" : "off"),Utils.toggleMask);
 		_loc2_.options.push("Back",Utils.mainMenu);
 		w.updateMainField(_loc2_);
 	}
@@ -178,7 +179,7 @@ class Utils
 	static function preferenceWindow(w)
 	{
 		var _loc2_ = {title:"Preferences",curWindow:Utils.preferenceWindow,options:[]};
-		Utils.addToggleVarOptions(_loc2_.options,["Perf optimizations",Utils,"perf"]);
+		Utils.addToggleVarOptions(_loc2_.options,["Perf optimizations",Utils,"perf","Auto scroll",Utils,"autoScroll","Screenshake",Utils,"screenshake"]);
 		_loc2_.options.push("Back",Utils.mainMenu);
 		w.updateMainField(_loc2_);
 	}
@@ -243,6 +244,7 @@ class Utils
 			_loc5_.push(_loc3_,Utils.extraLayerVisibilities,_loc3_);
 		}
 		_loc4_.options.push("Back",Utils.layerVisibilityWindow);
+		_loc4_.options.push("Mask: " + (Utils.masked ? "on" : "off"),Utils.toggleMask);
 		Utils.addToggleVarOptions(_loc4_.options,_loc5_);
 		w.updateMainField(_loc4_);
 	}

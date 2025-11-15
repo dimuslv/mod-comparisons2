@@ -22,6 +22,7 @@ class Main
 		//_root.holders = [g.heart_holder, g.bg_holder, g.ground_holder, g.solid_holder, g.object_holder, g.safe_holder, g.danger_holder, g.bossbmp_holder, g.laser_holder, g.debris_holder, g.player_holder, g.grow_holder, g.bomb_holder, g.missile_holder, g.splash_holder, g.acid_holder, g.explosion_holder];
 		var g = _root.game;
 		Main.holders = [g.heart_holder, g.object_holder, g.safe_holder, g.danger_holder, g.laser_holder, g.player_holder, g.grow_holder, g.bomb_holder, g.missile_holder, g.splash_holder, g.acid_holder, g.explosion_holder];
+		_root.popup_holder.stopped = true;
 		TAS.levelInit();
 		Utils.levelInit();
 		Main.stopAll();
@@ -47,8 +48,11 @@ class Main
 	}
 
 	static function gameUpdate() {
+		Main.scriptStack = [];
+		
 		TAS.checkKeys();
 		
+		Main.executeScripts(Main.scriptStack);
 		Main.scriptStack = [];
 		
 		Main.updateAnimations();
@@ -63,8 +67,7 @@ class Main
 		
 		Main.executeScripts(Main.scriptStack);
 		
-		TAS.justPause = com.nitrome.toxic.Global.game_paused;
-		TAS.justPlacedBombs = 0;
+		TAS.resetInputCheckers();
 	}
 
 	static function executeScripts(stack) {
@@ -84,6 +87,7 @@ class Main
 			}
 			i++;
 		}
+		Main.advanceAnimation(_root.popup_holder, _root.popup_holder.chid);
 	}
 	
 	static function iterateOnChildren(obj, childArray, fun1, fun2) {
@@ -193,7 +197,7 @@ class Main
 				if (oldFrame != that._currentframe) {
 					if (typeof(info[0]) == "object") {
 						if (info[0]["f" + that._currentframe]) {
-							Main.scriptStack.push(that, info[0]["f" + obj._currentframe]);
+							Main.scriptStack.push(that, info[0]["f" + that._currentframe]);
 						}
 					}
 					
@@ -246,6 +250,7 @@ class Main
 			}
 			i++;
 		}
+		Main.stopAnimation(_root.popup_holder, _root.popup_holder.chid);
 	}
 
 	static function stopAnimation(obj, chid) {

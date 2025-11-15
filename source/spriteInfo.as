@@ -1066,6 +1066,20 @@ m2121/*player, Player*/:
 			]
 		]
 	],
+m2141/*popup_holder, PopUpHolder*/:
+	[
+		{
+			f1: function(that) {
+				_root._stop(that);
+			},
+			f2: function(that) {
+				that.clip.gotoAndStop(that.id);
+			},
+			f23: function(that) {
+				_root._stop(that);
+			}
+		}
+	],
 m2156:
 	[
 		true

@@ -14,6 +14,7 @@ class com.nitrome.buttons.PauseButton extends com.nitrome.buttons.SimpleButton
 		else
 		{
 			TAS.justPause = true;
+			TAS.pressedPause = true;
 		}
 	}
 }

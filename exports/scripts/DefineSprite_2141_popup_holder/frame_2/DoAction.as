@@ -1,1 +1,4 @@
-clip.gotoAndStop(this.id);
+if(!_root.aMode)
+{
+	clip.gotoAndStop(this.id);
+}

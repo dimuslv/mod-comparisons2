@@ -18,14 +18,27 @@ class TAS
 	static var saveStates = [];
 	static var justPlacedBombs;
 	static var justPause;
+	static var pressedPause;
+	static var releasedUp;
+	static var pressedHit;
+	static var queuedHit = false;
+	
 	static var inputField;
 	static var targetIndex;
 	static var targetFrame;
 	static var delayedCaretIndex = -1;
 	
+	static var UP_PRESSED = false;
+	static var DOWN_PRESSED = false;
+	
 	static var subLetters = "rb";
 	
 	static var runBack = false;
+	
+	static var subLetters = "rbjJPh";
+	static var fullLetters = "qweasdQWEADnp";
+	static var letters = TAS.subLetters + TAS.fullLetters;
+	static var symbols = TAS.letters + "|";
 
 	static function updateVarWindow(w) {
 		var p = _root.game.player;
@@ -47,11 +60,35 @@ class TAS
 	}
 	
 	static function isSubLetter(let) {
-		return "rb".indexOf(let) != -1;
+		return TAS.subLetters.indexOf(let) !== -1;
+	}
+	
+	static function isLetter(let) {
+		return TAS.letters.indexOf(let) !== -1;
+	}
+	
+	static function isSymbol(let) {
+		return TAS.symbols.indexOf(let) !== -1;
 	}
 	
 	static function compact(num) {
 		return (num == 1)? "" : num;
+	}
+	
+	static function scrollToCaret() {
+		var caretInd;
+		
+		if (TAS.isAtStringEnd()) {
+			caretInd = TAS.curString.length;
+		} else if (TAS.curFrame == TAS.valueArray[TAS.curIndex]) {
+			caretInd = TAS.indArray[TAS.curIndex + 1];
+		} else {
+			caretInd = TAS.indArray[TAS.curIndex];
+		}
+		
+		Selection.setFocus(Windows.clip.inputWindow.inputField);
+		Selection.setSelection(caretInd, caretInd);
+		Windows.nullFocus();
 	}
 
 	static function doKeyDown(code) {
@@ -64,38 +101,55 @@ class TAS
 		}
 		
 		if (TAS.write || true) {
-			if (code == 37 || code == 65) {
+			if (code == 38 || code == 87) {
+				TAS.UP_PRESSED = true;
+			} else if (code == 40 || code == 83) {
+				TAS.DOWN_PRESSED = true;
+			} else if (code == 37 || code == 65) {
 				com.nitrome.toxic.Global.LAST_DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
 			} else if (code == 39 || code == 68) {
 				com.nitrome.toxic.Global.LAST_DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
 			} else if (code == 32 || code == 66) {
-				TAS.justPlacedBombs++;
+				if (!TAS.justPause) {
+					TAS.justPlacedBombs++;
+				}
 			} else if (code == 78) {
 				if (TAS.justPlacedBombs > 0) {
 					TAS.justPlacedBombs--;
 				}
 			} else if (code == 80) {
 				TAS.justPause = !TAS.justPause;
+				TAS.pressedPause = true;
+			} else if (code == 72) {
+				TAS.pressedHit = !TAS.pressedHit;
 			}
+		}
+	}
+	
+	static function doKeyUp(code) {
+		if (code == 38 || code == 87) {
+			TAS.releasedUp = true;
+			TAS.UP_PRESSED = false;
+		} else if (code == 40 || code == 83) {
+			TAS.DOWN_PRESSED = false;
 		}
 	}
 
 	static function doTasKeyDown(code) {
-		if (code == 13) { //Enter
-			TAS.loadInputs(false);
-			return true;
-		}
+		
 		if (TAS.foif()) {
 			if (code == 27 || code == 112) { //Esc F1
 				Windows.nullFocus();
 				TAS.loadInputs(false);
-			} else if (code == 38) { //Up
+			} else if (code == 34) { //PgDn
 				TAS.loadInputs(true);
 				TAS.delayedCaretIndex = Selection.getCaretIndex();
 				Windows.nullFocus();
-			} else if (code == 40 || code == 123) { //Down F12
+			} else if (code == 33 || code == 123) { //PgUp F12
 				TAS.loadInputs(true);
 				Windows.nullFocus();
+			} else if (code == 13) { //Enter
+				TAS.loadInputs(false);
 			}
 			return true;
 		}
@@ -117,7 +171,9 @@ class TAS
 			return true;
 		}
 		if (code == 73) { //i
-			Windows.clip.inputWindow._visible = !Windows.clip.inputWindow._visible;
+			if (Windows.clip.inputWindow._visible = !Windows.clip.inputWindow._visible) {
+				TAS.updateText();
+			}
 			//Windows.nullFocus();
 			return true;
 		}
@@ -189,19 +245,7 @@ class TAS
 		}
 		
 		if (code == 220) { //|
-			var caretInd;
-			
-			if (TAS.isAtStringEnd()) {
-				caretInd = TAS.curString.length;
-			} else if (TAS.curFrame == TAS.valueArray[TAS.curIndex]) {
-				caretInd = TAS.indArray[TAS.curIndex + 1];
-			} else {
-				caretInd = TAS.indArray[TAS.curIndex];
-			}
-			
-			Selection.setFocus(Windows.clip.inputWindow.inputField);
-			Selection.setSelection(caretInd, caretInd);
-			Windows.nullFocus();
+			TAS.scrollToCaret();
 			return true;
 		}
 		
@@ -293,7 +337,7 @@ class TAS
 		var caretInd = -1;
 		
 		var i = 0;
-		while (i < newString.length && "qweasdQWEADnbrp|".indexOf(newString.charAt(i)) == -1) {
+		while (i < newString.length && !TAS.isSymbol(newString.charAt(i))) {
 			i++;
 		}
 		while (i < newString.length) {
@@ -304,7 +348,7 @@ class TAS
 			var endPos = i + 1;
 			
 			i++;
-			while (i < newString.length && "qweasdQWEADnbrp|".indexOf(newString.charAt(i)) == -1) {
+			while (i < newString.length && !TAS.isSymbol(newString.charAt(i))) {
 				if (newString.charCodeAt(i) >= 48 && newString.charCodeAt(i) <= 57) {
 					num = num * 10 + newString.charCodeAt(i) - 48;
 					endPos = i + 1;
@@ -409,17 +453,28 @@ class TAS
 	}
 
 	static function updateText() {
-		var newText;
-		
-		if (TAS.isAtStringEnd()) {
-			newText = TAS.curString;
-		} else if (TAS.curFrame == TAS.valueArray[TAS.curIndex]) {
-			newText = TAS.curString.slice(0, TAS.indArray[TAS.curIndex+1]) + "|" + TAS.curString.slice(TAS.indArray[TAS.curIndex+1]);
-		} else {
-			newText = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + "|" + TAS.curFrame + TAS.curString.slice(TAS.indArray[TAS.curIndex]);
+		if (!Windows.clip.inputWindow._visible || !TAS.inputField._visible) {
+			return;
 		}
 		
-		TAS.inputField.text = newText;
+		var textW;
+		
+		if (TAS.isAtStringEnd()) {
+			TAS.inputField.text = TAS.curString;
+			textW = TAS.inputField.textWidth;
+		} else if (TAS.curFrame == TAS.valueArray[TAS.curIndex]) {
+			TAS.inputField.text = TAS.curString.slice(0, TAS.indArray[TAS.curIndex+1]);
+			textW = TAS.inputField.textWidth;
+			TAS.inputField.text += "|" + TAS.curString.slice(TAS.indArray[TAS.curIndex+1]);
+		} else {
+			TAS.inputField.text = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]);
+			textW = TAS.inputField.textWidth;
+			TAS.inputField.text += "|" + TAS.curFrame + TAS.curString.slice(TAS.indArray[TAS.curIndex]);
+		}
+		
+		if (Utils.autoScroll) {
+			TAS.inputField.hscroll = (textW - 225) * TAS.inputField.maxhscroll / (TAS.inputField.textWidth - 395);
+		}
 	}
 
 	static function foif() {
@@ -432,38 +487,34 @@ class TAS
 		}
 		
 		if (TAS.write) {
-			var prevUp = com.nitrome.toxic.Global.UP_PRESSED;
+			var DIR_PRESSED = -1;
+			var UP_PRESSED = false;
+			var DOWN_PRESSED = false;
 			
-			if (TAS.foif()) {
-				com.nitrome.toxic.Global.DIR_PRESSED = -1;
-				com.nitrome.toxic.Global.UP_PRESSED = false;
-				com.nitrome.toxic.Global.DOWN_PRESSED = false;
-			} else {
+			if (!TAS.foif()) {
 				if ((Key.isDown(37) || Key.isDown(65)) && (Key.isDown(39) || Key.isDown(68))) {
 					if (com.nitrome.toxic.Global.LAST_DIR_PRESSED == com.nitrome.toxic.Global.LEFT) {
-						com.nitrome.toxic.Global.DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
+						DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
 					} else if (com.nitrome.toxic.Global.LAST_DIR_PRESSED == com.nitrome.toxic.Global.RIGHT) {
-						com.nitrome.toxic.Global.DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
+						DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
 					}
 				} else if (Key.isDown(37) || Key.isDown(65)) {
-					com.nitrome.toxic.Global.DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
+					DIR_PRESSED = com.nitrome.toxic.Global.LEFT;
 				} else if (Key.isDown(39) || Key.isDown(68)) {
-					com.nitrome.toxic.Global.DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
+					DIR_PRESSED = com.nitrome.toxic.Global.RIGHT;
 				} else {
-					com.nitrome.toxic.Global.DIR_PRESSED = -1;
+					DIR_PRESSED = -1;
 				}
 				
-				com.nitrome.toxic.Global.UP_PRESSED = Key.isDown(38) || Key.isDown(87);
-				com.nitrome.toxic.Global.DOWN_PRESSED = Key.isDown(40) || Key.isDown(83);
-			}
-			
-			if (prevUp && !com.nitrome.toxic.Global.UP_PRESSED) {
-				com.nitrome.toxic.Global.can_jump = true;
-			}
-			
-			var letter = "nadwqesADWQE".charAt(com.nitrome.toxic.Global.DIR_PRESSED + 1 + int(com.nitrome.toxic.Global.UP_PRESSED) * 3 + int(com.nitrome.toxic.Global.DOWN_PRESSED) * 6);
-			if (TAS.justPause) {
-				letter = "p";
+				if(!Key.isDown(38) && !Key.isDown(87)) {
+					TAS.UP_PRESSED = false;
+				}
+				if(!Key.isDown(40) && !Key.isDown(83)) {
+					TAS.DOWN_PRESSED = false;
+				}
+				
+				UP_PRESSED = TAS.UP_PRESSED;
+				DOWN_PRESSED = TAS.DOWN_PRESSED;
 			}
 			
 			if (TAS.override) {
@@ -472,117 +523,190 @@ class TAS
 				TAS.splitCurLetter();
 			}
 			
-			//var addedLength = 0;
+			var atEnd = TAS.curIndex === TAS.inputArray.length - 1;
+			
+			var newInputs;
+			var newValues;
+			if (!atEnd) {
+				newInputs = [TAS.curIndex + 1, 0];
+				newValues = [TAS.curIndex + 1, 0];
+			} else {
+				newInputs = TAS.inputArray;
+				newValues = TAS.valueArray;
+			}
+			
+			var startLen = newInputs.length;
+			
+			if (TAS.justPause) {
+				UP_PRESSED = com.nitrome.toxic.Global.UP_PRESSED;
+			}
+			
+			if (!TAS.frozen && !com.nitrome.toxic.Global.can_jump) {
+				if ((com.nitrome.toxic.Global.UP_PRESSED && !UP_PRESSED) !== TAS.releasedUp) {
+					if (TAS.releasedUp) {
+						newInputs.push("j");
+					} else {
+						newInputs.push("J");
+					}
+					newValues.push(1);
+				}
+			}
+			
+			if (TAS.justPlacedBombs > 0) {
+				newInputs.push("b");
+				newValues.push(TAS.justPlacedBombs);
+			}
+			if (TAS.pressedHit) {
+				newInputs.push("h");
+				newValues.push(1);
+			}
+			if (com.nitrome.toxic.Global.game_paused === TAS.justPause && TAS.pressedPause) {
+				if (TAS.justPlacedBombs <= 0 || !TAS.justPause) {
+					newInputs.push("P");
+					newValues.push(1);
+				}
+			}
+			
+			var letter = "nadwqesADWQE".charAt(DIR_PRESSED + 1 + int(UP_PRESSED) * 3 + int(DOWN_PRESSED) * 6);
+			if (TAS.justPause) {
+				letter = "p";
+			}
+			
 			var endInd = TAS.endIndArray[TAS.curIndex];
 			var endString = TAS.curString.slice(endInd);
 			TAS.curString = TAS.curString.slice(0, endInd);
-			var i;
 			
-			if (TAS.justPlacedBombs > 0) {
-				i = 0;
-				while (i < TAS.justPlacedBombs) {
-					_root.game.layBomb();
-					i++;
-				}
-				TAS.curIndex++;
-				
-				TAS.inputArray.splice(TAS.curIndex, 0, "b");
-				TAS.valueArray.splice(TAS.curIndex, 0, TAS.justPlacedBombs);
-				TAS.indArray.splice(TAS.curIndex, 0, TAS.curString.length);
-				
-				TAS.curFrame = TAS.justPlacedBombs;
-				TAS.curString += "b" + ((TAS.justPlacedBombs > 1)? TAS.justPlacedBombs : "");
-				TAS.endIndArray.splice(TAS.curIndex, 0, TAS.curString.length);
-			}
-			
-			if (letter == TAS.inputArray[TAS.curIndex]) {
+			if (newInputs.length === startLen && letter === TAS.inputArray[TAS.curIndex]) {
 				TAS.valueArray[TAS.curIndex]++;
-				TAS.curFrame++;
-				TAS.curString = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + TAS.inputArray[TAS.curIndex] + TAS.curFrame;
+				TAS.curString = TAS.curString.slice(0, TAS.indArray[TAS.curIndex]) + TAS.inputArray[TAS.curIndex] + TAS.valueArray[TAS.curIndex];
 				TAS.endIndArray[TAS.curIndex] = TAS.curString.length;
 			} else {
-				TAS.curIndex++;
+				newInputs.push(letter);
+				newValues.push(1);
+				if (!atEnd) {
+					TAS.inputArray.splice.apply(TAS.inputArray, newInputs);
+					TAS.valueArray.splice.apply(TAS.valueArray, newValues);
+				}
 				
-				TAS.inputArray.splice(TAS.curIndex, 0, letter);
-				TAS.valueArray.splice(TAS.curIndex, 0, 1);
-				TAS.indArray.splice(TAS.curIndex, 0, TAS.curString.length);
+				var newInds;
+				var newEndInds
+				if (!atEnd) {
+					newInds = [TAS.curIndex + 1, 0];
+					newEndInds = [TAS.curIndex + 1, 0];
+				} else {
+					newInds = TAS.indArray;
+					newEndInds = TAS.endIndArray;
+				}
 				
-				TAS.curFrame = 1;
-				TAS.curString += letter;
-				TAS.endIndArray.splice(TAS.curIndex, 0, TAS.curString.length);
+				for (var i = startLen; i < newInputs.length; i++) {
+					newInds.push(TAS.curString.length);
+					TAS.curString += newInputs[i] + TAS.compact(newValues[i]);
+					newEndInds.push(TAS.curString.length);
+				}
+				
+				if (!atEnd) {
+					TAS.indArray.splice.apply(TAS.indArray, newInds);
+					TAS.endIndArray.splice.apply(TAS.endIndArray, newEndInds);
+				}
 			}
 			
-			i = TAS.curIndex + 1;
-			while (i < TAS.inputArray.length) {
-				TAS.indArray[i] += TAS.curString.length - endInd;
-				TAS.endIndArray[i] += TAS.curString.length - endInd;
-				i++;
+			if (!atEnd) {
+				for (var i = TAS.curIndex + newInputs.length - 1; i < TAS.indArray.length; i++) {
+					TAS.indArray[i] += TAS.curString.length - endInd;
+					TAS.endIndArray[i] += TAS.curString.length - endInd;
+				}
 			}
 			
 			TAS.curString += endString;
-			
-			if (TAS.justPause) {
-				if (!com.nitrome.toxic.Global.game_paused) {
+		}
+		
+		// Assumes that there is something to play!
+		if (TAS.curFrame >= TAS.valueArray[TAS.curIndex]) {
+			TAS.curIndex++;
+			TAS.curFrame = 0;
+		}
+		
+		var didntReleaseUp = false;
+		
+		while (TAS.isSubLetter(TAS.inputArray[TAS.curIndex])) {
+			switch (TAS.inputArray[TAS.curIndex]) {
+				case "b":
+					if (com.nitrome.toxic.Global.game_paused) {
+						_root.game.unpauseGame();
+						_root.popup_holder.hidePopUp();
+					}
+					for (var i = 0; i < TAS.valueArray[TAS.curIndex]; i++) {
+						_root.game.layBomb();
+					}
+					break;
+				case "r":
+					RNG.rngSeed = TAS.valueArray[TAS.curIndex];
+					break;
+				case "j":
+					com.nitrome.toxic.Global.can_jump = true;
+					break;
+				case "J":
+					didntReleaseUp = true;
+					break;
+				case "P":
 					_root.popup_holder.displayPopUp("game_paused");
 					_root.game.pauseGame();
-				}
-			} else if (com.nitrome.toxic.Global.game_paused) {
+					break;
+				case "h":
+					TAS.queuedHit = true;
+					break;
+			}
+			
+			TAS.curIndex++;
+			TAS.curFrame = 0;
+		}
+		
+		var letter = TAS.inputArray[TAS.curIndex];
+		
+		if (letter == "p") {
+			if (!com.nitrome.toxic.Global.game_paused) {
+				_root.popup_holder.displayPopUp("game_paused");
+				_root.game.pauseGame();
+			}
+		} else {
+			if (com.nitrome.toxic.Global.game_paused) {
 				_root.game.unpauseGame();
 				_root.popup_holder.hidePopUp();
 			}
-		} else {
-			// Assumes that there is something to play!
-			if (TAS.curFrame >= TAS.valueArray[TAS.curIndex]) {
-				TAS.curIndex++;
-				TAS.curFrame = 0;
-			}
 			
-			while (TAS.inputArray[TAS.curIndex] == "b" || TAS.inputArray[TAS.curIndex] == "r") {
-				if (TAS.inputArray[TAS.curIndex] == "b") {
-					i = 0;
-					while (i < TAS.valueArray[TAS.curIndex]) {
-						_root.game.layBomb();
-						i++;
-					}
-				} else {
-					RNG.rngSeed = TAS.valueArray[TAS.curIndex];
-				}
-				TAS.curIndex++;
-				TAS.curFrame = 0;
+			var num = "nadwqesADWQE".indexOf(letter);
+			com.nitrome.toxic.Global.DIR_PRESSED = (num % 3) - 1;
+			if (com.nitrome.toxic.Global.UP_PRESSED && num % 6 < 3 && !didntReleaseUp) {
+				com.nitrome.toxic.Global.can_jump = true;
 			}
-			
-			var letter = TAS.inputArray[TAS.curIndex];
-			
-			if (letter == "p") {
-				if (!com.nitrome.toxic.Global.game_paused) {
-					_root.popup_holder.displayPopUp("game_paused");
-					_root.game.pauseGame();
-				}
-			} else {
-				if (com.nitrome.toxic.Global.game_paused) {
-					_root.game.unpauseGame();
-					_root.popup_holder.hidePopUp();
-				}
-				
-				var num = "nadwqesADWQE".indexOf(letter);
-				com.nitrome.toxic.Global.DIR_PRESSED = (num % 3) - 1;
-				if (com.nitrome.toxic.Global.UP_PRESSED && num % 6 < 3) {
-					com.nitrome.toxic.Global.can_jump = true;
-				}
-				com.nitrome.toxic.Global.UP_PRESSED = num % 6 >= 3;
-				com.nitrome.toxic.Global.DOWN_PRESSED = num >= 6;
-			}
-			TAS.curFrame++;
-			
-			if (TAS.fastPlayback && TAS.curIndex == TAS.targetIndex && TAS.curFrame == TAS.targetFrame) {
-				TAS.fastPlayback = false;
-			}
+			com.nitrome.toxic.Global.UP_PRESSED = num % 6 >= 3;
+			com.nitrome.toxic.Global.DOWN_PRESSED = num >= 6;
 		}
+		TAS.curFrame++;
+		
+		if (TAS.fastPlayback && TAS.curIndex == TAS.targetIndex && TAS.curFrame == TAS.targetFrame) {
+			TAS.fastPlayback = false;
+		}
+	}
+	
+	static function performQueuedHit() {
+		if (TAS.queuedHit) {
+			_root.game.player.startHit();
+		}
+	}
+	
+	static function resetInputCheckers() {
+		TAS.justPause = com.nitrome.toxic.Global.game_paused;
+		TAS.pressedPause = false;
+		TAS.releasedUp = false;
+		TAS.pressedHit = false;
+		TAS.justPlacedBombs = 0;
+		
+		TAS.queuedHit = false;
 	}
 
 	static function levelInit() {
-		TAS.justPause = com.nitrome.toxic.Global.game_paused;
-		TAS.justPlacedBombs = 0;
+		TAS.resetInputCheckers();
 		
 		var bubArray = [];
 		

@@ -405,6 +405,10 @@ class com.nitrome.toxic.Game extends MovieClip
 	}
 	function doScreenShake()
 	{
+		if(!Utils.screenshake)
+		{
+			return undefined;
+		}
 		var _loc2_;
 		if(this.screen_shake > 0)
 		{
@@ -844,6 +848,10 @@ class com.nitrome.toxic.Game extends MovieClip
 			if(!_root.aMode)
 			{
 				_root.game.doKeyUp(Key.getCode());
+			}
+			else
+			{
+				TAS.doKeyUp(Key.getCode());
 			}
 		};
 		this.doKeyDown = function(code)

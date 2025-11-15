@@ -131,8 +131,8 @@ class com.nitrome.toxic.Laser extends MovieClip
 		else
 		{
 			this.drawing_clip.clear();
-			this.spark_clip._x = 0;
-			this.spark_clip._y = 0;
+			this.spark_clip._x = - this._x - 64;
+			this.spark_clip._y = - this._y - 64;
 		}
 		this.laser_head._rotation = this.deg;
 	}

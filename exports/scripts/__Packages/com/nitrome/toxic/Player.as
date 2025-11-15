@@ -167,6 +167,7 @@ class com.nitrome.toxic.Player extends MovieClip
 					{
 						this._y = this._y + 1;
 						this.adjustToFloor();
+						TAS.performQueuedHit();
 					}
 					else if(this.state == com.nitrome.toxic.Global.END)
 					{
@@ -285,6 +286,7 @@ class com.nitrome.toxic.Player extends MovieClip
 			Utils.updateVisBitmap("Damage",_global.img);
 			if(_loc7_.width == 0)
 			{
+				TAS.performQueuedHit();
 				_global.img.dispose();
 				delete _global.img;
 			}
@@ -294,6 +296,10 @@ class com.nitrome.toxic.Player extends MovieClip
 				_global.img.dispose();
 				delete _global.img;
 			}
+		}
+		else
+		{
+			TAS.performQueuedHit();
 		}
 		_global.img5 = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
 		_global.img5.draw(_root.game.acid_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
@@ -399,7 +405,7 @@ class com.nitrome.toxic.Player extends MovieClip
 	}
 	function startHit()
 	{
-		if(Utils.invulnerable)
+		if(Utils.invulnerable && !TAS.queuedHit)
 		{
 			return undefined;
 		}
@@ -1438,16 +1444,19 @@ class com.nitrome.toxic.Player extends MovieClip
 				if(this.vy >= 0)
 				{
 					_loc3_ = false;
-					_loc2_ = 1;
-					while(_loc2_ <= this.max_slope)
+					if(!Utils.perf)
 					{
-						if(this.getOnGround(this.rx,this._y - _loc2_) == true)
+						_loc2_ = 1;
+						while(_loc2_ <= this.max_slope)
 						{
-							this._y -= _loc2_;
-							_loc3_ = true;
-							break;
+							if(this.getOnGround(this.rx,this._y - _loc2_) == true)
+							{
+								this._y -= _loc2_;
+								_loc3_ = true;
+								break;
+							}
+							_loc2_ = _loc2_ + 1;
 						}
-						_loc2_ = _loc2_ + 1;
 					}
 					if(_loc3_ == false)
 					{
@@ -1473,16 +1482,19 @@ class com.nitrome.toxic.Player extends MovieClip
 				if(this.vy >= 0)
 				{
 					_loc3_ = false;
-					_loc2_ = 1;
-					while(_loc2_ <= this.max_slope)
+					if(!Utils.perf)
 					{
-						if(this.getOnGround(this.lx,this._y - _loc2_) == true)
+						_loc2_ = 1;
+						while(_loc2_ <= this.max_slope)
 						{
-							this._y -= _loc2_;
-							_loc3_ = true;
-							break;
+							if(this.getOnGround(this.lx,this._y - _loc2_) == true)
+							{
+								this._y -= _loc2_;
+								_loc3_ = true;
+								break;
+							}
+							_loc2_ = _loc2_ + 1;
 						}
-						_loc2_ = _loc2_ + 1;
 					}
 					if(_loc3_ == false)
 					{
@@ -1506,16 +1518,19 @@ class com.nitrome.toxic.Player extends MovieClip
 			if(this.vy >= 0)
 			{
 				_loc3_ = false;
-				_loc2_ = 1;
-				while(_loc2_ <= this.max_slope)
+				if(!Utils.perf)
 				{
-					if(this.getOnGround(this._x,this._y - _loc2_) == true)
+					_loc2_ = 1;
+					while(_loc2_ <= this.max_slope)
 					{
-						this._y -= _loc2_;
-						_loc3_ = true;
-						break;
+						if(this.getOnGround(this._x,this._y - _loc2_) == true)
+						{
+							this._y -= _loc2_;
+							_loc3_ = true;
+							break;
+						}
+						_loc2_ = _loc2_ + 1;
 					}
-					_loc2_ = _loc2_ + 1;
 				}
 				if(_loc3_ == false)
 				{

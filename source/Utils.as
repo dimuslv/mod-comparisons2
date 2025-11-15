@@ -15,6 +15,8 @@ class Utils
 	static var extraLayerVisibilities;
 	static var laserState = 1;
 	static var skipBeginning = true;
+	static var autoScroll = true;
+	static var screenshake = true;
 	
 	static var visWindowArray = [
 			"Damage", 60, 52,
@@ -114,8 +116,6 @@ class Utils
 		
 		Utils.addCycleOption(obj.options, "Lasers", Utils, "laserState", ["off", "on", "simple"]);
 		
-		obj.options.push("Mask: " + (Utils.masked? "on" : "off"), Utils.toggleMask);
-		
 		obj.options.push("Back", Utils.mainMenu);
 		
 		w.updateMainField(obj);
@@ -203,7 +203,9 @@ class Utils
 		}
 		
 		Utils.addToggleVarOptions(obj.options, [
-			"Perf optimizations", Utils, "perf"
+			"Perf optimizations", Utils, "perf",
+			"Auto scroll", Utils, "autoScroll",
+			"Screenshake", Utils, "screenshake"
 		]);
 
 		obj.options.push("Back", Utils.mainMenu);
@@ -284,6 +286,8 @@ class Utils
 		}
 		
 		obj.options.push("Back", Utils.layerVisibilityWindow);
+		
+		obj.options.push("Mask: " + (Utils.masked? "on" : "off"), Utils.toggleMask);
 		
 		Utils.addToggleVarOptions(obj.options, arr);
 		

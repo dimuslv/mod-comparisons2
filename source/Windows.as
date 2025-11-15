@@ -30,7 +30,10 @@ class Windows
 			title: "Input string",
 			customMinimize: function(w) {
 				w.minimized = !w.minimized;
-				w.inputField._visible = !w.minimized;
+				if (w.inputField._visible = !w.minimized) {
+					TAS.updateText();
+				}
+				
 				w.updateMainField(false);
 			}
 		});

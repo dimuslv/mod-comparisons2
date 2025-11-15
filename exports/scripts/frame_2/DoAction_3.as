@@ -2,7 +2,7 @@ _root.spriteInfo = {m168:[true],m400:[{f101:function(that)
 {
 	that._parent.doExplode();
 	_root._stop(that);
-}}],m403:[false,["anim",400]],m427:[true],m428:[false,["anim",427]],m470:[{f34:function(that)
+}}],m403:[false,["anim",400],["vx","vy","dir","on_conveyor"]],m427:[true],m428:[false,["anim",427],["dir","state","fall_anim_count","prev_dir","prev_state","vx","vy","done_splash"]],m470:[{f34:function(that)
 {
 	_root._gotoAndStop(that._parent,"normal");
 }}],m471:[false,["_anim",470]],m495:[true],m508:[{f10:function(that)
@@ -61,11 +61,11 @@ _root.spriteInfo = {m168:[true],m400:[{f101:function(that)
 {
 	that._parent.finishReset();
 	_root._stop(that);
-}}],m542:[false,["anim",[100,540,80,537,60,510,40,508,1,495]]],m547:[{f16:function(that)
+}}],m542:[false,["anim",[100,540,80,537,60,510,40,508,1,495]],["dir","state","fall_anim_count","#player","fire_angle","prev_dir","prev_state","aim_next","vx","vy","fire_count","done_splash"]],m547:[{f16:function(that)
 {
 	that._parent.finishFire();
 	_root._stop(that);
-}}],m548:[false,["_anim",547]],m581:[true],m582:[false,["spark_clip",581]],m587:[true],m616:[{f14:function(that)
+}}],m548:[false,["_anim",547],["dir","x_speed","y_speed","finished"]],m581:[true],m582:[false,["spark_clip",581],["deg","rot","active","_visible","laser_count"]],m587:[true,[],["deg","start_x","start_y","distance","_rotation"]],m616:[{f14:function(that)
 {
 	_root._stop(that);
 }}],m617:[{f6:function(that)
@@ -239,7 +239,7 @@ _root.spriteInfo = {m168:[true],m400:[{f101:function(that)
 },f35:function(that)
 {
 	that._parent.finishCollect();
-}}],m929:[false,["anim",[10,928,1,927]]],m957:[true],m959:[false,["anim",957]],m1250:[true],m1260:[false,["clip",[40,1259,30,1256,20,1253,10,1250]]],m1261:[{f102:function(that)
+}}],m929:[false,["anim",[10,928,1,927]],["bomb_type","spawner","collected"]],m957:[true],m959:[false,["anim",957]],m1250:[true],m1260:[false,["clip",[40,1259,30,1256,20,1253,10,1250]]],m1261:[{f102:function(that)
 {
 	that._parent.doExplode();
 	_root._stop(that);
@@ -393,7 +393,16 @@ _root.spriteInfo = {m168:[true],m400:[{f101:function(that)
 {
 	that._parent.finishEnd();
 	_root._stop(that);
-}}],m2121:[false,["anim",[200,2120,180,2086,160,2057,140,2013,100,2047,80,2013,60,2025,39,2018,20,2013,1,2004]]],m2156:[true],m2157:[{f3:function(that)
+}}],m2121:[false,["anim",[200,2120,180,2086,160,2057,140,2013,100,2047,80,2013,60,2025,39,2018,20,2013,1,2004]]],m2141:[{f1:function(that)
+{
+	_root._stop(that);
+},f2:function(that)
+{
+	that.clip.gotoAndStop(that.id);
+},f23:function(that)
+{
+	_root._stop(that);
+}}],m2156:[true],m2157:[{f3:function(that)
 {
 	_root.sfx.playSound("collect");
 },f16:function(that)
