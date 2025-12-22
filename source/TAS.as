@@ -31,8 +31,6 @@ class TAS
 	static var UP_PRESSED = false;
 	static var DOWN_PRESSED = false;
 	
-	static var subLetters = "rb";
-	
 	static var runBack = false;
 	
 	static var subLetters = "rbjJPh";
@@ -265,6 +263,7 @@ class TAS
 		}
 		if (code >= 48 && code <= 57) { //0..9
 			if (Key.isDown(16)) { //Shift
+				TAS.updateText(true);
 				TAS.saveStates[code-48] = TAS.inputField.text;
 			} else if (TAS.saveStates[code-48]) {
 				TAS.inputField.text = TAS.saveStates[code-48];
@@ -452,8 +451,8 @@ class TAS
 		}
 	}
 
-	static function updateText() {
-		if (!Windows.clip.inputWindow._visible || !TAS.inputField._visible) {
+	static function updateText(forced) {
+		if (!forced && (!Windows.clip.inputWindow._visible || !TAS.inputField._visible)) {
 			return;
 		}
 		

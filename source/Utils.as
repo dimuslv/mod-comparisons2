@@ -14,6 +14,7 @@ class Utils
 	static var layerVisibilities;
 	static var extraLayerVisibilities;
 	static var laserState = 1;
+	static var conveyorsOn = true;
 	static var skipBeginning = true;
 	static var autoScroll = true;
 	static var screenshake = true;
@@ -109,12 +110,16 @@ class Utils
 		Utils.addToggleVarOptions(obj.options, [
 			"Invulnerability", Utils, "invulnerable",
 			"No death", Utils, "noDeath",
-			"Buggy IL mod physics", Utils, "inaccuratePhysics",
+			"Wrong physics", Utils, "inaccuratePhysics",
 			"Deactivate teleport", Utils, "deactivateTeleport",
 			"Skip beginning", Utils, "skipBeginning"
 		]);
 		
 		Utils.addCycleOption(obj.options, "Lasers", Utils, "laserState", ["off", "on", "simple"]);
+		
+		Utils.addToggleVarOptions(obj.options, [
+			"Conveyors", Utils, "conveyorsOn"
+		]);
 		
 		obj.options.push("Back", Utils.mainMenu);
 		

@@ -14,6 +14,7 @@ class Utils
 	static var zeroPoint = new flash.geom.Point(0,0);
 	static var deactivateTeleport = false;
 	static var laserState = 1;
+	static var conveyorsOn = true;
 	static var skipBeginning = true;
 	static var autoScroll = true;
 	static var screenshake = true;
@@ -93,8 +94,9 @@ class Utils
 	static function testingVarsWindow(w)
 	{
 		var _loc2_ = {title:"Testing vars",curWindow:Utils.testingVarsWindow,options:[]};
-		Utils.addToggleVarOptions(_loc2_.options,["Invulnerability",Utils,"invulnerable","No death",Utils,"noDeath","Buggy IL mod physics",Utils,"inaccuratePhysics","Deactivate teleport",Utils,"deactivateTeleport","Skip beginning",Utils,"skipBeginning"]);
+		Utils.addToggleVarOptions(_loc2_.options,["Invulnerability",Utils,"invulnerable","No death",Utils,"noDeath","Wrong physics",Utils,"inaccuratePhysics","Deactivate teleport",Utils,"deactivateTeleport","Skip beginning",Utils,"skipBeginning"]);
 		Utils.addCycleOption(_loc2_.options,"Lasers",Utils,"laserState",["off","on","simple"]);
+		Utils.addToggleVarOptions(_loc2_.options,["Conveyors",Utils,"conveyorsOn"]);
 		_loc2_.options.push("Back",Utils.mainMenu);
 		w.updateMainField(_loc2_);
 	}

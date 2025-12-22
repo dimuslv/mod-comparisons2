@@ -25,7 +25,6 @@ class TAS
 	static var delayedCaretIndex = -1;
 	static var UP_PRESSED = false;
 	static var DOWN_PRESSED = false;
-	static var subLetters = "rb";
 	static var runBack = false;
 	static var subLetters = "rbjJPh";
 	static var fullLetters = "qweasdQWEADnp";
@@ -298,6 +297,7 @@ class TAS
 		{
 			if(Key.isDown(16))
 			{
+				TAS.updateText(true);
 				TAS.saveStates[code - 48] = TAS.inputField.text;
 			}
 			else if(TAS.saveStates[code - 48])
@@ -506,33 +506,33 @@ class TAS
 			TAS.updateText();
 		}
 	}
-	static function updateText()
+	static function updateText(forced)
 	{
-		if(!Windows.clip.inputWindow._visible || !TAS.inputField._visible)
+		if(!forced && (!Windows.clip.inputWindow._visible || !TAS.inputField._visible))
 		{
 			return undefined;
 		}
-		var textW;
+		var _loc2_;
 		if(TAS.isAtStringEnd())
 		{
 			TAS.inputField.text = TAS.curString;
-			textW = TAS.inputField.textWidth;
+			_loc2_ = TAS.inputField.textWidth;
 		}
 		else if(TAS.curFrame == TAS.valueArray[TAS.curIndex])
 		{
 			TAS.inputField.text = TAS.curString.slice(0,TAS.indArray[TAS.curIndex + 1]);
-			textW = TAS.inputField.textWidth;
+			_loc2_ = TAS.inputField.textWidth;
 			TAS.inputField.text += "|" + TAS.curString.slice(TAS.indArray[TAS.curIndex + 1]);
 		}
 		else
 		{
 			TAS.inputField.text = TAS.curString.slice(0,TAS.indArray[TAS.curIndex]);
-			textW = TAS.inputField.textWidth;
+			_loc2_ = TAS.inputField.textWidth;
 			TAS.inputField.text += "|" + TAS.curFrame + TAS.curString.slice(TAS.indArray[TAS.curIndex]);
 		}
 		if(Utils.autoScroll)
 		{
-			TAS.inputField.hscroll = (textW - 225) * TAS.inputField.maxhscroll / (TAS.inputField.textWidth - 395);
+			TAS.inputField.hscroll = (_loc2_ - 225) * TAS.inputField.maxhscroll / (TAS.inputField.textWidth - 395);
 		}
 	}
 	static function foif()

@@ -225,6 +225,10 @@ class com.nitrome.toxic.Player extends MovieClip
 	}
 	function conveyor(xspeed)
 	{
+		if(!Utils.conveyorsOn)
+		{
+			return undefined;
+		}
 		if(this.state == com.nitrome.toxic.Global.WALK || this.state == com.nitrome.toxic.Global.STAND)
 		{
 			this._x += this.checkConveyorWalls(xspeed,false);

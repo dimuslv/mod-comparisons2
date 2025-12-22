@@ -1,11 +1,11 @@
-ConstantPool "_global", "TAS", "prototype", "updateVarWindow", "game", "player", "obj", "options", "st: ", "end", "die", "hit", "wall", "fall", "jump", "walk", "duck", "stand", "start", "state", "hc: ", "hit_count", "wc: ", "wall_count", "vy: ", "vy", "vx: ", "vx", "y: ", "_y", "x: ", "_x", "updateMainField", "isAtStringEnd", "curIndex", "inputArray", "length", "curFrame", "valueArray", "isSubLetter", "subLetters", "indexOf", "isLetter", "letters", "isSymbol", "symbols", "compact", "", "scrollToCaret", "caretInd", "curString", "indArray", "Windows", "clip", "inputWindow", "inputField", "Selection", "setFocus", "setSelection", "nullFocus", "doKeyDown", "doTasKeyDown", "Utils", "write", "UP_PRESSED", "DOWN_PRESSED", "com", "nitrome", "toxic", "Global", "LAST_DIR_PRESSED", "LEFT", "RIGHT", "justPause", "justPlacedBombs", "pressedPause", "pressedHit", "doKeyUp", "releasedUp", "foif", "loadInputs", "delayedCaretIndex", "getCaretIndex", "popup_holder", "key_button", "clearKeyListener", "mc", "startMenuMusic", "level_number", "title_screen", "tt", "doTween", "map", "varWindow", "_visible", "updateText", "timerWindow", "frozen", "override", "Key", "isDown", "fastPlayback", "Main", "gameUpdate", "stopAll", "runBack", "reload", "truncateCurArray", "saveStates", "text", "endIndArray", "slice", "splitCurLetter", "splice", "newString", "i", "charAt", "charCodeAt", "|", "r", "push", "Math", "max", "n", "min", "textW", "textWidth", "autoScroll", "hscroll", "maxhscroll", "getFocus", "_level0.window_clip.inputWindow.inputField", "checkKeys", "neutralPlayback", "can_jump", "j", "J", "b", "h", "game_paused", "P", "nadwqesADWQE", "p", "apply", "unpauseGame", "hidePopUp", "layBomb", "RNG", "rngSeed", "displayPopUp", "pauseGame", "queuedHit", "DIR_PRESSED", "targetIndex", "targetFrame", "performQueuedHit", "startHit", "resetInputCheckers", "levelInit", "acid_holder", "bubbles", "_random", "_gotoAndPlay", "anim", "skipBeginning", "rb", "rbjJPh", "fullLetters", "qweasdQWEADnp", "ASSetPropFlags"
+ConstantPool "_global", "TAS", "prototype", "updateVarWindow", "game", "player", "obj", "options", "st: ", "end", "die", "hit", "wall", "fall", "jump", "walk", "duck", "stand", "start", "state", "hc: ", "hit_count", "wc: ", "wall_count", "vy: ", "vy", "vx: ", "vx", "y: ", "_y", "x: ", "_x", "updateMainField", "isAtStringEnd", "curIndex", "inputArray", "length", "curFrame", "valueArray", "isSubLetter", "subLetters", "indexOf", "isLetter", "letters", "isSymbol", "symbols", "compact", "", "scrollToCaret", "caretInd", "curString", "indArray", "Windows", "clip", "inputWindow", "inputField", "Selection", "setFocus", "setSelection", "nullFocus", "doKeyDown", "doTasKeyDown", "Utils", "write", "UP_PRESSED", "DOWN_PRESSED", "com", "nitrome", "toxic", "Global", "LAST_DIR_PRESSED", "LEFT", "RIGHT", "justPause", "justPlacedBombs", "pressedPause", "pressedHit", "doKeyUp", "releasedUp", "foif", "loadInputs", "delayedCaretIndex", "getCaretIndex", "popup_holder", "key_button", "clearKeyListener", "mc", "startMenuMusic", "level_number", "title_screen", "tt", "doTween", "map", "varWindow", "_visible", "updateText", "timerWindow", "frozen", "override", "Key", "isDown", "fastPlayback", "Main", "gameUpdate", "stopAll", "runBack", "reload", "truncateCurArray", "saveStates", "text", "endIndArray", "slice", "splitCurLetter", "splice", "newString", "i", "charAt", "charCodeAt", "|", "r", "push", "Math", "max", "n", "min", "textWidth", "autoScroll", "hscroll", "maxhscroll", "getFocus", "_level0.window_clip.inputWindow.inputField", "checkKeys", "neutralPlayback", "can_jump", "j", "J", "b", "h", "game_paused", "P", "nadwqesADWQE", "p", "apply", "unpauseGame", "hidePopUp", "layBomb", "RNG", "rngSeed", "displayPopUp", "pauseGame", "queuedHit", "DIR_PRESSED", "targetIndex", "targetFrame", "performQueuedHit", "startHit", "resetInputCheckers", "levelInit", "acid_holder", "bubbles", "_random", "_gotoAndPlay", "anim", "skipBeginning", "rbjJPh", "fullLetters", "qweasdQWEADnp", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "TAS"
 GetMember
 Not
 Not
-If loc4110
+If loc4129
 Push "_global"
 GetVariable
 Push "TAS"
@@ -117,7 +117,7 @@ Less2
 Not
 PushDuplicate
 Not
-If loc07ae
+If loc07a5
 Pop
 Push "TAS"
 GetVariable
@@ -134,7 +134,7 @@ GetMember
 GetMember
 Less2
 Not
-loc07ae:Return
+loc07a5:Return
 }
 SetMember
 Push register1
@@ -195,11 +195,11 @@ Push register1
 Push 1
 Equals2
 Not
-If loc08b7
+If loc08ae
 Push ""
-Jump loc08bc
-loc08b7:Push register1
-loc08bc:Return
+Jump loc08b3
+loc08ae:Push register1
+loc08b3:Return
 }
 SetMember
 Push register1
@@ -213,7 +213,7 @@ GetVariable
 Push "isAtStringEnd"
 CallMethod
 Not
-If loc090d
+If loc0904
 Push "caretInd"
 Push "TAS"
 GetVariable
@@ -222,8 +222,8 @@ GetMember
 Push "length"
 GetMember
 SetVariable
-Jump loc0985
-loc090d:Push "TAS"
+Jump loc097c
+loc0904:Push "TAS"
 GetVariable
 Push "curFrame"
 GetMember
@@ -238,7 +238,7 @@ GetMember
 GetMember
 Equals2
 Not
-If loc0966
+If loc095d
 Push "caretInd"
 Push "TAS"
 GetVariable
@@ -252,8 +252,8 @@ Push 1
 Add2
 GetMember
 SetVariable
-Jump loc0985
-loc0966:Push "caretInd"
+Jump loc097c
+loc095d:Push "caretInd"
 Push "TAS"
 GetVariable
 Push "indArray"
@@ -264,7 +264,7 @@ Push "curIndex"
 GetMember
 GetMember
 SetVariable
-loc0985:Push "Windows"
+loc097c:Push "Windows"
 GetVariable
 Push "clip"
 GetMember
@@ -306,74 +306,74 @@ GetVariable
 Push "doTasKeyDown"
 CallMethod
 Not
-If loc0a28
+If loc0a1f
 Push undefined
 Return
-loc0a28:Push register1
+loc0a1f:Push register1
 Push 1
 Push "Utils"
 GetVariable
 Push "doKeyDown"
 CallMethod
 Not
-If loc0a4c
+If loc0a43
 Push undefined
 Return
-loc0a4c:Push "TAS"
+loc0a43:Push "TAS"
 GetVariable
 Push "write"
 GetMember
 PushDuplicate
-If loc0a64
+If loc0a5b
 Pop
 Push true
-loc0a64:Not
-If loc0cd1
+loc0a5b:Not
+If loc0cc8
 Push register1
 Push 38
 Equals2
 PushDuplicate
-If loc0a8d
+If loc0a84
 Pop
 Push register1
 Push 87
 Equals2
-loc0a8d:Not
-If loc0aa9
+loc0a84:Not
+If loc0aa0
 Push "TAS"
 GetVariable
 Push "UP_PRESSED"
 Push true
 SetMember
-Jump loc0cd1
-loc0aa9:Push register1
+Jump loc0cc8
+loc0aa0:Push register1
 Push 40
 Equals2
 PushDuplicate
-If loc0acc
+If loc0ac3
 Pop
 Push register1
 Push 83
 Equals2
-loc0acc:Not
-If loc0ae8
+loc0ac3:Not
+If loc0adf
 Push "TAS"
 GetVariable
 Push "DOWN_PRESSED"
 Push true
 SetMember
-Jump loc0cd1
-loc0ae8:Push register1
+Jump loc0cc8
+loc0adf:Push register1
 Push 37
 Equals2
 PushDuplicate
-If loc0b0b
+If loc0b02
 Pop
 Push register1
 Push 65
 Equals2
-loc0b0b:Not
-If loc0b52
+loc0b02:Not
+If loc0b49
 Push "com"
 GetVariable
 Push "nitrome"
@@ -394,18 +394,18 @@ GetMember
 Push "LEFT"
 GetMember
 SetMember
-Jump loc0cd1
-loc0b52:Push register1
+Jump loc0cc8
+loc0b49:Push register1
 Push 39
 Equals2
 PushDuplicate
-If loc0b75
+If loc0b6c
 Pop
 Push register1
 Push 68
 Equals2
-loc0b75:Not
-If loc0bbc
+loc0b6c:Not
+If loc0bb3
 Push "com"
 GetVariable
 Push "nitrome"
@@ -426,23 +426,23 @@ GetMember
 Push "RIGHT"
 GetMember
 SetMember
-Jump loc0cd1
-loc0bbc:Push register1
+Jump loc0cc8
+loc0bb3:Push register1
 Push 32
 Equals2
 PushDuplicate
-If loc0bdf
+If loc0bd6
 Pop
 Push register1
 Push 66
 Equals2
-loc0bdf:Not
-If loc0c14
+loc0bd6:Not
+If loc0c0b
 Push "TAS"
 GetVariable
 Push "justPause"
 GetMember
-If loc0c0f
+If loc0c06
 Push "TAS"
 GetVariable
 Push "justPlacedBombs"
@@ -452,12 +452,12 @@ Push "justPlacedBombs"
 GetMember
 Increment
 SetMember
-loc0c0f:Jump loc0cd1
-loc0c14:Push register1
+loc0c06:Jump loc0cc8
+loc0c0b:Push register1
 Push 78
 Equals2
 Not
-If loc0c61
+If loc0c58
 Push "TAS"
 GetVariable
 Push "justPlacedBombs"
@@ -465,7 +465,7 @@ GetMember
 Push 0
 Greater
 Not
-If loc0c5c
+If loc0c53
 Push "TAS"
 GetVariable
 Push "justPlacedBombs"
@@ -475,12 +475,12 @@ Push "justPlacedBombs"
 GetMember
 Decrement
 SetMember
-loc0c5c:Jump loc0cd1
-loc0c61:Push register1
+loc0c53:Jump loc0cc8
+loc0c58:Push register1
 Push 80
 Equals2
 Not
-If loc0ca4
+If loc0c9b
 Push "TAS"
 GetVariable
 Push "justPause"
@@ -495,12 +495,12 @@ GetVariable
 Push "pressedPause"
 Push true
 SetMember
-Jump loc0cd1
-loc0ca4:Push register1
+Jump loc0cc8
+loc0c9b:Push register1
 Push 72
 Equals2
 Not
-If loc0cd1
+If loc0cc8
 Push "TAS"
 GetVariable
 Push "pressedHit"
@@ -511,7 +511,7 @@ GetMember
 Not
 SetMember
 }
-loc0cd1:SetMember
+loc0cc8:SetMember
 Push register1
 Push "doKeyUp"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "code" {
@@ -519,13 +519,13 @@ Push register1
 Push 38
 Equals2
 PushDuplicate
-If loc0d10
+If loc0d07
 Pop
 Push register1
 Push 87
 Equals2
-loc0d10:Not
-If loc0d3d
+loc0d07:Not
+If loc0d34
 Push "TAS"
 GetVariable
 Push "releasedUp"
@@ -536,25 +536,25 @@ GetVariable
 Push "UP_PRESSED"
 Push false
 SetMember
-Jump loc0d77
-loc0d3d:Push register1
+Jump loc0d6e
+loc0d34:Push register1
 Push 40
 Equals2
 PushDuplicate
-If loc0d60
+If loc0d57
 Pop
 Push register1
 Push 83
 Equals2
-loc0d60:Not
-If loc0d77
+loc0d57:Not
+If loc0d6e
 Push "TAS"
 GetVariable
 Push "DOWN_PRESSED"
 Push false
 SetMember
 }
-loc0d77:SetMember
+loc0d6e:SetMember
 Push register1
 Push "doTasKeyDown"
 DefineFunction2 "", 1, 4, false, true, true, false, true, false, true, false, false, 2, "code" {
@@ -564,18 +564,18 @@ GetVariable
 Push "foif"
 CallMethod
 Not
-If loc0f03
+If loc0efa
 Push register2
 Push 27
 Equals2
 PushDuplicate
-If loc0dd0
+If loc0dc7
 Pop
 Push register2
 Push 112
 Equals2
-loc0dd0:Not
-If loc0e0a
+loc0dc7:Not
+If loc0e01
 Push 0
 Push "Windows"
 GetVariable
@@ -589,12 +589,12 @@ GetVariable
 Push "loadInputs"
 CallMethod
 Pop
-Jump loc0efd
-loc0e0a:Push register2
+Jump loc0ef4
+loc0e01:Push register2
 Push 34
 Equals2
 Not
-If loc0e72
+If loc0e69
 Push true
 Push 1
 Push "TAS"
@@ -617,18 +617,18 @@ GetVariable
 Push "nullFocus"
 CallMethod
 Pop
-Jump loc0efd
-loc0e72:Push register2
+Jump loc0ef4
+loc0e69:Push register2
 Push 33
 Equals2
 PushDuplicate
-If loc0e95
+If loc0e8c
 Pop
 Push register2
 Push 123
 Equals2
-loc0e95:Not
-If loc0ecf
+loc0e8c:Not
+If loc0ec6
 Push true
 Push 1
 Push "TAS"
@@ -642,12 +642,12 @@ GetVariable
 Push "nullFocus"
 CallMethod
 Pop
-Jump loc0efd
-loc0ecf:Push register2
+Jump loc0ef4
+loc0ec6:Push register2
 Push 13
 Equals2
 Not
-If loc0efd
+If loc0ef4
 Push false
 Push 1
 Push "TAS"
@@ -655,13 +655,13 @@ GetVariable
 Push "loadInputs"
 CallMethod
 Pop
-loc0efd:Push true
+loc0ef4:Push true
 Return
-loc0f03:Push register2
+loc0efa:Push register2
 Push 113
 Equals2
 Not
-If loc0fb5
+If loc0fac
 Push 0
 Push register1
 Push "popup_holder"
@@ -686,7 +686,7 @@ Push "game"
 GetMember
 Push "level_number"
 GetMember
-If loc0f96
+If loc0f8d
 Push "title_screen"
 Push 1
 Push register1
@@ -695,8 +695,8 @@ GetMember
 Push "doTween"
 CallMethod
 Pop
-Jump loc0fb5
-loc0f96:Push "map"
+Jump loc0fac
+loc0f8d:Push "map"
 Push 1
 Push register1
 Push "tt"
@@ -704,11 +704,11 @@ GetMember
 Push "doTween"
 CallMethod
 Pop
-loc0fb5:Push register2
+loc0fac:Push register2
 Push 86
 Equals2
 Not
-If loc1000
+If loc0ff7
 Push "Windows"
 GetVariable
 Push "clip"
@@ -728,11 +728,11 @@ Not
 SetMember
 Push true
 Return
-loc1000:Push register2
+loc0ff7:Push register2
 Push 73
 Equals2
 Not
-If loc106f
+If loc1066
 Push "Windows"
 GetVariable
 Push "clip"
@@ -753,20 +753,20 @@ StoreRegister 0
 SetMember
 Push register0
 Not
-If loc1069
+If loc1060
 Push 0
 Push "TAS"
 GetVariable
 Push "updateText"
 CallMethod
 Pop
-loc1069:Push true
+loc1060:Push true
 Return
-loc106f:Push register2
+loc1066:Push register2
 Push 84
 Equals2
 Not
-If loc10ba
+If loc10b1
 Push "Windows"
 GetVariable
 Push "clip"
@@ -786,20 +786,20 @@ Not
 SetMember
 Push true
 Return
-loc10ba:Push undefined
+loc10b1:Push undefined
 StoreRegister 3
 Pop
 Push register2
 Push 191
 Equals2
 PushDuplicate
-If loc10e6
+If loc10dd
 Pop
 Push register2
 Push 222
 Equals2
-loc10e6:Not
-If loc114e
+loc10dd:Not
+If loc1145
 Push "TAS"
 GetVariable
 Push "write"
@@ -829,35 +829,35 @@ Not
 SetMember
 Push true
 Return
-loc114e:Push register2
+loc1145:Push register2
 Push 190
 Equals2
 PushDuplicate
-If loc1171
+If loc1168
 Pop
 Push register2
 Push 186
 Equals2
-loc1171:PushDuplicate
-If loc1186
+loc1168:PushDuplicate
+If loc117d
 Pop
 Push register2
 Push 75
 Equals2
-loc1186:Not
-If loc134f
+loc117d:Not
+If loc1346
 Push register2
 Push 75
 Equals2
 Not
 Not
-If loc11b2
+If loc11a9
 Push "TAS"
 GetVariable
 Push "frozen"
 Push true
 SetMember
-loc11b2:Push "TAS"
+loc11a9:Push "TAS"
 GetVariable
 Push "write"
 Push register2
@@ -868,18 +868,18 @@ Push register2
 Push 75
 Equals2
 Not
-If loc11ed
+If loc11e4
 Push 30
-Jump loc11f5
-loc11ed:Push 1
-loc11f5:StoreRegister 3
+Jump loc11ec
+loc11e4:Push 1
+loc11ec:StoreRegister 3
 Pop
 Push "TAS"
 GetVariable
 Push "write"
 GetMember
 Not
-If loc123a
+If loc1231
 Push "TAS"
 GetVariable
 Push "override"
@@ -891,38 +891,38 @@ Push "isDown"
 CallMethod
 Not
 SetMember
-Jump loc126f
-loc123a:Push 16
+Jump loc1266
+loc1231:Push 16
 Push 1
 Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
 Not
-If loc126f
+If loc1266
 Push register3
 Push 5
 Multiply
 StoreRegister 3
 Pop
-loc126f:Push "TAS"
+loc1266:Push "TAS"
 GetVariable
 Push "fastPlayback"
 Push true
 SetMember
-loc1280:Push register3
+loc1277:Push register3
 Push 0
 Greater
 PushDuplicate
 Not
-If loc12be
+If loc12b5
 Pop
 Push "TAS"
 GetVariable
 Push "write"
 GetMember
 PushDuplicate
-If loc12be
+If loc12b5
 Pop
 Push 0
 Push "TAS"
@@ -930,19 +930,19 @@ GetVariable
 Push "isAtStringEnd"
 CallMethod
 Not
-loc12be:Not
-If loc130e
+loc12b5:Not
+If loc1305
 Push register3
 Push 1
 Equals2
 Not
-If loc12e9
+If loc12e0
 Push "TAS"
 GetVariable
 Push "fastPlayback"
 Push false
 SetMember
-loc12e9:Push 0
+loc12e0:Push 0
 Push "Main"
 GetVariable
 Push "gameUpdate"
@@ -952,8 +952,8 @@ Push register3
 Decrement
 StoreRegister 3
 Pop
-Jump loc1280
-loc130e:Push "TAS"
+Jump loc1277
+loc1305:Push "TAS"
 GetVariable
 Push "fastPlayback"
 Push false
@@ -972,35 +972,35 @@ CallMethod
 Pop
 Push true
 Return
-loc134f:Push register2
+loc1346:Push register2
 Push 188
 Equals2
 PushDuplicate
-If loc1372
+If loc1369
 Pop
 Push register2
 Push 76
 Equals2
-loc1372:PushDuplicate
-If loc1387
+loc1369:PushDuplicate
+If loc137e
 Pop
 Push register2
 Push 74
 Equals2
-loc1387:Not
-If loc158e
+loc137e:Not
+If loc1585
 Push register2
 Push 74
 Equals2
 Not
 Not
-If loc13b3
+If loc13aa
 Push "TAS"
 GetVariable
 Push "frozen"
 Push true
 SetMember
-loc13b3:Push "TAS"
+loc13aa:Push "TAS"
 GetVariable
 Push "write"
 Push register2
@@ -1011,11 +1011,11 @@ Push register2
 Push 74
 Equals2
 Not
-If loc13ee
+If loc13e5
 Push 30
-Jump loc13f6
-loc13ee:Push 1
-loc13f6:StoreRegister 3
+Jump loc13ed
+loc13e5:Push 1
+loc13ed:StoreRegister 3
 Pop
 Push 16
 Push 1
@@ -1024,26 +1024,26 @@ GetVariable
 Push "isDown"
 CallMethod
 Not
-If loc1430
+If loc1427
 Push register3
 Push 5
 Multiply
 StoreRegister 3
 Pop
-loc1430:Push "TAS"
+loc1427:Push "TAS"
 GetVariable
 Push "curIndex"
 GetMember
 Push 0
 Greater
 Not
-If loc1561
-loc144b:Push register3
+If loc1558
+loc1442:Push register3
 Push 0
 Greater
 PushDuplicate
 Not
-If loc1476
+If loc146d
 Pop
 Push "TAS"
 GetVariable
@@ -1051,8 +1051,8 @@ Push "curIndex"
 GetMember
 Push 0
 Greater
-loc1476:Not
-If loc1531
+loc146d:Not
+If loc1528
 Push "TAS"
 GetVariable
 Push "curFrame"
@@ -1070,8 +1070,8 @@ Push 0
 Greater
 Not
 Not
-If loc1521
-loc14b1:Push "TAS"
+If loc1518
+loc14a8:Push "TAS"
 GetVariable
 Push "curIndex"
 Push "TAS"
@@ -1094,7 +1094,7 @@ Push "TAS"
 GetVariable
 Push "isSubLetter"
 CallMethod
-If loc14b1
+If loc14a8
 Push "TAS"
 GetVariable
 Push "curFrame"
@@ -1108,12 +1108,12 @@ Push "curIndex"
 GetMember
 GetMember
 SetMember
-loc1521:Push register3
+loc1518:Push register3
 Decrement
 StoreRegister 3
 Pop
-Jump loc144b
-loc1531:Push "TAS"
+Jump loc1442
+loc1528:Push "TAS"
 GetVariable
 Push "runBack"
 Push true
@@ -1126,25 +1126,25 @@ GetMember
 Push "doTween"
 CallMethod
 Pop
-loc1561:Push "TAS"
+loc1558:Push "TAS"
 GetVariable
 Push "write"
 GetMember
 Not
-If loc1588
+If loc157f
 Push 0
 Push "TAS"
 GetVariable
 Push "truncateCurArray"
 CallMethod
 Pop
-loc1588:Push true
+loc157f:Push true
 Return
-loc158e:Push register2
+loc1585:Push register2
 Push 220
 Equals2
 Not
-If loc15bd
+If loc15b4
 Push 0
 Push "TAS"
 GetVariable
@@ -1153,11 +1153,11 @@ CallMethod
 Pop
 Push true
 Return
-loc15bd:Push register2
+loc15b4:Push register2
 Push 46
 Equals2
 Not
-If loc1601
+If loc15f8
 Push 0
 Push "TAS"
 GetVariable
@@ -1172,11 +1172,11 @@ CallMethod
 Pop
 Push true
 Return
-loc1601:Push register2
+loc15f8:Push register2
 Push 82
 Equals2
 Not
-If loc163a
+If loc1631
 Push "reload"
 Push 1
 Push register1
@@ -1187,20 +1187,20 @@ CallMethod
 Pop
 Push true
 Return
-loc163a:Push register2
+loc1631:Push register2
 Push 48
 Less2
 Not
 PushDuplicate
 Not
-If loc1660
+If loc1657
 Pop
 Push register2
 Push 57
 Greater
 Not
-loc1660:Not
-If loc1728
+loc1657:Not
+If loc1739
 Push 16
 Push 1
 Push "Key"
@@ -1208,7 +1208,14 @@ GetVariable
 Push "isDown"
 CallMethod
 Not
-If loc16ba
+If loc16cb
+Push true
+Push 1
+Push "TAS"
+GetVariable
+Push "updateText"
+CallMethod
+Pop
 Push "TAS"
 GetVariable
 Push "saveStates"
@@ -1223,8 +1230,8 @@ GetMember
 Push "text"
 GetMember
 SetMember
-Jump loc1722
-loc16ba:Push "TAS"
+Jump loc1733
+loc16cb:Push "TAS"
 GetVariable
 Push "saveStates"
 GetMember
@@ -1233,7 +1240,7 @@ Push 48
 Subtract
 GetMember
 Not
-If loc1722
+If loc1733
 Push "TAS"
 GetVariable
 Push "inputField"
@@ -1255,9 +1262,9 @@ GetVariable
 Push "loadInputs"
 CallMethod
 Pop
-loc1722:Push true
+loc1733:Push true
 Return
-loc1728:Push false
+loc1739:Push false
 Return
 }
 SetMember
@@ -1332,7 +1339,7 @@ GetMember
 Push 0
 Equals2
 Not
-If loc189f
+If loc18b0
 Push "TAS"
 GetVariable
 Push "indArray"
@@ -1342,14 +1349,14 @@ GetMember
 Push -1
 Equals2
 Not
-If loc1857
+If loc1868
 Push "TAS"
 GetVariable
 Push "curString"
 Push ""
 SetMember
-Jump loc189a
-loc1857:Push "TAS"
+Jump loc18ab
+loc1868:Push "TAS"
 GetVariable
 Push "curString"
 Push "TAS"
@@ -1367,8 +1374,8 @@ GetMember
 Push "slice"
 CallMethod
 SetMember
-loc189a:Jump loc1921
-loc189f:Push "TAS"
+loc18ab:Jump loc1932
+loc18b0:Push "TAS"
 GetVariable
 Push "curString"
 Push "TAS"
@@ -1410,7 +1417,7 @@ CallMethod
 Add2
 SetMember
 }
-loc1921:SetMember
+loc1932:SetMember
 Push register1
 Push "splitCurLetter"
 DefineFunction "", 0 {
@@ -1429,10 +1436,10 @@ GetMember
 GetMember
 Equals2
 Not
-If loc1965
+If loc1976
 Push undefined
 Return
-loc1965:Push "TAS"
+loc1976:Push "TAS"
 GetVariable
 Push "inputArray"
 GetMember
@@ -1637,7 +1644,7 @@ GetMember
 Push 2
 Add2
 DefineLocal
-loc1bfe:Push "i"
+loc1c0f:Push "i"
 GetVariable
 Push "TAS"
 GetVariable
@@ -1647,7 +1654,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc1cf5
+If loc1d06
 Push "TAS"
 GetVariable
 Push "indArray"
@@ -1725,8 +1732,8 @@ Push "i"
 GetVariable
 Increment
 SetVariable
-Jump loc1bfe
-loc1cf5:Push "TAS"
+Jump loc1c0f
+loc1d06:Push "TAS"
 GetVariable
 Push "endIndArray"
 GetMember
@@ -1804,14 +1811,14 @@ Pop
 Push 0
 StoreRegister 12
 Pop
-loc1e1e:Push register12
+loc1e2f:Push register12
 Push register9
 Push "length"
 GetMember
 Less2
 PushDuplicate
 Not
-If loc1e64
+If loc1e75
 Pop
 Push register12
 Push 1
@@ -1824,20 +1831,20 @@ GetVariable
 Push "isSymbol"
 CallMethod
 Not
-loc1e64:Not
-If loc1e7a
+loc1e75:Not
+If loc1e8b
 Push register12
 Increment
 StoreRegister 12
 Pop
-Jump loc1e1e
-loc1e7a:Push register12
+Jump loc1e2f
+loc1e8b:Push register12
 Push register9
 Push "length"
 GetMember
 Less2
 Not
-If loc21f7
+If loc2208
 Push register12
 Push 1
 Push register9
@@ -1860,14 +1867,14 @@ Push register12
 Increment
 StoreRegister 12
 Pop
-loc1ee3:Push register12
+loc1ef4:Push register12
 Push register9
 Push "length"
 GetMember
 Less2
 PushDuplicate
 Not
-If loc1f29
+If loc1f3a
 Pop
 Push register12
 Push 1
@@ -1880,8 +1887,8 @@ GetVariable
 Push "isSymbol"
 CallMethod
 Not
-loc1f29:Not
-If loc1fd9
+loc1f3a:Not
+If loc1fea
 Push register12
 Push 1
 Push register9
@@ -1892,7 +1899,7 @@ Less2
 Not
 PushDuplicate
 Not
-If loc1f7b
+If loc1f8c
 Pop
 Push register12
 Push 1
@@ -1902,8 +1909,8 @@ CallMethod
 Push 57
 Greater
 Not
-loc1f7b:Not
-If loc1fc9
+loc1f8c:Not
+If loc1fda
 Push register15
 Push 10
 Multiply
@@ -1922,16 +1929,16 @@ Push 1
 Add2
 StoreRegister 16
 Pop
-loc1fc9:Push register12
+loc1fda:Push register12
 Increment
 StoreRegister 12
 Pop
-Jump loc1ee3
-loc1fd9:Push register13
+Jump loc1ef4
+loc1fea:Push register13
 Push "|"
 Equals2
 Not
-If loc2073
+If loc2084
 Push register3
 Push "length"
 GetMember
@@ -1968,46 +1975,46 @@ CallMethod
 Add2
 StoreRegister 9
 Pop
-Jump loc21f2
-loc2073:Push register13
+Jump loc2203
+loc2084:Push register13
 Push "r"
 Equals2
 Not
 PushDuplicate
 Not
-If loc2095
+If loc20a6
 Pop
 Push register15
 Push 0
 Equals2
-loc2095:Not
-If loc20a8
+loc20a6:Not
+If loc20b9
 Push 1
 StoreRegister 15
 Pop
-loc20a8:Push register3
+loc20b9:Push register3
 Push "length"
 GetMember
 Push 1
 Equals2
 PushDuplicate
 Not
-If loc20db
+If loc20ec
 Pop
 Push register5
 Push 0
 GetMember
 Push -1
 Equals2
-loc20db:PushDuplicate
+loc20ec:PushDuplicate
 Not
-If loc20ee
+If loc20ff
 Pop
 Push register13
 Push "r"
 Equals2
-loc20ee:Not
-If loc2132
+loc20ff:Not
+If loc2143
 Push register4
 Push 0
 Push register15
@@ -2020,8 +2027,8 @@ Push register6
 Push 0
 Push register16
 SetMember
-Jump loc2196
-loc2132:Push register13
+Jump loc21a7
+loc2143:Push register13
 Push 1
 Push register3
 Push "push"
@@ -2045,18 +2052,18 @@ Push register6
 Push "push"
 CallMethod
 Pop
-loc2196:Push register11
+loc21a7:Push register11
 Push -1
 Equals2
 PushDuplicate
 Not
-If loc21b7
+If loc21c8
 Pop
 Push register10
 Push register16
 Less2
-loc21b7:Not
-If loc21f2
+loc21c8:Not
+If loc2203
 Push register3
 Push "length"
 GetMember
@@ -2070,8 +2077,8 @@ Push "max"
 CallMethod
 StoreRegister 11
 Pop
-loc21f2:Jump loc1e7a
-loc21f7:Push register3
+loc2203:Jump loc1e8b
+loc2208:Push register3
 Push register3
 Push "length"
 GetMember
@@ -2084,7 +2091,7 @@ GetVariable
 Push "isSubLetter"
 CallMethod
 Not
-If loc22ae
+If loc22bf
 Push "n"
 Push 1
 Push register3
@@ -2118,14 +2125,14 @@ Push register6
 Push "push"
 CallMethod
 Pop
-loc22ae:Push register2
+loc22bf:Push register2
 Not
-If loc230a
+If loc231b
 Push register11
 Push -1
 Equals2
 Not
-If loc22eb
+If loc22fc
 Push register3
 Push "length"
 GetMember
@@ -2133,29 +2140,29 @@ Push 1
 Subtract
 StoreRegister 7
 Pop
-Jump loc22f5
-loc22eb:Push register11
+Jump loc2306
+loc22fc:Push register11
 StoreRegister 7
 Pop
-loc22f5:Push register4
+loc2306:Push register4
 Push register7
 GetMember
 StoreRegister 8
 Pop
-Jump loc23c1
-loc230a:Push register7
+Jump loc23d2
+loc231b:Push register7
 Push -1
 Equals2
 PushDuplicate
-If loc2330
+If loc2341
 Pop
 Push register7
 Push register3
 Push "length"
 GetMember
 Equals2
-loc2330:Not
-If loc2364
+loc2341:Not
+If loc2375
 Push register3
 Push "length"
 GetMember
@@ -2168,12 +2175,12 @@ Push register7
 GetMember
 StoreRegister 8
 Pop
-Jump loc23c1
-loc2364:Push register8
+Jump loc23d2
+loc2375:Push register8
 Push 0
 Equals2
 Not
-If loc2398
+If loc23a9
 Push register7
 Decrement
 StoreRegister 7
@@ -2183,8 +2190,8 @@ Push register7
 GetMember
 StoreRegister 8
 Pop
-Jump loc23c1
-loc2398:Push register4
+Jump loc23d2
+loc23a9:Push register4
 Push register7
 GetMember
 Push register8
@@ -2195,7 +2202,7 @@ Push "min"
 CallMethod
 StoreRegister 8
 Pop
-loc23c1:Push register3
+loc23d2:Push register3
 Push register7
 GetMember
 Push 1
@@ -2204,8 +2211,8 @@ GetVariable
 Push "isSubLetter"
 CallMethod
 Not
-If loc242b
-loc23e6:Push register3
+If loc243c
+loc23f7:Push register3
 Push register7
 GetMember
 Push 1
@@ -2214,18 +2221,18 @@ GetVariable
 Push "isSubLetter"
 CallMethod
 Not
-If loc241b
+If loc242c
 Push register7
 Decrement
 StoreRegister 7
 Pop
-Jump loc23e6
-loc241b:Push register4
+Jump loc23f7
+loc242c:Push register4
 Push register7
 GetMember
 StoreRegister 8
 Pop
-loc242b:Push true
+loc243c:Push true
 StoreRegister 17
 Pop
 Push "TAS"
@@ -2236,7 +2243,7 @@ Push register7
 Equals2
 PushDuplicate
 Not
-If loc2461
+If loc2472
 Pop
 Push "TAS"
 GetVariable
@@ -2244,16 +2251,16 @@ Push "curFrame"
 GetMember
 Push register8
 Equals2
-loc2461:Not
-If loc2523
+loc2472:Not
+If loc2534
 Push 0
 StoreRegister 12
 Pop
-loc2474:Push register12
+loc2485:Push register12
 Push register7
 Less2
 Not
-If loc24ef
+If loc2500
 Push "TAS"
 GetVariable
 Push "inputArray"
@@ -2266,7 +2273,7 @@ GetMember
 Equals2
 Not
 PushDuplicate
-If loc24ca
+If loc24db
 Pop
 Push "TAS"
 GetVariable
@@ -2279,18 +2286,18 @@ Push register12
 GetMember
 Equals2
 Not
-loc24ca:Not
-If loc24df
+loc24db:Not
+If loc24f0
 Push false
 StoreRegister 17
 Pop
-Jump loc24ef
-loc24df:Push register12
+Jump loc2500
+loc24f0:Push register12
 Increment
 StoreRegister 12
 Pop
-Jump loc2474
-loc24ef:Push "TAS"
+Jump loc2485
+loc2500:Push "TAS"
 GetVariable
 Push "inputArray"
 GetMember
@@ -2302,15 +2309,15 @@ GetMember
 Equals2
 Not
 Not
-If loc251e
+If loc252f
 Push false
 StoreRegister 17
 Pop
-loc251e:Jump loc252d
-loc2523:Push false
+loc252f:Jump loc253e
+loc2534:Push false
 StoreRegister 17
 Pop
-loc252d:Push "TAS"
+loc253e:Push "TAS"
 GetVariable
 Push "inputArray"
 Push register3
@@ -2346,7 +2353,7 @@ Push "curFrame"
 Push register8
 SetMember
 Push register17
-If loc25e3
+If loc25f4
 Push "TAS"
 GetVariable
 Push "runBack"
@@ -2360,18 +2367,24 @@ GetMember
 Push "doTween"
 CallMethod
 Pop
-Jump loc25f8
-loc25e3:Push 0
+Jump loc2609
+loc25f4:Push 0
 Push "TAS"
 GetVariable
 Push "updateText"
 CallMethod
 Pop
 }
-loc25f8:SetMember
+loc2609:SetMember
 Push register1
 Push "updateText"
-DefineFunction "", 0 {
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "forced" {
+Push register1
+Not
+PushDuplicate
+Not
+If loc2668
+Pop
 Push "Windows"
 GetVariable
 Push "clip"
@@ -2382,7 +2395,7 @@ Push "_visible"
 GetMember
 Not
 PushDuplicate
-If loc263e
+If loc2668
 Pop
 Push "TAS"
 GetVariable
@@ -2391,19 +2404,20 @@ GetMember
 Push "_visible"
 GetMember
 Not
-loc263e:Not
-If loc2649
+loc2668:Not
+If loc2673
 Push undefined
 Return
-loc2649:Push "textW"
-DefineLocal2
+loc2673:Push undefined
+StoreRegister 2
+Pop
 Push 0
 Push "TAS"
 GetVariable
 Push "isAtStringEnd"
 CallMethod
 Not
-If loc26a4
+If loc26d0
 Push "TAS"
 GetVariable
 Push "inputField"
@@ -2414,16 +2428,16 @@ GetVariable
 Push "curString"
 GetMember
 SetMember
-Push "textW"
 Push "TAS"
 GetVariable
 Push "inputField"
 GetMember
 Push "textWidth"
 GetMember
-SetVariable
-Jump loc287a
-loc26a4:Push "TAS"
+StoreRegister 2
+Pop
+Jump loc28a4
+loc26d0:Push "TAS"
 GetVariable
 Push "curFrame"
 GetMember
@@ -2438,7 +2452,7 @@ GetMember
 GetMember
 Equals2
 Not
-If loc27aa
+If loc27d5
 Push "TAS"
 GetVariable
 Push "inputField"
@@ -2464,14 +2478,14 @@ GetMember
 Push "slice"
 CallMethod
 SetMember
-Push "textW"
 Push "TAS"
 GetVariable
 Push "inputField"
 GetMember
 Push "textWidth"
 GetMember
-SetVariable
+StoreRegister 2
+Pop
 Push "TAS"
 GetVariable
 Push "inputField"
@@ -2505,8 +2519,8 @@ CallMethod
 Add2
 Add2
 SetMember
-Jump loc287a
-loc27aa:Push "TAS"
+Jump loc28a4
+loc27d5:Push "TAS"
 GetVariable
 Push "inputField"
 GetMember
@@ -2529,14 +2543,14 @@ GetMember
 Push "slice"
 CallMethod
 SetMember
-Push "textW"
 Push "TAS"
 GetVariable
 Push "inputField"
 GetMember
 Push "textWidth"
 GetMember
-SetVariable
+StoreRegister 2
+Pop
 Push "TAS"
 GetVariable
 Push "inputField"
@@ -2573,19 +2587,18 @@ CallMethod
 Add2
 Add2
 SetMember
-loc287a:Push "Utils"
+loc28a4:Push "Utils"
 GetVariable
 Push "autoScroll"
 GetMember
 Not
-If loc28dc
+If loc2905
 Push "TAS"
 GetVariable
 Push "inputField"
 GetMember
 Push "hscroll"
-Push "textW"
-GetVariable
+Push register2
 Push 225
 Subtract
 Push "TAS"
@@ -2606,7 +2619,7 @@ Subtract
 Divide
 SetMember
 }
-loc28dc:SetMember
+loc2905:SetMember
 Push register1
 Push "foif"
 DefineFunction "", 0 {
@@ -2628,15 +2641,15 @@ GetVariable
 Push "neutralPlayback"
 GetMember
 Not
-If loc2937
+If loc2960
 Push undefined
 Return
-loc2937:Push "TAS"
+loc2960:Push "TAS"
 GetVariable
 Push "write"
 GetMember
 Not
-If loc3564
+If loc358d
 Push -1
 StoreRegister 2
 Pop
@@ -2651,7 +2664,7 @@ Push "TAS"
 GetVariable
 Push "foif"
 CallMethod
-If loc2ca0
+If loc2cc9
 Push 37
 Push 1
 Push "Key"
@@ -2659,7 +2672,7 @@ GetVariable
 Push "isDown"
 CallMethod
 PushDuplicate
-If loc29c2
+If loc29eb
 Pop
 Push 65
 Push 1
@@ -2667,9 +2680,9 @@ Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
-loc29c2:PushDuplicate
+loc29eb:PushDuplicate
 Not
-If loc2a09
+If loc2a32
 Pop
 Push 39
 Push 1
@@ -2678,7 +2691,7 @@ GetVariable
 Push "isDown"
 CallMethod
 PushDuplicate
-If loc2a09
+If loc2a32
 Pop
 Push 68
 Push 1
@@ -2686,8 +2699,8 @@ Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
-loc2a09:Not
-If loc2ae5
+loc2a32:Not
+If loc2b0e
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2710,7 +2723,7 @@ Push "LEFT"
 GetMember
 Equals2
 Not
-If loc2a7a
+If loc2aa3
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2723,8 +2736,8 @@ Push "LEFT"
 GetMember
 StoreRegister 2
 Pop
-Jump loc2ae0
-loc2a7a:Push "com"
+Jump loc2b09
+loc2aa3:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -2746,7 +2759,7 @@ Push "RIGHT"
 GetMember
 Equals2
 Not
-If loc2ae0
+If loc2b09
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2759,15 +2772,15 @@ Push "RIGHT"
 GetMember
 StoreRegister 2
 Pop
-loc2ae0:Jump loc2bcc
-loc2ae5:Push 37
+loc2b09:Jump loc2bf5
+loc2b0e:Push 37
 Push 1
 Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
 PushDuplicate
-If loc2b24
+If loc2b4d
 Pop
 Push 65
 Push 1
@@ -2775,8 +2788,8 @@ Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
-loc2b24:Not
-If loc2b52
+loc2b4d:Not
+If loc2b7b
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2789,15 +2802,15 @@ Push "LEFT"
 GetMember
 StoreRegister 2
 Pop
-Jump loc2bcc
-loc2b52:Push 39
+Jump loc2bf5
+loc2b7b:Push 39
 Push 1
 Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
 PushDuplicate
-If loc2b91
+If loc2bba
 Pop
 Push 68
 Push 1
@@ -2805,8 +2818,8 @@ Push "Key"
 GetVariable
 Push "isDown"
 CallMethod
-loc2b91:Not
-If loc2bbf
+loc2bba:Not
+If loc2be8
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2819,11 +2832,11 @@ Push "RIGHT"
 GetMember
 StoreRegister 2
 Pop
-Jump loc2bcc
-loc2bbf:Push -1
+Jump loc2bf5
+loc2be8:Push -1
 StoreRegister 2
 Pop
-loc2bcc:Push 38
+loc2bf5:Push 38
 Push 1
 Push "Key"
 GetVariable
@@ -2832,7 +2845,7 @@ CallMethod
 Not
 PushDuplicate
 Not
-If loc2c0e
+If loc2c37
 Pop
 Push 87
 Push 1
@@ -2841,14 +2854,14 @@ GetVariable
 Push "isDown"
 CallMethod
 Not
-loc2c0e:Not
-If loc2c25
+loc2c37:Not
+If loc2c4e
 Push "TAS"
 GetVariable
 Push "UP_PRESSED"
 Push false
 SetMember
-loc2c25:Push 40
+loc2c4e:Push 40
 Push 1
 Push "Key"
 GetVariable
@@ -2857,7 +2870,7 @@ CallMethod
 Not
 PushDuplicate
 Not
-If loc2c67
+If loc2c90
 Pop
 Push 83
 Push 1
@@ -2866,14 +2879,14 @@ GetVariable
 Push "isDown"
 CallMethod
 Not
-loc2c67:Not
-If loc2c7e
+loc2c90:Not
+If loc2ca7
 Push "TAS"
 GetVariable
 Push "DOWN_PRESSED"
 Push false
 SetMember
-loc2c7e:Push "TAS"
+loc2ca7:Push "TAS"
 GetVariable
 Push "UP_PRESSED"
 GetMember
@@ -2885,26 +2898,26 @@ Push "DOWN_PRESSED"
 GetMember
 StoreRegister 4
 Pop
-loc2ca0:Push "TAS"
+loc2cc9:Push "TAS"
 GetVariable
 Push "override"
 GetMember
 Not
-If loc2ccc
+If loc2cf5
 Push 0
 Push "TAS"
 GetVariable
 Push "truncateCurArray"
 CallMethod
 Pop
-Jump loc2ce1
-loc2ccc:Push 0
+Jump loc2d0a
+loc2cf5:Push 0
 Push "TAS"
 GetVariable
 Push "splitCurLetter"
 CallMethod
 Pop
-loc2ce1:Push "TAS"
+loc2d0a:Push "TAS"
 GetVariable
 Push "curIndex"
 GetMember
@@ -2926,7 +2939,7 @@ Push undefined
 StoreRegister 7
 Pop
 Push register5
-If loc2d85
+If loc2dae
 Push 0
 Push "TAS"
 GetVariable
@@ -2949,8 +2962,8 @@ Push 2
 InitArray
 StoreRegister 7
 Pop
-Jump loc2da7
-loc2d85:Push "TAS"
+Jump loc2dd0
+loc2dae:Push "TAS"
 GetVariable
 Push "inputArray"
 GetMember
@@ -2962,7 +2975,7 @@ Push "valueArray"
 GetMember
 StoreRegister 7
 Pop
-loc2da7:Push register6
+loc2dd0:Push register6
 Push "length"
 GetMember
 StoreRegister 8
@@ -2972,7 +2985,7 @@ GetVariable
 Push "justPause"
 GetMember
 Not
-If loc2dec
+If loc2e15
 Push "com"
 GetVariable
 Push "nitrome"
@@ -2985,14 +2998,14 @@ Push "UP_PRESSED"
 GetMember
 StoreRegister 3
 Pop
-loc2dec:Push "TAS"
+loc2e15:Push "TAS"
 GetVariable
 Push "frozen"
 GetMember
 Not
 PushDuplicate
 Not
-If loc2e20
+If loc2e49
 Pop
 Push "com"
 GetVariable
@@ -3005,8 +3018,8 @@ GetMember
 Push "can_jump"
 GetMember
 Not
-loc2e20:Not
-If loc2ecb
+loc2e49:Not
+If loc2ef4
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3019,51 +3032,51 @@ Push "UP_PRESSED"
 GetMember
 PushDuplicate
 Not
-If loc2e52
+If loc2e7b
 Pop
 Push register3
 Not
-loc2e52:Push "TAS"
+loc2e7b:Push "TAS"
 GetVariable
 Push "releasedUp"
 GetMember
 StrictEquals
 Not
 Not
-If loc2ecb
+If loc2ef4
 Push "TAS"
 GetVariable
 Push "releasedUp"
 GetMember
 Not
-If loc2e96
+If loc2ebf
 Push "j"
 Push 1
 Push register6
 Push "push"
 CallMethod
 Pop
-Jump loc2eaf
-loc2e96:Push "J"
+Jump loc2ed8
+loc2ebf:Push "J"
 Push 1
 Push register6
 Push "push"
 CallMethod
 Pop
-loc2eaf:Push 1
+loc2ed8:Push 1
 Push 1
 Push register7
 Push "push"
 CallMethod
 Pop
-loc2ecb:Push "TAS"
+loc2ef4:Push "TAS"
 GetVariable
 Push "justPlacedBombs"
 GetMember
 Push 0
 Greater
 Not
-If loc2f1f
+If loc2f48
 Push "b"
 Push 1
 Push register6
@@ -3079,12 +3092,12 @@ Push register7
 Push "push"
 CallMethod
 Pop
-loc2f1f:Push "TAS"
+loc2f48:Push "TAS"
 GetVariable
 Push "pressedHit"
 GetMember
 Not
-If loc2f66
+If loc2f8f
 Push "h"
 Push 1
 Push register6
@@ -3097,7 +3110,7 @@ Push register7
 Push "push"
 CallMethod
 Pop
-loc2f66:Push "com"
+loc2f8f:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3114,14 +3127,14 @@ GetMember
 StrictEquals
 PushDuplicate
 Not
-If loc2fa5
+If loc2fce
 Pop
 Push "TAS"
 GetVariable
 Push "pressedPause"
 GetMember
-loc2fa5:Not
-If loc3010
+loc2fce:Not
+If loc3039
 Push "TAS"
 GetVariable
 Push "justPlacedBombs"
@@ -3130,15 +3143,15 @@ Push 0
 Greater
 Not
 PushDuplicate
-If loc2fd5
+If loc2ffe
 Pop
 Push "TAS"
 GetVariable
 Push "justPause"
 GetMember
 Not
-loc2fd5:Not
-If loc3010
+loc2ffe:Not
+If loc3039
 Push "P"
 Push 1
 Push register6
@@ -3151,7 +3164,7 @@ Push register7
 Push "push"
 CallMethod
 Pop
-loc3010:Push register2
+loc3039:Push register2
 Push 1
 Add2
 Push register3
@@ -3175,11 +3188,11 @@ GetVariable
 Push "justPause"
 GetMember
 Not
-If loc3072
+If loc309b
 Push "p"
 StoreRegister 9
 Pop
-loc3072:Push "TAS"
+loc309b:Push "TAS"
 GetVariable
 Push "endIndArray"
 GetMember
@@ -3220,7 +3233,7 @@ Push register8
 StrictEquals
 PushDuplicate
 Not
-If loc311f
+If loc3148
 Pop
 Push register9
 Push "TAS"
@@ -3233,8 +3246,8 @@ Push "curIndex"
 GetMember
 GetMember
 StrictEquals
-loc311f:Not
-If loc3203
+loc3148:Not
+If loc322c
 Push "TAS"
 GetVariable
 Push "valueArray"
@@ -3310,8 +3323,8 @@ GetMember
 Push "length"
 GetMember
 SetMember
-Jump loc346e
-loc3203:Push register9
+Jump loc3497
+loc322c:Push register9
 Push 1
 Push register6
 Push "push"
@@ -3324,7 +3337,7 @@ Push "push"
 CallMethod
 Pop
 Push register5
-If loc32a6
+If loc32cf
 Push register6
 Push "TAS"
 GetVariable
@@ -3355,14 +3368,14 @@ GetMember
 Push "apply"
 CallMethod
 Pop
-loc32a6:Push undefined
+loc32cf:Push undefined
 StoreRegister 12
 Pop
 Push undefined
 StoreRegister 13
 Pop
 Push register5
-If loc331d
+If loc3346
 Push 0
 Push "TAS"
 GetVariable
@@ -3385,8 +3398,8 @@ Push 2
 InitArray
 StoreRegister 13
 Pop
-Jump loc333f
-loc331d:Push "TAS"
+Jump loc3368
+loc3346:Push "TAS"
 GetVariable
 Push "indArray"
 GetMember
@@ -3398,16 +3411,16 @@ Push "endIndArray"
 GetMember
 StoreRegister 13
 Pop
-loc333f:Push register8
+loc3368:Push register8
 StoreRegister 14
 Pop
-loc3349:Push register14
+loc3372:Push register14
 Push register6
 Push "length"
 GetMember
 Less2
 Not
-If loc3400
+If loc3429
 Push "TAS"
 GetVariable
 Push "curString"
@@ -3455,9 +3468,9 @@ Push register14
 Increment
 StoreRegister 14
 Pop
-Jump loc3349
-loc3400:Push register5
-If loc346e
+Jump loc3372
+loc3429:Push register5
+If loc3497
 Push register12
 Push "TAS"
 GetVariable
@@ -3488,8 +3501,8 @@ GetMember
 Push "apply"
 CallMethod
 Pop
-loc346e:Push register5
-If loc3546
+loc3497:Push register5
+If loc356f
 Push "TAS"
 GetVariable
 Push "curIndex"
@@ -3502,7 +3515,7 @@ Push 1
 Subtract
 StoreRegister 14
 Pop
-loc349e:Push register14
+loc34c7:Push register14
 Push "TAS"
 GetVariable
 Push "indArray"
@@ -3511,7 +3524,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc3546
+If loc356f
 Push "TAS"
 GetVariable
 Push "indArray"
@@ -3558,8 +3571,8 @@ Push register14
 Increment
 StoreRegister 14
 Pop
-Jump loc349e
-loc3546:Push "TAS"
+Jump loc34c7
+loc356f:Push "TAS"
 GetVariable
 Push "curString"
 Push "TAS"
@@ -3569,7 +3582,7 @@ GetMember
 Push register11
 Add2
 SetMember
-loc3564:Push "TAS"
+loc358d:Push "TAS"
 GetVariable
 Push "curFrame"
 GetMember
@@ -3585,7 +3598,7 @@ GetMember
 Less2
 Not
 Not
-If loc35be
+If loc35e7
 Push "TAS"
 GetVariable
 Push "curIndex"
@@ -3600,10 +3613,10 @@ GetVariable
 Push "curFrame"
 Push 0
 SetMember
-loc35be:Push false
+loc35e7:Push false
 StoreRegister 15
 Pop
-loc35c8:Push "TAS"
+loc35f1:Push "TAS"
 GetVariable
 Push "inputArray"
 GetMember
@@ -3618,7 +3631,7 @@ GetVariable
 Push "isSubLetter"
 CallMethod
 Not
-If loc3818
+If loc3841
 Push "TAS"
 GetVariable
 Push "inputArray"
@@ -3631,29 +3644,29 @@ GetMember
 StoreRegister 0
 Push "b"
 StrictEquals
-If loc3678
+If loc36a1
 Push register0
 Push "r"
 StrictEquals
-If loc3731
+If loc375a
 Push register0
 Push "j"
 StrictEquals
-If loc375b
+If loc3784
 Push register0
 Push "J"
 StrictEquals
-If loc3783
+If loc37ac
 Push register0
 Push "P"
 StrictEquals
-If loc3792
+If loc37bb
 Push register0
 Push "h"
 StrictEquals
-If loc37d0
-Jump loc37e6
-loc3678:Push "com"
+If loc37f9
+Jump loc380f
+loc36a1:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3664,7 +3677,7 @@ GetMember
 Push "game_paused"
 GetMember
 Not
-If loc36d0
+If loc36f9
 Push 0
 Push register1
 Push "game"
@@ -3679,10 +3692,10 @@ GetMember
 Push "hidePopUp"
 CallMethod
 Pop
-loc36d0:Push 0
+loc36f9:Push 0
 StoreRegister 14
 Pop
-loc36dd:Push register14
+loc3706:Push register14
 Push "TAS"
 GetVariable
 Push "valueArray"
@@ -3694,7 +3707,7 @@ GetMember
 GetMember
 Less2
 Not
-If loc372c
+If loc3755
 Push 0
 Push register1
 Push "game"
@@ -3706,9 +3719,9 @@ Push register14
 Increment
 StoreRegister 14
 Pop
-Jump loc36dd
-loc372c:Jump loc37e6
-loc3731:Push "RNG"
+Jump loc3706
+loc3755:Jump loc380f
+loc375a:Push "RNG"
 GetVariable
 Push "rngSeed"
 Push "TAS"
@@ -3721,8 +3734,8 @@ Push "curIndex"
 GetMember
 GetMember
 SetMember
-Jump loc37e6
-loc375b:Push "com"
+Jump loc380f
+loc3784:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3733,12 +3746,12 @@ GetMember
 Push "can_jump"
 Push true
 SetMember
-Jump loc37e6
-loc3783:Push true
+Jump loc380f
+loc37ac:Push true
 StoreRegister 15
 Pop
-Jump loc37e6
-loc3792:Push "game_paused"
+Jump loc380f
+loc37bb:Push "game_paused"
 Push 1
 Push register1
 Push "popup_holder"
@@ -3753,14 +3766,14 @@ GetMember
 Push "pauseGame"
 CallMethod
 Pop
-Jump loc37e6
-loc37d0:Push "TAS"
+Jump loc380f
+loc37f9:Push "TAS"
 GetVariable
 Push "queuedHit"
 Push true
 SetMember
-Jump loc37e6
-loc37e6:Push "TAS"
+Jump loc380f
+loc380f:Push "TAS"
 GetVariable
 Push "curIndex"
 Push "TAS"
@@ -3774,8 +3787,8 @@ GetVariable
 Push "curFrame"
 Push 0
 SetMember
-Jump loc35c8
-loc3818:Push "TAS"
+Jump loc35f1
+loc3841:Push "TAS"
 GetVariable
 Push "inputArray"
 GetMember
@@ -3790,7 +3803,7 @@ Push register9
 Push "p"
 Equals2
 Not
-If loc38a8
+If loc38d1
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3801,7 +3814,7 @@ Push "Global"
 GetMember
 Push "game_paused"
 GetMember
-If loc38a3
+If loc38cc
 Push "game_paused"
 Push 1
 Push register1
@@ -3817,8 +3830,8 @@ GetMember
 Push "pauseGame"
 CallMethod
 Pop
-loc38a3:Jump loc3a29
-loc38a8:Push "com"
+loc38cc:Jump loc3a52
+loc38d1:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3829,7 +3842,7 @@ GetMember
 Push "game_paused"
 GetMember
 Not
-If loc3900
+If loc3929
 Push 0
 Push register1
 Push "game"
@@ -3844,7 +3857,7 @@ GetMember
 Push "hidePopUp"
 CallMethod
 Pop
-loc3900:Push register9
+loc3929:Push register9
 Push 1
 Push "nadwqesADWQE"
 Push "indexOf"
@@ -3878,21 +3891,21 @@ Push "UP_PRESSED"
 GetMember
 PushDuplicate
 Not
-If loc398f
+If loc39b8
 Pop
 Push register16
 Push 6
 Modulo
 Push 3
 Less2
-loc398f:PushDuplicate
+loc39b8:PushDuplicate
 Not
-If loc399d
+If loc39c6
 Pop
 Push register15
 Not
-loc399d:Not
-If loc39c6
+loc39c6:Not
+If loc39ef
 Push "com"
 GetVariable
 Push "nitrome"
@@ -3904,7 +3917,7 @@ GetMember
 Push "can_jump"
 Push true
 SetMember
-loc39c6:Push "com"
+loc39ef:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -3934,7 +3947,7 @@ Push 6
 Less2
 Not
 SetMember
-loc3a29:Push "TAS"
+loc3a52:Push "TAS"
 GetVariable
 Push "curFrame"
 Push "TAS"
@@ -3949,7 +3962,7 @@ Push "fastPlayback"
 GetMember
 PushDuplicate
 Not
-If loc3a6f
+If loc3a98
 Pop
 Push "TAS"
 GetVariable
@@ -3960,9 +3973,9 @@ GetVariable
 Push "targetIndex"
 GetMember
 Equals2
-loc3a6f:PushDuplicate
+loc3a98:PushDuplicate
 Not
-If loc3a90
+If loc3ab9
 Pop
 Push "TAS"
 GetVariable
@@ -3973,15 +3986,15 @@ GetVariable
 Push "targetFrame"
 GetMember
 Equals2
-loc3a90:Not
-If loc3aa7
+loc3ab9:Not
+If loc3ad0
 Push "TAS"
 GetVariable
 Push "fastPlayback"
 Push false
 SetMember
 }
-loc3aa7:SetMember
+loc3ad0:SetMember
 Push register1
 Push "performQueuedHit"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
@@ -3990,7 +4003,7 @@ GetVariable
 Push "queuedHit"
 GetMember
 Not
-If loc3aef
+If loc3b18
 Push 0
 Push register1
 Push "game"
@@ -4001,7 +4014,7 @@ Push "startHit"
 CallMethod
 Pop
 }
-loc3aef:SetMember
+loc3b18:SetMember
 Push register1
 Push "resetInputCheckers"
 DefineFunction "", 0 {
@@ -4065,10 +4078,10 @@ GetMember
 Push "acid_holder"
 GetMember
 Enumerate2
-loc3bcf:StoreRegister 0
+loc3bf8:StoreRegister 0
 Push null
 Equals2
-If loc3c17
+If loc3c40
 Push register0
 StoreRegister 3
 Pop
@@ -4084,13 +4097,13 @@ Push register2
 Push "push"
 CallMethod
 Pop
-Jump loc3bcf
-loc3c17:Push register2
+Jump loc3bf8
+loc3c40:Push register2
 Enumerate2
-loc3c1d:StoreRegister 0
+loc3c46:StoreRegister 0
 Push null
 Equals2
-If loc3cfb
+If loc3d24
 Push register0
 StoreRegister 3
 Pop
@@ -4103,7 +4116,7 @@ Push register4
 Push "bubbles"
 GetMember
 Not
-If loc3ca0
+If loc3cc9
 Push 267
 Push 1
 Push "RNG"
@@ -4121,12 +4134,12 @@ GetVariable
 Push "_gotoAndPlay"
 CallMethod
 Pop
-Jump loc3cf6
-loc3ca0:Push register4
+Jump loc3d1f
+loc3cc9:Push register4
 Push "anim"
 GetMember
 Not
-If loc3cf6
+If loc3d1f
 Push 267
 Push 1
 Push "RNG"
@@ -4144,8 +4157,8 @@ GetVariable
 Push "_gotoAndPlay"
 CallMethod
 Pop
-loc3cf6:Jump loc3c1d
-loc3cfb:Push "com"
+loc3d1f:Jump loc3c46
+loc3d24:Push "com"
 GetVariable
 Push "nitrome"
 GetMember
@@ -4208,7 +4221,7 @@ GetVariable
 Push "skipBeginning"
 GetMember
 Not
-If loc3e30
+If loc3e59
 Push "TAS"
 GetVariable
 Push "neutralPlayback"
@@ -4217,11 +4230,11 @@ SetMember
 Push 0
 StoreRegister 6
 Pop
-loc3de6:Push register6
+loc3e0f:Push register6
 Push 109
 Less2
 Not
-If loc3e1f
+If loc3e48
 Push 0
 Push "Main"
 GetVariable
@@ -4232,24 +4245,24 @@ Push register6
 Increment
 StoreRegister 6
 Pop
-Jump loc3de6
-loc3e1f:Push "TAS"
+Jump loc3e0f
+loc3e48:Push "TAS"
 GetVariable
 Push "neutralPlayback"
 Push false
 SetMember
-loc3e30:Push "TAS"
+loc3e59:Push "TAS"
 GetVariable
 Push "runBack"
 GetMember
 Not
-If loc3ecd
+If loc3ef6
 Push "TAS"
 GetVariable
 Push "runBack"
 Push false
 SetMember
-loc3e53:Push "TAS"
+loc3e7c:Push "TAS"
 GetVariable
 Push "curIndex"
 GetMember
@@ -4259,7 +4272,7 @@ Push "targetIndex"
 GetMember
 Less2
 PushDuplicate
-If loc3ead
+If loc3ed6
 Pop
 Push "TAS"
 GetVariable
@@ -4272,7 +4285,7 @@ GetMember
 Equals2
 PushDuplicate
 Not
-If loc3ead
+If loc3ed6
 Pop
 Push "TAS"
 GetVariable
@@ -4283,16 +4296,16 @@ GetVariable
 Push "targetFrame"
 GetMember
 Less2
-loc3ead:Not
-If loc3ecd
+loc3ed6:Not
+If loc3ef6
 Push 0
 Push "Main"
 GetVariable
 Push "gameUpdate"
 CallMethod
 Pop
-Jump loc3e53
-loc3ecd:Push "TAS"
+Jump loc3e7c
+loc3ef6:Push "TAS"
 GetVariable
 Push "fastPlayback"
 Push false
@@ -4393,10 +4406,6 @@ Push "DOWN_PRESSED"
 Push false
 SetMember
 Push register1
-Push "subLetters"
-Push "rb"
-SetMember
-Push register1
 Push "runBack"
 Push false
 SetMember
@@ -4440,4 +4449,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc4110:Pop
+loc4129:Pop
