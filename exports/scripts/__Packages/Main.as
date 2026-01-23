@@ -33,11 +33,11 @@ class Main
 	}
 	static function metaUpdate()
 	{
-		if(TAS.delayedCaretIndex != -1)
+		if(TAS.delayedCaretPos != -1)
 		{
 			Selection.setFocus(Windows.clip.inputWindow.inputField);
-			Selection.setSelection(TAS.delayedCaretIndex,TAS.delayedCaretIndex);
-			TAS.delayedCaretIndex = -1;
+			Selection.setSelection(TAS.delayedCaretPos,TAS.delayedCaretPos);
+			TAS.delayedCaretPos = -1;
 		}
 		if(!TAS.frozen)
 		{

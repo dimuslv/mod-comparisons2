@@ -250,4 +250,21 @@ class Utils
 		Utils.addToggleVarOptions(_loc4_.options,_loc5_);
 		w.updateMainField(_loc4_);
 	}
+	static function getLast(arr)
+	{
+		return arr[arr.length - 1];
+	}
+	static function pushO(arr, frame, inp, num)
+	{
+		Utils.getLast(arr).push(frame - Utils.getLast(arr)[0],inp,num,0);
+	}
+	static function foif()
+	{
+		return eval(Selection.getFocus()).type === "input";
+	}
+	static function currentPlayerString()
+	{
+		var _loc2_ = _root.game.player;
+		return [_loc2_._x,_loc2_._y,_loc2_.state,_loc2_.vx,_loc2_.vy,_loc2_.fall_count].join("/");
+	}
 }

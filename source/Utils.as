@@ -95,7 +95,8 @@ class Utils
 				"Bruteforcing", Utils.bruteforcingWindow,
 				"Info windows", Utils.infoWindowsWindow,
 				"Preferences", Utils.preferenceWindow,
-				"Layer visibility", Utils.layerVisibilityWindow
+				"Layer visibility", Utils.layerVisibilityWindow/*,
+				"Frame offsets", Utils.frameOffsetWindow*/
 			]
 		});
 	}
@@ -297,5 +298,34 @@ class Utils
 		Utils.addToggleVarOptions(obj.options, arr);
 		
 		w.updateMainField(obj);
+	}
+	
+	/*static function frameOffsetWindow(w) {
+		w.updateMainField({
+			title: "Frame offsets",
+			curWindow: Utils.frameOffsetWindow,
+			options: [
+				"Offset string 🗗", [Utils.activateStaticWindow, Windows.clip.offsetStringWindow],
+				"Offset bars 🗗", [Utils.activateStaticWindow, Windows.clip.offsetBarsWindow],
+				"Back", Utils.mainMenu
+			]
+		});
+	}*/
+	
+	static function getLast(arr) {
+		return arr[arr.length-1];
+	}
+	
+	static function pushO(arr, frame, inp, num) {
+		Utils.getLast(arr).push(frame - Utils.getLast(arr)[0], inp, num, 0);
+	}
+	
+	static function foif() {
+		return eval(Selection.getFocus()).type === "input";
+	}
+	
+	static function currentPlayerString() {
+		var p = _root.game.player;
+		return [p._x, p._y, p.state, /*p.dir,*/ p.vx, p.vy, /*p.wall_count,*/ p.fall_count].join("/");
 	}
 }

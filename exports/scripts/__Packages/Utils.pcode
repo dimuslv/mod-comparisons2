@@ -1,11 +1,11 @@
-ConstantPool "_global", "Utils", "prototype", "cutsceneIn", "TAS", "fastPlayback", "in", "cutscene", "gotoAndPlay", "gotoAndStop", "cutsceneOut", "out", "levelInit", "layerVisibilities", "game", "slice", "_holder", "test_holder", "_visible", "extraLayerVisibilities", "pipes", "big_pipes", "acid_holder", "bomb_panel", "health_panel", "powercell_panel", "text_display", "popup_holder", "doKeyDown", "Windows", "createEmptyWindow", "mainMenu", "title", "Main menu", "curWindow", "options", "layerVisibilityWindow", "Layer visibility", "preferenceWindow", "Preferences", "infoWindowsWindow", "Info windows", "bruteforcingWindow", "Bruteforcing", "testingVarsWindow", "Testing vars", "updateMainField", "skipBeginning", "Skip beginning", "deactivateTeleport", "Deactivate teleport", "inaccuratePhysics", "Wrong physics", "noDeath", "No death", "invulnerable", "Invulnerability", "addToggleVarOptions", "simple", "on", "off", "laserState", "Lasers", "addCycleOption", "conveyorsOn", "Conveyors", "Back", "push", "length", ": ", "toggleVar", "obj", "cycleVar", "copyCollisionData", "Copy collision data 📋", "com", "nitrome", "toxic", "Global", "level_height", "level_cols", "getSceneryCollision", "toString", "System", "setClipboard", "toggleMask", "masked", "mask", "setMask", "screenshake", "Screenshake", "autoScroll", "Auto scroll", "perf", "Perf optimizations", "visWindowArray", "clip", "VisWindow", "activateStaticWindow", " visualization 🗗", "updateVisBitmap", "bmps", "zeroPoint", "height", "width", "flash", "geom", "Rectangle", "empty_bmp", "copyPixels", "extraLayerVisibilityWindow", "Extra", "Extra layer visibility", "Mask: ", "fullLoads", "controlAtBeginning", "emptyStringOnExit", "closeWindowsOnExit", "Point", "Bomb", "Object", "Acid", "Damage", "display", "BitmapData", "ASSetPropFlags"
+ConstantPool "_global", "Utils", "prototype", "cutsceneIn", "TAS", "fastPlayback", "in", "cutscene", "gotoAndPlay", "gotoAndStop", "cutsceneOut", "out", "levelInit", "layerVisibilities", "game", "slice", "_holder", "test_holder", "_visible", "extraLayerVisibilities", "pipes", "big_pipes", "acid_holder", "bomb_panel", "health_panel", "powercell_panel", "text_display", "popup_holder", "doKeyDown", "Windows", "createEmptyWindow", "mainMenu", "title", "Main menu", "curWindow", "options", "layerVisibilityWindow", "Layer visibility", "preferenceWindow", "Preferences", "infoWindowsWindow", "Info windows", "bruteforcingWindow", "Bruteforcing", "testingVarsWindow", "Testing vars", "updateMainField", "skipBeginning", "Skip beginning", "deactivateTeleport", "Deactivate teleport", "inaccuratePhysics", "Wrong physics", "noDeath", "No death", "invulnerable", "Invulnerability", "addToggleVarOptions", "simple", "on", "off", "laserState", "Lasers", "addCycleOption", "conveyorsOn", "Conveyors", "Back", "push", "length", ": ", "toggleVar", "obj", "cycleVar", "copyCollisionData", "Copy collision data 📋", "com", "nitrome", "toxic", "Global", "level_height", "level_cols", "getSceneryCollision", "toString", "System", "setClipboard", "toggleMask", "masked", "mask", "setMask", "screenshake", "Screenshake", "autoScroll", "Auto scroll", "perf", "Perf optimizations", "visWindowArray", "clip", "VisWindow", "activateStaticWindow", " visualization 🗗", "updateVisBitmap", "bmps", "zeroPoint", "height", "width", "flash", "geom", "Rectangle", "empty_bmp", "copyPixels", "extraLayerVisibilityWindow", "Extra", "Extra layer visibility", "Mask: ", "getLast", "pushO", "foif", "Selection", "getFocus", "type", "input", "currentPlayerString", "player", "/", "fall_count", "vy", "vx", "state", "_y", "_x", "join", "fullLoads", "controlAtBeginning", "emptyStringOnExit", "closeWindowsOnExit", "Point", "Bomb", "Object", "Acid", "Damage", "display", "BitmapData", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Utils"
 GetMember
 Not
 Not
-If loc1a05
+If loc1bf9
 Push "_global"
 GetVariable
 Push "Utils"
@@ -25,7 +25,7 @@ Push "TAS"
 GetVariable
 Push "fastPlayback"
 GetMember
-If loc0613
+If loc0683
 Push "in"
 Push 1
 Push register1
@@ -34,8 +34,8 @@ GetMember
 Push "gotoAndPlay"
 CallMethod
 Pop
-Jump loc0635
-loc0613:Push 18
+Jump loc06a5
+loc0683:Push 18
 Push 1
 Push register1
 Push "cutscene"
@@ -44,7 +44,7 @@ Push "gotoAndStop"
 CallMethod
 Pop
 }
-loc0635:SetMember
+loc06a5:SetMember
 Push register1
 Push "cutsceneOut"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
@@ -52,7 +52,7 @@ Push "TAS"
 GetVariable
 Push "fastPlayback"
 GetMember
-If loc0680
+If loc06f0
 Push "out"
 Push 1
 Push register1
@@ -61,8 +61,8 @@ GetMember
 Push "gotoAndPlay"
 CallMethod
 Pop
-Jump loc06a2
-loc0680:Push 1
+Jump loc0712
+loc06f0:Push 1
 Push 1
 Push register1
 Push "cutscene"
@@ -71,7 +71,7 @@ Push "gotoAndStop"
 CallMethod
 Pop
 }
-loc06a2:SetMember
+loc0712:SetMember
 Push register1
 Push "levelInit"
 DefineFunction2 "", 0, 4, false, true, true, false, true, false, true, false, false {
@@ -79,7 +79,7 @@ Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
-If loc07ec
+If loc085c
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
@@ -90,10 +90,10 @@ Push register1
 Push "game"
 GetMember
 Enumerate2
-loc06ea:StoreRegister 0
+loc075a:StoreRegister 0
 Push null
 Equals2
-If loc0745
+If loc07b5
 Push register0
 StoreRegister 2
 Pop
@@ -105,7 +105,7 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc0740
+If loc07b0
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
@@ -113,8 +113,8 @@ GetMember
 Push register2
 Push true
 SetMember
-loc0740:Jump loc06ea
-loc0745:Push "Utils"
+loc07b0:Jump loc075a
+loc07b5:Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
@@ -153,15 +153,15 @@ Push true
 Push 9
 InitObject
 SetMember
-Jump loc08b2
-loc07ec:Push register1
+Jump loc0922
+loc085c:Push register1
 Push "game"
 GetMember
 Enumerate2
-loc07f8:StoreRegister 0
+loc0868:StoreRegister 0
 Push null
 Equals2
-If loc0865
+If loc08d5
 Push register0
 StoreRegister 2
 Pop
@@ -173,7 +173,7 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc0860
+If loc08d0
 Push register1
 Push "game"
 GetMember
@@ -187,16 +187,16 @@ GetMember
 Push register2
 GetMember
 SetMember
-loc0860:Jump loc07f8
-loc0865:Push "Utils"
+loc08d0:Jump loc0868
+loc08d5:Push "Utils"
 GetVariable
 Push "extraLayerVisibilities"
 GetMember
 Enumerate2
-loc0872:StoreRegister 0
+loc08e2:StoreRegister 0
 Push null
 Equals2
-If loc08b2
+If loc0922
 Push register0
 StoreRegister 3
 Pop
@@ -211,9 +211,9 @@ GetMember
 Push register3
 GetMember
 SetMember
-Jump loc0872
+Jump loc08e2
 }
-loc08b2:SetMember
+loc0922:SetMember
 Push register1
 Push "doKeyDown"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "code" {
@@ -221,7 +221,7 @@ Push register1
 Push 77
 Equals2
 Not
-If loc092b
+If loc099b
 Push 100
 Push 100
 Push 2
@@ -241,7 +241,7 @@ Pop
 Push true
 Return
 }
-loc092b:SetMember
+loc099b:SetMember
 Push register1
 Push "mainMenu"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
@@ -396,13 +396,13 @@ DefineFunction2 "", 2, 7, false, false, true, false, true, false, true, false, f
 Push 0
 StoreRegister 3
 Pop
-loc0ba5:Push register3
+loc0c15:Push register3
 Push register2
 Push "length"
 GetMember
 Less2
 Not
-If loc0c89
+If loc0cf9
 Push register2
 Push register3
 GetMember
@@ -429,11 +429,11 @@ Push register5
 Push register6
 GetMember
 Not
-If loc0c24
+If loc0c94
 Push "on"
-Jump loc0c29
-loc0c24:Push "off"
-loc0c29:Add2
+Jump loc0c99
+loc0c94:Push "off"
+loc0c99:Add2
 Push 1
 Push register1
 Push "push"
@@ -457,9 +457,9 @@ Push 3
 Add2
 StoreRegister 3
 Pop
-Jump loc0ba5
+Jump loc0c15
 }
-loc0c89:SetMember
+loc0cf9:SetMember
 Push register1
 Push "toggleVar"
 DefineFunction2 "", 3, 4, false, false, true, false, true, false, true, false, false, 1, "w", 2, "stump", 3, "varName" {
@@ -585,7 +585,7 @@ Pop
 Push 0
 StoreRegister 4
 Pop
-loc0ecc:Push register4
+loc0f3c:Push register4
 Push "com"
 GetVariable
 Push "nitrome"
@@ -598,11 +598,11 @@ Push "level_height"
 GetMember
 Less2
 Not
-If loc0ff5
+If loc1065
 Push 0
 StoreRegister 5
 Pop
-loc0f03:Push register5
+loc0f73:Push register5
 Push "com"
 GetVariable
 Push "nitrome"
@@ -615,18 +615,18 @@ Push "level_cols"
 GetMember
 Less2
 Not
-If loc0fe5
+If loc1055
 Push 0
 StoreRegister 6
 Pop
 Push 0
 StoreRegister 7
 Pop
-loc0f47:Push register7
+loc0fb7:Push register7
 Push 32
 Less2
 Not
-If loc0fbc
+If loc102c
 Push register4
 Push register5
 Push 32
@@ -640,7 +640,7 @@ GetMember
 Push "getSceneryCollision"
 CallMethod
 Not
-If loc0fac
+If loc101c
 Push register6
 Push 1
 Push register7
@@ -648,12 +648,12 @@ BitLShift
 BitOr
 StoreRegister 6
 Pop
-loc0fac:Push register7
+loc101c:Push register7
 Increment
 StoreRegister 7
 Pop
-Jump loc0f47
-loc0fbc:Push register6
+Jump loc0fb7
+loc102c:Push register6
 Push 1
 Push register3
 Push "push"
@@ -663,13 +663,13 @@ Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc0f03
-loc0fe5:Push register4
+Jump loc0f73
+loc1055:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc0ecc
-loc0ff5:Push 0
+Jump loc0f3c
+loc1065:Push 0
 Push register3
 Push "toString"
 CallMethod
@@ -698,7 +698,7 @@ GetVariable
 Push "masked"
 GetMember
 Not
-If loc1080
+If loc10f0
 Push "mask"
 GetVariable
 Push 1
@@ -706,14 +706,14 @@ Push register1
 Push "setMask"
 CallMethod
 Pop
-Jump loc1098
-loc1080:Push null
+Jump loc1108
+loc10f0:Push null
 Push 1
 Push register1
 Push "setMask"
 CallMethod
 Pop
-loc1098:Push register2
+loc1108:Push register2
 Push 1
 Push register2
 Push "obj"
@@ -793,7 +793,7 @@ Pop
 Push 0
 StoreRegister 3
 Pop
-loc11d8:Push register3
+loc1248:Push register3
 Push "Utils"
 GetVariable
 Push "visWindowArray"
@@ -802,7 +802,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc1274
+If loc12e4
 Push "Windows"
 GetVariable
 Push "clip"
@@ -840,8 +840,8 @@ Push 3
 Add2
 StoreRegister 3
 Pop
-Jump loc11d8
-loc1274:Push "Utils"
+Jump loc1248
+loc12e4:Push "Utils"
 GetVariable
 Push "mainMenu"
 GetMember
@@ -896,7 +896,7 @@ GetMember
 Not
 PushDuplicate
 Not
-If loc1377
+If loc13e7
 Pop
 Push "Windows"
 GetVariable
@@ -908,8 +908,8 @@ Add2
 GetMember
 Push "_visible"
 GetMember
-loc1377:Not
-If loc1442
+loc13e7:Not
+If loc14b2
 Push "zeroPoint"
 GetVariable
 Push register3
@@ -960,7 +960,7 @@ Push "copyPixels"
 CallMethod
 Pop
 }
-loc1442:SetMember
+loc14b2:SetMember
 Push register1
 Push "layerVisibilityWindow"
 DefineFunction2 "", 1, 6, false, true, true, false, true, false, true, false, false, 2, "w" {
@@ -968,10 +968,10 @@ Push register1
 Push "game"
 GetMember
 Enumerate2
-loc1467:StoreRegister 0
+loc14d7:StoreRegister 0
 Push null
 Equals2
-If loc14d4
+If loc1544
 Push register0
 StoreRegister 3
 Pop
@@ -983,7 +983,7 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc14cf
+If loc153f
 Push register1
 Push "game"
 GetMember
@@ -997,8 +997,8 @@ GetMember
 Push register3
 GetMember
 SetMember
-loc14cf:Jump loc1467
-loc14d4:Push "title"
+loc153f:Jump loc14d7
+loc1544:Push "title"
 Push "Layer visibility"
 Push "curWindow"
 Push "Utils"
@@ -1020,10 +1020,10 @@ Push register1
 Push "game"
 GetMember
 Enumerate2
-loc1525:StoreRegister 0
+loc1595:StoreRegister 0
 Push null
 Equals2
-If loc15b1
+If loc1621
 Push register0
 StoreRegister 3
 Pop
@@ -1035,7 +1035,7 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc15ac
+If loc161c
 Push register3
 Push "Utils"
 GetVariable
@@ -1052,8 +1052,8 @@ Push register5
 Push "push"
 CallMethod
 Pop
-loc15ac:Jump loc1525
-loc15b1:Push "Utils"
+loc161c:Jump loc1595
+loc1621:Push "Utils"
 GetVariable
 Push "extraLayerVisibilityWindow"
 GetMember
@@ -1103,10 +1103,10 @@ GetVariable
 Push "extraLayerVisibilities"
 GetMember
 Enumerate2
-loc166b:StoreRegister 0
+loc16db:StoreRegister 0
 Push null
 Equals2
-If loc16ab
+If loc171b
 Push register0
 StoreRegister 3
 Pop
@@ -1121,8 +1121,8 @@ GetMember
 Push register3
 GetMember
 SetMember
-Jump loc166b
-loc16ab:Push "title"
+Jump loc16db
+loc171b:Push "title"
 Push "Extra layer visibility"
 Push "curWindow"
 Push "Utils"
@@ -1145,10 +1145,10 @@ GetVariable
 Push "extraLayerVisibilities"
 GetMember
 Enumerate2
-loc16fd:StoreRegister 0
+loc176d:StoreRegister 0
 Push null
 Equals2
-If loc1744
+If loc17b4
 Push register0
 StoreRegister 3
 Pop
@@ -1163,8 +1163,8 @@ Push register5
 Push "push"
 CallMethod
 Pop
-Jump loc16fd
-loc1744:Push "Utils"
+Jump loc176d
+loc17b4:Push "Utils"
 GetVariable
 Push "layerVisibilityWindow"
 GetMember
@@ -1186,11 +1186,11 @@ GetVariable
 Push "masked"
 GetMember
 Not
-If loc179c
+If loc180c
 Push "on"
-Jump loc17a1
-loc179c:Push "off"
-loc17a1:Add2
+Jump loc1811
+loc180c:Push "off"
+loc1811:Add2
 Push 2
 Push register4
 Push "options"
@@ -1214,6 +1214,100 @@ Push register2
 Push "updateMainField"
 CallMethod
 Pop
+}
+SetMember
+Push register1
+Push "getLast"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "arr" {
+Push register1
+Push register1
+Push "length"
+GetMember
+Push 1
+Subtract
+GetMember
+Return
+}
+SetMember
+Push register1
+Push "pushO"
+DefineFunction2 "", 4, 5, false, false, true, false, true, false, true, false, false, 1, "arr", 2, "frame", 3, "inp", 4, "num" {
+Push 0
+Push register4
+Push register3
+Push register2
+Push register1
+Push 1
+Push "Utils"
+GetVariable
+Push "getLast"
+CallMethod
+Push 0
+GetMember
+Subtract
+Push 4
+Push register1
+Push 1
+Push "Utils"
+GetVariable
+Push "getLast"
+CallMethod
+Push "push"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "foif"
+DefineFunction "", 0 {
+Push 0
+Push "Selection"
+GetVariable
+Push "getFocus"
+CallMethod
+GetVariable
+Push "type"
+GetMember
+Push "input"
+StrictEquals
+Return
+}
+SetMember
+Push register1
+Push "currentPlayerString"
+DefineFunction2 "", 0, 3, false, true, true, false, true, false, true, false, false {
+Push register1
+Push "game"
+GetMember
+Push "player"
+GetMember
+StoreRegister 2
+Pop
+Push "/"
+Push 1
+Push register2
+Push "fall_count"
+GetMember
+Push register2
+Push "vy"
+GetMember
+Push register2
+Push "vx"
+GetMember
+Push register2
+Push "state"
+GetMember
+Push register2
+Push "_y"
+GetMember
+Push register2
+Push "_x"
+GetMember
+Push 6
+InitArray
+Push "join"
+CallMethod
+Return
 }
 SetMember
 Push register1
@@ -1334,4 +1428,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc1a05:Pop
+loc1bf9:Pop

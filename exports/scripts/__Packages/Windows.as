@@ -11,7 +11,7 @@ class Windows
 	{
 		Windows.clip = _root.window_clip;
 		var w = Windows.clip.attachMovie("window","inputWindow",Windows.clip.getNextHighestDepth());
-		w.init(10,355,{title:"Input string",customMinimize:function(w)
+		w.init(10,335,{title:"Input string",customMinimize:function(w)
 		{
 			w.minimized = !w.minimized;
 			if(w.inputField._visible = !w.minimized)
@@ -26,6 +26,33 @@ class Windows
 		w.inputField.type = "input";
 		w._visible = false;
 		TAS.inputField = w.inputField;
+		w.inputField.onKillFocus = function(newFocus)
+		{
+			TAS.loadInputs(TAS.lastCaretPos);
+			TAS.lastCaretPos = -1;
+		};
+		w.createTextField("offsetField",w.getNextHighestDepth(),0,40,530,20);
+		w.offsetField.background = true;
+		w.offsetField.type = "input";
+		w.offsetField._visible = false;
+		TAS.offsetField = w.offsetField;
+		w.offsetField.onKillFocus = function(newFocus)
+		{
+			TAS.loadOffsets();
+		};
+		var w = Windows.clip.attachMovie("window","offsetBarsWindow",Windows.clip.getNextHighestDepth());
+		w.init(10,200,{title:"Offset bars",customMinimize:function(w)
+		{
+			w.minimized = !w.minimized;
+			w.barsWindow._visible = !w.minimized;
+			w.updateMainField(false);
+		}});
+		w._static = true;
+		w.createTextField("barsWindow",w.getNextHighestDepth(),0,20,40,20);
+		w.barsWindow.background = true;
+		w.barsWindow.setNewTextFormat(new TextFormat("Consolas",14,null,null,null,null,null,null,"center"));
+		w.barsWindow.autoSize = true;
+		w._visible = false;
 		w = Windows.clip.attachMovie("window","varWindow",Windows.clip.getNextHighestDepth());
 		w.init(10,40,{title:"Vars",update:TAS.updateVarWindow});
 		w._static = true;
@@ -78,7 +105,6 @@ class Windows
 			{
 				var w = Windows.clip[focus.slice(20,focus.length - "mainTextField".length - 1)];
 				var ind = Selection.getCaretIndex();
-				trace(ind);
 				var i = w.mainIndices.length - 1;
 				while(i >= 0)
 				{
