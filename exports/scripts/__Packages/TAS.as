@@ -333,7 +333,6 @@ class TAS
 							TAS.curIndex--;
 						}
 						while(TAS.isSubLetter(TAS.inputArray[TAS.curIndex]));
-						
 						TAS.curFrame = TAS.valueArray[TAS.curIndex];
 					}
 					_loc3_ = _loc3_ - 1;

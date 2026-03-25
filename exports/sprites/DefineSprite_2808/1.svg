@@ -4,7 +4,7 @@
     <use ffdec:characterId="2807" height="268.05" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="1024.2" xlink:href="#shape0"/>
   </g>
   <defs>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <path d="M1024.2 268.05 L0.0 268.05 0.0 0.0 1024.2 0.0 1024.2 268.05" fill="url(#gradient0)" fill-rule="evenodd" stroke="none"/>
     </g>
     <linearGradient gradientTransform="matrix(0.4384, 0.0, 0.0, 0.1636, 512.1, 134.0)" gradientUnits="userSpaceOnUse" id="gradient0" spreadMethod="pad" x1="-819.2" x2="819.2">

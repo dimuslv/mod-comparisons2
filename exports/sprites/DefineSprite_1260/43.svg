@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="25.0px" width="25.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 12.5, 12.5)">
-    <use ffdec:characterId="1259" height="25.0" id="clip" transform="matrix(1.0, 0.0, 0.0, 1.0, -12.5, -12.5)" width="25.0" xlink:href="#sprite0"/>
+    <use ffdec:characterId="1259" height="25.0" id="clip" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="25.0" xlink:href="#sprite0"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 12.5, 12.5)">
-      <use ffdec:characterId="1258" height="25.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -12.5, -12.5)" width="25.0" xlink:href="#shape0"/>
+    <g id="sprite0">
+      <use ffdec:characterId="1258" height="25.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="25.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 12.5, 12.5)">
+    <g id="shape0">
       <pattern height="25" id="PatternID_1258_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -12.5, -12.5)" patternUnits="userSpaceOnUse" viewBox="0 0 25 25" width="25">
         <image height="25" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="25" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAABSUlEQVR4Xs1SQW4CMQzMI3rnAz2VLyAhwUfKpZce+oWKd3BC5T8c+Umq2TKuPetdEg6IkUZKYmcmtlPKE6AKW2PNqLvde91uN3W5fFPBgThHHHnXs24MIlMGpOR0w4TwUr6Wgv7MsQtBZL//NgOsacRzMZxFePnp9GMiIA1I30bskX+rMhsy1hz2rXmQzPX3s8pmfxFfiRyl5oLe8Ko/wAy0bOynzEUsVJD9OEvUpKTPgTT5LF9h7xhgAQ4Z6+RSanIuFzNyHCEY3GOSGI1gQbSo1YTthMGhHDUeYAGdRasJDZJPYrDg6mNRX9cvloR1ctEEke9zuU9/15wYYkqIeQNP6LiHGkIFSCJVIKPm+4r+5P9hl2jo2+aF9AG+Oq9jyhMI7aAZfx2HzXNpXRdGlWHtDXpfnmHUloyS0410Np7JLO6CCrfGHo9fmwkxO5Hj0L4AAAAASUVORK5CYII="/>
       </pattern>

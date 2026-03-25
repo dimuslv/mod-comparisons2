@@ -4,10 +4,10 @@
     <use ffdec:characterId="1295" height="32.0" id="_anim" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#sprite0"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite0">
       <use ffdec:characterId="1276" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <pattern height="32" id="PatternID_1276_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
         <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAASklEQVR4XmNgAAIeHp7/qXPMwLj5rhIYg8RActQAILNg5sLswTAfJICMUSSpAGht/igYBaNgFIyCUTAKRsEoGAWjYBSMglEwdAEAY2EggS3oRjwAAAAASUVORK5CYII="/>
       </pattern>

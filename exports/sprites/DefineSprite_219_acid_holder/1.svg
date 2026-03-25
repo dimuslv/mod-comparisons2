@@ -3,19 +3,19 @@
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 14.05, 64.5)">
     <use ffdec:characterId="67" height="178.0" id="wall_overlay" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="550.0" xlink:href="#sprite0"/>
     <use ffdec:characterId="95" height="96.0" id="acid_clip" transform="matrix(1.0, 0.0, 0.0, 1.0, -14.05, 6.45)" width="677.0" xlink:href="#sprite1"/>
-    <use ffdec:characterId="218" height="97.0" id="smoke_bubble_holder" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, -64.5)" width="1632.0" xlink:href="#sprite4"/>
+    <use ffdec:characterId="218" height="97.0" id="smoke_bubble_holder" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.5)" width="1632.0" xlink:href="#sprite4"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite0">
       <use ffdec:characterId="66" height="178.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="550.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <pattern height="178" id="PatternID_66_1" overflow="visible" patternTransform="matrix(61.1111, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 9 178" width="9">
         <image height="178" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="9" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAACyCAYAAACQnOWmAAADfUlEQVR4Xu3W248URRQG8BNuBg0SBEUBQXZmqjtCIBiBIBhNDOHBxPjgPmD0AYXFoAsuC9mdnenpVoIYblETJRDAWxSygpHbckcuCrLZnes/xDlka9PZOp2vHjbEBx5+k3Tlm1PV1V3VRUQ0wYPToHEaNE6DxmnQOA0ap0HjNGicBo3ToHEaNE6Dq72dJiKPQxPpjZgmIf/LUMdhmoz4hdr7aQryqEOdA/QE8qhDXf3zpiLjGOo4+8KTyDiGui/PfgrxC+38Z+Y0xC/UOZB/GhnHUM/VtumIX6j3zvwZCHXdnfcMQr3358xE/ELb/zazECrezj+LUPe/bc8hVLy3cDbiF9pxf8HzCL9PwRzEL9R3tzAXodJg7kXEL9Qz1DYf8QzdW/ASQqX/zEKESkP5HOIX6h3O5REqDwYBQsUhEyJUrOZfRqhcyy1CqDjYthih4rBZglC5WliKULmeX4ZQ31DuFcQzNBy8KqKqWZ6F+mqFFZqoXlhpUTScW6UpVYPXLEpfpEU1s9qiUt2s0USNwusWlWrBm4hfKGqYtxCKqvm1CEX1YB1CUa3wNkJxI3gHobhp3kWk0nsIVRrhekQqvY/ImD4Qlbr5MAvxz8eauGE2Wlwp7NBUmsFmi8dktmgqDfOpJaHPEeJy3QiHwiIiA68IvoizUNIKvhA8aV9moaQZ7hZxK/gqC8WtcL+Gqx+w5LF8o0la4bcWh4IfEB54eBiRMR0XfPFjFunuF8ED/DWLhH4XSTM4kUW669dwN39YPJnBaQ1P4p+WVPpLwxXOWBwKzmt4wBcsCQ1ouMJFS0JXNFzhqiWvyuhFFnks1xHp7iYi3d1CfEPhHeRxSELu5I3lFxr7MDWyP91ApNI1xC/Ea+yyJk697zKmS5r0H6Q7ZzmJJL2kOHlOE6cWKo1d3hnL3A04IdlBNHF6V0lS+1Aa3+EpyzM0suXxlngyi1T6Tdi9UyOVfhbxyC6skUoP92q++CmLX4h/joqkZY5lkdARRLo7hMjdfY9IpdGPXxo/5O8sWXejn9E0HstBS14V5/sr0n/guzN7BX/R92WR7vYILvt1FjmJPTwgJE2zK4uslkQkIycNjaw7fFbhrsqI39Go0jQ9CB9Gg50Ih0wXIu/TVg1X2GbJFHym4QNfp+V3zkyfTNO4y08sqTR6xk3jI/Ymy++AzKU3aLibj6wHRN7oB9SZkRIAAAAASUVORK5CYII="/>
       </pattern>
       <path d="M550.0 178.0 L0.0 178.0 0.0 0.0 550.0 0.0 550.0 178.0" ffdec:fill-bitmapId="65" style="fill:url(#PatternID_66_1)"/>
     </g>
-    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite1">
       <use ffdec:characterId="68" height="32.0" transform="matrix(21.1563, 0.0, 0.0, 2.0, 0.0, 32.0)" width="32.0" xlink:href="#shape1"/>
       <use ffdec:characterId="81" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#sprite2"/>
       <use ffdec:characterId="94" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 32.0, 0.0)" width="32.0" xlink:href="#sprite3"/>
@@ -39,28 +39,28 @@
       <use ffdec:characterId="94" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 608.0, 0.0)" width="32.0" xlink:href="#sprite3"/>
       <use ffdec:characterId="81" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 640.0, 0.0)" width="32.0" xlink:href="#sprite2"/>
     </g>
-    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape1">
       <path d="M32.0 32.0 L0.0 32.0 0.0 0.0 32.0 0.0 32.0 32.0" fill="#83d62a" fill-rule="evenodd" stroke="none"/>
     </g>
-    <g id="sprite2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite2">
       <use ffdec:characterId="70" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#shape2"/>
     </g>
-    <g id="shape2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape2">
       <pattern height="32" id="PatternID_70_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
         <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAdUlEQVR4XmNgGAWjgAbAPU/qP7EYXS9egK4ZF97wM4loTLShpBg86Z0+QQx3ALpmfBjdEFy4874OUbj5mtZ/BnTN+DC6AbgwyGBiMQO6ZnwYXTM1MAO6AL3xqANGHTDqgFEHjDpg1AGjDhh1wKgDRh0w4A4AABnHegBK+TzFAAAAAElFTkSuQmCC"/>
       </pattern>
       <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="69" style="fill:url(#PatternID_70_1)"/>
     </g>
-    <g id="sprite3" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite3">
       <use ffdec:characterId="83" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#shape3"/>
     </g>
-    <g id="shape3" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape3">
       <pattern height="32" id="PatternID_83_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
         <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAe0lEQVR4XmNgGAUjHrjnSf0nFqPrpQrY8DPpP7EY3UG4MLodeAG6JdTA6A7Chxk67+v8b76m9R8fDcPoFlEDM4AsIQVjcyA6jW4JMp70Th8Fk+wAYjA2R8FodEwTB5CCRx0w6oBRB4w6YNQBow4YdcCoA0YdMOqAAXcAAMAqgp3EGXydAAAAAElFTkSuQmCC"/>
       </pattern>
       <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="82" style="fill:url(#PatternID_83_1)"/>
     </g>
-    <g id="sprite4" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 65.0)">
+    <g id="sprite4">
       <use ffdec:characterId="168" height="32.0" id="bubble_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#sprite5"/>
       <use ffdec:characterId="168" height="32.0" id="bubble_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 50.0, 0.0)" width="32.0" xlink:href="#sprite5"/>
       <use ffdec:characterId="168" height="32.0" id="bubble_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 100.0, 0.0)" width="32.0" xlink:href="#sprite5"/>
@@ -94,53 +94,53 @@
       <use ffdec:characterId="168" height="32.0" id="bubblecopy2_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 1500.0, 0.0)" width="32.0" xlink:href="#sprite5"/>
       <use ffdec:characterId="168" height="32.0" id="bubblecopy2_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 1550.0, 0.0)" width="32.0" xlink:href="#sprite5"/>
       <use ffdec:characterId="168" height="32.0" id="bubblecopy2_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 1600.0, 0.0)" width="32.0" xlink:href="#sprite5"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 50.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 100.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_4" transform="matrix(1.0, 0.0, 0.0, 1.0, 150.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_5" transform="matrix(1.0, 0.0, 0.0, 1.0, 200.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_6" transform="matrix(1.0, 0.0, 0.0, 1.0, 250.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_7" transform="matrix(1.0, 0.0, 0.0, 1.0, 300.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_8" transform="matrix(1.0, 0.0, 0.0, 1.0, 350.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 400.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 450.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smoke_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 500.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 550.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 600.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 650.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_4" transform="matrix(1.0, 0.0, 0.0, 1.0, 700.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_5" transform="matrix(1.0, 0.0, 0.0, 1.0, 750.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_6" transform="matrix(1.0, 0.0, 0.0, 1.0, 800.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_7" transform="matrix(1.0, 0.0, 0.0, 1.0, 850.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_8" transform="matrix(1.0, 0.0, 0.0, 1.0, 900.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 950.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 1000.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 1050.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 1100.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 1150.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 1200.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_4" transform="matrix(1.0, 0.0, 0.0, 1.0, 1250.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_5" transform="matrix(1.0, 0.0, 0.0, 1.0, 1300.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_6" transform="matrix(1.0, 0.0, 0.0, 1.0, 1350.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_7" transform="matrix(1.0, 0.0, 0.0, 1.0, 1400.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_8" transform="matrix(1.0, 0.0, 0.0, 1.0, 1450.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 1500.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 1550.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
-      <use ffdec:characterId="217" height="75.0" id="smokecopy2_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 1600.0, -65.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 14.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 64.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 114.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_4" transform="matrix(1.0, 0.0, 0.0, 1.0, 164.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_5" transform="matrix(1.0, 0.0, 0.0, 1.0, 214.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_6" transform="matrix(1.0, 0.0, 0.0, 1.0, 264.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_7" transform="matrix(1.0, 0.0, 0.0, 1.0, 314.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_8" transform="matrix(1.0, 0.0, 0.0, 1.0, 364.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 414.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 464.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smoke_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 514.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 564.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 614.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 664.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_4" transform="matrix(1.0, 0.0, 0.0, 1.0, 714.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_5" transform="matrix(1.0, 0.0, 0.0, 1.0, 764.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_6" transform="matrix(1.0, 0.0, 0.0, 1.0, 814.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_7" transform="matrix(1.0, 0.0, 0.0, 1.0, 864.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_8" transform="matrix(1.0, 0.0, 0.0, 1.0, 914.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 964.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 1014.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 1064.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_1" transform="matrix(1.0, 0.0, 0.0, 1.0, 1114.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_2" transform="matrix(1.0, 0.0, 0.0, 1.0, 1164.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_3" transform="matrix(1.0, 0.0, 0.0, 1.0, 1214.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_4" transform="matrix(1.0, 0.0, 0.0, 1.0, 1264.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_5" transform="matrix(1.0, 0.0, 0.0, 1.0, 1314.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_6" transform="matrix(1.0, 0.0, 0.0, 1.0, 1364.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_7" transform="matrix(1.0, 0.0, 0.0, 1.0, 1414.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_8" transform="matrix(1.0, 0.0, 0.0, 1.0, 1464.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_9" transform="matrix(1.0, 0.0, 0.0, 1.0, 1514.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_10" transform="matrix(1.0, 0.0, 0.0, 1.0, 1564.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="217" height="75.0" id="smokecopy2_11" transform="matrix(1.0, 0.0, 0.0, 1.0, 1614.5, 10.0)" width="29.0" xlink:href="#sprite6"/>
     </g>
-    <g id="sprite5" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite5">
       <use ffdec:characterId="97" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#shape4"/>
     </g>
-    <g id="shape4" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape4">
       <pattern height="32" id="PatternID_97_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
         <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAP0lEQVR4XmNgGAWjYBSMglEwCkbBKBgFo2AUjIJRMAqGMyg9oPo/b4vqfxCNLkcXALK8+ZoW2BHocnQBxIQAACByFP9mY7T5AAAAAElFTkSuQmCC"/>
       </pattern>
       <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="96" style="fill:url(#PatternID_97_1)"/>
     </g>
-    <g id="sprite6" transform="matrix(1.0, 0.0, 0.0, 1.0, 14.5, 75.0)">
-      <use ffdec:characterId="170" height="75.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -14.5, -75.0)" width="29.0" xlink:href="#shape5"/>
+    <g id="sprite6">
+      <use ffdec:characterId="170" height="75.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="29.0" xlink:href="#shape5"/>
     </g>
-    <g id="shape5" transform="matrix(1.0, 0.0, 0.0, 1.0, 14.5, 75.0)">
+    <g id="shape5">
       <pattern height="75" id="PatternID_170_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -14.5, -75.0)" patternUnits="userSpaceOnUse" viewBox="0 0 29 75" width="29">
         <image height="75" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="29" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAABLCAYAAACMRIzlAAAASUlEQVR4Xu3PMQrAIAxA0Vy24P0vYMkgiHONBd+DLMnwSQQAAAAAAAD8UuvxrLvPZWTMetuiNJbmD8vC5cF0Z1R4u2PhdCTK3V4TDD7l67Q2wAAAAABJRU5ErkJggg=="/>
       </pattern>

@@ -24,6 +24,7 @@ class TAS
 	static var releasedUp;
 	static var pressedHit;
 	static var queuedHit = false;
+	static var bombsThrownThisFrame = 0;
 	
 	static var inputField;
 	static var targetIndex;
@@ -32,12 +33,14 @@ class TAS
 	static var lastCaretPos = -1;
 	
 	static var offsetField;
-	static var offsetObj = {};
 	static var offsetString = "";
-	static var initializeOffset = false;
 	static var curPattern = 0;
 	static var curPatternInd = 0;
 	static var curPatternFrame = 0;
+	static var offsetSetup = [0, 0, false, []];
+	static var offsetArr = [];
+	static var offsetObj = {};
+	static var initOffsetInd = -1;
 	
 	static var UP_PRESSED = false;
 	static var DOWN_PRESSED = false;
@@ -47,7 +50,7 @@ class TAS
 	static var subLetters = "rbjJPh";
 	static var fullLetters = "qweasdQWEADnp";
 	static var letters = TAS.subLetters + TAS.fullLetters;
-	static var symbols = TAS.letters + "|>,.";
+	static var symbols = TAS.letters + "|<>,.";
 	
 	static var keysDown = {};
 	static var importantKeycodes = TAS.getImportantKeycodes();
@@ -102,7 +105,7 @@ class TAS
 	}
 	
 	static function isKeyLetter(let) {
-		return TAS.isS(let, "wasdWASDlruvLRUVb");
+		return TAS.isS(let, "wasdWASDlruvLRUVbB");
 	}
 	
 	static function compact(num) {
@@ -165,7 +168,7 @@ class TAS
 			}
 			
 			if (TAS.importantKeycodes[code]) {
-				if (!TAS.keysDown[code] && TAS.write && TAS.offsetObj.hasOwnProperty(TAS.curPattern)) {
+				if (!TAS.keysDown[code] && TAS.write) {
 					TAS.hitOffset(code);
 				}
 				TAS.keysDown[code] = true;
@@ -182,7 +185,7 @@ class TAS
 		}
 		
 		if (TAS.importantKeycodes[code]) {
-			if (TAS.write && TAS.offsetObj.hasOwnProperty(TAS.curPattern)) {
+			if (TAS.write) {
 				TAS.hitOffset(-code);
 			}
 			TAS.keysDown[code] = false;
@@ -299,7 +302,11 @@ class TAS
 		} else if (code == 220) { //|
 			TAS.scrollToCaret();
 		} else if (code == 46) { //Delete
-			TAS.truncateCurArray();
+			if (Key.isDown(16)) {
+				TAS.splitCurLetter();
+			} else {
+				TAS.truncateCurArray();
+			}
 			TAS.updateText();
 		} else if (code == 82) { //r
 			//TAS.curIndex = 0;
@@ -383,11 +390,11 @@ class TAS
 		if (caretPos >= 0) useCaretPos = true;
 		var caretInd = -1;
 		
-		var offsetArr = [[0]];
+		var offsetSetup = [0, 0, false, []]; //start frame, length, diff obj, offset array
 		
 		var totalFrame = 0;
 		
-		var dotNum = -1;
+		var commaNum = -1;
 		
 		var i = 0;
 		while (i < newString.length && !TAS.isSymbol(newString.charAt(i))) {
@@ -401,24 +408,30 @@ class TAS
 			var endPos = i + 1;
 			
 			var linNum = 0;
-			var commaLetter = "";
-			
+			var dotLetter = "";
+			var patternDiff = false;
 			
 			i++;
+			if (symbol === "<") {
+				var ret = Code.parseAngled(str, i);
+				i = ret[1];
+				patternDiff = ret[0];
+			}
+			
 			while (i < newString.length) {
 				var curSymbol = newString.charAt(i);
 				
 				if (newString.charCodeAt(i) >= 48 && newString.charCodeAt(i) <= 57) {
 					num = num * 10 + newString.charCodeAt(i) - 48;
 					endPos = i + 1;
-				} else if (symbol === "," && !commaLetter) {
+				} else if (symbol === "." && !dotLetter) {
 					if (TAS.isKeyLetter(curSymbol)) {
-						commaLetter = curSymbol;
-					} else if (curSymbol === ",") {
+						dotLetter = curSymbol;
+					} else if (curSymbol === ".") {
 						linNum += num? num : 1;
 						num = 0;
 					}
-				} else if (symbol === "." && curSymbol === ".") {
+				} else if (symbol === "," && curSymbol === ",") {
 					linNum += num? num : 1;
 					num = 0;
 				} else if (TAS.isSymbol(curSymbol)) {
@@ -428,7 +441,7 @@ class TAS
 				i++;
 			}
 			
-			if (!TAS.isS(symbol, "|>r") && !num) {
+			if (!TAS.isS(symbol, "|<>r") && !num) {
 				num = 1;
 			}
 			num += linNum;
@@ -439,22 +452,19 @@ class TAS
 				i -= endPos - pos;
 				caretPos -= endPos - pos;
 				newString = newString.slice(0, pos) + newString.slice(endPos);
-			} else if (symbol === ">") {
-				if (totalFrame != Utils.getLast(offsetArr)[0]) {
-					offsetArr.push([totalFrame]);
-				}
-			} else if (symbol === ",") {
-				if (commaLetter) {
-					var letterNum = {w: 87, a: 65, s: 83, d: 68, u: 38, l: 37, v: 40, r: 39, b: 32}[commaLetter.toLowerCase()];
-					if (commaLetter !== commaLetter.toLowerCase()) {
+			} else if (TAS.isS(symbol, "<>")) {
+				offsetSetup.push(totalFrame, num, patternDiff, []);
+			} else if (symbol === ".") {
+				if (dotLetter) {
+					var letterNum = {w: 87, a: 65, s: 83, d: 68, u: 38, l: 37, v: 40, r: 39, b: 32}[dotLetter.toLowerCase()];
+					if (dotLetter !== dotLetter.toLowerCase()) {
 						letterNum *= -1;
 					}
-					Utils.pushO(offsetArr, totalFrame, letterNum, num);
+					Utils.pushO(offsetSetup, totalFrame, letterNum, num);
 				}
-			} else if (symbol === ".") {
-				dotNum = num;
+			} else if (symbol === ",") {
+				commaNum = num;
 			} else {
-				
 				if (newInputArray.length == 1 && newIndArray[0] == -1 && symbol == "r") {
 					newValueArray[0] = num;
 					newIndArray[0] = pos;
@@ -471,7 +481,7 @@ class TAS
 				}
 				
 				if (TAS.isFullLetter(symbol)) {
-					if (dotNum !== -1) {
+					if (commaNum !== -1) {
 						var prevFullLetter = "n";
 						for (var j = newInputArray.length - 2; j >= 0; j--) {
 							if (TAS.isFullLetter(newInputArray[j])) {
@@ -482,10 +492,10 @@ class TAS
 						
 						if (prevFullLetter === "p") {
 							if (symbol !== "p") {
-								Utils.pushO(offsetArr, totalFrame, 6, dotNum);
+								Utils.pushO(offsetSetup, totalFrame, 6, commaNum);
 							}
 						} else if (symbol === "p") {
-							Utils.pushO(offsetArr, totalFrame, 7, dotNum);
+							Utils.pushO(offsetSetup, totalFrame, 7, commaNum);
 						} else {
 							var inpStates = [];
 							for (var j = 0; j < 2; j++) {
@@ -495,12 +505,12 @@ class TAS
 							
 							for (var j = 0; j < 3; j++) {
 								if (inpStates[j] !== inpStates[3 + j]) {
-									Utils.pushO(offsetArr, totalFrame, j? 2*j + (inpStates[3 + j]? 1 : 0) : inpStates[3 + j], dotNum);
+									Utils.pushO(offsetSetup, totalFrame, j? 2*j + (inpStates[3 + j]? 1 : 0) : inpStates[3 + j], commaNum);
 								}
 							}
 						}
 						
-						dotNum = -1;
+						commaNum = -1;
 					}
 					
 					totalFrame += num;
@@ -550,7 +560,7 @@ class TAS
 			curString: newString,
 			curIndex: newIndex,
 			curFrame: newFrame,
-			offsetArr: offsetArr
+			offsetSetup: offsetSetup
 		};
 	}
 	
@@ -595,17 +605,17 @@ class TAS
 		if (TAS.offsetString === TAS.offsetField.text) {
 			return;
 		}
-		TAS.offsetString = TAS.offsetField.text;
 		
-		var obj = TAS.parseInputString(TAS.offsetString, -1);
+		var obj = TAS.parseInputString(TAS.offsetField.text, -1);
 		
+		TAS.offsetField.text = obj.curString;
+		TAS.offsetString = obj.curString;
+		
+		TAS.offsetSetup = obj.offsetSetup;
 		TAS.offsetObj = {};
+		TAS.offsetArr = [];
 		
-		for (var i = 0; i < obj.offsetArr.length; i++) {
-			TAS.offsetObj[obj.offsetArr[i].shift()] = obj.offsetArr[i];
-		}
-		
-		if (obj.offsetArr.length > 1) {
+		if (TAS.offsetSetup.length > 4) {
 			TAS.inputArray = obj.inputArray;
 			TAS.valueArray = obj.valueArray;
 			TAS.indArray = obj.indArray;
@@ -615,12 +625,11 @@ class TAS
 			TAS.curIndex = TAS.inputArray.length - 1;
 			TAS.curFrame = TAS.valueArray[TAS.curIndex];
 			
-			TAS.initializeOffset = true;
+			TAS.initOffsetInd = 4;
 			
 			TAS.runBack = true;
 			_root.tt.doTween("reload");
 		} else {
-			//TAS.updateText();
 			TAS.updateOffsetBars();
 		}
 	}
@@ -629,8 +638,8 @@ class TAS
 		var w = Windows.clip.offsetBarsWindow.barsWindow;
 		w.text = "";
 		
-		for (var i in TAS.offsetObj) {
-			var curP = TAS.offsetObj[i];
+		for (var i = 3; i < TAS.offsetSetup.length; i += 4) {
+			var curP = TAS.offsetSetup[i];
 			var curText = "";
 			for (var j = 0; j < curP.length; j += 4) {
 				var curPos = 1;
@@ -665,7 +674,7 @@ class TAS
 				curText += "\n";
 			}
 			
-			w.text = curText + w.text;
+			w.text = w.text + curText;
 		}
 		
 		w.text = w.text.slice(0, -1);
@@ -701,7 +710,7 @@ class TAS
 	}
 	
 	static function hitOffset(inp) {
-		var curArr = TAS.offsetObj[TAS.curPattern];
+		var curArr = TAS.offsetSetup[TAS.curPattern];
 		
 		if (!curArr) {
 			return;
@@ -736,24 +745,54 @@ class TAS
 			TAS.updateOffsetBars();
 		}
 	}
+	
+	static function updatePattern(curPatternData) {
+		if (TAS.curPattern !== curPatternData[1] || TAS.curPatternFrame !== TAS.totalFrame + curPatternData[0]) {
+			TAS.curPattern = curPatternData[1];
+			TAS.curPatternInd = 0;
+			TAS.curPatternFrame = TAS.totalFrame + curPatternData[0];
+			TAS.clearOffsets(TAS.offsetSetup[TAS.curPattern]);
+			TAS.updateOffsetBars();
+		}
+	}
 
 	static function checkKeys() {
 		if (TAS.neutralPlayback) {
 			return;
 		}
 		
-		if (TAS.initializeOffset) {
-			if (TAS.offsetObj.hasOwnProperty(TAS.totalFrame)) {
-				TAS.offsetObj[Utils.currentPlayerString()] = TAS.offsetObj[TAS.totalFrame];
-				delete TAS.offsetObj[TAS.totalFrame];
+		if (TAS.initOffsetInd !== -1) {
+			while (TAS.initOffsetInd < TAS.offsetSetup.length && (TAS.offsetSetup[TAS.initOffsetInd] < TAS.totalFrame || !TAS.offsetSetup[TAS.initOffsetInd + 3].length)) {
+				TAS.initOffsetInd += 4;
+			}
+			
+			if (TAS.initOffsetInd < TAS.offsetSetup.length && TAS.offsetSetup[TAS.initOffsetInd] - TAS.offsetSetup[TAS.initOffsetInd + 1] <= TAS.totalFrame) {
+				if (TAS.offsetSetup[TAS.initOffsetInd + 2]) {
+					var patternObj = {};
+					for (var prop in TAS.offsetSetup[TAS.initOffsetInd + 2]) {
+						patternObj[prop] = [_root.game.player[prop] + TAS.offsetSetup[TAS.initOffsetInd + 2][prop][0], _root.game.player[prop] + TAS.offsetSetup[TAS.initOffsetInd + 2][prop][1]];
+					}
+					TAS.offsetArr.push(patternObj, TAS.offsetSetup[TAS.initOffsetInd] - TAS.totalFrame, TAS.initOffsetInd + 3);
+				} else {
+					TAS.offsetObj[Utils.currentPlayerString()] = [TAS.offsetSetup[TAS.initOffsetInd] - TAS.totalFrame, TAS.initOffsetInd + 3];
+				}
 			}
 		} else {
-			if (TAS.offsetObj.hasOwnProperty(Utils.currentPlayerString())) {
-				TAS.curPattern = Utils.currentPlayerString();
-				TAS.curPatternInd = 0;
-				TAS.curPatternFrame = TAS.totalFrame;
-				TAS.clearOffsets(TAS.offsetObj[TAS.curPattern]);
-				TAS.updateOffsetBars();
+			var curPatternData = TAS.offsetObj[Utils.currentPlayerString()];
+			if (curPatternData) {
+				TAS.updatePattern(curPatternData);
+			} else {
+				outer:
+				for (var i = 0; i < TAS.offsetArr.length; i += 3) {
+					for (var prop in TAS.offsetArr[i]) {
+						if (_root.game.player[prop] < TAS.offsetArr[i][prop][0] || _root.game.player[prop] > TAS.offsetArr[i][prop][1]) {
+							continue outer;
+						}
+					}
+					
+					TAS.updatePattern([TAS.offsetArr[i + 1], TAS.offsetArr[i + 2]]);
+					break;
+				}
 			}
 		}
 		
@@ -902,6 +941,7 @@ class TAS
 		}
 		
 		var didntReleaseUp = false;
+		TAS.bombsThrownThisFrame = 0;
 		
 		while (TAS.isSubLetter(TAS.inputArray[TAS.curIndex])) {
 			switch (TAS.inputArray[TAS.curIndex]) {
@@ -912,6 +952,7 @@ class TAS
 					}
 					for (var i = 0; i < TAS.valueArray[TAS.curIndex]; i++) {
 						_root.game.layBomb();
+						TAS.bombsThrownThisFrame++;
 					}
 					break;
 				case "r":
@@ -938,7 +979,7 @@ class TAS
 		
 		var letter = TAS.inputArray[TAS.curIndex];
 		
-		var doOffsets = TAS.write && TAS.offsetObj.hasOwnProperty(TAS.curPattern) && prevFullLetter !== letter;
+		var doOffsets = TAS.write && prevFullLetter !== letter;
 		
 		if (letter == "p") {
 			if (!com.nitrome.toxic.Global.game_paused) {
@@ -1033,7 +1074,7 @@ class TAS
 		TAS.curFrame = TAS.valueArray[0];
 		TAS.fastPlayback = true;
 		
-		TAS.curPattern = 0;
+		TAS.curPattern = 3;
 		TAS.curPatternInd = 0;
 		TAS.curPatternFrame = 0;
 		
@@ -1061,12 +1102,12 @@ class TAS
 		TAS.write = oldWrite;
 		
 		TAS.updateText();
-		if (!TAS.initializeOffset) {
-			for (var i in TAS.offsetObj) {
-				TAS.clearOffsets(TAS.offsetObj[i]);
+		if (TAS.initOffsetInd === -1) {
+			for (var i = 3; i < TAS.offsetSetup.length; i += 4) {
+				TAS.clearOffsets(TAS.offsetSetup[i]);
 			}
 		}
-		TAS.initializeOffset = false;
+		TAS.initOffsetInd = -1;
 		TAS.updateOffsetBars();
 	}
 }

@@ -5,20 +5,20 @@
     <use ffdec:characterId="168" height="32.0" id="anim" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#sprite0"/>
   </g>
   <defs>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <pattern height="32" id="PatternID_91_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
         <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAY0lEQVR4XmNgGAWjYLgC9zyp/8RgohWSijf8TCIKM6ALUAtPeqdPFCboAHQNxOLO+zpEYQYQ0XxNC8zBRZODQXqJwQzoAvTGow4YdcCoA0YdMOqAUQeMOmDUAaMOGHXAgDsAAJj+RMmcoZNRAAAAAElFTkSuQmCC"/>
       </pattern>
       <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="90" style="fill:url(#PatternID_91_1)"/>
     </g>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-      <use ffdec:characterId="97" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#shape1"/>
+    <g id="sprite0">
+      <use ffdec:characterId="105" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="32.0" xlink:href="#shape1"/>
     </g>
-    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-      <pattern height="32" id="PatternID_97_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
-        <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAP0lEQVR4XmNgGAWjYBSMglEwCkbBKBgFo2AUjIJRMAqGMyg9oPo/b4vqfxCNLkcXALK8+ZoW2BHocnQBxIQAACByFP9mY7T5AAAAAElFTkSuQmCC"/>
+    <g id="shape1">
+      <pattern height="32" id="PatternID_105_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
+        <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAUklEQVR4XmNgGAXDGbjnSf2HYXQ5mgOQpRt+JoHxrf+b6e8IkIXN17TAGOQIujsAZjkyRldDU4Bu+agD0OVHwSgYBaNgFIyCUTAKRsEoGAUwAADuTU327dRYzwAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="96" style="fill:url(#PatternID_97_1)"/>
+      <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="104" style="fill:url(#PatternID_105_1)"/>
     </g>
   </defs>
 </svg>

@@ -4,7 +4,7 @@
     <use ffdec:characterId="324" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="10.0" xlink:href="#shape0"/>
   </g>
   <defs>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <pattern height="18" id="PatternID_324_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 10 18" width="10">
         <image height="18" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="10" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAKklEQVR4XmNgGAXDCPzHgVEAuiQ6hgOwwJIIPhRMuUI8GAWgS2JVRBAAADL7NCUlSZcIAAAAAElFTkSuQmCC"/>
       </pattern>

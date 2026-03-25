@@ -1,6 +1,22 @@
 - change some frame offset storage stuff maybe
-- add input display
-- adjustments? <x: -0.5,0.5; y: 1; wc: -2,2>
-- options for pattern matching?
-- change syntax? (! instead of , for example)
-- runup, oninput savestates
+- adjustments? <x: -0.5,0.5; y: 1; wc: -2,2> <- for ranges. For specific values, probably <x=5,6> If without values, means that you ignore it ig (need to think about default ignores)
+Array of offsets;
+Make when reading
+
+Array of fillables
+[frame, length, array of starts diff, ind in array of offsets]
+
+Array of starts
+[{_x: [0, 1], _y: [-0.5, 1], wall_count: [0, 0]}, ind, offset]
+Obj of starts
+{"`3235435": [ind, offset]}
+
+
+- add pattern start on frame-perfect. Syntax: ".> ,> .<> ,<>", "*" denotes normal pattern start (not obligatory in most cases) UPDATE: instead, number after > shows how many frames before you start matching. Possible syntax: a<x:0.5>6,d
+- runup, oninput savestates (syntax: $10, $r, ig in the same place where the savestate is? so more like $10 |d). This should work even if the runup is in the beginning animation, although might be a bit tricky to implement.
+- true savestates. Saving needs to be quick (maybe savestates partly premade during standard gameplay) and they should hopefully take little space, loading can be a bit slow. Automatic savestate modes: on, only on non-standard gameplay, off. Also can change whether savestates are used? Automatic savestates are hidden in the string by default, you can press a hotkey to show them as "#". When saving a state, automatic savestates are saved if they are currently visible? Can add new automatic savestates by adding the symbol, if you remove it, I think it gets automatically added back in on next pass. Manual savestates are probably not used as helper savestates, except... if saving a state without helper savestates visible, in the saved state it itself counts as a helper savestate?
+- true savestates are identified by their compressed string. Can also compress a string just if you like (could be convenient for automatic reduction)
+- there are save slots and savestates. Each savestate needs to be linked to at least one save slot, otherwise gets deleted. Current gamestate is a save slot, as is every manual savestate slot.
+- last thing ACE, probably don't need to sweat too hard as most uses would be simple. Use () for code-based pattern start
+- multiple branches for offset string??
+- default settings and keybinds. Probably a key for showing/hiding keybinds in the menus. Click on [] and you can choose a key.

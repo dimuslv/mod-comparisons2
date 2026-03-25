@@ -2,23 +2,23 @@
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="41.5px" width="20.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 10.0, 40.5)">
     <use ffdec:characterId="855" height="14.0" id="anim" transform="matrix(-1.0, 0.0, 0.0, 1.0, 10.0, -13.0)" width="20.0" xlink:href="#sprite0"/>
-    <use ffdec:characterId="402" height="41.0" id="wall_boundary_right" transform="matrix(1.0, 0.0, 0.0, 1.0, 7.5, -40.5)" width="1.0" xlink:href="#sprite1"/>
-    <use ffdec:characterId="402" height="41.0" id="wall_boundary_left" transform="matrix(1.0, 0.0, 0.0, 1.0, -8.5, -40.5)" width="1.0" xlink:href="#sprite1"/>
+    <use ffdec:characterId="402" height="41.0" id="wall_boundary_right" transform="matrix(1.0, 0.0, 0.0, 1.0, 8.0, -20.0)" width="1.0" xlink:href="#sprite1"/>
+    <use ffdec:characterId="402" height="41.0" id="wall_boundary_left" transform="matrix(1.0, 0.0, 0.0, 1.0, -8.0, -20.0)" width="1.0" xlink:href="#sprite1"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-      <use ffdec:characterId="844" height="14.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape0"/>
+    <g id="sprite0">
+      <use ffdec:characterId="848" height="14.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-      <pattern height="14" id="PatternID_844_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 14" width="20">
-        <image height="14" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAArklEQVR4XmNgGCDwHw2TDcAG5LdVw7FLkA/ZBoMNgNGUGApWCNIEMwDERzaMFAPhmkE0smYYW8tYH26YmLQkXkP//z/08v9/g3a4ASAaZADMEBgNMogYV/7fIRIGxiA2ku0YGCRHjKFgw5r4bVEMRNaIwc6Tx28gyDCYgTDF6K5BZjffVcJrIAigKDT0FsVwDbrLYGqQzMAAcMUgjTANyK5BtxBJL14AN4AApi0AADVU0glMrYb/AAAAAElFTkSuQmCC"/>
+    <g id="shape0">
+      <pattern height="14" id="PatternID_848_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 14" width="20">
+        <image height="14" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAAwElEQVR4XmNgGCDwHw2TDFAMyG+rhmOXIB+SDAYrBGmCGQDiIxsIM1RMWpKgoXDNIBqXoSBxENYy1sfr0v//D738/9+gHW4YjEZngwyCYZA4Lpf+3yESBsZoilA0w9ggeZgavAY28dvCFYEwzHVo3kOxEKwuTx7DULBhMANBCtANhWuG8pHZzXeVMAwEAXRJdNsxLEG3EGEUAsAlYQbBLEAOM5gcuoUIYzABiqGG3qJwDOIj+wKXd3EBZNvxYdoBABKm7p0adBw/AAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M0.0 0.0 L20.0 0.0 20.0 14.0 0.0 14.0 0.0 0.0" ffdec:fill-bitmapId="843" style="fill:url(#PatternID_844_1)"/>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 14.0 0.0 14.0 0.0 0.0" ffdec:fill-bitmapId="847" style="fill:url(#PatternID_848_1)"/>
     </g>
-    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
-      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -0.5, -20.5)" width="1.0" xlink:href="#shape1"/>
+    <g id="sprite1">
+      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="1.0" xlink:href="#shape1"/>
     </g>
-    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
+    <g id="shape1">
       <path d="M0.0 -20.0 L0.0 20.0" fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.0" stroke-width="1.0"/>
     </g>
   </defs>

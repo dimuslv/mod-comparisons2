@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="351.9px" width="432.1px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 15.6, 29.05)">
-    <use ffdec:characterId="2773" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 352.5, 179.0)" width="64.0" xlink:href="#shape0"/>
-    <use ffdec:characterId="2771" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 264.0, 179.0)" width="63.0" xlink:href="#shape1"/>
-    <use ffdec:characterId="2763" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 210.0)" width="63.0" xlink:href="#shape2"/>
-    <use ffdec:characterId="2764" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 307.0, 148.0)" width="63.0" xlink:href="#shape3"/>
-    <use ffdec:characterId="221" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 19.0, 200.0)" width="186.0" xlink:href="#shape4"/>
-    <use ffdec:characterId="2767" height="87.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 284.0, 150.0)" width="113.0" xlink:href="#shape5"/>
-    <use ffdec:characterId="364" height="260.5" transform="matrix(1.0, 0.0, 0.0, 1.0, -15.6, 62.35)" width="340.1" xlink:href="#sprite0"/>
-    <use ffdec:characterId="2038" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 275.7, 88.0)" width="46.0" xlink:href="#sprite2"/>
-    <use ffdec:characterId="2772" height="21.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 60.0, 7.0)" width="310.0" xlink:href="#text0"/>
+    <use ffdec:characterId="2773" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="64.0" xlink:href="#shape0"/>
+    <use ffdec:characterId="2771" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="63.0" xlink:href="#shape1"/>
+    <use ffdec:characterId="2763" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="63.0" xlink:href="#shape2"/>
+    <use ffdec:characterId="2764" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="63.0" xlink:href="#shape3"/>
+    <use ffdec:characterId="221" height="28.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="186.0" xlink:href="#shape4"/>
+    <use ffdec:characterId="2767" height="87.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="113.0" xlink:href="#shape5"/>
+    <use ffdec:characterId="364" height="260.5" transform="matrix(1.0, 0.0, 0.0, 1.0, 111.0, 205.0)" width="340.1" xlink:href="#sprite0"/>
+    <use ffdec:characterId="2038" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 298.7, 137.0)" width="46.0" xlink:href="#sprite46"/>
+    <use ffdec:characterId="2772" height="21.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 41.0, 4.0)" width="310.0" xlink:href="#text0"/>
   </g>
   <defs>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, -352.5, -179.0)">
+    <g id="shape0">
       <pattern height="28" id="PatternID_2773_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 230.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
         <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
       </pattern>
@@ -38,7 +38,7 @@
       </pattern>
       <path d="M370.45 179.0 L370.45 207.0 352.5 207.0 352.5 179.0 370.45 179.0" ffdec:fill-bitmapId="382" style="fill:url(#PatternID_2773_6)"/>
     </g>
-    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, -264.0, -179.0)">
+    <g id="shape1">
       <pattern height="28" id="PatternID_2771_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 141.0, 179.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
         <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
       </pattern>
@@ -48,7 +48,7 @@
       </pattern>
       <path d="M301.05 207.0 L264.0 207.0 264.0 179.0 301.05 179.0 301.05 207.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2771_2)"/>
     </g>
-    <g id="shape2" transform="matrix(1.0, 0.0, 0.0, 1.0, -307.0, -210.0)">
+    <g id="shape2">
       <pattern height="28" id="PatternID_2763_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 184.0, 210.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
         <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
       </pattern>
@@ -58,7 +58,7 @@
       </pattern>
       <path d="M344.05 238.0 L307.0 238.0 307.0 210.0 344.05 210.0 344.05 238.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2763_2)"/>
     </g>
-    <g id="shape3" transform="matrix(1.0, 0.0, 0.0, 1.0, -307.0, -148.0)">
+    <g id="shape3">
       <pattern height="28" id="PatternID_2764_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 184.0, 148.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
         <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
       </pattern>
@@ -68,13 +68,13 @@
       </pattern>
       <path d="M344.05 176.0 L307.0 176.0 307.0 148.0 344.05 148.0 344.05 176.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_2764_2)"/>
     </g>
-    <g id="shape4" transform="matrix(1.0, 0.0, 0.0, 1.0, -19.0, -200.0)">
+    <g id="shape4">
       <pattern height="28" id="PatternID_221_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 19.0, 200.0)" patternUnits="userSpaceOnUse" viewBox="0 0 186 28" width="186">
         <image height="28" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="186" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAcCAYAAADWS6UCAAABM0lEQVR4Xu3azU0DQRBE4Q2EBBAxIJEF+UditFJPq6ZmvP45dYtX0iebXe+cnnwAjoMxdtyARt6aHwJ08NLywd/vH6A8bXYq+WJT5F8fn0B5r8ZO5Gjr2diXyMfPfiBQiXb6KPa7kZ/8YKASb/Uq9m3k470fDFSirY73Fnvu8sN+MFDJ2ei9L+mQW27qg34wUMloVL/Fx/WQm27uDgGq8ka15ZAjdLTljWrLIUfoaMsb1ZZDjtDRljeqLYccoaMtb1RbDjlCR1veqLYcckvo/gpU5a3qa8jlTf/F+7gOVOWtbhrOTUH7B/1goBLtVP/rdlyXztdvb/4yii4eRD6Ffm4buz4MVOSdastT4bIldqATbXgqezNiR0va7lT0xYgdrWizU8lPzB8GOnhrfghQGWP/e38EHyKE2n5NZQAAAABJRU5ErkJggg=="/>
       </pattern>
       <path d="M19.0 200.0 L205.0 200.0 205.0 228.0 19.0 228.0 19.0 200.0" ffdec:fill-bitmapId="220" style="fill:url(#PatternID_221_1)"/>
     </g>
-    <g id="shape5" transform="matrix(1.0, 0.0, 0.0, 1.0, -284.0, -150.0)">
+    <g id="shape5">
       <pattern height="25" id="PatternID_2767_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 328.0, 150.0)" patternUnits="userSpaceOnUse" viewBox="0 0 22 25" width="22">
         <image height="25" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="22" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAZCAYAAAA14t7uAAAAfklEQVR4Xu3TwQmAMAyF4c7iJC4mCE7mIJ2lYsGQBNImaYqX/vAurX54MaWfK2whcTQEB+guZx0+I08aAuDKGxm+I28oEtERvIt6cDVqwc2oBnejPbwe7Ie8D+DneCLcmvBl0kj8kswAq5Pg4RYMLRiaC7d+W28YC4XfpqCuHt+DaBIub0SLAAAAAElFTkSuQmCC"/>
       </pattern>
@@ -92,136 +92,557 @@
       </pattern>
       <path d="M309.0 182.0 L309.0 204.0 284.0 204.0 284.0 182.0 309.0 182.0" ffdec:fill-bitmapId="1566" style="fill:url(#PatternID_2767_4)"/>
     </g>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 126.6, 142.65)">
-      <use ffdec:characterId="226" height="100.0" id="boundingBox_mc" transform="matrix(1.0, 0.0, 0.0, 0.14, 0.0, 0.0)" width="100.0" xlink:href="#sprite1"/>
+    <g id="sprite0">
+      <use ffdec:characterId="229" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -126.6, -27.15)" width="18.0" xlink:href="#sprite1"/>
+      <use ffdec:characterId="232" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -110.6, -27.15)" width="11.0" xlink:href="#sprite2"/>
+      <use ffdec:characterId="235" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -95.6, -23.15)" width="18.0" xlink:href="#sprite3"/>
+      <use ffdec:characterId="238" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -76.65, -12.15)" width="18.0" xlink:href="#sprite4"/>
+      <use ffdec:characterId="241" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -62.65, -12.15)" width="18.0" xlink:href="#sprite5"/>
+      <use ffdec:characterId="244" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -38.65, -8.15)" width="18.0" xlink:href="#sprite6"/>
+      <use ffdec:characterId="247" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -18.65, -8.15)" width="18.0" xlink:href="#sprite7"/>
+      <use ffdec:characterId="250" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 12.35, -8.15)" width="18.0" xlink:href="#sprite8"/>
+      <use ffdec:characterId="253" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 36.35, -8.15)" width="18.0" xlink:href="#sprite9"/>
+      <use ffdec:characterId="256" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 62.35, -8.15)" width="18.0" xlink:href="#sprite10"/>
+      <use ffdec:characterId="259" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -53.65, 18.0)" width="18.0" xlink:href="#sprite11"/>
+      <use ffdec:characterId="262" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -30.65, 18.0)" width="18.0" xlink:href="#sprite12"/>
+      <use ffdec:characterId="265" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -7.65, 18.0)" width="16.0" xlink:href="#sprite13"/>
+      <use ffdec:characterId="268" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 10.35, 18.0)" width="18.0" xlink:href="#sprite14"/>
+      <use ffdec:characterId="271" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 37.35, 18.0)" width="18.0" xlink:href="#sprite15"/>
+      <use ffdec:characterId="274" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 65.35, 22.85)" width="8.0" xlink:href="#sprite16"/>
+      <use ffdec:characterId="277" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -57.65, 44.85)" width="18.0" xlink:href="#sprite17"/>
+      <use ffdec:characterId="280" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -30.65, 44.85)" width="18.0" xlink:href="#sprite18"/>
+      <use ffdec:characterId="283" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -11.65, 46.85)" width="18.0" xlink:href="#sprite19"/>
+      <use ffdec:characterId="286" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 9.35, 44.85)" width="8.0" xlink:href="#sprite20"/>
+      <use ffdec:characterId="289" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 29.35, 44.85)" width="18.0" xlink:href="#sprite21"/>
+      <use ffdec:characterId="292" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 47.0, 44.85)" width="16.0" xlink:href="#sprite22"/>
+      <use ffdec:characterId="295" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 69.35, 44.85)" width="18.0" xlink:href="#sprite23"/>
+      <use ffdec:characterId="298" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -57.65, 69.85)" width="20.0" xlink:href="#sprite24"/>
+      <use ffdec:characterId="301" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -36.65, 69.85)" width="20.0" xlink:href="#sprite25"/>
+      <use ffdec:characterId="304" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -15.65, 69.85)" width="20.0" xlink:href="#sprite26"/>
+      <use ffdec:characterId="307" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 2.35, 67.85)" width="18.0" xlink:href="#sprite27"/>
+      <use ffdec:characterId="310" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 18.0, 67.85)" width="19.0" xlink:href="#sprite28"/>
+      <use ffdec:characterId="313" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 37.35, 69.85)" width="17.0" xlink:href="#sprite29"/>
+      <use ffdec:characterId="316" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 55.0, 72.85)" width="18.0" xlink:href="#sprite30"/>
+      <use ffdec:characterId="319" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 72.35, 72.85)" width="18.0" xlink:href="#sprite31"/>
+      <use ffdec:characterId="322" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -87.6, 95.85)" width="15.0" xlink:href="#sprite32"/>
+      <use ffdec:characterId="325" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -66.65, 95.85)" width="10.0" xlink:href="#sprite34"/>
+      <use ffdec:characterId="328" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -38.65, 92.85)" width="20.0" xlink:href="#sprite35"/>
+      <use ffdec:characterId="331" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -15.65, 97.85)" width="18.0" xlink:href="#sprite36"/>
+      <use ffdec:characterId="334" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 5.35, 89.85)" width="18.0" xlink:href="#sprite37"/>
+      <use ffdec:characterId="337" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 20.35, 92.85)" width="20.0" xlink:href="#sprite38"/>
+      <use ffdec:characterId="340" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 40.35, 89.85)" width="19.0" xlink:href="#sprite39"/>
+      <use ffdec:characterId="343" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 55.0, 92.85)" width="20.0" xlink:href="#sprite40"/>
+      <use ffdec:characterId="346" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 69.35, 92.85)" width="20.0" xlink:href="#sprite41"/>
+      <use ffdec:characterId="357" height="107.3" transform="matrix(1.0, 0.0, 0.0, 1.0, 20.35, -89.0)" width="183.3" xlink:href="#sprite42"/>
+      <use ffdec:characterId="360" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -88.45, 82.85)" width="16.0" xlink:href="#sprite43"/>
+      <use ffdec:characterId="363" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -84.6, 66.35)" width="10.0" xlink:href="#sprite44"/>
+      <use ffdec:characterId="226" height="100.0" id="boundingBox_mc" transform="matrix(1.0, 0.0, 0.0, 1.0, 51.3, -142.65)" width="100.0" xlink:href="#sprite45"/>
     </g>
-    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-      <use ffdec:characterId="225" height="100.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="100.0" xlink:href="#shape6"/>
+    <g id="sprite1">
+      <use ffdec:characterId="228" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape6"/>
     </g>
-    <g id="shape6" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
-      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4005548469065996"/>
-    </g>
-    <g id="sprite2" transform="matrix(1.0, 0.0, 0.0, 1.0, 23.0, 49.0)">
-      <use ffdec:characterId="2027" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -23.0, -49.0)" width="46.0" xlink:href="#shape7"/>
-    </g>
-    <g id="shape7" transform="matrix(1.0, 0.0, 0.0, 1.0, 23.0, 49.0)">
-      <pattern height="50" id="PatternID_2027_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -23.0, -49.0)" patternUnits="userSpaceOnUse" viewBox="0 0 46 50" width="46">
-        <image height="50" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="46" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAyCAYAAAAjrenXAAACaUlEQVR4Xu2XwVHkMBREuVOcNgBi4k4SHDeDzYdEuJEDIXAZaK1bfLW+JUuWraliuqoLW/Ol/1qjsYu7u5tumqZLxVenAHb5eCmadcZTlQEW5Qc5XTl0zU4IrLP4FOVQrfYDHK4cZMWoLdkGWMYO0+Xz/T4DVKMOfn76UzTrZN4hCuAleNQoYM2YYzxcEboEjzoFK/nf30cNMFxVcNQoWMmApk8FV3jUKNyaLfSR4AHy7fVhCLhCY93TwXvgFXoauIVHrYKuQV8F+Bb4NegpZ1xt4eEa9GngW+A1gLfrFvo08B54Wo8PbWqGKsK0gGsADWFtPhuq8HXugfdCOIGGKjYdBe8ZfbTxHsWFsSv468GPCIBe2nyPwqL2vxXc80nApnsDjD4q/xc10BYe1gC9Ri9tvkdhUQ98LUBvCPTS5r2KjylYgS202oaoBWHN0meIkrcc7mGFxpjCqDWIF4rrJwQdSl7P9rWMz2g21B+k983ImzGufyg44W0AhqhBwwRUeMzFGGpwbzamWxm4FwB1LeCoxRzOIzjHDgUnfCs4QQmv4HbNFKVNEXwNvhecoBzjvV0zRWlTAq7wdpcUvASPOZ51M34w2pWBq1Fjv/4aOIw5nMdr+FTwZnjz9sU8WtdLKDqUQXpGHSC3wsuuJuDL/W5lkNIguVZ4G8BC8zM5EsOgqQyasPYvrwnqwRM6BPkWrjEnbTdWGbhC2zHYg7e7TS/1hypCWQOWj0YNUIMf8fToVQTdAs+zzh+nebJMUXZkOAZ74NZL3VRZ4HCvx0Shrwmecn+Ia5551lXxHG815ugis5Sc9Q3+HfoCjkY7IhECdZIAAAAASUVORK5CYII="/>
+    <g id="shape6">
+      <pattern height="20" id="PatternID_228_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAhUlEQVR4XrWSQQqAMAwE+xZf4scEwZf5EN9SQWJI4m7XSwfmkg57amsT6T8dUmMlxIOz7/24Fmps00J8eEfWrUHV2GekhC4Zc54DCKCgc2RgyE4GhuxkYMhOBobsZGDITgaG7FgABZ3zHMhnS5JP6/gxjjHBz0+ksZGxTQuBGimH1Jg5hxun8ltUAvzhpAAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M-23.0 -49.0 L23.0 -49.0 23.0 1.0 -23.0 1.0 -23.0 -49.0" ffdec:fill-bitmapId="2026" style="fill:url(#PatternID_2027_1)"/>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="227" style="fill:url(#PatternID_228_1)"/>
     </g>
-    <g id="text0" transform="matrix(1.0, 0.0, 0.0, 1.0, -19.0, -3.0)">
+    <g id="sprite2">
+      <use ffdec:characterId="231" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="11.0" xlink:href="#shape7"/>
+    </g>
+    <g id="shape7">
+      <pattern height="20" id="PatternID_231_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 11 20" width="11">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="11" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAUCAYAAABbLMdoAAAAVklEQVR4XmNgoAL4j4ZxAnSFODXAJZvvKoExkhgKwFCISzFWhXgVwxQ41OJ3BlgApAiEkTXiVIyM8SkGAZIUw8CoYmQAlkSOICjGCpAVEFQMAkQrxAkApLWq9zSYGZkAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L11.0 0.0 11.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="230" style="fill:url(#PatternID_231_1)"/>
+    </g>
+    <g id="sprite3">
+      <use ffdec:characterId="234" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape8"/>
+    </g>
+    <g id="shape8">
+      <pattern height="20" id="PatternID_234_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAhklEQVR4XrWR0QmAMAwFO4uTuJggOJmDOEulxULzXmKi1YP7adIDbUo/kB+qgktRiTrY85q3Y3Jt+5eCejgvvl4MB6ZGTECXLL1Qgy6ikRBdQtuDlE/szgW0bAkREaIIvlavFSlQpJ05EnWg/MQ7Vd6E1OBISMREKKoZwtfxNEMDCnAY9VtO/RZuwfFFtQAAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="233" style="fill:url(#PatternID_234_1)"/>
+    </g>
+    <g id="sprite4">
+      <use ffdec:characterId="237" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape9"/>
+    </g>
+    <g id="shape9">
+      <pattern height="20" id="PatternID_237_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAiUlEQVR4XrWR0QnAIAxEnaWTdLFCoZN1kM5iUQw0d8azHz54P+ZyIElpAfmnXTA0K1EHdz7z9WxSyzcd9XE/tKoMB6FBmYOWIlWRQYvoTBEtoXaQ8sXPO+HCIy3bJOoAL/XnagYGyKCsCy2jqogWIkdFFI5UV3MhJZRwEV4oMiop4HDWLhhSruEFIOJliYHmO+sAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="236" style="fill:url(#PatternID_237_1)"/>
+    </g>
+    <g id="sprite5">
+      <use ffdec:characterId="240" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape10"/>
+    </g>
+    <g id="shape10">
+      <pattern height="20" id="PatternID_240_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAgElEQVR4XrWQ0QnAIAxEnaWTdLFCoZN1EGexKI3Ea6LG6oP7OczDxLkFBMgQKBmWpcE7nOHy239RlKwUmdbVRFpUqiLL7aoirX9TkMr9kIekDpLJJZdRaDWMJIoUMh4axJ7NfMAvpwg/wIjgo5aoC01kZq6o57gt8B7DosgUSTcPkhTyu+w+L8AAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="239" style="fill:url(#PatternID_240_1)"/>
+    </g>
+    <g id="sprite6">
+      <use ffdec:characterId="243" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape11"/>
+    </g>
+    <g id="shape11">
+      <pattern height="20" id="PatternID_243_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAfElEQVR4Xr2T0QmAMAwFO4uTuJggOJmDOEvEYot5zSOxUg/up4n305rSAKRTBQ7fWskHu6yyHVNYGioL85JCuqHHQtTKl5CiJ2TSEzJjKuRZ9m8V+RBvxdKL4YBKYormI+YvoWaZWX6j0Mv2hEgbwhtissgFDqOa4JLnGE6KPXSGLbSE2AAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="242" style="fill:url(#PatternID_243_1)"/>
+    </g>
+    <g id="sprite7">
+      <use ffdec:characterId="246" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape12"/>
+    </g>
+    <g id="shape12">
+      <pattern height="20" id="PatternID_246_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAiklEQVR4XrWS2wmAMBAEU4uV2JggWJmFWEuEYI7be8ZABuYnrkNAS1lI/aGLHI6ooId3Pev1bKFsD6jIfpRQ9g6gIv1sQKAdGtfOVMyETGZCZgxCmX3/CUBIfiFuFoOQGIFOjBgOOTvCG5gaO6IdONcGnZ+WoEMe8zT+fABikXwLBYYcZYbIsecaXi1XbWPzLjgYAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="245" style="fill:url(#PatternID_246_1)"/>
+    </g>
+    <g id="sprite8">
+      <use ffdec:characterId="249" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape13"/>
+    </g>
+    <g id="shape13">
+      <pattern height="20" id="PatternID_249_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAb0lEQVR4XmNgoAH4TyZGAeiSpGI4AAsc/N/wv/muEtEYp0EOtYQxUQYRg2GGgAxFEkcBGJrQMQ5DMAzCBgaPISAAVgyLSXINAQEU18D4UEwSwGUQyWDUIMIArBGWx2B8NDVEAWTNFBkEAlQxhCQAANvE8GtKNBOlAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="248" style="fill:url(#PatternID_249_1)"/>
+    </g>
+    <g id="sprite9">
+      <use ffdec:characterId="252" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape14"/>
+    </g>
+    <g id="shape14">
+      <pattern height="20" id="PatternID_252_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAhElEQVR4Xu2Ryw2AMAxDOwuTsBgSEpMxCLMUqQgrSe2US2886V2Ca/opZSL1oykxPJKCwFn3elyL1GZdg/3wlqxboY7KupIQhKIMtAEJUEkOqACV5EAbiG07xfFB97eRdk1aFF/rf7VnILbtFMcHGNoyJblDhyvLtFnXYIihkSkxrJzDDYfkhSZbYcKbAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="251" style="fill:url(#PatternID_252_1)"/>
+    </g>
+    <g id="sprite10">
+      <use ffdec:characterId="255" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape15"/>
+    </g>
+    <g id="shape15">
+      <pattern height="20" id="PatternID_255_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAkklEQVR4XrWS2wmAMAxFO4uTuJggOJmDdJZKiw1NcvP46YHzE29uFVvKRlpSFxmOhFDgbXd76mG6ZlnD+mCWnFeBRmWqRARJo4wYAxCAghxhBaAgR4yB8dpKkCFouJZFoqIOK/OMijrsEywzRR21KM0UqSVkVKQWkMalZbDTPMHNZ4yh/EPImf1VyEBGExn03MMHUiRtY4rPEgkAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="254" style="fill:url(#PatternID_255_1)"/>
+    </g>
+    <g id="sprite11">
+      <use ffdec:characterId="258" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape16"/>
+    </g>
+    <g id="shape16">
+      <pattern height="20" id="PatternID_258_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAi0lEQVR4XrWS0QmAMAwFO4uTuJggOJmDOEsFSR9pfOkrggf3kxxB1FJ+pE46JMZKCoKz7vW4llTfdhf8oh1Zt0JVx15HQgiTY+AZkIBKOiADQ3YyMGSXBVTSgSygkg50gbJ9XXko/jvR6SdyAZV0IAuopAMyMGT3DNo7YIEhOz+kgRH3tBsuHbPdN24vXWlUxgEVDAAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="257" style="fill:url(#PatternID_258_1)"/>
+    </g>
+    <g id="sprite12">
+      <use ffdec:characterId="261" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape17"/>
+    </g>
+    <g id="shape17">
+      <pattern height="20" id="PatternID_261_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAfUlEQVR4Xu2R0QmAMAxEO4uTuJggOJmDOEulxYbmkqMR7J8P3k9zHJRLaQL5pS4YimqohzPv+biWoS3/qKiPLbhuiToqU0UQUpIyIVxEcgILuDo5gQWMbZDyxe5dUEUR+3JahEv9q1VYwPjpalBii3AhJisp4DGqC4ZGzuEGTvmTr7h+REYAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="260" style="fill:url(#PatternID_261_1)"/>
+    </g>
+    <g id="sprite13">
+      <use ffdec:characterId="264" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="16.0" xlink:href="#shape18"/>
+    </g>
+    <g id="shape18">
+      <pattern height="20" id="PatternID_264_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 16 20" width="16">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="16" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAAAbUlEQVR4XmNgoAH4TyTGCtAVEcIoAC5x8H/D/+a7Sjgxklrcmh1qGXBinAYga0Y2FA+GA7AAFifiwygAlwFEg1EDaGgAPowCwIKgBESuIXBBZENwYWwGgACKIfgwkloMgO5EQhgrQFeEC1MHAACnkQQkMMX6oAAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L16.0 0.0 16.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="263" style="fill:url(#PatternID_264_1)"/>
+    </g>
+    <g id="sprite14">
+      <use ffdec:characterId="267" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape19"/>
+    </g>
+    <g id="shape19">
+      <pattern height="20" id="PatternID_267_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAg0lEQVR4XrWT0QnAIAwFnaWTdLFCoZN1kM5iUaI0MeHshwf3o8f70pQWkH/qYqNZB+rFnc98PRvaelFRD1u4HymUxtSQiZTBWGd6KOg6GAjYYSBgh4GAHQYCdhgI2GEgYBcFrk7XiYLB9o3Kw/ycd9QQaUbGIfuvIqORgr2c1cVG5Bpe1Khp1pLFOhcAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="266" style="fill:url(#PatternID_267_1)"/>
+    </g>
+    <g id="sprite15">
+      <use ffdec:characterId="270" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape20"/>
+    </g>
+    <g id="shape20">
+      <pattern height="20" id="PatternID_270_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAaklEQVR4Xs2RUQqAQAgFPUsn6WJB0Mk6SGcxCJJ9gvh2LdiB+VGZH0V+QAcF/LJX4xmcuutxLbRh6D1YN6FMQ80Bq1EJAVOEIAYh1jTkvxOZhpoDVqMSAqYIQQxCrGHIfyUzDBUE/JL1W266HIPGkbNv0wAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="269" style="fill:url(#PatternID_270_1)"/>
+    </g>
+    <g id="sprite16">
+      <use ffdec:characterId="273" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="8.0" xlink:href="#shape21"/>
+    </g>
+    <g id="shape21">
+      <pattern height="20" id="PatternID_273_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 8 20" width="8">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="8" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUCAYAAACwG3xrAAAAOklEQVR4XmNgIAH8R8MoAF0SQxFY4OD/hv/Nd5VwKwBJjipg+O9QC8E4FWDBJCogGBcUuQEE8EriBACuCooxeTab2gAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L8.0 0.0 8.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="272" style="fill:url(#PatternID_273_1)"/>
+    </g>
+    <g id="sprite17">
+      <use ffdec:characterId="276" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape22"/>
+    </g>
+    <g id="shape22">
+      <pattern height="20" id="PatternID_276_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAaElEQVR4XmNgoAH4TyZGAeiSpGI4AAsc/N/wv/muEtEYp0EwBQ61DERhggYhKSAWwwElBqGAQWEQimEoBhGLCRqEHju4MEGDkBQQi+GAEoNQAC6DSAaD1CB8sUEsQNZMkUEgQBVDKAYA0mMyixWDs9AAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="275" style="fill:url(#PatternID_276_1)"/>
+    </g>
+    <g id="sprite18">
+      <use ffdec:characterId="279" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape23"/>
+    </g>
+    <g id="shape23">
+      <pattern height="20" id="PatternID_279_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAhElEQVR4Xs2SwQmAQAwErxYrsTFBsDILsZYTDgzZsHuJD8GB+ZzroGhrH9JfSomjqoBdOPvej2tJdffoyLq1VBnyER8vaIwD8sgVgV+EIEZD2dcrh+JXeoy7NKQkO0MNqGRnqAGV7IxxIN4fFD+tYYc+piR/PgCxmX4LBUccZU6JY+U33PFNedtvRxD4AAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="278" style="fill:url(#PatternID_279_1)"/>
+    </g>
+    <g id="sprite19">
+      <use ffdec:characterId="282" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape24"/>
+    </g>
+    <g id="shape24">
+      <pattern height="20" id="PatternID_282_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAiElEQVR4XrXR0QmAMAyE4cziJC4mCE7mIM5SaTlLbS+9IPhDHkw++qLZD6VuvKauP1Jk431wZXGmPR3XQgEq+2yyfb4piD7kOQmQdBIg6TxAh7iaB+gQV3uB6MiH1s2mE36oAXSIq3mADnE1CZB0EiDpJEDSlcXzVxhA0rVLClB/p256bIq6b934Bkv4ARs7tAAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="281" style="fill:url(#PatternID_282_1)"/>
+    </g>
+    <g id="sprite20">
+      <use ffdec:characterId="285" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="8.0" xlink:href="#shape25"/>
+    </g>
+    <g id="shape25">
+      <pattern height="20" id="PatternID_285_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 8 20" width="8">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="8" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAUCAYAAACwG3xrAAAAM0lEQVR4XmNgIAH8R8MoAF0SQxFY4OD/hv/Nd5VwKwBJjioYHAocaiEYpwIsGAXglcQJAGsckQXkXrzoAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L8.0 0.0 8.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="284" style="fill:url(#PatternID_285_1)"/>
+    </g>
+    <g id="sprite21">
+      <use ffdec:characterId="288" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape26"/>
+    </g>
+    <g id="shape26">
+      <pattern height="20" id="PatternID_288_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAfElEQVR4Xu2SUQqAIBAFPUsn6WJB0Mk6iGcxlG3Zfbq6GNFPA+9HpwGhED4kwabAyHSsfHimPR1xeR7KkT9k4grJi+qSGIYwUgmEL+T4P3yhnkAMPUtoruEx5WDdmpLa/fzsinOGD2XMGkRUKKNivUlXFQQojdYFZWvvcAG+I/a3NKK8EwAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="287" style="fill:url(#PatternID_288_1)"/>
+    </g>
+    <g id="sprite22">
+      <use ffdec:characterId="291" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="16.0" xlink:href="#shape27"/>
+    </g>
+    <g id="shape27">
+      <pattern height="20" id="PatternID_291_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 16 20" width="16">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="16" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAAAi0lEQVR4Xq2S3QmAMBCDO4uTuJggOJmDOEsl/pw2vTuvaiBgm+TTB1P6UZnMcnMOucT3nO8Xcx7ztHRckLORXyWEVBCfWT84X2ABjHEMEBlDKiA6hipAyxgqRnef2WFT1Vs/AfDcCqkAcAtEBcBRiAmAIxAXABsQkZSUf72AKHlZIkfzTW6YnvN3WgEnWzGzVz9H9QAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L16.0 0.0 16.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="290" style="fill:url(#PatternID_291_1)"/>
+    </g>
+    <g id="sprite23">
+      <use ffdec:characterId="294" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape28"/>
+    </g>
+    <g id="shape28">
+      <pattern height="20" id="PatternID_294_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAATElEQVR4XmNgoAH4j4bJAuiGkG0YWOPB/w3/m+8qUW4QyJBRg3CCUYMIA5obRAxGAZQYhGIYikHEYpwGOdSShnEaRAFGAeiSxGLqAgCfteJAnBEFhgAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="293" style="fill:url(#PatternID_294_1)"/>
+    </g>
+    <g id="sprite24">
+      <use ffdec:characterId="297" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape29"/>
+    </g>
+    <g id="shape29">
+      <pattern height="20" id="PatternID_297_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAnUlEQVR4XrXR0QmAMAwEUGdxEhcTBCdzEGepKBqv5yWpggeB0rzeT7vuxxSaLKHnpUQQdg9/XCxlKvPau+iM7YSv0b68Bh+yC2wNEYlSWdZUOIz3GYsajKXC+1k9wDL251gkwFIuUx76XFCVYpnjLR6wUi5zvMUD4QhviQAXZb4NUFKfAkrqU0BJ/XEhftNL6vFSAgo76cOlyFv/LRvAjntuV0tOSgAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="296" style="fill:url(#PatternID_297_1)"/>
+    </g>
+    <g id="sprite25">
+      <use ffdec:characterId="300" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape30"/>
+    </g>
+    <g id="shape30">
+      <pattern height="20" id="PatternID_300_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAo0lEQVR4XrXMAQrDMAwDwL5lL9nHBoW9bA/ZW1I8llR2JYUMJjC09kXb9se0MrNYX48UQaq7+M/i1fb2fN8kgiifQRz7AGKlyfd/CQispWuF9wfF+GCtML4npRcPNw1MKfW9LKKALSX7EQVsKdmNKGBL638vizggS4U/HxlAS42fFg4TU0vhlrED39BS2GcYKIYBSCpVHpcUlFRHvT2SrPrfcgCab31snvL0oQAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="299" style="fill:url(#PatternID_300_1)"/>
+    </g>
+    <g id="sprite26">
+      <use ffdec:characterId="303" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape31"/>
+    </g>
+    <g id="shape31">
+      <pattern height="20" id="PatternID_303_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAiElEQVR4Xr2TwQmAMBAEU4uV2JggWJmFWEsEweOyXm7iQwfmEyf7MqX8QH1pisajhliw17Vux4T6O82S/3CPzUtJpdHHmIQPO6PGdRAEqUFvYCBgj4GAPQYC9hgI2GMgYI+BgH0vSA164zro/KyhnUdg2KEfJYMX1dCMjujvNEsOjUZN0Zj8lhOxdHw4BrYhVgAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="302" style="fill:url(#PatternID_303_1)"/>
+    </g>
+    <g id="sprite27">
+      <use ffdec:characterId="306" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape32"/>
+    </g>
+    <g id="shape32">
+      <pattern height="20" id="PatternID_306_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAiUlEQVR4XrWS0QmAMAwFO4uTuJggOJmDOEulpQkmzSNN1YP3YT0PEVP6gRyciZZG11FvnHnPx7W4I79NUA9JXLcE58VESEliIMYMh4DHuELD9Vyh4XpIMGd4DBK60S9SPvrjnBEhbyqCQ/rf0UORggjR9cA6ZkImKBSmPmh8gzD6tadDhU8ir7kBPDhE39ctM+gAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="305" style="fill:url(#PatternID_306_1)"/>
+    </g>
+    <g id="sprite28">
+      <use ffdec:characterId="309" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="19.0" xlink:href="#shape33"/>
+    </g>
+    <g id="shape33">
+      <pattern height="20" id="PatternID_309_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 19 20" width="19">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="19" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAlklEQVR4XrWSgQmAMAwEO4uTuJggOJmDOEvFQGOSfpIW9OChtpdHaEv5mTqRECuPBMLCWfd6XEsY6asWedCK1q24yQq7IiOqOIUMbQDBDXCZVBCkbioIUjcT5F7mhkJXFLhEJNC63XTivgOOQGv7HNq3cd8BUKaCCsU5A2WUwGGgjGIdVPagCqNIR8x12F+fCcRKI/meG002h+n57GDgAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L19.0 0.0 19.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="308" style="fill:url(#PatternID_309_1)"/>
+    </g>
+    <g id="sprite29">
+      <use ffdec:characterId="312" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="17.0" xlink:href="#shape34"/>
+    </g>
+    <g id="shape34">
+      <pattern height="20" id="PatternID_312_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 17 20" width="17">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="17" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAUCAYAAABroNZJAAAAjUlEQVR4Xq2R7Q2AIAxEncVJXMzExMkcxFkwbagp1/JR9CX3A+g9gyzLz6RAXHBoJAY+uNKRznttRmZzCnhz29vpifDATUVUYEpeehLECCgRiSlTREDXUvsu74D3WiBoS3RJR85zqhQSWTtpwkOVLw8JCCwMFzVYnpfIy8gaZrpwyfknIfAaUxLisyDMAy9p78s4Y06VAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L17.0 0.0 17.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="311" style="fill:url(#PatternID_312_1)"/>
+    </g>
+    <g id="sprite30">
+      <use ffdec:characterId="315" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape35"/>
+    </g>
+    <g id="shape35">
+      <pattern height="20" id="PatternID_315_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAlUlEQVR4XrWS0QmAMAxEO4uTuJggOJmDOEul0oQkzTVR8MF9mDwOKSnlB+rLuFgpm4Fncda9HtcShvwexTMkcd0KTFSmioykAsqYdBHwmFDohF4odEIPCW4cj0HCEDqR9uhizqiiKKYEF9nbyd5QQxXRtw3YK2YiJ/NXqEjtW0CZFuktPEHMpp4cukLH7l1vuhRkvW/c3YVvTEEzocsAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="314" style="fill:url(#PatternID_315_1)"/>
+    </g>
+    <g id="sprite31">
+      <use ffdec:characterId="318" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape36"/>
+    </g>
+    <g id="shape36">
+      <pattern height="20" id="PatternID_318_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAiElEQVR4XrWS0QmAMAwFO4uTuJggOJmDOEukRUKS5plU6cH9NO2htKVMhAZ1sZuyKnhw0k7HtYSKMziybiUUhmRExhMybcH55IyKLyGXNqy/9DfGQxlDyv2q8qBiyOEYEsRcusPWKNQdQL6Fus1I8GiZtmBvB+m8fB2yN4REkYodZnWxmyLncAOua2YEtmZHogAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="317" style="fill:url(#PatternID_318_1)"/>
+    </g>
+    <g id="sprite32">
+      <use ffdec:characterId="321" height="18.0" transform="matrix(1.5, 0.0, 0.0, 1.0, 7.5, 9.0)" width="10.0" xlink:href="#sprite33"/>
+    </g>
+    <g id="sprite33">
+      <use ffdec:characterId="320" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="10.0" xlink:href="#shape37"/>
+    </g>
+    <g id="shape37">
+      <path d="M5.0 9.0 L-5.0 9.0 -5.0 -9.0 5.0 -9.0 5.0 9.0" fill="#0000ff" fill-opacity="0.0" fill-rule="evenodd" stroke="none"/>
+    </g>
+    <g id="sprite34">
+      <use ffdec:characterId="324" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="10.0" xlink:href="#shape38"/>
+    </g>
+    <g id="shape38">
+      <pattern height="18" id="PatternID_324_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 10 18" width="10">
+        <image height="18" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="10" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAASCAYAAABit09LAAAAKklEQVR4XmNgGAXDCPzHgVEAuiQ6hgOwwJIIPhRMuUI8GAWgS2JVRBAAADL7NCUlSZcIAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L10.0 0.0 10.0 18.0 0.0 18.0 0.0 0.0" ffdec:fill-bitmapId="323" style="fill:url(#PatternID_324_1)"/>
+    </g>
+    <g id="sprite35">
+      <use ffdec:characterId="327" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape39"/>
+    </g>
+    <g id="shape39">
+      <pattern height="20" id="PatternID_327_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAWklEQVR4XmNgoCH4TyFGAeiS5GI4AAsc/N/wv/muEskYp4EOtdgxTCO6OAzjNBAXxuISXBgFoEuSaiBRAJeBZINRA0cNJAPQxkB8eZZUgGwIVQwEAaoaRjIAAIOV8bNTvX/oAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="326" style="fill:url(#PatternID_327_1)"/>
+    </g>
+    <g id="sprite36">
+      <use ffdec:characterId="330" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape40"/>
+    </g>
+    <g id="shape40">
+      <pattern height="20" id="PatternID_330_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAhUlEQVR4XrXTwQ2AIAxGYWZxEhczMXEyB3EWDOSXQGl5J1/SS/nSGyn9UDYTtXT20UVpfp9cXdz5zNezuUChq4vyGAGFDoFCh0ChQ6DQIVDoECh0CBQ6BAodAoUuAu44rlUX++GiYb7vUWy3b7Vlfywac2Q4VBqOraa3w4Uui2iWWRzNP71QAj62fdvW0AAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="329" style="fill:url(#PatternID_330_1)"/>
+    </g>
+    <g id="sprite37">
+      <use ffdec:characterId="333" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="18.0" xlink:href="#shape41"/>
+    </g>
+    <g id="shape41">
+      <pattern height="20" id="PatternID_333_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 18 20" width="18">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="18" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAAiklEQVR4XrWM0QmAMAxEO4uTuJggOJmDOEulci1JmvSs4IP83L1cSj+QzUUMPVu6Uur7znuCM+/5uBZXANR7glJGAqAeFQD1qACoRwVAPSoA6lEBUI8KgHqRIKWWOZ6W1s2V1NW+uCJvtHA0FoyoocJw7O1IxR2bHamoMXmyUx8D7JO9Kezzp5Fpbgm3K/y9TbUEAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L18.0 0.0 18.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="332" style="fill:url(#PatternID_333_1)"/>
+    </g>
+    <g id="sprite38">
+      <use ffdec:characterId="336" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape42"/>
+    </g>
+    <g id="shape42">
+      <pattern height="20" id="PatternID_336_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAlUlEQVR4XrWSwQ2AMAwDOwuTsBgSEpMxCLMUEdQodZO4Dzgpj9qXvFrKj1QYRupj6UoG9AZfgrPu9bgWVwCoL8FTRgJAfSoA1KcCQH0qANSnAkD9TLDvLgv8VEjH8ZVIkHH+W+QrkaBZ1plMcYX2XrciE/Xtbe69gV2yx2b74SAugTzTd3RLjsx6F5RQxhx7Fyaz/ltu+uZrKK5paH4AAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="335" style="fill:url(#PatternID_336_1)"/>
+    </g>
+    <g id="sprite39">
+      <use ffdec:characterId="339" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="19.0" xlink:href="#shape43"/>
+    </g>
+    <g id="shape43">
+      <pattern height="20" id="PatternID_339_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 19 20" width="19">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="19" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAoElEQVR4XrXR0QkDMQwD0Julk3SxQuEm6yA3S0pCEmRbsdLCCfyjvFM/ehw3pbjLklr/SFGPN8G24lPe5bweFECkbUV9XAGItBJApF0BPzh7Yi16vigKN0z10M/MUg0uhsxYTfggO/RmpSeM1V/3tzNGh7AftzO4NTRuMThjxvBDRNgTa1EGINJKAJG2FeMfYwAiLZYUQLyhNn10+cX+ly91nlEdPK4j6gAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L19.0 0.0 19.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="338" style="fill:url(#PatternID_339_1)"/>
+    </g>
+    <g id="sprite40">
+      <use ffdec:characterId="342" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape44"/>
+    </g>
+    <g id="shape44">
+      <pattern height="20" id="PatternID_342_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAi0lEQVR4XtWRwQ2AIBRDncVJXMzExMkcxFkwn0RS6ocKwYMv6aU8eoBp+pBAUVR9PnQlgL2HH4sjbGE/Z1cgpB8LOywJhPSlQEhfCoT0S0I1jp+IxbK6kpv7Q+wO9IlU4qgKjWWDRjaKwQEM3smWAJZiXjxDFZbVYBOlwW5+Muj8ajc4MmTQGDrWzAWRcRc2ToDn0AAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="341" style="fill:url(#PatternID_342_1)"/>
+    </g>
+    <g id="sprite41">
+      <use ffdec:characterId="345" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="20.0" xlink:href="#shape45"/>
+    </g>
+    <g id="shape45">
+      <pattern height="20" id="PatternID_345_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAZklEQVR4XmNgoCH4TyFGAeiS5GI4AAsc/N/wv/muEskYp4EOtYQxumEgMZwGEoPxGIZiIAigS2LFxBqGD4waNtIMw4dRAIZhIIwsTiSGAwzDSME4DUTPt8RinAZSAaMAdElSMW0AADfzb5EHrENKAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L20.0 0.0 20.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="344" style="fill:url(#PatternID_345_1)"/>
+    </g>
+    <g id="sprite43">
+      <use ffdec:characterId="359" height="18.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="16.0" xlink:href="#shape46"/>
+    </g>
+    <g id="shape46">
+      <pattern height="18" id="PatternID_359_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 16 18" width="16">
+        <image height="18" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="16" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAM0lEQVR4XmNgGAVUBf9JxCgAXZJYDAdggSURfERhnAYcSBcgCuM0gAyMAtAlCeFRMHwAAApbZjvnupfbAAAAAElFTkSuQmCC"/>
+      </pattern>
+      <path d="M0.0 0.0 L16.0 0.0 16.0 18.0 0.0 18.0 0.0 0.0" ffdec:fill-bitmapId="358" style="fill:url(#PatternID_359_1)"/>
+    </g>
+    <g id="sprite44">
+      <use ffdec:characterId="362" height="20.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="10.0" xlink:href="#shape47"/>
+    </g>
+    <g id="shape47">
+      <pattern height="20" id="PatternID_362_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 10 20" width="10">
+        <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="10" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAUCAYAAAC07qxWAAAANElEQVR4XmNgGAXDCPzHgVEAuiQ6hgOwwJIIPhRMuUJ0DdgUggDRCkEAxWQkjBUQpQgnAAAn9ENC9zCLJwAAAABJRU5ErkJggg=="/>
+      </pattern>
+      <path d="M0.0 0.0 L10.0 0.0 10.0 20.0 0.0 20.0 0.0 0.0" ffdec:fill-bitmapId="361" style="fill:url(#PatternID_362_1)"/>
+    </g>
+    <g id="sprite45">
+      <use ffdec:characterId="225" height="100.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="100.0" xlink:href="#shape48"/>
+    </g>
+    <g id="shape48">
+      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
+      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.0"/>
+    </g>
+    <g id="sprite46">
+      <use ffdec:characterId="2029" height="50.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="46.0" xlink:href="#shape49"/>
+    </g>
+    <g id="shape49">
+      <pattern height="50" id="PatternID_2029_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -23.0, -49.0)" patternUnits="userSpaceOnUse" viewBox="0 0 46 50" width="46">
+        <image height="50" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="46" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAyCAYAAAAjrenXAAACYElEQVR4Xu2XwU3FMBBEuSNOFEBN3GmCIx3QD41wowdK4PLRRH+syXid7/xsnI/ESCOSeO1966wD3N396+/qtMKHq8Ccvl+7LfMOUQXUrQMLqKHXOC5gd9UgDSM2clTAeWxXVYBuxMAvz4+hOV7gB4Cffr7uJztsD7Cb8fDe8E1wjDlYy+9vT5MbRaSrQEfwGHfAyIR2C3y6muAYc8CWFfbz42HycHDCY8wBI/suDwVHIgfvhY+gDwPvhV/a7cPAe1omgr4J8CX4nt0+FFzhaS+gtdtDwHvgte9pfxNqiUtXN3hPEW7Enq/TNQNfAx8VERk5PGmGpn7cCt8y1veEWZoS7AWP9T1hhmZJCA9nwSOHJ81QlYifMlxn7D5yeNIMlQQ8SLzXArYYOTzpVpXF/SsQFbC2EMYjjyfeqhhc/ld0GAW6ZMZjHU+8VRfBtbf9TeC3ooAV8zfmXtBQBUVjjI7gYcDpNWIJPAycUHgG6yvHvcMrtBfL8T3BoQKEawUGrILrZ9F3mzuuhQ0Bx08k8wOm8DSetfqb6wwHX4L31uEuRx4BDhXoJXia8Aruu88xeVu7qAKP4P0N6Dw9J4TmGojH/TxlnirwJXjC6WGlo7UEPrWI2aKe1IEVUFuIcAobmW9LAa5RBYB7h3dHc3Sewyo05yvEWpUedAgHdejIHNezoMBZ0FBJgD7tgcdzX0RUnQVvMcT4pGs0A4/gA19SCI3nZ6eoAm/Ar1UEnaoQXOER45M6lN4akSr44C++a7RlbpcqcDdifNItqPSj9nZCnw9R9SVQY9wn3JIIGPlfPfoFOlpK7yjDznEAAAAASUVORK5CYII="/>
+      </pattern>
+      <path d="M-23.0 -49.0 L23.0 -49.0 23.0 1.0 -23.0 1.0 -23.0 -49.0" ffdec:fill-bitmapId="2028" style="fill:url(#PatternID_2029_1)"/>
+    </g>
+    <g id="text0">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 18.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 25.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 32.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 39.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 46.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 56.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 63.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 73.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 80.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 90.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_J0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 96.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 103.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 112.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 122.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_-0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 131.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 138.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 145.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 152.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 162.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 169.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 179.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 186.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 189.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_G0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 196.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 203.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 213.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 220.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 230.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 237.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 244.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_F0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 251.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 261.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 268.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 278.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_J0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 284.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 291.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 300.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 310.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 313.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 323.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 18.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 25.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 32.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 39.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 46.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_S0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 56.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 63.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 73.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 80.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 90.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_J0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 96.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 103.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 112.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 122.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_-0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 131.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 138.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 145.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 152.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 162.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 169.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 179.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 186.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 189.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_G0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 196.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_H0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 203.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 213.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 220.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 230.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_L0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 237.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 244.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_F0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 251.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 261.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 268.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 278.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_J0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 284.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_U0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 291.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_M0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 300.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_P0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 310.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 313.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 323.0, 9.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_A0"/>
       </g>
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 146.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 153.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 156.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 163.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 170.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_C0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 177.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 184.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 187.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
-        <use fill="#83dd22" height="21.0" transform="matrix(0.0088, 0.0, 0.0, 0.0088, 194.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 146.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_D0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 153.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 156.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_R0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 163.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_E0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 170.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_C0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 177.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_T0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 184.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_I0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 187.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_O0"/>
+        <use fill="#83dd22" height="21.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 194.0, 22.0)" width="310.0" xlink:href="#font_FFF_Idea_8pt_st_N0"/>
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_P0">
-      <path d="M568.9 -341.35 L568.9 -455.1 227.55 -455.1 227.55 -341.35 568.9 -341.35 M682.65 -227.55 L227.55 -227.55 227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -227.55" fill-rule="evenodd" stroke="none"/>
+      <path d="M631.5 -378.9 L631.5 -505.2 252.6 -505.2 252.6 -378.9 631.5 -378.9 M757.8 -252.6 L252.6 -252.6 252.6 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 -252.6" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_R0">
-      <path d="M682.65 -227.55 L682.65 113.8 568.9 113.8 568.9 -227.55 682.65 -227.55 M568.9 -341.35 L568.9 -455.1 227.55 -455.1 227.55 -341.35 568.9 -341.35 568.9 -227.55 227.55 -227.55 227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -341.35 568.9 -341.35" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -252.6 L757.8 126.3 631.5 126.3 631.5 -252.6 757.8 -252.6 M631.5 -378.9 L631.5 -505.2 252.6 -505.2 252.6 -378.9 631.5 -378.9 631.5 -252.6 252.6 -252.6 252.6 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 -378.9 631.5 -378.9" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_E0">
-      <path d="M682.65 -455.1 L227.55 -455.1 227.55 -341.35 682.65 -341.35 682.65 -227.55 227.55 -227.55 227.55 0.0 682.65 0.0 682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -505.2 L252.6 -505.2 252.6 -378.9 757.8 -378.9 757.8 -252.6 252.6 -252.6 252.6 0.0 757.8 0.0 757.8 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_S0">
-      <path d="M682.65 -455.1 L227.55 -455.1 227.55 -341.35 682.65 -341.35 682.65 113.8 113.8 113.8 113.8 0.0 568.9 0.0 568.9 -227.55 113.8 -227.55 113.8 -568.9 682.65 -568.9 682.65 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -505.2 L252.6 -505.2 252.6 -378.9 757.8 -378.9 757.8 126.3 126.3 126.3 126.3 0.0 631.5 0.0 631.5 -252.6 126.3 -252.6 126.3 -631.5 757.8 -631.5 757.8 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_U0">
-      <path d="M682.65 -568.9 L682.65 113.8 113.8 113.8 113.8 -568.9 227.55 -568.9 227.55 0.0 568.9 0.0 568.9 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -631.5 L757.8 126.3 126.3 126.3 126.3 -631.5 252.6 -631.5 252.6 0.0 631.5 0.0 631.5 -631.5 757.8 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_T0">
-      <path d="M455.1 -455.1 L455.1 113.8 341.35 113.8 341.35 -455.1 113.8 -455.1 113.8 -568.9 682.65 -568.9 682.65 -455.1 455.1 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M505.2 -505.2 L505.2 126.3 378.9 126.3 378.9 -505.2 126.3 -505.2 126.3 -631.5 757.8 -631.5 757.8 -505.2 505.2 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_O0">
-      <path d="M568.9 -455.1 L227.55 -455.1 227.55 0.0 568.9 0.0 568.9 -455.1 M682.65 -568.9 L682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M631.5 -505.2 L252.6 -505.2 252.6 0.0 631.5 0.0 631.5 -505.2 M757.8 -631.5 L757.8 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_J0">
-      <path d="M568.9 -568.9 L568.9 113.8 113.8 113.8 113.8 0.0 455.1 0.0 455.1 -568.9 568.9 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M631.5 -631.5 L631.5 126.3 126.3 126.3 126.3 0.0 505.2 0.0 505.2 -631.5 631.5 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_M0">
-      <path d="M227.55 -455.1 L227.55 113.8 113.8 113.8 113.8 -568.9 910.2 -568.9 910.2 113.8 796.45 113.8 796.45 -455.1 568.9 -455.1 568.9 113.8 455.1 113.8 455.1 -455.1 227.55 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M252.6 -505.2 L252.6 126.3 126.3 126.3 126.3 -631.5 1010.4 -631.5 1010.4 126.3 884.1 126.3 884.1 -505.2 631.5 -505.2 631.5 126.3 505.2 126.3 505.2 -505.2 252.6 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_-0">
-      <path d="M113.8 -227.55 L568.9 -227.55 568.9 -113.8 113.8 -113.8 113.8 -227.55" fill-rule="evenodd" stroke="none"/>
+      <path d="M126.3 -252.6 L631.5 -252.6 631.5 -126.3 126.3 -126.3 126.3 -252.6" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_H0">
-      <path d="M682.65 -568.9 L682.65 113.8 568.9 113.8 568.9 -227.55 227.55 -227.55 227.55 113.8 113.8 113.8 113.8 -568.9 227.55 -568.9 227.55 -341.35 568.9 -341.35 568.9 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -631.5 L757.8 126.3 631.5 126.3 631.5 -252.6 252.6 -252.6 252.6 126.3 126.3 126.3 126.3 -631.5 252.6 -631.5 252.6 -378.9 631.5 -378.9 631.5 -631.5 757.8 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_L0">
-      <path d="M227.55 -568.9 L227.55 0.0 682.65 0.0 682.65 113.8 113.8 113.8 113.8 -568.9 227.55 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M252.6 -631.5 L252.6 0.0 757.8 0.0 757.8 126.3 126.3 126.3 126.3 -631.5 252.6 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_D0">
-      <path d="M568.9 -455.1 L227.55 -455.1 227.55 0.0 568.9 0.0 568.9 113.8 113.8 113.8 113.8 -568.9 568.9 -568.9 568.9 -455.1 682.65 -455.1 682.65 0.0 568.9 0.0 568.9 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M631.5 -505.2 L252.6 -505.2 252.6 0.0 631.5 0.0 631.5 126.3 126.3 126.3 126.3 -631.5 631.5 -631.5 631.5 -505.2 757.8 -505.2 757.8 0.0 631.5 0.0 631.5 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_N0">
-      <path d="M682.65 -568.9 L682.65 113.8 568.9 113.8 568.9 -455.1 227.55 -455.1 227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -631.5 L757.8 126.3 631.5 126.3 631.5 -505.2 252.6 -505.2 252.6 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_I0">
-      <path d="M227.55 -568.9 L227.55 113.8 113.8 113.8 113.8 -568.9 227.55 -568.9" fill-rule="evenodd" stroke="none"/>
+      <path d="M252.6 -631.5 L252.6 126.3 126.3 126.3 126.3 -631.5 252.6 -631.5" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_G0">
-      <path d="M682.65 -455.1 L227.55 -455.1 227.55 0.0 568.9 0.0 568.9 -227.55 341.35 -227.55 341.35 -341.35 682.65 -341.35 682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -505.2 L252.6 -505.2 252.6 0.0 631.5 0.0 631.5 -252.6 378.9 -252.6 378.9 -378.9 757.8 -378.9 757.8 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_F0">
-      <path d="M682.65 -455.1 L227.55 -455.1 227.55 -341.35 682.65 -341.35 682.65 -227.55 227.55 -227.55 227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -455.1" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -505.2 L252.6 -505.2 252.6 -378.9 757.8 -378.9 757.8 -252.6 252.6 -252.6 252.6 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 -505.2" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_A0">
-      <path d="M568.9 -341.35 L568.9 -455.1 227.55 -455.1 227.55 -341.35 568.9 -341.35 M227.55 -227.55 L227.55 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 113.8 568.9 113.8 568.9 -227.55 227.55 -227.55" fill-rule="evenodd" stroke="none"/>
+      <path d="M631.5 -378.9 L631.5 -505.2 252.6 -505.2 252.6 -378.9 631.5 -378.9 M252.6 -252.6 L252.6 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 126.3 631.5 126.3 631.5 -252.6 252.6 -252.6" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_C0">
-      <path d="M682.65 -113.8 L682.65 113.8 113.8 113.8 113.8 -568.9 682.65 -568.9 682.65 -341.35 568.9 -341.35 568.9 -455.1 227.55 -455.1 227.55 0.0 568.9 0.0 568.9 -113.8 682.65 -113.8" fill-rule="evenodd" stroke="none"/>
+      <path d="M757.8 -126.3 L757.8 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5 757.8 -378.9 631.5 -378.9 631.5 -505.2 252.6 -505.2 252.6 0.0 631.5 0.0 631.5 -126.3 757.8 -126.3" fill-rule="evenodd" stroke="none"/>
     </g>
   </defs>
 </svg>

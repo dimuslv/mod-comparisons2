@@ -12,10 +12,10 @@ class Main
 		_root._play = Main._play;
 		_root._gotoAndStop = Main._gotoAndStop;
 		_root._gotoAndPlay = Main._gotoAndPlay;
-		_root.updateTestBitmap = function(a) {return;};
 		
 		Main.spriteInfo = _root.spriteInfo;
 		Windows.init();
+		Utils.init();
 	}
 	
 	static function levelInit() {
@@ -48,6 +48,8 @@ class Main
 	}
 
 	static function gameUpdate() {
+		Utils.clearTestBitmaps();
+		
 		Main.scriptStack = [];
 		
 		TAS.checkKeys();

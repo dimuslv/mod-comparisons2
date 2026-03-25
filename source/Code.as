@@ -1,10 +1,8 @@
 class Code
 {
-	static var rngSeed = 0;
-	
 	//static var operators = ",=?:|&^!<>+-*/%~[]{}().@";
 	
-	static var operators = {
+	/*static var operators = {
 		"+" : 0,
 		"-",
 		"*",
@@ -18,25 +16,133 @@ class Code
 		11, //- 1
 		
 	];
-	
-	"+-*/%=,|^&<>~!?:";
-	"== || && "
+	*/
+	//"+-*/%=,|^&<>~!?:";
+	//"== || && "
 	//          cba?
 	//https://help.adobe.com/en_US/as3/learn/WS5b3ccc516d4fbf351e63e3d118a9b90204-7fd1.html#WS5b3ccc516d4fbf351e63e3d118a9b90204-7f6c
 	
+	static function isS(sym, str) {
+		return str.indexOf(sym) !== -1;
+	}
+	
 	static function isWhiteSpaceAt(str, ind) {
-		return " \t\r\n".indexOf(str.charAt(ind)) != -1;
+		return Code.isWhiteSpace(str.charAt(ind));
 	}
 	
 	static function isWhiteSpace(c) {
-		return " \t\r\n".indexOf(c) != -1;
+		return Code.isS(c, " \t\r\n");
 	}
 	
-	static function findOperator(c) {
-		return ",=?:|&^!<>+-*/%~[]{}().@".indexOf(c);
+	static function indOf(str1, str2) {
+		var ind = str1.indexOf(str2);
+		if (ind === -1) {
+			return str1.length;
+		}
+		return ind;
 	}
 	
-	static function find(str, value, startInd) {
+	static function parseAngled(str, ind) {
+		
+		var obj = {_x: [0, 0], _y: [0, 0], vx: [0, 0], vy: [0, 0], state: [0, 0], fall_count: [0, 0]};
+		
+		var firstLetter = -1;
+		var lastLetter = -1;
+		
+		mainLoop:
+		for (; ind < str.length; ind++) {
+			var c = str.charAt(ind);
+			
+			if (Code.isWhiteSpace(c)) {
+				continue;
+			}
+			
+			if (c === ">") {
+				break;
+			}
+			
+			if (firstLetter === -1 || !Code.isS(c, ":;")) {
+				if (firstLetter === -1) {
+					firstLetter = ind;
+				}
+				lastLetter = ind + 1;
+				continue;
+			}
+			
+			var varName = str.slice(firstLetter, lastLetter);
+			var newName = {x: "_x", y: "_y", wc: "wall_count", fc: "fall_count", st: "state"}[varName];
+			if (newName) {
+				varName = newName;
+			}
+			
+			if (_root.game.player[varName] === undefined) {
+				break;
+			}
+			
+			if (c === ";") {
+				delete obj[varName];
+				firstLetter = -1;
+				continue;
+			}
+			
+			obj[varName] = [0, 0];
+			
+			for (var i = 0; i < 2; i++) {
+				firstLetter = -1;
+				lastLetter = -1;
+				for (ind++; ind < str.length; ind++) {
+					c = str.charAt(ind)
+					if (Code.isS(c, ",;")) {
+						break;
+					}
+					
+					if (!Code.isWhiteSpace(c)) {
+						if (firstLetter === -1) {
+							firstLetter = ind;
+						}
+						lastLetter = ind + 1;
+					}
+				}
+				
+				if (ind >= str.length || firstLetter === -1) {
+					break mainLoop;
+				}
+				
+				var num = Number(str.slice(firstLetter, lastLetter));
+				if (isNaN(num)) {
+					break mainLoop;
+				}
+				
+				if (c === ";" && i === 0) {
+					if (num >= 0) {
+						obj[varName][1] = num;
+					} else {
+						obj[varName][0] = num;
+					}
+					break;
+				} else if (c === "," && i === 1) {
+					break mainLoop;
+				} else {
+					obj[varName][i] = num;
+				}
+			}
+			
+			firstLetter = -1;
+		}
+		
+		ind = str.indexOf(">", ind) + 1;
+		if (ind === 0) {
+			ind = str.length;
+		}
+		
+		return [obj, ind];
+	}
+	
+	//static function findOperator(c) {
+	//	return ",=?:|&^!<>+-*/%~[]{}().@".indexOf(c);
+	//}
+	
+	/*static function find(str, value, startInd) {
 		var ind = str.indexOf(value, startInd);
 		if (ind === -1)
 			ind = str.length;
@@ -144,7 +250,7 @@ class Code
 								operands.push("");
 							}
 							
-							operators.push(/*thing here*/);
+							operators.push(/*thing here*//*);
 							isT = true;
 							break;
 						}
@@ -198,6 +304,7 @@ class Code
 	! != !==
 	*/
 	// still need to implement brackets
+	/*
 	static function compileValue2(str, start, end) {
 		var instructions = [];
 		var operands = [];  // asdasd
@@ -282,4 +389,4 @@ class Code
 			}
 		}
 	}
-}
+}*/

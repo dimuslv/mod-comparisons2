@@ -12,21 +12,92 @@ class Utils
 	static var zeroPoint = new flash.geom.Point(0, 0);
 	static var deactivateTeleport = false;
 	static var layerVisibilities;
-	static var extraLayerVisibilities;
+	static var extraVisibilities;
+	static var testVisibilities;
 	static var laserState = 1;
 	static var conveyorsOn = true;
 	static var skipBeginning = true;
 	static var autoScroll = true;
 	static var screenshake = true;
+	static var collisionQueryBitmap;
+	static var robotRangeBitmap;
+	static var bomberRangeBitmap;
 	
 	static var visWindowArray = [
 			"Damage", 60, 52,
 			"Acid", 60, 52,
 			"Object", 60, 52,
-			"Bomb", 31, 18
+			"Bomb", 31, 18,
+			"Explosion", 120, 120
 		];
 	static var bmps = {};
-	static var empty_bmp = new flash.display.BitmapData(100, 100, false);
+	static var empty_bmp = new flash.display.BitmapData(200, 200, false);
+	
+	static var inputDisplayParams = {
+		size: 20,
+		border: 2,
+		spacing: 4
+	};
+	
+	static function init() {
+		Utils.bomberRangeBitmap = new flash.display.BitmapData(499, 299, true, 0x80F5BF0F);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(49, 0, 401, 299), 0x80F2720C);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(149, 0, 201, 299), 0x80FC0C04);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(1, 1, 47, 297), 0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(50, 1, 98, 297), 0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(150, 1, 99, 297), 0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(250, 1, 99, 297), 0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(351, 1, 98, 297), 0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(451, 1, 47, 297), 0);
+	}
+	
+	static function onLoadLevel(game) {
+		Utils.robotRangeBitmap.dispose();
+		Utils.robotRangeBitmap = new flash.display.BitmapData(com.nitrome.toxic.Global.level_width, com.nitrome.toxic.Global.level_height, true, 0);
+		game.test_holder.createEmptyMovieClip("robotRanges", game.test_holder.getNextHighestDepth());
+		game.test_holder.robotRanges.attachBitmap(Utils.robotRangeBitmap, 1);
+		
+		game.test_holder.createEmptyMovieClip("testPoints",game.test_holder.getNextHighestDepth());
+		game.test_holder.testPoints.attachBitmap(flash.display.BitmapData.loadBitmap("testPoints"), 1);
+		
+		Utils.collisionQueryBitmap.dispose();
+		Utils.collisionQueryBitmap = new flash.display.BitmapData(com.nitrome.toxic.Global.level_width, com.nitrome.toxic.Global.level_height, true, 0);
+		game.test_holder.createEmptyMovieClip("collisionQueries", game.test_holder.getNextHighestDepth());
+		game.test_holder.collisionQueries.attachBitmap(Utils.collisionQueryBitmap, 1);
+	}
+	
+	static function onClearAll(game) {
+		for (var i in game.test_holder) {
+			game.test_holder[i].removeMovieClip();
+		}
+	}
+	
+	static function testVisible(layer) {
+		return _root.game.test_holder._visible && _root.game.test_holder[layer]._visible && !TAS.fastPlayback;
+	}
+	
+	static function markCollisionQuery(x, y, fun) {
+		var ans = fun(x, y);
+		if (Utils.testVisible("collisionQueries")) {
+			Utils.collisionQueryBitmap.setPixel32(x, y, ans? 0xFFFF3300 : 0xFF99CCFF);
+		}
+		return ans;
+	}
+	
+	static function markBomberRange(x, y) {
+		if (Utils.testVisible("robotRanges")) {
+			Utils.robotRangeBitmap.copyPixels(Utils.bomberRangeBitmap, Utils.bomberRangeBitmap.rectangle, new flash.geom.Point(x - 249, y - 199));
+		}
+	}
+	
+	static function clearTestBitmaps() {
+		if (Utils.testVisible("collisionQueries")) {
+			Utils.collisionQueryBitmap.fillRect(Utils.collisionQueryBitmap.rectangle, 0);
+		}
+		if (Utils.testVisible("robotRanges")) {
+			Utils.robotRangeBitmap.fillRect(Utils.robotRangeBitmap.rectangle, 0);
+		}
+	}
 	
 	static function cutsceneIn() {
 		if (!TAS.fastPlayback) {
@@ -47,14 +118,25 @@ class Utils
 	static function levelInit() {
 		if (!Utils.layerVisibilities) {
 			Utils.layerVisibilities = {};
+			var tempArr = [];
 			for (var holder in _root.game) {
-				if (holder.slice(-7) == "_holder")
-					Utils.layerVisibilities[holder] = true;
+				if (holder.slice(-7) == "_holder") {
+					tempArr.push(holder);
+				}
 			}
-			Utils.layerVisibilities.test_holder = false;
-			_root.game.test_holder._visible = false;
+			for (var holder in tempArr) {
+				Utils.layerVisibilities[tempArr[holder]] = true;
+			}
 			
-			Utils.extraLayerVisibilities = {
+			Utils.layerVisibilities.test_holder = false;
+			
+			Utils.testVisibilities = {
+				testPoints: true,
+				collisionQueries: false,
+				robotRanges: false
+			};
+			
+			Utils.extraVisibilities = {
 				pipes : true,
 				big_pipes : true,
 				acid_holder : true,
@@ -67,14 +149,17 @@ class Utils
 				popup_holder : true/*,
 				loading_clip : true*/
 			};
-		} else {
-			for (var holder in _root.game) {
-				if (holder.slice(-7) == "_holder")
-					_root.game[holder]._visible = Utils.layerVisibilities[holder];
-			}
-			for (var layer in Utils.extraLayerVisibilities) {
-				_root[layer]._visible = Utils.extraLayerVisibilities[layer];
-			}
+		}
+		
+		for (var holder in _root.game) {
+			if (holder.slice(-7) == "_holder")
+				_root.game[holder]._visible = Utils.layerVisibilities[holder];
+		}
+		for (var layer in Utils.extraVisibilities) {
+			_root[layer]._visible = Utils.extraVisibilities[layer];
+		}
+		for (var sprite in Utils.testVisibilities) {
+			_root.game.test_holder[sprite]._visible = Utils.testVisibilities[sprite];
 		}
 	}
 	
@@ -95,8 +180,8 @@ class Utils
 				"Bruteforcing", Utils.bruteforcingWindow,
 				"Info windows", Utils.infoWindowsWindow,
 				"Preferences", Utils.preferenceWindow,
-				"Layer visibility", Utils.layerVisibilityWindow/*,
-				"Frame offsets", Utils.frameOffsetWindow*/
+				"Layer visibility", Utils.layerVisibilityWindow,
+				"Inspect", [Utils.inspectWindow, "_root.game"]
 			]
 		});
 	}
@@ -225,6 +310,8 @@ class Utils
 			options.push(Utils.visWindowArray[i] + " visualization 🗗", [Utils.activateStaticWindow, Windows.clip[Utils.visWindowArray[i] + "VisWindow"]]);
 		}
 		
+		options.push("Input display 🗗", [Utils.activateStaticWindow, Windows.clip.inputDisplay]);
+		
 		options.push("Back", Utils.mainMenu);
 		
 		w.updateMainField({
@@ -238,11 +325,21 @@ class Utils
 		w2._visible = true;
 	}
 	
+	static function clearBitmap(bmp) {
+		bmp.copyPixels(Utils.empty_bmp, new flash.geom.Rectangle(0, 0, bmp.width, bmp.height), Utils.zeroPoint);
+	}
+	
+	static function imgMinimize(w) {
+		w.minimized = !w.minimized;
+		w.img._visible = !w.minimized;
+		w.updateMainField(false);
+	}
+	
 	static function updateVisBitmap(n, source_bmp) {
 		var dest_bmp = Utils.bmps[n];
 		if (!TAS.fastPlayback && Windows.clip[n+"VisWindow"]._visible) {
-			dest_bmp.copyPixels(Utils.empty_bmp, new flash.geom.Rectangle(0, 0, dest_bmp.width, dest_bmp.height), zeroPoint);
-			dest_bmp.copyPixels(source_bmp, new flash.geom.Rectangle(0, 0, source_bmp.width, source_bmp.height), zeroPoint);
+			Utils.clearBitmap(dest_bmp);
+			dest_bmp.copyPixels(source_bmp, new flash.geom.Rectangle(0, 0, source_bmp.width, source_bmp.height), Utils.zeroPoint);
 		}
 	}
 	
@@ -260,35 +357,44 @@ class Utils
 		
 		var arr = [];
 		
-		for (var holder in _root.game) {
-			if (holder.slice(-7) == "_holder")
-				arr.push(holder.slice(0, -7), Utils.layerVisibilities, holder);
+		for (var holder in Utils.layerVisibilities) {
+			arr.push(holder.slice(0, -7), Utils.layerVisibilities, holder);
 		}
 		
-		obj.options.push("Extra", Utils.extraLayerVisibilityWindow);
-		
 		obj.options.push("Back", Utils.mainMenu);
+		
+		obj.options.push("Extra", Utils.extraVisibilityWindow);
 		
 		Utils.addToggleVarOptions(obj.options, arr);
 		
 		w.updateMainField(obj);
 	}
 	
-	static function extraLayerVisibilityWindow(w) {
-		for (var layer in Utils.extraLayerVisibilities) {
-			_root[layer]._visible = Utils.extraLayerVisibilities[layer];
+	static function extraVisibilityWindow(w) {
+		for (var sprite in Utils.testVisibilities) {
+			_root.game.test_holder[sprite]._visible = Utils.testVisibilities[sprite];
+		}
+		
+		for (var layer in Utils.extraVisibilities) {
+			_root[layer]._visible = Utils.extraVisibilities[layer];
 		}
 		
 		var obj = {
-			title: "Extra layer visibility",
-			curWindow: Utils.extraLayerVisibilityWindow,
+			title: "Extra visibility",
+			curWindow: Utils.extraVisibilityWindow,
 			options: []
 		}
 		
 		var arr = [];
 		
-		for (var layer in Utils.extraLayerVisibilities) {
-			arr.push(layer, Utils.extraLayerVisibilities, layer);
+		if (Utils.layerVisibilities.test_holder) {
+			for (var sprite in Utils.testVisibilities) {
+				arr.push(sprite, Utils.testVisibilities, sprite);
+			}
+		}
+		
+		for (var layer in Utils.extraVisibilities) {
+			arr.push(layer, Utils.extraVisibilities, layer);
 		}
 		
 		obj.options.push("Back", Utils.layerVisibilityWindow);
@@ -296,6 +402,54 @@ class Utils
 		obj.options.push("Mask: " + (Utils.masked? "on" : "off"), Utils.toggleMask);
 		
 		Utils.addToggleVarOptions(obj.options, arr);
+		
+		w.updateMainField(obj);
+	}
+	
+	static function inspectWindow(w, str, isProp) {
+		if (str === "_root") {
+			Utils.mainMenu(w);
+			return;
+		}
+		
+		var obj = {
+			title: str.slice(str.lastIndexOf(".") + 1) + (isProp? "" : "/"),
+			update: [Utils.inspectWindow, str, isProp],
+			options: ["Back"]
+		}
+		
+		if (isProp) {
+			obj.options.push([Utils.inspectWindow, str, false]);
+		} else {
+			obj.options.push([Utils.inspectWindow, str.slice(0, str.lastIndexOf(".")), false]);
+		}
+		
+		var currentObj = eval(str);
+		
+		if (currentObj) {
+			if (!isProp) {
+				obj.options.push("Properties", [Utils.inspectWindow, str, true]);
+			} else if (typeof currentObj === "movieclip") {
+				obj.options.push("_x: " + currentObj._x, false, "_y: " + currentObj._y, false, "_currentframe: " + currentObj._currentframe, false);
+			}
+			
+			for (var i in currentObj) {
+				switch (typeof currentObj[i]) {
+					case "function":
+						break;
+					case "object":
+					case "movieclip":
+						if (!isProp) {
+							obj.options.push(i, [Utils.inspectWindow, str + "." + i]);
+						}
+						break;
+					default:
+						if (isProp) {
+							obj.options.push(i + ": " + currentObj[i], false);
+						}
+				}
+			}
+		}
 		
 		w.updateMainField(obj);
 	}
@@ -317,7 +471,7 @@ class Utils
 	}
 	
 	static function pushO(arr, frame, inp, num) {
-		Utils.getLast(arr).push(frame - Utils.getLast(arr)[0], inp, num, 0);
+		Utils.getLast(arr).push(frame - arr[arr.length - 4], inp, num, 0);
 	}
 	
 	static function foif() {

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="75.0px" width="29.0px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 14.5, 75.0)">
-    <use ffdec:characterId="182" height="75.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -14.5, -75.0)" width="29.0" xlink:href="#shape0"/>
+    <use ffdec:characterId="182" height="75.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="29.0" xlink:href="#shape0"/>
   </g>
   <defs>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 14.5, 75.0)">
+    <g id="shape0">
       <pattern height="75" id="PatternID_182_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -14.5, -75.0)" patternUnits="userSpaceOnUse" viewBox="0 0 29 75" width="29">
         <image height="75" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="29" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAABLCAYAAACMRIzlAAAAoElEQVR4Xu3PUQrDIBAAUY/b+18gxUKgDLU1dnVbmQf7k7gOliJJkq64HeXgt30tfe3SWFWDz8P/b3F5ZHhnExdHhnc2cZHD819jYGqsYmS/YMVQWjAlynOhGDMaijGjoRhLD/NcKMauhkd2HrjI6T33aucjLkYMG01c7L2EZ3t2Qv1EmP+mSw3z2zRnbHl0afCUEl1u/1fu/0JJkiT9iTtJEA1hvrUbrQAAAABJRU5ErkJggg=="/>
       </pattern>

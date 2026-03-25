@@ -4,10 +4,10 @@
     <use ffdec:characterId="1273" height="46.0" id="anim" transform="matrix(1.0, 0.0, 0.0, 1.0, -19.0, -45.0)" width="37.0" xlink:href="#sprite0"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite0">
       <use ffdec:characterId="1264" height="46.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="37.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <pattern height="46" id="PatternID_1264_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 37 46" width="37">
         <image height="46" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="37" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAuCAYAAACvWdDAAAACDUlEQVR4Xt3Xv04CQRAGcGMIBbWxoiRWVIbSWBkrK2NpZSytfAYewdL4AMb4BD6GlYVPQsTM4rd8990td8D+uTjJFIZh5+fs3gIHB/81BoeDJVJfKxIGubi+8lkcpqBewIC6fXxw2RsUQAwrhtIpPb0/l58WowzUGxRPCahiW+jupOH6yVv8rPPza7p8e50sB6PM9xajGATU+GRcDmUARc3OZ/lRDjRagRRlk6ugcsGsiZ0ZReF8edSwMAognZQ78KlRADGKQYzCU5gcplNSEFB43V8PuVDWXEGWuBayoHjrbHuaUHxXIZM+hUBZA6AYphdoBZQSxU0YphdoDZQCpSCXwxVMQZa12hSwEMom0hUU/cA3oXBuuoCiP4WbQIzSGq2NepEqikH+KcPnXADEsDgoaqhNPKgBpXW+dl8UT0kbVECC0jpXa6+hdh8YUNqgBmqbJsBUr706hQP9ZbCJpNa5WlpHU3sGA2/gG1s/5/S3Hv+K2ZS8nvvO1YYLYRTFiKZUiKauG8QB0waKgQrBgKug+pI0q3BY4cfxTdTs3LwpAFqczqPm1jAdZ65URyWsYHp5VEk9mDGS129FWUBvbzi7G9eQ+ybW7DQlDR4vL4i8f5n5nH9PXOJvrkMyZGtMU+gZ2DV13Whhi9t/jfOhE+FzkxSiARi2EdunW6XvSx7YEj5rOx/g2JHt3JSMX0CBLt2LhSqVAAAAAElFTkSuQmCC"/>
       </pattern>

@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:ffdec="https://www.free-decompiler.com/flash" xmlns:xlink="http://www.w3.org/1999/xlink" ffdec:objectType="frame" height="259.1px" width="89.1px" xmlns="http://www.w3.org/2000/svg">
   <g transform="matrix(1.0, 0.0, 0.0, 1.0, 44.55, 234.0)">
-    <use ffdec:characterId="2025" height="36.0" id="anim" transform="matrix(-1.0, 0.0, 0.0, 1.0, 24.0, -34.0)" width="51.0" xlink:href="#sprite0"/>
-    <use ffdec:characterId="402" height="41.0" id="wall_boundary_right" transform="matrix(1.0, 0.0, 0.0, 1.0, 21.5, -41.5)" width="1.0" xlink:href="#sprite1"/>
-    <use ffdec:characterId="402" height="41.0" id="wall_boundary_left" transform="matrix(1.0, 0.0, 0.0, 1.0, -26.5, -41.5)" width="1.0" xlink:href="#sprite2"/>
+    <use ffdec:characterId="2025" height="36.0" id="anim" transform="matrix(-1.0, 0.0, 0.0, 1.0, 0.0, 1.0)" width="51.0" xlink:href="#sprite0"/>
+    <use ffdec:characterId="402" height="41.0" id="wall_boundary_right" transform="matrix(1.0, 0.0, 0.0, 1.0, 22.0, -21.0)" width="1.0" xlink:href="#sprite1"/>
+    <use ffdec:characterId="402" height="41.0" id="wall_boundary_left" transform="matrix(1.0, 0.0, 0.0, 1.0, -26.0, -21.0)" width="1.0" xlink:href="#sprite2"/>
     <use ffdec:characterId="2014" height="0.0" id="bomb_start_pos" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, -8.0)" width="0.0" xlink:href="#sprite3"/>
     <use ffdec:characterId="2015" height="0.0" id="platform_start_pos" transform="matrix(1.0, 0.0, 0.0, 1.0, -33.0, -13.0)" width="0.0" xlink:href="#sprite4"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 24.0, 35.0)">
-      <use ffdec:characterId="2020" height="36.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -24.0, -35.0)" width="51.0" xlink:href="#shape0"/>
+    <g id="sprite0">
+      <use ffdec:characterId="2022" height="36.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="51.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 24.0, 35.0)">
-      <pattern height="36" id="PatternID_2020_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -24.0, -35.0)" patternUnits="userSpaceOnUse" viewBox="0 0 51 36" width="51">
-        <image height="36" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="51" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAkCAYAAAAkcgIJAAACXUlEQVR4Xu2UPU7DQBSEKZEQFQegoaFCOQptRE1PyQ24DzfgBHTcgSPQGM3KY41n367X+dmkyEij2N63782XdXJ1dVGzhhU+S00Bh9+3Zsu+s1EWsllnBpWDrHEMdRLl4QKjzu01CjXWdFceKoB4eb7LzDU62NdVw9/PTbJDMJAD1Ix6+hRAE0wEhHUPHPnj/T65ANZNMxgFwpqHjkwQtwB10fD9eZt8KBj26wUze68jGAJh3YO7/TR6waTG/pvQAPvCsE8XmASgWoBZAqqdyjFhshM5xOlEIN1gPOgSTA2o5VSOBoNgHlZfJf1mS0C0Q5VO5egwGrYVRmtrYO6xZi/Nhqn3BfI9DlbwzpoNohEAa2tgloB8f2T09Hziqqb31ZvWYByoVLPW6FXKF6zNNA2HsCFdCwzWUcfr0un4D9pDthh9PB//FHD9+HAd1UyaBVAYfPI56vSewx1Ga3YBQh83TwQgX0+vVaAQxkOhbsm1/R46Mvv4vxo/t9ttMq5Lr9z0PvI1icKgTofoHho1BFKoFmOvZ4EVSkE4Z9w30yw4gWowCqSNuYb9GsrDO4TOcBD23mw20/1qGPubbIbBPT8ZWsHYj9bnPqMEY70yZTBrgXzdvyD20P58tgbGnxNAlQ1XGAJFgwjD5sE3Nz1nb+4nUAuMr9dgoAzGTyca5DBqryGIzmBtDUj7Bc9DhadDIKx7swgmWm+ASfNrxmum/WVfptQ4gsEaXALZFWgpkCnBEGh0qAyCxppDREH9GfbpXgeXmjVaBvEhOszDl4xar/d7r9UQh5I27+WLavoHYqWMxJLWkx4AAAAASUVORK5CYII="/>
+    <g id="shape0">
+      <pattern height="36" id="PatternID_2022_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -24.0, -35.0)" patternUnits="userSpaceOnUse" viewBox="0 0 51 36" width="51">
+        <image height="36" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="51" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAkCAYAAAAkcgIJAAACVElEQVR4Xu2Uy1HDMBiEuTOcKIAaUgrXDE1wpAP6oRFu9EAJXMys8Ir16pcs56HkkJ3ZiS39r89yfHd3U7emDb5K5QGn79duS97VqBiyW1cGVYJscQx1EZXDBUac22MUao4ZrnKoAOLl+bEw9+ggb6imn6/7ZIfgQA7QMuLpSwBlmAgI+z5w5Pe3p+QK2DAtYBQIez50ZIK4BWiIps+Ph+RTwbDeKJjFex3BEAj7PrjbT2MUTCrs/wkd4FgY1hkCkwBUKzBrQK1TOSdMcSKnOJ0IZBiMD7oG0wLqOZWzwWAwH1ZfJX2yNSDaoWqncnYYHbYXRmNbYO455igtmqmPBfIcB6v4YC0a0RgAe1tg1oA8PzJq2nzdyu+rF23BOFAtZqtRy+brVm4OAShdCwz2Ecfr2un4H9qH7DHq2HxU1+u3GEBh8Mt1xOk9mzuMxhwChDqR9VM+r4UKYXwoxK25le9DR2Yd/6rp51pgQqAFtTZ2GG2iOfrECKRQPUauz8Ka8qlexM3XhRaDE6gFo0AE0Bjk61A+vENoD+b4Ce33+wyiPf8x/hTC2GeyGwb3/OXQCsZ6tK57D/bB3m63y/ctGKiA2Qrk+/6AWEPrc20rjD2YQkVzhSFQ1MifVNAsr7M28wm0BcbXM4GpgPHTiRo5jNpjCKI9GFsD0rqV9VDh6RAI+1Ejh4n2O2BSfzfr+L2tF0qFIxjswV5IBz0EqDWMKPfHa4bftdwCgsaeQ0SD+hryNNfBJaZXCYZAswsVTbSZD18zYj3e7z1Wh+jUaq4GjPJNLf0CbWCGNioi9nQAAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M27.0 1.0 L-24.0 1.0 -24.0 -35.0 27.0 -35.0 27.0 1.0" ffdec:fill-bitmapId="2019" style="fill:url(#PatternID_2020_1)"/>
+      <path d="M27.0 1.0 L-24.0 1.0 -24.0 -35.0 27.0 -35.0 27.0 1.0" ffdec:fill-bitmapId="2021" style="fill:url(#PatternID_2022_1)"/>
     </g>
-    <g id="sprite1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
-      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -0.5, -20.5)" width="1.0" xlink:href="#shape1"/>
+    <g id="sprite1">
+      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="1.0" xlink:href="#shape1"/>
     </g>
-    <g id="shape1" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
+    <g id="shape1">
       <path d="M0.0 -20.0 L0.0 20.0" fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.0" stroke-width="1.0"/>
     </g>
-    <g id="sprite2" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.5, 20.5)">
-      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, -0.5, -20.5)" width="1.0" xlink:href="#shape1"/>
+    <g id="sprite2">
+      <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="1.0" xlink:href="#shape2"/>
+    </g>
+    <g id="shape2">
+      <path d="M0.0 -20.0 L0.0 20.0" fill="none" stroke="#ff0000" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.0" stroke-width="1.0"/>
     </g>
   </defs>
 </svg>

@@ -4,10 +4,10 @@
     <use ffdec:characterId="3033" height="560.85" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="326.5" xlink:href="#sprite0"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite0">
       <use ffdec:characterId="3032" height="560.85" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="326.5" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <path d="M163.25 0.0 Q230.85 0.0 278.65 82.1 326.5 164.3 326.5 280.4 326.5 396.55 278.65 478.65 230.85 560.85 163.25 560.85 95.65 560.85 47.8 478.65 0.0 396.55 0.0 280.4 0.0 164.3 47.8 82.1 95.65 0.0 163.25 0.0" fill="url(#gradient0)" fill-rule="evenodd" stroke="none"/>
     </g>
     <radialGradient cx="0" cy="0" gradientTransform="matrix(0.1705, 0.0, 0.0, 0.2929, 163.25, 280.4)" gradientUnits="userSpaceOnUse" id="gradient0" r="819.2" spreadMethod="pad">

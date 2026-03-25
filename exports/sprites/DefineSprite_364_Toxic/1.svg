@@ -4,12 +4,12 @@
     <use ffdec:characterId="226" height="100.0" id="boundingBox_mc" transform="matrix(1.0, 0.0, 0.0, 0.14, 0.0, 0.0)" width="100.0" xlink:href="#sprite0"/>
   </g>
   <defs>
-    <g id="sprite0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="sprite0">
       <use ffdec:characterId="225" height="100.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="100.0" xlink:href="#shape0"/>
     </g>
-    <g id="shape0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+    <g id="shape0">
       <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0" fill="#ffffff" fill-rule="evenodd" stroke="none"/>
-      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4005548469065996"/>
+      <path d="M100.0 100.0 L0.0 100.0 0.0 0.0 100.0 0.0 100.0 100.0 Z" ffdec:has-small-stroke="true" ffdec:original-stroke-width="0.05" fill="none" stroke="#666666" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6726182449760287"/>
     </g>
   </defs>
 </svg>
