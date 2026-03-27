@@ -30,7 +30,7 @@ class Code
 	}
 	static function parseAngled(str, ind)
 	{
-		var _loc4_ = {_x:[0,0],_y:[0,0],vx:[0,0],vy:[0,0],state:[0,0],fall_count:[0,0]};
+		var _loc4_ = {_x:[0,0],_y:[0,0],vx:[0,0],vy:[0,0],state:[0,0]};
 		var _loc5_ = -1;
 		var _loc6_ = -1;
 		var _loc7_;

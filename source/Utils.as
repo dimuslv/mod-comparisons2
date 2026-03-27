@@ -480,6 +480,6 @@ class Utils
 	
 	static function currentPlayerString() {
 		var p = _root.game.player;
-		return [p._x, p._y, p.state, /*p.dir,*/ p.vx, p.vy, /*p.wall_count,*/ p.fall_count].join("/");
+		return [p._x, p._y, p.state, /*p.dir,*/ p.vx, p.vy/*, p.wall_count, p.fall_count*/].join("/");
 	}
 }

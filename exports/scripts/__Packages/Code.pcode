@@ -1,11 +1,11 @@
-ConstantPool "_global", "Code", "prototype", "isS", "indexOf", "isWhiteSpaceAt", "charAt", "isWhiteSpace", " \t\r\n", "indOf", "length", "parseAngled", "_x", "_y", "vx", "vy", "state", "fall_count", ">", ":;", "slice", "x", "y", "wc", "wall_count", "fc", "st", "game", "player", ";", ",;", "isNaN", ",", "ASSetPropFlags"
+ConstantPool "_global", "Code", "prototype", "isS", "indexOf", "isWhiteSpaceAt", "charAt", "isWhiteSpace", " \t\r\n", "indOf", "length", "parseAngled", "_x", "_y", "vx", "vy", "state", ">", ":;", "slice", "x", "y", "wc", "wall_count", "fc", "fall_count", "st", "game", "player", ";", ",;", "isNaN", ",", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Code"
 GetMember
 Not
 Not
-If loc0826
+If loc0808
 Push "_global"
 GetVariable
 Push "Code"
@@ -118,12 +118,7 @@ Push 0
 Push 0
 Push 2
 InitArray
-Push "fall_count"
-Push 0
-Push 0
-Push 2
-InitArray
-Push 6
+Push 5
 InitObject
 StoreRegister 4
 Pop
@@ -133,13 +128,13 @@ Pop
 Push -1
 StoreRegister 6
 Pop
-loc0355:Push register3
+loc0337:Push register3
 Push register2
 Push "length"
 GetMember
 Less2
 Not
-If loc07be
+If loc07a0
 Push register3
 Push 1
 Push register2
@@ -154,19 +149,19 @@ GetVariable
 Push "isWhiteSpace"
 CallMethod
 Not
-If loc03ad
-Jump loc07ae
-loc03ad:Push register7
+If loc038f
+Jump loc0790
+loc038f:Push register7
 Push ">"
 StrictEquals
 Not
-If loc03c3
-Jump loc07be
-loc03c3:Push register5
+If loc03a5
+Jump loc07a0
+loc03a5:Push register5
 Push -1
 StrictEquals
 PushDuplicate
-If loc03f7
+If loc03d9
 Pop
 Push ":;"
 Push register7
@@ -176,23 +171,23 @@ GetVariable
 Push "isS"
 CallMethod
 Not
-loc03f7:Not
-If loc0433
+loc03d9:Not
+If loc0415
 Push register5
 Push -1
 StrictEquals
 Not
-If loc041b
+If loc03fd
 Push register3
 StoreRegister 5
 Pop
-loc041b:Push register3
+loc03fd:Push register3
 Push 1
 Add2
 StoreRegister 6
 Pop
-Jump loc07ae
-loc0433:Push register6
+Jump loc0790
+loc0415:Push register6
 Push register5
 Push 2
 Push register2
@@ -218,11 +213,11 @@ StoreRegister 9
 Pop
 Push register9
 Not
-If loc04b0
+If loc0492
 Push register9
 StoreRegister 8
 Pop
-loc04b0:Push register1
+loc0492:Push register1
 Push "game"
 GetMember
 Push "player"
@@ -232,13 +227,13 @@ GetMember
 Push undefined
 StrictEquals
 Not
-If loc04d7
-Jump loc07be
-loc04d7:Push register7
+If loc04b9
+Jump loc07a0
+loc04b9:Push register7
 Push ";"
 StrictEquals
 Not
-If loc0506
+If loc04e8
 Push register4
 Push register8
 Delete
@@ -246,8 +241,8 @@ Pop
 Push -1
 StoreRegister 5
 Pop
-Jump loc07ae
-loc0506:Push register4
+Jump loc0790
+loc04e8:Push register4
 Push register8
 Push 0
 Push 0
@@ -260,11 +255,11 @@ Pop
 Push 0
 StoreRegister 11
 Pop
-loc0541:Push register11
+loc0523:Push register11
 Push 2
 Less2
 Not
-If loc0791
+If loc0773
 Push -1
 StoreRegister 5
 Pop
@@ -275,13 +270,13 @@ Push register3
 Increment
 StoreRegister 3
 Pop
-loc057a:Push register3
+loc055c:Push register3
 Push register2
 Push "length"
 GetMember
 Less2
 Not
-If loc0636
+If loc0618
 Push register3
 Push 1
 Push register2
@@ -297,52 +292,52 @@ GetVariable
 Push "isS"
 CallMethod
 Not
-If loc05d7
-Jump loc0636
-loc05d7:Push register7
+If loc05b9
+Jump loc0618
+loc05b9:Push register7
 Push 1
 Push "Code"
 GetVariable
 Push "isWhiteSpace"
 CallMethod
-If loc0626
+If loc0608
 Push register5
 Push -1
 StrictEquals
 Not
-If loc0613
+If loc05f5
 Push register3
 StoreRegister 5
 Pop
-loc0613:Push register3
+loc05f5:Push register3
 Push 1
 Add2
 StoreRegister 6
 Pop
-loc0626:Push register3
+loc0608:Push register3
 Increment
 StoreRegister 3
 Pop
-Jump loc057a
-loc0636:Push register3
+Jump loc055c
+loc0618:Push register3
 Push register2
 Push "length"
 GetMember
 Less2
 Not
 PushDuplicate
-If loc065d
+If loc063f
 Pop
 Push register5
 Push -1
 StrictEquals
-loc065d:Not
-If loc0672
+loc063f:Not
+If loc0654
 Push true
 StoreRegister 10
 Pop
-Jump loc0791
-loc0672:Push register6
+Jump loc0773
+loc0654:Push register6
 Push register5
 Push 2
 Push register2
@@ -356,60 +351,60 @@ Push 1
 Push "isNaN"
 CallFunction
 Not
-If loc06bd
+If loc069f
 Push true
 StoreRegister 10
 Pop
-Jump loc0791
-loc06bd:Push register7
+Jump loc0773
+loc069f:Push register7
 Push ";"
 StrictEquals
 PushDuplicate
 Not
-If loc06de
+If loc06c0
 Pop
 Push register11
 Push 0
 StrictEquals
-loc06de:Not
-If loc0735
+loc06c0:Not
+If loc0717
 Push register12
 Push 0
 Less2
 Not
 Not
-If loc0717
+If loc06f9
 Push register4
 Push register8
 GetMember
 Push 1
 Push register12
 SetMember
-Jump loc0730
-loc0717:Push register4
+Jump loc0712
+loc06f9:Push register4
 Push register8
 GetMember
 Push 0
 Push register12
 SetMember
-loc0730:Jump loc0791
-loc0735:Push register7
+loc0712:Jump loc0773
+loc0717:Push register7
 Push ","
 StrictEquals
 PushDuplicate
 Not
-If loc0756
+If loc0738
 Pop
 Push register11
 Push 1
 StrictEquals
-loc0756:Not
-If loc076b
+loc0738:Not
+If loc074d
 Push true
 StoreRegister 10
 Pop
-Jump loc0791
-loc076b:Push register4
+Jump loc0773
+loc074d:Push register4
 Push register8
 GetMember
 Push register11
@@ -419,20 +414,20 @@ Push register11
 Increment
 StoreRegister 11
 Pop
-Jump loc0541
-loc0791:Push register10
+Jump loc0523
+loc0773:Push register10
 Not
-If loc07a1
-Jump loc07be
-loc07a1:Push -1
+If loc0783
+Jump loc07a0
+loc0783:Push -1
 StoreRegister 5
 Pop
-loc07ae:Push register3
+loc0790:Push register3
 Increment
 StoreRegister 3
 Pop
-Jump loc0355
-loc07be:Push register3
+Jump loc0337
+loc07a0:Push register3
 Push ">"
 Push register2
 Push 3
@@ -459,4 +454,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc0826:Pop
+loc0808:Pop

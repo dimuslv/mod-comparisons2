@@ -47,7 +47,7 @@ class Code
 	
 	static function parseAngled(str, ind) {
 		
-		var obj = {_x: [0, 0], _y: [0, 0], vx: [0, 0], vy: [0, 0], state: [0, 0], fall_count: [0, 0]};
+		var obj = {_x: [0, 0], _y: [0, 0], vx: [0, 0], vy: [0, 0], state: [0, 0]};
 		
 		var firstLetter = -1;
 		var lastLetter = -1;

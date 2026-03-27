@@ -409,6 +409,6 @@ class Utils
 	static function currentPlayerString()
 	{
 		var _loc2_ = _root.game.player;
-		return [_loc2_._x,_loc2_._y,_loc2_.state,_loc2_.vx,_loc2_.vy,_loc2_.fall_count].join("/");
+		return [_loc2_._x,_loc2_._y,_loc2_.state,_loc2_.vx,_loc2_.vy].join("/");
 	}
 }
