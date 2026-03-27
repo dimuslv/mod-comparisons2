@@ -24,21 +24,24 @@ class TAS
 	static var neutralPlayback = false;
 	static var saveStates = [];
 	static var queuedHit = false;
+	static var bombsThrownThisFrame = 0;
 	static var delayedCaretPos = -1;
 	static var lastCaretPos = -1;
-	static var offsetObj = {};
 	static var offsetString = "";
-	static var initializeOffset = false;
 	static var curPattern = 0;
 	static var curPatternInd = 0;
 	static var curPatternFrame = 0;
+	static var offsetSetup = [0,0,false,[]];
+	static var offsetArr = [];
+	static var offsetObj = {};
+	static var initOffsetInd = -1;
 	static var UP_PRESSED = false;
 	static var DOWN_PRESSED = false;
 	static var runBack = false;
 	static var subLetters = "rbjJPh";
 	static var fullLetters = "qweasdQWEADnp";
 	static var letters = TAS.subLetters + TAS.fullLetters;
-	static var symbols = TAS.letters + "|>,.";
+	static var symbols = TAS.letters + "|<>,.";
 	static var keysDown = {};
 	static var importantKeycodes = TAS.getImportantKeycodes();
 	function TAS()
@@ -86,7 +89,7 @@ class TAS
 	}
 	static function isKeyLetter(let)
 	{
-		return TAS.isS(let,"wasdWASDlruvLRUVb");
+		return TAS.isS(let,"wasdWASDlruvLRUVbB");
 	}
 	static function compact(num)
 	{
@@ -173,7 +176,7 @@ class TAS
 			}
 			if(TAS.importantKeycodes[code])
 			{
-				if(!TAS.keysDown[code] && TAS.write && TAS.offsetObj.hasOwnProperty(TAS.curPattern))
+				if(!TAS.keysDown[code] && TAS.write)
 				{
 					TAS.hitOffset(code);
 				}
@@ -183,6 +186,10 @@ class TAS
 	}
 	static function doKeyUp(code)
 	{
+		if(Utils.foif())
+		{
+			return undefined;
+		}
 		if(code == 38 || code == 87)
 		{
 			TAS.releasedUp = true;
@@ -194,7 +201,7 @@ class TAS
 		}
 		if(TAS.importantKeycodes[code])
 		{
-			if(TAS.write && TAS.offsetObj.hasOwnProperty(TAS.curPattern))
+			if(TAS.write)
 			{
 				TAS.hitOffset(- code);
 			}
@@ -351,7 +358,14 @@ class TAS
 		}
 		else if(code == 46)
 		{
-			TAS.truncateCurArray();
+			if(Key.isDown(16))
+			{
+				TAS.splitCurLetter();
+			}
+			else
+			{
+				TAS.truncateCurArray();
+			}
 			TAS.updateText();
 		}
 		else if(code == 82)
@@ -439,7 +453,7 @@ class TAS
 			_loc10_ = true;
 		}
 		var _loc11_ = -1;
-		var _loc12_ = [[0]];
+		var _loc12_ = [0,0,false,[]];
 		var _loc13_ = 0;
 		var _loc14_ = -1;
 		var _loc15_ = 0;
@@ -458,6 +472,8 @@ class TAS
 		var _loc24_;
 		var _loc25_;
 		var _loc26_;
+		var _loc27_;
+		var _loc28_;
 		while(_loc15_ < _loc9_.length)
 		{
 			_loc16_ = _loc9_.charAt(_loc15_);
@@ -466,39 +482,46 @@ class TAS
 			_loc19_ = _loc15_ + 1;
 			_loc20_ = 0;
 			_loc21_ = "";
+			_loc22_ = false;
 			_loc15_ = _loc15_ + 1;
+			if(_loc16_ === "<")
+			{
+				_loc23_ = Code.parseAngled(str,_loc15_);
+				_loc15_ = _loc23_[1];
+				_loc22_ = _loc23_[0];
+			}
 			while(_loc15_ < _loc9_.length)
 			{
-				_loc22_ = _loc9_.charAt(_loc15_);
+				_loc24_ = _loc9_.charAt(_loc15_);
 				if(_loc9_.charCodeAt(_loc15_) >= 48 && _loc9_.charCodeAt(_loc15_) <= 57)
 				{
 					_loc18_ = _loc18_ * 10 + _loc9_.charCodeAt(_loc15_) - 48;
 					_loc19_ = _loc15_ + 1;
 				}
-				else if(_loc16_ === "," && !_loc21_)
+				else if(_loc16_ === "." && !_loc21_)
 				{
-					if(TAS.isKeyLetter(_loc22_))
+					if(TAS.isKeyLetter(_loc24_))
 					{
-						_loc21_ = _loc22_;
+						_loc21_ = _loc24_;
 					}
-					else if(_loc22_ === ",")
+					else if(_loc24_ === ".")
 					{
 						_loc20_ += _loc18_ ? _loc18_ : 1;
 						_loc18_ = 0;
 					}
 				}
-				else if(_loc16_ === "." && _loc22_ === ".")
+				else if(_loc16_ === "," && _loc24_ === ",")
 				{
 					_loc20_ += _loc18_ ? _loc18_ : 1;
 					_loc18_ = 0;
 				}
-				else if(TAS.isSymbol(_loc22_))
+				else if(TAS.isSymbol(_loc24_))
 				{
 					break;
 				}
 				_loc15_ = _loc15_ + 1;
 			}
-			if(!TAS.isS(_loc16_,"|>r") && !_loc18_)
+			if(!TAS.isS(_loc16_,"|<>r") && !_loc18_)
 			{
 				_loc18_ = 1;
 			}
@@ -511,26 +534,23 @@ class TAS
 				caretPos -= _loc19_ - _loc17_;
 				_loc9_ = _loc9_.slice(0,_loc17_) + _loc9_.slice(_loc19_);
 			}
-			else if(_loc16_ === ">")
+			else if(TAS.isS(_loc16_,"<>"))
 			{
-				if(_loc13_ != Utils.getLast(_loc12_)[0])
-				{
-					_loc12_.push([_loc13_]);
-				}
+				_loc12_.push(_loc13_,_loc18_,_loc22_,[]);
 			}
-			else if(_loc16_ === ",")
+			else if(_loc16_ === ".")
 			{
 				if(_loc21_)
 				{
-					_loc23_ = {w:87,a:65,s:83,d:68,u:38,l:37,v:40,r:39,b:32}[_loc21_.toLowerCase()];
+					_loc25_ = {w:87,a:65,s:83,d:68,u:38,l:37,v:40,r:39,b:32}[_loc21_.toLowerCase()];
 					if(_loc21_ !== _loc21_.toLowerCase())
 					{
-						_loc23_ *= -1;
+						_loc25_ *= -1;
 					}
-					Utils.pushO(_loc12_,_loc13_,_loc23_,_loc18_);
+					Utils.pushO(_loc12_,_loc13_,_loc25_,_loc18_);
 				}
 			}
-			else if(_loc16_ === ".")
+			else if(_loc16_ === ",")
 			{
 				_loc14_ = _loc18_;
 			}
@@ -557,18 +577,18 @@ class TAS
 				{
 					if(_loc14_ !== -1)
 					{
-						_loc24_ = "n";
-						_loc25_ = _loc3_.length - 2;
-						while(_loc25_ >= 0)
+						_loc26_ = "n";
+						_loc27_ = _loc3_.length - 2;
+						while(_loc27_ >= 0)
 						{
-							if(TAS.isFullLetter(_loc3_[_loc25_]))
+							if(TAS.isFullLetter(_loc3_[_loc27_]))
 							{
-								_loc24_ = _loc3_[_loc25_];
+								_loc26_ = _loc3_[_loc27_];
 								break;
 							}
-							_loc25_ = _loc25_ - 1;
+							_loc27_ = _loc27_ - 1;
 						}
-						if(_loc24_ === "p")
+						if(_loc26_ === "p")
 						{
 							if(_loc16_ !== "p")
 							{
@@ -581,22 +601,22 @@ class TAS
 						}
 						else
 						{
-							_loc26_ = [];
-							_loc25_ = 0;
-							while(_loc25_ < 2)
+							_loc28_ = [];
+							_loc27_ = 0;
+							while(_loc27_ < 2)
 							{
-								_loc23_ = "nadwqesADWQE".indexOf([_loc24_,_loc16_][_loc25_]);
-								_loc26_.push(_loc23_ % 3 - 1,_loc23_ % 6 >= 3,_loc23_ >= 6);
-								_loc25_ = _loc25_ + 1;
+								_loc25_ = "nadwqesADWQE".indexOf([_loc26_,_loc16_][_loc27_]);
+								_loc28_.push(_loc25_ % 3 - 1,_loc25_ % 6 >= 3,_loc25_ >= 6);
+								_loc27_ = _loc27_ + 1;
 							}
-							_loc25_ = 0;
-							while(_loc25_ < 3)
+							_loc27_ = 0;
+							while(_loc27_ < 3)
 							{
-								if(_loc26_[_loc25_] !== _loc26_[3 + _loc25_])
+								if(_loc28_[_loc27_] !== _loc28_[3 + _loc27_])
 								{
-									Utils.pushO(_loc12_,_loc13_,_loc25_ ? 2 * _loc25_ + (_loc26_[3 + _loc25_] ? 1 : 0) : _loc26_[3 + _loc25_],_loc14_);
+									Utils.pushO(_loc12_,_loc13_,_loc27_ ? 2 * _loc27_ + (_loc28_[3 + _loc27_] ? 1 : 0) : _loc28_[3 + _loc27_],_loc14_);
 								}
-								_loc25_ = _loc25_ + 1;
+								_loc27_ = _loc27_ + 1;
 							}
 						}
 						_loc14_ = -1;
@@ -647,7 +667,7 @@ class TAS
 			}
 			_loc8_ = _loc4_[_loc7_];
 		}
-		return {inputArray:_loc3_,valueArray:_loc4_,indArray:_loc5_,endIndArray:_loc6_,curString:_loc9_,curIndex:_loc7_,curFrame:_loc8_,offsetArr:_loc12_};
+		return {inputArray:_loc3_,valueArray:_loc4_,indArray:_loc5_,endIndArray:_loc6_,curString:_loc9_,curIndex:_loc7_,curFrame:_loc8_,offsetSetup:_loc12_};
 	}
 	static function loadInputs(caretPos)
 	{
@@ -697,16 +717,13 @@ class TAS
 		{
 			return undefined;
 		}
-		TAS.offsetString = TAS.offsetField.text;
-		var _loc2_ = TAS.parseInputString(TAS.offsetString,-1);
+		var _loc2_ = TAS.parseInputString(TAS.offsetField.text,-1);
+		TAS.offsetField.text = _loc2_.curString;
+		TAS.offsetString = _loc2_.curString;
+		TAS.offsetSetup = _loc2_.offsetSetup;
 		TAS.offsetObj = {};
-		var _loc3_ = 0;
-		while(_loc3_ < _loc2_.offsetArr.length)
-		{
-			TAS.offsetObj[_loc2_.offsetArr[_loc3_].shift()] = _loc2_.offsetArr[_loc3_];
-			_loc3_ = _loc3_ + 1;
-		}
-		if(_loc2_.offsetArr.length > 1)
+		TAS.offsetArr = [];
+		if(TAS.offsetSetup.length > 4)
 		{
 			TAS.inputArray = _loc2_.inputArray;
 			TAS.valueArray = _loc2_.valueArray;
@@ -715,7 +732,7 @@ class TAS
 			TAS.curString = _loc2_.curString;
 			TAS.curIndex = TAS.inputArray.length - 1;
 			TAS.curFrame = TAS.valueArray[TAS.curIndex];
-			TAS.initializeOffset = true;
+			TAS.initOffsetInd = 4;
 			TAS.runBack = true;
 			_root.tt.doTween("reload");
 		}
@@ -728,9 +745,10 @@ class TAS
 	{
 		var w = Windows.clip.offsetBarsWindow.barsWindow;
 		w.text = "";
-		for(var i in TAS.offsetObj)
+		var i = 3;
+		while(i < TAS.offsetSetup.length)
 		{
-			var curP = TAS.offsetObj[i];
+			var curP = TAS.offsetSetup[i];
 			var curText = "";
 			var j = 0;
 			while(j < curP.length)
@@ -782,7 +800,8 @@ class TAS
 				curText += "\n";
 				j += 4;
 			}
-			w.text = curText + w.text;
+			w.text += curText;
+			i += 4;
 		}
 		w.text = w.text.slice(0,-1);
 	}
@@ -821,7 +840,7 @@ class TAS
 	}
 	static function hitOffset(inp)
 	{
-		var _loc2_ = TAS.offsetObj[TAS.curPattern];
+		var _loc2_ = TAS.offsetSetup[TAS.curPattern];
 		if(!_loc2_)
 		{
 			return undefined;
@@ -860,33 +879,80 @@ class TAS
 			TAS.updateOffsetBars();
 		}
 	}
+	static function updatePattern(curPatternData)
+	{
+		if(TAS.curPattern !== curPatternData[1] || TAS.curPatternFrame !== TAS.totalFrame + curPatternData[0])
+		{
+			TAS.curPattern = curPatternData[1];
+			TAS.curPatternInd = 0;
+			TAS.curPatternFrame = TAS.totalFrame + curPatternData[0];
+			TAS.clearOffsets(TAS.offsetSetup[TAS.curPattern]);
+			TAS.updateOffsetBars();
+		}
+	}
 	static function checkKeys()
 	{
 		if(TAS.neutralPlayback)
 		{
 			return undefined;
 		}
-		if(TAS.initializeOffset)
-		{
-			if(TAS.offsetObj.hasOwnProperty(TAS.totalFrame))
-			{
-				TAS.offsetObj[Utils.currentPlayerString()] = TAS.offsetObj[TAS.totalFrame];
-				delete TAS.offsetObj[TAS.totalFrame];
-			}
-		}
-		else if(TAS.offsetObj.hasOwnProperty(Utils.currentPlayerString()))
-		{
-			TAS.curPattern = Utils.currentPlayerString();
-			TAS.curPatternInd = 0;
-			TAS.curPatternFrame = TAS.totalFrame;
-			TAS.clearOffsets(TAS.offsetObj[TAS.curPattern]);
-			TAS.updateOffsetBars();
-		}
 		var _loc2_;
-		var _loc3_;
 		var _loc4_;
 		var _loc5_;
 		var _loc6_;
+		if(TAS.initOffsetInd !== -1)
+		{
+			while(TAS.initOffsetInd < TAS.offsetSetup.length && (TAS.offsetSetup[TAS.initOffsetInd] < TAS.totalFrame || !TAS.offsetSetup[TAS.initOffsetInd + 3].length))
+			{
+				TAS.initOffsetInd += 4;
+			}
+			if(TAS.initOffsetInd < TAS.offsetSetup.length && TAS.offsetSetup[TAS.initOffsetInd] - TAS.offsetSetup[TAS.initOffsetInd + 1] <= TAS.totalFrame)
+			{
+				if(TAS.offsetSetup[TAS.initOffsetInd + 2])
+				{
+					_loc2_ = {};
+					for(var _loc3_ in TAS.offsetSetup[TAS.initOffsetInd + 2])
+					{
+						_loc2_[_loc3_] = [_root.game.player[_loc3_] + TAS.offsetSetup[TAS.initOffsetInd + 2][_loc3_][0],_root.game.player[_loc3_] + TAS.offsetSetup[TAS.initOffsetInd + 2][_loc3_][1]];
+					}
+					TAS.offsetArr.push(_loc2_,TAS.offsetSetup[TAS.initOffsetInd] - TAS.totalFrame,TAS.initOffsetInd + 3);
+				}
+				else
+				{
+					TAS.offsetObj[Utils.currentPlayerString()] = [TAS.offsetSetup[TAS.initOffsetInd] - TAS.totalFrame,TAS.initOffsetInd + 3];
+				}
+			}
+		}
+		else
+		{
+			_loc4_ = TAS.offsetObj[Utils.currentPlayerString()];
+			if(_loc4_)
+			{
+				TAS.updatePattern(_loc4_);
+			}
+			else
+			{
+				_loc5_ = 0;
+				while(_loc5_ < TAS.offsetArr.length)
+				{
+					_loc6_ = false;
+					for(_loc3_ in TAS.offsetArr[_loc5_])
+					{
+						if(_root.game.player[_loc3_] < TAS.offsetArr[_loc5_][_loc3_][0] || _root.game.player[_loc3_] > TAS.offsetArr[_loc5_][_loc3_][1])
+						{
+							_loc6_ = true;
+							break;
+						}
+					}
+					if(!_loc6_)
+					{
+						TAS.updatePattern([TAS.offsetArr[_loc5_ + 1],TAS.offsetArr[_loc5_ + 2]]);
+						break;
+					}
+					_loc5_ += 3;
+				}
+			}
+		}
 		var _loc7_;
 		var _loc8_;
 		var _loc9_;
@@ -895,35 +961,39 @@ class TAS
 		var _loc12_;
 		var _loc13_;
 		var _loc14_;
+		var _loc15_;
+		var _loc16_;
+		var _loc17_;
+		var _loc18_;
 		if(TAS.write)
 		{
-			_loc2_ = -1;
-			_loc3_ = false;
-			_loc4_ = false;
+			_loc7_ = -1;
+			_loc8_ = false;
+			_loc9_ = false;
 			if(!Utils.foif())
 			{
 				if((Key.isDown(37) || Key.isDown(65)) && (Key.isDown(39) || Key.isDown(68)))
 				{
 					if(com.nitrome.toxic.Global.LAST_DIR_PRESSED == com.nitrome.toxic.Global.LEFT)
 					{
-						_loc2_ = com.nitrome.toxic.Global.LEFT;
+						_loc7_ = com.nitrome.toxic.Global.LEFT;
 					}
 					else if(com.nitrome.toxic.Global.LAST_DIR_PRESSED == com.nitrome.toxic.Global.RIGHT)
 					{
-						_loc2_ = com.nitrome.toxic.Global.RIGHT;
+						_loc7_ = com.nitrome.toxic.Global.RIGHT;
 					}
 				}
 				else if(Key.isDown(37) || Key.isDown(65))
 				{
-					_loc2_ = com.nitrome.toxic.Global.LEFT;
+					_loc7_ = com.nitrome.toxic.Global.LEFT;
 				}
 				else if(Key.isDown(39) || Key.isDown(68))
 				{
-					_loc2_ = com.nitrome.toxic.Global.RIGHT;
+					_loc7_ = com.nitrome.toxic.Global.RIGHT;
 				}
 				else
 				{
-					_loc2_ = -1;
+					_loc7_ = -1;
 				}
 				if(!Key.isDown(38) && !Key.isDown(87))
 				{
@@ -933,8 +1003,8 @@ class TAS
 				{
 					TAS.DOWN_PRESSED = false;
 				}
-				_loc3_ = TAS.UP_PRESSED;
-				_loc4_ = TAS.DOWN_PRESSED;
+				_loc8_ = TAS.UP_PRESSED;
+				_loc9_ = TAS.DOWN_PRESSED;
 			}
 			if(TAS.override)
 			{
@@ -944,64 +1014,64 @@ class TAS
 			{
 				TAS.splitCurLetter();
 			}
-			_loc5_ = TAS.curIndex === TAS.inputArray.length - 1;
-			if(!_loc5_)
+			_loc10_ = TAS.curIndex === TAS.inputArray.length - 1;
+			if(!_loc10_)
 			{
-				_loc6_ = [TAS.curIndex + 1,0];
-				_loc7_ = [TAS.curIndex + 1,0];
+				_loc11_ = [TAS.curIndex + 1,0];
+				_loc12_ = [TAS.curIndex + 1,0];
 			}
 			else
 			{
-				_loc6_ = TAS.inputArray;
-				_loc7_ = TAS.valueArray;
+				_loc11_ = TAS.inputArray;
+				_loc12_ = TAS.valueArray;
 			}
-			_loc8_ = _loc6_.length;
+			_loc13_ = _loc11_.length;
 			if(TAS.justPause)
 			{
-				_loc3_ = com.nitrome.toxic.Global.UP_PRESSED;
+				_loc8_ = com.nitrome.toxic.Global.UP_PRESSED;
 			}
 			if(!TAS.frozen && !com.nitrome.toxic.Global.can_jump)
 			{
-				if((com.nitrome.toxic.Global.UP_PRESSED && !_loc3_) !== TAS.releasedUp)
+				if((com.nitrome.toxic.Global.UP_PRESSED && !_loc8_) !== TAS.releasedUp)
 				{
 					if(TAS.releasedUp)
 					{
-						_loc6_.push("j");
+						_loc11_.push("j");
 					}
 					else
 					{
-						_loc6_.push("J");
+						_loc11_.push("J");
 					}
-					_loc7_.push(1);
+					_loc12_.push(1);
 				}
 			}
 			if(TAS.justPlacedBombs > 0)
 			{
-				_loc6_.push("b");
-				_loc7_.push(TAS.justPlacedBombs);
+				_loc11_.push("b");
+				_loc12_.push(TAS.justPlacedBombs);
 			}
 			if(TAS.pressedHit)
 			{
-				_loc6_.push("h");
-				_loc7_.push(1);
+				_loc11_.push("h");
+				_loc12_.push(1);
 			}
 			if(com.nitrome.toxic.Global.game_paused === TAS.justPause && TAS.pressedPause)
 			{
 				if(TAS.justPlacedBombs <= 0 || !TAS.justPause)
 				{
-					_loc6_.push("P");
-					_loc7_.push(1);
+					_loc11_.push("P");
+					_loc12_.push(1);
 				}
 			}
-			_loc9_ = "nadwqesADWQE".charAt(_loc2_ + 1 + int(_loc3_) * 3 + int(_loc4_) * 6);
+			_loc14_ = "nadwqesADWQE".charAt(_loc7_ + 1 + int(_loc8_) * 3 + int(_loc9_) * 6);
 			if(TAS.justPause)
 			{
-				_loc9_ = "p";
+				_loc14_ = "p";
 			}
-			_loc10_ = TAS.endIndArray[TAS.curIndex];
-			_loc11_ = TAS.curString.slice(_loc10_);
-			TAS.curString = TAS.curString.slice(0,_loc10_);
-			if(_loc6_.length === _loc8_ && _loc9_ === TAS.inputArray[TAS.curIndex])
+			_loc15_ = TAS.endIndArray[TAS.curIndex];
+			_loc16_ = TAS.curString.slice(_loc15_);
+			TAS.curString = TAS.curString.slice(0,_loc15_);
+			if(_loc11_.length === _loc13_ && _loc14_ === TAS.inputArray[TAS.curIndex])
 			{
 				TAS.valueArray[TAS.curIndex]++;
 				TAS.curString = TAS.curString.slice(0,TAS.indArray[TAS.curIndex]) + TAS.inputArray[TAS.curIndex] + TAS.valueArray[TAS.curIndex];
@@ -1009,60 +1079,61 @@ class TAS
 			}
 			else
 			{
-				_loc6_.push(_loc9_);
-				_loc7_.push(1);
-				if(!_loc5_)
+				_loc11_.push(_loc14_);
+				_loc12_.push(1);
+				if(!_loc10_)
 				{
-					TAS.inputArray.splice.apply(TAS.inputArray,_loc6_);
-					TAS.valueArray.splice.apply(TAS.valueArray,_loc7_);
+					TAS.inputArray.splice.apply(TAS.inputArray,_loc11_);
+					TAS.valueArray.splice.apply(TAS.valueArray,_loc12_);
 				}
-				if(!_loc5_)
+				if(!_loc10_)
 				{
-					_loc12_ = [TAS.curIndex + 1,0];
-					_loc13_ = [TAS.curIndex + 1,0];
+					_loc17_ = [TAS.curIndex + 1,0];
+					_loc18_ = [TAS.curIndex + 1,0];
 				}
 				else
 				{
-					_loc12_ = TAS.indArray;
-					_loc13_ = TAS.endIndArray;
+					_loc17_ = TAS.indArray;
+					_loc18_ = TAS.endIndArray;
 				}
-				_loc14_ = _loc8_;
-				while(_loc14_ < _loc6_.length)
+				_loc5_ = _loc13_;
+				while(_loc5_ < _loc11_.length)
 				{
-					_loc12_.push(TAS.curString.length);
-					TAS.curString += _loc6_[_loc14_] + TAS.compact(_loc7_[_loc14_]);
-					_loc13_.push(TAS.curString.length);
-					_loc14_ = _loc14_ + 1;
+					_loc17_.push(TAS.curString.length);
+					TAS.curString += _loc11_[_loc5_] + TAS.compact(_loc12_[_loc5_]);
+					_loc18_.push(TAS.curString.length);
+					_loc5_ = _loc5_ + 1;
 				}
-				if(!_loc5_)
+				if(!_loc10_)
 				{
-					TAS.indArray.splice.apply(TAS.indArray,_loc12_);
-					TAS.endIndArray.splice.apply(TAS.endIndArray,_loc13_);
+					TAS.indArray.splice.apply(TAS.indArray,_loc17_);
+					TAS.endIndArray.splice.apply(TAS.endIndArray,_loc18_);
 				}
 			}
-			if(!_loc5_)
+			if(!_loc10_)
 			{
-				_loc14_ = TAS.curIndex + _loc6_.length - 1;
-				while(_loc14_ < TAS.indArray.length)
+				_loc5_ = TAS.curIndex + _loc11_.length - 1;
+				while(_loc5_ < TAS.indArray.length)
 				{
-					TAS.indArray[_loc14_] += TAS.curString.length - _loc10_;
-					TAS.endIndArray[_loc14_] += TAS.curString.length - _loc10_;
-					_loc14_ = _loc14_ + 1;
+					TAS.indArray[_loc5_] += TAS.curString.length - _loc15_;
+					TAS.endIndArray[_loc5_] += TAS.curString.length - _loc15_;
+					_loc5_ = _loc5_ + 1;
 				}
 			}
-			TAS.curString += _loc11_;
+			TAS.curString += _loc16_;
 		}
-		var _loc15_ = "n";
+		var _loc19_ = "n";
 		if(TAS.isFullLetter(TAS.inputArray[TAS.curIndex]))
 		{
-			_loc15_ = TAS.inputArray[TAS.curIndex];
+			_loc19_ = TAS.inputArray[TAS.curIndex];
 		}
 		if(TAS.curFrame >= TAS.valueArray[TAS.curIndex])
 		{
 			TAS.curIndex++;
 			TAS.curFrame = 0;
 		}
-		var _loc16_ = false;
+		var _loc20_ = false;
+		TAS.bombsThrownThisFrame = 0;
 		while(TAS.isSubLetter(TAS.inputArray[TAS.curIndex]))
 		{
 			switch(TAS.inputArray[TAS.curIndex])
@@ -1073,11 +1144,12 @@ class TAS
 						_root.game.unpauseGame();
 						_root.popup_holder.hidePopUp();
 					}
-					_loc14_ = 0;
-					while(_loc14_ < TAS.valueArray[TAS.curIndex])
+					_loc5_ = 0;
+					while(_loc5_ < TAS.valueArray[TAS.curIndex])
 					{
 						_root.game.layBomb();
-						_loc14_ = _loc14_ + 1;
+						TAS.bombsThrownThisFrame++;
+						_loc5_ = _loc5_ + 1;
 					}
 					break;
 				case "r":
@@ -1087,7 +1159,7 @@ class TAS
 					com.nitrome.toxic.Global.can_jump = true;
 					break;
 				case "J":
-					_loc16_ = true;
+					_loc20_ = true;
 					break;
 				case "P":
 					_root.popup_holder.displayPopUp("game_paused");
@@ -1099,18 +1171,18 @@ class TAS
 			TAS.curIndex++;
 			TAS.curFrame = 0;
 		}
-		_loc9_ = TAS.inputArray[TAS.curIndex];
-		var _loc17_ = TAS.write && TAS.offsetObj.hasOwnProperty(TAS.curPattern) && _loc15_ !== _loc9_;
-		var _loc18_;
-		var _loc19_;
-		if(_loc9_ == "p")
+		_loc14_ = TAS.inputArray[TAS.curIndex];
+		var _loc21_ = TAS.write && _loc19_ !== _loc14_;
+		var _loc22_;
+		var _loc23_;
+		if(_loc14_ == "p")
 		{
 			if(!com.nitrome.toxic.Global.game_paused)
 			{
 				_root.popup_holder.displayPopUp("game_paused");
 				_root.game.pauseGame();
 			}
-			if(_loc17_)
+			if(_loc21_)
 			{
 				TAS.hitOffset(7);
 			}
@@ -1122,32 +1194,32 @@ class TAS
 				_root.game.unpauseGame();
 				_root.popup_holder.hidePopUp();
 			}
-			_loc18_ = "nadwqesADWQE".indexOf(_loc9_);
-			com.nitrome.toxic.Global.DIR_PRESSED = _loc18_ % 3 - 1;
-			if(com.nitrome.toxic.Global.UP_PRESSED && _loc18_ % 6 < 3 && !_loc16_)
+			_loc22_ = "nadwqesADWQE".indexOf(_loc14_);
+			com.nitrome.toxic.Global.DIR_PRESSED = _loc22_ % 3 - 1;
+			if(com.nitrome.toxic.Global.UP_PRESSED && _loc22_ % 6 < 3 && !_loc20_)
 			{
 				com.nitrome.toxic.Global.can_jump = true;
 			}
-			com.nitrome.toxic.Global.UP_PRESSED = _loc18_ % 6 >= 3;
-			com.nitrome.toxic.Global.DOWN_PRESSED = _loc18_ >= 6;
-			if(_loc17_)
+			com.nitrome.toxic.Global.UP_PRESSED = _loc22_ % 6 >= 3;
+			com.nitrome.toxic.Global.DOWN_PRESSED = _loc22_ >= 6;
+			if(_loc21_)
 			{
-				if(_loc15_ === "p")
+				if(_loc19_ === "p")
 				{
 					TAS.hitOffset(6);
 				}
 				else
 				{
-					_loc19_ = "nadwqesADWQE".indexOf(_loc15_);
-					if(_loc19_ % 3 - 1 !== com.nitrome.toxic.Global.DIR_PRESSED)
+					_loc23_ = "nadwqesADWQE".indexOf(_loc19_);
+					if(_loc23_ % 3 - 1 !== com.nitrome.toxic.Global.DIR_PRESSED)
 					{
 						TAS.hitOffset(com.nitrome.toxic.Global.DIR_PRESSED);
 					}
-					if(_loc19_ % 6 >= 3 !== com.nitrome.toxic.Global.UP_PRESSED)
+					if(_loc23_ % 6 >= 3 !== com.nitrome.toxic.Global.UP_PRESSED)
 					{
 						TAS.hitOffset(com.nitrome.toxic.Global.UP_PRESSED ? 3 : 2);
 					}
-					if(_loc19_ >= 6 !== com.nitrome.toxic.Global.DOWN_PRESSED)
+					if(_loc23_ >= 6 !== com.nitrome.toxic.Global.DOWN_PRESSED)
 					{
 						TAS.hitOffset(com.nitrome.toxic.Global.DOWN_PRESSED ? 5 : 4);
 					}
@@ -1206,7 +1278,7 @@ class TAS
 		TAS.curIndex = 0;
 		TAS.curFrame = TAS.valueArray[0];
 		TAS.fastPlayback = true;
-		TAS.curPattern = 0;
+		TAS.curPattern = 3;
 		TAS.curPatternInd = 0;
 		TAS.curPatternFrame = 0;
 		var _loc6_;
@@ -1234,14 +1306,16 @@ class TAS
 		TAS.targetIndex = -1;
 		TAS.write = _loc5_;
 		TAS.updateText();
-		if(!TAS.initializeOffset)
+		if(TAS.initOffsetInd === -1)
 		{
-			for(_loc6_ in TAS.offsetObj)
+			_loc6_ = 3;
+			while(_loc6_ < TAS.offsetSetup.length)
 			{
-				TAS.clearOffsets(TAS.offsetObj[_loc6_]);
+				TAS.clearOffsets(TAS.offsetSetup[_loc6_]);
+				_loc6_ += 4;
 			}
 		}
-		TAS.initializeOffset = false;
+		TAS.initOffsetInd = -1;
 		TAS.updateOffsetBars();
 	}
 }

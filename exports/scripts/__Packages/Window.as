@@ -6,6 +6,7 @@ class Window extends MovieClip
 	var obj;
 	var minimized = false;
 	var _static = false;
+	var scroll = 0;
 	function Window()
 	{
 		super();
@@ -23,6 +24,10 @@ class Window extends MovieClip
 	{
 		if(obj)
 		{
+			if(this.obj.title !== obj.title)
+			{
+				this.scroll = 0;
+			}
 			this.obj = obj;
 		}
 		else
@@ -42,16 +47,32 @@ class Window extends MovieClip
 		this.mainBehaviors.push(Windows.closeWindow);
 		this.mainTextField.text += "🗙";
 		var _loc3_;
+		var _loc4_;
 		if(!this.minimized && obj.options)
 		{
-			_loc3_ = 0;
-			while(_loc3_ < obj.options.length)
+			if(this.scroll > 0)
 			{
 				this.mainTextField.text += "\n";
 				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(obj.options[_loc3_ + 1]);
-				this.mainTextField.text += obj.options[_loc3_];
-				_loc3_ += 2;
+				this.mainBehaviors.push(Windows.scrollUp);
+				this.mainTextField.text += "↑";
+			}
+			_loc3_ = Math.min((this.scroll + 20 - (this.scroll > 0 ? 1 : 0)) * 2,obj.options.length);
+			_loc4_ = this.scroll * 2;
+			while(_loc4_ < _loc3_)
+			{
+				this.mainTextField.text += "\n";
+				this.mainIndices.push(this.mainTextField.text.length);
+				this.mainBehaviors.push(obj.options[_loc4_ + 1]);
+				this.mainTextField.text += obj.options[_loc4_];
+				_loc4_ += 2;
+			}
+			if(_loc3_ < obj.options.length)
+			{
+				this.mainTextField.text += "\n";
+				this.mainIndices.push(this.mainTextField.text.length);
+				this.mainBehaviors.push(Windows.scrollDown);
+				this.mainTextField.text += "↓";
 			}
 		}
 	}

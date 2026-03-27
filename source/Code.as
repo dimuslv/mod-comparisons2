@@ -34,8 +34,11 @@ class Code
 		return Code.isS(c, " \t\r\n");
 	}
 	
-	static function indOf(str1, str2) {
-		var ind = str1.indexOf(str2);
+	static function indOf(str1, str2, ind) {
+		if (!ind) {
+			ind = 0;
+		}
+		ind = str1.indexOf(str2, ind);
 		if (ind === -1) {
 			return str1.length;
 		}
@@ -49,7 +52,6 @@ class Code
 		var firstLetter = -1;
 		var lastLetter = -1;
 		
-		mainLoop:
 		for (; ind < str.length; ind++) {
 			var c = str.charAt(ind);
 			
@@ -87,6 +89,7 @@ class Code
 			
 			obj[varName] = [0, 0];
 			
+			var failed = false;
 			for (var i = 0; i < 2; i++) {
 				firstLetter = -1;
 				lastLetter = -1;
@@ -105,12 +108,14 @@ class Code
 				}
 				
 				if (ind >= str.length || firstLetter === -1) {
-					break mainLoop;
+					failed = true;
+					break;
 				}
 				
 				var num = Number(str.slice(firstLetter, lastLetter));
 				if (isNaN(num)) {
-					break mainLoop;
+					failed = true;
+					break;
 				}
 				
 				if (c === ";" && i === 0) {
@@ -121,21 +126,20 @@ class Code
 					}
 					break;
 				} else if (c === "," && i === 1) {
-					break mainLoop;
+					failed = true;
+					break;
 				} else {
 					obj[varName][i] = num;
 				}
+			}
+			if (failed) {
+				break;
 			}
 			
 			firstLetter = -1;
 		}
 		
-		ind = str.indexOf(">", ind) + 1;
-		if (ind === 0) {
-			ind = str.length;
-		}
-		
-		return [obj, ind];
+		return [obj, Code.indOf(str, ">", ind) + 1];
 	}
 	
 	//static function findOperator(c) {
@@ -388,5 +392,5 @@ class Code
 				sStart = ind;
 			}
 		}
-	}
-}*/
+	}*/
+}

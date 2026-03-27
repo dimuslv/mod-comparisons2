@@ -62,7 +62,7 @@ Push "Explosion"
 GetMember
 Not
 Not
-If loc0ac2
+If loc0abb
 Push "com"
 GetVariable
 Push "nitrome"
@@ -217,23 +217,21 @@ GetMember
 Push 60
 Add2
 SetMember
-Push register3, "img2", false, register4, "yMax"
-GetMember
-Push register4, "yMin"
-GetMember
-Subtract
-Push register4, "xMax"
-GetMember
-Push register4, "xMin"
-GetMember
-Subtract
-Push 3, "flash"
+Push register3, "img2"
+Push "Utils"
 GetVariable
-Push "display"
+Push "bmps"
 GetMember
-Push "BitmapData"
-NewMethod
+Push "Explosion"
+GetMember
 SetMember
+Push register3, "img2"
+GetMember
+Push 1, "Utils"
+GetVariable
+Push "clearBitmap"
+CallMethod
+Pop
 Push 0, "flash"
 GetVariable
 Push "geom"
@@ -295,21 +293,16 @@ GetMember
 Push 0
 Equals2
 Not
-If loc06ff
-Jump loc071b
-loc06ff:Push register1, "_name"
+If loc070c
+Jump loc0728
+loc070c:Push register1, "_name"
 GetMember
 Push 1, register1, "game"
 GetMember
 Push "findExplodeRobot"
 CallMethod
 Pop
-loc071b:Push 0, register3, "img2"
-GetMember
-Push "dispose"
-CallMethod
-Pop
-Push register3, "img2"
+loc0728:Push register3, "img2"
 Delete
 Pop
 Push register3, "img3", false, register4, "yMax"
@@ -370,16 +363,16 @@ GetMember
 Push 0
 Equals2
 Not
-If loc0886
-Jump loc08a2
-loc0886:Push register1, "_name"
+If loc087f
+Jump loc089b
+loc087f:Push register1, "_name"
 GetMember
 Push 1, register1, "game"
 GetMember
 Push "findExplodeHoloButton"
 CallMethod
 Pop
-loc08a2:Push 0, register3, "img3"
+loc089b:Push 0, register3, "img3"
 GetMember
 Push "dispose"
 CallMethod
@@ -394,7 +387,7 @@ CallMethod
 Push true
 Equals2
 Not
-If loc0a5d
+If loc0a56
 Push register3, "img4", false, register4, "yMax"
 GetMember
 Push register4, "yMin"
@@ -453,14 +446,14 @@ GetMember
 Push 0
 Equals2
 Not
-If loc0a2c
-Jump loc0a40
-loc0a2c:Push 0, register1, "game"
+If loc0a25
+Jump loc0a39
+loc0a25:Push 0, register1, "game"
 GetMember
 Push "hitFinalBoss"
 CallMethod
 Pop
-loc0a40:Push 0, register3, "img4"
+loc0a39:Push 0, register3, "img4"
 GetMember
 Push "dispose"
 CallMethod
@@ -468,7 +461,7 @@ Pop
 Push register3, "img4"
 Delete
 Pop
-loc0a5d:Push 0, register1, "game"
+loc0a56:Push 0, register1, "game"
 GetMember
 Push "checkFirstInfoPoint"
 CallMethod
@@ -494,4 +487,4 @@ Push "prototype"
 GetMember
 Push 3, "ASSetPropFlags"
 CallFunction
-loc0ac2:Pop
+loc0abb:Pop

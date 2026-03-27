@@ -90,6 +90,7 @@ class com.nitrome.toxic.BomberRobot extends MovieClip
 				}
 			}
 		}
+		Utils.markBomberRange(this._x,this._y);
 	}
 	function doExplode()
 	{

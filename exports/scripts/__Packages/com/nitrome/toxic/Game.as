@@ -405,15 +405,15 @@ class com.nitrome.toxic.Game extends MovieClip
 	}
 	function doScreenShake()
 	{
-		if(!Utils.screenshake)
-		{
-			return undefined;
-		}
 		var _loc2_;
 		if(this.screen_shake > 0)
 		{
 			this.screen_shake -= 1;
 			_loc2_ = _root._random(4) + 1;
+			if(!Utils.screenshake)
+			{
+				return undefined;
+			}
 			if(_loc2_ == 1)
 			{
 				this._x -= 3;
@@ -634,6 +634,7 @@ class com.nitrome.toxic.Game extends MovieClip
 		delete _global.img3;
 		delete _global.img4;
 		delete _global.img5;
+		Utils.onClearAll(this);
 		this.screen_shake = 0;
 		this.deg_count = 0;
 		this.last_collect_object = "";
@@ -825,8 +826,7 @@ class com.nitrome.toxic.Game extends MovieClip
 			this.bossbmp_holder.attachBitmap(_global.boss_bmp,1);
 			this.bossbmp_holder.cacheAsBitmap = true;
 		}
-		this.test_holder.createEmptyMovieClip("testPoints",this.test_holder.getNextHighestDepth());
-		this.test_holder.testPoints.attachBitmap(flash.display.BitmapData.loadBitmap("testPoints"),1);
+		Utils.onLoadLevel(this);
 		if(this.level_number != 0)
 		{
 			_root.powercell_panel.setCount(this.power_cell_memory.getTotalCollected());
@@ -1564,6 +1564,10 @@ class com.nitrome.toxic.Game extends MovieClip
 		return false;
 	}
 	function getSceneryCollision(x, y)
+	{
+		return Utils.markCollisionQuery(x,y,this.getSceneryCollisionFR);
+	}
+	function getSceneryCollisionFR(x, y)
 	{
 		var _loc5_ = _global.ground_bmp.getPixel32(x,y) >> 24 & 0xFF;
 		var _loc6_ = _global.solid_bmp.getPixel32(x,y) >> 24 & 0xFF;

@@ -1,7 +1,11 @@
 class Utils
 {
-	static var extraLayerVisibilities;
+	static var bomberRangeBitmap;
+	static var collisionQueryBitmap;
+	static var extraVisibilities;
 	static var layerVisibilities;
+	static var robotRangeBitmap;
+	static var testVisibilities;
 	static var invulnerable = false;
 	static var noDeath = false;
 	static var fullLoads = false;
@@ -18,11 +22,75 @@ class Utils
 	static var skipBeginning = true;
 	static var autoScroll = true;
 	static var screenshake = true;
-	static var visWindowArray = ["Damage",60,52,"Acid",60,52,"Object",60,52,"Bomb",31,18];
+	static var visWindowArray = ["Damage",60,52,"Acid",60,52,"Object",60,52,"Bomb",31,18,"Explosion",120,120];
 	static var bmps = {};
-	static var empty_bmp = new flash.display.BitmapData(100,100,false);
+	static var empty_bmp = new flash.display.BitmapData(200,200,false);
+	static var inputDisplayParams = {size:20,border:2,spacing:4};
 	function Utils()
 	{
+	}
+	static function init()
+	{
+		Utils.bomberRangeBitmap = new flash.display.BitmapData(499,299,true,2163588879);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(49,0,401,299),2163372556);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(149,0,201,299),2164001796);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(1,1,47,297),0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(50,1,98,297),0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(150,1,99,297),0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(250,1,99,297),0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(351,1,98,297),0);
+		Utils.bomberRangeBitmap.fillRect(new flash.geom.Rectangle(451,1,47,297),0);
+	}
+	static function onLoadLevel(game)
+	{
+		Utils.robotRangeBitmap.dispose();
+		Utils.robotRangeBitmap = new flash.display.BitmapData(com.nitrome.toxic.Global.level_width,com.nitrome.toxic.Global.level_height,true,0);
+		game.test_holder.createEmptyMovieClip("robotRanges",game.test_holder.getNextHighestDepth());
+		game.test_holder.robotRanges.attachBitmap(Utils.robotRangeBitmap,1);
+		game.test_holder.createEmptyMovieClip("testPoints",game.test_holder.getNextHighestDepth());
+		game.test_holder.testPoints.attachBitmap(flash.display.BitmapData.loadBitmap("testPoints"),1);
+		Utils.collisionQueryBitmap.dispose();
+		Utils.collisionQueryBitmap = new flash.display.BitmapData(com.nitrome.toxic.Global.level_width,com.nitrome.toxic.Global.level_height,true,0);
+		game.test_holder.createEmptyMovieClip("collisionQueries",game.test_holder.getNextHighestDepth());
+		game.test_holder.collisionQueries.attachBitmap(Utils.collisionQueryBitmap,1);
+	}
+	static function onClearAll(game)
+	{
+		for(var _loc2_ in game.test_holder)
+		{
+			game.test_holder[_loc2_].removeMovieClip();
+		}
+	}
+	static function testVisible(layer)
+	{
+		return _root.game.test_holder._visible && _root.game.test_holder[layer]._visible && !TAS.fastPlayback;
+	}
+	static function markCollisionQuery(x, y, fun)
+	{
+		var _loc4_ = fun(x,y);
+		if(Utils.testVisible("collisionQueries"))
+		{
+			Utils.collisionQueryBitmap.setPixel32(x,y,_loc4_ ? 4294914816 : 4288269567);
+		}
+		return _loc4_;
+	}
+	static function markBomberRange(x, y)
+	{
+		if(Utils.testVisible("robotRanges"))
+		{
+			Utils.robotRangeBitmap.copyPixels(Utils.bomberRangeBitmap,Utils.bomberRangeBitmap.rectangle,new flash.geom.Point(x - 249,y - 199));
+		}
+	}
+	static function clearTestBitmaps()
+	{
+		if(Utils.testVisible("collisionQueries"))
+		{
+			Utils.collisionQueryBitmap.fillRect(Utils.collisionQueryBitmap.rectangle,0);
+		}
+		if(Utils.testVisible("robotRanges"))
+		{
+			Utils.robotRangeBitmap.fillRect(Utils.robotRangeBitmap.rectangle,0);
+		}
 	}
 	static function cutsceneIn()
 	{
@@ -48,33 +116,40 @@ class Utils
 	}
 	static function levelInit()
 	{
+		var _loc2_;
 		if(!Utils.layerVisibilities)
 		{
 			Utils.layerVisibilities = {};
-			for(var _loc2_ in _root.game)
+			_loc2_ = [];
+			for(var _loc3_ in _root.game)
 			{
-				if(_loc2_.slice(-7) == "_holder")
+				if(_loc3_.slice(-7) == "_holder")
 				{
-					Utils.layerVisibilities[_loc2_] = true;
+					_loc2_.push(_loc3_);
 				}
+			}
+			for(_loc3_ in _loc2_)
+			{
+				Utils.layerVisibilities[_loc2_[_loc3_]] = true;
 			}
 			Utils.layerVisibilities.test_holder = false;
-			_root.game.test_holder._visible = false;
-			Utils.extraLayerVisibilities = {pipes:true,big_pipes:true,acid_holder:true,bomb_panel:true,health_panel:true,powercell_panel:true,text_display:true,cutscene:true,popup_holder:true};
+			Utils.testVisibilities = {testPoints:true,collisionQueries:false,robotRanges:false};
+			Utils.extraVisibilities = {pipes:true,big_pipes:true,acid_holder:true,bomb_panel:true,health_panel:true,powercell_panel:true,text_display:true,cutscene:true,popup_holder:true};
 		}
-		else
+		for(_loc3_ in _root.game)
 		{
-			for(_loc2_ in _root.game)
+			if(_loc3_.slice(-7) == "_holder")
 			{
-				if(_loc2_.slice(-7) == "_holder")
-				{
-					_root.game[_loc2_]._visible = Utils.layerVisibilities[_loc2_];
-				}
+				_root.game[_loc3_]._visible = Utils.layerVisibilities[_loc3_];
 			}
-			for(var _loc3_ in Utils.extraLayerVisibilities)
-			{
-				_root[_loc3_]._visible = Utils.extraLayerVisibilities[_loc3_];
-			}
+		}
+		for(var _loc4_ in Utils.extraVisibilities)
+		{
+			_root[_loc4_]._visible = Utils.extraVisibilities[_loc4_];
+		}
+		for(var _loc5_ in Utils.testVisibilities)
+		{
+			_root.game.test_holder[_loc5_]._visible = Utils.testVisibilities[_loc5_];
 		}
 	}
 	static function doKeyDown(code)
@@ -89,7 +164,7 @@ class Utils
 	}
 	static function mainMenu(w)
 	{
-		w.updateMainField({title:"Main menu",curWindow:Utils.mainMenu,options:["Testing vars",Utils.testingVarsWindow,"Bruteforcing",Utils.bruteforcingWindow,"Info windows",Utils.infoWindowsWindow,"Preferences",Utils.preferenceWindow,"Layer visibility",Utils.layerVisibilityWindow]});
+		w.updateMainField({title:"Main menu",curWindow:Utils.mainMenu,options:["Testing vars",Utils.testingVarsWindow,"Bruteforcing",Utils.bruteforcingWindow,"Info windows",Utils.infoWindowsWindow,"Preferences",Utils.preferenceWindow,"Layer visibility",Utils.layerVisibilityWindow,"Inspect",[Utils.inspectWindow,"_root.game"]]});
 	}
 	static function testingVarsWindow(w)
 	{
@@ -194,6 +269,7 @@ class Utils
 			_loc2_.push(Utils.visWindowArray[_loc3_] + " visualization 🗗",[Utils.activateStaticWindow,Windows.clip[Utils.visWindowArray[_loc3_] + "VisWindow"]]);
 			_loc3_ += 3;
 		}
+		_loc2_.push("Input display 🗗",[Utils.activateStaticWindow,Windows.clip.inputDisplay]);
 		_loc2_.push("Back",Utils.mainMenu);
 		w.updateMainField({title:"Info windows",curWindow:Utils.infoWindowsWindow,options:_loc2_});
 	}
@@ -201,13 +277,23 @@ class Utils
 	{
 		w2._visible = true;
 	}
+	static function clearBitmap(bmp)
+	{
+		bmp.copyPixels(Utils.empty_bmp,new flash.geom.Rectangle(0,0,bmp.width,bmp.height),Utils.zeroPoint);
+	}
+	static function imgMinimize(w)
+	{
+		w.minimized = !w.minimized;
+		w.img._visible = !w.minimized;
+		w.updateMainField(false);
+	}
 	static function updateVisBitmap(n, source_bmp)
 	{
 		var _loc3_ = Utils.bmps[n];
 		if(!TAS.fastPlayback && Windows.clip[n + "VisWindow"]._visible)
 		{
-			_loc3_.copyPixels(Utils.empty_bmp,new flash.geom.Rectangle(0,0,_loc3_.width,_loc3_.height),zeroPoint);
-			_loc3_.copyPixels(source_bmp,new flash.geom.Rectangle(0,0,source_bmp.width,source_bmp.height),zeroPoint);
+			Utils.clearBitmap(_loc3_);
+			_loc3_.copyPixels(source_bmp,new flash.geom.Rectangle(0,0,source_bmp.width,source_bmp.height),Utils.zeroPoint);
 		}
 	}
 	static function layerVisibilityWindow(w)
@@ -221,34 +307,92 @@ class Utils
 		}
 		var _loc4_ = {title:"Layer visibility",curWindow:Utils.layerVisibilityWindow,options:[]};
 		var _loc5_ = [];
-		for(_loc3_ in _root.game)
+		for(_loc3_ in Utils.layerVisibilities)
 		{
-			if(_loc3_.slice(-7) == "_holder")
-			{
-				_loc5_.push(_loc3_.slice(0,-7),Utils.layerVisibilities,_loc3_);
-			}
+			_loc5_.push(_loc3_.slice(0,-7),Utils.layerVisibilities,_loc3_);
 		}
-		_loc4_.options.push("Extra",Utils.extraLayerVisibilityWindow);
 		_loc4_.options.push("Back",Utils.mainMenu);
+		_loc4_.options.push("Extra",Utils.extraVisibilityWindow);
 		Utils.addToggleVarOptions(_loc4_.options,_loc5_);
 		w.updateMainField(_loc4_);
 	}
-	static function extraLayerVisibilityWindow(w)
+	static function extraVisibilityWindow(w)
 	{
-		for(var _loc3_ in Utils.extraLayerVisibilities)
+		for(var _loc3_ in Utils.testVisibilities)
 		{
-			_root[_loc3_]._visible = Utils.extraLayerVisibilities[_loc3_];
+			_root.game.test_holder[_loc3_]._visible = Utils.testVisibilities[_loc3_];
 		}
-		var _loc4_ = {title:"Extra layer visibility",curWindow:Utils.extraLayerVisibilityWindow,options:[]};
-		var _loc5_ = [];
-		for(_loc3_ in Utils.extraLayerVisibilities)
+		for(var _loc4_ in Utils.extraVisibilities)
 		{
-			_loc5_.push(_loc3_,Utils.extraLayerVisibilities,_loc3_);
+			_root[_loc4_]._visible = Utils.extraVisibilities[_loc4_];
 		}
-		_loc4_.options.push("Back",Utils.layerVisibilityWindow);
-		_loc4_.options.push("Mask: " + (Utils.masked ? "on" : "off"),Utils.toggleMask);
-		Utils.addToggleVarOptions(_loc4_.options,_loc5_);
-		w.updateMainField(_loc4_);
+		var _loc5_ = {title:"Extra visibility",curWindow:Utils.extraVisibilityWindow,options:[]};
+		var _loc6_ = [];
+		if(Utils.layerVisibilities.test_holder)
+		{
+			for(_loc3_ in Utils.testVisibilities)
+			{
+				_loc6_.push(_loc3_,Utils.testVisibilities,_loc3_);
+			}
+		}
+		for(_loc4_ in Utils.extraVisibilities)
+		{
+			_loc6_.push(_loc4_,Utils.extraVisibilities,_loc4_);
+		}
+		_loc5_.options.push("Back",Utils.layerVisibilityWindow);
+		_loc5_.options.push("Mask: " + (Utils.masked ? "on" : "off"),Utils.toggleMask);
+		Utils.addToggleVarOptions(_loc5_.options,_loc6_);
+		w.updateMainField(_loc5_);
+	}
+	static function inspectWindow(w, str, isProp)
+	{
+		if(str === "_root")
+		{
+			Utils.mainMenu(w);
+			return undefined;
+		}
+		var obj = {title:str.slice(str.lastIndexOf(".") + 1) + (isProp ? "" : "/"),update:[Utils.inspectWindow,str,isProp],options:["Back"]};
+		if(isProp)
+		{
+			obj.options.push([Utils.inspectWindow,str,false]);
+		}
+		else
+		{
+			obj.options.push([Utils.inspectWindow,str.slice(0,str.lastIndexOf(".")),false]);
+		}
+		var currentObj = eval(str);
+		if(currentObj)
+		{
+			if(!isProp)
+			{
+				obj.options.push("Properties",[Utils.inspectWindow,str,true]);
+			}
+			else if(typeof currentObj === "movieclip")
+			{
+				obj.options.push("_x: " + currentObj._x,false,"_y: " + currentObj._y,false,"_currentframe: " + currentObj._currentframe,false);
+			}
+			for(var i in currentObj)
+			{
+				switch(typeof currentObj[i])
+				{
+					default:
+						if(isProp)
+						{
+							obj.options.push(i + ": " + currentObj[i],false);
+						}
+						break;
+					case "object":
+					case "movieclip":
+						if(!isProp)
+						{
+							obj.options.push(i,[Utils.inspectWindow,str + "." + i]);
+						}
+						break;
+					case "function":
+				}
+			}
+		}
+		w.updateMainField(obj);
 	}
 	static function getLast(arr)
 	{
@@ -256,7 +400,7 @@ class Utils
 	}
 	static function pushO(arr, frame, inp, num)
 	{
-		Utils.getLast(arr).push(frame - Utils.getLast(arr)[0],inp,num,0);
+		Utils.getLast(arr).push(frame - arr[arr.length - 4],inp,num,0);
 	}
 	static function foif()
 	{

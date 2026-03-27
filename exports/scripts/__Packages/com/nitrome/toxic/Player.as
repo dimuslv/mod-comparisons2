@@ -250,20 +250,19 @@ class com.nitrome.toxic.Player extends MovieClip
 			_loc4_.xMax = this._x + 30;
 			_loc4_.yMin = this._y - 50;
 			_loc4_.yMax = this._y + 2;
-			_global.img = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
+			_global.img = Utils.bmps.Object;
+			Utils.clearBitmap(_global.img);
 			_loc5_ = new flash.geom.Matrix();
 			_loc5_.tx -= _loc4_.xMin;
 			_loc5_.ty -= _loc4_.yMin;
 			_global.img.draw(_root.game.object_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
 			_global.img.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
 			_loc6_ = _global.img.getColorBoundsRect(4294967295,4278255615);
-			Utils.updateVisBitmap("Object",_global.img);
 			if(_loc6_.width != 0)
 			{
 				this.game.findCollectObject();
 				this.game.findConveyor(this);
 			}
-			_global.img.dispose();
 			delete _global.img;
 		}
 	}
@@ -280,24 +279,22 @@ class com.nitrome.toxic.Player extends MovieClip
 		var _loc7_;
 		if(this.hit == false && this.hit_count == 0)
 		{
-			_global.img = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
+			_global.img = Utils.bmps.Damage;
+			Utils.clearBitmap(_global.img);
 			_global.img.draw(_root.game.danger_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
 			_global.img.draw(_root.game.explosion_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
 			_global.img.draw(_root.game.laser_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
 			_global.img.draw(_root.game.missile_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
 			_global.img.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
 			_loc7_ = _global.img.getColorBoundsRect(4294967295,4278255615);
-			Utils.updateVisBitmap("Damage",_global.img);
 			if(_loc7_.width == 0)
 			{
 				TAS.performQueuedHit();
-				_global.img.dispose();
 				delete _global.img;
 			}
 			else
 			{
 				this.startHit();
-				_global.img.dispose();
 				delete _global.img;
 			}
 		}
@@ -305,17 +302,16 @@ class com.nitrome.toxic.Player extends MovieClip
 		{
 			TAS.performQueuedHit();
 		}
-		_global.img5 = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
+		_global.img5 = Utils.bmps.Acid;
+		Utils.clearBitmap(_global.img5);
 		_global.img5.draw(_root.game.acid_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));
 		_global.img5.draw(_root.game.player_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,255,255,255),"difference");
-		Utils.updateVisBitmap("Acid",_global.img5);
 		var _loc6_ = _global.img5.getColorBoundsRect(4294967295,4278255615);
 		if(_loc6_.width != 0)
 		{
 			this.forcedGameOver();
 			this.game.doSplash(this._x,this._y + 15);
 		}
-		_global.img5.dispose();
 		delete _global.img5;
 	}
 	function checkMines()

@@ -63,12 +63,7 @@ class Windows
 		{
 			_loc3_ = Utils.visWindowArray[_loc2_];
 			w = Windows.clip.attachMovie("window",_loc3_ + "VisWindow",Windows.clip.getNextHighestDepth());
-			w.init(160 + 23 * _loc2_,7,{title:_loc3_,customMinimize:function(w)
-			{
-				w.minimized = !w.minimized;
-				w.img._visible = !w.minimized;
-				w.updateMainField(false);
-			}});
+			w.init(160 + 23 * _loc2_,7,{title:_loc3_,customMinimize:Utils.imgMinimize});
 			w.createEmptyMovieClip("img",w.getNextHighestDepth());
 			w.img._y = 20;
 			Utils.bmps[_loc3_] = new flash.display.BitmapData(Utils.visWindowArray[_loc2_ + 1],Utils.visWindowArray[_loc2_ + 2],false);
@@ -77,6 +72,51 @@ class Windows
 			w._visible = false;
 			_loc2_ += 3;
 		}
+		w = Windows.clip.attachMovie("window","inputDisplay",Windows.clip.getNextHighestDepth());
+		w.init(444,40,{title:"Input display",customMinimize:Utils.imgMinimize,update:function(w)
+		{
+			var _loc2_ = Utils.bmps.inputDisplay;
+			var _loc3_ = Utils.inputDisplayParams;
+			var _loc4_ = com.nitrome.toxic.Global;
+			Utils.clearBitmap(_loc2_);
+			var _loc5_ = 0;
+			var _loc6_;
+			var _loc7_;
+			while(_loc5_ < 4)
+			{
+				_loc6_ = _loc3_.spacing + (_loc3_.size + _loc3_.spacing) * [0,2,1,1][_loc5_];
+				_loc7_ = _loc5_ === 2 ? _loc3_.spacing : _loc3_.spacing * 2 + _loc3_.size;
+				_loc2_.fillRect(new flash.geom.Rectangle(_loc6_,_loc7_,_loc3_.size,_loc3_.size),0);
+				if(_loc5_ === 0 && _loc4_.DIR_PRESSED !== 0 || _loc5_ === 1 && _loc4_.DIR_PRESSED !== 1 || _loc5_ === 2 && !_loc4_.UP_PRESSED || _loc5_ === 3 && !_loc4_.DOWN_PRESSED)
+				{
+					_loc2_.fillRect(new flash.geom.Rectangle(_loc6_ + _loc3_.border,_loc7_ + _loc3_.border,_loc3_.size - _loc3_.border * 2,_loc3_.size - _loc3_.border * 2),16777215);
+				}
+				_loc5_ = _loc5_ + 1;
+			}
+			_loc6_ = _loc3_.spacing;
+			_loc7_ = _loc3_.size * 2 + _loc3_.spacing * 3;
+			var _loc8_ = _loc3_.size * 3 + _loc3_.spacing * 2;
+			_loc2_.fillRect(new flash.geom.Rectangle(_loc6_,_loc7_,_loc8_,_loc3_.size),0);
+			if(TAS.bombsThrownThisFrame === 0)
+			{
+				_loc2_.fillRect(new flash.geom.Rectangle(_loc6_ + _loc3_.border,_loc7_ + _loc3_.border,_loc8_ - _loc3_.border * 2,_loc3_.size - _loc3_.border * 2),16777215);
+			}
+			else
+			{
+				_loc5_ = 1;
+				while(_loc5_ < TAS.bombsThrownThisFrame)
+				{
+					_loc2_.fillRect(new flash.geom.Rectangle(_loc6_ + _loc3_.border / 2 + (_loc8_ - _loc3_.border * 2) * _loc5_ / TAS.bombsThrownThisFrame,_loc7_ + _loc3_.border,_loc3_.border,_loc3_.size - _loc3_.border * 2),16777215);
+					_loc5_ = _loc5_ + 1;
+				}
+			}
+		}});
+		w.createEmptyMovieClip("img",w.getNextHighestDepth());
+		w.img._y = 20;
+		Utils.bmps.inputDisplay = new flash.display.BitmapData(Utils.inputDisplayParams.size * 3 + Utils.inputDisplayParams.spacing * 4,Utils.inputDisplayParams.size * 3 + Utils.inputDisplayParams.spacing * 4,false);
+		w.img.attachBitmap(Utils.bmps.inputDisplay,w.img.getNextHighestDepth());
+		w._static = true;
+		w._visible = false;
 		w = Windows.clip.attachMovie("window","timerWindow",Windows.clip.getNextHighestDepth());
 		w.init(29,7,{title:"00:00.000",update:Timer.updateTimerWindow,noMinimize:true});
 		w.mainTextField.setNewTextFormat(new TextFormat("Consolas",18));
@@ -104,7 +144,7 @@ class Windows
 			if(focus.slice(0,19) == "_level0.window_clip" && focus.slice(focus.length - "mainTextField".length) == "mainTextField")
 			{
 				var w = Windows.clip[focus.slice(20,focus.length - "mainTextField".length - 1)];
-				var ind = Selection.getCaretIndex();
+				var ind = Selection.getBeginIndex();
 				var i = w.mainIndices.length - 1;
 				while(i >= 0)
 				{
@@ -112,18 +152,7 @@ class Windows
 					{
 						if(w.mainBehaviors[i])
 						{
-							if(w.mainBehaviors[i] instanceof Function)
-							{
-								w.mainBehaviors[i](w);
-								break;
-							}
-							if(w.mainBehaviors[i] instanceof Array)
-							{
-								var fun = w.mainBehaviors[i][0];
-								w.mainBehaviors[i][0] = w;
-								fun.apply(null,w.mainBehaviors[i]);
-								w.mainBehaviors[i][0] = fun;
-							}
+							Windows.windowFunction(w.mainBehaviors[i],w);
 						}
 						break;
 					}
@@ -134,10 +163,25 @@ class Windows
 		}
 		for(i in Windows.clip)
 		{
-			if(Windows.clip[i].obj.update && Windows.clip[i]._visible)
+			if(Windows.clip[i].obj.update && Windows.clip[i]._visible && !Windows.clip[i].minimized)
 			{
-				Windows.clip[i].obj.update(Windows.clip[i]);
+				Windows.windowFunction(Windows.clip[i].obj.update,Windows.clip[i]);
 			}
+		}
+	}
+	static function windowFunction(fun, w)
+	{
+		var _loc3_;
+		if(fun instanceof Function)
+		{
+			fun(w);
+		}
+		else if(fun instanceof Array)
+		{
+			_loc3_ = fun[0];
+			fun[0] = w;
+			_loc3_.apply(null,fun);
+			fun[0] = _loc3_;
 		}
 	}
 	static function nullFocus()
@@ -166,6 +210,16 @@ class Windows
 		Windows.curDragOfsX = w._x - _xmouse;
 		Windows.curDragOfsY = w._y - _ymouse;
 		Windows.nullFocus();
+	}
+	static function scrollUp(w)
+	{
+		w.scroll = Math.max(0,w.scroll - 10);
+		w.updateMainField(false);
+	}
+	static function scrollDown(w)
+	{
+		w.scroll = Math.min(w.obj.options.length / 2 - 19,w.scroll + 10);
+		w.updateMainField(false);
 	}
 	static function createWindow(x, y, obj)
 	{

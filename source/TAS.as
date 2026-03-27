@@ -177,6 +177,10 @@ class TAS
 	}
 	
 	static function doKeyUp(code) {
+		if (Utils.foif()) {
+			return;
+		}
+		
 		if (code == 38 || code == 87) {
 			TAS.releasedUp = true;
 			TAS.UP_PRESSED = false;
@@ -782,16 +786,18 @@ class TAS
 			if (curPatternData) {
 				TAS.updatePattern(curPatternData);
 			} else {
-				outer:
 				for (var i = 0; i < TAS.offsetArr.length; i += 3) {
+					var failed = false;
 					for (var prop in TAS.offsetArr[i]) {
 						if (_root.game.player[prop] < TAS.offsetArr[i][prop][0] || _root.game.player[prop] > TAS.offsetArr[i][prop][1]) {
-							continue outer;
+							failed = true;
+							break;
 						}
 					}
-					
-					TAS.updatePattern([TAS.offsetArr[i + 1], TAS.offsetArr[i + 2]]);
-					break;
+					if (!failed) {
+						TAS.updatePattern([TAS.offsetArr[i + 1], TAS.offsetArr[i + 2]]);
+						break;
+					}
 				}
 			}
 		}

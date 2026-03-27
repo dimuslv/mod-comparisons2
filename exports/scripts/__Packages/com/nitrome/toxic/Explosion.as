@@ -54,7 +54,8 @@ class com.nitrome.toxic.Explosion extends MovieClip
 		_loc4_.xMax = this._x + 60;
 		_loc4_.yMin = this._y - 60;
 		_loc4_.yMax = this._y + 60;
-		_global.img2 = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
+		_global.img2 = Utils.bmps.Explosion;
+		Utils.clearBitmap(_global.img2);
 		var _loc5_ = new flash.geom.Matrix();
 		_loc5_.tx -= _loc4_.xMin;
 		_loc5_.ty -= _loc4_.yMin;
@@ -65,7 +66,6 @@ class com.nitrome.toxic.Explosion extends MovieClip
 		{
 			this.game.findExplodeRobot(this._name);
 		}
-		_global.img2.dispose();
 		delete _global.img2;
 		_global.img3 = new flash.display.BitmapData(_loc4_.xMax - _loc4_.xMin,_loc4_.yMax - _loc4_.yMin,false);
 		_global.img3.draw(_root.game.object_holder,_loc5_,new flash.geom.ColorTransform(1,1,1,1,255,-255,-255,255));

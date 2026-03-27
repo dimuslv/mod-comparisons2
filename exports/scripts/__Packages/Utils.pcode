@@ -1,11 +1,11 @@
-ConstantPool "_global", "Utils", "prototype", "cutsceneIn", "TAS", "fastPlayback", "in", "cutscene", "gotoAndPlay", "gotoAndStop", "cutsceneOut", "out", "levelInit", "layerVisibilities", "game", "slice", "_holder", "test_holder", "_visible", "extraLayerVisibilities", "pipes", "big_pipes", "acid_holder", "bomb_panel", "health_panel", "powercell_panel", "text_display", "popup_holder", "doKeyDown", "Windows", "createEmptyWindow", "mainMenu", "title", "Main menu", "curWindow", "options", "layerVisibilityWindow", "Layer visibility", "preferenceWindow", "Preferences", "infoWindowsWindow", "Info windows", "bruteforcingWindow", "Bruteforcing", "testingVarsWindow", "Testing vars", "updateMainField", "skipBeginning", "Skip beginning", "deactivateTeleport", "Deactivate teleport", "inaccuratePhysics", "Wrong physics", "noDeath", "No death", "invulnerable", "Invulnerability", "addToggleVarOptions", "simple", "on", "off", "laserState", "Lasers", "addCycleOption", "conveyorsOn", "Conveyors", "Back", "push", "length", ": ", "toggleVar", "obj", "cycleVar", "copyCollisionData", "Copy collision data 📋", "com", "nitrome", "toxic", "Global", "level_height", "level_cols", "getSceneryCollision", "toString", "System", "setClipboard", "toggleMask", "masked", "mask", "setMask", "screenshake", "Screenshake", "autoScroll", "Auto scroll", "perf", "Perf optimizations", "visWindowArray", "clip", "VisWindow", "activateStaticWindow", " visualization 🗗", "updateVisBitmap", "bmps", "zeroPoint", "height", "width", "flash", "geom", "Rectangle", "empty_bmp", "copyPixels", "extraLayerVisibilityWindow", "Extra", "Extra layer visibility", "Mask: ", "getLast", "pushO", "foif", "Selection", "getFocus", "type", "input", "currentPlayerString", "player", "/", "fall_count", "vy", "vx", "state", "_y", "_x", "join", "fullLoads", "controlAtBeginning", "emptyStringOnExit", "closeWindowsOnExit", "Point", "Bomb", "Object", "Acid", "Damage", "display", "BitmapData", "ASSetPropFlags"
+ConstantPool "_global", "Utils", "prototype", "init", "bomberRangeBitmap", "flash", "display", "BitmapData", "geom", "Rectangle", "fillRect", "onLoadLevel", "robotRangeBitmap", "dispose", "com", "nitrome", "toxic", "Global", "level_height", "level_width", "test_holder", "getNextHighestDepth", "robotRanges", "createEmptyMovieClip", "attachBitmap", "testPoints", "loadBitmap", "collisionQueryBitmap", "collisionQueries", "onClearAll", "removeMovieClip", "testVisible", "game", "_visible", "TAS", "fastPlayback", "markCollisionQuery", "setPixel32", "markBomberRange", "Point", "rectangle", "copyPixels", "clearTestBitmaps", "cutsceneIn", "in", "cutscene", "gotoAndPlay", "gotoAndStop", "cutsceneOut", "out", "levelInit", "layerVisibilities", "slice", "_holder", "push", "testVisibilities", "extraVisibilities", "pipes", "big_pipes", "acid_holder", "bomb_panel", "health_panel", "powercell_panel", "text_display", "popup_holder", "doKeyDown", "Windows", "createEmptyWindow", "mainMenu", "title", "Main menu", "curWindow", "options", "_root.game", "inspectWindow", "Inspect", "layerVisibilityWindow", "Layer visibility", "preferenceWindow", "Preferences", "infoWindowsWindow", "Info windows", "bruteforcingWindow", "Bruteforcing", "testingVarsWindow", "Testing vars", "updateMainField", "skipBeginning", "Skip beginning", "deactivateTeleport", "Deactivate teleport", "inaccuratePhysics", "Wrong physics", "noDeath", "No death", "invulnerable", "Invulnerability", "addToggleVarOptions", "simple", "on", "off", "laserState", "Lasers", "addCycleOption", "conveyorsOn", "Conveyors", "Back", "length", ": ", "toggleVar", "obj", "cycleVar", "copyCollisionData", "Copy collision data 📋", "level_cols", "getSceneryCollision", "toString", "System", "setClipboard", "toggleMask", "masked", "mask", "setMask", "screenshake", "Screenshake", "autoScroll", "Auto scroll", "perf", "Perf optimizations", "visWindowArray", "clip", "VisWindow", "activateStaticWindow", " visualization 🗗", "inputDisplay", "Input display 🗗", "clearBitmap", "zeroPoint", "height", "width", "empty_bmp", "imgMinimize", "minimized", "img", "updateVisBitmap", "bmps", "extraVisibilityWindow", "Extra", "Extra visibility", "Mask: ", "_root", ".", "lastIndexOf", "", "/", "update", "currentObj", "Properties", "movieclip", "_currentframe: ", "_currentframe", "_y: ", "_y", "_x: ", "_x", "i", "function", "object", "getLast", "pushO", "foif", "Selection", "getFocus", "type", "input", "currentPlayerString", "player", "fall_count", "vy", "vx", "state", "join", "fullLoads", "controlAtBeginning", "emptyStringOnExit", "closeWindowsOnExit", "Explosion", "Bomb", "Object", "Acid", "Damage", "inputDisplayParams", "size", "border", "spacing", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Utils"
 GetMember
 Not
 Not
-If loc1bf9
+If loc2d50
 Push "_global"
 GetVariable
 Push "Utils"
@@ -19,13 +19,565 @@ GetMember
 StoreRegister 2
 Pop
 Push register1
+Push "init"
+DefineFunction "", 0 {
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+Push 2163588879.0
+Push true
+Push 299
+Push 499
+Push 4
+Push "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 2163372556.0
+Push 299
+Push 401
+Push 0
+Push 49
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 2164001796.0
+Push 299
+Push 201
+Push 0
+Push 149
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 0
+Push 297
+Push 47
+Push 1
+Push 1
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 0
+Push 297
+Push 98
+Push 1
+Push 50
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 0
+Push 297
+Push 99
+Push 1
+Push 150
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 0
+Push 297
+Push 99
+Push 1
+Push 250
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 0
+Push 297
+Push 98
+Push 1
+Push 351
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+Push 0
+Push 297
+Push 47
+Push 1
+Push 451
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push 2
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "onLoadLevel"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "game" {
+Push 0
+Push "Utils"
+GetVariable
+Push "robotRangeBitmap"
+GetMember
+Push "dispose"
+CallMethod
+Pop
+Push "Utils"
+GetVariable
+Push "robotRangeBitmap"
+Push 0
+Push true
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Push 4
+Push "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 0
+Push register1
+Push "test_holder"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "robotRanges"
+Push 2
+Push register1
+Push "test_holder"
+GetMember
+Push "createEmptyMovieClip"
+CallMethod
+Pop
+Push 1
+Push "Utils"
+GetVariable
+Push "robotRangeBitmap"
+GetMember
+Push 2
+Push register1
+Push "test_holder"
+GetMember
+Push "robotRanges"
+GetMember
+Push "attachBitmap"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "test_holder"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "testPoints"
+Push 2
+Push register1
+Push "test_holder"
+GetMember
+Push "createEmptyMovieClip"
+CallMethod
+Pop
+Push 1
+Push "testPoints"
+Push 1
+Push "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+GetMember
+Push "loadBitmap"
+CallMethod
+Push 2
+Push register1
+Push "test_holder"
+GetMember
+Push "testPoints"
+GetMember
+Push "attachBitmap"
+CallMethod
+Pop
+Push 0
+Push "Utils"
+GetVariable
+Push "collisionQueryBitmap"
+GetMember
+Push "dispose"
+CallMethod
+Pop
+Push "Utils"
+GetVariable
+Push "collisionQueryBitmap"
+Push 0
+Push true
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_height"
+GetMember
+Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_width"
+GetMember
+Push 4
+Push "flash"
+GetVariable
+Push "display"
+GetMember
+Push "BitmapData"
+NewMethod
+SetMember
+Push 0
+Push register1
+Push "test_holder"
+GetMember
+Push "getNextHighestDepth"
+CallMethod
+Push "collisionQueries"
+Push 2
+Push register1
+Push "test_holder"
+GetMember
+Push "createEmptyMovieClip"
+CallMethod
+Pop
+Push 1
+Push "Utils"
+GetVariable
+Push "collisionQueryBitmap"
+GetMember
+Push 2
+Push register1
+Push "test_holder"
+GetMember
+Push "collisionQueries"
+GetMember
+Push "attachBitmap"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "onClearAll"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "game" {
+Push register1
+Push "test_holder"
+GetMember
+Enumerate2
+loc0e85:StoreRegister 0
+Push null
+Equals2
+If loc0ec2
+Push register0
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "test_holder"
+GetMember
+Push register2
+GetMember
+Push "removeMovieClip"
+CallMethod
+Pop
+Jump loc0e85
+}
+loc0ec2:SetMember
+Push register1
+Push "testVisible"
+DefineFunction2 "", 1, 3, false, true, true, false, true, false, true, false, false, 2, "layer" {
+Push register1
+Push "game"
+GetMember
+Push "test_holder"
+GetMember
+Push "_visible"
+GetMember
+PushDuplicate
+Not
+If loc0f1b
+Pop
+Push register1
+Push "game"
+GetMember
+Push "test_holder"
+GetMember
+Push register2
+GetMember
+Push "_visible"
+GetMember
+loc0f1b:PushDuplicate
+Not
+If loc0f30
+Pop
+Push "TAS"
+GetVariable
+Push "fastPlayback"
+GetMember
+Not
+loc0f30:Return
+}
+SetMember
+Push register1
+Push "markCollisionQuery"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, true, false, false, 1, "x", 2, "y", 3, "fun" {
+Push register2
+Push register1
+Push 2
+Push register3
+Push undefined
+CallMethod
+StoreRegister 4
+Pop
+Push "collisionQueries"
+Push 1
+Push "Utils"
+GetVariable
+Push "testVisible"
+CallMethod
+Not
+If loc0fdf
+Push register4
+Not
+If loc0fae
+Push 4294914816.0
+Jump loc0fba
+loc0fae:Push 4288269567.0
+loc0fba:Push register2
+Push register1
+Push 3
+Push "Utils"
+GetVariable
+Push "collisionQueryBitmap"
+GetMember
+Push "setPixel32"
+CallMethod
+Pop
+loc0fdf:Push register4
+Return
+}
+SetMember
+Push register1
+Push "markBomberRange"
+DefineFunction2 "", 2, 3, false, false, true, false, true, false, true, false, false, 1, "x", 2, "y" {
+Push "robotRanges"
+Push 1
+Push "Utils"
+GetVariable
+Push "testVisible"
+CallMethod
+Not
+If loc108f
+Push register2
+Push 199
+Subtract
+Push register1
+Push 249
+Subtract
+Push 2
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Point"
+NewMethod
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push "rectangle"
+GetMember
+Push "Utils"
+GetVariable
+Push "bomberRangeBitmap"
+GetMember
+Push 3
+Push "Utils"
+GetVariable
+Push "robotRangeBitmap"
+GetMember
+Push "copyPixels"
+CallMethod
+Pop
+}
+loc108f:SetMember
+Push register1
+Push "clearTestBitmaps"
+DefineFunction "", 0 {
+Push "collisionQueries"
+Push 1
+Push "Utils"
+GetVariable
+Push "testVisible"
+CallMethod
+Not
+If loc10f6
+Push 0
+Push "Utils"
+GetVariable
+Push "collisionQueryBitmap"
+GetMember
+Push "rectangle"
+GetMember
+Push 2
+Push "Utils"
+GetVariable
+Push "collisionQueryBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+loc10f6:Push "robotRanges"
+Push 1
+Push "Utils"
+GetVariable
+Push "testVisible"
+CallMethod
+Not
+If loc114a
+Push 0
+Push "Utils"
+GetVariable
+Push "robotRangeBitmap"
+GetMember
+Push "rectangle"
+GetMember
+Push 2
+Push "Utils"
+GetVariable
+Push "robotRangeBitmap"
+GetMember
+Push "fillRect"
+CallMethod
+Pop
+}
+loc114a:SetMember
+Push register1
 Push "cutsceneIn"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
 Push "TAS"
 GetVariable
 Push "fastPlayback"
 GetMember
-If loc0683
+If loc1195
 Push "in"
 Push 1
 Push register1
@@ -34,8 +586,8 @@ GetMember
 Push "gotoAndPlay"
 CallMethod
 Pop
-Jump loc06a5
-loc0683:Push 18
+Jump loc11b7
+loc1195:Push 18
 Push 1
 Push register1
 Push "cutscene"
@@ -44,7 +596,7 @@ Push "gotoAndStop"
 CallMethod
 Pop
 }
-loc06a5:SetMember
+loc11b7:SetMember
 Push register1
 Push "cutsceneOut"
 DefineFunction2 "", 0, 2, false, true, true, false, true, false, true, false, false {
@@ -52,7 +604,7 @@ Push "TAS"
 GetVariable
 Push "fastPlayback"
 GetMember
-If loc06f0
+If loc1202
 Push "out"
 Push 1
 Push register1
@@ -61,8 +613,8 @@ GetMember
 Push "gotoAndPlay"
 CallMethod
 Pop
-Jump loc0712
-loc06f0:Push 1
+Jump loc1224
+loc1202:Push 1
 Push 1
 Push register1
 Push "cutscene"
@@ -71,67 +623,93 @@ Push "gotoAndStop"
 CallMethod
 Pop
 }
-loc0712:SetMember
+loc1224:SetMember
 Push register1
 Push "levelInit"
-DefineFunction2 "", 0, 4, false, true, true, false, true, false, true, false, false {
+DefineFunction2 "", 0, 6, false, true, true, false, true, false, true, false, false {
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
-If loc085c
+If loc13d0
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
 Push 0
 InitObject
 SetMember
+Push 0
+InitArray
+StoreRegister 2
+Pop
 Push register1
 Push "game"
 GetMember
 Enumerate2
-loc075a:StoreRegister 0
+loc127a:StoreRegister 0
 Push null
 Equals2
-If loc07b5
+If loc12d7
 Push register0
-StoreRegister 2
+StoreRegister 3
 Pop
 Push -7
 Push 1
-Push register2
+Push register3
 Push "slice"
 CallMethod
 Push "_holder"
 Equals2
 Not
-If loc07b0
+If loc12d2
+Push register3
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+loc12d2:Jump loc127a
+loc12d7:Push register2
+Enumerate2
+loc12dd:StoreRegister 0
+Push null
+Equals2
+If loc1317
+Push register0
+StoreRegister 3
+Pop
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
 Push register2
+Push register3
+GetMember
 Push true
 SetMember
-loc07b0:Jump loc075a
-loc07b5:Push "Utils"
+Jump loc12dd
+loc1317:Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
 Push "test_holder"
 Push false
 SetMember
-Push register1
-Push "game"
-GetMember
-Push "test_holder"
-GetMember
-Push "_visible"
+Push "Utils"
+GetVariable
+Push "testVisibilities"
+Push "testPoints"
+Push true
+Push "collisionQueries"
 Push false
+Push "robotRanges"
+Push false
+Push 3
+InitObject
 SetMember
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "extraVisibilities"
 Push "pipes"
 Push true
 Push "big_pipes"
@@ -153,67 +731,94 @@ Push true
 Push 9
 InitObject
 SetMember
-Jump loc0922
-loc085c:Push register1
+loc13d0:Push register1
 Push "game"
 GetMember
 Enumerate2
-loc0868:StoreRegister 0
+loc13dc:StoreRegister 0
 Push null
 Equals2
-If loc08d5
+If loc1449
 Push register0
-StoreRegister 2
+StoreRegister 3
 Pop
 Push -7
 Push 1
-Push register2
+Push register3
 Push "slice"
 CallMethod
 Push "_holder"
 Equals2
 Not
-If loc08d0
+If loc1444
 Push register1
 Push "game"
 GetMember
-Push register2
+Push register3
 GetMember
 Push "_visible"
 Push "Utils"
 GetVariable
 Push "layerVisibilities"
 GetMember
-Push register2
+Push register3
 GetMember
 SetMember
-loc08d0:Jump loc0868
-loc08d5:Push "Utils"
+loc1444:Jump loc13dc
+loc1449:Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "extraVisibilities"
 GetMember
 Enumerate2
-loc08e2:StoreRegister 0
+loc1456:StoreRegister 0
 Push null
 Equals2
-If loc0922
+If loc1496
 Push register0
-StoreRegister 3
+StoreRegister 4
 Pop
 Push register1
-Push register3
+Push register4
 GetMember
 Push "_visible"
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "extraVisibilities"
 GetMember
-Push register3
+Push register4
 GetMember
 SetMember
-Jump loc08e2
+Jump loc1456
+loc1496:Push "Utils"
+GetVariable
+Push "testVisibilities"
+GetMember
+Enumerate2
+loc14a3:StoreRegister 0
+Push null
+Equals2
+If loc14ef
+Push register0
+StoreRegister 5
+Pop
+Push register1
+Push "game"
+GetMember
+Push "test_holder"
+GetMember
+Push register5
+GetMember
+Push "_visible"
+Push "Utils"
+GetVariable
+Push "testVisibilities"
+GetMember
+Push register5
+GetMember
+SetMember
+Jump loc14a3
 }
-loc0922:SetMember
+loc14ef:SetMember
 Push register1
 Push "doKeyDown"
 DefineFunction2 "", 1, 3, false, false, true, false, true, false, true, false, false, 1, "code" {
@@ -221,7 +826,7 @@ Push register1
 Push 77
 Equals2
 Not
-If loc099b
+If loc1568
 Push 100
 Push 100
 Push 2
@@ -241,7 +846,7 @@ Pop
 Push true
 Return
 }
-loc099b:SetMember
+loc1568:SetMember
 Push register1
 Push "mainMenu"
 DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
@@ -253,6 +858,14 @@ GetVariable
 Push "mainMenu"
 GetMember
 Push "options"
+Push "_root.game"
+Push "Utils"
+GetVariable
+Push "inspectWindow"
+GetMember
+Push 2
+InitArray
+Push "Inspect"
 Push "Utils"
 GetVariable
 Push "layerVisibilityWindow"
@@ -278,7 +891,7 @@ GetVariable
 Push "testingVarsWindow"
 GetMember
 Push "Testing vars"
-Push 10
+Push 12
 InitArray
 Push 3
 InitObject
@@ -396,13 +1009,13 @@ DefineFunction2 "", 2, 7, false, false, true, false, true, false, true, false, f
 Push 0
 StoreRegister 3
 Pop
-loc0c15:Push register3
+loc1801:Push register3
 Push register2
 Push "length"
 GetMember
 Less2
 Not
-If loc0cf9
+If loc18e5
 Push register2
 Push register3
 GetMember
@@ -429,11 +1042,11 @@ Push register5
 Push register6
 GetMember
 Not
-If loc0c94
+If loc1880
 Push "on"
-Jump loc0c99
-loc0c94:Push "off"
-loc0c99:Add2
+Jump loc1885
+loc1880:Push "off"
+loc1885:Add2
 Push 1
 Push register1
 Push "push"
@@ -457,9 +1070,9 @@ Push 3
 Add2
 StoreRegister 3
 Pop
-Jump loc0c15
+Jump loc1801
 }
-loc0cf9:SetMember
+loc18e5:SetMember
 Push register1
 Push "toggleVar"
 DefineFunction2 "", 3, 4, false, false, true, false, true, false, true, false, false, 1, "w", 2, "stump", 3, "varName" {
@@ -585,7 +1198,7 @@ Pop
 Push 0
 StoreRegister 4
 Pop
-loc0f3c:Push register4
+loc1b28:Push register4
 Push "com"
 GetVariable
 Push "nitrome"
@@ -598,11 +1211,11 @@ Push "level_height"
 GetMember
 Less2
 Not
-If loc1065
+If loc1c51
 Push 0
 StoreRegister 5
 Pop
-loc0f73:Push register5
+loc1b5f:Push register5
 Push "com"
 GetVariable
 Push "nitrome"
@@ -615,18 +1228,18 @@ Push "level_cols"
 GetMember
 Less2
 Not
-If loc1055
+If loc1c41
 Push 0
 StoreRegister 6
 Pop
 Push 0
 StoreRegister 7
 Pop
-loc0fb7:Push register7
+loc1ba3:Push register7
 Push 32
 Less2
 Not
-If loc102c
+If loc1c18
 Push register4
 Push register5
 Push 32
@@ -640,7 +1253,7 @@ GetMember
 Push "getSceneryCollision"
 CallMethod
 Not
-If loc101c
+If loc1c08
 Push register6
 Push 1
 Push register7
@@ -648,12 +1261,12 @@ BitLShift
 BitOr
 StoreRegister 6
 Pop
-loc101c:Push register7
+loc1c08:Push register7
 Increment
 StoreRegister 7
 Pop
-Jump loc0fb7
-loc102c:Push register6
+Jump loc1ba3
+loc1c18:Push register6
 Push 1
 Push register3
 Push "push"
@@ -663,13 +1276,13 @@ Push register5
 Increment
 StoreRegister 5
 Pop
-Jump loc0f73
-loc1055:Push register4
+Jump loc1b5f
+loc1c41:Push register4
 Increment
 StoreRegister 4
 Pop
-Jump loc0f3c
-loc1065:Push 0
+Jump loc1b28
+loc1c51:Push 0
 Push register3
 Push "toString"
 CallMethod
@@ -698,7 +1311,7 @@ GetVariable
 Push "masked"
 GetMember
 Not
-If loc10f0
+If loc1cdc
 Push "mask"
 GetVariable
 Push 1
@@ -706,14 +1319,14 @@ Push register1
 Push "setMask"
 CallMethod
 Pop
-Jump loc1108
-loc10f0:Push null
+Jump loc1cf4
+loc1cdc:Push null
 Push 1
 Push register1
 Push "setMask"
 CallMethod
 Pop
-loc1108:Push register2
+loc1cf4:Push register2
 Push 1
 Push register2
 Push "obj"
@@ -793,7 +1406,7 @@ Pop
 Push 0
 StoreRegister 3
 Pop
-loc1248:Push register3
+loc1e34:Push register3
 Push "Utils"
 GetVariable
 Push "visWindowArray"
@@ -802,7 +1415,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc12e4
+If loc1ed0
 Push "Windows"
 GetVariable
 Push "clip"
@@ -840,8 +1453,26 @@ Push 3
 Add2
 StoreRegister 3
 Pop
-Jump loc1248
-loc12e4:Push "Utils"
+Jump loc1e34
+loc1ed0:Push "Windows"
+GetVariable
+Push "clip"
+GetMember
+Push "inputDisplay"
+GetMember
+Push "Utils"
+GetVariable
+Push "activateStaticWindow"
+GetMember
+Push 2
+InitArray
+Push "Input display 🗗"
+Push 2
+Push register2
+Push "push"
+CallMethod
+Pop
+Push "Utils"
 GetVariable
 Push "mainMenu"
 GetMember
@@ -879,6 +1510,66 @@ SetMember
 }
 SetMember
 Push register1
+Push "clearBitmap"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "bmp" {
+Push "Utils"
+GetVariable
+Push "zeroPoint"
+GetMember
+Push register1
+Push "height"
+GetMember
+Push register1
+Push "width"
+GetMember
+Push 0
+Push 0
+Push 4
+Push "flash"
+GetVariable
+Push "geom"
+GetMember
+Push "Rectangle"
+NewMethod
+Push "Utils"
+GetVariable
+Push "empty_bmp"
+GetMember
+Push 3
+Push register1
+Push "copyPixels"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "imgMinimize"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "w" {
+Push register1
+Push "minimized"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push register1
+Push "img"
+GetMember
+Push "_visible"
+Push register1
+Push "minimized"
+GetMember
+Not
+SetMember
+Push false
+Push 1
+Push register1
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
 Push "updateVisBitmap"
 DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "n", 2, "source_bmp" {
 Push "Utils"
@@ -896,7 +1587,7 @@ GetMember
 Not
 PushDuplicate
 Not
-If loc13e7
+If loc2100
 Pop
 Push "Windows"
 GetVariable
@@ -908,36 +1599,19 @@ Add2
 GetMember
 Push "_visible"
 GetMember
-loc13e7:Not
-If loc14b2
-Push "zeroPoint"
-GetVariable
+loc2100:Not
+If loc2185
 Push register3
-Push "height"
-GetMember
-Push register3
-Push "width"
-GetMember
-Push 0
-Push 0
-Push 4
-Push "flash"
-GetVariable
-Push "geom"
-GetMember
-Push "Rectangle"
-NewMethod
+Push 1
 Push "Utils"
 GetVariable
-Push "empty_bmp"
-GetMember
-Push 3
-Push register3
-Push "copyPixels"
+Push "clearBitmap"
 CallMethod
 Pop
-Push "zeroPoint"
+Push "Utils"
 GetVariable
+Push "zeroPoint"
+GetMember
 Push register2
 Push "height"
 GetMember
@@ -960,7 +1634,7 @@ Push "copyPixels"
 CallMethod
 Pop
 }
-loc14b2:SetMember
+loc2185:SetMember
 Push register1
 Push "layerVisibilityWindow"
 DefineFunction2 "", 1, 6, false, true, true, false, true, false, true, false, false, 2, "w" {
@@ -968,10 +1642,10 @@ Push register1
 Push "game"
 GetMember
 Enumerate2
-loc14d7:StoreRegister 0
+loc21aa:StoreRegister 0
 Push null
 Equals2
-If loc1544
+If loc2217
 Push register0
 StoreRegister 3
 Pop
@@ -983,7 +1657,7 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc153f
+If loc2212
 Push register1
 Push "game"
 GetMember
@@ -997,8 +1671,8 @@ GetMember
 Push register3
 GetMember
 SetMember
-loc153f:Jump loc14d7
-loc1544:Push "title"
+loc2212:Jump loc21aa
+loc2217:Push "title"
 Push "Layer visibility"
 Push "curWindow"
 Push "Utils"
@@ -1016,26 +1690,18 @@ Push 0
 InitArray
 StoreRegister 5
 Pop
-Push register1
-Push "game"
+Push "Utils"
+GetVariable
+Push "layerVisibilities"
 GetMember
 Enumerate2
-loc1595:StoreRegister 0
+loc2269:StoreRegister 0
 Push null
 Equals2
-If loc1621
+If loc22ce
 Push register0
 StoreRegister 3
 Pop
-Push -7
-Push 1
-Push register3
-Push "slice"
-CallMethod
-Push "_holder"
-Equals2
-Not
-If loc161c
 Push register3
 Push "Utils"
 GetVariable
@@ -1052,12 +1718,12 @@ Push register5
 Push "push"
 CallMethod
 Pop
-loc161c:Jump loc1595
-loc1621:Push "Utils"
+Jump loc2269
+loc22ce:Push "Utils"
 GetVariable
-Push "extraLayerVisibilityWindow"
+Push "mainMenu"
 GetMember
-Push "Extra"
+Push "Back"
 Push 2
 Push register4
 Push "options"
@@ -1067,9 +1733,9 @@ CallMethod
 Pop
 Push "Utils"
 GetVariable
-Push "mainMenu"
+Push "extraVisibilityWindow"
 GetMember
-Push "Back"
+Push "Extra"
 Push 2
 Push register4
 Push "options"
@@ -1096,81 +1762,141 @@ Pop
 }
 SetMember
 Push register1
-Push "extraLayerVisibilityWindow"
-DefineFunction2 "", 1, 6, false, true, true, false, true, false, true, false, false, 2, "w" {
+Push "extraVisibilityWindow"
+DefineFunction2 "", 1, 7, false, true, true, false, true, false, true, false, false, 2, "w" {
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "testVisibilities"
 GetMember
 Enumerate2
-loc16db:StoreRegister 0
+loc2388:StoreRegister 0
 Push null
 Equals2
-If loc171b
+If loc23d4
 Push register0
 StoreRegister 3
 Pop
 Push register1
+Push "game"
+GetMember
+Push "test_holder"
+GetMember
 Push register3
 GetMember
 Push "_visible"
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "testVisibilities"
 GetMember
 Push register3
 GetMember
 SetMember
-Jump loc16db
-loc171b:Push "title"
-Push "Extra layer visibility"
+Jump loc2388
+loc23d4:Push "Utils"
+GetVariable
+Push "extraVisibilities"
+GetMember
+Enumerate2
+loc23e1:StoreRegister 0
+Push null
+Equals2
+If loc2421
+Push register0
+StoreRegister 4
+Pop
+Push register1
+Push register4
+GetMember
+Push "_visible"
+Push "Utils"
+GetVariable
+Push "extraVisibilities"
+GetMember
+Push register4
+GetMember
+SetMember
+Jump loc23e1
+loc2421:Push "title"
+Push "Extra visibility"
 Push "curWindow"
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilityWindow"
+Push "extraVisibilityWindow"
 GetMember
 Push "options"
 Push 0
 InitArray
 Push 3
 InitObject
-StoreRegister 4
+StoreRegister 5
 Pop
 Push 0
 InitArray
-StoreRegister 5
+StoreRegister 6
 Pop
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "layerVisibilities"
+GetMember
+Push "test_holder"
+GetMember
+Not
+If loc24d2
+Push "Utils"
+GetVariable
+Push "testVisibilities"
 GetMember
 Enumerate2
-loc176d:StoreRegister 0
+loc248b:StoreRegister 0
 Push null
 Equals2
-If loc17b4
+If loc24d2
 Push register0
 StoreRegister 3
 Pop
 Push register3
 Push "Utils"
 GetVariable
-Push "extraLayerVisibilities"
+Push "testVisibilities"
 GetMember
 Push register3
 Push 3
-Push register5
+Push register6
 Push "push"
 CallMethod
 Pop
-Jump loc176d
-loc17b4:Push "Utils"
+Jump loc248b
+loc24d2:Push "Utils"
+GetVariable
+Push "extraVisibilities"
+GetMember
+Enumerate2
+loc24df:StoreRegister 0
+Push null
+Equals2
+If loc2526
+Push register0
+StoreRegister 4
+Pop
+Push register4
+Push "Utils"
+GetVariable
+Push "extraVisibilities"
+GetMember
+Push register4
+Push 3
+Push register6
+Push "push"
+CallMethod
+Pop
+Jump loc24df
+loc2526:Push "Utils"
 GetVariable
 Push "layerVisibilityWindow"
 GetMember
 Push "Back"
 Push 2
-Push register4
+Push register5
 Push "options"
 GetMember
 Push "push"
@@ -1186,20 +1912,20 @@ GetVariable
 Push "masked"
 GetMember
 Not
-If loc180c
+If loc257e
 Push "on"
-Jump loc1811
-loc180c:Push "off"
-loc1811:Add2
+Jump loc2583
+loc257e:Push "off"
+loc2583:Add2
 Push 2
-Push register4
+Push register5
 Push "options"
 GetMember
 Push "push"
 CallMethod
 Pop
+Push register6
 Push register5
-Push register4
 Push "options"
 GetMember
 Push 2
@@ -1208,9 +1934,258 @@ GetVariable
 Push "addToggleVarOptions"
 CallMethod
 Pop
-Push register4
+Push register5
 Push 1
 Push register2
+Push "updateMainField"
+CallMethod
+Pop
+}
+SetMember
+Push register1
+Push "inspectWindow"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, true, false, false, 1, "w", 2, "str", 3, "isProp" {
+Push register2
+Push "_root"
+StrictEquals
+Not
+If loc2632
+Push register1
+Push 1
+Push "Utils"
+GetVariable
+Push "mainMenu"
+CallMethod
+Pop
+Push undefined
+Return
+loc2632:Push "obj"
+Push "title"
+Push "."
+Push 1
+Push register2
+Push "lastIndexOf"
+CallMethod
+Push 1
+Add2
+Push 1
+Push register2
+Push "slice"
+CallMethod
+Push register3
+Not
+If loc2685
+Push ""
+Jump loc268a
+loc2685:Push "/"
+loc268a:Add2
+Push "update"
+Push register3
+Push register2
+Push "Utils"
+GetVariable
+Push "inspectWindow"
+GetMember
+Push 3
+InitArray
+Push "options"
+Push "Back"
+Push 1
+InitArray
+Push 3
+InitObject
+DefineLocal
+Push register3
+Not
+If loc2716
+Push false
+Push register2
+Push "Utils"
+GetVariable
+Push "inspectWindow"
+GetMember
+Push 3
+InitArray
+Push 1
+Push "obj"
+GetVariable
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+Jump loc277e
+loc2716:Push false
+Push "."
+Push 1
+Push register2
+Push "lastIndexOf"
+CallMethod
+Push 0
+Push 2
+Push register2
+Push "slice"
+CallMethod
+Push "Utils"
+GetVariable
+Push "inspectWindow"
+GetMember
+Push 3
+InitArray
+Push 1
+Push "obj"
+GetVariable
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc277e:Push "currentObj"
+Push register2
+GetVariable
+DefineLocal
+Push "currentObj"
+GetVariable
+Not
+If loc295f
+Push register3
+If loc27e4
+Push true
+Push register2
+Push "Utils"
+GetVariable
+Push "inspectWindow"
+GetMember
+Push 3
+InitArray
+Push "Properties"
+Push 2
+Push "obj"
+GetVariable
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+Jump loc2857
+loc27e4:Push "currentObj"
+GetVariable
+TypeOf
+Push "movieclip"
+StrictEquals
+Not
+If loc2857
+Push false
+Push "_currentframe: "
+Push "currentObj"
+GetVariable
+Push "_currentframe"
+GetMember
+Add2
+Push false
+Push "_y: "
+Push "currentObj"
+GetVariable
+Push "_y"
+GetMember
+Add2
+Push false
+Push "_x: "
+Push "currentObj"
+GetVariable
+Push "_x"
+GetMember
+Add2
+Push 6
+Push "obj"
+GetVariable
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc2857:Push "currentObj"
+GetVariable
+Enumerate2
+loc285e:StoreRegister 0
+Push null
+Equals2
+If loc295f
+Push "i"
+Push register0
+DefineLocal
+Push "currentObj"
+GetVariable
+Push "i"
+GetVariable
+GetMember
+TypeOf
+StoreRegister 4
+Push "function"
+StrictEquals
+If loc28b9
+Push register4
+Push "object"
+StrictEquals
+If loc28be
+Push register4
+Push "movieclip"
+StrictEquals
+If loc28be
+Jump loc2915
+loc28b9:Jump loc295a
+loc28be:Push register3
+If loc2910
+Push register2
+Push "."
+Add2
+Push "i"
+GetVariable
+Add2
+Push "Utils"
+GetVariable
+Push "inspectWindow"
+GetMember
+Push 2
+InitArray
+Push "i"
+GetVariable
+Push 2
+Push "obj"
+GetVariable
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc2910:Jump loc295a
+loc2915:Push register3
+Not
+If loc295a
+Push false
+Push "i"
+GetVariable
+Push ": "
+Add2
+Push "currentObj"
+GetVariable
+Push "i"
+GetVariable
+GetMember
+Add2
+Push 2
+Push "obj"
+GetVariable
+Push "options"
+GetMember
+Push "push"
+CallMethod
+Pop
+loc295a:Jump loc285e
+loc295f:Push "obj"
+GetVariable
+Push 1
+Push register1
 Push "updateMainField"
 CallMethod
 Pop
@@ -1237,12 +2212,11 @@ Push register4
 Push register3
 Push register2
 Push register1
-Push 1
-Push "Utils"
-GetVariable
-Push "getLast"
-CallMethod
-Push 0
+Push register1
+Push "length"
+GetMember
+Push 4
+Subtract
 GetMember
 Subtract
 Push 4
@@ -1384,6 +2358,9 @@ Push true
 SetMember
 Push register1
 Push "visWindowArray"
+Push 120
+Push 120
+Push "Explosion"
 Push 18
 Push 31
 Push "Bomb"
@@ -1396,7 +2373,7 @@ Push "Acid"
 Push 52
 Push 60
 Push "Damage"
-Push 12
+Push 15
 InitArray
 SetMember
 Push register1
@@ -1407,8 +2384,8 @@ SetMember
 Push register1
 Push "empty_bmp"
 Push false
-Push 100
-Push 100
+Push 200
+Push 200
 Push 3
 Push "flash"
 GetVariable
@@ -1416,6 +2393,17 @@ Push "display"
 GetMember
 Push "BitmapData"
 NewMethod
+SetMember
+Push register1
+Push "inputDisplayParams"
+Push "size"
+Push 20
+Push "border"
+Push 2
+Push "spacing"
+Push 4
+Push 3
+InitObject
 SetMember
 Push 1
 Push null
@@ -1428,4 +2416,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc1bf9:Pop
+loc2d50:Pop
