@@ -272,6 +272,8 @@ class Utils
 			y++;
 		}
 		
+		collisionData.push(com.nitrome.toxic.Global.level_cols);
+		
 		System.setClipboard(collisionData.toString());
 	}
 	

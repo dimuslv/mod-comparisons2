@@ -400,6 +400,8 @@ class TAS
 		
 		var commaNum = -1;
 		
+		var prevFullLetter = "n";
+		
 		var i = 0;
 		while (i < newString.length && !TAS.isSymbol(newString.charAt(i))) {
 			i++;
@@ -486,14 +488,6 @@ class TAS
 				
 				if (TAS.isFullLetter(symbol)) {
 					if (commaNum !== -1) {
-						var prevFullLetter = "n";
-						for (var j = newInputArray.length - 2; j >= 0; j--) {
-							if (TAS.isFullLetter(newInputArray[j])) {
-								prevFullLetter = newInputArray[j];
-								break;
-							}
-						}
-						
 						if (prevFullLetter === "p") {
 							if (symbol !== "p") {
 								Utils.pushO(offsetSetup, totalFrame, 6, commaNum);
@@ -517,6 +511,7 @@ class TAS
 						commaNum = -1;
 					}
 					
+					prevFullLetter = symbol;
 					totalFrame += num;
 				}
 			}

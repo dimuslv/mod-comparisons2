@@ -1,22 +1,16 @@
-- change some frame offset storage stuff maybe
-- adjustments? <x: -0.5,0.5; y: 1; wc: -2,2> <- for ranges. For specific values, probably <x=5,6> If without values, means that you ignore it ig (need to think about default ignores)
-Array of offsets;
-Make when reading
-
-Array of fillables
-[frame, length, array of starts diff, ind in array of offsets]
-
-Array of starts
-[{_x: [0, 1], _y: [-0.5, 1], wall_count: [0, 0]}, ind, offset]
-Obj of starts
-{"`3235435": [ind, offset]}
-
-
-- add pattern start on frame-perfect. Syntax: ".> ,> .<> ,<>", "*" denotes normal pattern start (not obligatory in most cases) UPDATE: instead, number after > shows how many frames before you start matching. Possible syntax: a<x:0.5>6,d
+- Collision query bitmap gets filled in initially??
+- Saving when damage was taken in a string and using that when instant reloading?
+- Ghost comparisons
+- Freeze when focus on input field
+- For specific values, probably <x=5,6>
+- Patterns can detect inputs done before it started (maybe after as well) by just saving all inputs that were done in last frames in a queue
+- add pattern start on frame-perfect?? Syntax: ".> ,> .<> ,<>", "*" denotes normal pattern start (not obligatory in most cases)
+- show var (delta) on pattern activation, or maybe as a "frame-perfect"? Second option is more expressive ig. Syntax: ?wall_count;
 - runup, oninput savestates (syntax: $10, $r, ig in the same place where the savestate is? so more like $10 |d). This should work even if the runup is in the beginning animation, although might be a bit tricky to implement.
 - true savestates. Saving needs to be quick (maybe savestates partly premade during standard gameplay) and they should hopefully take little space, loading can be a bit slow. Automatic savestate modes: on, only on non-standard gameplay, off. Also can change whether savestates are used? Automatic savestates are hidden in the string by default, you can press a hotkey to show them as "#". When saving a state, automatic savestates are saved if they are currently visible? Can add new automatic savestates by adding the symbol, if you remove it, I think it gets automatically added back in on next pass. Manual savestates are probably not used as helper savestates, except... if saving a state without helper savestates visible, in the saved state it itself counts as a helper savestate?
 - true savestates are identified by their compressed string. Can also compress a string just if you like (could be convenient for automatic reduction)
 - there are save slots and savestates. Each savestate needs to be linked to at least one save slot, otherwise gets deleted. Current gamestate is a save slot, as is every manual savestate slot.
+- Maybe true savestates load to the previous frame and then advance by one...
 - last thing ACE, probably don't need to sweat too hard as most uses would be simple. Use () for code-based pattern start
 - multiple branches for offset string??
 - default settings and keybinds. Probably a key for showing/hiding keybinds in the menus. Click on [] and you can choose a key.
