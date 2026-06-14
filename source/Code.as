@@ -1,37 +1,43 @@
 class Code
 {
-	//static var operators = ",=?:|&^!<>+-*/%~[]{}().@";
-	
-	/*static var operators = {
-		"+" : 0,
-		"-",
-		"*",
-		"/",
-		"%",
-		
-	};
-	
-	static var operatorPrecedence = [
-		11, //+ 0
-		11, //- 1
-		
-	];
-	*/
-	//"+-*/%=,|^&<>~!?:";
-	//"== || && "
-	//          cba?
+	var str;
+	var ind;
 	//https://help.adobe.com/en_US/as3/learn/WS5b3ccc516d4fbf351e63e3d118a9b90204-7fd1.html#WS5b3ccc516d4fbf351e63e3d118a9b90204-7f6c
+	
+	static var playerVars = {
+		x: "_x",
+		y: "_y",
+		vx: "vx",
+		vy: "vy",
+		wc: "wall_count",
+		fc: "fall_count",
+		st: "state"
+	};
 	
 	static function isS(sym, str) {
 		return str.indexOf(sym) !== -1;
 	}
 	
-	static function isWhiteSpaceAt(str, ind) {
-		return Code.isWhiteSpace(str.charAt(ind));
+	static function isWhitespaceAt(str, ind) {
+		return Code.isWhitespace(str.charAt(ind));
 	}
 	
-	static function isWhiteSpace(c) {
+	static function isWhitespace(c) {
 		return Code.isS(c, " \t\r\n");
+	}
+	
+	static function isDigit(c) {
+		var num = c.charCodeAt(0);
+		return num >= 48 && num <= 57;
+	}
+	
+	static function isVarStart(c) {
+		var num = c.charCodeAt(0);
+		return num >= 65 && num <= 90 || num >= 97 && num <= 122 || num === 95;
+	}
+	
+	static function isVarMiddle(c) {
+		return Code.isVarStart(c) || Code.isDigit(c);
 	}
 	
 	static function indOf(str1, str2, ind) {
@@ -55,7 +61,7 @@ class Code
 		for (; ind < str.length; ind++) {
 			var c = str.charAt(ind);
 			
-			if (Code.isWhiteSpace(c)) {
+			if (Code.isWhitespace(c)) {
 				continue;
 			}
 			
@@ -72,9 +78,9 @@ class Code
 			}
 			
 			var varName = str.slice(firstLetter, lastLetter);
-			var newName = {x: "_x", y: "_y", wc: "wall_count", fc: "fall_count", st: "state"}[varName];
-			if (newName) {
-				varName = newName;
+			
+			if (Code.playerVars.hasOwnProperty(varName)) {
+				varName = Code.playerVars[varName];
 			}
 			
 			if (_root.game.player[varName] === undefined) {
@@ -99,7 +105,7 @@ class Code
 						break;
 					}
 					
-					if (!Code.isWhiteSpace(c)) {
+					if (!Code.isWhitespace(c)) {
 						if (firstLetter === -1) {
 							firstLetter = ind;
 						}
@@ -140,6 +146,264 @@ class Code
 		}
 		
 		return [obj, Code.indOf(str, ">", ind) + 1];
+	}
+	
+	static function compile(str, ind) {
+		try {
+			return new Parser(new Code().lex(str, ind)).program();
+		} catch (err) {
+			trace(err.toString());
+		}
+		return null;
+	}
+	
+	function peek() {
+		if (this.ind >= this.str.length) {
+			return "$end";
+		}
+		return this.str.charAt(this.ind);
+	}
+	
+	function consume() {
+		if (this.ind >= this.str.length) {
+			throw new Error("Code string ended unexpectedly");
+		}
+		return this.str.charAt(this.ind++);
+	}
+	
+	function lex(str, startInd) {
+		this.str = str;
+		this.ind = startInd || 0;
+		var arr = [];
+		
+		while (true) {
+			while (Code.isWhitespace(this.peek())) {
+				this.consume();
+			}
+			
+			var tok = "";
+			var c = this.peek();
+			
+			if (c === "$end") {
+				
+				break;
+				
+			} else if (Code.isVarStart(c)) {
+				
+				tok = "$v";
+				do {
+					tok += this.consume();
+				} while (Code.isVarMiddle(this.peek()) || c === ".");
+				
+			} else if (c === ".") {
+				
+				arr.push(this.consume());
+				tok = "$p";
+				while (Code.isVarMiddle(this.peek())) {
+					tok += this.consume();
+				}
+				
+			} else if (Code.isDigit(c)) {
+			
+				tok = "$n";
+				do {
+					tok += this.consume();
+				} while (Code.isDigit(this.peek()));
+				
+				if (this.peek() === ".") {
+					do {
+						tok += this.consume();
+					} while (Code.isDigit(this.peek()));
+				}
+				
+			} else if (c === '"') {
+				
+				tok = "$s";
+				for (this.consume(); this.peek() !== '"'; this.consume()) {
+					if (this.peek() == "\\") {
+						this.consume();
+						switch (this.peek()) {
+							case "n":
+								tok += "\n";
+								break;
+							case "t":
+								tok += "\t";
+								break;
+							default:
+								tok += this.peek();
+								break;
+						}
+					} else {
+						tok += this.peek();
+					}
+				}
+				this.consume();
+				
+			} else if (Code.isS(c, "!+-*/%=&|<>^")) {
+				
+				tok += this.consume();
+				
+				if (Code.isS(c, "&|<>") && this.peek() === c) {
+					tok += this.consume();
+					if (c === ">" && this.peek() === ">") {
+						tok += this.consume();
+					}
+				}
+				
+				if (this.peek() === "=") {
+					tok += this.consume();
+					if ((c === "!" || c === "=") && this.peek() === "=") {
+						tok += this.consume();
+					}
+				} else if (this.peek() === c) {
+					if (c === "+" || c === "-") {
+						tok += this.consume();
+					} else if (c === "/") {
+						tok = "";
+						while (this.peek() !== "$end" && this.consume() !== "\n") {}
+					}
+				} else if (c === "/" && this.peek() === "*") {
+					tok = "";
+					this.consume();
+					while (true) {
+                        if (this.consume() === "*") {
+                            if (this.peek() === "/") {
+                                this.consume();
+                                break;
+                            }
+                        }
+                    }
+				}
+				
+			} else if (Code.isS(c, "()[];?:,~")) {
+				tok += this.consume();
+			} else {
+				throw new Error("Unexpected symbol " + c + " at position " + this.ind);
+			}
+			
+			if (tok) {
+				arr.push(tok);
+			}
+		}
+		
+		arr.push("$end");
+		return arr;
+	}
+	
+	static function interpret(tree) {
+		if (!(tree instanceof Array)) {
+			return tree;
+		}
+		
+		var op = tree[0];
+		
+		switch (op) {
+			case "&&":
+				return Code.interpret(tree[1]) && Code.interpret(tree[2]);
+			case "||":
+				return Code.interpret(tree[1]) || Code.interpret(tree[2]);
+			case "?":
+				return Code.interpret(tree[1]) ? Code.interpret(tree[2]) : Code.interpret(tree[3]);
+			case ",":
+				var arr = [];
+				for (var i = 1; i < tree.length; i++) {
+					arr.push(Code.interpret(tree[i]));
+				}
+				return arr;
+			case ";":
+				for (var i = 1; i < tree.length; i++) {
+					Code.interpret(tree[i]);
+				}
+				return;
+		}
+		
+		var val1 = Code.interpret(tree[1]);
+		
+		switch (op) {
+			case "!":
+				return !val1;
+			case "~":
+				return ~val1;
+			case "$":
+				return eval(val1);
+		}
+		
+		var val2 = Code.interpret(tree[2]);
+		
+		switch (op) {
+			case "|":
+				return val1 | val2;
+			case "^":
+				return val1 ^ val2;
+			case "&":
+				return val1 & val2;
+			case "==":
+				return val1 == val2;
+			case "!=":
+				return val1 != val2;
+			case "===":
+				return val1 === val2;
+			case "!==":
+				return val1 !== val2;
+			case "<":
+				return val1 < val2;
+			case ">":
+				return val1 > val2;
+			case "<=":
+				return val1 <= val2;
+			case ">=":
+				return val1 >= val2;
+			case "<<":
+				return val1 << val2;
+			case ">>":
+				return val1 >> val2;
+			case ">>>":
+				return val1 >>> val2;
+			case "+":
+				return val1 + val2;
+			case "-":
+				return val1 - val2;
+			case "*":
+				return val1 * val2;
+			case "/":
+				return val1 / val2;
+			case "%":
+				return val1 % val2;
+			case ".":
+				return val1[val2];
+			case "(":
+				return val1.apply(null, val2);
+			case "$=":
+				if (tree.length === 4) {
+					if (tree[3] === "++" || tree[3] === "--") {
+						val2 = eval(val1);
+						set(val1, val2 + (tree[3] === "++"? 1 : -1));
+						return val2;
+					} else {
+						val2 = Code.interpret([tree[3], eval(val1), val2]);
+					}
+				}
+				set(val1, val2);
+				return val1;
+		}
+		
+		var val3 = Code.interpret(tree[3]);
+		
+		switch (op) {
+			case "=":
+				if (tree.length === 5) {
+					if (tree[4] === "++" || tree[4] === "--") {
+						val3 = val1[val2];
+						val1[val2] = val3 + (tree[4] === "++"? 1 : -1);
+						return val3;
+					} else {
+						val3 = Code.interpret([tree[4], val1[val2], val3]);
+					}
+				}
+				return val1[val2] = val3;
+		}
+		
+		throw new Error("Unknown operation: " + op);
 	}
 	
 	//static function findOperator(c) {
@@ -241,7 +505,7 @@ class Code
 		
 		for (var ind = start; true; ind++) {
 			var c = str.charAt(ind);
-			if (Code.isWhiteSpace(c)) {
+			if (Code.isWhitespace(c)) {
 				if (nStart != -1) {
 					var curN = str.slice(nStart, ind);
 					nStart = -1;
@@ -325,7 +589,7 @@ class Code
 		for (var ind = start; ind <= end; ind++) {
 			var c = str.charAt(ind);
 			var op = Code.getOp(c);
-			var isW = Code.isWhiteSpace(c);
+			var isW = Code.isWhitespace(c);
 			if (isW) {
 				spaceBetween = true;
 			}
