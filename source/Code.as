@@ -2,6 +2,7 @@ class Code
 {
 	var str;
 	var ind;
+	var endInd;
 	//https://help.adobe.com/en_US/as3/learn/WS5b3ccc516d4fbf351e63e3d118a9b90204-7fd1.html#WS5b3ccc516d4fbf351e63e3d118a9b90204-7f6c
 	
 	static var playerVars = {
@@ -84,7 +85,7 @@ class Code
 			}
 			
 			if (_root.game.player[varName] === undefined) {
-				break;
+				throw new CompilerError("'" varName + "' is not a player variable name", firstLetter);
 			}
 			
 			if (c === ";") {
@@ -95,10 +96,11 @@ class Code
 			
 			obj[varName] = [0, 0];
 			
-			var failed = false;
 			for (var i = 0; i < 2; i++) {
 				firstLetter = -1;
 				lastLetter = -1;
+				var curStart = ind;
+				
 				for (ind++; ind < str.length; ind++) {
 					c = str.charAt(ind)
 					if (Code.isS(c, ",;")) {
@@ -113,15 +115,15 @@ class Code
 					}
 				}
 				
-				if (ind >= str.length || firstLetter === -1) {
-					failed = true;
-					break;
+				if (ind >= str.length) {
+					throw new CompilerError("Closing symbol not found", curStart);
+				} else if (firstLetter === -1) {
+					throw new CompilerError("Number not found", ind);
 				}
 				
 				var num = Number(str.slice(firstLetter, lastLetter));
 				if (isNaN(num)) {
-					failed = true;
-					break;
+					throw new CompilerError("'" + str.slice(firstLetter, lastLetter) + "' is not a number", firstLetter);
 				}
 				
 				if (c === ";" && i === 0) {
@@ -132,48 +134,40 @@ class Code
 					}
 					break;
 				} else if (c === "," && i === 1) {
-					failed = true;
-					break;
+					throw new CompilerError("Expected ';', found ','", ind);
 				} else {
 					obj[varName][i] = num;
 				}
-			}
-			if (failed) {
-				break;
 			}
 			
 			firstLetter = -1;
 		}
 		
-		return [obj, Code.indOf(str, ">", ind) + 1];
+		return [obj, ind + 1];
 	}
 	
-	static function compile(str, ind) {
-		try {
-			return new Parser(new Code().lex(str, ind)).program();
-		} catch (err) {
-			trace("Compilation error: " + err.toString());
-		}
-		return null;
+	static function compile(str, startInd, endInd) {
+		return new Parser(new Code().lex(str, startInd, endInd)).program();
 	}
 	
 	function peek() {
-		if (this.ind >= this.str.length) {
+		if (this.ind >= this.endInd) {
 			return "$end";
 		}
 		return this.str.charAt(this.ind);
 	}
 	
 	function consume() {
-		if (this.ind >= this.str.length) {
-			throw new Error("Code string ended unexpectedly");
+		if (this.ind >= this.endInd) {
+			throw new CompilerError("Code string ended unexpectedly", this.endInd - 1);
 		}
 		return this.str.charAt(this.ind++);
 	}
 	
-	function lex(str, startInd) {
+	function lex(str, startInd, endInd) {
 		this.str = str;
 		this.ind = startInd || 0;
+		this.endInd = endInd || str.length;
 		var arr = [];
 		
 		while (true) {
@@ -183,6 +177,7 @@ class Code
 			
 			var tok = "";
 			var c = this.peek();
+			var pos = this.ind;
 			
 			if (c === "$end") {
 				
@@ -197,7 +192,7 @@ class Code
 				
 			} else if (c === ".") {
 				
-				arr.push(this.consume());
+				arr.push(this.consume(), pos);
 				tok = "$p";
 				while (Code.isVarMiddle(this.peek())) {
 					tok += this.consume();
@@ -278,15 +273,15 @@ class Code
 			} else if (Code.isS(c, "()[];?:,~")) {
 				tok += this.consume();
 			} else {
-				throw new Error("Unexpected symbol " + c + " at position " + this.ind);
+				throw new CompilerError("Unexpected symbol " + c, this.ind);
 			}
 			
 			if (tok) {
-				arr.push(tok);
+				arr.push(tok, pos);
 			}
 		}
 		
-		arr.push("$end");
+		arr.push("$end", this.ind);
 		return arr;
 	}
 	
@@ -428,7 +423,7 @@ class Code
 			}
 			
 			if (nextCloseInd === nextQuoteInd) {
-				return str.length;
+				throw new CompilerError("Closing parenthesis not found", ind);
 			}
 			
 			if (nextCloseInd < nextQuoteInd) {
@@ -445,7 +440,7 @@ class Code
 			while (true) {
 				ind2 = str.indexOf(q, ind2);
 				if (ind2 === -1) {
-					return str.length;
+					throw new CompilerError("Closing quote not found", ind);
 				}
 				var slashStart = ind2 - 1;
 				while (str.charAt(slashStart) === "\\") {

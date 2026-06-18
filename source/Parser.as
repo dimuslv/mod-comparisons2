@@ -26,7 +26,7 @@ class Parser {
 		if (tok === ".") {
 			return "=";
 		}
-		throw new Error("Unexpected operation " + tok + " before assignment");
+		throw new CompilerError("Unexpected operation " + tok + " before assignment", this.pos());
 	}
 	
 	static function isOp(op, ops) {
@@ -49,7 +49,11 @@ class Parser {
 	}
 	
 	function wrongTokenError() {
-		throw new Error("Unexpected token: " + this.peek());
+		throw new CompilerError("Unexpected token: " + this.peek(), this.pos());
+	}
+	
+	function pos() {
+		return this.arr[this.ind + 1];
 	}
 	
 	function peek() {
@@ -60,11 +64,13 @@ class Parser {
 		if (this.peek() !== token) {
 			wrongTokenError();
 		}
-		this.ind++;
+		this.consume();
 	}
 	
 	function consume() {
-		return this.arr[this.ind++];
+		var v = this.peek();
+		this.ind += 2;
+		return v;
 	}
 	
 	function program() {

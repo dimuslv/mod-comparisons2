@@ -44,25 +44,36 @@ class Window extends MovieClip
 		this.mainBehaviors.push(Windows.closeWindow);
 		this.mainTextField.text += "🗙";
 		
-		if (!this.minimized && obj.options) {
-			if (this.scroll > 0) {
-				this.mainTextField.text += "\n";
-				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(Windows.scrollUp);
-				this.mainTextField.text += "↑";
+		if (!this.minimized) {
+			if (obj.headerOptions) {
+				for (var i = 0; i < obj.headerOptions.length; i += 2) {
+					this.mainTextField.text += " ";
+					this.mainIndices.push(this.mainTextField.text.length);
+					this.mainBehaviors.push(obj.headerOptions[i+1]);
+					this.mainTextField.text += obj.headerOptions[i];
+				}
 			}
-			var end = Math.min((this.scroll + 20 - (this.scroll > 0? 1 : 0)) * 2, obj.options.length);
-			for (var i = this.scroll * 2; i < end; i += 2) {
-				this.mainTextField.text += "\n";
-				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(obj.options[i+1]);
-				this.mainTextField.text += obj.options[i];
-			}
-			if (end < obj.options.length) {
-				this.mainTextField.text += "\n";
-				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(Windows.scrollDown);
-				this.mainTextField.text += "↓";
+			
+			if (obj.options) {
+				if (this.scroll > 0) {
+					this.mainTextField.text += "\n";
+					this.mainIndices.push(this.mainTextField.text.length);
+					this.mainBehaviors.push(Windows.scrollUp);
+					this.mainTextField.text += "↑";
+				}
+				var end = Math.min((this.scroll + 20 - (this.scroll > 0? 1 : 0)) * 2, obj.options.length);
+				for (var i = this.scroll * 2; i < end; i += 2) {
+					this.mainTextField.text += "\n";
+					this.mainIndices.push(this.mainTextField.text.length);
+					this.mainBehaviors.push(obj.options[i+1]);
+					this.mainTextField.text += obj.options[i];
+				}
+				if (end < obj.options.length) {
+					this.mainTextField.text += "\n";
+					this.mainIndices.push(this.mainTextField.text.length);
+					this.mainBehaviors.push(Windows.scrollDown);
+					this.mainTextField.text += "↓";
+				}
 			}
 		}
 	}
