@@ -30,51 +30,49 @@ class Window extends MovieClip
 			obj = this.obj;
 		}
 		
-		this.mainIndices = [0];
-		this.mainBehaviors = [Windows.startDragging];
-		this.mainTextField.text = obj.title + " ";
+		this.mainIndices = [];
+		this.mainBehaviors = [];
+		this.mainTextField.text = "";
+		
+		this.addOption(obj.title + " ", Windows.startDragging);
 		
 		if (!obj.noMinimize) {
-			this.mainIndices.push(this.mainTextField.text.length);
-			this.mainBehaviors.push(obj.customMinimize? obj.customMinimize : Windows.minimizeWindow);
-			this.mainTextField.text += (this.minimized? "🗖 " : "🗕 ");
+			this.addOption(this.minimized? "🗖 " : "🗕 ", obj.customMinimize? obj.customMinimize : Windows.minimizeWindow);
 		}
 		
-		this.mainIndices.push(this.mainTextField.text.length);
-		this.mainBehaviors.push(Windows.closeWindow);
-		this.mainTextField.text += "🗙";
+		this.addOption("🗙", Windows.closeWindow);
 		
 		if (!this.minimized) {
 			if (obj.headerOptions) {
 				for (var i = 0; i < obj.headerOptions.length; i += 2) {
-					this.mainTextField.text += " ";
-					this.mainIndices.push(this.mainTextField.text.length);
-					this.mainBehaviors.push(obj.headerOptions[i+1]);
-					this.mainTextField.text += obj.headerOptions[i];
+					this.addOption(obj.headerOptions[i], obj.headerOptions[i+1], " ");
 				}
 			}
 			
 			if (obj.options) {
 				if (this.scroll > 0) {
-					this.mainTextField.text += "\n";
-					this.mainIndices.push(this.mainTextField.text.length);
-					this.mainBehaviors.push(Windows.scrollUp);
-					this.mainTextField.text += "↑";
+					this.addOption("↑", Windows.scrollUp, "\n");
 				}
+				
 				var end = Math.min((this.scroll + 20 - (this.scroll > 0? 1 : 0)) * 2, obj.options.length);
+				
 				for (var i = this.scroll * 2; i < end; i += 2) {
-					this.mainTextField.text += "\n";
-					this.mainIndices.push(this.mainTextField.text.length);
-					this.mainBehaviors.push(obj.options[i+1]);
-					this.mainTextField.text += obj.options[i];
+					this.addOption(obj.options[i], obj.options[i+1], "\n");
 				}
+				
 				if (end < obj.options.length) {
-					this.mainTextField.text += "\n";
-					this.mainIndices.push(this.mainTextField.text.length);
-					this.mainBehaviors.push(Windows.scrollDown);
-					this.mainTextField.text += "↓";
+					this.addOption("↓", Windows.scrollDown, "\n");
 				}
 			}
 		}
+	}
+	
+	function addOption(name, func, before) {
+		if (before) {
+			this.mainTextField.text += before;
+		}
+		this.mainIndices.push(this.mainTextField.text.length);
+		this.mainBehaviors.push(func);
+		this.mainTextField.text += name;
 	}
 }
