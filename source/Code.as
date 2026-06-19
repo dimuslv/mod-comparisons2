@@ -85,7 +85,7 @@ class Code
 			}
 			
 			if (_root.game.player[varName] === undefined) {
-				throw new CompilerError("'" varName + "' is not a player variable name", firstLetter);
+				throw new CompilerError("'" + varName + "' is not a player variable name", firstLetter);
 			}
 			
 			if (c === ";") {
@@ -147,7 +147,9 @@ class Code
 	}
 	
 	static function compile(str, startInd, endInd) {
-		return new Parser(new Code().lex(str, startInd, endInd)).program();
+		var r = new Parser(new Code().lex(str, startInd, endInd)).program();
+		trace(r);
+		return r;
 	}
 	
 	function peek() {
@@ -188,15 +190,7 @@ class Code
 				tok = "$v";
 				do {
 					tok += this.consume();
-				} while (Code.isVarMiddle(this.peek()) || c === ".");
-				
-			} else if (c === ".") {
-				
-				arr.push(this.consume(), pos);
-				tok = "$p";
-				while (Code.isVarMiddle(this.peek())) {
-					tok += this.consume();
-				}
+				} while (Code.isVarMiddle(this.peek()));
 				
 			} else if (Code.isDigit(c)) {
 			
@@ -236,7 +230,7 @@ class Code
 				
 			} else if (Code.isS(c, "!+-*/%=&|<>^")) {
 				
-				tok += this.consume();
+				tok = this.consume();
 				
 				if (Code.isS(c, "&|<>") && this.peek() === c) {
 					tok += this.consume();
@@ -271,7 +265,17 @@ class Code
 				}
 				
 			} else if (Code.isS(c, "()[];?:,~")) {
-				tok += this.consume();
+				
+				tok = this.consume();
+				
+			} else if (c === ".") {
+				
+				tok = this.consume();
+				if (Code.isWhitespace(this.peek())) {
+					tok += " ";
+					this.consume();
+				}
+				
 			} else {
 				throw new CompilerError("Unexpected symbol " + c, this.ind);
 			}
@@ -320,7 +324,20 @@ class Code
 			case "~":
 				return ~val1;
 			case "$":
-				return eval(val1);
+				var r = eval(val1);
+				
+				if (r === undefined) {
+					var arr = val1.split(".");
+					r = eval(arr[0]);
+					
+					for (var i = 1; i < arr.length && r; i++) {
+						r = r[arr[i]];
+					}
+				}
+				return r;
+			case "trace":
+				trace(val1);
+				return;
 		}
 		
 		var val2 = Code.interpret(tree[2]);
@@ -379,7 +396,7 @@ class Code
 					}
 				}
 				set(val1, val2);
-				return val1;
+				return val2;
 		}
 		
 		var val3 = Code.interpret(tree[3]);
@@ -396,6 +413,8 @@ class Code
 					}
 				}
 				return val1[val2] = val3;
+			case ".(":
+				return val1[val2].apply(val1, val3);
 		}
 		
 		throw new Error("Unknown operation: " + op);

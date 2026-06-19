@@ -19,14 +19,17 @@ class Parser {
 		return str === "=" || str !== ">=" && str !== "<=" && !Code.isS(str.charAt(0), "$!=") && str.charAt(str.length - 1) === "=";
 	}
 	
-	static function getToSetToken(tok) {
+	function getToSetToken(tok) {
 		if (tok === "$") {
 			return "$=";
 		}
 		if (tok === ".") {
 			return "=";
 		}
-		throw new CompilerError("Unexpected operation " + tok + " before assignment", this.pos());
+		if (tok === undefined) {
+			throw new CompilerError("Unexpected literal before assignment", this.pos());
+		}
+		throw new CompilerError("Unexpected operation '" + tok + "' before assignment", this.pos());
 	}
 	
 	static function isOp(op, ops) {
@@ -62,7 +65,7 @@ class Parser {
 	
 	function match(token) {
 		if (this.peek() !== token) {
-			wrongTokenError();
+			this.wrongTokenError();
 		}
 		this.consume();
 	}
@@ -111,7 +114,7 @@ class Parser {
 	function assignment() {
 		var a = this.conditional();
 		if (Parser.isAssignmentToken(this.peek())) {
-			a[0] = Parser.getToSetToken(a[0]);
+			a[0] = this.getToSetToken(a[0]);
 			var op = this.consume().slice(0, -1);
 			a.push(this.assignment());
 			if (op) {
@@ -124,7 +127,8 @@ class Parser {
 	function leftAssocOp(ops, next) {
 		var a = this[next]();
 		while (Parser.isOp(this.peek(), ops)) {
-			a = [this.consume(), a, this[next]()];
+			a = [this.consume(), a];
+			a.push(this[next]());
 		}
 		return a;
 	}
@@ -132,7 +136,8 @@ class Parser {
 	function rightAssocOp(ops, next) {
 		var a = this[next]();
 		if (Parser.isOp(this.peek(), ops)) {
-			a = [this.consume(), a, rightAssocOp(ops, next)];
+			a = [this.consume(), a];
+			a.push(rightAssocOp(ops, next));
 		}
 		return a;
 	}
@@ -140,7 +145,8 @@ class Parser {
 	function conditional() {
 		var a = this.logOr();
 		if (this.peek() === "?") {
-			a = [this.consume(), a, this.conditional()];
+			a = [this.consume(), a];
+			a.push(this.conditional());
 			this.match(":");
 			a.push(this.conditional());
 		}
@@ -148,69 +154,74 @@ class Parser {
 	}
 	
 	function logOr() {
-		return rightAssocOp(["||"], "logAnd");
+		return this.rightAssocOp(["||"], "logAnd");
 	}
 	
 	function logAnd() {
-		return rightAssocOp(["&&"], "bitOr");
+		return this.rightAssocOp(["&&"], "bitOr");
 	}
 	
 	function bitOr() {
-		return leftAssocOp("|", "bitXor");
+		return this.leftAssocOp("|", "bitXor");
 	}
 	
 	function bitXor() {
-		return leftAssocOp("^", "bitAnd");
+		return this.leftAssocOp("^", "bitAnd");
 	}
 	
 	function bitAnd() {
-		return leftAssocOp("&", "equality");
+		return this.leftAssocOp("&", "equality");
 	}
 	
 	function equality() {
-		return leftAssocOp(["==", "!=", "===", "!=="], "relational");
+		return this.leftAssocOp(["==", "!=", "===", "!=="], "relational");
 	}
 	
 	function relational() {
-		return leftAssocOp(["<", ">", "<=", ">="], "bitShift");
+		return this.leftAssocOp(["<", ">", "<=", ">="], "bitShift");
 	}
 	
 	function bitShift() {
-		return leftAssocOp(["<<", ">>", ">>>"], "sum");
+		return this.leftAssocOp(["<<", ">>", ">>>"], "sum");
 	}
 	
 	function sum() {
-		return leftAssocOp("+-", "product");
+		return this.leftAssocOp("+-", "product");
 	}
 	
 	function product() {
-		return leftAssocOp("*/%", "unary");
+		return this.leftAssocOp("*/%", "unary");
 	}
 	
 	function unary() {
+		var a;
+		
 		switch (this.peek()) {
 			case "+":
 				this.consume();
 				return this.unary();
 			case "-":
-				return [this.consume(), 0, this.unary()];
+				this.consume();
+				return ["-", 0, this.unary()];
 			case "!":
 			case "~":
-				return [this.consume(), this.unary()];
+				a = [this.consume()];
+				a.push(this.unary());
+				return a;
 			case "++":
 			case "--":
 				var op = this.consume().charAt(0);
-				var a = this.unary();
-				a[0] = Parser.getToSetToken(a[0]);
+				a = this.unary();
+				a[0] = this.getToSetToken(a[0]);
 				a.push(1, op);
 				return a;
 		}
 		
-		var a = this.property();
+		a = this.property();
 		
 		if (this.peek() === "++" || this.peek() === "--") {
 			var op = this.consume();
-			a[0] = Parser.getToSetToken(a[0]);
+			a[0] = this.getToSetToken(a[0]);
 			a.push(1, op);
 		}
 		
@@ -222,11 +233,16 @@ class Parser {
 		while (true) {
 			switch (this.peek()) {
 				case ".":
-					this.consume();
-					if (this.peek().slice(0, 2) !== "$p") {
-						wrongTokenError();
+				case ". ":
+					var spaced = this.consume() === ". ";
+					if (this.peek().slice(0, 2) !== "$v") {
+						this.wrongTokenError();
 					}
-					a = [".", a, this.consume().slice(2)];
+					if (!spaced && a instanceof Array && a[0] === "$" && typeof a[1] === "string") {
+						a[1] += "." + this.consume().slice(2);
+					} else {
+						a = [".", a, this.consume().slice(2)];
+					}
 					continue;
 				case "[":
 					this.consume();
@@ -234,7 +250,39 @@ class Parser {
 					this.match("]");
 					continue;
 				case "(":
-					a = [this.consume(), a, this.commaList()];
+					this.consume();
+					var params = this.commaList();
+					var b = ["(", a, params];
+					
+					if (a instanceof Array) {
+						if (a[0] === "$" && typeof a[1] === "string") {
+							var lastDot = a[1].lastIndexOf(".");
+							
+							if (lastDot !== -1) {
+								b = [".(", a, a[1].slice(lastDot + 1), params];
+								a[1] = a[1].slice(0, lastDot);
+							} else {
+								switch (a[1]) {
+									case "eval":
+										b = ["$", params[1]];
+										break;
+									case "set":
+										b = ["$=", params[1], params[2]];
+										break;
+									case "trace":
+										b = ["trace", params[1]];
+										break;
+								}
+							}
+						} else if (a[0] === ".") {
+							a[0] = ".(";
+							a.push(params);
+							b = a;
+						}
+					}
+					
+					a = b;
+					
 					this.match(")");
 					continue;
 			}
@@ -265,12 +313,12 @@ class Parser {
 				}
 				if (Code.playerVars.hasOwnProperty(v)) {
 					v = "_root.game.player." + Code.playerVars[v];
-				} else if (Parser.globalShortcuts.hasOwnProperty(v.charAr(0)) && (v.length === 1 || v.charAt(1) === ".")) {
-					v = Parser.globalShortcuts[v] + v.slice(1);
+				} else if (Parser.globalShortcuts.hasOwnProperty(v)) {
+					v = Parser.globalShortcuts[v];
 				}
 				return ["$", v];
 			default:
-				wrongTokenError();
+				this.wrongTokenError();
 		}
 		
 		return a;
