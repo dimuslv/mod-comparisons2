@@ -1,11 +1,11 @@
-ConstantPool "_global", "Window", "MovieClip", "prototype", "init", "_x", "_y", "getNextHighestDepth", "mainTextField", "createTextField", "background", "autoSize", "updateMainField", "obj", "title", "scroll", "mainIndices", "mainBehaviors", "Windows", "startDragging", "text", " ", "noMinimize", "length", "push", "customMinimize", "minimizeWindow", "minimized", "🗖 ", "🗕 ", "closeWindow", "🗙", "options", "\n", "scrollUp", "↑", "Math", "min", "scrollDown", "↓", "_static", "ASSetPropFlags"
+ConstantPool "_global", "Window", "MovieClip", "prototype", "init", "_x", "_y", "getNextHighestDepth", "mainTextField", "createTextField", "background", "autoSize", "updateMainField", "obj", "title", "scroll", "mainIndices", "mainBehaviors", "text", "", "Windows", "startDragging", " ", "addOption", "noMinimize", "customMinimize", "minimizeWindow", "minimized", "🗖 ", "🗕 ", "closeWindow", "🗙", "headerOptions", "length", "options", "\n", "scrollUp", "↑", "Math", "min", "scrollDown", "↓", "push", "_static", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Window"
 GetMember
 Not
 Not
-If loc084e
+If loc07b5
 Push "_global"
 GetVariable
 Push "Window"
@@ -77,7 +77,7 @@ Push "updateMainField"
 DefineFunction2 "", 1, 5, false, false, true, false, true, false, false, true, false, 2, "obj" {
 Push register2
 Not
-If loc0312
+If loc032b
 Push register1
 Push "obj"
 GetMember
@@ -89,210 +89,160 @@ GetMember
 StrictEquals
 Not
 Not
-If loc02fd
+If loc0316
 Push register1
 Push "scroll"
 Push 0
 SetMember
-loc02fd:Push register1
+loc0316:Push register1
 Push "obj"
 Push register2
 SetMember
-Jump loc0322
-loc0312:Push register1
+Jump loc033b
+loc032b:Push register1
 Push "obj"
 GetMember
 StoreRegister 2
 Pop
-loc0322:Push register1
+loc033b:Push register1
 Push "mainIndices"
 Push 0
-Push 1
 InitArray
 SetMember
 Push register1
 Push "mainBehaviors"
-Push "Windows"
-GetVariable
-Push "startDragging"
-GetMember
-Push 1
+Push 0
 InitArray
 SetMember
 Push register1
 Push "mainTextField"
 GetMember
 Push "text"
+Push ""
+SetMember
+Push "Windows"
+GetVariable
+Push "startDragging"
+GetMember
 Push register2
 Push "title"
 GetMember
 Push " "
 Add2
-SetMember
+Push 2
+Push register1
+Push "addOption"
+CallMethod
+Pop
 Push register2
 Push "noMinimize"
 GetMember
-If loc044b
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "length"
-GetMember
-Push 1
-Push register1
-Push "mainIndices"
-GetMember
-Push "push"
-CallMethod
-Pop
+If loc041b
 Push register2
 Push "customMinimize"
 GetMember
 Not
-If loc03e2
+If loc03db
 Push register2
 Push "customMinimize"
 GetMember
-Jump loc03ee
-loc03e2:Push "Windows"
+Jump loc03e7
+loc03db:Push "Windows"
 GetVariable
 Push "minimizeWindow"
 GetMember
-loc03ee:Push 1
-Push register1
-Push "mainBehaviors"
-GetMember
-Push "push"
-CallMethod
-Pop
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push register1
+loc03e7:Push register1
 Push "minimized"
 GetMember
 Not
-If loc0444
+If loc0402
 Push "🗖 "
-Jump loc0449
-loc0444:Push "🗕 "
-loc0449:Add2
-SetMember
-loc044b:Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "length"
-GetMember
-Push 1
+Jump loc0407
+loc0402:Push "🗕 "
+loc0407:Push 2
 Push register1
-Push "mainIndices"
-GetMember
-Push "push"
+Push "addOption"
 CallMethod
 Pop
-Push "Windows"
+loc041b:Push "Windows"
 GetVariable
 Push "closeWindow"
 GetMember
-Push 1
+Push "🗙"
+Push 2
 Push register1
-Push "mainBehaviors"
-GetMember
-Push "push"
+Push "addOption"
 CallMethod
 Pop
 Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "🗙"
-Add2
-SetMember
-Push register1
 Push "minimized"
 GetMember
-Not
-PushDuplicate
-Not
-If loc04e9
-Pop
+If loc0680
 Push register2
+Push "headerOptions"
+GetMember
+Not
+If loc04e7
+Push 0
+StoreRegister 3
+Pop
+loc046e:Push register3
+Push register2
+Push "headerOptions"
+GetMember
+Push "length"
+GetMember
+Less2
+Not
+If loc04e7
+Push " "
+Push register2
+Push "headerOptions"
+GetMember
+Push register3
+Push 1
+Add2
+GetMember
+Push register2
+Push "headerOptions"
+GetMember
+Push register3
+GetMember
+Push 3
+Push register1
+Push "addOption"
+CallMethod
+Pop
+Push register3
+Push 2
+Add2
+StoreRegister 3
+Pop
+Jump loc046e
+loc04e7:Push register2
 Push "options"
 GetMember
-loc04e9:Not
-If loc07ee
+Not
+If loc0680
 Push register1
 Push "scroll"
 GetMember
 Push 0
 Greater
 Not
-If loc05b0
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
+If loc053c
 Push "\n"
-Add2
-SetMember
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "length"
-GetMember
-Push 1
-Push register1
-Push "mainIndices"
-GetMember
-Push "push"
-CallMethod
-Pop
 Push "Windows"
 GetVariable
 Push "scrollUp"
 GetMember
-Push 1
+Push "↑"
+Push 3
 Push register1
-Push "mainBehaviors"
-GetMember
-Push "push"
+Push "addOption"
 CallMethod
 Pop
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "↑"
-Add2
-SetMember
-loc05b0:Push register2
+loc053c:Push register2
 Push "options"
 GetMember
 Push "length"
@@ -308,11 +258,11 @@ GetMember
 Push 0
 Greater
 Not
-If loc05fc
+If loc0588
 Push 1
-Jump loc0604
-loc05fc:Push 0
-loc0604:Subtract
+Jump loc0590
+loc0588:Push 0
+loc0590:Subtract
 Push 2
 Multiply
 Push 2
@@ -320,83 +270,45 @@ Push "Math"
 GetVariable
 Push "min"
 CallMethod
-StoreRegister 3
+StoreRegister 4
 Pop
 Push register1
 Push "scroll"
 GetMember
 Push 2
 Multiply
-StoreRegister 4
+StoreRegister 3
 Pop
-loc0640:Push register4
-Push register3
+loc05cc:Push register3
+Push register4
 Less2
 Not
-If loc072a
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
+If loc0639
 Push "\n"
-Add2
-SetMember
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "length"
-GetMember
-Push 1
-Push register1
-Push "mainIndices"
-GetMember
-Push "push"
-CallMethod
-Pop
 Push register2
 Push "options"
 GetMember
-Push register4
+Push register3
 Push 1
 Add2
-GetMember
-Push 1
-Push register1
-Push "mainBehaviors"
-GetMember
-Push "push"
-CallMethod
-Pop
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
 GetMember
 Push register2
 Push "options"
 GetMember
-Push register4
+Push register3
 GetMember
-Add2
-SetMember
-Push register4
+Push 3
+Push register1
+Push "addOption"
+CallMethod
+Pop
+Push register3
 Push 2
 Add2
-StoreRegister 4
+StoreRegister 3
 Pop
-Jump loc0640
-loc072a:Push register3
+Jump loc05cc
+loc0639:Push register4
 Push register2
 Push "options"
 GetMember
@@ -404,37 +316,53 @@ Push "length"
 GetMember
 Less2
 Not
-If loc07ee
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
+If loc0680
 Push "\n"
-Add2
-SetMember
-Push register1
-Push "mainTextField"
-GetMember
-Push "text"
-GetMember
-Push "length"
-GetMember
-Push 1
-Push register1
-Push "mainIndices"
-GetMember
-Push "push"
-CallMethod
-Pop
 Push "Windows"
 GetVariable
 Push "scrollDown"
 GetMember
+Push "↓"
+Push 3
+Push register1
+Push "addOption"
+CallMethod
+Pop
+}
+loc0680:SetMember
+Push register2
+Push "addOption"
+DefineFunction2 "", 3, 5, false, false, true, false, true, false, false, true, false, 2, "name", 3, "func", 4, "before" {
+Push register4
+Not
+If loc06dd
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push register4
+Add2
+SetMember
+loc06dd:Push register1
+Push "mainTextField"
+GetMember
+Push "text"
+GetMember
+Push "length"
+GetMember
+Push 1
+Push register1
+Push "mainIndices"
+GetMember
+Push "push"
+CallMethod
+Pop
+Push register3
 Push 1
 Push register1
 Push "mainBehaviors"
@@ -451,11 +379,11 @@ Push "mainTextField"
 GetMember
 Push "text"
 GetMember
-Push "↓"
+Push register2
 Add2
 SetMember
 }
-loc07ee:SetMember
+SetMember
 Push register2
 Push "minimized"
 Push false
@@ -479,4 +407,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc084e:Pop
+loc07b5:Pop

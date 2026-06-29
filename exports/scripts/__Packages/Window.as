@@ -34,46 +34,56 @@ class Window extends MovieClip
 		{
 			obj = this.obj;
 		}
-		this.mainIndices = [0];
-		this.mainBehaviors = [Windows.startDragging];
-		this.mainTextField.text = obj.title + " ";
+		this.mainIndices = [];
+		this.mainBehaviors = [];
+		this.mainTextField.text = "";
+		this.addOption(obj.title + " ",Windows.startDragging);
 		if(!obj.noMinimize)
 		{
-			this.mainIndices.push(this.mainTextField.text.length);
-			this.mainBehaviors.push(obj.customMinimize ? obj.customMinimize : Windows.minimizeWindow);
-			this.mainTextField.text += this.minimized ? "🗖 " : "🗕 ";
+			this.addOption(this.minimized ? "🗖 " : "🗕 ",obj.customMinimize ? obj.customMinimize : Windows.minimizeWindow);
 		}
-		this.mainIndices.push(this.mainTextField.text.length);
-		this.mainBehaviors.push(Windows.closeWindow);
-		this.mainTextField.text += "🗙";
+		this.addOption("🗙",Windows.closeWindow);
 		var _loc3_;
 		var _loc4_;
-		if(!this.minimized && obj.options)
+		if(!this.minimized)
 		{
-			if(this.scroll > 0)
+			if(obj.headerOptions)
 			{
-				this.mainTextField.text += "\n";
-				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(Windows.scrollUp);
-				this.mainTextField.text += "↑";
+				_loc3_ = 0;
+				while(_loc3_ < obj.headerOptions.length)
+				{
+					this.addOption(obj.headerOptions[_loc3_],obj.headerOptions[_loc3_ + 1]," ");
+					_loc3_ += 2;
+				}
 			}
-			_loc3_ = Math.min((this.scroll + 20 - (this.scroll > 0 ? 1 : 0)) * 2,obj.options.length);
-			_loc4_ = this.scroll * 2;
-			while(_loc4_ < _loc3_)
+			if(obj.options)
 			{
-				this.mainTextField.text += "\n";
-				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(obj.options[_loc4_ + 1]);
-				this.mainTextField.text += obj.options[_loc4_];
-				_loc4_ += 2;
-			}
-			if(_loc3_ < obj.options.length)
-			{
-				this.mainTextField.text += "\n";
-				this.mainIndices.push(this.mainTextField.text.length);
-				this.mainBehaviors.push(Windows.scrollDown);
-				this.mainTextField.text += "↓";
+				if(this.scroll > 0)
+				{
+					this.addOption("↑",Windows.scrollUp,"\n");
+				}
+				_loc4_ = Math.min((this.scroll + 20 - (this.scroll > 0 ? 1 : 0)) * 2,obj.options.length);
+				_loc3_ = this.scroll * 2;
+				while(_loc3_ < _loc4_)
+				{
+					this.addOption(obj.options[_loc3_],obj.options[_loc3_ + 1],"\n");
+					_loc3_ += 2;
+				}
+				if(_loc4_ < obj.options.length)
+				{
+					this.addOption("↓",Windows.scrollDown,"\n");
+				}
 			}
 		}
+	}
+	function addOption(name, func, before)
+	{
+		if(before)
+		{
+			this.mainTextField.text += before;
+		}
+		this.mainIndices.push(this.mainTextField.text.length);
+		this.mainBehaviors.push(func);
+		this.mainTextField.text += name;
 	}
 }

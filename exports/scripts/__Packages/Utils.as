@@ -238,6 +238,7 @@ class Utils
 			}
 			_loc4_ = _loc4_ + 1;
 		}
+		_loc3_.push(com.nitrome.toxic.Global.level_cols);
 		System.setClipboard(_loc3_.toString());
 	}
 	static function toggleMask(w)

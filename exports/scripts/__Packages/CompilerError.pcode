@@ -1,0 +1,49 @@
+ConstantPool "_global", "CompilerError", "pos", "Error", "prototype", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "CompilerError"
+GetMember
+Not
+Not
+If loc00ed
+Push "_global"
+GetVariable
+Push "CompilerError"
+DefineFunction2 "", 2, 5, false, false, false, true, true, false, false, true, false, 3, "msg", 4, "pos" {
+Push register3
+Push 1
+Push register2
+Push undefined
+CallMethod
+Pop
+Push register1
+Push "pos"
+Push register4
+SetMember
+}
+StoreRegister 1
+SetMember
+Push "_global"
+GetVariable
+Push "CompilerError"
+GetMember
+Push "Error"
+GetVariable
+Extends
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "CompilerError"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc00ed:Pop

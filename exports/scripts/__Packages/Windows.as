@@ -145,6 +145,7 @@ class Windows
 			{
 				var w = Windows.clip[focus.slice(20,focus.length - "mainTextField".length - 1)];
 				var ind = Selection.getBeginIndex();
+				Windows.nullFocus();
 				var i = w.mainIndices.length - 1;
 				while(i >= 0)
 				{
@@ -158,7 +159,6 @@ class Windows
 					}
 					i--;
 				}
-				Windows.nullFocus();
 			}
 		}
 		for(i in Windows.clip)

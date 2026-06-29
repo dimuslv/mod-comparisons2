@@ -5,7 +5,7 @@ Push "Utils"
 GetMember
 Not
 Not
-If loc2d3a
+If loc2d6c
 Push "_global"
 GetVariable
 Push "Utils"
@@ -1282,7 +1282,22 @@ Increment
 StoreRegister 4
 Pop
 Jump loc1b1d
-loc1c46:Push 0
+loc1c46:Push "com"
+GetVariable
+Push "nitrome"
+GetMember
+Push "toxic"
+GetMember
+Push "Global"
+GetMember
+Push "level_cols"
+GetMember
+Push 1
+Push register3
+Push "push"
+CallMethod
+Pop
+Push 0
 Push register3
 Push "toString"
 CallMethod
@@ -1311,7 +1326,7 @@ GetVariable
 Push "masked"
 GetMember
 Not
-If loc1cd1
+If loc1d03
 Push "mask"
 GetVariable
 Push 1
@@ -1319,14 +1334,14 @@ Push register1
 Push "setMask"
 CallMethod
 Pop
-Jump loc1ce9
-loc1cd1:Push null
+Jump loc1d1b
+loc1d03:Push null
 Push 1
 Push register1
 Push "setMask"
 CallMethod
 Pop
-loc1ce9:Push register2
+loc1d1b:Push register2
 Push 1
 Push register2
 Push "obj"
@@ -1406,7 +1421,7 @@ Pop
 Push 0
 StoreRegister 3
 Pop
-loc1e29:Push register3
+loc1e5b:Push register3
 Push "Utils"
 GetVariable
 Push "visWindowArray"
@@ -1415,7 +1430,7 @@ Push "length"
 GetMember
 Less2
 Not
-If loc1ec5
+If loc1ef7
 Push "Windows"
 GetVariable
 Push "clip"
@@ -1453,8 +1468,8 @@ Push 3
 Add2
 StoreRegister 3
 Pop
-Jump loc1e29
-loc1ec5:Push "Windows"
+Jump loc1e5b
+loc1ef7:Push "Windows"
 GetVariable
 Push "clip"
 GetMember
@@ -1587,7 +1602,7 @@ GetMember
 Not
 PushDuplicate
 Not
-If loc20f5
+If loc2127
 Pop
 Push "Windows"
 GetVariable
@@ -1599,8 +1614,8 @@ Add2
 GetMember
 Push "_visible"
 GetMember
-loc20f5:Not
-If loc217a
+loc2127:Not
+If loc21ac
 Push register3
 Push 1
 Push "Utils"
@@ -1634,7 +1649,7 @@ Push "copyPixels"
 CallMethod
 Pop
 }
-loc217a:SetMember
+loc21ac:SetMember
 Push register1
 Push "layerVisibilityWindow"
 DefineFunction2 "", 1, 6, false, true, true, false, true, false, true, false, false, 2, "w" {
@@ -1642,10 +1657,10 @@ Push register1
 Push "game"
 GetMember
 Enumerate2
-loc219f:StoreRegister 0
+loc21d1:StoreRegister 0
 Push null
 Equals2
-If loc220c
+If loc223e
 Push register0
 StoreRegister 3
 Pop
@@ -1657,7 +1672,7 @@ CallMethod
 Push "_holder"
 Equals2
 Not
-If loc2207
+If loc2239
 Push register1
 Push "game"
 GetMember
@@ -1671,8 +1686,8 @@ GetMember
 Push register3
 GetMember
 SetMember
-loc2207:Jump loc219f
-loc220c:Push "title"
+loc2239:Jump loc21d1
+loc223e:Push "title"
 Push "Layer visibility"
 Push "curWindow"
 Push "Utils"
@@ -1695,10 +1710,10 @@ GetVariable
 Push "layerVisibilities"
 GetMember
 Enumerate2
-loc225e:StoreRegister 0
+loc2290:StoreRegister 0
 Push null
 Equals2
-If loc22c3
+If loc22f5
 Push register0
 StoreRegister 3
 Pop
@@ -1718,8 +1733,8 @@ Push register5
 Push "push"
 CallMethod
 Pop
-Jump loc225e
-loc22c3:Push "Utils"
+Jump loc2290
+loc22f5:Push "Utils"
 GetVariable
 Push "mainMenu"
 GetMember
@@ -1769,10 +1784,10 @@ GetVariable
 Push "testVisibilities"
 GetMember
 Enumerate2
-loc237d:StoreRegister 0
+loc23af:StoreRegister 0
 Push null
 Equals2
-If loc23c9
+If loc23fb
 Push register0
 StoreRegister 3
 Pop
@@ -1791,16 +1806,16 @@ GetMember
 Push register3
 GetMember
 SetMember
-Jump loc237d
-loc23c9:Push "Utils"
+Jump loc23af
+loc23fb:Push "Utils"
 GetVariable
 Push "extraVisibilities"
 GetMember
 Enumerate2
-loc23d6:StoreRegister 0
+loc2408:StoreRegister 0
 Push null
 Equals2
-If loc2416
+If loc2448
 Push register0
 StoreRegister 4
 Pop
@@ -1815,8 +1830,8 @@ GetMember
 Push register4
 GetMember
 SetMember
-Jump loc23d6
-loc2416:Push "title"
+Jump loc2408
+loc2448:Push "title"
 Push "Extra visibility"
 Push "curWindow"
 Push "Utils"
@@ -1841,16 +1856,16 @@ GetMember
 Push "test_holder"
 GetMember
 Not
-If loc24c7
+If loc24f9
 Push "Utils"
 GetVariable
 Push "testVisibilities"
 GetMember
 Enumerate2
-loc2480:StoreRegister 0
+loc24b2:StoreRegister 0
 Push null
 Equals2
-If loc24c7
+If loc24f9
 Push register0
 StoreRegister 3
 Pop
@@ -1865,16 +1880,16 @@ Push register6
 Push "push"
 CallMethod
 Pop
-Jump loc2480
-loc24c7:Push "Utils"
+Jump loc24b2
+loc24f9:Push "Utils"
 GetVariable
 Push "extraVisibilities"
 GetMember
 Enumerate2
-loc24d4:StoreRegister 0
+loc2506:StoreRegister 0
 Push null
 Equals2
-If loc251b
+If loc254d
 Push register0
 StoreRegister 4
 Pop
@@ -1889,8 +1904,8 @@ Push register6
 Push "push"
 CallMethod
 Pop
-Jump loc24d4
-loc251b:Push "Utils"
+Jump loc2506
+loc254d:Push "Utils"
 GetVariable
 Push "layerVisibilityWindow"
 GetMember
@@ -1912,11 +1927,11 @@ GetVariable
 Push "masked"
 GetMember
 Not
-If loc2573
+If loc25a5
 Push "on"
-Jump loc2578
-loc2573:Push "off"
-loc2578:Add2
+Jump loc25aa
+loc25a5:Push "off"
+loc25aa:Add2
 Push 2
 Push register5
 Push "options"
@@ -1949,7 +1964,7 @@ Push register2
 Push "_root"
 StrictEquals
 Not
-If loc2627
+If loc2659
 Push register1
 Push 1
 Push "Utils"
@@ -1959,7 +1974,7 @@ CallMethod
 Pop
 Push undefined
 Return
-loc2627:Push "obj"
+loc2659:Push "obj"
 Push "title"
 Push "."
 Push 1
@@ -1974,11 +1989,11 @@ Push "slice"
 CallMethod
 Push register3
 Not
-If loc267a
+If loc26ac
 Push ""
-Jump loc267f
-loc267a:Push "/"
-loc267f:Add2
+Jump loc26b1
+loc26ac:Push "/"
+loc26b1:Add2
 Push "update"
 Push register3
 Push register2
@@ -1997,7 +2012,7 @@ InitObject
 DefineLocal
 Push register3
 Not
-If loc270b
+If loc273d
 Push false
 Push register2
 Push "Utils"
@@ -2014,8 +2029,8 @@ GetMember
 Push "push"
 CallMethod
 Pop
-Jump loc2773
-loc270b:Push false
+Jump loc27a5
+loc273d:Push false
 Push "."
 Push 1
 Push register2
@@ -2040,16 +2055,16 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc2773:Push "currentObj"
+loc27a5:Push "currentObj"
 Push register2
 GetVariable
 DefineLocal
 Push "currentObj"
 GetVariable
 Not
-If loc2954
+If loc2986
 Push register3
-If loc27d9
+If loc280b
 Push true
 Push register2
 Push "Utils"
@@ -2067,14 +2082,14 @@ GetMember
 Push "push"
 CallMethod
 Pop
-Jump loc284c
-loc27d9:Push "currentObj"
+Jump loc287e
+loc280b:Push "currentObj"
 GetVariable
 TypeOf
 Push "movieclip"
 StrictEquals
 Not
-If loc284c
+If loc287e
 Push false
 Push "_currentframe: "
 Push "currentObj"
@@ -2104,13 +2119,13 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc284c:Push "currentObj"
+loc287e:Push "currentObj"
 GetVariable
 Enumerate2
-loc2853:StoreRegister 0
+loc2885:StoreRegister 0
 Push null
 Equals2
-If loc2954
+If loc2986
 Push "i"
 Push register0
 DefineLocal
@@ -2123,19 +2138,19 @@ TypeOf
 StoreRegister 4
 Push "function"
 StrictEquals
-If loc28ae
+If loc28e0
 Push register4
 Push "object"
 StrictEquals
-If loc28b3
+If loc28e5
 Push register4
 Push "movieclip"
 StrictEquals
-If loc28b3
-Jump loc290a
-loc28ae:Jump loc294f
-loc28b3:Push register3
-If loc2905
+If loc28e5
+Jump loc293c
+loc28e0:Jump loc2981
+loc28e5:Push register3
+If loc2937
 Push register2
 Push "."
 Add2
@@ -2158,10 +2173,10 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc2905:Jump loc294f
-loc290a:Push register3
+loc2937:Jump loc2981
+loc293c:Push register3
 Not
-If loc294f
+If loc2981
 Push false
 Push "i"
 GetVariable
@@ -2181,8 +2196,8 @@ GetMember
 Push "push"
 CallMethod
 Pop
-loc294f:Jump loc2853
-loc2954:Push "obj"
+loc2981:Jump loc2885
+loc2986:Push "obj"
 GetVariable
 Push 1
 Push register1
@@ -2413,4 +2428,4 @@ GetMember
 Push 3
 Push "ASSetPropFlags"
 CallFunction
-loc2d3a:Pop
+loc2d6c:Pop

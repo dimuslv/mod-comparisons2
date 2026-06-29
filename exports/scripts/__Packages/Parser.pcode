@@ -1,0 +1,1434 @@
+ConstantPool "_global", "Parser", "arr", "ind", "prototype", "isAssignmentToken", "=", ">=", "<=", "$!=", "charAt", "Code", "isS", "length", "getToSetToken", "$", "$=", ".", "pos", "Unexpected literal before assignment", "CompilerError", "Unexpected operation \'", "\' before assignment", "isOp", "string", "wrongTokenError", "Unexpected token: ", "peek", "match", "consume", "program", "statementStack", "$end", ";", "statement", "push", "expression", "commaList", ")", "]", ",", "assignment", "conditional", "slice", "leftAssocOp", "rightAssocOp", "logOr", "?", ":", "logAnd", "||", "bitOr", "&&", "bitXor", "|", "bitAnd", "^", "equality", "&", "relational", "!==", "===", "!=", "==", "bitShift", ">", "<", "sum", ">>>", ">>", "<<", "product", "+-", "unary", "*/%", "+", "-", "!", "~", "++", "--", "property", "singleton", ". ", "[", "(", "$v", "Array", "lastIndexOf", ".(", "eval", "set", "trace", "$n", "$s", "constObj", "hasOwnProperty", "playerVars", "_root.game.player.", "globalShortcuts", "true", "false", "undefined", "null", "p", "_root.game.player", "g", "_root.game", "G", "com.nitrome.toxic.Global", "ASSetPropFlags"
+Push "_global"
+GetVariable
+Push "Parser"
+GetMember
+Not
+Not
+If loc19e1
+Push "_global"
+GetVariable
+Push "Parser"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "arr" {
+Push register1
+Push "arr"
+Push register2
+SetMember
+Push register1
+Push "ind"
+Push 0
+SetMember
+}
+StoreRegister 1
+SetMember
+Push register1
+Push "prototype"
+GetMember
+StoreRegister 2
+Pop
+Push register1
+Push "isAssignmentToken"
+DefineFunction2 "", 1, 2, false, false, true, false, true, false, true, false, false, 1, "str" {
+Push register1
+Push "="
+StrictEquals
+PushDuplicate
+If loc0439
+Pop
+Push register1
+Push ">="
+StrictEquals
+Not
+PushDuplicate
+Not
+If loc03c7
+Pop
+Push register1
+Push "<="
+StrictEquals
+Not
+loc03c7:PushDuplicate
+Not
+If loc0404
+Pop
+Push "$!="
+Push 0
+Push 1
+Push register1
+Push "charAt"
+CallMethod
+Push 2
+Push "Code"
+GetVariable
+Push "isS"
+CallMethod
+Not
+loc0404:PushDuplicate
+Not
+If loc0439
+Pop
+Push register1
+Push "length"
+GetMember
+Push 1
+Subtract
+Push 1
+Push register1
+Push "charAt"
+CallMethod
+Push "="
+StrictEquals
+loc0439:Return
+}
+SetMember
+Push register2
+Push "getToSetToken"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "tok" {
+Push register2
+Push "$"
+StrictEquals
+Not
+If loc046c
+Push "$="
+Return
+loc046c:Push register2
+Push "."
+StrictEquals
+Not
+If loc0483
+Push "="
+Return
+loc0483:Push register2
+Push undefined
+StrictEquals
+Not
+If loc04ba
+Push 0
+Push register1
+Push "pos"
+CallMethod
+Push "Unexpected literal before assignment"
+Push 2
+Push "CompilerError"
+NewObject
+Throw
+loc04ba:Push 0
+Push register1
+Push "pos"
+CallMethod
+Push "Unexpected operation \'"
+Push register2
+Add2
+Push "\' before assignment"
+Add2
+Push 2
+Push "CompilerError"
+NewObject
+Throw
+}
+SetMember
+Push register1
+Push "isOp"
+DefineFunction2 "", 2, 4, false, false, true, false, true, false, true, false, false, 1, "op", 2, "ops" {
+Push register2
+TypeOf
+Push "string"
+StrictEquals
+Not
+If loc053d
+Push register2
+Push register1
+Push 2
+Push "Code"
+GetVariable
+Push "isS"
+CallMethod
+Return
+loc053d:Push register2
+Enumerate2
+loc0543:StoreRegister 0
+Push null
+Equals2
+If loc0588
+Push register0
+StoreRegister 3
+Pop
+Push register2
+Push register3
+GetMember
+Push register1
+StrictEquals
+Not
+If loc0583
+loc0572:Push null
+Equals2
+Not
+If loc0572
+Push true
+Return
+loc0583:Jump loc0543
+loc0588:Push false
+Return
+}
+SetMember
+Push register2
+Push "wrongTokenError"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "pos"
+CallMethod
+Push "Unexpected token: "
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Add2
+Push 2
+Push "CompilerError"
+NewObject
+Throw
+}
+SetMember
+Push register2
+Push "pos"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1
+Push "arr"
+GetMember
+Push register1
+Push "ind"
+GetMember
+Push 1
+Add2
+GetMember
+Return
+}
+SetMember
+Push register2
+Push "peek"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push register1
+Push "arr"
+GetMember
+Push register1
+Push "ind"
+GetMember
+GetMember
+Return
+}
+SetMember
+Push register2
+Push "match"
+DefineFunction2 "", 1, 3, false, false, true, false, true, false, false, true, false, 2, "token" {
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push register2
+StrictEquals
+Not
+Not
+If loc0695
+Push 0
+Push register1
+Push "wrongTokenError"
+CallMethod
+Pop
+loc0695:Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+}
+SetMember
+Push register2
+Push "consume"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "peek"
+CallMethod
+StoreRegister 2
+Pop
+Push register1
+Push "ind"
+Push register1
+Push "ind"
+GetMember
+Push 2
+Add2
+SetMember
+Push register2
+Return
+}
+SetMember
+Push register2
+Push "program"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "statementStack"
+CallMethod
+StoreRegister 2
+Pop
+Push "$end"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Push register2
+Return
+}
+SetMember
+Push register2
+Push "statementStack"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push ";"
+Push 1
+InitArray
+StoreRegister 2
+Pop
+loc0772:Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "$end"
+StrictEquals
+Not
+Not
+If loc07d7
+Push 0
+Push register1
+Push "statement"
+CallMethod
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Push ";"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Jump loc0772
+loc07d7:Push register2
+Return
+}
+SetMember
+Push register2
+Push "statement"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "expression"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "commaList"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push ")"
+StrictEquals
+PushDuplicate
+If loc0856
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "]"
+StrictEquals
+loc0856:Not
+If loc086b
+Push ","
+Push 1
+InitArray
+Return
+loc086b:Push 0
+Push register1
+Push "expression"
+CallMethod
+Push ","
+Push 2
+InitArray
+StoreRegister 2
+Pop
+loc0891:Push 0
+Push register1
+Push "peek"
+CallMethod
+Push ","
+StrictEquals
+Not
+If loc08f0
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "expression"
+CallMethod
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Jump loc0891
+loc08f0:Push register2
+Return
+}
+SetMember
+Push register2
+Push "expression"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "assignment"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "assignment"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "conditional"
+CallMethod
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push 1
+Push "Parser"
+GetVariable
+Push "isAssignmentToken"
+CallMethod
+Not
+If loc0a2b
+Push register2
+Push 0
+Push register2
+Push 0
+GetMember
+Push 1
+Push register1
+Push "getToSetToken"
+CallMethod
+SetMember
+Push -1
+Push 0
+Push 2
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "slice"
+CallMethod
+StoreRegister 3
+Pop
+Push 0
+Push register1
+Push "assignment"
+CallMethod
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Push register3
+Not
+If loc0a2b
+Push register3
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+loc0a2b:Push register2
+Return
+}
+SetMember
+Push register2
+Push "leftAssocOp"
+DefineFunction2 "", 2, 5, false, false, true, false, true, false, false, true, false, 2, "ops", 3, "next" {
+Push 0
+Push register1
+Push register3
+CallMethod
+StoreRegister 4
+Pop
+loc0a6a:Push register2
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push 2
+Push "Parser"
+GetVariable
+Push "isOp"
+CallMethod
+Not
+If loc0aee
+Push register4
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push 2
+InitArray
+StoreRegister 4
+Pop
+Push 0
+Push register1
+Push register3
+CallMethod
+Push 1
+Push register4
+Push "push"
+CallMethod
+Pop
+Jump loc0a6a
+loc0aee:Push register4
+Return
+}
+SetMember
+Push register2
+Push "rightAssocOp"
+DefineFunction2 "", 2, 5, false, false, true, false, true, false, false, true, false, 2, "ops", 3, "next" {
+Push 0
+Push register1
+Push register3
+CallMethod
+StoreRegister 4
+Pop
+Push register2
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push 2
+Push "Parser"
+GetVariable
+Push "isOp"
+CallMethod
+Not
+If loc0bb1
+Push register4
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push 2
+InitArray
+StoreRegister 4
+Pop
+Push register3
+Push register2
+Push 2
+Push "rightAssocOp"
+CallFunction
+Push 1
+Push register4
+Push "push"
+CallMethod
+Pop
+loc0bb1:Push register4
+Return
+}
+SetMember
+Push register2
+Push "conditional"
+DefineFunction2 "", 0, 3, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "logOr"
+CallMethod
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "?"
+StrictEquals
+Not
+If loc0c91
+Push register2
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push 2
+InitArray
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "conditional"
+CallMethod
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Push ":"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "conditional"
+CallMethod
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+loc0c91:Push register2
+Return
+}
+SetMember
+Push register2
+Push "logOr"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "logAnd"
+Push "||"
+Push 1
+InitArray
+Push 2
+Push register1
+Push "rightAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "logAnd"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "bitOr"
+Push "&&"
+Push 1
+InitArray
+Push 2
+Push register1
+Push "rightAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "bitOr"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "bitXor"
+Push "|"
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "bitXor"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "bitAnd"
+Push "^"
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "bitAnd"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "equality"
+Push "&"
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "equality"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "relational"
+Push "!=="
+Push "==="
+Push "!="
+Push "=="
+Push 4
+InitArray
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "relational"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "bitShift"
+Push ">="
+Push "<="
+Push ">"
+Push "<"
+Push 4
+InitArray
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "bitShift"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "sum"
+Push ">>>"
+Push ">>"
+Push "<<"
+Push 3
+InitArray
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "sum"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "product"
+Push "+-"
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "product"
+DefineFunction2 "", 0, 2, false, false, true, false, true, false, false, true, false {
+Push "unary"
+Push "*/%"
+Push 2
+Push register1
+Push "leftAssocOp"
+CallMethod
+Return
+}
+SetMember
+Push register2
+Push "unary"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push undefined
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+StoreRegister 0
+Push "+"
+StrictEquals
+If loc0f8a
+Push register0
+Push "-"
+StrictEquals
+If loc0fb2
+Push register0
+Push "!"
+StrictEquals
+If loc0ff0
+Push register0
+Push "~"
+StrictEquals
+If loc0ff0
+Push register0
+Push "++"
+StrictEquals
+If loc103e
+Push register0
+Push "--"
+StrictEquals
+If loc103e
+Jump loc10da
+loc0f8a:Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "unary"
+CallMethod
+Return
+loc0fb2:Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "unary"
+CallMethod
+Push 0
+Push "-"
+Push 3
+InitArray
+Return
+loc0ff0:Push 0
+Push register1
+Push "consume"
+CallMethod
+Push 1
+InitArray
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "unary"
+CallMethod
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Push register2
+Return
+loc103e:Push 0
+Push 1
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "charAt"
+CallMethod
+StoreRegister 3
+Pop
+Push 0
+Push register1
+Push "unary"
+CallMethod
+StoreRegister 2
+Pop
+Push register2
+Push 0
+Push register2
+Push 0
+GetMember
+Push 1
+Push register1
+Push "getToSetToken"
+CallMethod
+SetMember
+Push register3
+Push 1
+Push 2
+Push register2
+Push "push"
+CallMethod
+Pop
+Push register2
+Return
+loc10da:Push 0
+Push register1
+Push "property"
+CallMethod
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "++"
+StrictEquals
+PushDuplicate
+If loc112b
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "--"
+StrictEquals
+loc112b:Not
+If loc1199
+Push 0
+Push register1
+Push "consume"
+CallMethod
+StoreRegister 3
+Pop
+Push register2
+Push 0
+Push register2
+Push 0
+GetMember
+Push 1
+Push register1
+Push "getToSetToken"
+CallMethod
+SetMember
+Push register3
+Push 1
+Push 2
+Push register2
+Push "push"
+CallMethod
+Pop
+loc1199:Push register2
+Return
+}
+SetMember
+Push register2
+Push "property"
+DefineFunction2 "", 0, 8, false, false, true, false, true, false, false, true, false {
+Push 0
+Push register1
+Push "singleton"
+CallMethod
+StoreRegister 2
+Pop
+loc11cd:Push true
+Not
+If loc1680
+Push 0
+Push register1
+Push "peek"
+CallMethod
+StoreRegister 0
+Push "."
+StrictEquals
+If loc122f
+Push register0
+Push ". "
+StrictEquals
+If loc122f
+Push register0
+Push "["
+StrictEquals
+If loc138f
+Push register0
+Push "("
+StrictEquals
+If loc13ec
+Jump loc167b
+loc122f:Push 0
+Push register1
+Push "consume"
+CallMethod
+Push ". "
+StrictEquals
+StoreRegister 3
+Pop
+Push 2
+Push 0
+Push 2
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "slice"
+CallMethod
+Push "$v"
+StrictEquals
+Not
+Not
+If loc129f
+Push 0
+Push register1
+Push "wrongTokenError"
+CallMethod
+Pop
+loc129f:Push register3
+Not
+PushDuplicate
+Not
+If loc12b9
+Pop
+Push register2
+Push "Array"
+GetVariable
+InstanceOf
+loc12b9:PushDuplicate
+Not
+If loc12d5
+Pop
+Push register2
+Push 0
+GetMember
+Push "$"
+StrictEquals
+loc12d5:PushDuplicate
+Not
+If loc12f2
+Pop
+Push register2
+Push 1
+GetMember
+TypeOf
+Push "string"
+StrictEquals
+loc12f2:Not
+If loc1349
+Push register2
+Push 1
+Push register2
+Push 1
+GetMember
+Push "."
+Push 2
+Push 1
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "slice"
+CallMethod
+Add2
+Add2
+SetMember
+Jump loc138a
+loc1349:Push 2
+Push 1
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "slice"
+CallMethod
+Push register2
+Push "."
+Push 3
+InitArray
+StoreRegister 2
+Pop
+loc138a:Jump loc11cd
+loc138f:Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "expression"
+CallMethod
+Push register2
+Push "."
+Push 3
+InitArray
+StoreRegister 2
+Pop
+Push "]"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Jump loc11cd
+loc13ec:Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "commaList"
+CallMethod
+StoreRegister 4
+Pop
+Push register4
+Push register2
+Push "("
+Push 3
+InitArray
+StoreRegister 5
+Pop
+Push register2
+Push "Array"
+GetVariable
+InstanceOf
+Not
+If loc1653
+Push register2
+Push 0
+GetMember
+Push "$"
+StrictEquals
+PushDuplicate
+Not
+If loc1478
+Pop
+Push register2
+Push 1
+GetMember
+TypeOf
+Push "string"
+StrictEquals
+loc1478:Not
+If loc1603
+Push "."
+Push 1
+Push register2
+Push 1
+GetMember
+Push "lastIndexOf"
+CallMethod
+StoreRegister 6
+Pop
+Push register6
+Push -1
+StrictEquals
+Not
+Not
+If loc153c
+Push register4
+Push register6
+Push 1
+Add2
+Push 1
+Push register2
+Push 1
+GetMember
+Push "slice"
+CallMethod
+Push register2
+Push ".("
+Push 4
+InitArray
+StoreRegister 5
+Pop
+Push register2
+Push 1
+Push register6
+Push 0
+Push 2
+Push register2
+Push 1
+GetMember
+Push "slice"
+CallMethod
+SetMember
+Jump loc15fe
+loc153c:Push register2
+Push 1
+GetMember
+StoreRegister 7
+Push "eval"
+StrictEquals
+If loc157e
+Push register7
+Push "set"
+StrictEquals
+If loc15a4
+Push register7
+Push "trace"
+StrictEquals
+If loc15d8
+Jump loc15fe
+loc157e:Push register4
+Push 1
+GetMember
+Push "$"
+Push 2
+InitArray
+StoreRegister 5
+Pop
+Jump loc15fe
+loc15a4:Push register4
+Push 2
+GetMember
+Push register4
+Push 1
+GetMember
+Push "$="
+Push 3
+InitArray
+StoreRegister 5
+Pop
+Jump loc15fe
+loc15d8:Push register4
+Push 1
+GetMember
+Push "trace"
+Push 2
+InitArray
+StoreRegister 5
+Pop
+Jump loc15fe
+loc15fe:Jump loc1653
+loc1603:Push register2
+Push 0
+GetMember
+Push "."
+StrictEquals
+Not
+If loc1653
+Push register2
+Push 0
+Push ".("
+SetMember
+Push register4
+Push 1
+Push register2
+Push "push"
+CallMethod
+Pop
+Push register2
+StoreRegister 5
+Pop
+loc1653:Push register5
+StoreRegister 2
+Pop
+Push ")"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Jump loc11cd
+loc167b:Jump loc1680
+loc1680:Push register2
+Return
+}
+SetMember
+Push register2
+Push "singleton"
+DefineFunction2 "", 0, 4, false, false, true, false, true, false, false, true, false {
+Push undefined
+StoreRegister 2
+Pop
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "("
+StrictEquals
+Not
+If loc170e
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "expression"
+CallMethod
+StoreRegister 2
+Pop
+Push ")"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Jump loc1942
+loc170e:Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "["
+StrictEquals
+Not
+If loc1777
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Pop
+Push 0
+Push register1
+Push "commaList"
+CallMethod
+StoreRegister 2
+Pop
+Push "]"
+Push 1
+Push register1
+Push "match"
+CallMethod
+Pop
+Jump loc1942
+loc1777:Push 2
+Push 0
+Push 2
+Push 0
+Push register1
+Push "peek"
+CallMethod
+Push "slice"
+CallMethod
+StoreRegister 0
+Push "$n"
+StrictEquals
+If loc17dc
+Push register0
+Push "$s"
+StrictEquals
+If loc1807
+Push register0
+Push "$v"
+StrictEquals
+If loc1831
+Jump loc192e
+loc17dc:Push 2
+Push 1
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "slice"
+CallMethod
+ToNumber
+Return
+loc1807:Push 2
+Push 1
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "slice"
+CallMethod
+Return
+loc1831:Push 2
+Push 1
+Push 0
+Push register1
+Push "consume"
+CallMethod
+Push "slice"
+CallMethod
+StoreRegister 3
+Pop
+Push register3
+Push 1
+Push "Parser"
+GetVariable
+Push "constObj"
+GetMember
+Push "hasOwnProperty"
+CallMethod
+Not
+If loc1897
+Push "Parser"
+GetVariable
+Push "constObj"
+GetMember
+Push register3
+GetMember
+Return
+loc1897:Push register3
+Push 1
+Push "Code"
+GetVariable
+Push "playerVars"
+GetMember
+Push "hasOwnProperty"
+CallMethod
+Not
+If loc18de
+Push "_root.game.player."
+Push "Code"
+GetVariable
+Push "playerVars"
+GetMember
+Push register3
+GetMember
+Add2
+StoreRegister 3
+Pop
+Jump loc191a
+loc18de:Push register3
+Push 1
+Push "Parser"
+GetVariable
+Push "globalShortcuts"
+GetMember
+Push "hasOwnProperty"
+CallMethod
+Not
+If loc191a
+Push "Parser"
+GetVariable
+Push "globalShortcuts"
+GetMember
+Push register3
+GetMember
+StoreRegister 3
+Pop
+loc191a:Push register3
+Push "$"
+Push 2
+InitArray
+Return
+loc192e:Push 0
+Push register1
+Push "wrongTokenError"
+CallMethod
+Pop
+loc1942:Push register2
+Return
+}
+SetMember
+Push register1
+Push "constObj"
+Push "true"
+Push true
+Push "false"
+Push false
+Push "undefined"
+Push undefined
+Push "null"
+Push null
+Push 4
+InitObject
+SetMember
+Push register1
+Push "globalShortcuts"
+Push "p"
+Push "_root.game.player"
+Push "g"
+Push "_root.game"
+Push "G"
+Push "com.nitrome.toxic.Global"
+Push 3
+InitObject
+SetMember
+Push 1
+Push null
+Push "_global"
+GetVariable
+Push "Parser"
+GetMember
+Push "prototype"
+GetMember
+Push 3
+Push "ASSetPropFlags"
+CallFunction
+loc19e1:Pop

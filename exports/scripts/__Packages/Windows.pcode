@@ -1,4 +1,4 @@
-ConstantPool "_global", "Windows", "prototype", "init", "clip", "window_clip", "w", "getNextHighestDepth", "inputWindow", "window", "attachMovie", "title", "Input string", "customMinimize", "minimized", "inputField", "_visible", "TAS", "updateText", "updateMainField", "_static", "createTextField", "background", "type", "input", "onKillFocus", "lastCaretPos", "loadInputs", "offsetField", "loadOffsets", "offsetBarsWindow", "Offset bars", "barsWindow", "center", "Consolas", "TextFormat", "setNewTextFormat", "autoSize", "varWindow", "Vars", "update", "updateVarWindow", "Utils", "visWindowArray", "length", "VisWindow", "imgMinimize", "img", "createEmptyMovieClip", "_y", "bmps", "flash", "display", "BitmapData", "attachBitmap", "inputDisplay", "Input display", "inputDisplayParams", "com", "nitrome", "toxic", "Global", "clearBitmap", "spacing", "size", "geom", "Rectangle", "fillRect", "DIR_PRESSED", "UP_PRESSED", "DOWN_PRESSED", "border", "bombsThrownThisFrame", "timerWindow", "00:00.000", "Timer", "updateTimerWindow", "noMinimize", "mainTextField", "_height", "nullField", "onMouseUp", "curDragging", "onEnterFrame", "_x", "_xmouse", "Math", "min", "max", "curDragOfsX", "_ymouse", "curDragOfsY", "focus", "Selection", "getFocus", "slice", "_level0.window_clip", "ind", "getBeginIndex", "i", "mainIndices", "mainBehaviors", "windowFunction", "nullFocus", "obj", "Function", "Array", "apply", "setFocus", "minimizeWindow", "closeWindow", "removeMovieClip", "startDragging", "scrollUp", "scroll", "scrollDown", "options", "createWindow", "createEmptyWindow", "", "ASSetPropFlags"
+ConstantPool "_global", "Windows", "prototype", "init", "clip", "window_clip", "w", "getNextHighestDepth", "inputWindow", "window", "attachMovie", "title", "Input string", "customMinimize", "minimized", "inputField", "_visible", "TAS", "updateText", "updateMainField", "_static", "createTextField", "background", "type", "input", "onKillFocus", "lastCaretPos", "loadInputs", "offsetField", "loadOffsets", "offsetBarsWindow", "Offset bars", "barsWindow", "center", "Consolas", "TextFormat", "setNewTextFormat", "autoSize", "varWindow", "Vars", "update", "updateVarWindow", "Utils", "visWindowArray", "length", "VisWindow", "imgMinimize", "img", "createEmptyMovieClip", "_y", "bmps", "flash", "display", "BitmapData", "attachBitmap", "inputDisplay", "Input display", "inputDisplayParams", "com", "nitrome", "toxic", "Global", "clearBitmap", "spacing", "size", "geom", "Rectangle", "fillRect", "DIR_PRESSED", "UP_PRESSED", "DOWN_PRESSED", "border", "bombsThrownThisFrame", "timerWindow", "00:00.000", "Timer", "updateTimerWindow", "noMinimize", "mainTextField", "_height", "nullField", "onMouseUp", "curDragging", "onEnterFrame", "_x", "_xmouse", "Math", "min", "max", "curDragOfsX", "_ymouse", "curDragOfsY", "focus", "Selection", "getFocus", "slice", "_level0.window_clip", "ind", "getBeginIndex", "nullFocus", "i", "mainIndices", "mainBehaviors", "windowFunction", "obj", "Function", "Array", "apply", "setFocus", "minimizeWindow", "closeWindow", "removeMovieClip", "startDragging", "scrollUp", "scroll", "scrollDown", "options", "createWindow", "createEmptyWindow", "", "ASSetPropFlags"
 Push "_global"
 GetVariable
 Push "Windows"
@@ -1279,6 +1279,12 @@ GetVariable
 Push "getBeginIndex"
 CallMethod
 DefineLocal
+Push 0
+Push "Windows"
+GetVariable
+Push "nullFocus"
+CallMethod
+Pop
 Push "i"
 Push "w"
 GetVariable
@@ -1289,13 +1295,13 @@ GetMember
 Push 1
 Subtract
 DefineLocal
-loc177c:Push "i"
+loc1791:Push "i"
 GetVariable
 Push 0
 Less2
 Not
 Not
-If loc1811
+If loc1826
 Push "ind"
 GetVariable
 Push "w"
@@ -1308,7 +1314,7 @@ GetMember
 Less2
 Not
 Not
-If loc17ff
+If loc1814
 Push "w"
 GetVariable
 Push "mainBehaviors"
@@ -1317,7 +1323,7 @@ Push "i"
 GetVariable
 GetMember
 Not
-If loc17fa
+If loc180f
 Push "w"
 GetVariable
 Push "w"
@@ -1333,19 +1339,13 @@ GetVariable
 Push "windowFunction"
 CallMethod
 Pop
-loc17fa:Jump loc1811
-loc17ff:Push "i"
+loc180f:Jump loc1826
+loc1814:Push "i"
 Push "i"
 GetVariable
 Decrement
 SetVariable
-Jump loc177c
-loc1811:Push 0
-Push "Windows"
-GetVariable
-Push "nullFocus"
-CallMethod
-Pop
+Jump loc1791
 loc1826:Push "Windows"
 GetVariable
 Push "clip"
