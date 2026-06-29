@@ -4,6 +4,6 @@
     <pattern height="13" id="PatternID_1211_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -18.0, -6.5)" patternUnits="userSpaceOnUse" viewBox="0 0 36 13" width="36">
       <image height="13" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="36" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAANCAYAAADBo8xmAAAAr0lEQVR4Xt2SSwqEMBBEvYfC4NaNi4HZzWnEW3nXSAc6lJXuxN9CLHirpKorn6Z5qMIOroizLDYK/6kzmZefaTiomMPZiqxnBg/PcEKY5ZEU2v5jIms3lEoZnI9zNobhO5pQqZr4xAkshNleIVE0cSEsVUP+iWL9E69M6QWKpTQcByPi9zhTRhU3oUnDZK0EH8LiaBlVduXezSG8v4bM4cElZTfAgQzv38FlcSDzPq1ix1PKAjOtPQAAAABJRU5ErkJggg=="/>
     </pattern>
-    <path d="M-18.0 -6.5 L18.0 -6.5 18.0 6.5 -18.0 6.5 -18.0 -6.5" ffdec:fill-bitmapId="1210" style="fill:url(#PatternID_1211_1)"/>
+    <path d="M-18.0 -6.5 L18.0 -6.5 18.0 6.5 -18.0 6.5 -18.0 -6.5" ffdec:fill-bitmapId="1210" fill-rule="evenodd" style="fill:url(#PatternID_1211_1)"/>
   </g>
 </svg>

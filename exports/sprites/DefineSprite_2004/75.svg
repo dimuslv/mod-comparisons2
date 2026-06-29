@@ -9,7 +9,7 @@
       <pattern height="168" id="PatternID_1991_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -26.0, -167.0)" patternUnits="userSpaceOnUse" viewBox="0 0 61 168" width="61">
         <image height="168" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="61" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAACoCAYAAABTyeYZAAACoElEQVR4Xu2VQZKUQBBFZ2+48gCeyb2XcOkNvI8XcecdPIKbHpPppD+/CihooJvxvYiMmIaszP+AiHl5AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeKdcZurd0Etd/nybLO0dTDgRpegc5QM4FcVbbCp7ADHHBz8rpcyaOpF4Gf6eOol4F/Lv7w9FFUILKub6omehEK2VC7VWzPeFz0AhOFYu1FIx3xc+msuvnx+7csFauVBLxQ5f+ggySFdT0t57RvFuuQf68f1zVTx6v375NKi4tkb8uvshvIVQFkqvFY8zluUQiiBaLh79LrtWPHoty2F0AfRN3iOt4j7LK/osy2F04fwT1mBLpVM8Z/vMp5JW8Xuk4+tw+dyTdb12CIMQWi3ieS1+u2jKavl93/kWaV+Kzysqn/q90i4c/TPyu9MHWCLt4notfk8Ja6l8nBtG24fbW/pHLFeZlI2+mnjtbbv4QuHjpDVEhlbJ6FsireJR/glXPudud/59i7cPVWkVTOm5cml/KFkunG9bz117d6P4/MakNayeyYqemrjK+wPQvXpWenZjIJjLp6RVPO6r9Ji4V/S7dFzT69ffu1CV9jfTIq0CY/I5L0vk+pk+N4NuTTXsWnGXj8oZOr82tzbzFnNbipAqrf+C5gLq24rfWfog8nyKt8yVrJtSSPvb9nATAft+vZ/CukN7G+duykDaxeN+S7Da/Qbpbv/cfJHfhC5ATTruRY0F8mDe6z0pHnWd3WfwHS6uO+zsYgrZrLjnIWqB/Fqc07P+gKSnz+CzvVR+ZEYzRRgd6IvHKnq93397r4bw3uzxs1Ge0eY0oSGOqhpjPX7d6//mFReQwTTpZVDLAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M35.0 1.0 L-26.0 1.0 -26.0 -167.0 35.0 -167.0 35.0 1.0" ffdec:fill-bitmapId="1990" style="fill:url(#PatternID_1991_1)"/>
+      <path d="M35.0 1.0 L-26.0 1.0 -26.0 -167.0 35.0 -167.0 35.0 1.0" ffdec:fill-bitmapId="1990" fill-rule="evenodd" style="fill:url(#PatternID_1991_1)"/>
     </g>
     <g id="sprite0">
       <use ffdec:characterId="1966" height="56.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape1"/>
@@ -18,7 +18,7 @@
       <pattern height="56" id="PatternID_1966_1" overflow="visible" patternTransform="matrix(0.0, 1.0, -1.0, 0.0, 56.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 56" width="56">
         <image height="56" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAABoElEQVR4Xu2YTUoEQQyFB3El4krEm3j8uYQbf8CdB1Bx4Sb6hAehZOxkplNNQj5omqF7quvlpapStds1hRGRs3uRyyeRK9zxe3wnLRDzIG/Xj1+fd7xeRS7G91KixT3L+005ByGG4sqI0sAxCMR9fFYCOoj7+KwESEtMKCXT8xTKB6Z8avfkpEiZzp5Oe4KRkk0Eehw4lZnf+kXXn2WKak3Xn5mBY3AuetDjO2h/+tZrVnryO9PHeXR60rkX+bidEcg/RAmkMKY/LszUU8WBqBRFGlIY2l5r7DFwMMR0nBI1yURNKjpw5sygi2sKjGJ0kOb8KxIPppZOK4I+u6qwjGJdfWaOlzwTBdpy8yDOhh7IHMSm/M6IK7+bpjlE+aGUqRpzA9ci6unN4XJmqkczoncWpcRxQtmLnEdsyTaHznV1FUlkJyLbNhO5LkW2bYadWDrMOsaNqJNAF+jw0lGC5Z0R/IdnrJsKBEvuWF3W6LVv0xQ9BIRwM00nPB3d/6x9PE6xBmUq2gFvBXJMSk9HO+itQBgcT1BSsTSmm6ZppvINrEthrazr7a0AAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M56.0 0.0 L56.0 56.0 0.0 56.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="1943" style="fill:url(#PatternID_1966_1)"/>
+      <path d="M56.0 0.0 L56.0 56.0 0.0 56.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="1943" fill-rule="evenodd" style="fill:url(#PatternID_1966_1)"/>
     </g>
   </defs>
 </svg>

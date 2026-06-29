@@ -19,7 +19,7 @@ class com.nitrome.buttons.NextLevelButton extends com.nitrome.buttons.SimpleButt
 	{
 		if(this.done == false)
 		{
-			com.nitrome.toxic.Global.level_id = com.nitrome.toxic.Global.level_id + 1;
+			com.nitrome.toxic.Global.level_id++;
 			com.nitrome.toxic.Global.secret_id = 0;
 			_root.tt.doTween("reload");
 			Key.removeListener(this);

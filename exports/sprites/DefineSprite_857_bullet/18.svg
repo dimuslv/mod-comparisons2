@@ -13,7 +13,7 @@
       <pattern height="14" id="PatternID_546_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -7.0, -7.0)" patternUnits="userSpaceOnUse" viewBox="0 0 14 14" width="14">
         <image height="14" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="14" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAP0lEQVR4XmNgwAL+owF0eQyArgEdoKsHA3RFuABZmmCAMo3ogsSCoaSRHH9SFqqkakbRBAPoitABunoMQIwGAE5HTc8lrH90AAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M-7.0 -7.0 L7.0 -7.0 7.0 7.0 -7.0 7.0 -7.0 -7.0" ffdec:fill-bitmapId="545" style="fill:url(#PatternID_546_1)"/>
+      <path d="M-7.0 -7.0 L7.0 -7.0 7.0 7.0 -7.0 7.0 -7.0 -7.0" ffdec:fill-bitmapId="545" fill-rule="evenodd" style="fill:url(#PatternID_546_1)"/>
     </g>
     <g id="sprite1">
       <use ffdec:characterId="401" height="41.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="1.0" xlink:href="#shape1"/>

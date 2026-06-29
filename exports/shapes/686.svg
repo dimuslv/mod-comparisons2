@@ -4,10 +4,10 @@
     <pattern height="54" id="PatternID_686_1" overflow="visible" patternTransform="matrix(-1.0, 0.0, 0.0, 1.0, -83.9, -5.75)" patternUnits="userSpaceOnUse" viewBox="0 0 55 54" width="55">
       <image height="54" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="55" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA2CAYAAABjhwHjAAABF0lEQVR4Xu2XwQnDQAwEU0fKSRN5pbD0kB6dCLKwLL6H/Ui0iwb0ke7ghvXZ+HIZhmEYfsDtcd20Z8/zdd9GzIntQ8lp354SK+JSg1icHKRWd616KJ21BlIoFoBQ9e1SZaEqTg9SXFaCe0mpED+SEGwvp2JAZbhnIbcSUzTJ9mJHD8eJtZc7CqcXJQYgOHJujJwrJRX3pgSQi09vBF2Jvn/FvD2/1JpV6doWsNzqkJjxX4XWau/f4YNrIjxb0VoQ6fFB94RUWve1lCv0sIBFdE+BPa3lgCaj8z1qnYXcGZDeyDkS/WgWLBgpCcFYSUjZfCLOEH0PNb0oSchBkCUjRFkQkrrGFpbTmT2Q0749MXdrj1ixYQjgDWw/dC7Ijr7GAAAAAElFTkSuQmCC"/>
     </pattern>
-    <path d="M-138.9 -5.75 L-83.9 -5.75 -83.9 48.25 -138.9 48.25 -138.9 -5.75" ffdec:fill-bitmapId="661" style="fill:url(#PatternID_686_1)"/>
+    <path d="M-138.9 -5.75 L-83.9 -5.75 -83.9 48.25 -138.9 48.25 -138.9 -5.75" ffdec:fill-bitmapId="661" fill-rule="evenodd" style="fill:url(#PatternID_686_1)"/>
     <pattern height="66" id="PatternID_686_2" overflow="visible" patternTransform="matrix(-1.0, 0.0, 0.0, 1.0, -159.05, -15.75)" patternUnits="userSpaceOnUse" viewBox="0 0 62 66" width="62">
       <image height="66" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="62" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAABCCAYAAAAPIWX+AAABIklEQVR4Xu2WwWkDQRRDXYfLSRM+ubD0kB5jdBAIsQGDD2EkPfhgdmYPb/T9Z2+3McYYY4wxPuLref/1ZzVAvvYAIP798+iWrzwAtv3k26A48LVoVJz4nkiuxOPlXZqTPrr1VZqyHHbR1x3kKK3CXlHymih++zqIlH9HnOgB+NoReILvSB8PBJUqaR9ivi+OqtZ2Jt8oT/Ga4UYqxTnJa64zFeb/O06aklqeMMvfPRaVpKimGyHrqXqykel6skpUuspVst7S/s7xuDSTjU0Z/CUNIoXBlTSfx7Y3uBKvla4R96SjpYEmTuKlgYprm/u+KFza12Oh+KTTqWzxeGmd0Fog/rqCHD9GUBXSSq040U/ROnlQmTqpTR3UioPJjzHG+D9eHYrLibBNSlAAAAAASUVORK5CYII="/>
     </pattern>
-    <path d="M-221.05 -15.75 L-159.05 -15.75 -159.05 50.25 -221.05 50.25 -221.05 -15.75" ffdec:fill-bitmapId="659" style="fill:url(#PatternID_686_2)"/>
+    <path d="M-221.05 -15.75 L-159.05 -15.75 -159.05 50.25 -221.05 50.25 -221.05 -15.75" ffdec:fill-bitmapId="659" fill-rule="evenodd" style="fill:url(#PatternID_686_2)"/>
   </g>
 </svg>

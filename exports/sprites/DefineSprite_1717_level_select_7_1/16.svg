@@ -10,23 +10,23 @@
       <pattern height="35" id="PatternID_1713_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -36.5, -17.5)" patternUnits="userSpaceOnUse" viewBox="0 0 73 35" width="73">
         <image height="35" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="73" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAjCAYAAADYHCfgAAAA30lEQVR4Xu3WQQrCQBBE0ew9rrfw0hGFCBm0Y5LuX9WQB0NwofUHsnCaLr3dHve5+oybrRAXIDbKUPHUTjoynNxKQ0fTe6cpghWbh6liVbu7KUOV2x/Lf5HojN8hqfffLCICFn0WEQGLPouIgEWfRUTAos8iImDRZxERsOiziAhY9FlEBCz6LCI2yBvlAX+SdkrHd5K1yoYPkvRKRk/Cm/HBJGg3OpYMa8eGiiD9yEihVf94meVz1rMrpB8ZKRS+SVmqfpeC9CMjhb6+SVXPrpB+ZKQQ0v8a6X7GO11+eALCFVCa12a2AwAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M36.5 17.5 L-36.5 17.5 -36.5 -17.5 36.5 -17.5 36.5 17.5" ffdec:fill-bitmapId="1712" style="fill:url(#PatternID_1713_1)"/>
+      <path d="M36.5 17.5 L-36.5 17.5 -36.5 -17.5 36.5 -17.5 36.5 17.5" ffdec:fill-bitmapId="1712" fill-rule="evenodd" style="fill:url(#PatternID_1713_1)"/>
     </g>
     <g id="text0">
       <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
-        <use fill="#0b8a73" height="8.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 6.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_70"/>
-        <use fill="#0b8a73" height="8.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 13.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
-        <use fill="#0b8a73" height="8.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 16.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_10"/>
+        <use fill="#0b8a73" height="8.0" transform="matrix(0.0077, 0.0, 0.0, 0.0077, 6.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_70"/>
+        <use fill="#0b8a73" height="8.0" transform="matrix(0.0077, 0.0, 0.0, 0.0077, 13.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_.0"/>
+        <use fill="#0b8a73" height="8.0" transform="matrix(0.0077, 0.0, 0.0, 0.0077, 16.0, 9.0)" width="12.0" xlink:href="#font_FFF_Idea_8pt_st_10"/>
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_70">
-      <path d="M126.3 -631.5 L757.8 -631.5 757.8 126.3 631.5 126.3 631.5 -505.2 126.3 -505.2 126.3 -631.5" fill-rule="evenodd" stroke="none"/>
+      <path d="M129.35 -646.65 L776.0 -646.65 776.0 129.35 646.65 129.35 646.65 -517.35 129.35 -517.35 129.35 -646.65" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_.0">
-      <path d="M252.6 0.0 L252.6 126.3 126.3 126.3 126.3 0.0 252.6 0.0" fill-rule="evenodd" stroke="none"/>
+      <path d="M258.65 0.0 L258.65 129.35 129.35 129.35 129.35 0.0 258.65 0.0" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="font_FFF_Idea_8pt_st_10">
-      <path d="M378.9 -631.5 L378.9 126.3 252.6 126.3 252.6 -505.2 126.3 -505.2 126.3 -631.5 378.9 -631.5" fill-rule="evenodd" stroke="none"/>
+      <path d="M388.0 -646.65 L388.0 129.35 258.65 129.35 258.65 -517.35 129.35 -517.35 129.35 -646.65 388.0 -646.65" fill-rule="evenodd" stroke="none"/>
     </g>
     <g id="sprite0">
       <use ffdec:characterId="1710" height="32.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="48.0" xlink:href="#shape1"/>

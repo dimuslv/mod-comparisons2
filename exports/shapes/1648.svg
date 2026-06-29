@@ -4,6 +4,6 @@
     <pattern height="59" id="PatternID_1648_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -37.5, -29.5)" patternUnits="userSpaceOnUse" viewBox="0 0 75 59" width="75">
       <image height="59" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="75" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA7CAYAAAAzbHcrAAABlElEQVR4Xu2WQW4DMQwD85Z8te/sW1rsbe0UGLCUHMnxAD5RpJY67eNx0Pj6fv64b87cFres62+FW9b1t+KjyrqcYwmcYwm4x3L9rXDLuv5WUNn5n+o/b85sC5UhnXD9paAypBOuvxRUhnTC9ZeCypBOuP5SUBnSCddfCipDOuH6S0FlSCdcfymoDOnE5c9+8840aBnphOsnsvMHaBnphOsnsvMHaBnphOsnsvMHaBnphOsnsvMHaBnphOsnsvMHaBnphOsnsvMHaBnphOsnsvMHaNml05s9d0h3mb8l4w3LbrtlyE96dc6xBM6xBM6xBM6xBM6xBM6xBF6ORe/mfWGe/evNnk5I30/DpHdH6kfDpHdH6icNb4jUXxreEKm/NLwhUn8aJr07Uj8aJr07Ur9rmN7s2YnQfqFhBQntFxpWkNB+oWEFCe0XGlaQ0H6hYQUJ7RcaVpDQfqFhBQntFxpWkNB+oWHFCO8WHliElF4poW8mrVNa8JtI7ZMavpj0LukLFrGkx5IlySzrcC3q/uZOB5NfhdQNZolGm+8AAAAASUVORK5CYII="/>
     </pattern>
-    <path d="M-37.5 -29.5 L37.5 -29.5 37.5 29.5 -37.5 29.5 -37.5 -29.5" ffdec:fill-bitmapId="1647" style="fill:url(#PatternID_1648_1)"/>
+    <path d="M-37.5 -29.5 L37.5 -29.5 37.5 29.5 -37.5 29.5 -37.5 -29.5" ffdec:fill-bitmapId="1647" fill-rule="evenodd" style="fill:url(#PatternID_1648_1)"/>
   </g>
 </svg>

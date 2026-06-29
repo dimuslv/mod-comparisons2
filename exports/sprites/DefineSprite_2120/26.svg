@@ -15,7 +15,7 @@
       <pattern height="55" id="PatternID_2109_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -13.0, -27.5)" patternUnits="userSpaceOnUse" viewBox="0 0 26 55" width="26">
         <image height="55" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="26" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAA3CAYAAAASeFomAAABbUlEQVR4Xu2VUW7CMBAFuf9HL9Nb9BY9QKv+oEo0JWijOHoedm0noSG0HclCwO6MTD44HBrpAzi3GIojuNcMRa3QU4TLc6HPhUuJ1+7kngh6r+ACxdEh9GZwWEUv3efVWRzToVLAO16M/gEdmBuZFdMvvcjz8d09nGsOebdR8dPpbThRkLdiJwx5kVJsdYgRL1b9+fTD/1AUcp+TdB47ZGwXyt71cSiKMbL/UO3nY+RHQt5tVoWi2E1CjHnPapOQvvciNw9Ft6mGDC/WEtK9xSGNtYTIfkIau3sozUQh928i4YVSLIWi2/y+ENk+VIutCWWRWkhjfyOkc9WQkU2MMLbLEP0T4p9gKMWi59MUMqQxUQpFEYPujGxyhLd6rJCRTfftIYVOl2xjREN6vIhBZwgXvVB0G4O+EC4aGipFDPpCuGio3At9fHfDMegrMhlGiRFFdIaeKpllJIoYX+fz8EpPFXiaoacJSmpwP3EBvF0wvJc9HX8AAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M13.0 27.5 L-13.0 27.5 -13.0 -27.5 13.0 -27.5 13.0 27.5" ffdec:fill-bitmapId="2108" style="fill:url(#PatternID_2109_1)"/>
+      <path d="M13.0 27.5 L-13.0 27.5 -13.0 -27.5 13.0 -27.5 13.0 27.5" ffdec:fill-bitmapId="2108" fill-rule="evenodd" style="fill:url(#PatternID_2109_1)"/>
     </g>
     <g id="sprite1">
       <use ffdec:characterId="1963" height="56.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape1"/>
@@ -24,7 +24,7 @@
       <pattern height="56" id="PatternID_1963_1" overflow="visible" patternTransform="matrix(0.0, 1.0, 1.0, 0.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 56" width="56">
         <image height="56" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAABrUlEQVR4Xu2YMW7DMAxFs3btPTp27C0yeuuVCxSpxwLdOySC0sEF7dBlFSQWE5MCCT4gMAI7sb74KVHcbALHfA7Dw+64f979pBe4wvfyGbOAmD4fth85feHnPeen8jmTUHF9Tp27CIIYFOdGFAUiBgLhWt5zAUYQruU9F4AtYUFxac97cD8x7q0dixPBpJ05g+ZMhkmaCORE4F403zVC6083RTUl6k/LTPZMnXTSw3vGA7T20UvLnvge9TyXtidGrj+mV42JPENK4CzsZP9J3GGrKg6QsijY8E9Y6tbKvTmXoZVS006RWmSkFhU6cdXOwCiuKVCKMoIYnKsi4YZq6bQikwMZVZhFsawxo8dd9kQBGvLqJLYGTWRM4ip/W4Tl7yAILuE+lSxVY2ymrW39ero5uJ1V1aMW+X8kcyQOF5S34ftR4kjWHIxcVFeSSA5C8r+rkdyXJP+7GhzEUjPrlmhIdQJZTJvv9VZCzTMl429OPdamAoGl6NRGmUL3vqYWvQQImQ/TGAnGQGHvw3ZK7aSoQiPArUBusbQ6NILcCgQnhzMppljK6SAIAlV+AVO+mUxEbrerAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M0.0 0.0 L56.0 0.0 56.0 56.0 0.0 56.0 0.0 0.0" ffdec:fill-bitmapId="1943" style="fill:url(#PatternID_1963_1)"/>
+      <path d="M0.0 0.0 L56.0 0.0 56.0 56.0 0.0 56.0 0.0 0.0" ffdec:fill-bitmapId="1943" fill-rule="evenodd" style="fill:url(#PatternID_1963_1)"/>
     </g>
   </defs>
 </svg>

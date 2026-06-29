@@ -8,7 +8,7 @@
       <pattern height="31" id="PatternID_2178_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 69 31" width="69">
         <image height="31" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="69" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAfCAYAAACxmAC4AAACCUlEQVR4Xu2WsUoDURBFg6SSVNaWlqmCpaVlKmsrsUxlbSXBL7AUv0D8JL9EUCZyl8vJvM2u4maJb+DC5mXmzZ3zXlYnkxo1atSoUaNGjclkejT9lPjdQUWXIZVzebVs1KeO66MNGb6+W21UMi8YynMJDmsiuHcpbzQhw09vz40yMG1A2sB03X80EcZk1J+zAQll9XjfqATFa7I+owNDc/qcDanhCCXLZw3zvdeowIQRnR5NagiCmZ3Mmtw2KS/7qWWHEOvxTI+Dhwy5uQyIQ8mGzLQrPwOzdyhhQFfZVRqCA/q7hCIY7qXv2Dtq9wpGZt2Q3gUE48MRAIciHMLUfpLvoXx6HTTCwHwxb+RmXRqMQ+vqu5jj9Zm8/96BxItQRi5uTotg/KQJQ+u8UQ7H17m3ekZ/HVD4otdBwg0KzO3L+RYYDr56+AZCGJRqI59rBBJ9BcT70vOfBk9MUByMPnN4X9NQmRxCBksQBIRQBgeTnZaDoEEO5HVe47WqV77vofqsxvsOBkUG4oR8OD+hkghTA70eLxv5kFldm9yL31jO8Ovw0zgkcc5OoeIg7i/Q0q2IXH/Wdeef15L8vdGmtp5+W6jMby84grF+P9sJJIzK0MdivZGacvC2f9L6win17AJGB60azr8VfYG0GcxgUITSFUypp7wRCGfQfDvB6Er9V5FHjRo1fhRfuxafJFrex1YAAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M69.0 31.0 L0.0 31.0 0.0 0.0 69.0 0.0 69.0 31.0" ffdec:fill-bitmapId="2177" style="fill:url(#PatternID_2178_1)"/>
+      <path d="M69.0 31.0 L0.0 31.0 0.0 0.0 69.0 0.0 69.0 31.0" ffdec:fill-bitmapId="2177" fill-rule="evenodd" style="fill:url(#PatternID_2178_1)"/>
     </g>
   </defs>
 </svg>

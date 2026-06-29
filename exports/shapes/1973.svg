@@ -4,6 +4,6 @@
     <pattern height="168" id="PatternID_1973_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -30.5, -84.0)" patternUnits="userSpaceOnUse" viewBox="0 0 61 168" width="61">
       <image height="168" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="61" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAACoCAYAAABTyeYZAAABw0lEQVR4Xu3WQU7DQBBE0dx/wWW4BbfgALBDSFGkgVqM1ZQcx2zA7vpP8iZpj+drkiiXCwAAAAAAAAAAAAAAAAAAAAAAwGV889faIzoF0SmITkF0CqJTEJ2C6BREpyA6BdEpiE5BdAqiUxCdgugECp78vbaITkF0CqJTEJ2C6BREpyA6BdEpiE5BdAqiUxCdgugURKcgOgXRCWrw5DPteLD4TDseLD7TjgeLz7TjweIz7Xiw+Ew7Hiw+044Hi8+048HiM+14sPhMOx4sPtOOB4vPtOPB4jPteLD4TDseLD7Tzgx9vV2JbmupHD+jxWfbqJFED6J7qZFED6J7qZFEj4BoBb/cPvv/K1vqxnq0+D2nV+OILvye06txcdEzeF6tf8yIJproPpaqsR0tfu9p1Sii06KfP96JnvzeU6pBCnwULb7G6dSY+n2e0Wvhvsap1BA/5XmtRYuvdRo1wk/Zo1uE183XU57RT9e3zY+4+JqH5pv34Brd4rR902unvBZ977TFn3Eovtmt4HntOW3xZ/0736DcC96KfhQu/uw/5xua9gY/Cj9UvG9gqpvdG+zhh4r3h1Vrsb8J9vC6xt548T1H+wLg1YO4KFkbUgAAAABJRU5ErkJggg=="/>
     </pattern>
-    <path d="M30.5 84.0 L-30.5 84.0 -30.5 -84.0 30.5 -84.0 30.5 84.0" ffdec:fill-bitmapId="1972" style="fill:url(#PatternID_1973_1)"/>
+    <path d="M30.5 84.0 L-30.5 84.0 -30.5 -84.0 30.5 -84.0 30.5 84.0" ffdec:fill-bitmapId="1972" fill-rule="evenodd" style="fill:url(#PatternID_1973_1)"/>
   </g>
 </svg>

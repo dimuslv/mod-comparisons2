@@ -116,9 +116,11 @@ class Code
 								if(_loc12_ >= 0)
 								{
 									_loc4_[_loc8_][1] = _loc12_;
-									break;
 								}
-								_loc4_[_loc8_][0] = _loc12_;
+								else
+								{
+									_loc4_[_loc8_][0] = _loc12_;
+								}
 								break;
 							}
 							if(_loc7_ === "," && _loc11_ === 1)

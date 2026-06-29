@@ -15,7 +15,7 @@
       <pattern height="141" id="PatternID_2115_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -6.5, -70.5)" patternUnits="userSpaceOnUse" viewBox="0 0 13 141" width="13">
         <image height="141" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="13" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAACNCAYAAABsW/CkAAAAu0lEQVR4Xu3RQQqDQAyFYe+/6MF6ix6g64IIlcDL8IyJzNS2UPp+mIWYD5w4TaFnUpxpxcGsYeCl6LbMu8OV4Lo82kkhPzC4zPcN5FJkwM/nEMPyTryMHlSuPCLuEJWb+xHEkDdYbi4iixEXjdApZPlL/z+M4mzrFLK6Ps3iob9Glg91rdsTQkJICH0fcXFmVwRWnEkbBpYQEkJCSAgJoZeQNQwsISSEhJAQEkJCSAgJISEkhISQEHo7WgGew0l3Cpto0gAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M6.5 70.5 L-6.5 70.5 -6.5 -70.5 6.5 -70.5 6.5 70.5" ffdec:fill-bitmapId="2114" style="fill:url(#PatternID_2115_1)"/>
+      <path d="M6.5 70.5 L-6.5 70.5 -6.5 -70.5 6.5 -70.5 6.5 70.5" ffdec:fill-bitmapId="2114" fill-rule="evenodd" style="fill:url(#PatternID_2115_1)"/>
     </g>
     <g id="sprite1">
       <use ffdec:characterId="1967" height="56.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape1"/>
@@ -24,7 +24,7 @@
       <pattern height="56" id="PatternID_1967_1" overflow="visible" patternTransform="matrix(0.0, 1.0, -1.0, 0.0, 56.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 56" width="56">
         <image height="56" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAAyklEQVR4Xu3YOwrCQBSF4VhooUtw/7uxEWzcgEtIe+UUIxIQRWZuZk7+D0KKwIT7yOPONMFUROwuEXudl9eGp6AeEcf7PJ8V5PL68BSUglOQthW0bU8AAAAgk/3PdRmPLGc/sa5gZnCZ93rJas8W2yBa8xZx0PExaVlZbbENUtasve5fWiSyVPAacarZGd1pkTygF/b9nfWdXI19BQHgV9YvRAVVexzrSotxrCvW7QlgHfYvFkY5NKSsf92VHtn7rrTlM2RfQQDb8AQfejbLwLTh9AAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M56.0 0.0 L56.0 56.0 0.0 56.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="1945" style="fill:url(#PatternID_1967_1)"/>
+      <path d="M56.0 0.0 L56.0 56.0 0.0 56.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="1945" fill-rule="evenodd" style="fill:url(#PatternID_1967_1)"/>
     </g>
   </defs>
 </svg>

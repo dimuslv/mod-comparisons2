@@ -8,7 +8,7 @@
       <pattern height="50" id="PatternID_2012_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -28.0, -49.0)" patternUnits="userSpaceOnUse" viewBox="0 0 55 50" width="55">
         <image height="50" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="55" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAAyCAYAAAD4FkP1AAAC2UlEQVR4Xu2Wy5HUQBBE905wwgBs4o4THPEAf3CEGz5gApfZSYVSkZ1V/dGuRmqIyYiMUa+qquupJK1eXp56KtNth/8JbQ3f/nwbtuRNq9D0sCaHjGB7nENOodhsYsS5PUYh15jLFZtMoL5++RTMc3SSd6luf39/WOxQbNCBWkY8PQPgIXA/vn9eXAG9RBtYBojzDpGZYG4BvEQL0K+fHw+DQy14SjgFxHkHcfu0/ls4gk0NNwrYmtpUcDVAxDhUBudTmx6uBTgytangeoC0Q9amNh1cC1CfQ9onqpa4SzQMNwLqRux6fIlSuBHADDQz9vBNz1LR6FsBa0Z93/AspbcRfQTkWvc0pSDWzPK2w/q9gGu9hysAFbo/G94YAeG3QnLf1YdrmwSMYwXK7IAZpEPUjP302PwuFV8PBWAHyu2Qo172ukt70T5W71YK5nDeTM/eoJ/3OOyF/b0fv9hl621VwbSgN7TndnMIN85hD4JoT9ob/47fgqChUIjWzyICuR0A9kknn1ebGcM+8KvfoTTPcwBrflOhiEL5d59eWV3X4Gjk85i5MMFrcOzNL8woYIBzKIWjfYotOAXjmnW4Jhyd7a1rnSZBMoVCmRG3esk5Ao5xWDuc9+Vr+BA4xHhOD04BUcPBuG8CV+yjsZmTnEIhQRMrBQJcBqhA2WTgwSZDbwM5i0KSJNaKpHA1wBYcjLz1uKbQX6WvVCGxU6AKl0H67dgAbclje/GFPLFVoAvnkLxYCq0XsHEhT9cwnFvvCqxRi+uRt9+jlYLp/0k2DXsczfMK1nkUTlGAI9DyfN1lE9hA1DpBgtmFuURVuGQyrgKKQA7XyH+oAhjhtLHOsxPAkKPrTv7DVMDp8Y7GAhitE71iegGOXyHaJOI80ZTCuRHniY9SFcyNWE82FZN2qLMBu02oO7dmeL56Ro4XOVJhw56R40VWhTdmz8jxIkeLm4y6JY/t+SnoFZqzwXR7Kc3wAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M-28.0 -49.0 L27.0 -49.0 27.0 1.0 -28.0 1.0 -28.0 -49.0" ffdec:fill-bitmapId="2011" style="fill:url(#PatternID_2012_1)"/>
+      <path d="M-28.0 -49.0 L27.0 -49.0 27.0 1.0 -28.0 1.0 -28.0 -49.0" ffdec:fill-bitmapId="2011" fill-rule="evenodd" style="fill:url(#PatternID_2012_1)"/>
     </g>
   </defs>
 </svg>

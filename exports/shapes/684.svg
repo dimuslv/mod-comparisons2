@@ -4,10 +4,10 @@
     <pattern height="30" id="PatternID_684_1" overflow="visible" patternTransform="matrix(-1.0, 0.0, 0.0, 1.0, -57.1, 32.4)" patternUnits="userSpaceOnUse" viewBox="0 0 70 30" width="70">
       <image height="30" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="70" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAAAeCAYAAACR82geAAAAhklEQVR4Xu3VwQ2AIAyFYeZwHJfw5GDu4I6YxpQ0JAXxpPT/kl6kHvpSMSUAAAAAAAC8se5L9qruDUMDOM6tlBUyHG9ouzEajtc7pd6wukm9vnAIpuFXn5G9A+oz4T2fjg1CSsiK131WmHDsb/TJ0Ho3tDZrGqODliTzvWEj705tNEgA+JILUySK7K7qYz4AAAAASUVORK5CYII="/>
     </pattern>
-    <path d="M-57.1 32.4 L-57.1 62.4 -127.1 62.4 -127.1 32.4 -57.1 32.4" ffdec:fill-bitmapId="669" style="fill:url(#PatternID_684_1)"/>
+    <path d="M-57.1 32.4 L-57.1 62.4 -127.1 62.4 -127.1 32.4 -57.1 32.4" ffdec:fill-bitmapId="669" fill-rule="evenodd" style="fill:url(#PatternID_684_1)"/>
     <pattern height="60" id="PatternID_684_2" overflow="visible" patternTransform="matrix(-1.0, 0.0, 0.0, 1.0, -131.0, -20.75)" patternUnits="userSpaceOnUse" viewBox="0 0 36 60" width="36">
       <image height="60" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="36" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAA8CAYAAAAOhRhuAAAA+0lEQVR4Xu2VywnDQAxEXUfKSRM5pbD0kB4dJjAgBvlz0WoOerDglTB6SMLetqGIz/e1H4EczvP9+B99twQUYuFWkQgLU6ZNJMJOtYsQCmm8DYsxERsZXWTNL8VKBozQHShlJ2TZJf6/NG8Df7ZW3QN2UnZ7NkJXjNAVkGiXyYpnsTJQjEdzy+FIsrHovRwubNadLFZOFIrxrFvlUCYrnsXKORPS+xKOhFpkCIpbCQGVshPSjrVAKTxbCCl2QmCkzoBI9o1qhVIjdISVkNUOWchQQuNttHdE4fLaCFnsjQIRKyFgNTZg1yUrIcpYLHeUiXCnlsotLzgMN/kB00f1ChbAV64AAAAASUVORK5CYII="/>
     </pattern>
-    <path d="M-167.0 -20.75 L-131.0 -20.75 -131.0 39.25 -167.0 39.25 -167.0 -20.75" ffdec:fill-bitmapId="660" style="fill:url(#PatternID_684_2)"/>
+    <path d="M-167.0 -20.75 L-131.0 -20.75 -131.0 39.25 -167.0 39.25 -167.0 -20.75" ffdec:fill-bitmapId="660" fill-rule="evenodd" style="fill:url(#PatternID_684_2)"/>
   </g>
 </svg>

@@ -12,13 +12,13 @@
       <pattern height="20" id="PatternID_1511_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -10.0, -10.0)" patternUnits="userSpaceOnUse" viewBox="0 0 20 20" width="20">
         <image height="20" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="20" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAYUlEQVR4XuXOQQrAIAxEUU/olXJ0y0AHYowVRqELP2Qj5pFS/qi9xXcpQGZWMRLKaxgxj/riflcGrOYTvQxUsCm6g3E69Di4iw4YU9Aphi4EET74MsAX95d5VAKy5GtO9ADFiuyIjZox6gAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M-10.0 -10.0 L10.0 -10.0 10.0 10.0 -10.0 10.0 -10.0 -10.0" ffdec:fill-bitmapId="1510" style="fill:url(#PatternID_1511_1)"/>
+      <path d="M-10.0 -10.0 L10.0 -10.0 10.0 10.0 -10.0 10.0 -10.0 -10.0" ffdec:fill-bitmapId="1510" fill-rule="evenodd" style="fill:url(#PatternID_1511_1)"/>
     </g>
     <g id="shape1">
       <pattern height="19" id="PatternID_1514_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -28.0, 9.0)" patternUnits="userSpaceOnUse" viewBox="0 0 49 19" width="49">
         <image height="19" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="49" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAATCAYAAAA5+OUhAAAArElEQVR4Xu2RAQrDMAwD+549Zk/Y/3+xzQWBq0rNWtpQhx0YXEtxIjpNf9o8nq93FM/LEI8HJYPkAF2D4NefUQ72HS1++0wIlVgF6R3ge+VcW/ziWQS5W4iWDsYOgQV5ydbM9exvaUB5XC9DZANwC87qFay7szIEm/j7il6hdMzy3IYI3IVX9ArW3VkZAga+YM88fzuN5wzrbqcMUY3xQlQMsgoAQqhS/PbyfACCE8bsL6p6HQAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M21.0 28.0 L-28.0 28.0 -28.0 9.0 21.0 9.0 21.0 28.0" ffdec:fill-bitmapId="1513" style="fill:url(#PatternID_1514_1)"/>
+      <path d="M21.0 28.0 L-28.0 28.0 -28.0 9.0 21.0 9.0 21.0 28.0" ffdec:fill-bitmapId="1513" fill-rule="evenodd" style="fill:url(#PatternID_1514_1)"/>
     </g>
   </defs>
 </svg>

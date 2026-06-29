@@ -375,11 +375,7 @@ class Utils
 			{
 				switch(typeof currentObj[i])
 				{
-					default:
-						if(isProp)
-						{
-							obj.options.push(i + ": " + currentObj[i],false);
-						}
+					case "function":
 						break;
 					case "object":
 					case "movieclip":
@@ -388,7 +384,11 @@ class Utils
 							obj.options.push(i,[Utils.inspectWindow,str + "." + i]);
 						}
 						break;
-					case "function":
+					default:
+						if(isProp)
+						{
+							obj.options.push(i + ": " + currentObj[i],false);
+						}
 				}
 			}
 		}

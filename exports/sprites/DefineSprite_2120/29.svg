@@ -15,7 +15,7 @@
       <pattern height="68" id="PatternID_2112_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -8.5, -34.0)" patternUnits="userSpaceOnUse" viewBox="0 0 17 68" width="17">
         <image height="68" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="17" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAABECAYAAABnLt6+AAAA4UlEQVR4Xu3SUYrCQBBF0ez/w4W5CxfgtxACyrPtWLmp7urEgB/pC4FhfHUYdYah0NOJm2I89OLNIo5r8fYdRy2FwG0aV49XEdHBdXqsHg8Kgct4n58qxF9kxAIWOjNCqPrB8hvairj/J/9FCLUiC4AI/5r88yFI9a0chqj8YgvC27kTIPbZhChCTd+MsqPdiLLDDG0ClB13JGXHHUnZ8W5E5bGHcFvsUETteivKHnUkZY86krJHHfm2uPzETRgBxU0YAcVNGAHFTRgBxU0YAcVNGAHFTVM/A6oj6zri1wK8AEpFJKartPNQAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M8.5 34.0 L-8.5 34.0 -8.5 -34.0 8.5 -34.0 8.5 34.0" ffdec:fill-bitmapId="2111" style="fill:url(#PatternID_2112_1)"/>
+      <path d="M8.5 34.0 L-8.5 34.0 -8.5 -34.0 8.5 -34.0 8.5 34.0" ffdec:fill-bitmapId="2111" fill-rule="evenodd" style="fill:url(#PatternID_2112_1)"/>
     </g>
     <g id="sprite1">
       <use ffdec:characterId="1966" height="56.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape1"/>
@@ -24,7 +24,7 @@
       <pattern height="56" id="PatternID_1966_1" overflow="visible" patternTransform="matrix(0.0, 1.0, -1.0, 0.0, 56.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 56" width="56">
         <image height="56" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAABqUlEQVR4Xu2YwU7DMAyGd+DAHYkDVw5IvBVPymMwMaS9w9BExyX0r/BkgrbaW53Ilj+pqqZ2aX7/TuJktUoC81rKzUf5vF/v9w+443f9jlsgZjMMj+/fXy90vZXdXf2eS7i49TA8hXMQYkhcGFEcODYJHO/1sxCQg7jXz0KAtMSEEjI9ryF8YMKndk5ODJfprOm0Jhgu6SJQ48C1tPzWBK8/wxTVnKw/PQPH4Jz1oMd30H7zrVer9KTvNB/n1ulJzm0Oh+cWgfyHlUASRumPCzN1U3HAKkWRhiQMbS819o6BGw0RHadYTTJWkwoPnDgzyMUlBVpRO0jmnBWJB01LpwVBn1VVmEexqj5Tjoc8EwXccvEg9safgfw7iEX57RFVfidJcorwQ8lTNaYGrlnU0905LmeSetQjfGcRShxNKNtSbi22ZN0h57K6ssSyE5Zti7FclyzbFkOdmDvMusQNq5NAFejw3FGC5J2a6T90xtpTIJhzR+oyh699XVP0FBBCm2lyQtPR7bj20XGKNChN4Q5oK5BLUro53EFtBULB0QTFFXNjOkmSpCk/f/ZXwwfGHd0AAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M56.0 0.0 L56.0 56.0 0.0 56.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="1943" style="fill:url(#PatternID_1966_1)"/>
+      <path d="M56.0 0.0 L56.0 56.0 0.0 56.0 0.0 0.0 56.0 0.0" ffdec:fill-bitmapId="1943" fill-rule="evenodd" style="fill:url(#PatternID_1966_1)"/>
     </g>
   </defs>
 </svg>

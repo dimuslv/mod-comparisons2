@@ -20,7 +20,7 @@
       <pattern height="58" id="PatternID_473_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -11.5, -29.0)" patternUnits="userSpaceOnUse" viewBox="0 0 23 58" width="23">
         <image height="58" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="23" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAA6CAYAAABbGMJIAAAB4ElEQVR4Xu2X3UrDQBSE+xBWRYqtUiheqMVqUaGIKCroje//MJFZO8vZ2Z9u0iqCGRhisud8s9mjEAeDP6Am4Z2oef58b64f7p3Pl1fOeK6FbeXAk9k02DXutw1wAIJxpXm/TUAAwhswzD7HVfqqFO3yR+B7h/vBseDerktfUWwIzhVAGvepQRtGJFcwPZs1o8k4GUArGPXoMzWB3CJ9uVwkA+y5cw11qLf967UYjkLaBqRMMN0KfrO6cwCaQBrrneBotF69PTkgrrpWDacV/Pjx6uC4aoD2KtwFWNuAEtzArCP55OHB9+8yAzz8dBLACUZ9addQkM6AEtzWiZPyxSn4xe0iCzchWTVHx6NOcPYFNKPg1drCxZGCgbaB72SgObj2eqIoGlAtvB9oBO8HmoX3A43g2uuJomhAtfB+oBH8nw9Uv1ts3dYDLcHFkYKB4h6AEtwGtBoomzfBGSAO1JzMh85I16/cTXB+4ZKhAUU4A/D6Cu4EtwHr4uSx2W/zKjgDCOJfoTXX7Ed/Fj5/GQcBOagadRYMjsIh95Ah+JkA+38QbeECjcBWWTB2mAtYu0pd4NXyjTxLvrq97wzv4FbyO9Pjsc9Rp42bpLuqcbWiHduz1jdAvQJK0l3V+Hf1BePd6GpOxEzOAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M11.5 29.0 L-11.5 29.0 -11.5 -29.0 11.5 -29.0 11.5 29.0" ffdec:fill-bitmapId="472" style="fill:url(#PatternID_473_1)"/>
+      <path d="M11.5 29.0 L-11.5 29.0 -11.5 -29.0 11.5 -29.0 11.5 29.0" ffdec:fill-bitmapId="472" fill-rule="evenodd" style="fill:url(#PatternID_473_1)"/>
     </g>
     <g id="sprite2">
       <use ffdec:characterId="515" height="55.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="64.0" xlink:href="#shape1"/>
@@ -29,7 +29,7 @@
       <pattern height="55" id="PatternID_515_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -30.5, -27.5)" patternUnits="userSpaceOnUse" viewBox="0 0 64 55" width="64">
         <image height="55" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="64" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA3CAYAAAC8TkynAAAD4ElEQVR4Xu2ZsY4TQRBE/REEIERIQIBERERGwgcgEAkBEiHppQRkCImYP+HvOJW1bdXW9PRMz86uD8klPa29O9PTVZ61fb7T6aabZurfZP4LXRp+/fHJVLg28WBUmH7z7u1UNBAnlKupafr918+b0ZoaCvpYOFSucW1+L7ww0NPC7trduNaP1jk6iK6mtoCaX+6+rbBz0ZqVIKZrKAA1FBEFYI+1vmJBoN+FKUqZVxO9eHUtAH6s6BwbC9C7mhmR25yHNpeBG/do1dderB76V0NZ8Za6oItqQ9fiaiFoI8rd7x8rvv/5FaLjGa3tMSuE80TdjlbQFtLFPcM9pkfQNWosXlIqTPcGkDWMWgfRrcKwgjFeABnzqAEeP3t6xh7zOQ9cf/7yxWp8g5QKsx4YVwtAjSqYCyJjjDeOj4r2ufjqVmFW31kBxo1sfczThtUYQuAjzuOxYc/52KBbTeOtANRwxrxHzaDNsVe5Ui8t1zzM6a7A2BkB4Byvq2vYHN0VFowXAIWWVhGAmcM5NoqxmQAw3jOv6zEahCJmI7rlmocx79XZEoCupfX1Gsbz+0CE9rly2FARAH+ZYDBWr6vpHvPcLP/io0HUQiCTEd1KBZDBC0DN83gNoRWAd3udkiqanoU2psbUvNETghcAzi81UlptwU8/X4Xw2AjUjQKomTc0BJzTXaBzHLqkk6axJYDWDvDQ8adOFYW2Yg3YtvQCoCZdvLHeGg26pJOmYQEAPNdtXTOhY2y3eAHwLrOgTwM6F5z9KcABeCHwx5zB52vmawHYGqcBpQLg6/rZ730PqAXAazLeqw+8ABp0qwigFgLGjnwTjEKowa++HSN4LsazwZZWAXAICsbquUwAHEItCP4otfk4qmG7HtCty+JRCJasnm/dDpjjhQDMLGPXMI7vbX21re60N0EvBL4vccRYDWBkF2gQDBlZhdEKgOoNqdiKUQC6Q3p3QS0IDoSPfx99cI9kNiKlIgAOohVAbwggCsKu46jXWnDPy1ppFeZHAohC8ILQe5iDiLA6AUMqAuAgcN0CaIXQG8QBpHWeyOaRuG2tKAAvhFYQWbR2DYxdvAxLkywCqIUQhbEVXYPhvuwFY0MZFcaBLtIK4CjU+Fbz0OW+70EbOgrtY5Z5qHgT7AlEG9wDXZONzzJvcr+v6+IR2nwWradYT/wVWk1skRtANgSv4R50rldH/n7YRdUQWk0qM8ZXjO9m3hSG0BtI67oa1Np2/kjjrOLP1lqTEa05Vhc/weO5/hSPPhauovPiI/8nqBlSuLaNt3UXHoQuDek/TiLMUATXJh60tNmt3HTTzroHow+IGS1wlyYAAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M-30.5 -27.5 L33.5 -27.5 33.5 27.5 -30.5 27.5 -30.5 -27.5" ffdec:fill-bitmapId="514" style="fill:url(#PatternID_515_1)"/>
+      <path d="M-30.5 -27.5 L33.5 -27.5 33.5 27.5 -30.5 27.5 -30.5 -27.5" ffdec:fill-bitmapId="514" fill-rule="evenodd" style="fill:url(#PatternID_515_1)"/>
     </g>
     <g id="sprite3">
       <use ffdec:characterId="479" height="7.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="30.0" xlink:href="#shape2"/>
@@ -38,7 +38,7 @@
       <pattern height="7" id="PatternID_479_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -15.0, -3.5)" patternUnits="userSpaceOnUse" viewBox="0 0 30 7" width="30">
         <image height="7" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="30" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAHCAYAAAAf6f3xAAAALUlEQVR4XmNgGATgP50wCvivY6BPF4xuOVjQxtWRphinxfTA6BaDLacTHlgAABMHtvtEykw5AAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M-15.0 -3.5 L15.0 -3.5 15.0 3.5 -15.0 3.5 -15.0 -3.5" ffdec:fill-bitmapId="478" style="fill:url(#PatternID_479_1)"/>
+      <path d="M-15.0 -3.5 L15.0 -3.5 15.0 3.5 -15.0 3.5 -15.0 -3.5" ffdec:fill-bitmapId="478" fill-rule="evenodd" style="fill:url(#PatternID_479_1)"/>
     </g>
     <g id="sprite4">
       <use ffdec:characterId="482" height="58.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="23.0" xlink:href="#shape3"/>
@@ -47,7 +47,7 @@
       <pattern height="58" id="PatternID_482_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -11.5, -29.0)" patternUnits="userSpaceOnUse" viewBox="0 0 23 58" width="23">
         <image height="58" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="23" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAA6CAYAAABbGMJIAAAB7UlEQVR4Xu2XzStFURTF/T0iykRR8hUDJkzMFEmJiDJg9gYGBjKQMlLm/sardbx12medj3fufY+Uu2p13Xv2/q1zz6auqak/oCbhiah5/nxvLh/unQ9vzpzxXAvbyoE39naCXeN+3AAHIBhXmvfjBAQgvAHD7HNcpa9K0S5/BD69MBccC+7tuvQVxYbgXAGkcZ8atGFEcgW7B/vN8uZqMoBWMOrRZ2oCuUX6+Po8GWDPnWuoQ73tH67FcBTSNiBlgulW8KvBnQPQBNJY7wRHo/Xg7ckBcdW1ajit4MePVwfHVQO0V+EuwNoGlOAGZh3JJ8/Mf/8uM8DDt9cDOMGoL+0aCtIZUILbOnFSvjgFP7q9yMJNSFbN4spSJzj7AppR8Gpt4eJIwUDbwCcy0Bxcez1RFA2oFt4PNIL3A83C+4FGcO31RFE0oFp4P9AI/s8Hqt8ttm7sgZbg4kjBQHEPQAluA1oNlM2j4AwQB2q2Tmadka5fuaPg/MIlQwOKcAbg9RXcCW4DhsXJY7Pf5lVwBhDEv0JrrtmP/iz89GUtCMhB1aizYHAUDrmHDMHPBNj/g2gLF2gEtsqCscNcwNBV6gKvlm/kWfLV7X1neAe3kt+ZHo99jjptHCXdVY2rFe3YnrW+AeoVUJLuqsa/qy/9iUuTPJ49QwAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M11.5 29.0 L-11.5 29.0 -11.5 -29.0 11.5 -29.0 11.5 29.0" ffdec:fill-bitmapId="481" style="fill:url(#PatternID_482_1)"/>
+      <path d="M11.5 29.0 L-11.5 29.0 -11.5 -29.0 11.5 -29.0 11.5 29.0" ffdec:fill-bitmapId="481" fill-rule="evenodd" style="fill:url(#PatternID_482_1)"/>
     </g>
   </defs>
 </svg>

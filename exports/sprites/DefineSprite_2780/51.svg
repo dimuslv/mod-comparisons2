@@ -9,13 +9,13 @@
       <pattern height="19" id="PatternID_387_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -9.5, -9.5)" patternUnits="userSpaceOnUse" viewBox="0 0 19 19" width="19">
         <image height="19" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="19" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAA90lEQVR4XrWTMQ7CMAxFO7MhMcPQlam9AhIS3IKJLuzcAPUs9CQcKuinfPPjJhVCqqUv1fb3S5qmVbVgBJHPS/VshL5/hPP5FOq6jkbkXqijDx9zx6liE8JzuIwDw/A0EYY6+n4mgbVtYyAxZIU+gZwjCBFXfDVrA2E3XXe11VUEws8jURjCGgDJiolQJ7AIwi4gPn9MWRGmMwQhksYvZ+ZnCEJEwz8w8VpMDleHvXTRxWGIsD9uzDT3NXnz6f8ixrB7pkAv7EhBpXuW/AGyYlboz/4BMLBx365iXhL6BBVflWZu/XDbTYQ6+vQidxwLfR2fl+rLxBuBF4MRo4mPbgAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M-9.5 -9.5 L9.5 -9.5 9.5 9.5 -9.5 9.5 -9.5 -9.5" ffdec:fill-bitmapId="386" style="fill:url(#PatternID_387_1)"/>
+      <path d="M-9.5 -9.5 L9.5 -9.5 9.5 9.5 -9.5 9.5 -9.5 -9.5" ffdec:fill-bitmapId="386" fill-rule="evenodd" style="fill:url(#PatternID_387_1)"/>
     </g>
     <g id="shape1">
       <pattern height="7" id="PatternID_395_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -3.5, -3.5)" patternUnits="userSpaceOnUse" viewBox="0 0 7 7" width="7">
         <image height="7" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="7" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAIUlEQVR4XmNgIAT+owF0eRSAVQFOnVgFQQCmAxmgq8EAAKQyM81R5CusAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M-3.5 -3.5 L3.5 -3.5 3.5 3.5 -3.5 3.5 -3.5 -3.5" ffdec:fill-bitmapId="394" style="fill:url(#PatternID_395_1)"/>
+      <path d="M-3.5 -3.5 L3.5 -3.5 3.5 3.5 -3.5 3.5 -3.5 -3.5" ffdec:fill-bitmapId="394" fill-rule="evenodd" style="fill:url(#PatternID_395_1)"/>
     </g>
   </defs>
 </svg>

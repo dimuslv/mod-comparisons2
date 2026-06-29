@@ -291,91 +291,92 @@ class mx.managers.FocusManager extends mx.core.UIComponent
 			_loc2_ = p[_loc11_];
 			if(_loc2_._parent == p && _loc2_.enabled != false && _loc2_._visible != false && (_loc2_.tabEnabled == true || _loc2_.tabEnabled != false && (_loc2_.onPress != undefined || _loc2_.onRelease != undefined || _loc2_.onReleaseOutside != undefined || _loc2_.onDragOut != undefined || _loc2_.onDragOver != undefined || _loc2_.onRollOver != undefined || _loc2_.onRollOut != undefined || _loc2_ instanceof TextField)))
 			{
-				if(_loc2_._searchKey != this._searchKey)
+				if(_loc2_._searchKey == this._searchKey)
 				{
-					_loc2_._searchKey = this._searchKey;
-					if(_loc2_ != this._lastTarget)
+					continue;
+				}
+				_loc2_._searchKey = this._searchKey;
+				if(_loc2_ != this._lastTarget)
+				{
+					if((_loc2_.groupName != undefined || groupName != undefined) && _loc2_.groupName == groupName)
 					{
-						if((_loc2_.groupName != undefined || groupName != undefined) && _loc2_.groupName == groupName)
+						continue;
+					}
+					if(_loc2_ instanceof TextField && _loc2_.selectable == false)
+					{
+						continue;
+					}
+					if(_loc5_ || _loc2_.groupName != undefined && _loc2_.groupName == this._firstNode.groupName && _loc2_.selected == true)
+					{
+						if(firstChild)
 						{
-							continue;
-						}
-						if(_loc2_ instanceof TextField && _loc2_.selectable == false)
-						{
-							continue;
-						}
-						if(_loc5_ || _loc2_.groupName != undefined && _loc2_.groupName == this._firstNode.groupName && _loc2_.selected == true)
-						{
-							if(firstChild)
-							{
-								this._firstNode = _loc2_;
-								firstChild = false;
-							}
-						}
-						if(this._nextIsNext == true)
-						{
-							if(_loc2_.groupName != undefined && _loc2_.groupName == this._nextNode.groupName && _loc2_.selected == true || this._nextNode == undefined && (_loc2_.groupName == undefined || _loc2_.groupName != undefined && _loc2_.groupName != groupName))
-							{
-								this._nextNode = _loc2_;
-							}
-						}
-						if(_loc2_.groupName == undefined || groupName != _loc2_.groupName)
-						{
-							if(!(this._lastx.groupName != undefined && _loc2_.groupName == this._lastx.groupName && this._lastx.selected == true))
-							{
-								this._lastx = _loc2_;
-							}
+							this._firstNode = _loc2_;
+							firstChild = false;
 						}
 					}
-					else
+					if(this._nextIsNext == true)
 					{
-						this._prevNode = this._lastx;
-						this._needPrev = false;
-						this._nextIsNext = true;
+						if(_loc2_.groupName != undefined && _loc2_.groupName == this._nextNode.groupName && _loc2_.selected == true || this._nextNode == undefined && (_loc2_.groupName == undefined || _loc2_.groupName != undefined && _loc2_.groupName != groupName))
+						{
+							this._nextNode = _loc2_;
+						}
 					}
-					if(_loc2_.tabIndex != undefined)
+					if(_loc2_.groupName == undefined || groupName != _loc2_.groupName)
 					{
-						if(_loc2_.tabIndex == index)
+						if(!(this._lastx.groupName != undefined && _loc2_.groupName == this._lastx.groupName && this._lastx.selected == true))
 						{
-							if(this._foundList[_loc2_._name] == undefined)
-							{
-								if(this._needPrev)
-								{
-									this._prevObj = _loc2_;
-									this._needPrev = false;
-								}
-								this._nextObj = _loc2_;
-							}
+							this._lastx = _loc2_;
 						}
-						if(dir && _loc2_.tabIndex > index)
+					}
+				}
+				else
+				{
+					this._prevNode = this._lastx;
+					this._needPrev = false;
+					this._nextIsNext = true;
+				}
+				if(_loc2_.tabIndex != undefined)
+				{
+					if(_loc2_.tabIndex == index)
+					{
+						if(this._foundList[_loc2_._name] == undefined)
 						{
-							if(this._nextObj == undefined || this._nextObj.tabIndex > _loc2_.tabIndex && (_loc2_.groupName == undefined || this._nextObj.groupName == undefined || _loc2_.groupName != this._nextObj.groupName) || this._nextObj.groupName != undefined && this._nextObj.groupName == _loc2_.groupName && this._nextObj.selected != true && (_loc2_.selected == true || this._nextObj.tabIndex > _loc2_.tabIndex))
-							{
-								this._nextObj = _loc2_;
-							}
-						}
-						else if(!dir && _loc2_.tabIndex < index)
-						{
-							if(this._prevObj == undefined || this._prevObj.tabIndex < _loc2_.tabIndex && (_loc2_.groupName == undefined || this._prevObj.groupName == undefined || _loc2_.groupName != this._prevObj.groupName) || this._prevObj.groupName != undefined && this._prevObj.groupName == _loc2_.groupName && this._prevObj.selected != true && (_loc2_.selected == true || this._prevObj.tabIndex < _loc2_.tabIndex))
+							if(this._needPrev)
 							{
 								this._prevObj = _loc2_;
+								this._needPrev = false;
 							}
-						}
-						if(this._firstObj == undefined || _loc2_.tabIndex < this._firstObj.tabIndex && (_loc2_.groupName == undefined || this._firstObj.groupName == undefined || _loc2_.groupName != this._firstObj.groupName) || this._firstObj.groupName != undefined && this._firstObj.groupName == _loc2_.groupName && this._firstObj.selected != true && (_loc2_.selected == true || _loc2_.tabIndex < this._firstObj.tabIndex))
-						{
-							this._firstObj = _loc2_;
-						}
-						if(this._lastObj == undefined || _loc2_.tabIndex > this._lastObj.tabIndex && (_loc2_.groupName == undefined || this._lastObj.groupName == undefined || _loc2_.groupName != this._lastObj.groupName) || this._lastObj.groupName != undefined && this._lastObj.groupName == _loc2_.groupName && this._lastObj.selected != true && (_loc2_.selected == true || _loc2_.tabIndex > this._lastObj.tabIndex))
-						{
-							this._lastObj = _loc2_;
+							this._nextObj = _loc2_;
 						}
 					}
-					if(_loc2_.tabChildren)
+					if(dir && _loc2_.tabIndex > index)
 					{
-						this.getTabCandidateFromChildren(_loc2_,index,groupName,dir,_loc5_ && firstChild);
+						if(this._nextObj == undefined || this._nextObj.tabIndex > _loc2_.tabIndex && (_loc2_.groupName == undefined || this._nextObj.groupName == undefined || _loc2_.groupName != this._nextObj.groupName) || this._nextObj.groupName != undefined && this._nextObj.groupName == _loc2_.groupName && this._nextObj.selected != true && (_loc2_.selected == true || this._nextObj.tabIndex > _loc2_.tabIndex))
+						{
+							this._nextObj = _loc2_;
+						}
 					}
-					_loc5_ = false;
+					else if(!dir && _loc2_.tabIndex < index)
+					{
+						if(this._prevObj == undefined || this._prevObj.tabIndex < _loc2_.tabIndex && (_loc2_.groupName == undefined || this._prevObj.groupName == undefined || _loc2_.groupName != this._prevObj.groupName) || this._prevObj.groupName != undefined && this._prevObj.groupName == _loc2_.groupName && this._prevObj.selected != true && (_loc2_.selected == true || this._prevObj.tabIndex < _loc2_.tabIndex))
+						{
+							this._prevObj = _loc2_;
+						}
+					}
+					if(this._firstObj == undefined || _loc2_.tabIndex < this._firstObj.tabIndex && (_loc2_.groupName == undefined || this._firstObj.groupName == undefined || _loc2_.groupName != this._firstObj.groupName) || this._firstObj.groupName != undefined && this._firstObj.groupName == _loc2_.groupName && this._firstObj.selected != true && (_loc2_.selected == true || _loc2_.tabIndex < this._firstObj.tabIndex))
+					{
+						this._firstObj = _loc2_;
+					}
+					if(this._lastObj == undefined || _loc2_.tabIndex > this._lastObj.tabIndex && (_loc2_.groupName == undefined || this._lastObj.groupName == undefined || _loc2_.groupName != this._lastObj.groupName) || this._lastObj.groupName != undefined && this._lastObj.groupName == _loc2_.groupName && this._lastObj.selected != true && (_loc2_.selected == true || _loc2_.tabIndex > this._lastObj.tabIndex))
+					{
+						this._lastObj = _loc2_;
+					}
 				}
+				if(_loc2_.tabChildren)
+				{
+					this.getTabCandidateFromChildren(_loc2_,index,groupName,dir,_loc5_ && firstChild);
+				}
+				_loc5_ = false;
 			}
 			else if(_loc2_._parent == p && _loc2_.tabChildren == true && _loc2_._visible != false)
 			{

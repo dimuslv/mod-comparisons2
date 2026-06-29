@@ -9,15 +9,15 @@
       <pattern height="34" id="PatternID_2160_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, -17.0)" patternUnits="userSpaceOnUse" viewBox="0 0 59 34" width="59">
         <image height="34" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="59" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAiCAYAAADh/KHgAAABgUlEQVR4Xu2YMW7CQBBFKRAnSImoEAWidBmhFKSjQigV4gSpohwhJ4goc4acIOfgOAF9i7Fm/44l23LiWZsvPYHxrj2PWSyxo9E95RlPxpcyeGyyEaHNbptzeHsNwGe9kIZAts4i0dP3VySMcUkK8zJtAl/TZVDodDEt7ajVVRkjHcZ898IocL6YF2Trx5zt8ZAjgnIs5zV6vmvhu2xDWfe/XX7ItAHfw11Q5P7zIeDn9z2Az8sYvHqXRHEFLcl2jZnLy9NzgMh+nFcFLKvPWbJ8zb+GPXAciVrUldVjRHY5W/4rSpApEn1DoKosi3cpC9jDlOVJIssi3mU1piwPAlU7y3iSBY1kWbTXspYwiw5Clt+7lrWoI8tjupRljxtBokkpyrKHJSoxO6vF6sryNTugWqrIWsIk6zsosm34Hm6C4tr68z6onYpBybpfxggKlK1UgbdUBd5GTWorVcIPmSbwNd0HRaNLgnRaf6ZJUlJHOsXCWjrZbpaFl2nSS7bPuQKTFJEmcd85nQAAAABJRU5ErkJggg=="/>
       </pattern>
-      <path d="M59.0 -17.0 L59.0 17.0 0.0 17.0 0.0 -17.0 59.0 -17.0" ffdec:fill-bitmapId="2159" style="fill:url(#PatternID_2160_1)"/>
+      <path d="M59.0 -17.0 L59.0 17.0 0.0 17.0 0.0 -17.0 59.0 -17.0" ffdec:fill-bitmapId="2159" fill-rule="evenodd" style="fill:url(#PatternID_2160_1)"/>
     </g>
     <g id="text0">
-      <g transform="matrix(1.0, 0.0, 0.0, 1.0, -2.0, -2.0)">
-        <use fill="#81da20" height="15.0" transform="matrix(0.0079, 0.0, 0.0, 0.0079, 18.1, 9.1)" width="25.2" xlink:href="#font_FFF_Idea_8pt_st_00"/>
+      <g transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)">
+        <use fill="#81da20" height="15.0" transform="matrix(0.0077, 0.0, 0.0, 0.0077, 18.3, 8.9)" width="25.2" xlink:href="#font_FFF_Idea_8pt_st_00"/>
       </g>
     </g>
     <g id="font_FFF_Idea_8pt_st_00">
-      <path d="M631.5 -505.2 L252.6 -505.2 252.6 0.0 631.5 0.0 631.5 -505.2 M757.8 -631.5 L757.8 126.3 126.3 126.3 126.3 -631.5 757.8 -631.5" fill-rule="evenodd" stroke="none"/>
+      <path d="M646.65 -517.35 L258.65 -517.35 258.65 0.0 646.65 0.0 646.65 -517.35 M776.0 -646.65 L776.0 129.35 129.35 129.35 129.35 -646.65 776.0 -646.65" fill-rule="evenodd" stroke="none"/>
     </g>
   </defs>
 </svg>

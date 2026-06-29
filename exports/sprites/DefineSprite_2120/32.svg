@@ -15,7 +15,7 @@
       <pattern height="84" id="PatternID_2118_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -4.5, -42.0)" patternUnits="userSpaceOnUse" viewBox="0 0 9 84" width="9">
         <image height="84" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="9" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAABUCAYAAABQgR05AAAAYklEQVR4Xu3OQQrAIAxE0dx/4cF6ix7AdUGElgiGaQy4LNb5MJvwFhGBbgjvFoJeCM5abC/owVGvESJSkEo2+BXyz4dgBdQ3IA9DQLQRwrxpTYFGRLQw0qZAIyIiEiL5GXoAtnEwIfl4YN8AAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M4.5 42.0 L-4.5 42.0 -4.5 -42.0 4.5 -42.0 4.5 42.0" ffdec:fill-bitmapId="2117" style="fill:url(#PatternID_2118_1)"/>
+      <path d="M4.5 42.0 L-4.5 42.0 -4.5 -42.0 4.5 -42.0 4.5 42.0" ffdec:fill-bitmapId="2117" fill-rule="evenodd" style="fill:url(#PatternID_2118_1)"/>
     </g>
     <g id="sprite1">
       <use ffdec:characterId="1938" height="56.0" transform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" width="56.0" xlink:href="#shape1"/>
@@ -24,7 +24,7 @@
       <pattern height="56" id="PatternID_1938_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 56 56" width="56">
         <image height="56" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="56" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAAI0lEQVR4Xu3BAQ0AAADCoPdPbQ8HFAAAAAAAAAAAAAAAwKcBMTgAAU1vjj0AAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M0.0 0.0 L56.0 0.0 56.0 56.0 0.0 56.0 0.0 0.0" ffdec:fill-bitmapId="1937" style="fill:url(#PatternID_1938_1)"/>
+      <path d="M0.0 0.0 L56.0 0.0 56.0 56.0 0.0 56.0 0.0 0.0" ffdec:fill-bitmapId="1937" fill-rule="evenodd" style="fill:url(#PatternID_1938_1)"/>
     </g>
   </defs>
 </svg>

@@ -4,10 +4,10 @@
     <pattern height="60" id="PatternID_678_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -233.05, 2.15)" patternUnits="userSpaceOnUse" viewBox="0 0 63 60" width="63">
       <image height="60" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="63" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA8CAYAAADRy2JxAAAA7UlEQVR4Xu3WwQ2DMAyFYeboOF2ipw7WHbojlQ9PsqyAGnCpnPyfxCXQyM8Y6LIAAAAAAAAAALDcn7fVH/H8kCzo6/1YvWnCi7/rZRqQXWSp8Ca7UHsMsvf8meyXVKnwpYrNZuHtiOtm+Kb4l1Q84rVDUgPM3iQM6+zdPvNbr9zkZRVq+2jySvxfUMFxvZffR49hifCx0COj669XI3p+/xcK74vNKDpjmi6hBsQmnJGxx2WOjDpmM/V0tMJ/u1ZeDLX1kmytlWeh9ClT8FbQMp+7Xvo8bgU3e40pTaG2wmndxHNTaDUFAAAAAIb3AWifAAd1FlKVAAAAAElFTkSuQmCC"/>
     </pattern>
-    <path d="M-233.05 2.15 L-170.05 2.15 -170.05 62.15 -233.05 62.15 -233.05 2.15" ffdec:fill-bitmapId="677" style="fill:url(#PatternID_678_1)"/>
+    <path d="M-233.05 2.15 L-170.05 2.15 -170.05 62.15 -233.05 62.15 -233.05 2.15" ffdec:fill-bitmapId="677" fill-rule="evenodd" style="fill:url(#PatternID_678_1)"/>
     <pattern height="36" id="PatternID_678_2" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -133.05, 26.25)" patternUnits="userSpaceOnUse" viewBox="0 0 69 36" width="69">
       <image height="36" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="69" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAAAkCAYAAADfJffWAAAAyUlEQVR4Xu3XbQrCMBBF0a7D5bgJf7kw9+AeKyMODI9CzRBjPu6BgC1pm7xMrG4bAAAAAPzX9X7Zren5ZVkYjmA+Hs/bOwxr/ln7DCu7BfQaPR4WW+DA1FsgS0PQYwCHptkqNSdS816lqj/b3xbxrWFN+y0n/r7wQDwk7bsMD6XXEHRcXtHx3E/0XhlxizdbwCYPOXE2BquOZoHU8G05xwnF1c9c3xUdWMmkjPePX+56zyHFP3+Zko5VUnpttzyMTCBTm2qVASDhBZHxyW7SFnThAAAAAElFTkSuQmCC"/>
     </pattern>
-    <path d="M-64.05 62.25 L-133.05 62.25 -133.05 26.25 -64.05 26.25 -64.05 62.25" ffdec:fill-bitmapId="676" style="fill:url(#PatternID_678_2)"/>
+    <path d="M-64.05 62.25 L-133.05 62.25 -133.05 26.25 -64.05 26.25 -64.05 62.25" ffdec:fill-bitmapId="676" fill-rule="evenodd" style="fill:url(#PatternID_678_2)"/>
   </g>
 </svg>

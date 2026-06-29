@@ -13,7 +13,7 @@
       <pattern height="23" id="PatternID_570_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -11.0, -12.0)" patternUnits="userSpaceOnUse" viewBox="0 0 23 23" width="23">
         <image height="23" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="23" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAoklEQVR4XtWR0Q2AIAxE+XAcx3A0vxzQdTA1XtKcbREkEV9iQNretZDSKCzblPlsXD7rtqtxVzFGi0dGZmzd52wGLiQuq+SUch+hBSBehdcBzrFCPDLxtFxwDfjkv1oEoFiLafEuJsAS5Zxm9B1jCuz5XW64AUJ3rWtgWNSJEvQETFR3wg/EBVbXTUSjehNYuS7eFFUibwiNwiDBb2JRiv+DA7H5oKtlVa3kAAAAAElFTkSuQmCC"/>
       </pattern>
-      <path d="M-11.0 -12.0 L12.0 -12.0 12.0 11.0 -11.0 11.0 -11.0 -12.0" ffdec:fill-bitmapId="569" style="fill:url(#PatternID_570_1)"/>
+      <path d="M-11.0 -12.0 L12.0 -12.0 12.0 11.0 -11.0 11.0 -11.0 -12.0" ffdec:fill-bitmapId="569" fill-rule="evenodd" style="fill:url(#PatternID_570_1)"/>
     </g>
   </defs>
 </svg>

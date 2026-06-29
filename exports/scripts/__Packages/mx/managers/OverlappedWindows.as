@@ -13,7 +13,7 @@ class mx.managers.OverlappedWindows
 		}
 		else
 		{
-			mx.managers.SystemManager.idleFrames = mx.managers.SystemManager.idleFrames + 1;
+			mx.managers.SystemManager.idleFrames++;
 		}
 	}
 	static function __addEventListener(e, o, l)

@@ -8,7 +8,7 @@
       <pattern height="32" id="PatternID_161_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, 0.0, 0.0)" patternUnits="userSpaceOnUse" viewBox="0 0 32 32" width="32">
         <image height="32" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="32" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAd0lEQVR4Xu3O3QmAMAwE4M7hCC7iHg7gEi4kuIsPbuJT5QoH9aBa/97ug0CbNE1CsA90QxNrcq/hUwZz49Ie7qTvSrlqaJy2PsUa5/RRaTigpvWrnlNsRmCJ/K5vgXWemecCt5fgsDz0za90uBfQupmZmZmZPbUD7R9/mmBi9QgAAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="160" style="fill:url(#PatternID_161_1)"/>
+      <path d="M0.0 0.0 L32.0 0.0 32.0 32.0 0.0 32.0 0.0 0.0" ffdec:fill-bitmapId="160" fill-rule="evenodd" style="fill:url(#PatternID_161_1)"/>
     </g>
   </defs>
 </svg>

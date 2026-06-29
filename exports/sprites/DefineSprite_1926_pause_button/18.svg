@@ -11,7 +11,7 @@
       <pattern height="18" id="PatternID_1924_1" overflow="visible" patternTransform="matrix(1.0, 0.0, 0.0, 1.0, -8.5, -9.0)" patternUnits="userSpaceOnUse" viewBox="0 0 17 18" width="17">
         <image height="18" style="image-rendering:optimizeSpeed; image-rendering:pixelated" width="17" xlink:href="data:image/PNG;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAASCAYAAAC9+TVUAAAAMklEQVR4XmNgoCb4jwMQkkMxoL6+3g8bJiQ3agim3KghmHKjhmDKUdcQmEHYACE5qgEAHb00T9mALrQAAAAASUVORK5CYII="/>
       </pattern>
-      <path d="M-8.5 -9.0 L8.5 -9.0 8.5 9.0 -8.5 9.0 -8.5 -9.0" ffdec:fill-bitmapId="1923" style="fill:url(#PatternID_1924_1)"/>
+      <path d="M-8.5 -9.0 L8.5 -9.0 8.5 9.0 -8.5 9.0 -8.5 -9.0" ffdec:fill-bitmapId="1923" fill-rule="evenodd" style="fill:url(#PatternID_1924_1)"/>
     </g>
   </defs>
 </svg>
