@@ -14,40 +14,46 @@ Another thing useful for general practicing is savestates, just as before, you c
 
 ## Base TAS controls
 
-I for toggling the visibility of the input string
+`I` for toggling the visibility of the input string
 
-/ for freezing/unfreezing the game in edit mode
-. for frame advancing in edit mode
-, for frame rewinding in edit mode
 
-' for freezing/unfreezing the game in playback mode
-; for frame advancing in playback mode
-L for frame rewinding in playback mode
+`/` for freezing/unfreezing the game in edit mode
 
-K for jumping a second ahead in playback mode
-J for jumping a second back in playback mode
+`.` for frame advancing in edit mode
+
+`,` for frame rewinding in edit mode
+
+
+`'` for freezing/unfreezing the game in playback mode
+
+`;` for frame advancing in playback mode
+
+`L` for frame rewinding in playback mode
+
+`K` for jumping a second ahead in playback mode
+`J` for jumping a second back in playback mode
 
 For most keys above, pressing them while holding Shift alters their behaviour, usually increasing their effect 5 times (like jumping back 5 seconds instead of 1). Holding Shift and pressing the edit mode unfreeze or frame advance buttons will make them do their action in "insert mode", where, if there are inputs behind the playhead in the input string, instead of truncating, the new inputs get inserted inbetween.
 
 Some gameplay convenience keybinds:
-N decreases the amount of bombs thrown at the start of the next frame
-P toggles pause
-H forces a hit
+`N` decreases the amount of bombs thrown at the start of the next frame
+`P` toggles pause
+`H` forces a hit
 
 ## Other TAS controls
 
 If you are focused on the input field:
-Enter loads the inputs from the field
-Esc or F1 do the same and unfocus from the input field
-PgDn sets the playhead roughly to the current caret position
-PgUp or F12 do the same and unfocus from the input field
+`Enter` loads the inputs from the field
+`Esc` or F1 do the same and unfocus from the input field
+`PgDn` sets the playhead roughly to the current caret position
+`PgUp` or F12 do the same and unfocus from the input field
 
 If you're not focused on the input field:
-R makes the playhead jump back to the beginning of the string without altering the current mode
-F2 exits the level to the map screen
-\ makes the input field scroll to the playhead
-Delete truncates the input field after the playhead
-Shift + Delete splits a letter in half at the playhead
+`R` makes the playhead jump back to the beginning of the string without altering the current mode
+`F2` exits the level to the map screen
+`\` makes the input field scroll to the playhead
+`Delete` truncates the input field after the playhead
+`Shift` + `Delete` splits a letter in half at the playhead
 
 # Frame offsets
 
