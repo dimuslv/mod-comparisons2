@@ -8,7 +8,7 @@ By default you don't have infinite lives, which could be useful for practicing s
 
 In general, you can drag all windows around by clicking and dragging on their title bars, minimize and close them by clicking the respective icons and click on options to select/toggle them. You can look around the various options I added, hopefully it should be clear enough what they do, and also suggest new ones if you want any. Besides the main menu, you can also toggle the visibility of the input string by pressing `I`, variable window by pressing `V` and timer by pressing `T`.
 
-Another thing useful for general practicing is savestates, just as before, you can save a state by holding Shift and pressing any number 0-9 and load a state by simply pressing that number. Unfortunately, just as earlier, loading a state can be pretty slow because it plays back inputs from the very beginning each time. Loading a state can desync if the playback is influenced by RNG (to fix that, you can input `r#`, where `#` is any number, at the beginning of the input string, which sets the RNG seed to a specific value), the options at "Testing vars" are set to different values than they were when saving the state, or the playback depends on very specific laser-bomb interactions or other things that depend on the hitTest function (unfortunately not really fixable, it's basically the same thing as why spike glitch doesn't work on the Red Ball 1 TAS mod instant playback).
+Another thing useful for general practicing is savestates, you can save a state by holding Shift and pressing any number 0-9 and load a state by simply pressing that number. Unfortunately, loading a state can be pretty slow because it plays back inputs from the very beginning each time. Loading a state can desync if the playback is influenced by RNG (to fix that, you can input `r#`, where `#` is any number, at the beginning of the input string, which sets the RNG seed to a specific value), the options at "Testing vars" are set to different values than they were when saving the state, or the playback depends on very specific laser-bomb interactions or other things that depend on the hitTest function (unfortunately not really fixable, it's basically the same thing as why spike glitch doesn't work on the Red Ball 1 TAS mod instant playback).
 
 # TAS controls
 
@@ -26,6 +26,8 @@ Another thing useful for general practicing is savestates, just as before, you c
 
 `K` jumps a second ahead in playback mode  
 `J` jumps a second back in playback mode  
+
+`R` jumps to the beginning of the string while keeping the current mode  
 
 For most keys above, pressing them while holding Shift alters their behaviour, usually increasing their effect 5 times (like jumping back 5 seconds instead of 1). Holding Shift and pressing the edit mode unfreeze or frame advance buttons will make them do their action in "insert mode", where, if there are inputs behind the playhead in the input string, instead of truncating, the new inputs get inserted inbetween.
 
@@ -46,7 +48,6 @@ If you are focused on the input field:
 
 If you're not focused on the input field:
 
-`R` makes the playhead jump back to the beginning of the string without altering the current mode  
 `F2` exits the level to the map screen  
 `\` makes the input field scroll to the playhead  
 `Delete` truncates the input field after the playhead  
