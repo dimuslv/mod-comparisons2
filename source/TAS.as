@@ -15,11 +15,12 @@ class TAS
 	static var indArray = [-1];
 	static var endIndArray = [0];
 	static var codeObj = {};
+	static var ghostData = [];
 	
 	static var fastPlayback = false;
 	static var neutralPlayback = false;
 	static var saveStates = [];
-	static var saveStateCodeObj = [];
+	static var ghostVisible = [];
 	static var justPlacedBombs;
 	static var justPause;
 	static var pressedPause;
@@ -323,14 +324,32 @@ class TAS
 			//frozen = false;
 			_root.tt.doTween("reload");
 		} else if (code >= 48 && code <= 57) { //0..9
+			var state = TAS.saveStates[code-48];
 			if (Key.isDown(16)) { //Shift
 				TAS.updateText(true);
-				TAS.saveStates[code-48] = TAS.inputField.text;
-				TAS.saveStateCodeObj[code-48] = TAS.codeObj;
-			} else if (TAS.saveStates[code-48]) {
-				TAS.inputField.text = TAS.saveStates[code-48];
-				TAS.codeObj = TAS.saveStateCodeObj[code-48];
-				TAS.loadInputs(-1);
+				TAS.saveStates[code-48] = {
+					inputText: TAS.inputField.text,
+					codeObj: TAS.codeObj,
+					ghostData: TAS.ghostData.concat()
+				};
+			} else if (state) {
+				if (Key.isDown(17)) {
+					var ghostName = "g" + (code-48);
+					if (_root.game.ghost_holder[ghostName]) {
+						_root.game.ghost_holder[ghostName].removeMovieClip();
+						TAS.ghostVisible[code-48] = false;
+					} else {
+						_root.game.ghost_holder.attachMovie("player", ghostName, code-48);
+						_root.game.ghost_holder[ghostName]._alpha = 30;
+						TAS.updateGhost(ghostName);
+						TAS.ghostVisible[code-48] = true;
+					}
+				} else {
+					TAS.inputField.text = state.inputText;
+					TAS.codeObj = state.codeObj;
+					//TAS.ghostData = state.ghostData.concat();
+					TAS.loadInputs(-1);
+				}
 			}
 		} else {
 			return false;
@@ -1169,6 +1188,38 @@ class TAS
 		
 		TAS.queuedHit = false;
 	}
+	
+	static function updateGhosts() {
+		if (TAS.neutralPlayback) {
+			return;
+		}
+		
+		var p = _root.game.player;
+		
+		TAS.ghostData.push(p._x, p._y, p._currentframe, p.anim._currentframe);
+		
+		if (TAS.fastPlayback) {
+			return;
+		}
+		
+		for (var ghostName in _root.game.ghost_holder) {
+			TAS.updateGhost(ghostName);
+		}
+	}
+	
+	static function updateGhost(ghostName) {
+		var ghost = _root.game.ghost_holder[ghostName];
+		var data = TAS.saveStates[ghostName.slice(1)].ghostData;
+		
+		var ind = Math.min((TAS.totalFrame - 1) * 4, data.length - 4);
+		
+		if (ind >= 0) {
+			ghost._x = data[ind];
+			ghost._y = data[ind+1];
+			ghost.gotoAndStop(data[ind+2]);
+			ghost.anim.gotoAndStop(data[ind+3]);
+		}
+	}
 
 	static function levelInit() {
 		TAS.resetInputCheckers();
@@ -1192,12 +1243,22 @@ class TAS
 		}
 		
 		com.nitrome.toxic.Global.can_jump = true;
+		com.nitrome.toxic.Global.UP_PRESSED = false;
 		var oldWrite = TAS.write;
 		TAS.write = false;
 		TAS.targetIndex = TAS.curIndex;
 		TAS.targetFrame = TAS.curFrame;
 		TAS.curIndex = 0;
 		TAS.curFrame = TAS.valueArray[0];
+		
+		TAS.ghostData = [];
+		for (var i = 0; i < 10; i++) {
+			if (TAS.ghostVisible[i]) {
+				_root.game.ghost_holder.attachMovie("player", "g" + i, i);
+				_root.game.ghost_holder["g" + i]._alpha = 30;
+			}
+		}
+		
 		TAS.fastPlayback = true;
 		
 		TAS.curPattern = 3;
@@ -1218,7 +1279,7 @@ class TAS
 		
 		if (TAS.runBack) {
 			TAS.runBack = false;
-			while (TAS.curIndex < TAS.targetIndex || (TAS.curIndex == TAS.targetIndex && TAS.curFrame < TAS.targetFrame)) {
+			while (TAS.curIndex < TAS.targetIndex || TAS.curFrame < TAS.targetFrame) {
 				Main.gameUpdate();
 			}
 		}

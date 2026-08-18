@@ -70,6 +70,7 @@ class Main
 		Main.executeScripts(Main.scriptStack);
 		
 		TAS.resetInputCheckers();
+		TAS.updateGhosts();
 	}
 
 	static function executeScripts(stack) {
